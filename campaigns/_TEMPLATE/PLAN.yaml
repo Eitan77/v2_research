@@ -1,0 +1,51 @@
+campaign_id: CAM-XXXX
+title:
+purpose_profile:
+
+core_hypothesis:
+mechanism:
+why_it_might_work:
+
+starting_implementation:
+  universe:
+  signal:
+  decision_time:
+  entry:
+  exit:
+  direction:
+  sizing:
+  cost_model:
+  execution_model:
+
+main_questions: []
+
+adaptation_policy:
+  allowed_within_campaign:
+    - holding_period
+    - entry_or_exit_timing
+    - broad_thresholds
+    - mechanism_consistent_filters
+    - position_sizing
+    - stops_and_risk_overlays
+    - execution_assumptions
+    - long_short_treatment
+    - mechanism_consistent_universe_changes
+    - portfolio_construction
+  new_campaign_required_when:
+    - core_hypothesis_changes
+    - source_of_edge_or_mechanism_changes
+    - information_set_changes_materially
+    - strategy_identity_changes_materially
+
+hard_constraints:
+  fixed_capital_base: 1.0
+  reinvest_pnl: false
+  sealed_holdout_start: "2026-05-01"
+  holdout_access_authorized: false
+  overnight_direct_stock_or_etf_shorts: false
+  intraday_direct_shorts_require_stop_and_forced_close: true
+
+development_period:
+status: draft
+frozen_at:
+file_hash:

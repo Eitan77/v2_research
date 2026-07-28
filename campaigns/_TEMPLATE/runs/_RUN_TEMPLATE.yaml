@@ -1,0 +1,48 @@
+run_id: RUN-XXXX
+campaign_id: CAM-XXXX
+parent_run_id:
+
+planned_at:
+status: planned
+
+change_from_parent:
+reason:
+expected_effect:
+
+configuration:
+  universe:
+  signal:
+  decision_time:
+  entry:
+  exit:
+  direction:
+  sizing:
+  filters:
+  stops_or_risk_overlays:
+  cost_model:
+  execution_model:
+
+short_selling:
+  direct_stock_or_etf_shorting_used: false
+  strictly_intraday_if_used:
+  protective_stop_or_emergency_exit:
+  forced_close_before_regular_session_end:
+  overnight_direct_short_exposure_detected: false
+
+completed_at:
+metrics_artifact:
+results_summary:
+  net_full_period_simple_return:
+  average_monthly_net_simple_return:
+  average_calendar_year_net_simple_return:
+  standard_max_drawdown:
+  max_full_recovery_time_days:
+  negative_month_count:
+  trade_or_event_count:
+  average_capital_utilization:
+  adverse_cost_net_simple_return:
+
+factual_outcome:
+decision:
+next_question:
+artifacts: []

@@ -1,0 +1,45 @@
+campaign_id: CAM-XXXX
+updated_at:
+status:
+intended_profile:
+current_profile_fit:
+
+run_count:
+current_best_run:
+current_baseline_run:
+
+current_best:
+  net_full_period_simple_return:
+  average_monthly_net_simple_return:
+  median_monthly_net_simple_return:
+  average_calendar_year_net_simple_return:
+  standard_max_drawdown:
+  max_full_recovery_time_days:
+  negative_month_count:
+  monthly_return_consistency:
+  trade_or_event_count:
+  average_capital_utilization:
+  maximum_gross_exposure:
+  adverse_cost_net_simple_return:
+  severe_cost_net_simple_return:
+  market_beta:
+
+notable_runs: []
+failed_or_rejected_directions: []
+
+adaptation_summary:
+  main_changes_tried: []
+  improvements_that_held_up: []
+  weaknesses_not_resolved: []
+  selection_and_overfitting_notes:
+
+short_selling_compliance:
+  direct_stock_or_etf_shorts_used:
+  all_shorts_strictly_intraday:
+  stops_or_emergency_exits_defined:
+  all_shorts_closed_before_regular_session_end:
+  compliance_errors: []
+
+current_judgment:
+next_question:
+artifacts: []
