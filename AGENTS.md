@@ -30,6 +30,14 @@ Within the V2 workspace, Codex may write new campaign code, engines, models, dat
 
 Keep new work and campaign artifacts inside this V2 workspace. Do not modify the older source projects, and do not treat copied code, old comments, tests, reports, or results as strategy evidence. All new implementations remain subject to the constitution, the declared data sources, causal timing, realistic costs, and sealed-holdout rules.
 
+## V2 scope and launch gate
+
+- Work in this V2 workspace only. Outside it, access only the data paths in `research/DATA_SOURCES.yaml` and the copied reference paths in `research/CODE_SOURCES.yaml`; do not browse the wider AlgoResearch tree for prior reports, runs, results, or strategy conclusions unless the user explicitly authorizes a specific path and purpose.
+- Before the first backtest or broad scan, create and freeze the campaign `PLAN.yaml`, verify the relevant schemas and data readiness, record the code and data provenance, and confirm that the loaded maximum date is on or before the discovery cutoff with zero holdout rows loaded.
+- Every meaningful run must preserve its configuration, parent run, reason, expected effect, factual result, and decision. Do not overwrite completed run records.
+- Write new code and outputs under the active V2 campaign. Do not write results into the copied reference-code directories or the older source projects.
+- If CUDA is used, report the actual device and GPU execution path. An imported GPU module or CUDA-capable environment alone is not evidence that the run used CUDA.
+
 ## Capital and drawdown convention
 
 Research comparisons are independent of actual account size.
