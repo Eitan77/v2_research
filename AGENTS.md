@@ -13,9 +13,10 @@ Do not inherit conclusions merely because they appear in an old report, comment,
 1. Read `research/CONSTITUTION.md`.
 2. Read `research/CURRENT.md`.
 3. Read `research/DATA_SOURCES.yaml` and verify the required data paths and boundaries.
-4. Search `research/KNOWLEDGE.md` for relevant mechanisms and failure patterns.
-5. Search `research/LEDGER.md` for related V2 campaigns.
-6. Inspect the relevant code, configuration, data provenance, and raw outputs directly.
+4. Read `research/CODE_SOURCES.yaml` before reusing copied reference code.
+5. Search `research/KNOWLEDGE.md` for relevant mechanisms and failure patterns.
+6. Search `research/LEDGER.md` for related V2 campaigns.
+7. Inspect the relevant code, configuration, data provenance, and raw outputs directly.
 
 Read only what is relevant. Do not repeatedly summarize unchanged files.
 

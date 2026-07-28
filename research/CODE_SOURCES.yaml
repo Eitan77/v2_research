@@ -1,0 +1,45 @@
+version: 1
+
+purpose: >-
+  Reference-only source code copied into v2_research. Reuse is permitted after
+  inspection and validation; copied code may be changed or replaced per campaign.
+
+reference_root: "reference_code"
+
+sources:
+  - id: ar_pipeline
+    local_path: "reference_code/ar_pipeline"
+    original_path: "D:\\AlgoResearch\\src\\ar_pipeline"
+    role: reusable framework, execution, fills, validation, metrics, and CUDA helpers
+  - id: quant_pipeline_base
+    local_path: "reference_code/quant_pipeline_base"
+    original_path: "D:\\AlgoResearch\\src\\quant_pipeline"
+    role: base quant pipeline package
+  - id: quant_pipeline_existing
+    local_path: "reference_code/quant_pipeline_existing"
+    original_path: "D:\\AlgoResearch\\Quant Pipeline\\src\\quant_pipeline"
+    role: specialized discovery and portfolio pipeline
+  - id: standalone_tools
+    local_path: "reference_code/tools"
+    original_path: "D:\\AlgoResearch\\tools"
+    role: standalone research and CUDA scripts
+  - id: quant_pipeline_tools
+    local_path: "reference_code/quant_pipeline_tools"
+    original_path: "D:\\AlgoResearch\\Quant Pipeline\\tools"
+    role: supporting pipeline utilities
+  - id: base_tests
+    local_path: "reference_code/tests_base"
+    original_path: "D:\\AlgoResearch\\tests"
+    role: reference tests
+  - id: existing_tests
+    local_path: "reference_code/tests_existing"
+    original_path: "D:\\AlgoResearch\\Quant Pipeline\\tests"
+    role: reference tests
+
+excluded:
+  - results
+  - reports
+  - runs
+  - caches
+  - credentials
+  - generated_outputs

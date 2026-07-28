@@ -6,6 +6,8 @@ This package defines a lightweight, adaptive research workflow for one Codex res
 
 The local data locations and date boundaries are recorded in `research/DATA_SOURCES.yaml`. The data remains outside this public repository.
 
+Reference source code and tests copied from the existing local projects are under `reference_code/`. Read `research/CODE_SOURCES.yaml` and `reference_code/README.md` before reusing them. Results, reports, runs, caches, credentials, and generated outputs were not copied.
+
 - `AGENTS.md` — operating instructions
 - `research/CONSTITUTION.md` — research principles and hard constraints
 - `research/CURRENT.md` — active objectives and strategy profiles
