@@ -4,6 +4,8 @@ This package defines a lightweight, adaptive research workflow for one Codex res
 
 ## Permanent research documents
 
+The local data locations and date boundaries are recorded in `research/DATA_SOURCES.yaml`. The data remains outside this public repository.
+
 - `AGENTS.md` — operating instructions
 - `research/CONSTITUTION.md` — research principles and hard constraints
 - `research/CURRENT.md` — active objectives and strategy profiles

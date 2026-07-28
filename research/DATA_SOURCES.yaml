@@ -1,0 +1,27 @@
+version: 1
+
+# Local canonical data location. The data itself is not committed to this repository.
+data_root: "D:\\AlgoResearch\\data"
+catalog: "D:\\AlgoResearch\\data\\catalog.duckdb"
+
+sources:
+  raw: "D:\\AlgoResearch\\data\\raw"
+  derived: "D:\\AlgoResearch\\data\\derived"
+  features: "D:\\AlgoResearch\\data\\features"
+  indicators: "D:\\AlgoResearch\\data\\features\\technical\\indicators"
+  labels: "D:\\AlgoResearch\\data\\labels"
+  events: "D:\\AlgoResearch\\data\\events"
+  reference: "D:\\AlgoResearch\\data\\reference"
+  manifests: "D:\\AlgoResearch\\data\\manifests"
+
+indicator_timeframes:
+  - 5m
+  - 10m
+  - 15m
+  - 30m
+  - 1h
+  - 4h
+
+discovery_cutoff: "2026-04-30"
+sealed_holdout_start: "2026-05-01"
+holdout_access: false
