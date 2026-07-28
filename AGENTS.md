@@ -24,6 +24,12 @@ Read only what is relevant. Do not repeatedly summarize unchanged files.
 
 > Code measures. The agent judges. The constitution guides. The campaign adapts. The ledger remembers.
 
+## Code and model freedom
+
+Within the V2 workspace, Codex may write new campaign code, engines, models, data adapters, feature builders, execution simulators, diagnostics, tests, and supporting tools when they are needed to answer the campaign's research question. It may adapt, replace, or ignore copied reference code.
+
+Keep new work and campaign artifacts inside this V2 workspace. Do not modify the older source projects, and do not treat copied code, old comments, tests, reports, or results as strategy evidence. All new implementations remain subject to the constitution, the declared data sources, causal timing, realistic costs, and sealed-holdout rules.
+
 ## Capital and drawdown convention
 
 Research comparisons are independent of actual account size.
