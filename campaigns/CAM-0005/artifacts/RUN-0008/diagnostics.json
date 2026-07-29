@@ -1,0 +1,8 @@
+{
+  "status": "passed",
+  "event_count": 134,
+  "quote_complete_events": 134,
+  "trade_complete_events": 134,
+  "max_exit_session": "2026-04-29",
+  "holdout_rows_loaded": 0
+}

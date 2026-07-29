@@ -1,0 +1,149 @@
+campaign_id: CAM-0006
+title: Opening-auction pressure absorption and intraday path
+purpose_profile: "A. Recent Money Printer"
+
+core_hypothesis: >-
+  An unusually large official opening auction and opening gap concentrate
+  overnight information and inventory transfer. The first completed regular
+  minute reveals whether that pressure is being absorbed or confirmed.
+  Conditional continuation or reversal from the first actionable post-minute
+  price may persist for 15 minutes through the same-session close.
+mechanism: >-
+  Opening auction orders clear at one price, but liquidity providers and
+  discretionary traders continue redistributing the inventory after 09:30.
+  A high-size auction with a gap that is immediately reclaimed may mean
+  temporary inventory pressure; a gap confirmed by the first minute may mean
+  underreaction to information. The campaign must determine the sign, horizon,
+  and long/short contribution rather than assume either behavior.
+material_difference_from_prior_campaigns: >-
+  CAM-0006 uses the official opening-auction print and size plus the completed
+  first regular minute to predict the remaining same-session path in a
+  point-in-time cross-section. CAM-0005 traded late-day pressure overnight,
+  CAM-0003 used the first half-hour return rather than auction microstructure,
+  and CAM-0002 studied extreme residual shocks and later reclaims rather than
+  opening inventory transfer. The information event, causal clock, portfolio,
+  and execution problem are distinct.
+
+primary_source:
+  type: "mechanism-first, no inherited empirical source"
+  source_faithful_requirement: >-
+    The frozen baseline is the source contract: official opening auction
+    condition, prior adjusted close, completed 09:30 minute, 09:31 entry, both
+    continuation and absorption directions, point-in-time universe, and
+    explicit same-session short safeguards must be implemented before
+    adaptation.
+
+intended_strategy_profile:
+  recent_evaluation_window_family:
+    - "2024-11-01 through 2026-04-30"
+    - "2025-02-01 through 2026-04-30"
+    - "2025-05-01 through 2026-04-30"
+  representative_recent_window: "2025-02-01 through 2026-04-30"
+  return_objective: >-
+    Approximately 10%-15% average monthly net fixed-capital simple return over
+    a representative recent 12-to-18-month regime, with frequent independent
+    auction events, realistic marketable execution, distributed contribution,
+    and preferred drawdown below 20%.
+  activation_rule: >-
+    Every auction-size, gap, liquidity, and state threshold uses only shifted
+    prior sessions or the official auction and completed 09:30 bar known by
+    09:31. No same-day close, future auction, or full-sample winner may affect
+    eligibility.
+  decay_monitor: >-
+    Monitor long and short legs separately, opening-auction size and gap
+    buckets, first-minute confirmation, marketable spread/cost coverage,
+    event/day/symbol concentration, rolling net expectancy, and stop frequency.
+
+starting_implementation:
+  universe: >-
+    Point-in-time QQQ members intersecting symbols with an official opening
+    auction record, complete SIP one-minute path, and causal prior-liquidity
+    history. Compare a causal auction-coverage universe only if its
+    point-in-time eligibility can be established without full-sample winner
+    selection.
+  auction_record: >-
+    Decode declared SIP condition codes and select the official primary opening
+    auction print. Reject missing, ambiguous, duplicate-conflicting, nonprimary,
+    or nonpositive records; measure every source of attrition.
+  features:
+    gap: "Official adjusted opening-auction price / prior adjusted close - 1"
+    auction_size: "Official opening-auction shares / shifted trailing symbol median"
+    first_minute: "Completed 09:30 close / official opening-auction price - 1"
+    liquidity: "Shifted trailing dollar volume and price, never current close"
+  baseline_signals:
+    continuation: >-
+      Extreme positive or negative auction gap whose first completed minute
+      continues in the gap direction.
+    absorption: >-
+      Extreme positive or negative auction gap whose first completed minute
+      reclaims toward the prior close.
+  decision_time: "09:31 Eastern after the 09:30-09:31 minute is complete"
+  entry: "09:31 minute open as the bar screen; following marketable SIP quote for every survivor"
+  exits:
+    - "09:45 completed-bar boundary"
+    - "10:00 completed-bar boundary"
+    - "12:00 completed-bar boundary"
+    - "15:55 completed-bar boundary with forced same-session liquidation"
+  portfolio: >-
+    Normalize to original capital 1.0. Equal-weight simultaneous eligible
+    positions within each leg and allocate at most 1.0 total gross. A
+    long-short portfolio uses at most 0.5 gross per side. No compounding.
+  costs: "Screen 5, 10, and 20 bp per side; targeted SIP replay is mandatory for survivors."
+  short_safeguards: >-
+    Direct stock shorts are same-session only, have a predefined 2% protective
+    stop or tighter mechanism-justified neighbor, use conservative full
+    one-minute high-path handling with adverse ambiguity, and are forcibly
+    liquidated no later than 15:55.
+
+main_questions:
+  - "Does the opening-auction event predict continuation or absorption after the first completed minute?"
+  - "Is auction size informative beyond gap magnitude and ordinary first-minute return?"
+  - "Which 15-minute to same-day horizon contains the payoff?"
+  - "Do long, protected-short, and balanced portfolios each contribute?"
+  - "Does the effect survive point-in-time membership, shifted liquidity, and corporate actions?"
+  - "Are profitable events distributed across dates, symbols, gap signs, and auction-size states?"
+  - "Do gap, size, first-minute, breadth, stop, and cost neighbors form a stable region?"
+  - "Can targeted SIP quotes/trades support entry, exit, stops, and capacity?"
+
+adaptation_policy:
+  allowed_within_campaign:
+    - "Causal gap ranks, broad thresholds, and cross-sectional tails"
+    - "Shifted auction-size, liquidity, volatility, and market-state filters"
+    - "First-minute confirmation, reclaim fraction, and range position"
+    - "09:31-09:35 entry latency and 09:45 through 15:55 exits"
+    - "Long-only, protected-short-only, balanced, and causal selective portfolios"
+    - "Equal, capped-strength, volatility-aware, and breadth-aware sizing at gross <= 1.0"
+    - "Protective stop and emergency-exit neighbors"
+    - "Marketable costs and targeted SIP quote/trade replay"
+  new_campaign_required_when:
+    - "The signal no longer depends on the official opening auction"
+    - "The payoff moves overnight or beyond the same session"
+    - "Options, earnings, news text, or a multi-day directional mechanism becomes primary"
+
+launch_and_conclusion_gates:
+  - "PLAN frozen before campaign-scoped readiness or backtesting"
+  - "Official auction condition, primary venue, duplicates, timestamps, prices, and sizes verified"
+  - "Point-in-time universe, minute path, split lineage, and prior-close mapping verified"
+  - "Maximum loaded date <= 2026-04-30 and zero holdout rows"
+  - "Fixtures pass for auction selection, completed-minute timing, membership, adjustment, portfolio allocation, costs, stops, forced close, and drawdown"
+  - "Every meaningful run is frozen, reconciled, and preserves parent/reason/expectation/result/decision"
+  - "Sample/universe attrition, chronology, month, symbol, event, leg, state, concentration, and execution evidence completed before promotion"
+  - "Mandatory eleven-principle and skeptical-quant audit completed before promotion, retirement, or pivot"
+
+hard_constraints:
+  fixed_capital_base: 1.0
+  maximum_gross_exposure: 1.0
+  reinvest_pnl: false
+  discovery_cutoff: "2026-04-30"
+  sealed_holdout_start: "2026-05-01"
+  holdout_access_authorized: false
+  direct_overnight_stock_or_etf_shorts: false
+  targeted_data_policy: >-
+    Use declared local auction, membership, daily, and minute data first.
+    Alpaca pulls may fill only specific missing symbols, dates, fields, or
+    execution windows; never download a blanket S&P universe.
+
+development_period: "Declared pre-cutoff data only; standard recent views end 2026-04-30"
+status: frozen
+frozen_at: "2026-07-29T04:08:00-07:00"
+file_hash: "sha256 excluding file_hash line: 679e435ccb26c990090e87c63f57ca0969c4b91b671b9337f18f60cf41f01261"

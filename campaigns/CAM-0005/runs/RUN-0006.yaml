@@ -1,0 +1,98 @@
+run_id: RUN-0006
+campaign_id: CAM-0005
+parent_run_id: RUN-0005
+planned_at: "2026-07-29T03:09:00-07:00"
+status: completed
+
+change_from_parent: >-
+  Freeze q50 and q60 edge25 always-active 15:59-to-next-open candidates and
+  acquire targeted SIP quotes and trades only for their union of entry/exit
+  events. Replay buys at the first regular SIP ask at/after 15:59 and sells at
+  the first regular SIP bid at/after 09:30, with 0/2/5 bp additional slippage.
+reason: >-
+  Bar evidence is close and strong enough to require execution qualification.
+  The strategy crosses both close and open, where spread, auction transition,
+  quote availability, and displayed size can differ materially from minute
+  opens.
+expected_effect: >-
+  A real executable candidate should retain positive monthly economics under
+  marketable NBBO and 2-5 bp added slippage, have high event coverage, credible
+  displayed size, and no dependence on stale or locked/crossed quotes.
+
+configuration:
+  candidates: ["q50_edge25", "q60_edge25"]
+  event_source: "Frozen RUN-0004 always-active next-open both-reversal at 5 bp"
+  quote_windows:
+    entry: "15:58:55 through 15:59:10 Eastern"
+    exit: "09:29:55 through 09:30:10 Eastern next session"
+  replay:
+    entry: "First noncrossed SIP ask at or after 15:59:00"
+    exit: "First noncrossed SIP bid at or after 09:30:00"
+  additional_slippage_bps_per_side: [0, 2, 5]
+  data_scope: >-
+    SOXL/SOXS only, union of candidate dates and two 15-second windows per
+    event; no broad universe or sealed data.
+  expected_variant_count: 6
+
+execution_contract:
+  pull_command: >-
+    python campaigns/CAM-0005/src/pull_run0006_nbbo.py
+    --parent-positions campaigns/CAM-0005/artifacts/RUN-0004/positions.parquet
+    --output-dir campaigns/CAM-0005/artifacts/RUN-0006/raw
+  replay_command: >-
+    python campaigns/CAM-0005/src/run0006.py
+    --raw-dir campaigns/CAM-0005/artifacts/RUN-0006/raw
+    --parent-positions campaigns/CAM-0005/artifacts/RUN-0004/positions.parquet
+    --output-dir campaigns/CAM-0005/artifacts/RUN-0006
+  expected_variant_count: 6
+
+completed_at: "2026-07-29T03:13:30-07:00"
+factual_outcome: >-
+  The targeted pull reconciled to 134 unique SOXL/SOXS events and 268
+  fifteen-second windows, with 442,764 SIP quote rows, 576,988 SIP trade rows,
+  and no request or load on or after 2026-05-01. All 134 events had valid
+  noncrossed entry and exit quotes and trades after the frozen timestamps.
+  Under first-ask entry and first-bid exit, q60 earned 6.24% average per month
+  over 18 months at 2 bp additional slippage per side, 7.89% over 15 months,
+  and 5.40% over 12 months, with 19.58% standard drawdown, seven calendar-day
+  maximum recovery, 108 trades, and 55.07% top-five-day profit share. At 5 bp
+  additional slippage per side it retained 5.84%, 7.51%, and 5.04% average
+  monthly return over those windows with 20.70% drawdown. The q50 neighbor
+  also remained positive at every replay cost. Median selected spreads were
+  4.49 bp at entry and 15.00 bp at exit for q60, already paid by the
+  marketable replay. SOXL generated 0.9311 fixed-base return across 57 events
+  while SOXS generated 0.2087 across 77; the weaker inverse leg remains the
+  main tail risk. Quote size is retained only in raw API units and is not
+  converted into a capacity claim.
+decision: >-
+  Pass execution qualification for the q50/q60 edge25 neighborhood and retain
+  q60 as the lower-drawdown primary development candidate. Do not promote it
+  as genuine or untouched: all rules were adapted on the same 18-month
+  history, the top five days still contribute 55.07% at the central replay,
+  and the SOXS leg has a recent large loss. Advance the frozen neighborhood
+  to adversarial chronological, concentration, bootstrap, and leave-tail-out
+  confirmation before a checkpoint.
+next_question: >-
+  Does the now-frozen q50/q60 neighborhood survive chronological subperiods,
+  moving-block resampling, removal of leading days/months, leg and event
+  decomposition, and parameter-neighbor comparison without retrospective
+  rescue?
+artifacts:
+  - "artifacts/RUN-0006/raw/events.parquet"
+  - "artifacts/RUN-0006/raw/quotes.parquet"
+  - "artifacts/RUN-0006/raw/trades.parquet"
+  - "artifacts/RUN-0006/raw/pull_report.json"
+  - "artifacts/RUN-0006/event_replay.parquet"
+  - "artifacts/RUN-0006/variants.csv"
+  - "artifacts/RUN-0006/monthly.csv"
+  - "artifacts/RUN-0006/contract.json"
+  - "artifacts/RUN-0006/diagnostics.json"
+artifact_hashes:
+  raw_events_parquet: "d0bf8924af018fb88020c13f4860b0091e808da75f3f30d9adfe8987eb5540cc"
+  raw_quotes_parquet: "99a299cf36e2c2b860c7174f17c073522ca98b281d79f61af7688c4d863ca867"
+  raw_trades_parquet: "a67aaaa75888650c2ef0332121e07c69cab9a3d1416d07ecdefee2c68cbeea2d"
+  replay_parquet: "469ca65b6450d09f21a63c2e2ab28167a4d3da29beeec03b9b330dc98dd4ca1b"
+  variants_csv: "c2b0f24a6c96b57a0b9b2b193385071cd64fafbcee779b03f4d935aa74585310"
+  monthly_csv: "0ee2c33bb2bad5c1947c23d9aad1449593c6724a0ba4f6865b2b3c61563acb7c"
+  contract_json: "91f7722ac3ca42a494d2718c154ccf392aced72705f5c203233ff5b47f6180f4"
+  diagnostics_json: "3fb8cf5ec772bb431175c157b3c9caa65cc7d398b4202af56570dc0cb809fe7c"

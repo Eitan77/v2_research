@@ -1,0 +1,99 @@
+run_id: RUN-0008
+campaign_id: CAM-0006
+parent_run_id: RUN-0007
+planned_at: "2026-07-29T04:17:00-07:00"
+status: completed
+
+change_from_parent: >-
+  Freeze volatility-high, first-minute dollar-participation q50, range-close
+  >=50%, fully covered marketable NBBO plus 2 bp additional slippage as the
+  central development sleeve. Audit its q50-only, q67, and 0/5 bp neighbors;
+  remove leading days, months, and symbols; leave each six-month block out;
+  and run 20,000 seeded circular moving-block bootstrap samples of the 18
+  calendar months using three-month blocks.
+reason: >-
+  The sleeve is positive in all chronological blocks and has good drawdown,
+  but its top five days contribute about half of profit, three months are
+  inactive, and the whole family is heavily adapted. Adversarial confirmation
+  is required before a development checkpoint or campaign closure.
+expected_effect: >-
+  A worthwhile observation sleeve should remain positive after reasonable
+  contributor removal, across adjacent causal thresholds/costs, and in most
+  moving-block samples. These tests cannot make it Type A; they determine
+  whether the edge is distributed enough to preserve for forward observation.
+
+configuration:
+  central_variant: "vol_high_dollar_q50_range50_nbbo_slip2"
+  neighbor_variants:
+    - "vol_high_dollar_q50_nbbo_slip2"
+    - "vol_high_dollar_q67_nbbo_slip2"
+    - "vol_high_dollar_q50_range50_nbbo_slip0"
+    - "vol_high_dollar_q50_range50_nbbo_slip5"
+  leave_outs:
+    top_profit_days: [1, 5, 10]
+    top_profit_symbols: [1, 5]
+    top_profit_months: [1, 3]
+    chronological_blocks: "Leave each of three six-month blocks out"
+  bootstrap:
+    unit: "Calendar month fixed-base net P&L, including zero months"
+    method: "Circular moving blocks"
+    block_length_months: 3
+    sample_length_months: 18
+    resamples: 20000
+    seed: 6008
+  expected_resamples: 20000
+
+execution_contract:
+  command: >-
+    python campaigns/CAM-0006/src/run0008.py
+    --variants campaigns/CAM-0006/artifacts/RUN-0007/variants.csv
+    --monthly campaigns/CAM-0006/artifacts/RUN-0007/monthly.csv
+    --blocks campaigns/CAM-0006/artifacts/RUN-0007/blocks.csv
+    --positions campaigns/CAM-0006/artifacts/RUN-0007/positions.parquet
+    --output-dir campaigns/CAM-0006/artifacts/RUN-0008
+  expected_resamples: 20000
+
+completed_at: "2026-07-29T04:15:38-07:00"
+factual_outcome: >-
+  The frozen audit reconciled five neighboring variants and 20,000 seeded
+  three-month circular moving-block resamples with zero holdout. The central
+  94-event/59-symbol sleeve had a 62.77% event win rate and retained positive
+  total return after every planned removal: 67.04% after the best day, 39.15%
+  after the best five days, 12.49% after the best ten, 65.92% after the top
+  symbol, 25.99% after the top five symbols, 54.57% after the best month, and
+  24.97% after the best three months. Each two-block complement remained
+  positive. Contributor removal confirms a real edge but also severe
+  dependence: removing the best five days cuts the 15-month average month from
+  5.53% to 2.90%; removing the top five symbols cuts it to 2.03%.
+  Bootstrap probability of positive 18-month total was 99.79%; median average
+  month was 4.34%, 5th/95th percentiles 1.54%/7.30%, probability of at least
+  5% was 35.76%, and probability of at least 10% was 0.05%. Monthly-path
+  drawdown stayed below 20% in 99.99% of samples. All q50/q67 and 0/2/5 bp
+  neighbors remained positive across each chronological block.
+decision: >-
+  Pass adversarial confirmation for a frozen development observation sleeve,
+  but reject Type-A promotion. The mechanism is genuine, executable at
+  targeted marketable NBBO, and robustly positive, yet typical bootstrap
+  return is near 4.3% per month, top contributors materially matter, three
+  months are inactive, and the chance of the Type-A return reference is
+  negligible. Close CAM-0006 without holdout access or further tuning and move
+  to a materially different mechanism.
+next_question: >-
+  Which distinct information event and payoff horizon can plausibly supply
+  the missing return and consistency without reusing opening-auction
+  absorption, late-day overnight reversal, or prior failed momentum/reversal
+  families?
+artifacts:
+  - "artifacts/RUN-0008/neighbors.csv"
+  - "artifacts/RUN-0008/neighbor_blocks.csv"
+  - "artifacts/RUN-0008/leaveouts.csv"
+  - "artifacts/RUN-0008/bootstrap.parquet"
+  - "artifacts/RUN-0008/adversarial_summary.json"
+  - "artifacts/RUN-0008/contract.json"
+artifact_hashes:
+  neighbors_csv: "e882759fc06e7973cafcce71e60c4108cbb8fe05a4ab1b57ba6610a4790fc544"
+  neighbor_blocks_csv: "55dbf0bb125cefd014fb3a2775f11389b21f3a5262a6a32ab14207735b146030"
+  leaveouts_csv: "56116a87b2d630af788d9b883511f5dcdb1b8def4200f62187f2a9c86ec14fa5"
+  bootstrap_parquet: "20652b1bb3105bd57bb38bf815f245314ba237a77cdbbecac87655caa138a31f"
+  adversarial_summary_json: "2263cbcf3f6b1c108671f3eaeda8efecad345bc9471860628f7be0564f7234eb"
+  contract_json: "84830dcffeead8b0997db2643375b960f02d1a1e3ee38da74f91012b68e0c48a"

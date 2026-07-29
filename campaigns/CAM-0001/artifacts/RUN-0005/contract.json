@@ -1,0 +1,38 @@
+{
+  "executed_variant_count": 18,
+  "expected_variant_count": 18,
+  "filters": {
+    "baseline": {},
+    "all_funds_positive": {
+      "require_all_funds_positive": true
+    },
+    "qqq_positive": {
+      "require_qqq_positive_lookback": true
+    },
+    "participation_and_qqq": {
+      "require_all_funds_positive": true,
+      "require_qqq_positive_lookback": true
+    },
+    "sma_rising": {
+      "require_sma_rising": true
+    },
+    "orderly_volatility": {
+      "require_orderly_volatility": true
+    },
+    "trend_efficiency": {
+      "require_trend_efficiency": true
+    },
+    "participation_and_efficiency": {
+      "require_all_funds_positive": true,
+      "require_trend_efficiency": true
+    },
+    "qqq_and_orderly": {
+      "require_qqq_positive_lookback": true,
+      "require_orderly_volatility": true
+    }
+  },
+  "threshold_policy": "No tuned numeric cutoff. Volatility and efficiency compare the current completed-bar statistic with its prior rolling 252-session median (minimum 126 prior observations).",
+  "sample_policy": "No dates, symbols, or rows are removed. Report loss of independent entry decisions versus the same-SMA baseline as eligibility attrition.",
+  "loaded_max_date": "2026-04-30",
+  "holdout_rows_loaded": 0
+}

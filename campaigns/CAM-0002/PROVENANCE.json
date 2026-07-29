@@ -1,0 +1,24 @@
+{
+  "campaign_id": "CAM-0002",
+  "created_at": "2026-07-28T22:05:00-07:00",
+  "plan_canonical_sha256": "85767825af6c862a3587125f44e8595fc3bb77ba3993ebc86e610433402cce66",
+  "source_pdf": {
+    "path": "artifacts/source/zawadowski_andor_kertesz_2004.pdf",
+    "sha256": "48bcc30ead18eea368dd811c14ac76598515393b7c3d08cdb973fbe18aab3d32",
+    "pages": 27,
+    "visual_review": "all pages rendered and inspected"
+  },
+  "minute_data": {
+    "declared_root": "D:\\AlgoResearch\\data\\raw\\alpaca\\market\\stocks\\bars_1m\\feed=sip",
+    "months": "2024-11 through 2026-04 only",
+    "adjustment": "raw",
+    "readiness_artifact": "artifacts/readiness.json",
+    "readiness_sha256": "91abca8d4565cfe4cccf93c53335bf473de36f17a51f0fc4951f9b9b9be2a98e",
+    "readiness_script_sha256": "b365188c0899d96511a10d33d8495831074f12fae38cb1c6e8cf19416464e294",
+    "rows": 31197975,
+    "union_symbols": 181,
+    "max_loaded_date": "2026-04-30",
+    "holdout_rows_loaded": 0
+  },
+  "pending_gate": "Regular-session calendar and point-in-time liquidity normalization"
+}

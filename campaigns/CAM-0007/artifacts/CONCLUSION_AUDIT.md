@@ -1,0 +1,28 @@
+# CAM-0007 Conclusion Audit
+
+- Governing checklist operationalized before research: passed.
+- PLAN frozen before campaign readiness, targeted pulls, or performance: passed.
+- Source contract: mechanism-first internal event contract implemented faithfully.
+- Earnings timestamps, public availability, timezone, clustering, mapping, and detector validation: passed.
+- Point-in-time QQQ membership, raw/split lineage, shifted liquidity, completed bars, calendar exits, and cutoff: passed.
+- Maximum date April 30, 2026 and zero holdout rows: passed.
+- Source-faithful four-leg baseline before adaptation: passed.
+- Alpha, execution, and portfolio construction separated: passed.
+- Positive/negative gaps, continuation/failure, long/protected-short controls: passed; shorts rejected.
+- Announcement timing, gap/reaction strength, participation, range, volatility, and market states: passed.
+- Same-day, next-open, and every relevant two-to-ten-session long exit: passed.
+- 10:00, 10:01, 10:03, and 10:05 entry latency: passed.
+- Fixed-base additive marked-to-market P&L and gross exposure <=1.0: passed.
+- Equal, strength-priority, overlap-aware, and sleeve-reserved capacity; cap10-cap100: passed.
+- 5/10/20 bp per-side costs: passed.
+- Attrition from event source, detector, mapping, membership, liquidity, bars, fields, and exit horizon: passed.
+- Monthly, block, rolling, symbol, event, day, sleeve, neighbor, and concentration evidence: passed.
+- Exact capacity-aware leave-one-symbol/event resimulation: passed, 414 cases.
+- Moving-block uncertainty: passed, 20,000 replications per profile/window.
+- Invalid/failed attempts preserved and excluded: passed.
+- Targeted SIP quote/trade replay: inapplicable because the best bar-stage return is far below Type A; replay cannot rescue alpha.
+- Capacity: unresolved by design; no depth/impact evidence and no capacity claim.
+- Prospective or sealed confirmation: not justified for Type A; holdout untouched.
+- Obvious bounded causal experiment: none. The omitted exit lattice, market/event states, latency, costs, sizing, concentration, and allocation alternatives were completed.
+- Promotion: rejected.
+- Retirement: justified. The mechanism is genuine but economically incompatible with Type A under gross<=1.

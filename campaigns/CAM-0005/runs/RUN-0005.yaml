@@ -1,0 +1,79 @@
+run_id: RUN-0005
+campaign_id: CAM-0005
+parent_run_id: RUN-0004
+planned_at: "2026-07-29T03:02:00-07:00"
+status: completed
+
+change_from_parent: >-
+  Replace aggregate activation with separate shifted trailing unlevered SMH
+  reversal means for negative-signal long and positive-signal short-diagnostic
+  events. Apply the corresponding state to SOXL or SOXS independently.
+reason: >-
+  April 2026 losses are entirely the SOXS leg while SOXL remains profitable.
+  Aggregate activation masks this divergence. Leg-specific unlevered
+  activation is causal, mechanism-consistent, and avoids selecting on
+  leveraged-product P&L.
+expected_effect: >-
+  A valid decay rule should suspend SOXS after its unlevered positive-signal
+  reversal turns negative, retain SOXL while its negative-signal rebound
+  remains positive, improve the latest 12 months and April tail, and remain
+  stable across 10/20/40 prior same-leg event windows.
+
+configuration:
+  thresholds: ["q50", "q60"]
+  pressure_states: ["edge20", "edge25", "edge33"]
+  leg_activation:
+    always: "Both product legs always active"
+    event10: "Prior 10 same-sign unlevered SMH reversal events mean > 0"
+    event20: "Prior 20 same-sign unlevered SMH reversal events mean > 0"
+    event40: "Prior 40 same-sign unlevered SMH reversal events mean > 0"
+  activation_timing: "Shifted one same-sign event; all outcome data known before decision"
+  entry: "15:59 open"
+  exits: ["next_open", "next_0934_close"]
+  cost_bps_per_side: [5, 10]
+  expected_variant_count: 96
+
+execution_contract:
+  command: >-
+    python campaigns/CAM-0005/src/run0005.py
+    --readiness-dir campaigns/CAM-0005/artifacts/readiness
+    --features-path campaigns/CAM-0005/artifacts/RUN-0002/features.parquet
+    --parent-positions campaigns/CAM-0005/artifacts/RUN-0003/positions.parquet
+    --output-dir campaigns/CAM-0005/artifacts/RUN-0005
+  expected_variant_count: 96
+  output_paths:
+    - "artifacts/RUN-0005/positions.parquet"
+    - "artifacts/RUN-0005/variants.csv"
+    - "artifacts/RUN-0005/monthly.csv"
+    - "artifacts/RUN-0005/contract.json"
+    - "artifacts/RUN-0005/diagnostics.json"
+
+completed_at: "2026-07-29T03:05:30-07:00"
+factual_outcome: >-
+  All 96 variants reconciled with zero holdout. Leg-specific 10/20/40-event
+  activation did not improve the always-active pressure-confirmed family.
+  The best adapted activation was q50/edge25/event40 at 5 bp/side: 5.80%
+  average month over 15 months, 3.62% over 12 months, and 16.93% drawdown.
+  Event10 lowered drawdown to 14.39% but averaged only 5.38% per month. The
+  first large SOXS loss can occur while the prior leg mean remains positive,
+  so causal trailing means cannot prevent the tail without materially reducing
+  opportunity and return.
+decision: >-
+  Reject trailing activation as a rescue and retain the simpler always-active
+  q50/q60 edge25 neighborhood for execution qualification. Do not select a
+  rolling window. Pull targeted SIP quotes/trades only for the union of frozen
+  q50/q60 edge25 events.
+next_question: >-
+  Do marketable SIP NBBO entry/exit prices, observed trades, displayed size,
+  and conservative slippage preserve the candidate-shaped economics?
+artifacts:
+  - "artifacts/RUN-0005/positions.parquet"
+  - "artifacts/RUN-0005/variants.csv"
+  - "artifacts/RUN-0005/monthly.csv"
+  - "artifacts/RUN-0005/contract.json"
+  - "artifacts/RUN-0005/diagnostics.json"
+artifact_hashes:
+  variants_csv: "6a7d03965d13ee721b39e83a1b96922947bc09ef63b77982eba9f556a0598121"
+  monthly_csv: "aa4797e5ca2de414586d7972e3144349bf28fd868add1145c9bcb2b5ec0c60cf"
+  contract_json: "d5fec678ac1705c6dbf02673ecb3614db4de9819b8cd896fdc91fb026540b653"
+  diagnostics_json: "803ef1344f6d80715337a0f2121a108b42047bd3c5c213ca521a62b12cb28938"

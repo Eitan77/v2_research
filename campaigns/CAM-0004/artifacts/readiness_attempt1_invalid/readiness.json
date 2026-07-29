@@ -1,0 +1,80 @@
+{
+  "status": "passed_for_labeled_adapted_mechanism_only",
+  "source_faithful_replication_status": "blocked",
+  "source_faithful_blockers": {
+    "missing_exact_point_in_time_sp500_membership": true,
+    "missing_exact_causally_lagged_characteristics": [
+      "accruals",
+      "asset_growth",
+      "book_to_market",
+      "composite_equity_issuance",
+      "failure_probability",
+      "gross_profitability",
+      "investment_to_assets",
+      "momentum",
+      "net_operating_assets",
+      "net_stock_issues",
+      "o_score",
+      "return_on_assets",
+      "beta",
+      "short_term_reversal",
+      "size"
+    ],
+    "open_source_characteristics_not_loaded": "Public Open Source Asset Pricing files use CRSP PERMNO and do not provide a declared, license-clean symbol mapping in this workspace; the current exact source data cannot be joined causally."
+  },
+  "adapted_mechanism": {
+    "universe": "point-in-time QQQ members",
+    "features": [
+      "log_price",
+      "log_dollar_volume",
+      "reversal_1d",
+      "momentum_5d",
+      "momentum_20d",
+      "volatility_20d",
+      "beta_60d"
+    ],
+    "label": "price/liquidity proxy residual; not source replication"
+  },
+  "max_loaded_date": "2026-04-30",
+  "holdout_rows_loaded": 0,
+  "membership": {
+    "rows": 73730,
+    "dates": 730,
+    "symbols": 119,
+    "min_date": "2024-05-01",
+    "max_date": "2026-04-30",
+    "known_before_session_rows": 73730,
+    "known_after_or_at_session_rows": 0
+  },
+  "regular_30m_bars": {
+    "rows": 479396,
+    "dates": 501,
+    "symbols": 119,
+    "min_date": "2024-05-01",
+    "max_date": "2026-04-30",
+    "member_symbol_dates": 73730,
+    "complete_13_symbol_dates": 25131,
+    "incomplete_symbol_dates": 48599,
+    "zero_bar_symbol_dates": 26820,
+    "null_ohlc_rows": 0
+  },
+  "daily_split_adjustment": {
+    "raw_rows": 58774,
+    "native_split_rows": 499,
+    "reconstructed_rows": 2,
+    "unreconstructable_edge_rows": 58273,
+    "maximum_neighbor_factor_drift": 0.0
+  },
+  "proxy_feature_coverage": {
+    "member_symbol_dates": 73730,
+    "complete_rows": 0,
+    "incomplete_rows": 73730,
+    "attrition_fraction": 1.0
+  },
+  "hashes": {
+    "membership": "c70f21cc9ee79b148a5a9fd84e7fa1c87ea7777a3528e606babe639b7df9ebd5",
+    "bars": "2588310bedb9a2acdb0383beb839832f2ab1061e1e7023162306c86127f9b10e",
+    "daily": "09a3563a1828040eac001f86771fbed740ac51e0bccc7fdc69c2edb2284bb924",
+    "features": "cd721f52de3713e4a7f72b0ca907efb63fe29b6ec9008d7a91919dbd82885bc3"
+  }
+}

@@ -1,0 +1,78 @@
+run_id: RUN-0009
+campaign_id: CAM-0002
+parent_run_id: RUN-0008
+planned_at: "2026-07-28T22:51:00-07:00"
+status: completed
+
+change_from_parent: >-
+  Expand the causal reclaim test to more frequent 10/15/30-minute SPY-residual
+  shocks across broad 2%/4%/6% and 6x/8x/10x neighborhoods.
+reason: >-
+  RUN-0008 showed that a completed-bar reclaim improves the extreme
+  residual-stock anchor, but only 18 portfolio events cap income. Testing
+  neighboring less-extreme shocks is the principled way to increase frequency;
+  leverage or retrospective ticker selection is not.
+expected_effect: >-
+  If stabilization converts common overreactions into an edge, positive net
+  results should span adjacent formation, residual-severity, surprise, volume,
+  confirmation, and hold cells with materially higher event counts and a
+  complete recent monthly path.
+
+configuration:
+  formation_minutes: [10, 15, 30]
+  residual_decline_thresholds: [0.02, 0.04, 0.06]
+  stock_surprise_thresholds: [6, 8, 10]
+  causal_volume_ratio_thresholds: [0, 2, 5]
+  confirmations: ["reclaim2", "no_new_low5"]
+  holding_minutes: [15, 30, 60]
+  universe: "stocks"
+  cost_bps_per_side: 10
+  variants: 486
+  diagnostics:
+    - "Full 486-cell table"
+    - "Parent and confirmation attrition"
+    - "Neighborhood breadth"
+    - "April 7 exclusion"
+    - "Monthly path, drawdown, recovery, events, and clusters"
+
+execution_contract:
+  command: >-
+    python campaigns/CAM-0002/src/run0009.py
+    --events campaigns/CAM-0002/artifacts/RUN-0007/annotated_events.parquet
+    --output-dir campaigns/CAM-0002/artifacts/RUN-0009
+  expected_variant_count: 486
+  output_paths:
+    - "artifacts/RUN-0009/path_prices.parquet"
+    - "artifacts/RUN-0009/reclaim_grid.csv"
+    - "artifacts/RUN-0009/contract.json"
+    - "artifacts/RUN-0009/diagnostics.json"
+
+completed_at: "2026-07-28T22:56:00-07:00"
+factual_outcome: >-
+  All 486 reclaim-neighborhood cells executed with data through 2026-04-30
+  and zero holdout rows. No cell reached even 2% average monthly return. The
+  maximum representative average was 1.50% per month: 15-minute formation,
+  6% residual decline, 10x surprise, reclaim2, 60-minute hold, no volume
+  filter. It earned 20.20% total with 2.33% drawdown but only 13 events,
+  eight zero months in the representative window, and seven zero months in
+  the recent 12 months. The 6x/8x neighbors produced similar 1.24%-1.43%
+  recent averages. Lower 2%-4% thresholds increased samples into the hundreds
+  but diluted the edge; their best recent-window averages were below 0.7% and
+  several turned negative. Zero of 486 cells approached the 10%-15% Strategy
+  A objective.
+decision: >-
+  Reject higher opportunity frequency as a rescue: common residual shocks do
+  not retain the stabilized edge, while extreme shocks are structurally too
+  rare under fixed-capital, unlevered accounting. Complete a frozen TP/SL and
+  adverse intrabar-ordering audit of the extreme stabilized family to test
+  risk/exit shape, then perform the campaign conclusion audit.
+next_question: >-
+  Can realistic stops or take-profits improve the extreme stabilized family's
+  return path without relying on rarity, and does any principled CAM-0002
+  question remain afterward?
+artifacts:
+  - "artifacts/RUN-0009/path_prices.parquet (sha256 91503474dad141b3ff1d376572d359a21fa4cf7125c3025e58f282f23db6e744)"
+  - "artifacts/RUN-0009/reclaim_grid.csv (sha256 a8a2ae1998410c9e2339ba7c9f23609745999627026c94da9c31d6bd8eef47fb)"
+  - "artifacts/RUN-0009/contract.json (sha256 d158914e8d2bd29e3110ca6b00da81d3791239396adcefd3901129656b0d843e)"
+  - "artifacts/RUN-0009/diagnostics.json (sha256 2191a8ee41a28e87caa22f8da6e8a8454d436a46e0ebff72d2bb18e4c110b581)"
+  - "src/run0009.py (sha256 bbe0bed120819b46c461ae9f16a1379820de680e74cd5685341f5dabe1b85f5a)"

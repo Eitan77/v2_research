@@ -1,0 +1,39 @@
+{
+  "command": "python campaigns/CAM-0006/src/run0002.py --signals-path campaigns/CAM-0006/artifacts/RUN-0001/signals.parquet --event-readiness-path campaigns/CAM-0006/artifacts/readiness/event_readiness.parquet --output-dir campaigns/CAM-0006/artifacts/RUN-0002",
+  "resolved_defaults": {
+    "direction": "long_negative_gap_absorption",
+    "gap_tails": [
+      0.02,
+      0.05,
+      0.1,
+      0.15
+    ],
+    "minimum_reclaim_fractions": [
+      0.0,
+      0.1,
+      0.25,
+      0.5
+    ],
+    "auction_states": [
+      "all",
+      "participation_q50",
+      "participation_q67",
+      "participation_q80",
+      "anomaly_ge1",
+      "anomaly_ge1_5",
+      "anomaly_ge2"
+    ],
+    "horizons": [
+      "1200",
+      "final"
+    ],
+    "cost_bps_per_side": [
+      5,
+      10,
+      20
+    ]
+  },
+  "executed_variant_count": 672,
+  "max_loaded_date": "2026-04-30",
+  "holdout_rows_loaded": 0
+}

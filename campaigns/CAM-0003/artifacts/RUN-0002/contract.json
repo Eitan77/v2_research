@@ -1,0 +1,26 @@
+{
+  "executed_variant_count": 54,
+  "expected_variant_count": 54,
+  "components": [
+    "combined_previous_close",
+    "overnight_to_open",
+    "open_session"
+  ],
+  "mornings": [
+    15,
+    30,
+    60
+  ],
+  "holds": [
+    15,
+    30,
+    60
+  ],
+  "confirmations": [
+    "none",
+    "positive_preclose_same_length"
+  ],
+  "cost": 2,
+  "loaded_max_date": "2026-04-30",
+  "holdout_rows_loaded": 0
+}

@@ -1,0 +1,9 @@
+{
+  "status": "passed",
+  "event_count": 232,
+  "quote_complete_events": 220,
+  "trade_complete_events": 230,
+  "max_session": "2026-04-29",
+  "holdout_rows_loaded": 0,
+  "size_unit_warning": "Alpaca SIP quote size fields remain in raw API units; no dollar capacity claim is made."
+}

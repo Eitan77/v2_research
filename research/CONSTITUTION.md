@@ -167,6 +167,11 @@ Use point-in-time universes and metadata where relevant. Do not allow future mem
 
 Report missing point-in-time data rather than silently substituting current information.
 
+When a new feature, field, filter, join, or completeness requirement changes
+the eligible sample, report the resulting date, symbol, event, and row
+attrition relative to the parent run. A silent sample or universe change is an
+implementation change, not evidence that the strategy improved.
+
 ### Holdout protection
 
 The sealed holdout begins May 1, 2026.
@@ -190,6 +195,11 @@ Within a campaign, the researcher may run as many justified variants, diagnostic
 - Its factual result
 - The resulting decision
 
+Before interpretation, reconcile the recorded configuration with the actual
+command, resolved defaults, executed variants, and saved outputs. Planned and
+executed research must match or the discrepancy must be corrected and
+documented.
+
 Do not require a full plan, review, or ledger entry for every run.
 
 Create a new campaign only when the core hypothesis, mechanism, information set, or strategy identity changes materially.
@@ -205,6 +215,11 @@ Disclose spreads, commissions, slippage, delay, liquidity, turnover, borrow assu
 A favorable quote touch does not prove a passive fill. Queue position, actual trades, displayed size, partial fills, cancellation, and adverse selection may matter.
 
 Do not claim executable performance when the simulation cannot support it.
+
+Validation is fail-fast. A failed unit test, semantic fixture, schema check,
+data-readiness check, causal-timing check, or holdout check blocks the
+associated backtest or sweep. Output produced after a failed gate cannot be
+interpreted until validation passes and the run is reproduced.
 
 ### Consistent return accounting
 
@@ -279,13 +294,19 @@ For a useful outside idea, identify:
 - The proposed mechanism
 - The actionable information and timing
 - The intended universe and horizon
-- The original implementation
+- The exact original implementation, including formation, skip, decision,
+  entry, exit, weighting, and control intervals
 - What would falsify the claim
 - Differences from this repository's data and market
 - Related or duplicate V2 campaigns and runs, plus older artifacts that require independent verification
 - The original source
 
 Prefer a few well-reasoned hypotheses over a large blind search. Broad scans remain valid when the research question genuinely calls for discovery and the multiple-testing burden is handled honestly.
+
+Before interpreting a replication, verify that the implemented timing,
+universe, signal, and portfolio construction match the source. A related
+strategy is not a source-faithful test. Preserve related failures, but do not
+use them to declare the documented mechanism absent.
 
 ## 8. Intelligent iteration
 
@@ -300,6 +321,8 @@ Continue running and adapting within a campaign when:
 - The test distinguishes among competing interpretations
 - The modification remains connected to the mechanism
 - Meaningful uncertainty remains
+- A profitable symbol, event, asset, leg, or subuniverse may be hidden by
+  aggregate portfolio construction
 
 Examples include:
 
@@ -312,6 +335,9 @@ Examples include:
 - Separating long and short sides when they behave differently
 - Combining low-correlation sleeves
 - Investigating a structured recent-versus-history difference
+- Comparing a fixed asset set, causal ranking universe, ETF implementation,
+  and mechanism-specific stock subset
+- Testing whether a concentrated edge can be selected prospectively
 
 Stop, pause, or split the campaign when:
 
@@ -326,6 +352,31 @@ Stop, pause, or split the campaign when:
 - No clear question remains
 
 As adaptation accumulates, require stronger and more independent final evidence.
+
+### Required completeness before retirement
+
+Do not retire a campaign merely because the first implementation is weak,
+broad aggregate performance is disappointing, or baseline turnover costs
+exceed gross return. Before retirement, establish that:
+
+- The source-faithful baseline was implemented correctly.
+- Relevant timeframes, holding periods, entries, exits, confirmations, and
+  signal definitions were considered.
+- Appropriate stocks, stock subsets, ranking universes, ETFs, leveraged or
+  inverse ETFs, and hybrid expressions were considered where consistent with
+  the mechanism.
+- Long and short legs, breadth, concentration, and component attribution were
+  examined where relevant.
+- Profitable symbols, events, or subsets were investigated for causal
+  selectability rather than dismissed or selected retrospectively.
+- Reasonable turnover, netting, execution, sizing, and risk improvements were
+  tested when they addressed the diagnosed failure.
+- The remaining failure mode is understood and no principled experiment
+  remains.
+
+Do not continue when further changes would mainly manufacture a better
+historical chart. Thorough investigation and resistance to overfitting are
+simultaneous requirements.
 
 ## 9. Diagnose before modifying
 
@@ -363,11 +414,62 @@ How should valid signals be sized, diversified, hedged, leveraged, and combined?
 
 Do not use leverage to rescue noise. Do not reject a useful low-risk signal because its raw return is below an aggressive objective. Do not assume a stop helps unless it matches the loss mechanism.
 
+After each meaningful run, determine which symbols, events, periods, legs, and
+portfolio choices produced the return and the losses. Ask whether the signal is
+wrong or whether an inappropriate universe, horizon, construction, or
+execution model obscured it. The next run should discriminate among those
+explanations.
+
+## 9A. Asset and universe selection
+
+The asset universe is a research variable. A valid strategy may trade:
+
+- One stock or a fixed set of stocks
+- A causal point-in-time eligibility universe
+- A daily or weekly ranking universe
+- Only the top one, three, five, or other justified number of opportunities
+- A sector, liquidity, volatility, behavioral, or event subset
+- One or more ETFs
+- Leveraged or inverse ETFs
+- A stock-and-ETF combination
+- Nothing when no opportunity qualifies
+
+Choose the implementation that maximizes credible net fixed-capital profit
+while accounting for consistency, drawdown, turnover, capacity, and execution.
+Broad diversification may dilute a genuine edge; concentration may expose a
+genuine specialization or an accidental dependency.
+
+For stock and event strategies, examine per-symbol or per-event contribution,
+hit rate, sample size, stability across independent periods, top-contributor
+share, leave-one-out behavior, and common observable characteristics. A
+concentrated strategy is acceptable when the concentration matches the
+mechanism and can be selected prospectively.
+
+Never use full-sample future performance to choose a fixed basket and present
+it as prospective. Validate a specialized universe through an ex-ante economic
+rationale, causal walk-forward eligibility, untouched confirmation data, or
+forward paper testing.
+
 ## 10. Match the evidence to the strategy's purpose
 
 ### Recent or aggressive strategies
 
 Recent regime dependence can be acceptable when explicitly recognized.
+
+For a Class A Recent Money Printer campaign, evaluate a small set of
+representative recent windows normally spanning about 12 to 18 months before
+the sealed holdout; 12, 15, and 18 months are useful standard views. Do not
+turn any exact window or the approximately 10% to 15% average-month objective
+into a mechanical pass/fail cutoff. The researcher must infer whether the
+evidence describes a genuine exploitable recent regime using return,
+consistency, drawdown, recovery, breadth, concentration, execution, and
+mechanism together. A causally justified regime-onset window inside or near
+the normal band may be emphasized, but its start must not be chosen simply
+because it maximizes historical performance. Apply the return objective to
+recent behavior, not to the full historical backtest. Older data remains
+required diagnostic and tail-risk evidence, but it must not dilute the recent
+objective into a lifetime average. Require causal activation, decay
+monitoring, and retirement logic for any temporary phenomenon.
 
 Look for multiple recent subperiods, broad contribution, a plausible structural explanation, realistic costs, decay monitoring, retirement logic, and forward paper testing.
 
@@ -397,6 +499,9 @@ Research records should preserve reproducibility and adaptation history without 
 - Do not write a human-readable review after every run.
 - Reserve full reviews and ledger updates for meaningful checkpoints.
 - A routine failed variant may need only its run YAML and worklog entry.
+- Save tokens and compute by caching shared features, batching closely related
+  prespecified experiments, and avoiding repeated prose. Resource conservation
+  must not remove required analysis or weaken the conclusion gate.
 
 ## 11. Review and decide
 
@@ -415,6 +520,22 @@ What is the strongest reason the result may be misleading? Would the strategy ha
 Is the strategy useful at a different risk level? Is capital underused? Could sizing, limits, diversification, or combination improve its usefulness?
 
 Then select one primary next action and justify it.
+
+Before selecting that action, perform a conclusion audit:
+
+- Were all relevant governing-document requirements followed?
+- Was the source implemented faithfully?
+- Were reasonable timeframes, universes, assets, confirmations, filters,
+  indicators, sizing, and execution choices investigated?
+- Were individual symbols, events, concentration, and causal profitable
+  subsets analyzed?
+- Did each adaptation address a diagnosed weakness?
+- Is the campaign stopping because the mechanism is exhausted, or because a
+  broad initial implementation was disappointing?
+- Would a careful skeptical quant identify an obvious missing experiment?
+
+If a material answer is unresolved, the campaign is not ready for promotion,
+retirement, or pivot.
 
 Useful research judgments include:
 

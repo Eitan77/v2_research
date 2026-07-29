@@ -1,0 +1,54 @@
+{
+  "campaign_id": "CAM-0006",
+  "plan_hash_excluding_file_hash_line": "679e435ccb26c990090e87c63f57ca0969c4b91b671b9337f18f60cf41f01261",
+  "status": "readiness_passed",
+  "catalog": "D:\\AlgoResearch\\data\\catalog.duckdb",
+  "declared_sources": [
+    "auctions",
+    "bars_1m",
+    "bars_1d",
+    "qqq_pit_membership_daily",
+    "stock_condition_codes",
+    "stock_exchange_codes"
+  ],
+  "preplan_feasibility_note": "Only declared catalog schema, pre-cutoff row counts, and sample auction record structure were inspected while selecting a materially distinct mechanism; no campaign outcome, signal return, ranking, or backtest was computed.",
+  "auction_contract": {
+    "condition": "Q Market Center Official Open",
+    "cross_check": "Matching O opening trade on same exchange, price, and size",
+    "primary_selection": "Largest matched official opening size; reject ambiguous ties",
+    "raw_membership_rows": 46563,
+    "selected_valid_session_events": 46322,
+    "selected_symbols": 118
+  },
+  "calendar_contract": {
+    "source": "calendar",
+    "normal_forced_liquidation": "15:55",
+    "early_close_forced_liquidation": "12:55",
+    "invalid_snapshot_preserved": "artifacts/readiness_INVALID_calendar_close"
+  },
+  "corporate_action_contract": {
+    "daily_adjustment_available": "raw only for member stocks",
+    "rule": "Reject opening/prior-close ratios within 3% of common integer split factors 1:2 through 1:25 or reverse",
+    "probable_split_rejections": 9,
+    "large_non-split_gaps_retained": true
+  },
+  "readiness": {
+    "signal_complete_events": 44549,
+    "signal_complete_symbols": 116,
+    "bar_model_complete_events": 41488,
+    "dense_trade_minute_paths": 23608,
+    "session_count": 460,
+    "causality_rule": "Rank on auction, prior data, and exact 09:30/09:31 bars only; later exit availability is post-signal attrition and cannot change ranks",
+    "sparse_bar_rule": "Missing later SIP trade minutes mean no eligible trade print; preserve actual trade highs, require exact horizon exit marks, and use quotes for survivors",
+    "hashes": {
+      "official_auctions": "e62a19a8c5fd14c1ca6d3c20467d5c932b460bb0f360dcd2032fb4b4ef597ce7",
+      "auction_statuses": "ab5b2d7b6cc8e061fa98a293174c2eacfa8787eb53768bb6a34b9c63ed2947d9",
+      "daily_raw": "dc97a34df291cb3ec7f1ba4947e03ba8a4407b059d286acd25a5b38f9fabe617",
+      "regular_minutes": "f3110f931ca2d36dea3ce0565eb684df71003016ddf6a3ab59e530761498fbd3",
+      "minute_coverage": "1f0871e17aad60616936793e9d368c2b9abf01957ed7fe9d9bcb7c532a9d5bf8",
+      "event_readiness": "f54f041592ed68d411171944467e4589496808e7e04666f151b7ae81dab90b9c"
+    }
+  },
+  "maximum_loaded_date": "2026-04-30",
+  "holdout_rows_loaded": 0
+}

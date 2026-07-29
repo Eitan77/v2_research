@@ -1,0 +1,8 @@
+{
+  "status": "passed",
+  "max_loaded_date": "2026-04-30",
+  "holdout_rows_loaded": 0,
+  "position_rows": 7888,
+  "variant_count": 96,
+  "activation_source": "shifted trailing same-sign unlevered SMH reversal events"
+}

@@ -1,0 +1,21 @@
+{
+  "status": "passed",
+  "reviewed_at": "2026-07-29T06:20:00-07:00",
+  "sample_method": "Seed 8008, up to 15 detections per action type plus 40 keyword near-miss rejections",
+  "frozen_sample_sha256": "d95f80406048f0159c68e0da92548cae9edd6ed891657358209feec53f36a84b",
+  "detected_rows_reviewed": 90,
+  "detected_true_explicit_directional_actions": 90,
+  "detected_false_positives": 0,
+  "sample_precision": 1.0,
+  "rejected_rows_reviewed": 40,
+  "rejected_decisions_correct": 40,
+  "rejected_decision_accuracy": 1.0,
+  "intentional_recall_exclusions": [
+    "maintains or reiterates an unchanged rating and unchanged target",
+    "neutral initiations",
+    "generic articles saying an analyst upgraded or cut a target without the explicit action template",
+    "assumes or reinstates coverage",
+    "listicles and non-financial product upgrades"
+  ],
+  "important_caveat": "This deterministic audit estimates precision and rejection-rule fidelity, not total-market recall."
+}

@@ -1,0 +1,101 @@
+campaign_id: CAM-0002
+updated_at: "2026-07-28T23:04:00-07:00"
+status: "retired_economically_weak_for_strategy_a"
+intended_profile: "A. Recent Money Printer"
+current_profile_fit: >-
+  Not a Strategy A candidate. A heavily adapted extreme residual-stock
+  reversal has positive expectancy and low drawdown, but only 13 events and
+  1.58% average monthly net simple return over the representative 15 months.
+  Less-extreme events increase frequency but lose the edge.
+run_count: 10
+current_baseline_run: RUN-0001
+current_best_run: RUN-0010
+source_faithful_baseline:
+  specification: >-
+    Point-in-time liquid stocks above $10; first completed 60-minute decline
+    greater than 4% and 8x causal prior-60-session same-clock mean absolute
+    return; next-minute open entry; 30/60-minute exit; 10 bps per side.
+  result: >-
+    The 60-minute variant lost 21.61% over 18 months with 33.17% drawdown and
+    averaged -1.05% per month over 15 months. The 30-minute variant lost
+    47.48%. Gross all-event 30-minute rebound was only 0.22% before costs.
+best_adapted:
+  specification: >-
+    Stocks only; 15-minute stock-minus-SPY residual decline >=6%; raw stock
+    shock >=10x causal same-clock normal; require offset-1 completed close
+    above event close; enter offset-2 open; exit at +4% target or offset-62
+    open; 10 bps per side; no stop.
+  selection_status: >-
+    Adapted after source thresholds, delays, holds, formations, SPY
+    residualization, volume/universe splits, confirmations, frequency
+    expansion, and 144 TP/SL cells. It is not untouched or out-of-sample.
+  representative_recent_window: "2025-02-01 through 2026-04-30 (15 months)"
+  net_simple_return: {"18m": 0.213643, "15m": 0.236944, "12m": 0.155037}
+  average_monthly_net_simple_return: {"18m": 0.011869, "15m": 0.015796, "12m": 0.012920}
+  median_monthly_net_simple_return: {"18m": 0.0, "15m": 0.0, "12m": 0.0}
+  negative_months: {"18m": 1, "15m": 0, "12m": 0}
+  zero_months: {"18m": 10, "15m": 8, "12m": 7}
+  standard_max_drawdown: 0.023301
+  recovery_days: 91
+  portfolio_events: 13
+  independent_clusters: 13
+  unique_symbols: 12
+  target_exits: 4
+  time_exits: 9
+  top_event_share_of_positive_contribution: 0.160375
+  top_five_share_of_positive_contribution: 0.745010
+  leave_one_symbol_out_net_range: "0.175643 to 0.233339"
+  maximum_gross_exposure: 1.0
+  account_level_leverage: false
+  monthly_path:
+    "2024-11": -0.023301
+    "2024-12": 0.0
+    "2025-01": 0.0
+    "2025-02": 0.072174
+    "2025-03": 0.0
+    "2025-04": 0.009734
+    "2025-05": 0.0
+    "2025-06": 0.0
+    "2025-07": 0.010114
+    "2025-08": 0.0
+    "2025-09": 0.0
+    "2025-10": 0.013783
+    "2025-11": 0.0
+    "2025-12": 0.0
+    "2026-01": 0.038
+    "2026-02": 0.076
+    "2026-03": 0.0
+    "2026-04": 0.017139
+research_breadth:
+  total_recorded_parameter_cells: 1689
+  dimensions: >-
+    Source fidelity, gross/net alpha, holding and formation clocks, latency,
+    thresholds, SPY residuals, clusters, causal volume, asset classes,
+    confirmations, opportunity frequency, and TP/SL risk.
+execution:
+  bar_model: >-
+    Raw SIP regular-session one-minute opens, prior-price fallback, 10 bps per
+    side, and adverse stop-first ordering.
+  high_price_fallback: "3 rows full risk grid; 1 row in best-cell audit"
+  quote_replay: >-
+    Not performed. The best bar result is roughly one-eighth of Strategy A and
+    has only 13 events; quotes cannot close the alpha/frequency gap.
+short_selling_compliance:
+  direct_stock_or_etf_shorts_used: false
+  status: "N/A; all runs long-only"
+holdout:
+  sealed_start: "2026-05-01"
+  rows_loaded: 0
+  accessed: false
+current_judgment: >-
+  Retire this mechanism for Strategy A and do not promote the adapted leader.
+  The broader Strategy A profile is not exhausted.
+next_question: >-
+  Can a more frequent information-diffusion or continuation mechanism produce
+  exceptional recent fixed-capital income without relying on rare shocks?
+artifacts:
+  - "PLAN.yaml"
+  - "RULE_CHECKLIST.md"
+  - "artifacts/CONCLUSION_AUDIT.md"
+  - "artifacts/RUN-0010/leader_audit.json"
+  - "artifacts/RUN-0010/risk_grid.csv"

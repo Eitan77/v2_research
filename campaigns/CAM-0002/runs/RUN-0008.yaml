@@ -1,0 +1,95 @@
+run_id: RUN-0008
+campaign_id: CAM-0002
+parent_run_id: RUN-0007
+planned_at: "2026-07-28T22:46:00-07:00"
+status: completed
+
+change_from_parent: >-
+  Require completed-bar price stabilization before entry across the four
+  representative shock anchors, with and without the RUN-0007 abnormal-volume
+  state and stock-only expression.
+reason: >-
+  RUN-0007 found a modest high-volume residual-stock edge, but its monthly
+  path remained weak. A price shock can still be active at the immediate
+  entry. Causal reclaim and no-new-low confirmations directly test whether
+  waiting for observable stabilization avoids falling knives.
+expected_effect: >-
+  A real temporary dislocation should improve across neighboring confirmation
+  definitions and holds. A single sparse confirmation cell or performance
+  destroyed by a few minutes of decision latency is not prospective.
+
+configuration:
+  anchors:
+    - "source60"
+    - "abrupt_residual15"
+    - "slow_residual120"
+    - "episode_control45"
+  volume_ratio_thresholds: [0, 5]
+  universe_expressions: ["all", "stocks"]
+  confirmations:
+    immediate:
+      decision: "event completed"
+      entry_delay_minutes: 1
+    reclaim2:
+      decision: "offset-1 completed close above event close"
+      entry_delay_minutes: 2
+    reclaim5:
+      decision: "offset-4 close above event close and offset-1 close"
+      entry_delay_minutes: 5
+    no_new_low5:
+      decision: >-
+        Offset-4 close above event close and no offset-1..4 minute low below
+        the event-minute low
+      entry_delay_minutes: 5
+  holding_minutes: [5, 15, 30, 60]
+  cost_bps_per_side: 10
+  variants: 256
+  execution: "Enter and exit at the next permissible raw SIP minute open with prior-price fallback"
+  diagnostics:
+    - "Confirmation and path attrition versus parent"
+    - "Full 256-cell table"
+    - "April 7 exclusion"
+    - "Monthly path, drawdown, recovery, events, and clusters"
+
+execution_contract:
+  command: >-
+    python campaigns/CAM-0002/src/run0008.py
+    --events campaigns/CAM-0002/artifacts/RUN-0007/annotated_events.parquet
+    --output-dir campaigns/CAM-0002/artifacts/RUN-0008
+  expected_variant_count: 256
+  output_paths:
+    - "artifacts/RUN-0008/path_prices.parquet"
+    - "artifacts/RUN-0008/stabilization_grid.csv"
+    - "artifacts/RUN-0008/contract.json"
+    - "artifacts/RUN-0008/diagnostics.json"
+
+completed_at: "2026-07-28T22:49:00-07:00"
+factual_outcome: >-
+  All 256 frozen stabilization cells executed with data through the last
+  qualifying event on 2026-04-29 and zero holdout rows. Reclaim confirmation
+  improved many weak parents, but no cell approached Strategy A. Excluding the
+  episode-control family, the best 15-month average was 1.40% per month for
+  the source trigger/reclaim2/60-minute hold, but its recent 12-month average
+  fell to 0.29%, drawdown was 12.55%, and recovery remained unresolved. The
+  cleaner abrupt-residual stock/reclaim2/60-minute expression earned 23.15%
+  total, averaged 1.24% per month over both 15 and 12 months, and had 4.51%
+  drawdown, but only 18 portfolio events, six zero months, and two negative
+  months in the representative window. Reclaim2 was broadly better than
+  immediate entry; stricter five-minute confirmations collapsed samples and
+  did not raise the return rate enough. The strong raw 45-minute control is
+  adaptation evidence, not untouched validation.
+decision: >-
+  Stabilization is a real implementation improvement but event rarity caps
+  credible fixed-capital income far below Strategy A. Test the reclaim across
+  a broad neighboring 10/15/30-minute residual threshold family to determine
+  whether a less extreme but still causal shock can increase opportunity
+  frequency without losing the edge. Do not add leverage.
+next_question: >-
+  Does reclaim confirmation make the more frequent 2%-4% residual-shock
+  neighborhood profitable and stable enough to raise recent monthly income?
+artifacts:
+  - "artifacts/RUN-0008/path_prices.parquet (sha256 1bcc4c8e38c18dfe03292aaad1a854e3993db46da7f01240d8aef7ca8dc67059)"
+  - "artifacts/RUN-0008/stabilization_grid.csv (sha256 4df2ed3dcedde75d1afaf237a40ca14547e81b50896e703fe24a15568f68e901)"
+  - "artifacts/RUN-0008/contract.json (sha256 d642a2c4753883876dcbbe5219e12e4692bc0444bb27497cc36a918947c7d3b2)"
+  - "artifacts/RUN-0008/diagnostics.json (sha256 f8038208338bc65aadc5f38d44f7c381f6ac69a1beb4b36922bfe965f890180a)"
+  - "src/run0008.py (sha256 b608e8e22458a9fd387b3044860d6b21e5aaba4ebb2c04f80666b47c3645e4d4)"

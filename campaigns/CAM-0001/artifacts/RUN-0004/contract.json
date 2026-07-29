@@ -1,0 +1,23 @@
+{
+  "executed_variant_count": 16,
+  "expected_variant_count": 16,
+  "qqq_sma": [
+    20,
+    50
+  ],
+  "exit_rules": [
+    "fixed",
+    "market",
+    "fund_momentum",
+    "either"
+  ],
+  "cost_bps_per_side": [
+    5,
+    20
+  ],
+  "maximum_holding_sessions": 10,
+  "invalidation_timing": "Evaluate completed close; exit next open.",
+  "reentry_policy": "Preserve the parent 10-session decision block after early exit to isolate exit behavior; freed capital remains cash until next block.",
+  "loaded_max_date": "2026-04-30",
+  "holdout_rows_loaded": 0
+}

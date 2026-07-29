@@ -1,0 +1,39 @@
+{
+  "executed_variant_count": 540,
+  "expected_variant_count": 540,
+  "symbols": [
+    "SPY",
+    "QQQ",
+    "IWM",
+    "DIA",
+    "XLF",
+    "XLK",
+    "SMH",
+    "TLT",
+    "TQQQ",
+    "SOXL"
+  ],
+  "components": [
+    "combined_previous_close",
+    "open_session"
+  ],
+  "mornings": [
+    15,
+    30,
+    60
+  ],
+  "holds": [
+    15,
+    30,
+    60
+  ],
+  "states": [
+    "all",
+    "high_opening_volume",
+    "high_opening_volatility"
+  ],
+  "unlevered_cost": 5,
+  "leveraged_cost": 10,
+  "loaded_max_date": "2026-04-30",
+  "holdout_rows_loaded": 0
+}

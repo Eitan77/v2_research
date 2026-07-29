@@ -1,0 +1,11 @@
+{
+  "status": "passed",
+  "detector": "single issuer tag; explicit Q/FY EPS result with beat/miss/inline/estimate language or explicit Q earnings revenue/EPS; preview and guidance-update exclusions; 36-hour symbol clustering",
+  "validation_news_events": 268,
+  "validation_ground_truth_events": 297,
+  "matched_news_events": 262,
+  "matched_ground_truth_events": 262,
+  "apparent_precision": 0.9776119402985075,
+  "ground_truth_recall": 0.8821548821548821,
+  "precision_caveat": "Unmatched explicit releases may be genuine events missing from the local yfinance table, so apparent precision is conservative."
+}

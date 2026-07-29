@@ -1,0 +1,168 @@
+campaign_id: CAM-0006
+updated_at: "2026-07-29T04:20:00-07:00"
+status: "development_sleeve_frozen_not_type_a"
+intended_profile: "A. Recent Money Printer"
+run_count: 8
+meaningful_variant_count: 1170
+bootstrap_resamples: 20000
+
+current_profile_fit: >-
+  Not a genuine Type-A candidate. Official opening-auction gap absorption has
+  a causal, marketable, and robustly positive long-stock sleeve in high prior
+  QQQ volatility, but its approximately 5.5% average month is near half the
+  reference objective. It has three inactive months, meaningful contributor
+  dependence, adaptation on the same discovery sample, no capacity evidence,
+  and no sealed-holdout or prospective confirmation.
+
+readiness:
+  raw_auction_member_rows: 46563
+  valid_session_official_opens: 46322
+  causal_signal_complete_events: 44549
+  signal_symbols: 116
+  sessions: 460
+  exact_all_exit_events: 41488
+  dense_every_trade_minute_events: 23608
+  maximum_loaded_date: "2026-04-30"
+  holdout_rows_loaded: 0
+  invalidated_attempts:
+    - >-
+      Initial readiness used a fixed 15:55 clock, admitted early-close
+      after-hours bars and two weekend auction rows, and was invalidated before
+      performance. It is preserved separately.
+    - >-
+      The first RUN-0002 execution inherited RUN-0001's 10% tail gate, making
+      planned 15% cells duplicates. It was preserved as invalid and rerun after
+      reconstructing absorption independently.
+  source_contract: >-
+    Official NASDAQ Q condition matched to an O trade on exchange, price, and
+    size; choose largest matched size and reject missing, unmatched, or
+    ambiguous opens. Point-in-time QQQ membership, raw daily prices, shifted
+    prior liquidity, split rejection, and completed-minute causality passed.
+
+mechanism_evidence:
+  sign: >-
+    Broad opening continuation, protected shorts, and balanced books failed
+    after costs. The coherent direction is long stocks after an unusually
+    negative official opening gap whose completed first minute reclaims at
+    least 25% of the gap.
+  auction_information: >-
+    Auction-dollar anomaly and same-day participation strengthen the long
+    absorption branch beyond gap magnitude alone. A shifted anomaly >=1 and
+    first-minute dollar-participation above the same-day median form useful
+    causal states.
+  timing: >-
+    Immediate 09:31 entry and same-session final exit dominate 09:32-09:35
+    delays and 09:45/10:00/12:00 exits. One-to-three-percent stops and
+    auction-price failure exits harm both return and drawdown because
+    profitable paths often recross the auction before recovering.
+  market_state: >-
+    Prior QQQ 20-day volatility above its shifted prior-60-state median
+    materially reduces drawdown. QQQ trend and signal breadth do not create
+    comparable economics.
+  portfolio: >-
+    Selecting the strongest reclaim event among simultaneous causal signals
+    improves return versus equal weighting. Full-sample ticker selection is
+    never used.
+
+execution:
+  targeted_scope: >-
+    Alpaca SIP quotes and trades only for 232 frozen selected symbols/dates
+    and their 09:31/calendar-aware final-exit windows. A second pull covered
+    only 12 missing event-phase pairs through 120 seconds. No broad universe
+    or sealed date was requested.
+  coverage:
+    union_events: 232
+    quote_complete: 232
+    trade_complete: 232
+    late_entry_over_10s: 11
+    late_exit_over_10s: 1
+    max_entry_delay_ms: 32673.404
+    max_exit_delay_ms: 20767.585
+  frozen_sleeve_subset:
+    events: 94
+    symbols: 59
+    median_entry_spread_bps: 28.256970
+    q90_entry_spread_bps: 88.295982
+    median_exit_spread_bps: 2.993470
+    q90_exit_spread_bps: 11.009643
+    median_entry_delay_ms: 408.040
+    median_exit_delay_ms: 47.998
+    late_entry_over_10s: 2
+    late_exit_over_10s: 1
+    median_nbbo_minus_bar_bps: -18.784281
+  capacity_warning: >-
+    Raw quote-size fields have no independently verified dollar-depth unit or
+    impact model. The replay establishes first-quote economics, not capacity.
+
+frozen_development_sleeve:
+  configuration: >-
+    Point-in-time QQQ stocks; official negative opening-gap bottom decile and
+    at least -0.5%; official auction-dollar anomaly >=1; completed first minute
+    reclaims >=25%; prior QQQ 20-day volatility >= its shifted prior-60-state
+    median; choose the event with strongest reclaim when several qualify;
+    require first-minute dollar-participation rank >=50% and range-close
+    position >=50%; buy first valid ask at/after 09:31 and sell first valid bid
+    at/after the calendar-aware final-exit minute.
+  net_assumption: "Marketable NBBO plus 2 bp additional slippage per side"
+  recent_months: 18
+  events: 94
+  symbols: 59
+  full_net_simple_return: 0.784708
+  average_month_18m: 0.043595
+  average_month_15m: 0.055257
+  average_month_12m: 0.046746
+  positive_event_fraction: 0.627660
+  negative_months_18m: 3
+  zero_months_18m: 3
+  max_drawdown: 0.098324
+  max_recovery_days: 5
+  top_5_day_profit_share: 0.501041
+  top_symbol_profit_share: 0.159956
+  chronological_block_returns: [0.2238, 0.2255, 0.3355]
+  status: "execution_qualified_adapted_development_only"
+
+robustness:
+  neighbors: >-
+    Volatility-high dollar-q50, dollar-q67, and q50-plus-range50 at marketable
+    NBBO plus 0/2/5 bp additional slippage remain positive across all three
+    six-month blocks. Central 15-month average month is 5.93%, 5.53%, and
+    5.21% at those slippage settings.
+  leave_outs: >-
+    Total return remains positive after removing the top 1/5/10 days, top 1/5
+    symbols, top 1/3 months, or any six-month block. Dependence is still
+    material: top-five-day removal lowers average month to 2.90%, and top-five-
+    symbol removal lowers it to 2.03%.
+  moving_block_bootstrap: >-
+    In 20,000 seeded circular three-month-block samples, 99.79% have positive
+    18-month total. Median average month is 4.34%; 5th/95th percentiles are
+    1.54%/7.30%. Only 35.76% reach 5% average month and 0.05% reach 10%.
+    Monthly-path drawdown is below 20% in 99.99% of samples.
+
+activation_and_decay:
+  activation: >-
+    Event eligibility, high-volatility state, auction anomaly, gap rank,
+    reclaim, dollar participation, range-close position, and within-day
+    top-reclaim selection are all known by 09:31.
+  forward_monitor: >-
+    Paper only. Monitor completed rolling 20-event marketable expectancy,
+    median entry spread/delay, QQQ volatility-state frequency, monthly
+    inactivity, top-five contribution, and q50/q67 neighbor agreement.
+    Suspend when rolling expectancy is nonpositive or quote availability and
+    spread exceed frozen tolerances; do not retune on the sealed interval.
+  retirement: >-
+    Retire after two completed nonoverlapping 20-event windows with
+    nonpositive central expectancy, failure of both q50 and q67 neighbors, or
+    persistent inability to obtain a valid marketable entry within the
+    observed 33-second bound. Thresholds require prospective confirmation
+    before any live use.
+
+holdout:
+  sealed_start: "2026-05-01"
+  rows_loaded: 0
+  accessed: false
+
+current_judgment: >-
+  Freeze for prospective paper observation only. Do not promote, allocate live
+  capital, access the holdout, infer capacity, or tune CAM-0006 further. The
+  campaign is complete and Strategy A continues with a materially different
+  mechanism.

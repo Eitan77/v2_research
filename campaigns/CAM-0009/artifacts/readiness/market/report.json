@@ -1,0 +1,231 @@
+{
+  "status": "passed",
+  "minute_source": "local catalog bars_1m SIP raw",
+  "minute_symbols_available": [
+    "ADI",
+    "AMD",
+    "AMAT",
+    "ARM",
+    "ASML",
+    "AVGO",
+    "INTC",
+    "KLAC",
+    "LRCX",
+    "MCHP",
+    "MPWR",
+    "MRVL",
+    "MU",
+    "NVDA",
+    "NXPI",
+    "ON",
+    "QCOM",
+    "TXN",
+    "QQQ",
+    "SMH"
+  ],
+  "minute_symbol_declared_but_unavailable": [
+    "SOXX"
+  ],
+  "minute_rows": 3472107,
+  "point_in_time_membership_rows": 11373,
+  "expected_symbol_days": 8740,
+  "covered_symbol_days": 8740,
+  "missing_symbol_days": 0,
+  "coverage_by_symbol": [
+    {
+      "symbol": "ADI",
+      "rows": 176388,
+      "observed_sessions": 460,
+      "minimum_date": "2024-07-01 00:00:00",
+      "maximum_date": "2026-04-30 00:00:00",
+      "expected_sessions": 460,
+      "missing_sessions": 0.0
+    },
+    {
+      "symbol": "AMAT",
+      "rows": 178164,
+      "observed_sessions": 460,
+      "minimum_date": "2024-07-01 00:00:00",
+      "maximum_date": "2026-04-30 00:00:00",
+      "expected_sessions": 460,
+      "missing_sessions": 0.0
+    },
+    {
+      "symbol": "AMD",
+      "rows": 178320,
+      "observed_sessions": 460,
+      "minimum_date": "2024-07-01 00:00:00",
+      "maximum_date": "2026-04-30 00:00:00",
+      "expected_sessions": 460,
+      "missing_sessions": 0.0
+    },
+    {
+      "symbol": "ARM",
+      "rows": 178037,
+      "observed_sessions": 460,
+      "minimum_date": "2024-07-01 00:00:00",
+      "maximum_date": "2026-04-30 00:00:00",
+      "expected_sessions": 460,
+      "missing_sessions": 0.0
+    },
+    {
+      "symbol": "ASML",
+      "rows": 169245,
+      "observed_sessions": 460,
+      "minimum_date": "2024-07-01 00:00:00",
+      "maximum_date": "2026-04-30 00:00:00",
+      "expected_sessions": 460,
+      "missing_sessions": 0.0
+    },
+    {
+      "symbol": "AVGO",
+      "rows": 178320,
+      "observed_sessions": 460,
+      "minimum_date": "2024-07-01 00:00:00",
+      "maximum_date": "2026-04-30 00:00:00",
+      "expected_sessions": 460,
+      "missing_sessions": 0.0
+    },
+    {
+      "symbol": "INTC",
+      "rows": 178316,
+      "observed_sessions": 460,
+      "minimum_date": "2024-07-01 00:00:00",
+      "maximum_date": "2026-04-30 00:00:00",
+      "expected_sessions": 460,
+      "missing_sessions": 0.0
+    },
+    {
+      "symbol": "KLAC",
+      "rows": 151871,
+      "observed_sessions": 460,
+      "minimum_date": "2024-07-01 00:00:00",
+      "maximum_date": "2026-04-30 00:00:00",
+      "expected_sessions": 460,
+      "missing_sessions": 0.0
+    },
+    {
+      "symbol": "LRCX",
+      "rows": 175223,
+      "observed_sessions": 460,
+      "minimum_date": "2024-07-01 00:00:00",
+      "maximum_date": "2026-04-30 00:00:00",
+      "expected_sessions": 460,
+      "missing_sessions": 0.0
+    },
+    {
+      "symbol": "MCHP",
+      "rows": 178294,
+      "observed_sessions": 460,
+      "minimum_date": "2024-07-01 00:00:00",
+      "maximum_date": "2026-04-30 00:00:00",
+      "expected_sessions": 460,
+      "missing_sessions": 0.0
+    },
+    {
+      "symbol": "MPWR",
+      "rows": 130855,
+      "observed_sessions": 460,
+      "minimum_date": "2024-07-01 00:00:00",
+      "maximum_date": "2026-04-30 00:00:00",
+      "expected_sessions": 89,
+      "missing_sessions": 0.0
+    },
+    {
+      "symbol": "MRVL",
+      "rows": 178320,
+      "observed_sessions": 460,
+      "minimum_date": "2024-07-01 00:00:00",
+      "maximum_date": "2026-04-30 00:00:00",
+      "expected_sessions": 460,
+      "missing_sessions": 0.0
+    },
+    {
+      "symbol": "MU",
+      "rows": 178320,
+      "observed_sessions": 460,
+      "minimum_date": "2024-07-01 00:00:00",
+      "maximum_date": "2026-04-30 00:00:00",
+      "expected_sessions": 460,
+      "missing_sessions": 0.0
+    },
+    {
+      "symbol": "NVDA",
+      "rows": 178320,
+      "observed_sessions": 460,
+      "minimum_date": "2024-07-01 00:00:00",
+      "maximum_date": "2026-04-30 00:00:00",
+      "expected_sessions": 460,
+      "missing_sessions": 0.0
+    },
+    {
+      "symbol": "NXPI",
+      "rows": 172802,
+      "observed_sessions": 460,
+      "minimum_date": "2024-07-01 00:00:00",
+      "maximum_date": "2026-04-30 00:00:00",
+      "expected_sessions": 460,
+      "missing_sessions": 0.0
+    },
+    {
+      "symbol": "ON",
+      "rows": 178293,
+      "observed_sessions": 460,
+      "minimum_date": "2024-07-01 00:00:00",
+      "maximum_date": "2026-04-30 00:00:00",
+      "expected_sessions": 371,
+      "missing_sessions": 0.0
+    },
+    {
+      "symbol": "QCOM",
+      "rows": 178302,
+      "observed_sessions": 460,
+      "minimum_date": "2024-07-01 00:00:00",
+      "maximum_date": "2026-04-30 00:00:00",
+      "expected_sessions": 460,
+      "missing_sessions": 0.0
+    },
+    {
+      "symbol": "QQQ",
+      "rows": 178320,
+      "observed_sessions": 460,
+      "minimum_date": "2024-07-01 00:00:00",
+      "maximum_date": "2026-04-30 00:00:00",
+      "expected_sessions": 460,
+      "missing_sessions": 0.0
+    },
+    {
+      "symbol": "SMH",
+      "rows": 178314,
+      "observed_sessions": 460,
+      "minimum_date": "2024-07-01 00:00:00",
+      "maximum_date": "2026-04-30 00:00:00",
+      "expected_sessions": 460,
+      "missing_sessions": 0.0
+    },
+    {
+      "symbol": "TXN",
+      "rows": 178083,
+      "observed_sessions": 460,
+      "minimum_date": "2024-07-01 00:00:00",
+      "maximum_date": "2026-04-30 00:00:00",
+      "expected_sessions": 460,
+      "missing_sessions": 0.0
+    }
+  ],
+  "daily_rows": 10020,
+  "daily_symbols": 20,
+  "daily_split_only_unavailable_symbols": [
+    "SOXX"
+  ],
+  "maximum_loaded_date": "2026-04-30",
+  "holdout_rows_loaded": 0,
+  "invalid_minute_ohlc_rows": 0,
+  "hashes": {
+    "minute_regular": "a142c4f9b023ab74b903a7e4ea6c5cfb0d0da58e6bd7f8f9c5c22ce9fa6395ce",
+    "membership": "8d7787044c6e7d449a0bf3f9af889947f6a218d1cd09f9176b23638515ec091d",
+    "daily_state": "4c8499cef5dcccaf529b117cb05ff8c763c973ac1c3d8300734e6d78fab82832",
+    "missing_symbol_days": "38d5c8af15e92c1ca6e0f95ccdda8c86ff6f6ab652377c5565c5aeba789ed58d",
+    "daily_split_input": "1f5e364d79de397848052091b9cffe2120ce8fc0c30dd214f8d0df6123bb6470"
+  }
+}

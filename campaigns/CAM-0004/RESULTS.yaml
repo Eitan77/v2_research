@@ -1,0 +1,75 @@
+campaign_id: CAM-0004
+updated_at: "2026-07-29T02:12:00-07:00"
+status: "retired_adapted_branch_exact_source_blocked"
+intended_profile: "A. Recent Money Printer"
+current_profile_fit: >-
+  Not a Strategy A candidate. Unconditional residual reversal lost gross.
+  Prespecified high-volatility cumulative-residual variants produced a modest
+  long-only rebound, but protected shorts failed, realistic net monthly return
+  remained below 1%, and profitable days were highly concentrated.
+run_count: 6
+recorded_parameter_cells: 1016
+source_fidelity:
+  paper: "Brogaard, Han, and Kim (2024), SSRN 4731947"
+  paper_pages_read_and_visualized: 59
+  headline_warning: >-
+    The paper's 162.3% is a compounded annualization of a 7.70% annualized
+    one-period spread across 13 daily periods, not an observed 13.5% monthly
+    fixed-base return.
+  exact_replication_status: blocked
+  blockers:
+    - "No declared point-in-time S&P 500 membership with the source June convention"
+    - "No declared exact 15 causal firm characteristics"
+    - "No source-equivalent split-adjusted 30-minute TAQ midpoint panel"
+  interpretation: >-
+    Exact source replication was not faked and the paper itself is not
+    disproven. All empirical conclusions below apply only to explicitly
+    labeled, cutoff-bounded QQQ proxy adaptations.
+adapted_readiness:
+  universe: "Point-in-time QQQ membership"
+  membership_trading_rows: 50603
+  daily_split_adjusted_rows: 58335
+  regular_30m_rows: 479396
+  complete_13_bar_symbol_days: 25131
+  proxy_feature_complete_rows: 46064
+  maximum_loaded_date: "2026-04-30"
+  holdout_rows_loaded: 0
+unconditional_evidence:
+  run_0002: >-
+    All 12 one-period residual/raw and leg/cost variants failed gross;
+    half-long/half-protected-short residual lost 28.30% gross.
+  run_0003: >-
+    All 60 source-close/actionable/protected, M1-M6, decile/quintile, and
+    residual/raw variants lost gross. Best was -9.06% fixed-base.
+conditional_evidence:
+  run_0004: >-
+    81/300 gross K/M/state variants were positive, concentrated in the
+    prespecified high-noise and high-market-volatility states. Best coherent
+    K6/M3 gross branch averaged 0.78% per month and had only about 1.05 bp/side
+    break-even cost.
+  executable_screen: >-
+    Every protected-short neighborhood lost before costs. With 1/M concurrent
+    capital scaling, the best 1 bp/side full-proxy long-low branch averaged
+    0.89% per month; at 3 bp it averaged 0.44%.
+  model_challenge: >-
+    Return-risk, full-proxy, beta-only, and price/liquidity residuals produced
+    similar surfaces. The best return-risk K4/M4 decile long-low at 1 bp/side
+    averaged 0.95% per month, had five negative months, 6.46% drawdown, and
+    133.5% top-five-day profit share. At 3 bp its best average was 0.50%.
+execution:
+  model: >-
+    Split-adjusted 30-minute following-open execution, explicit round-trip
+    costs, protected short bar paths with 2% emergency stop and adverse
+    slippage, forced same-session close, and 1/M concurrent-capital scaling.
+  quote_replay: >-
+    Not performed. No bar-stage branch was close to the Strategy A objective;
+    targeted quote replay cannot create the missing order of magnitude.
+holdout:
+  sealed_start: "2026-05-01"
+  rows_loaded: 0
+  accessed: false
+current_judgment: >-
+  Retire the adapted CAM-0004 branch for Strategy A and preserve the conditional
+  long-low liquidity-stress lesson. Reopen exact replication only if the
+  declared source inputs become available. Continue the broader Strategy A
+  search in a materially different campaign.

@@ -1,0 +1,47 @@
+{
+  "command": "python campaigns/CAM-0005/src/run0001.py --readiness-dir campaigns/CAM-0005/artifacts/readiness --output-dir campaigns/CAM-0005/artifacts/RUN-0002",
+  "resolved_defaults": {
+    "signal_window": "15:00_open_to_15:54_close",
+    "decision_time": "15:55_ET",
+    "entry": "15:56_open",
+    "exit": "next_session_09:30_open",
+    "mappings": [
+      "continuation",
+      "reversal"
+    ],
+    "thresholds": [
+      "all",
+      "q50",
+      "q67",
+      "q80"
+    ],
+    "portfolios": [
+      "qqq",
+      "smh",
+      "combined_available"
+    ],
+    "expressions": [
+      "product_long_only",
+      "underlying_signed_diagnostic"
+    ],
+    "product_cost_bps_per_side": [
+      2,
+      5,
+      10
+    ],
+    "underlying_cost_bps_per_side": [
+      0
+    ]
+  },
+  "executed_variant_count": 96,
+  "output_paths": [
+    "features.parquet",
+    "positions.parquet",
+    "portfolio_decisions.parquet",
+    "variants.csv",
+    "monthly.csv",
+    "concentration.csv",
+    "contract.json",
+    "diagnostics.json"
+  ]
+}

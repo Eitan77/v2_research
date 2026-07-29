@@ -1,0 +1,138 @@
+campaign_id: CAM-0005
+title: Late-day imbalance to overnight ETF gap
+purpose_profile: "A. Recent Money Printer"
+
+core_hypothesis: >-
+  A large, causally observable final-hour directional imbalance in a liquid
+  equity index or sector can persist into the next opening price because
+  market-on-close flows, slow overnight risk transfer, and leveraged/inverse
+  ETF rebalance demand are not fully absorbed at the regular close.
+mechanism: >-
+  Closing auction demand and dealer inventory leave a directional footprint in
+  the final hour. Overnight price discovery may continue that footprint when
+  it reflects information or persistent allocation flow, or reverse it when
+  the close is temporary pressure. Bull and inverse ETFs permit both economic
+  directions through long positions only. The campaign must determine the
+  sign, state, and product expression causally rather than assume continuation.
+material_difference_from_prior_campaigns: >-
+  CAM-0005 trades only the regular-close-to-next-open gap using a late-session
+  imbalance signal and long bull/inverse ETF expressions. CAM-0001 was
+  multi-session daily trend persistence, CAM-0003 predicted the same-day
+  closing window from the morning, and CAM-0002/CAM-0004 were intraday stock
+  reversals. The information set, payoff window, and ETF flow mechanism differ.
+
+primary_source:
+  type: "mechanism-first, no inherited empirical source"
+  implication: >-
+    There is no paper headline to reproduce. The source-faithful starting layer
+    is the frozen first-principles signal/entry/exit contract below, followed
+    by explicit continuation and reversal controls.
+
+intended_strategy_profile:
+  recent_evaluation_window_family:
+    - "2024-11-01 through 2026-04-30"
+    - "2025-02-01 through 2026-04-30"
+    - "2025-05-01 through 2026-04-30"
+  representative_recent_window: "2025-02-01 through 2026-04-30"
+  return_objective: >-
+    Approximately 10%-15% average monthly net fixed-capital simple return in a
+    representative recent regime, with frequent opportunities, realistic
+    close/open execution, acceptable drawdown/recovery, and distributed
+    contribution.
+  leverage_integrity: >-
+    Leveraged or inverse ETF performance must be accompanied by the matching
+    causal QQQ or SMH underlying relationship. Product leverage may amplify a
+    verified edge but cannot rescue absent unlevered alpha.
+  activation_rule: >-
+    Any threshold or state must be computed from prior sessions or current
+    completed observations. A recent onset may be emphasized only if a causal
+    state—not the best historical endpoint—identifies it.
+  decay_monitor: >-
+    Monitor rolling net overnight expectancy, direction accuracy, cost
+    coverage, product-versus-underlying scaling, top-day contribution, monthly
+    hit rate, and close/open execution quality.
+
+starting_implementation:
+  pairs:
+    - {underlying: QQQ, bull: TQQQ, inverse: SQQQ}
+    - {underlying: SMH, bull: SOXL, inverse: SOXS}
+  signal: >-
+    At 15:55 Eastern, after the minute ending 15:55 is complete, measure the
+    underlying's return from 15:00 through 15:55, final-hour realized
+    volatility, dollar volume, and close-location within the final-hour range.
+  starting_direction: >-
+    Continuation: long the bull ETF after positive pressure and long the
+    inverse ETF after negative pressure. Run the sign-reversed mapping as a
+    declared falsification control.
+  decision_time: "15:55 Eastern after the completed 15:54-15:55 minute"
+  entry: >-
+    First actionable marketable ETF price after the decision, initially the
+    15:56 minute open; compare 15:57 and 15:59 latency only as declared
+    execution variants.
+  exit: >-
+    Next regular-session 09:30 minute open as the efficient screen; compare
+    completed 09:30 and 09:35 exits to diagnose auction marking without
+    changing the overnight mechanism.
+  sizing: >-
+    Fixed original capital 1.0, additive P&L, no reinvestment. If both pairs
+    qualify, split original capital equally; otherwise allocate at most 1.0 to
+    the qualifying pair. No overlapping overnight positions.
+  cost_model: >-
+    Screen 2, 5, and 10 bp per side. Targeted SIP NBBO/trade replay is mandatory
+    for any close, strong, or execution-questionable candidate.
+  short_rule: >-
+    No direct stock or ETF short. Bearish exposure is a long position in SQQQ
+    or SOXS, which may be held overnight subject to ETF gap and liquidity risk.
+
+main_questions:
+  - "Is the causal late-day-to-overnight relationship continuation or reversal?"
+  - "Does the effect exist in QQQ and SMH before leveraged/inverse amplification?"
+  - "Do bull and inverse products scale symmetrically after fees, decay, and spread?"
+  - "Which final-hour magnitude, volatility, volume, and close-location states are prospective?"
+  - "Is the payoff the overnight gap or an opening-auction marking that vanishes by 09:35?"
+  - "Does one pair, direction, month, or event dominate the result?"
+  - "Do timing, threshold, state, and product neighbors form a stable region?"
+  - "Can targeted quotes support realistic entry/exit and capacity?"
+
+adaptation_policy:
+  allowed_within_campaign:
+    - "15:30-15:55 signal windows and 15:56-15:59 entry latency"
+    - "next-open, 09:30-complete, and 09:35 exits"
+    - "continuation and reversal direction controls"
+    - "causal magnitude, volatility, volume, breadth, and close-location states"
+    - "QQQ/SMH and matching leveraged/inverse ETF expressions"
+    - "single-pair, equal-pair, and causal best-qualified allocation"
+    - "fixed, volatility-scaled, and capped signal-strength sizing"
+    - "marketable costs and targeted SIP NBBO/trade replay"
+    - "cash when no pair qualifies"
+  new_campaign_required_when:
+    - "the primary payoff moves to the regular intraday session or multi-session holding"
+    - "single stocks, options, news, text, or macro releases become the primary signal"
+    - "the mechanism no longer depends on late-day imbalance and overnight absorption"
+
+launch_and_conclusion_gates:
+  - "PLAN frozen before market-data inventory or backtesting"
+  - "Minute schemas, SIP feed, corporate-action handling, and pair continuity verified"
+  - "Maximum loaded date <= 2026-04-30 and zero holdout rows"
+  - "Fixtures pass for completed-minute timing, next-session mapping, split lineage, inverse direction, costs, pair allocation, fixed-base accounting, and drawdown"
+  - "Every meaningful run is frozen, reconciled, and preserves parent/reason/expectation/result/decision"
+  - "Underlying/product decomposition, chronology, monthly path, concentration, neighbors, and targeted execution evidence completed before promotion"
+  - "Mandatory eleven-principle and skeptical-quant audit completed before promotion, retirement, or pivot"
+
+hard_constraints:
+  fixed_capital_base: 1.0
+  reinvest_pnl: false
+  discovery_cutoff: "2026-04-30"
+  sealed_holdout_start: "2026-05-01"
+  holdout_access_authorized: false
+  direct_overnight_stock_or_etf_shorts: false
+  leverage_policy: "Verify underlying alpha before crediting leveraged products"
+  targeted_data_policy: >-
+    Use declared local data first. Alpaca pulls may fill only specific missing
+    pair/date/field requirements or targeted execution evidence; no blanket
+    S&P universe download.
+
+development_period: "Declared pre-cutoff data only; standard recent views end 2026-04-30"
+status: frozen
+frozen_at: "2026-07-29T02:16:00-07:00"
+file_hash: "sha256 excluding file_hash line: d39936a3f3a2d09713c27f249ac4bc022dd2bb52652b9b1b8723322aba8adebd"

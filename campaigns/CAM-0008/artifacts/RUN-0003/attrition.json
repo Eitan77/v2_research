@@ -1,0 +1,29 @@
+{
+  "readiness_events": 7641,
+  "base_eligible_long_events": 3482,
+  "screen_candidate_counts": {
+    "positive_continuation_long|baseline": 2169,
+    "positive_continuation_long|stock_vol_high": 1029,
+    "positive_continuation_long|qqq_vol_high": 990,
+    "positive_continuation_long|target_intraday": 1144,
+    "positive_continuation_long|gap_down1pct": 316,
+    "positive_continuation_long|participation_le1pct": 536,
+    "positive_continuation_long|reaction_ge50bp": 658,
+    "negative_failure_long|baseline": 1313,
+    "negative_failure_long|stock_vol_high": 791,
+    "negative_failure_long|qqq_vol_high": 803,
+    "negative_failure_long|target_intraday": 701,
+    "negative_failure_long|gap_down1pct": 461,
+    "negative_failure_long|participation_le1pct": 340,
+    "negative_failure_long|reaction_ge50bp": 413,
+    "all_longs|baseline": 3482,
+    "all_longs|stock_vol_high": 1820,
+    "all_longs|qqq_vol_high": 1793,
+    "all_longs|target_intraday": 1845,
+    "all_longs|gap_down1pct": 777,
+    "all_longs|participation_le1pct": 876,
+    "all_longs|reaction_ge50bp": 1071
+  },
+  "maximum_loaded_date": "2026-04-30",
+  "holdout_rows_loaded": 0
+}

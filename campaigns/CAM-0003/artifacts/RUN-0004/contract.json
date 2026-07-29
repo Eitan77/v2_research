@@ -1,0 +1,33 @@
+{
+  "executed_variant_count": 270,
+  "expected_variant_count": 270,
+  "symbols": [
+    "EEM",
+    "FXI",
+    "EFA",
+    "VWO",
+    "IYR"
+  ],
+  "components": [
+    "combined_previous_close",
+    "open_session"
+  ],
+  "mornings": [
+    15,
+    30,
+    60
+  ],
+  "holds": [
+    15,
+    30,
+    60
+  ],
+  "states": [
+    "all",
+    "high_opening_volume",
+    "high_opening_volatility"
+  ],
+  "cost_bps_per_side": 5,
+  "loaded_max_date": "2026-04-30",
+  "holdout_rows_loaded": 0
+}

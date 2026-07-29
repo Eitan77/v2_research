@@ -1,0 +1,24 @@
+{
+  "command": "python campaigns/CAM-0005/src/run0006.py --raw-dir campaigns/CAM-0005/artifacts/RUN-0006/raw --parent-positions campaigns/CAM-0005/artifacts/RUN-0004/positions.parquet --output-dir campaigns/CAM-0005/artifacts/RUN-0006",
+  "resolved_defaults": {
+    "candidates": [
+      "q50_edge25",
+      "q60_edge25"
+    ],
+    "entry": "first_noncrossed_ask_at_or_after_15:59",
+    "exit": "first_noncrossed_bid_at_or_after_09:30",
+    "additional_slippage_bps_per_side": [
+      0,
+      2,
+      5
+    ]
+  },
+  "executed_variant_count": 6,
+  "output_paths": [
+    "event_replay.parquet",
+    "variants.csv",
+    "monthly.csv",
+    "contract.json",
+    "diagnostics.json"
+  ]
+}

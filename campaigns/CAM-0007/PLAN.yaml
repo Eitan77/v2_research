@@ -1,0 +1,150 @@
+campaign_id: CAM-0007
+title: Earnings-announcement reaction and post-event drift
+purpose_profile: "A. Recent Money Printer"
+
+core_hypothesis: >-
+  A scheduled earnings announcement concentrates fundamental information and
+  institutional repositioning. The next actionable regular-session gap and
+  completed opening reaction reveal whether the information is being absorbed
+  immediately or underreacted to; strong causally observed reactions may
+  continue intraday or for one to ten sessions.
+mechanism: >-
+  Earnings information arrives at a known public timestamp, but analysts,
+  passive funds, options hedgers, and discretionary investors update positions
+  at different speeds. Large price/volume reactions with early confirmation
+  may exhibit post-announcement drift, while failed reactions may reverse.
+  The event condition is fundamental and scheduled; price reaction supplies
+  the tradable sign without requiring incomplete analyst-surprise fields.
+material_difference_from_prior_campaigns: >-
+  CAM-0007 conditions on a public corporate earnings event and tests
+  announcement-to-multiday information diffusion. CAM-0006 studied official
+  opening-auction inventory transfer regardless of corporate news, CAM-0005
+  studied late-day ETF pressure overnight, and CAM-0001 studied generic
+  leveraged-ETF momentum. The event registry, causal clock, holding horizon,
+  universe attrition, and source-validation problem are distinct.
+
+primary_source:
+  type: "mechanism-first with event-source validation"
+  source_faithful_requirement: >-
+    The frozen baseline is the internal source contract: public earnings
+    timestamp, announcement-session mapping, point-in-time membership, completed
+    reaction window, both continuation and failure controls, and declared
+    long/short safeguards. Local yfinance-sourced earnings rows validate event
+    timing and historical coverage; missing recent event metadata may be filled
+    only with targeted Alpaca Benzinga news for point-in-time QQQ symbols.
+  incomplete_field_policy: >-
+    EPS estimate/reported/surprise fields are not used in the baseline because
+    their coverage does not extend through the discovery cutoff. Never mix
+    complete price-reaction events with selectively available surprise values
+    without reporting attrition and chronology.
+
+intended_strategy_profile:
+  recent_evaluation_window_family:
+    - "2024-11-01 through 2026-04-30"
+    - "2025-02-01 through 2026-04-30"
+    - "2025-05-01 through 2026-04-30"
+  representative_recent_window: "2025-02-01 through 2026-04-30"
+  return_objective: >-
+    Approximately 10%-15% average monthly net fixed-capital simple return over
+    a representative recent 12-to-18-month regime, with frequent independent
+    corporate events, realistic marketable execution, distributed contribution,
+    and preferred drawdown below 20%.
+  activation_rule: >-
+    Event identity and timestamp must be public before the entry session.
+    Gap, volume, and reaction features use only prices/bars complete before the
+    decision. Universe membership, liquidity, volatility, and any thresholds
+    are point-in-time or shifted.
+  decay_monitor: >-
+    Monitor event-source precision/recall, announcement-time buckets, positive
+    and negative reaction legs, holding horizons, event frequency, marketable
+    spreads, rolling expectancy, month inactivity, and symbol/event
+    concentration.
+
+starting_implementation:
+  event_registry: >-
+    Use unique local earnings timestamps through their verified coverage.
+    Validate a conservative earnings-headline detector against the overlap,
+    then target only missing post-coverage QQQ event metadata from Alpaca news.
+    Reject ambiguous, duplicate-conflicting, during-session, after-entry,
+    unmapped-session, or non-public events and report each attrition source.
+  universe: >-
+    Point-in-time QQQ members on the actionable entry session with shifted
+    prior-20 median dollar volume >= $100M and corporate-action-safe prices.
+  announcement_mapping:
+    after_close: "16:00-23:59 Eastern maps to next market session"
+    premarket: "00:00 through 09:29:59 Eastern maps to same market session"
+    during_session: "Excluded from the source-contract baseline"
+  reaction_features:
+    gap: "Actionable session open / prior adjusted close - 1"
+    opening_reaction: "Completed first 30-minute return"
+    volume: "Completed first-30-minute dollar volume versus shifted history"
+  decision_time: "10:00 Eastern after the 09:30-10:00 reaction is complete"
+  entry: "10:00/10:01 minute boundary screen; following marketable SIP quote for survivors"
+  baseline_signals:
+    continuation: "Large gap whose first 30 minutes confirm the gap direction"
+    failed_reaction: "Large gap whose first 30 minutes reverse the gap direction"
+  exits:
+    - "Same-session five minutes before actual close"
+    - "Next-session open"
+    - "Three-session close"
+    - "Five-session close"
+    - "Ten-session close"
+  portfolio: >-
+    Normalize to original capital 1.0, equal-weight simultaneous events, and
+    cap total gross at 1.0. Long positive-reaction stocks may hold up to ten
+    sessions. Direct negative-reaction stock shorts are intraday only with a
+    2% protective stop and forced close.
+  costs: "Screen 5, 10, and 20 bp per side; targeted SIP replay for every survivor."
+
+main_questions:
+  - "Does an earnings-conditioned price reaction drift or reverse after 10:00?"
+  - "Do after-close and premarket announcements behave differently?"
+  - "Which same-day to ten-session horizon contains the payoff?"
+  - "Do gap sign, first-30-minute confirmation, event volume, and market state add information?"
+  - "Can a causal long-only event portfolio reach Type-A return without sparse episodes?"
+  - "Does any protected intraday short leg survive stops, borrow-independent costs, and forced close?"
+  - "Are results distributed across quarters, symbols, sectors, event types, and parameter neighbors?"
+  - "Can targeted SIP quotes/trades support entry, same-day exits, and practical event capacity?"
+
+adaptation_policy:
+  allowed_within_campaign:
+    - "Announcement-time buckets and conservative event-detector rules"
+    - "Causal gap/reaction ranks and broad thresholds"
+    - "First-30-minute volume, range, VWAP, volatility, and market-state filters"
+    - "10:00-10:05 entry latency and same-day through ten-session long exits"
+    - "Long-only, protected intraday-short, and causally selective portfolios"
+    - "Equal, capped-strength, volatility-aware, and event-overlap-aware sizing"
+    - "Protective stops, marketable costs, and targeted SIP replay"
+  new_campaign_required_when:
+    - "The signal no longer requires an earnings announcement"
+    - "Options-implied data, transcript text, or analyst revisions become primary"
+    - "A generic non-event momentum or reversal strategy replaces the event mechanism"
+
+launch_and_conclusion_gates:
+  - "PLAN frozen before campaign-scoped readiness, network event pull, or backtest"
+  - "Event timestamps, public availability, duplicates, timezone, and session mapping verified"
+  - "Headline detector validated against independent local earnings overlap before missing-period use"
+  - "Point-in-time membership, price adjustment, minute/daily paths, and shifted liquidity verified"
+  - "Maximum loaded/requested date <= 2026-04-30 and zero holdout rows"
+  - "Fixtures pass for event mapping, detector precision cases, completed-window timing, allocation, costs, stops, forced close, multiday exit, and drawdown"
+  - "Every meaningful run is frozen, reconciled, and preserves parent/reason/expectation/result/decision"
+  - "Sample/universe attrition, chronology, month, quarter, symbol, event, leg, state, concentration, and execution evidence completed before promotion"
+  - "Mandatory eleven-principle and skeptical-quant audit completed before promotion, retirement, or pivot"
+
+hard_constraints:
+  fixed_capital_base: 1.0
+  maximum_gross_exposure: 1.0
+  reinvest_pnl: false
+  discovery_cutoff: "2026-04-30"
+  sealed_holdout_start: "2026-05-01"
+  holdout_access_authorized: false
+  direct_overnight_stock_or_etf_shorts: false
+  targeted_data_policy: >-
+    Use declared local event and market data first. Alpaca may fill only the
+    missing earnings-event interval for point-in-time QQQ symbols and later
+    exact execution windows; never pull a blanket S&P universe or sealed date.
+
+development_period: "Declared pre-cutoff data only; standard recent views end 2026-04-30"
+status: frozen
+frozen_at: "2026-07-29T04:21:30-07:00"
+file_hash: "sha256 excluding file_hash line: f1e2396aacfbbc8ccc07eaa73b7e26cf7705e187690043ae3929da1b22c721c1"

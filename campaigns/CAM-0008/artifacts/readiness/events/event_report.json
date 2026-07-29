@@ -1,0 +1,35 @@
+{
+  "status": "passed",
+  "detected_candidates": 10545,
+  "actionable_membership_candidates": 9285,
+  "episodes_before_remap": 7641,
+  "conflicting_sign_episodes_excluded": 118,
+  "same_sign_rows_collapsed": 1315,
+  "eligible_event_episodes": 7641,
+  "eligible_symbols": 117,
+  "action_sign_counts": {
+    "1": 4741,
+    "-1": 2900
+  },
+  "primary_action_type_counts": {
+    "target_raise": 4090,
+    "target_lower": 2489,
+    "rating_upgrade": 418,
+    "rating_downgrade": 390,
+    "positive_initiation": 233,
+    "negative_initiation": 21
+  },
+  "release_bucket_counts": {
+    "intraday": 4444,
+    "premarket": 2867,
+    "after_close": 330
+  },
+  "earnings_confound_events": 2469,
+  "multi_firm_episodes": 786,
+  "minimum_event_timestamp": "2024-07-01 09:17:29+00:00",
+  "maximum_event_timestamp": "2026-04-30 19:22:52+00:00",
+  "maximum_entry_session": "2026-04-30",
+  "holdout_rows_loaded": 0,
+  "earnings_control_source": "campaigns\\CAM-0007\\artifacts\\readiness\\events\\event_registry.parquet",
+  "earnings_control_note": "Revalidated V2 data artifact used only as a causal confound flag, not as inherited strategy evidence."
+}

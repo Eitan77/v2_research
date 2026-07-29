@@ -1,0 +1,184 @@
+{
+  "status": "passed",
+  "catalog": "D:\\AlgoResearch\\data\\catalog.duckdb",
+  "catalog_sha256": "8ace63df1ad5b3335945bad7d6220bc27a34203adfc49e4324d1383f6c286664",
+  "source_view": "bars_1d",
+  "source_view_filter": "date <= 2026-04-30 AND symbol IN (QQQ,TQQQ,SOXL) AND adjustment IN (raw,split) AND feed=sip",
+  "max_loaded_date": "2026-04-30",
+  "holdout_rows_loaded": 0,
+  "loaded_frame_sha256": "0e6d0bec8f86898e7c8350ed3e6e4bbc8b2c408ec19b827d43d3081e72b0f1e1",
+  "split_stream_reconciliation": {
+    "raw_rows": 5172,
+    "native_split_rows": 5496,
+    "reconstructed_rows": 30,
+    "missing_native_split_dates": [
+      "2019-11-25",
+      "2020-01-28",
+      "2020-02-27",
+      "2020-03-30",
+      "2020-04-24",
+      "2021-01-11",
+      "2021-03-29",
+      "2024-03-13",
+      "2025-01-08",
+      "2025-08-21"
+    ],
+    "maximum_neighbor_split_factor_relative_drift": 0.0005513721289265305,
+    "method": "For a raw symbol-date absent from the split stream, multiply raw OHLC/VWAP by the mean of the immediately preceding and following native split/raw close ratios; require relative ratio drift <= 0.1%. Volume and trade_count remain raw. The reconstruction is deterministic and is not a strategy parameter."
+  },
+  "schema": {
+    "symbol": "str",
+    "date": "datetime64[us]",
+    "open": "float64",
+    "high": "float64",
+    "low": "float64",
+    "close": "float64",
+    "volume": "int64",
+    "trade_count": "int64",
+    "vwap": "float64",
+    "feed": "str",
+    "adjustment": "str",
+    "source_ingestion_id": "str",
+    "ingested_at": "str",
+    "reconstructed_from_raw": "bool"
+  },
+  "symbols": [
+    "QQQ",
+    "SOXL",
+    "TQQQ"
+  ],
+  "proposed_trade_symbols": [
+    "TQQQ",
+    "UPRO",
+    "SPXL",
+    "SOXL",
+    "TECL",
+    "FAS",
+    "TNA"
+  ],
+  "eligible_trade_symbols": [
+    "TQQQ",
+    "SOXL"
+  ],
+  "unavailable_proposed_symbols": [
+    "FAS",
+    "SPXL",
+    "TECL",
+    "TNA",
+    "UPRO"
+  ],
+  "symbol_attrition_count": 5,
+  "symbol_attrition_fraction": 0.7142857142857143,
+  "date_attrition_vs_shared_calendar": {
+    "QQQ": 0,
+    "SOXL": 0,
+    "TQQQ": 0
+  },
+  "duplicate_symbol_dates": 0,
+  "null_ohlc_rows": 0,
+  "invalid_price_rows": 0,
+  "by_symbol": [
+    {
+      "symbol": "QQQ",
+      "min_date": "2019-01-02T00:00:00.000",
+      "max_date": "2026-04-30T00:00:00.000",
+      "rows": 1842,
+      "sessions": 1842,
+      "null_volume": 0
+    },
+    {
+      "symbol": "SOXL",
+      "min_date": "2019-01-02T00:00:00.000",
+      "max_date": "2026-04-30T00:00:00.000",
+      "rows": 1842,
+      "sessions": 1842,
+      "null_volume": 0
+    },
+    {
+      "symbol": "TQQQ",
+      "min_date": "2019-01-02T00:00:00.000",
+      "max_date": "2026-04-30T00:00:00.000",
+      "rows": 1842,
+      "sessions": 1842,
+      "null_volume": 0
+    }
+  ],
+  "extreme_split_adjusted_overnight_gaps": [
+    {
+      "symbol": "SOXL",
+      "date": "2020-03-16",
+      "overnight_gap": -0.30897125043297535
+    },
+    {
+      "symbol": "TQQQ",
+      "date": "2020-03-16",
+      "overnight_gap": -0.28810696692470095
+    },
+    {
+      "symbol": "SOXL",
+      "date": "2020-03-09",
+      "overnight_gap": -0.23413897280966767
+    },
+    {
+      "symbol": "SOXL",
+      "date": "2020-03-18",
+      "overnight_gap": -0.2131007354198735
+    },
+    {
+      "symbol": "SOXL",
+      "date": "2020-03-12",
+      "overnight_gap": -0.20478723404255317
+    },
+    {
+      "symbol": "TQQQ",
+      "date": "2020-03-09",
+      "overnight_gap": -0.19927121290994276
+    },
+    {
+      "symbol": "SOXL",
+      "date": "2024-08-05",
+      "overnight_gap": -0.19836400817995914
+    },
+    {
+      "symbol": "TQQQ",
+      "date": "2020-03-12",
+      "overnight_gap": -0.19719771665801766
+    },
+    {
+      "symbol": "SOXL",
+      "date": "2025-05-12",
+      "overnight_gap": 0.1970233876683205
+    },
+    {
+      "symbol": "SOXL",
+      "date": "2020-03-24",
+      "overnight_gap": 0.19348617955860314
+    },
+    {
+      "symbol": "SOXL",
+      "date": "2020-03-13",
+      "overnight_gap": 0.1868293399970602
+    },
+    {
+      "symbol": "SOXL",
+      "date": "2026-04-08",
+      "overnight_gap": 0.17294429708222814
+    },
+    {
+      "symbol": "SOXL",
+      "date": "2022-11-10",
+      "overnight_gap": 0.16883116883116878
+    },
+    {
+      "symbol": "TQQQ",
+      "date": "2020-03-13",
+      "overnight_gap": 0.16711349419124222
+    },
+    {
+      "symbol": "TQQQ",
+      "date": "2020-03-18",
+      "overnight_gap": -0.16195752539242836
+    }
+  ],
+  "failures": []
+}

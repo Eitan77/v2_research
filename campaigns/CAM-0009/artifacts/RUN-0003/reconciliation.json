@@ -1,0 +1,24 @@
+{
+  "status": "passed",
+  "run_id": "RUN-0003",
+  "expected_variant_count": 540,
+  "executed_variant_count": 540,
+  "frozen_configuration_hash": "8d04ed8e31ebc24d22d20d4265e38767e064f3789b64cf3be95fcf4ff1d3138d",
+  "input_hashes": {
+    "minute": "a142c4f9b023ab74b903a7e4ea6c5cfb0d0da58e6bd7f8f9c5c22ce9fa6395ce",
+    "features": {
+      "1": "a3c17ef9e0b8094d8ee0bdaaa4330c7a5d6e241213237a8e6feb593ab1418d11",
+      "5": "d218deda9edb71f2eea31b34db37335453f98e8d1d13c96850f19150cd903f8f",
+      "10": "cb34fa2621d24aa243915607d25f2cad2d020093bcc39db1e18c7e026ba85569",
+      "15": "c030190f15cd9b01e32a21d5b81f0a1a657856fd2d66b54eed6b44182661e6d2",
+      "30": "a1ec6812d42438ee9d257fb0b043b76091580e073e45500926b40a8321863858"
+    }
+  },
+  "executed_code_hashes": {
+    "run0003.py": "2cf54513d83a51b05e0e1708d684b0a9b6ecf39c53e77da3fa349398638ecde5",
+    "cam0009.py": "cad889dd129b79e627e123ddd05ec7173aacf50af5f80d6601484c6581a7d2e9",
+    "run0001.py": "a6195f0b4b84438bc2e19f4e1c3c21e3cc869f924b2f30847b0539bd37f4ff7c"
+  },
+  "maximum_loaded_date": "2026-04-30",
+  "holdout_rows_loaded": 0
+}

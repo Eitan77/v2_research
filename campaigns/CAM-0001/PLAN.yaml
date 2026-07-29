@@ -1,0 +1,126 @@
+campaign_id: CAM-0001
+title: Recent leveraged-ETF directional persistence
+purpose_profile: "A. Recent Money Printer"
+
+core_hypothesis: >-
+  Large, liquid long leveraged equity ETFs can exhibit exploitable multi-session
+  directional persistence when a completed daily move is supported by recent
+  trend efficiency and broad-market confirmation, because slow-moving
+  institutional flows and the funds' daily rebalancing transmit directional
+  demand across sessions.
+mechanism: >-
+  Delayed incorporation of persistent market and sector information plus
+  mechanically recurring leveraged-fund rebalance demand can create continuation
+  over the next one to ten sessions. Requiring a positive, efficient underlying
+  trend should distinguish persistent information/flow from isolated noise.
+why_it_might_work: >-
+  Embedded ETF leverage can express a real continuation edge without direct
+  shorting or research-account leverage. The mechanism predicts stronger
+  results in liquid funds, after broad directional participation, and over a
+  neighborhood of short holding periods rather than one exact parameter.
+
+intended_strategy_profile:
+  recent_evaluation_window_family:
+    - "2024-11-01 through 2026-04-30 (18-month standard view)"
+    - "2025-02-01 through 2026-04-30 (15-month standard view)"
+    - "2025-05-01 through 2026-04-30 (12-month standard view)"
+  representative_recent_window: >-
+    To be chosen from the predeclared 12-, 15-, and 18-month views, or a
+    causally detected onset near them, based on mechanism, path, breadth, and
+    stability rather than maximum return.
+  representative_window_reason: >-
+    All views end at the discovery cutoff. The 15-month view is the neutral
+    starting reference; a different emphasis requires a causal onset argument.
+  full_history_role: >-
+    Diagnose mechanism, adverse regimes, tail risk, and decay; do not use the
+    lifetime average as the recent-income denominator.
+  return_objective: >-
+    Roughly 10%-15% average monthly net simple return over an honestly
+    representative recent regime, interpreted jointly with consistency,
+    drawdown, recovery, concentration, execution, and selection burden.
+  judgment_policy: >-
+    No rigid window or return cutoff. Prefer a complete, repeatable monthly path
+    with standard drawdown below about 20%, recovery near one month or faster,
+    few negative months, credible costs, and non-accidental concentration.
+  activation_rule: >-
+    Must be causal and observable before entry; candidate families include
+    positive broad-market trend, rising cross-sectional participation, and
+    adequate signal strength. The final rule, if any, must be tested
+    walk-forward and cannot be selected from the best historical start date.
+  decay_monitor: >-
+    Track rolling 3- and 6-month net expectancy, positive-month rate, drawdown,
+    signal hit rate, breadth of contributors, cost margin, and parameter-neighbor
+    agreement against frozen development expectations.
+  retirement_rule: >-
+    Suspend new entries when a predeclared combination of rolling net expectancy
+    loss, drawdown/recovery breach, breadth collapse, or execution-cost erosion
+    persists; retire only after forward evidence and mechanism review show the
+    phenomenon has decayed rather than temporarily weakened.
+
+starting_implementation:
+  universe: >-
+    A fixed, predeclared set of highly liquid U.S. long leveraged equity ETFs
+    that existed before the recent evaluation windows and have complete
+    split-adjusted daily data; exact eligible symbols are frozen only after the
+    readiness gate reports availability and attrition, without inspecting
+    returns.
+  signal: >-
+    At each completed daily close, rank eligible funds by trailing 20-session
+    total return; require positive fund momentum and a positive 200-session QQQ
+    trend. This is an internally specified transparent continuation baseline,
+    not a claimed replication of an external strategy.
+  decision_time: "After the completed regular-session close on session t"
+  entry: "Next regular-session open on t+1"
+  exit: "Next regular-session open after five trading sessions"
+  direction: "Long only; no direct stock or ETF short sales"
+  sizing: >-
+    Invest 1.0 of the original fixed capital in the top-ranked eligible fund;
+    no reinvestment and no account-level leverage. Embedded ETF leverage is
+    disclosed as product exposure, not improved alpha.
+  cost_model: >-
+    Base 5 bps per side, adverse 10 bps per side, severe 20 bps per side,
+    charged on traded notional.
+  execution_model: >-
+    Marketable next-open bar fill with explicit costs; stress one-session delay
+    and close-to-next-open gaps. Daily-bar screening only; SIP quote replay is
+    reserved for a close, strong, or execution-questionable candidate.
+
+main_questions:
+  - "Does the baseline have positive recent net alpha after costs, separately from embedded leverage and market beta?"
+  - "Are 12-, 15-, and 18-month paths consistently strong without favorable start-date selection?"
+  - "Which horizons, confirmation logic, and portfolio breadth best match the persistence mechanism?"
+  - "Are gains broad across months, symbols, decisions, and independent market episodes?"
+  - "Can any specialized subset or activation state be selected causally rather than from full-sample winners?"
+  - "Do cost, delay, gap, liquidity, and parameter-neighborhood stresses preserve the result?"
+  - "What observable activation, decay, and prospective retirement rules are justified?"
+
+adaptation_policy:
+  allowed_within_campaign:
+    - holding_period
+    - entry_or_exit_timing
+    - broad_thresholds
+    - mechanism_consistent_filters
+    - position_sizing
+    - stops_and_risk_overlays
+    - execution_assumptions
+    - long_short_treatment
+    - mechanism_consistent_universe_changes
+    - portfolio_construction
+  new_campaign_required_when:
+    - core_hypothesis_changes
+    - source_of_edge_or_mechanism_changes
+    - information_set_changes_materially
+    - strategy_identity_changes_materially
+
+hard_constraints:
+  fixed_capital_base: 1.0
+  reinvest_pnl: false
+  sealed_holdout_start: "2026-05-01"
+  holdout_access_authorized: false
+  overnight_direct_stock_or_etf_shorts: false
+  intraday_direct_shorts_require_stop_and_forced_close: true
+
+development_period: "All loaded market rows must be on or before 2026-04-30"
+status: frozen
+frozen_at: "2026-07-28T20:53:13.9527284-07:00"
+file_hash: "sha256 excluding file_hash line: ba5f5d6a7efca432369b943a294633aa89b9472e931e4dca68e1a7c98b1a27bd"

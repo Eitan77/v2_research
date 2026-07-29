@@ -1,0 +1,7 @@
+{
+  "daily_raw.parquet": "a45191b6adce0683cc6844ee058a406896b7032ccc6380076d1b6299186b9c4b",
+  "daily_split.parquet": "91c539ae8c8c7e9207887f8412cc788b5db4ef930fda8e32036dc4c8a24c13a6",
+  "event_minutes.parquet": "2332e471db5000bfe709871d7eb7b57131e63a0329ce68f4f9ecb1c704959bd5",
+  "event_readiness.parquet": "e220113a410bb2116d846189cfac6daaf649ed83c9c2ae40e5f9238fd90eaa69",
+  "market_report.json": "10cce283256f8351cebca60bb60526ae490042cb63ee264a5046dfc7b868a439"
+}

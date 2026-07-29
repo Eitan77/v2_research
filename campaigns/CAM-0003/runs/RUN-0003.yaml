@@ -1,0 +1,98 @@
+run_id: RUN-0003
+campaign_id: CAM-0003
+parent_run_id: RUN-0002
+planned_at: "2026-07-28T23:27:00-07:00"
+status: completed
+
+change_from_parent: >-
+  Replicate the positive-morning continuation family across broad, sector, and
+  leveraged equity ETFs and causal high opening-volume/volatility states.
+reason: >-
+  RUN-0002 rejected SPY timing migration. The source reports pervasiveness
+  across ETFs and strongest predictability on high opening activity days.
+  These are source-mechanism tests, not arbitrary filters.
+expected_effect: >-
+  A genuine closing-flow mechanism should appear across neighboring intervals
+  in one or more unleveraged equity ETFs and strengthen monotonically in
+  causal high-volume or high-volatility states. Leveraged products are
+  diagnostic magnitude checks only if unleveraged alpha survives.
+
+configuration:
+  instruments: ["SPY", "QQQ", "IWM", "DIA", "XLF", "XLK", "SMH", "TLT", "TQQQ", "SOXL"]
+  morning_components: ["combined_previous_close", "open_session"]
+  morning_intervals_minutes: [15, 30, 60]
+  closing_holds_minutes: [15, 30, 60]
+  causal_states: ["all", "high_opening_volume", "high_opening_volatility"]
+  state_definition: >-
+    Current opening-window value above the causal 66.7th percentile of the
+    prior 60 sessions for the same instrument and interval.
+  signal: "long selected ETF when selected morning return > 0"
+  costs_bps_per_side:
+    unlevered: 5
+    leveraged: 10
+  variants: 540
+  leverage_policy: "TQQQ/SOXL cannot rescue absent unleveraged alpha"
+
+execution_contract:
+  command: >-
+    python campaigns/CAM-0003/src/run0003.py
+    --output-dir campaigns/CAM-0003/artifacts/RUN-0003
+  expected_variant_count: 540
+  output_paths:
+    - "artifacts/RUN-0003/etf_daily_features.parquet"
+    - "artifacts/RUN-0003/etf_state_grid.csv"
+    - "artifacts/RUN-0003/contract.json"
+    - "artifacts/RUN-0003/diagnostics.json"
+
+reconciliation:
+  validation_passed: true
+  executed_variant_count: 540
+  expected_variant_count: 540
+  configuration_match: true
+  loaded_max_date: "2026-04-30"
+  holdout_rows_loaded: 0
+  sample_attrition: "Zero required-price nulls across 3,730 evaluation symbol-sessions."
+
+factual_result:
+  positive_full_period_variants: 15
+  positive_full_period_unlevered_variants: 1
+  positive_recent_12m_variants: 0
+  best_15m_cell:
+    symbol: "SOXL"
+    component: "open_session"
+    morning_minutes: 30
+    closing_hold_minutes: 15
+    state: "high_opening_volatility"
+    signal_days: 58
+    total_18m_net_simple: 0.130722
+    average_month_15m: 0.010176
+    average_month_12m: -0.004666
+    max_drawdown: 0.066857
+    recovery_days: 176
+    recovery_unresolved: true
+  best_unlevered_15m_cell:
+    symbol: "SMH"
+    component: "open_session"
+    morning_minutes: 60
+    closing_hold_minutes: 60
+    state: "high_opening_volume"
+    signal_days: 61
+    average_month_15m: 0.000853
+    average_month_12m: -0.001852
+    max_drawdown: 0.038308
+  diagnosis: >-
+    The only economically visible pocket was leveraged SOXL, while its
+    unlevered SMH analogue was essentially flat and every cell was negative
+    over the latest 12 months. This is leverage magnifying a decayed pocket,
+    not surviving underlying continuation alpha.
+
+decision: >-
+  Do not promote or quote replay. Acquire and replicate the source's omitted
+  international and real-estate ETFs before judging cross-ETF pervasiveness.
+
+artifacts:
+  script_sha256: "50fb662a613ea4d5286fac256b212dc055fc4bf8735c53fc0daa78581d34badf"
+  etf_daily_features_sha256: "4939701c5e445f813057b15045e7235cde2d55d77efacf6d761a1353edd89acf"
+  etf_state_grid_sha256: "a2c296423c264613e80378e3c476d479c36a15129ee71b6bd179a3123cbdc06d"
+  contract_sha256: "0c85514785e851002bc6cecbcd14e152a2f8a4089cdf221806699f3b5ab8b5fb"
+  diagnostics_sha256: "e0c8fe420b54f8942d8fab6ca78688b86875b41fd9f42516763595daea0c3759"

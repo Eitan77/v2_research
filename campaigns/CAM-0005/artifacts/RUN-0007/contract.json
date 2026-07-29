@@ -1,0 +1,27 @@
+{
+  "command": "python campaigns/CAM-0005/src/run0007.py --replay-path campaigns/CAM-0005/artifacts/RUN-0006/event_replay.parquet --calendar-path campaigns/CAM-0005/artifacts/readiness/split_daily.parquet --output-dir campaigns/CAM-0005/artifacts/RUN-0007",
+  "resolved_defaults": {
+    "thresholds": [
+      "q50",
+      "q60"
+    ],
+    "additional_slippage_bps_per_side": [
+      2,
+      5,
+      10
+    ],
+    "bootstrap_seed": 20260729,
+    "bootstrap_replicates": 20000,
+    "bootstrap_block_lengths": [
+      20,
+      60
+    ],
+    "bootstrap_method": "circular_moving_block",
+    "include_zero_return_sessions": true
+  },
+  "executed_variant_count": 6,
+  "input_hashes": {
+    "replay": "469ca65b6450d09f21a63c2e2ab28167a4d3da29beeec03b9b330dc98dd4ca1b",
+    "calendar": "d59f3b246c5a66b0875d53422608641c468c07604a017597af020156592311d1"
+  }
+}

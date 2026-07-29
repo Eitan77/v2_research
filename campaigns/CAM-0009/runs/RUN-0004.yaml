@@ -1,0 +1,108 @@
+campaign_id: CAM-0009
+run_id: RUN-0004
+parent_run: RUN-0003
+status: completed
+frozen_at: "2026-07-29T10:15:00-07:00"
+role: "Execution clock, lag expression, cost, and long-risk screen"
+
+question: >-
+  Can the strongest stable five-minute lower-threshold region improve its
+  recent/full consistency through causal entry delay, exit clock, lag-state
+  expression, breadth, sign treatment, or symmetric long risk control?
+reason: >-
+  RUN-0003 found a coherent 5/10/15-minute neighborhood, with the highest
+  return at five minutes and a lower threshold. It remains only 2.14% recent
+  average month at 5 bps, so execution/risk questions must be exhausted before
+  either hedging or retirement.
+expected_effect: >-
+  True slow diffusion should peak at a finite later horizon, tolerate a small
+  entry delay, show a coherent lag-state shape, and retain economics at 5/10
+  bps. Stops should improve drawdown without erasing the drift.
+
+inputs:
+  parent_trade_details: "artifacts/RUN-0003/trade_details.parquet"
+  parent_variant: "f5__m0.75__v1.5__liq250m__cd15__5bp"
+  minute_paths: "artifacts/readiness/market/minute_regular.parquet"
+  maximum_loaded_date: "2026-04-30"
+  holdout_rows_loaded: 0
+
+adaptation_label: >-
+  In-sample adaptation using RUN-0003's strongest stable five-minute region;
+  no result is untouched or independently confirmed.
+
+frozen_configuration:
+  direction:
+    positive_only: ["long"]
+    negative_only: ["short"]
+    both: ["long", "short"]
+  additional_entry_delay_minutes: [0, 1, 3]
+  exit_horizons_minutes: [30, 60, 120, close]
+  peer_signed_ratio:
+    baseline: [-0.25, 0.50]
+    strict_lag: [-0.10, 0.10]
+    not_opposite: [0.00, 0.50]
+    partly_caught_up: [0.10, 0.50]
+  maximum_peers: [1, 3]
+  long_stop_fraction: [null, 0.02, 0.04]
+  short_stop_fraction: 0.02
+  adverse_stop_slippage_bps: 10
+  costs_bps_per_side: [2, 5, 10]
+  forced_intraday_exit: true
+  overnight: false
+  portfolio:
+    capital_base: 1.0
+    accounting: "additive fixed-size intraday P&L"
+    position_cap: 0.10
+    symbol_cap: 0.10
+    gross_cap: 1.0
+  expected_variant_count:
+    direction: 3
+    delays: 3
+    exits: 4
+    lag_states: 4
+    peer_breadths: 2
+    long_stops: 3
+    costs: 3
+    total: 2592
+
+required_outputs:
+  - "2,592/2,592 reconciliation, exact-path and exit attrition"
+  - "Full/recent performance, month signs, drawdown/recovery, blocks, and concentration"
+  - "Delay, exit, lag, breadth, sign, stop, and cost neighbor surfaces"
+  - "Decision on sector hedge follow-up, quote replay, or retirement"
+
+result:
+  validation: passed
+  reconciliation:
+    expected_variants: 2592
+    executed_variants: 2592
+    parent_candidates: 3358
+    maximum_loaded_date: "2026-04-30"
+    holdout_rows_loaded: 0
+  strongest_variant:
+    id: "both__d3__hclose__baseline__p3__lsnone__5bp"
+    recent_15m_average_month: 0.023823
+    recent_12m_average_month: 0.012402
+    full_average_month: 0.016887
+    maximum_drawdown: 0.043412
+    recovery_days: 36
+    recent_15m_months: {positive: 10, negative: 5}
+    allocated_trades: 1513
+    events: 689
+    leaders: 18
+    peers: 12
+    blocks: [0.020661, 0.181237, 0.070680, 0.098932]
+    at_2bps_recent_15m_average_month: 0.028315
+    at_10bps_recent_15m_average_month: 0.016336
+    at_10bps_recent_12m_average_month: 0.004944
+  landscape:
+    - "Close was the only broadly positive exit; 30/60-minute medians were materially negative and 120-minute median remained negative."
+    - "Three extra minutes improved the top close result coherently, but did not improve the median surface."
+    - "Unstopped longs were strongest; 2% and 4% long stops reduced return and did not consistently improve drawdown."
+    - "Both-sign top performance exceeded long-only, while negative-only median performance was negative."
+    - "Only 4.9% of 5bp variants were positive in all four blocks; the broad surface is fragile despite a coherent top neighborhood."
+decision: >-
+  Do not promote or quote replay. Test whether higher causal capital
+  utilization preserves the result and whether SMH dollar/beta hedging
+  confirms information diffusion rather than common sector beta. Then apply
+  leave-one-out and bootstrap adversity before retirement or checkpoint.

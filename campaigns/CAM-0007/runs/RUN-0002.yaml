@@ -1,0 +1,151 @@
+campaign_id: CAM-0007
+run_id: RUN-0002
+parent_run: RUN-0001
+status: completed
+frozen_at: "2026-07-29T05:07:00-07:00"
+role: "Weakness-driven causal-state and neighbor diagnostic"
+
+observed_parent_weakness: >-
+  RUN-0001's best representative 10 bp variant averaged only 0.864% per
+  month. Positive-gap continuation localized at five sessions with low
+  drawdown, while negative-gap failure localized more weakly at ten sessions.
+  The combined book imported severe early losses, and protected shorts failed.
+question: >-
+  Is the weak aggregate long alpha diluted by causally identifiable event
+  strength, opening participation, announcement timing, or pre-event
+  stock/market state, and is it robust to broad gap, horizon, cost, and sizing
+  neighbors?
+reason: >-
+  Earnings information diffusion should be strongest when the news reprices
+  the stock materially, the first completed reaction closes firmly in its
+  direction on meaningful participation, and the state supports rather than
+  mechanically overwhelms the move. Each proposed field is observable by
+  10:00 and tests a mechanism-specific explanation of RUN-0001.
+expected_effect: >-
+  Genuine underreaction should strengthen smoothly with moderate gap,
+  reaction, participation, or strong-close thresholds and persist across
+  neighboring three/five/ten-session exits. A single brittle threshold,
+  announcement bucket, recent-only state, or 33% sizing spike would indicate
+  selection rather than a Type-A strategy.
+
+inputs:
+  parent_artifacts: "artifacts/RUN-0001/"
+  event_readiness: "artifacts/readiness/market/event_readiness.parquet"
+  event_minutes: "artifacts/readiness/market/event_minutes.parquet"
+  daily_split: "artifacts/readiness/market/daily_split.parquet"
+  qqq_daily: "catalog.bars_1d, QQQ, SIP split, through 2026-04-30"
+  holdout_rows_loaded: 0
+
+frozen_configuration:
+  parent_eligibility: >-
+    signal complete, shifted prior20 median dollar volume >= $100M,
+    first30_return > 0, and either positive-gap continuation or negative-gap
+    failure
+  new_causal_features:
+    first30_close_location: "(09:59 close - 09:30-09:59 low) / first30 range"
+    participation: "first30 dollar volume / shifted prior20 median daily dollar volume"
+    reaction_gap_ratio: "first30_return / absolute gap"
+    stock_vol20: "annualized standard deviation of split close returns through prior session"
+    stock_vol_state: "stock_vol20 versus its shifted prior60-session median"
+    qqq_prior20_return: "QQQ prior close / QQQ close 21 sessions earlier - 1"
+    qqq_vol_state: "QQQ prior20 volatility versus shifted prior60-session median"
+  screen_ids:
+    - base_gap2
+    - gap1
+    - gap1_5
+    - gap3
+    - gap5
+    - gap8
+    - reaction50bp
+    - reaction100bp
+    - reaction200bp
+    - participation10
+    - participation20
+    - participation30
+    - close_location67
+    - close_location80
+    - after_close
+    - premarket
+    - qqq_up
+    - qqq_down
+    - stock_vol_high
+    - stock_vol_low
+    - gap3_reaction50bp
+    - reaction100bp_close67
+    - participation20_close67
+    - gap3_reaction50bp_participation10
+    - after_close_gap3_reaction50bp
+    - reaction_gap_ratio25
+    - reaction_gap_ratio50
+  screen_semantics: >-
+    Every non-gap-specific screen retains the base absolute-gap >=2% rule.
+    gap1, gap1_5, gap3, gap5, and gap8 replace that threshold; combined
+    screens use their explicitly named gap threshold.
+  legs:
+    - long_positive_continuation
+    - long_negative_failure
+  horizons: [three_close, five_close, ten_close]
+  costs_bps_per_side: [5, 10, 20]
+  standard_position_cap: 0.20
+  position_cap_neighbors_on_base_only: [0.10, 0.33]
+  portfolio_accounting: >-
+    Same overlap-aware fixed-size, gross<=1.0, capital-base 1.0 additive
+    marked-to-market implementation as RUN-0001.
+  expected_variant_count:
+    screens_standard_cap: 486
+    base_position_cap_neighbors: 36
+    total: 522
+
+required_outputs:
+  - "Exact feature timing, missingness, and per-screen/leg/horizon attrition"
+  - "522/522 command/default/output reconciliation and code/data hashes"
+  - "Net results for every cost with fixed full/18/15/12-month views"
+  - "Chronological blocks, monthly consistency, drawdown/recovery, event/day/symbol concentration"
+  - "Neighbor topology rather than the single historical maximum"
+  - "Separate mechanism diagnosis for the two long legs"
+
+result:
+  validation: "passed"
+  executed_variant_count: 522
+  strongest_10bp_standard_cap:
+    variant_id: "long_negative_failure__stock_vol_high__ten_close__10bp__cap20"
+    allocated_trades: 47
+    symbols: 39
+    recent_15m_average_month: 0.01451494668363482
+    recent_12m_average_month: 0.0167773370735709
+    full_average_month: 0.010442670857595938
+    recent_15m_months: "9 positive / 3 negative / 3 inactive"
+    maximum_drawdown: 0.10286108461694354
+    recovery_days: 97
+    chronological_block_returns: [0.021568, 0.058150, 0.055938, 0.094083]
+    at_20bp_per_side_average_month: 0.013635
+    top5_event_positive_share: 0.41379927913592657
+    top_symbol: "WDAY"
+    total_net_return_without_top_symbol: 0.18080352258317428
+  second_mechanism:
+    variant_id: "long_positive_continuation__after_close__five_close__10bp__cap20"
+    allocated_trades: 74
+    symbols: 44
+    recent_15m_average_month: 0.012398277019865768
+    recent_12m_average_month: 0.015085749422305837
+    full_average_month: 0.0062382783930749995
+    recent_15m_months: "10 positive / 3 negative / 2 inactive"
+    maximum_drawdown: 0.06546184634115126
+    chronological_block_returns: [-0.037236, 0.072754, 0.072949, 0.028775]
+    at_20bp_per_side_average_month: 0.011118
+    top5_event_positive_share: 0.2711863520872815
+  diagnosis: >-
+    High pre-event stock volatility is the only tested state that materially
+    and chronologically improves the slower negative-gap reclaim leg; all four
+    chronological blocks are positive, but 47 trades, three inactive recent
+    months, and 41% top-five positive contribution require adversarial
+    concentration checks. After-close timing improves positive continuation
+    smoothly across three/five/ten-session neighbors and costs, but its first
+    block is negative. Neither sleeve approaches Type-A return.
+  artifacts: "artifacts/RUN-0002/"
+decision: >-
+  Do not promote. Test each sleeve on a finer causal exit and entry-latency
+  lattice, apply sizing neighbors to the actual state-filtered sleeves, combine
+  the two distinct long sleeves under one overlap-aware gross cap, and perform
+  leave-one-symbol/event and chronological stability diagnostics. Do not revive
+  protected shorts absent a new causal explanation.

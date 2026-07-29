@@ -1,0 +1,1672 @@
+1 
+ 
+Intraday Residual Reversal in the U.S. Stock Market 
+Jonathan Brogaard, Jaehee Han, and Hanjun Kim* 
+ABSTRACT 
+Li et al. (2023) show that intraday risk factor exposure leads to predictable returns.  
+In this paper, we focus on the unexplained price movements from the factor -based 
+intraday model. We document an economically large and statistically significant 
+return reversal based on the previous period’s residual return. This residual reversal 
+strategy, which buys stocks with negative residuals  and sells stocks with positive 
+residuals, earns an annualized return of 162.3%. The strategy captures the returns to 
+liquidity provision to the transitory component of stock returns.  
+ 
+  
+ 
+Keywords: Residual Reversal, Market Efficiency, Intraday Market, Trading Strategy 
+JEL classification: G11, G12, G14
+ 
+  
+ 
+* Jonathan Brogaard, Jaehee Han, and Hanjun Kim are with the Eccles David School of Business, The University 
+of Utah. 
+E-mail addresses: brogaardj@eccles.utah.edu  (J. Brogaard),  jaehee.han@eccles.utah.edu (J. Han), 
+hanjun.kim@eccles.utah.edu (H. Kim) 
+Electronic copy available at: https://ssrn.com/abstract=4731947
+
+2 
+ 
+I. Introduction 
+A growing body of literature has studied stock return predictability in various settings using 
+risk and residual of stock prices. Recently, Li et al. (2023) show that the risk momentum exists 
+at the intraday level. They decompose stock returns into two com ponents: risk and residual. 
+They find that the risk component exhibits a momentum pattern: stocks with a high (low) risk 
+component have a high (low) risk component in the subsequent period. Furthermore, a long-
+short portfolio based on the risk momentum earns annualized 30-minute returns ranging from 
+3.82% to 14.68%, depending on various sets of risk anomalies. Another stream of literature 
+analyzes the dynamics of residual and stock returns. For example, Blitz et al. (2011) examine 
+the monthly momentum strategy based on past residuals, while Biltz et al. (2013) and Da et al. 
+(2014) study the short-term reversal strategy based on the prior month’s residuals. However, to 
+our best knowledge, the intraday stock market predictability using residuals has not been 
+explored. Analyzing residuals at the intraday level is crucial since they account for a huge 
+portion of stock returns at the intraday level, suggesting that they might play a substantial role 
+in explaining and predicting stock returns within higher frequency data.
+1 Therefore, this paper 
+studies the intraday residual return dynamics. 
+The noise inherent in stock return is defined as the deviation from the fundamental value. One 
+possible explanation for its existence is that risk -averse liquidity providers are unwilling to 
+provide sufficient liquidity to resolve illiquid status. The statu s of illiquidity prevents stocks 
+from converging to their intrinsic value, resulting in temporary deviations from fair prices (i.e., 
+price pressure) until sufficient liquidity is provided. In line with this idea, Brunnermeier and 
+ 
+1 For example, Brogaard et al. (2022) show that the level of noise in daily returns is much smaller than the noise 
+in intraday trade-to-trade returns. In particular, their estimates of the noise share in daily returns in 1989 is around 
+31%. However, by using the results from Hasbrouck (1991, 1993), they find that the estimates in intraday trade -
+to-trade returns are around 82% in 1989. 
+Electronic copy available at: https://ssrn.com/abstract=4731947
+
+3 
+ 
+Pedersen (2009) use an absolute deviation from the fundamental value as a measure of 
+illiquidity. Putting together, the noise temporally exists at least partially due to risk -averse 
+liquidity providers’ insufficient liquidity provision. 
+Then, how does the noise affect stock returns? Since the noise is transitory, it will eventually 
+converge to zero if liquidity providers provide liquidity and resolve the temporary deviation 
+from fair prices. In particular, the short- lived lifespan of nois e is likely to create a reversal 
+pattern in stock returns. That is, stocks with positive noise are likely to have negative returns, 
+while stocks with negative noise are likely to have positive returns. Similarly, Nagel (2012) 
+theoretically shows that marke t makers’ limited risk-bearing capacity causes an insufficient 
+supply of liquidity, which in turn induces a reversal pattern in the return process. Based on the 
+idea above, the focus of our paper is to test whether the dynamics of the noise create a reversal 
+pattern in stock returns and, if so, how large the pattern is.  
+The intraday market provides an appropriate setting for examining the reversal pattern. First, 
+given the huge share of the noise in intraday returns (Hasbrouck, 1991; Hasbrouck, 1993; 
+Brogaard et al., 2022), it is likely that the reversal pattern created from the noise, if exists, 
+drives a large fraction of variation in intraday stock returns. For ex ample, Hendershott and 
+Menkveld (2014) show that even daily price changes are likely to be driven more by noise from 
+price pressures than information about fundamentals. Their results provide evidence that the 
+movement from the noise is likely to explain a n even larger fraction of variation in intraday 
+stock returns. Second, liquidity providers are likely to actively engage in resolving temporal 
+illiquidity during trading hours. In other words, the noise inherent in intraday stock returns is 
+likely to be re solved by liquidity providers  during trading hours . Hence, studying intraday 
+returns allows us to precisely capture the residual return dynamics, compared to returns at the 
+lower frequencies.  
+Electronic copy available at: https://ssrn.com/abstract=4731947
+
+4 
+ 
+To identify and examine noise return dynamics, we  first decompose stock returns into two 
+components: RISK and RESIDUAL. RISK is a part of the return explained by the risk a stock 
+has, and RESIDUAL is a rest part of the return not explained by the risk. It means RESIDUAL 
+measures how far the stock return deviates from its fair price, and therefore, we use RESIDUAL 
+as a proxy for the noise in stock returns. Following Stambaugh et al. (2012), we use 11 risk -
+related anomalies and add four additional anomalies f rom Li et al. (2023) to capture the risk 
+inherent in stocks. After regressing stock returns on these anomalies cross -sectionally, we 
+predict fitted values. Then, we define the returns explained by the fitted values as RISK, and 
+the remainder of the returns is RESIDUAL.  Consistent with Li et al. (2023), we consider 13 
+intraday periods, where the first 12 periods are 30-minute windows starting from 10:00 A.M., 
+and the last period is the overnight window from 16:00 P.M. to 10:00 A.M. 
+Our sample is  S&P500 index constituents, covering the period from July 1996 to December 
+2022. We choose it because S&P500 stocks hold advantages for studying intraday trading. First, 
+they have a deeper and larger order book than other index constituents such as Russell 2000. It 
+prevents investors from su ffering from price impact in trade s. Second, the constituents also 
+have a narrower bid-ask spread, minimizing transaction costs for investors. This combination 
+of high liquidity and reduced trading costs makes S&P500 constituents more favorable and 
+feasible for intraday trading. 
+Using the estimated residuals, we show that the residual reversal exists in the intraday market, 
+and the residual reversal strategy built on the reversal pattern has consistently generated 
+positive return s over the past three decades. Consistent with our expectation, stocks with 
+positive residuals yield negative returns , and stocks with negative residuals yield positive 
+returns in the next 30 minutes. The larger the residual, the greater the reversal. We formally 
+show this by sorting individual stocks into decile s based on the level of residual. The lowest 
+Electronic copy available at: https://ssrn.com/abstract=4731947
+
+5 
+ 
+residual decile portfolio has the largest positive returns, and the highest residual decile portfolio 
+has the largest negative returns in the next period. The annualized period return for the lowest 
+decile portfolio is 5.39% , while the return for the highest decile portfolio showed a -2.31% 
+return, resulting in  a 7.70% return for the  long-short portfolio on average . It means if an 
+investor constructs a residual reversal-based portfolio, holds it for one period, and repeats the 
+process over the next year, the investor expects to earn a return of 7.70%. With thirteen periods 
+in a day, cumulating the individual period returns reveals that the strategy has yielded an 
+annualized return of 162.3%. We further find that the results are not driven by the firm’s size. 
+It might be possible  that the residual reversal exists only in  specific periods out of thirteen 
+periods, such as the last 30 minutes before the market closes.  To address this  concern, we 
+analyze the return s for each individual period. The outcomes find the presence of residual 
+reversal across all periods, with the exception of the initial period from 10:00 a .m. to 10:30 
+a.m. 
+During financial crises, liquidity dries up quickly (Brunnermeier and Pedersen, 2009; Nagel, 
+2012). Since illiquidity can be thought of as the (absolute) deviation from the fundamental 
+value, the overall level of residual, which is also a proxy for the deviation from the fundamental 
+value, is likely to increase during financial downturns. This increas ed level of residual during 
+financial downturns would lead to higher performance of the residual reversal strategy because 
+a higher level of residual implies a  higher level of noise, which needs to be corrected . To test 
+this hypothesis, following Nagel (2012), we examine the relationship between the performance 
+of the residual reversal strategy and financial downturns, which are proxied by the VIX index. 
+We regress the returns of the residual reversal strategy on the lagged VIX index and find a 
+significant and positive relationship between them. The result implies that illiquidity makes the 
+reversal patterns more pronounced, supporting the argument that the returns of the residual 
+Electronic copy available at: https://ssrn.com/abstract=4731947
+
+6 
+ 
+reversal strategy capture the returns from liquidity provision. In particular, the reversal patterns 
+became even more intensified during huge financial crises such as the dot-com bubble in 2002, 
+the global financial crisis in 2008, and the COVID-19 pandemic in 2020. 
+So far, we primarily provide the returns of holding a decile portfolio for the next 30 minutes 
+and rebalancing it every 30 minutes. However, we posit that the noise incorporated into stocks 
+may not be resolved within a mere 30 -minute interval, requiring more time for the noise to 
+dissipate. To see how long the residuals last , we examine the persistency  of residual reversal. 
+The outcomes reveal a distinct pattern by decile portfolio. The portfolio stemming from the 
+lowest residual decile consistently generates positive returns over the following 12 periods (6 
+hours). In contrast, the portfolio linked to the highest residual decile experiences no such 
+persistence. It means while stocks with negative residuals need a few hours to reduce their 
+residuals, stocks with positive residuals experience reversals only for the next 30 minutes. The 
+persistence of the long-short portfolio dissipates after the 8 periods (4 hours). 
+Next we explore whether the residual reversal remains after incorporating risk. Since Li et al. 
+(2023) predict intraday return using risk component, it might be possible that residual reversal 
+might become insignificant when considered alongside risk. Nonetheless, we propose that 
+residual reversal maintains its significance even after accounting for risk because the residuals 
+are orthogonal to the risks. To assess this hypothesis, we employ a double-sorting approach. 
+We create 5x5 (25) portfolios based on both RESIDUAL and RISK. Initially, stocks are sorted 
+into quintile portfolios based on RISK. Subsequently, within each RISK quintile, stocks are 
+sorted into quintile portfolios based on the RESIDUAL . By employing a double -sorting 
+approach, we can identify whether the performance of the residual reversal strategy depends 
+on the magnitude of RISK . The intriguing result emerges that across all RISK quintiles, 
+residual-based reversal strategies consistently yield positive returns. It implies that residual 
+Electronic copy available at: https://ssrn.com/abstract=4731947
+
+7 
+ 
+reversal is not subsumed by risk. While the risk momentum strategy also yields positive returns 
+regardless of RESIDUAL, it falls short in comparison to our residual reversal strategy. The 
+result underscores that residual has  a return predictive power regardless of risk , and its 
+predictability power is stronger than that of risk. 
+Thus far, we have identified the presence of residual reversal , and Li et al . (2023) find risk 
+momentum in the intraday stock market. However, the question of which of these components 
+drives the returns  is still unanswered.  To ascertain the primary driver, we analyze the 
+subsequent returns of 10 portfolios constructed based on total return. Given the contrasting 
+directions of risk momentum and residual reversal, observing any patterns in the total  return 
+portfolios will help identify the primary driver in the intraday market. Our findings reveal that 
+the intraday returns show reversal patterns . The portfolio with the lowest prior -period return 
+yields the highest return in the subsequent period, and the subsequent returns consistently 
+decline in a monotonic fashion as the deciles  move up. We also find that the sign and the 
+direction of total returns are closely aligned with those of residuals. This observation suggests 
+that it is the residual reversal that influences the return patterns rather than risk momentum at 
+the intraday level. 
+In the ongoing debate on momentum and reversal strategies, previous research has emphasized 
+that these strategies lose their ability to generat e positive profits when trading costs are 
+incorporated into trades (Pastor and Stambaugh, 2003; Da et al., 2014). Given that intraday 
+trading submits orders several times within a day, considering trading cost is particularly  
+necessary and imperative. To address this concern, we integrate trading costs directly into our 
+strategy rather than solely using midpoints when calculating returns. We present five scenarios 
+with trading costs ranging from 3 to 7 basis points (bps). The results show that it requires more 
+time for investors to hold the long -short portfolio based on the residual reversal strategy  to 
+Electronic copy available at: https://ssrn.com/abstract=4731947
+
+8 
+ 
+generate positive returns. In other words, instead of rebalancing the portfolios every 30 minutes, 
+investors are required to rebalance their portfolios every hour or more to yield positive returns. 
+Nevertheless, the strategy consistently yields positive returns across different scenarios, except 
+for when the trading cost is set at 7 bps. 
+As robustness tests, we explore the residual reversal over the various combinations of portfolio 
+formation (K) and holding periods  (M). Our primary examinations involve constructing 
+residual reversal decile portfolios based on residuals from the preceding period (K=1) and 
+holding them for the subsequent single period (M=1). We extend this analysis by spanning 
+formation and holding periods from 1 to 13. We posit that the residual reversal pattern is valid 
+across the periods because of the nature of noise that needs to dissipate. The results report that 
+irrespective of the chosen formation and holding periods, the significance of residual reversal 
+strategies remains consistent. 
+We next conduct subsample tests by year t o address any potential concern that the strategy ’s 
+effectiveness might be confined to specific years. We find that from 1996 to 2022, the residual 
+reversal has existed, and the residual reversal strategy demonstrates validity and significance 
+across all years except for 1997. It implies that the residual reversal pattern  has persisted 
+consistently and is not driven by particular years. 
+There might be a chance that the risk anomalies used in our study do not fully capture the risk 
+portion in the returns, possibly making our noise proxy, RESIDUAL, biased. To address this 
+concern, we conduct a parallel analysis using alternative sets of risk anomalies. We randomly 
+select 15 risk anomalies from the pool of over 200 identified in the literature to explain stock 
+risk. We additionally include these risk anomalies in the anomaly set we use and repeat this 
+process 15 times. With these new sets, we re calculate RESIDUAL and assess whether the 
+residual reversal pattern remains valid. Consistent with the original results, our findings show 
+Electronic copy available at: https://ssrn.com/abstract=4731947
+
+9 
+ 
+residual reversal in the intraday market. The results still demonstrate that stocks with positive 
+residuals yield negative returns, and those with negative residuals yield positive returns in the 
+subsequent period. These outcomes mitigate concerns that the pattern is confined to a specific 
+set of anomalies. 
+Our research contributes to several strands of literature. First, our paper relates to work on 
+return reversal. After Jegadeesh (1990) and Lehman (1990) report the profitability of return 
+reversal strategies, several papers provide explanations for why return reversals exist. One 
+plausible explanation is that return reversals act as a form of compensation for liquidity 
+providers. (Campbell et al., 1993; Conrad et al., 1994; Jegadeesh and Titman, 1995b; Avramov 
+et al., 2006; Hammed et al., 2010; Nagel, 2012). An alternative explanation for return reversals 
+is that return reversals are the results of overreactions to firm- specific news from investors 
+(Jegadeesh and Titman, 1995a; Cooper, 1999; Mase, 1999; Subrahmanyam, 2005). Our paper 
+supports the first explanation by showing that the profitability of residual reversal strategies is 
+high when the compensation for liquidity provision is high, especially during financial crises.   
+Second, our results add to the literature on the role of residuals in explaining stock returns. 
+Grundy and Martin (2001) and Blitz et al. (2011)  show that the residual -based momentum 
+strategies perform better than the original momentum strategies. Similarly, Blitz et al. (2013)  
+and Da et al. (2014) show that, at monthly frequency, the residual -based reversal strategies 
+have better performance than the original reversal strategies. Our paper employs the residual -
+based reversal strategy at the intraday level and finds that return reversals are pervasive even 
+in the intraday frequency and that the residual-based reversal strategy yields higher profits than 
+the original reversal strategy. 
+Finally, this paper adds to the literature on patterns in intraday stock returns. How stock prices 
+behave at intraday frequencies has received a great deal of academic attention. Several studies 
+Electronic copy available at: https://ssrn.com/abstract=4731947
+
+10 
+ 
+show the existence of both momentum and reversal patterns at the intraday level (Grant et al., 
+2005; Heston et al., 2010; Gao et al., 2018; Zhang et al., 2019; Lou et al., 2019;  Baltussen et 
+al., 2021). Most recently and related to our paper, Li et al. (2023) show that the risk component 
+of return exhibits strong intraday momentum patterns. Our results support the existence of risk 
+momentum patterns, but we also provide some evidence that the residual reversal effects 
+dominate the risk momentum effects. In addition, our paper takes a closer look at return reversal 
+effects at intraday frequency and finds that return reversals documented in the previous 
+literature are mainly caused by residual reversals. 
+ 
+II. Data and Methodology 
+In this section, we present the main  variables while explaining comprehensive information 
+about the risk anomalies utilized in our research and providing data sources to formulate these 
+variables. Subsequently, we provide a detailed methodology for constructing the residual 
+reversal strategy.  
+ 
+A. Dependent Variable 
+We choose to utilize the 30-minute return as our primary dependent variable for intraday return. 
+It is a frequently used time window in intraday studies (Heston et al., 2010; Li et al., 2023). 
+This time interval offers a balanced trade-off between capturing meaningful market movements 
+and avoiding excessive noise inherent in shorter intervals. To calculate the 30-minute intraday 
+returns, we utilize the quote data from the Trade and Quote (TAQ) database from July 1996 to 
+December 2022. Specifically, we select the last bid and ask quote  prices every 30 minutes 
+between the hours of 10:00 AM and 4:00 PM Eastern Time, resulting in a total of 13 quote  
+Electronic copy available at: https://ssrn.com/abstract=4731947
+
+11 
+ 
+price observations per day for each stock. We intentionally drop prices at the market open (9:30 
+AM) because of the greater volatility (e.g., Stoll and Whaley, 1990) and because some stocks 
+may have no trading activity at that time . In cases where no quote  occurred during a given 
+period, we imputed the quote price of the previous period to ensure the continuity of the series. 
+Then, we calculate the midpoint of the bid and ask quote prices to get a return measure to avoid 
+a bid-ask bounce in the transaction price. 
+Stock splits or reverse stock splits can introduce a concern that the return between the periods 
+before and after the splits  might not be zero  unless the prices are adjusted . The unadjusted 
+prices could result in a significant, biased return jump or drop. To mitigate this potential 
+problem, we employ the adjustment factor, CFACPR, from CRSP. The adjustment ensures that 
+the returns remain accurate and unbiased despite the split events. However, we still find a few 
+huge outliers, which can potentially be harmful to proper statistical inferences, in our 30-minute 
+returns even after adjustment through CFACPR . To prevent those outliers from driving the 
+entire empirical result, 30-minute returns are winsorized at the 0.5% level.  
+ 
+B. Risk Anomalies 
+It is necessary to specify and identify a degree of noise in a stock return to test whether residual 
+reversal exists at the intraday level. In order to obtain  the level of noise, we partition the 30-
+minute return into two distinct components: RISK and RESIDUAL. RISK corresponds to the 
+part of a total return that can be attributed to firm- specific risk, while RESIDUAL is the rest 
+portion of the total return, which cannot be explained by the firm -specific risk profile. After 
+the partitioning, we use RESIDUAL as a proxy for noise in stock returns. 
+To divide a total return into two components, we first run the following cross-section regression 
+with k anomalies.  
+ 
+Electronic copy available at: https://ssrn.com/abstract=4731947
+
+12 
+ 
+𝑅𝑅𝑅𝑅𝑇𝑇𝑠𝑠,𝑑𝑑,𝑖𝑖= 𝛼𝛼𝑑𝑑,𝑖𝑖+ Σi=1
+k 𝛽𝛽𝑑𝑑,𝑖𝑖,𝑗𝑗𝐴𝐴𝐴𝐴𝐴𝐴𝐴𝐴𝐴𝐴𝐴𝐴𝐴𝐴𝑠𝑠,𝑑𝑑−1,𝑗𝑗+ 𝜀𝜀𝑠𝑠,𝑑𝑑,𝑖𝑖,  (1) 
+ 
+where 𝑅𝑅𝑅𝑅𝑇𝑇𝑠𝑠,𝑑𝑑,𝑖𝑖 is a return of stock 𝑠𝑠, at date  𝑑𝑑,  and period 𝑖𝑖. 𝑗𝑗 denotes anomaly. 
+ 
+We establish the term RISK to represent the portion of the total return that can be accounted 
+for by the fitted values of risk anomalies , and RESIDUAL pertains to the remaining part. In 
+our analysis, an  intercept is incorporated within the  RESIDUAL. Therefore, RISK and 
+RESIDUAL are obtained through the equations below. 
+ 
+𝑅𝑅𝑅𝑅𝑅𝑅𝐾𝐾𝑠𝑠,𝑑𝑑,𝑖𝑖= Σi=1
+k 𝛽𝛽̂𝑑𝑑,𝑖𝑖,𝑗𝑗𝐴𝐴𝐴𝐴𝐴𝐴𝐴𝐴𝐴𝐴𝐴𝐴𝐴𝐴𝑠𝑠,𝑑𝑑−1,𝑖𝑖  (2) 
+𝑅𝑅𝑅𝑅𝑅𝑅𝑅𝑅𝑆𝑆𝑆𝑆𝐴𝐴𝑆𝑆𝑠𝑠,𝑑𝑑,𝑖𝑖= 𝑅𝑅𝑅𝑅𝑇𝑇𝑠𝑠,𝑑𝑑,𝑖𝑖− 𝑅𝑅𝑅𝑅𝑅𝑅𝐾𝐾𝑠𝑠,𝑑𝑑,𝑖𝑖  (3) 
+ 
+Risk anomalies serve as a proxy for risk that explains a firm’s return. We choose 11 anomalies 
+that explain firm -specific risk following Stambaugh et al. (2012)  and four additional return-
+based risk anomalies (Li et al., 2023) . A detailed description of 15 anomalies is reported in 
+Table A1.  
+Because each anomaly has a different  dispersion and scale, to make them aligned  and 
+comparable, we transform, standardize, and normalize  each anomaly by following Kozak, 
+Nagel, and Santosh (2020). We transform each anomaly, 𝐴𝐴𝑠𝑠,𝑑𝑑−1,𝑗𝑗, by using its cross-sectional 
+rank within a given day.  
+ 
+𝐶𝐶𝑅𝑅𝑠𝑠,𝑑𝑑−1,𝑗𝑗= 𝑟𝑟𝐴𝐴𝐴𝐴𝑟𝑟�𝐴𝐴𝑠𝑠,𝑑𝑑−1,𝑗𝑗�
+𝐴𝐴𝑑𝑑−1 + 1  (4) 
+ 
+where 𝑠𝑠, 𝑑𝑑 and 𝑗𝑗 denote stock, date, and anomaly, and 𝐴𝐴𝑑𝑑−1 is the number of stocks on day 
+d-1. 
+Electronic copy available at: https://ssrn.com/abstract=4731947
+
+13 
+ 
+Then, we standardize these transformed value s to have zero mean and then normalize by 
+dividing them by the sum of absolute deviations from the mean.  
+ 
+𝐴𝐴𝐴𝐴𝐴𝐴𝐴𝐴𝐴𝐴𝐴𝐴𝐴𝐴𝑠𝑠,𝑑𝑑−1,𝑗𝑗= 𝐶𝐶𝑅𝑅𝑠𝑠,𝑑𝑑−1,𝑗𝑗− 𝐶𝐶𝑅𝑅����𝑠𝑠,𝑑𝑑−1,𝑗𝑗
+Σ𝑠𝑠=1
+𝑛𝑛𝑑𝑑−1 |𝐶𝐶𝑅𝑅𝑠𝑠,𝑑𝑑−1,𝑗𝑗− 𝐶𝐶𝑅𝑅����𝑠𝑠,𝑑𝑑−1,𝑗𝑗| (5) 
+ 
+C. Sample 
+We employ stocks encompassing the S&P500 index to empirically examine and validate our 
+conjecture concerning the presence of residual reversal in  the intraday market. The rationale 
+for employing S&P500 constituent stocks rests on their relatively high liquidity  and small 
+transaction costs.  
+High liquidity is pivotal in facilitating seamless and rapid order execution, a critical requisite 
+for intraday trading that hinges upon the timely execution of orders within a few seconds. We 
+underscore the consideration of stock liquidity regarding tradability within our sample. How 
+easy it is to buy and sell stocks in our sample is important  because it affects whether we can 
+use our intraday trading strategies effectively. Should our sample stocks lack this characteristic, 
+the viability of our proposed trading strategy would be fundamentally compromised.  
+The second reason why we  stress the importance of selecting S&P500 stocks pertains to the 
+issue of trading costs, particularly manifest in the form of bid-ask spreads. These costs bear the 
+potential to substantially erode the profitability of intraday trading. Given the inherent nature 
+of intraday trading, which entails multiple buy and sell actions within a single day, r educing 
+trading expenses plays a crucial part in the main goal of achieving profitable results. S&P 500 
+stocks are more adequate than other index constituents because they typically have a narrower 
+bid-ask spread (i.e. higher liquidity). 
+Electronic copy available at: https://ssrn.com/abstract=4731947
+
+14 
+ 
+It should be noted that t he composition of the S&P500 index undergoes several alterations 
+throughout the course of a single year. To our best knowledge, for example, these constituents 
+experienced approximately 20 changes during the calendar year of 2022. Given such frequency, 
+it is possible to miss some changes that occurred over the sample period. To avoid the problem 
+of missing changes and keep the consistency of our study, we  employ the end of June as a 
+cutoff date. For instance, consider the situation where we pick out S&P500 stocks at the end 
+of June in the year 2015. These particular stocks become our designated sample, and we then 
+proceed to examine them starting from July 2015 to June 2016. This systematic methodology 
+ensures a certain stability within our study, mitigating a potential problem that could emanate 
+from frequent changes in the constituents of the S&P500 index. 
+ 
+Table 1 shows descriptive statistics of variables that we use in the paper. Panel A provides 
+information on our main dependent variable, the 30-minute return  (RET), RISK, and 
+RESIDUAL. Panel B shows descriptive information on risk anomalies that we employ in the 
+paper. One thing to note is that the residual component comprises 95% of total return s, while 
+the risk component 5% of total returns. 
+ 
+[Insert Table 1 here] 
+ 
+D. Constructing the Residual Reversal Strategy 
+After partitioning stock returns into two distinct constituents, RISK and RESIDUAL, we use 
+RESIDUAL to construct the residual reversal strategy.  We first split the S&P500 stocks into 
+ten groups by RESIDUAL level. The first group, the RESIDUAL decile 1 portfolio, comprises 
+stocks with the lowest RESIDUAL values. Given that RESIDUAL should be corrected for the 
+fair stock price, our anticipation is that stocks in this group a re likely to be undervalued and 
+Electronic copy available at: https://ssrn.com/abstract=4731947
+
+15 
+ 
+yield a positive return in the upcoming period. On the other hand, the RESIDUAL decile 10 
+portfolio contains stocks with the highest RESIDUAL values. Given that the RESIDUAL 
+values for the stocks in this portfolio are positive, stocks in this group a re likely to be 
+overvalued and yield a negative return in the upcoming period. With this in mind, we take a 
+long (short) position on stocks from the decile 1  (10) group using both a value -weighted and 
+an equal-weighted method. 
+We hold the long-short portfolio for the next 30 minutes, one period. After holding one period, 
+we rebalance the portfolios every 30 minutes. Thus, we rebalance the portfolios 13 times in a 
+business day. 
+ 
+III. Does Intraday Residual Reversal Exist? 
+In this section, we first test whether the residual reversal exists at the intraday level and analyze 
+the overall performance of the residual reversal strategy during our sample period. We further 
+analyze whether certain period(s) during a day drives the performance of the strategy. Next, we 
+test whether the performance of the residual reversal strategy is positively associated with the 
+market liquidity and financial crises . Finally, we test how long the residual reversal effects 
+persist over time.  
+ 
+A. The Existence of Residual Reversal 
+In this subsection, we document the presence of residual reversal. To examine our hypothesis 
+that the residual reversal pattern exists at the intraday level, we divide our sample into ten 
+groups by residual level . Subsequently, we track the performance of each  group during the 
+subsequent period to shed light on potential residual reversal. 
+Electronic copy available at: https://ssrn.com/abstract=4731947
+
+16 
+ 
+ 
+[Insert Table 2 here] 
+ 
+The result is reported in Table 2, which illustrates the annualized period returns by each decile 
+portfolio. We annualize the period returns for each decile by multiplying the period returns by 
+252. Panel A shows the result of value -weighted portfolios. Columns (1) and (10)  report the 
+average returns of the lowest and the highest residual portfolios, respectively. The results align 
+with our expectations: the lowest residual portfolio tends to yield a  positive return in the next 
+period. The annualized period return is 5.39% and statistically significant at the 1% level. In 
+contrast, the highest residual portfolio yields  a negative annualized period return of 2.31%. It 
+implies that residuals revert to zero-mean. Column (11) presents the return from a long-short 
+portfolio that involves purchasing the lowest residual portfolio while simultaneously selling 
+the highest residual portfolio. The long-short portfolio generates an average annualized return 
+of 7.7% per period. It means if an investor constructs the portfolio, holds it for one period, and 
+repeats the process over the next one year, the investor expects to earn a return of 7.70%. With 
+thirteen periods in a day, cumulating the individual period returns reveals that the strategy has 
+yielded an annualized return of 162.3%.
+2 
+Seeking further insights, we examine the potential influence of firm size on our results. In Panel 
+B, we duplicate our analysis using equal -weighted portfolios, thus assessing the role of firm  
+size in our outcomes. The results are consistent in that residuals show the reversal pattern. The 
+long-short portfolio return is 8.06%, maintaining its statistical significance at the 1% level. The 
+return in Panel B is slightly higher than the return in Panel A, but the difference is enough to 
+ 
+2 Mathematically, 162.3% = (1 + .077)13 − 1. 
+Electronic copy available at: https://ssrn.com/abstract=4731947
+
+17 
+ 
+reassure us that the residual reversal is not mainly driven by firm size, especially by small firms.  
+Figure 1 graphically illustrates Table 2. Irrespective of the chosen weighting approaches, there 
+is a monotonic downward trend in the annualized period return as the residual decile increases. 
+This pattern r einforces that our hypothesis holds true for deciles other than just the first and 
+last. 
+ 
+[Insert Figure 1 here] 
+ 
+Figure 2 illustrates the cumulative return generated by the residual reversal strategy 
+implemented between July 1996 and December 2022. It reports both the cumulative returns of 
+value-weighted portfolios (blue line) and equal-weighted portfolios (red line). The strategy has 
+produced consistent and large returns. 
+ 
+[Insert Figure 2 here] 
+ 
+B. Residual Reversal by Period 
+We examine if the findings in Table 2 are influenced by specific time periods. It is possible that 
+the residual reversal strategy is valid only for  certain periods.  To address this concern and 
+confirm that our results are consistent across different periods, we present the returns of each 
+decile portfolio across all 13 periods. 
+ 
+Electronic copy available at: https://ssrn.com/abstract=4731947
+
+18 
+ 
+[Insert Table 3 here] 
+ 
+In Panel A in Table 3, which represents portfolio  returns constructed using a value -weighted 
+approach, we show a parallel consistency with the patterns seen in Table 2. The returns in each 
+period gradually decrease as we move from lower to higher deciles. This suggests that, in the 
+subsequent period, higher residual returns tend to be penalized, while lower residual returns 
+are rewarded, heading to fair pricing. Additionally, the long -short portfolios generally yield 
+positive returns in most periods, except for the initial period (10:00 a .m. – 10:30 a.m.). An 
+interesting point here is that, in most periods, the absolute returns in the lowest decile portfolio 
+surpass those in the highest decile portfolio.  
+Turning to Panel B, where we consider equal -weighted portfolios, we observe a significant 
+results across all periods, even including the first period. It implies the results are not driven 
+by relatively small stocks. Furthermore, consistent with  Panel A, the returns in subsequent 
+periods are negatively related to the decile ranks, and the lowest portfolio consistently has  
+higher absolute returns than the highest portfolio. 
+In summary, we conclude that the phenomenon of residual reversal is not confined to specific 
+time periods but rather represents a universal trait within the intraday market. Our findings hold 
+true regardless of the time frame considered, underlining the wi despread nature of this 
+phenomenon. 
+ 
+C. Residual Reversal Strategy and Financial Crisis 
+Nagel (2012) shows that liquidity evaporates during the financial crisis because liquidity 
+providers require a higher expected return from liquidity provision. In addition, Brunnermeier 
+Electronic copy available at: https://ssrn.com/abstract=4731947
+
+19 
+ 
+and Pedersen (2009) use an absolute deviation from the fundamental value as a measure of 
+illiquidity. In other words, residual, which is a proxy for the deviation from the fundamental 
+value in our context, can also be interpreted as illiquidity. Hence, if liquidity dries up during 
+the financial market turmoil, the overall level of residuals across stocks is also likely to increase, 
+and this increased level of residuals can lead to higher returns of the residual reversal strategy. 
+Therefore, in this subsecti on, we examine whether the residual reversal strategy can be 
+predicted with the VIX index by using the VIX index as a financial crisis state variable (Nagel, 
+2012). 
+We divide the VIX index by the square root of 252 to scale it to a daily volatility level. Next, 
+we compute the daily returns of the long-short portfolio from the residual reversal strategy by 
+cumulating returns from period 1 to period 13. Then, we regress our long- short portfolio’s 
+returns on the lagged VIX index. Table 4 shows the results from the following regression: 
+ 
+𝑅𝑅𝑡𝑡= 𝛼𝛼+ 𝛽𝛽𝑉𝑉𝑅𝑅𝑉𝑉𝑡𝑡−5 + 𝛾𝛾𝐶𝐶𝐴𝐴𝐴𝐴𝐶𝐶𝑟𝑟𝐴𝐴𝐴𝐴𝑠𝑠𝑡𝑡−5 + 𝜀𝜀𝑡𝑡 (6) 
+ 
+where 𝑅𝑅𝑡𝑡 is the returns from the residual reversal strategy on a given day t. Following Nagel 
+(2012), control variables are the stock market return and an indicator variable for pre -
+decimalization. Column (1) shows that the residual reversal strategy is positively associated 
+with the lagged VIX index, suggesting that the residual reversal strategy performs better during 
+financial crises. One percentage point increase in the VIX index is associated with a 44 basis 
+points increase in the returns of the residual reversal strategy. Columns (2) and (3) add control 
+variables, and the coefficients on the VIX index remain significant and are changed only 
+marginally. Columns (4) to (6) show the results from the equal- weighted strategy, and the 
+results are consistent with the strategy using the value-weighted approach. 
+Electronic copy available at: https://ssrn.com/abstract=4731947
+
+20 
+ 
+ 
+[Insert Table 4 here] 
+ 
+We further study the performance of the residual reversal strategy each year to see whether the 
+performance is better in years of higher VIX index, especially in financial crises . Figure 3 
+shows each year’s cumulative returns of the residual reversal strategy and each year’s average 
+of the VIX index. First, over the entire sample period, the residual reversal strategy has never 
+had a negative return. More importantly, consistent with our hypothesis, we observe notable 
+increases in both returns and the VIX index during major financial crises. In 2002, the stock 
+market was grappling with the  aftermath of the dot- com bubble burst and the Enron scandal. 
+Similarly, the global financial crisis occurred in 2008, followed by a stock market crash due to 
+the COVID-19 pandemic in 2020. It turns out that our strategy has a higher performance during 
+those crisis periods. It is also worth noting that, besides those years of crises, the VIX index 
+and the performance of residual reversal strategy exhibit surprisingly similar trends across all 
+years, except for 2022. 
+ 
+[Insert Figure 3 here] 
+ 
+In sum, the strong performance of the residual reversal strategy when the VIX index is high, 
+especially during financial crises, suggests that the increased level of residual  leads to higher 
+returns for the residual reversal strategy.  Moreover, the results imply that the returns of the 
+residual reversal strategy capture the compensation to liquidity provision  to the noise 
+component of stock returns. 
+Electronic copy available at: https://ssrn.com/abstract=4731947
+
+21 
+ 
+ 
+D. Persistency 
+Up until now, our observations have consistently indicated  that the phenomenon of residual 
+reversal holds true across all examined time periods. However, our previous analyses focus on 
+returns in the immediate subsequent period (30 minutes), leaving us with an unanswered 
+question regarding the duration of the residual reversal's persistency. To ascertain the extent of 
+this persistency and its implications for price efficiency, we seek to determine the duration it 
+takes for the residual reversal to dissipate. 
+ 
+[Insert Table 5 here] 
+ 
+For this purpose, we construct portfolios based on residual deciles at time t  and then assess 
+their performance over the following 13 individual periods. It should be noted that the returns 
+presented are not cumulative but rather indicative of distinct period returns. After constructing 
+portfolios, we track the performance of the portfolio s for the next 13 period s. It shows the 
+return from t to t+1, from t+1 to t+2, and so forth. This approach avoids the cumulative effect 
+that a sudden surge in one  period could have on subsequent periods. We focus on distinct 
+returns since our aim is to gauge the persistency of the phenomenon precisely. 
+Table 5 shows the residual reversal persistency by decile. The initial row suggests that the first 
+decile portfolio consistently yields positive returns over the subsequent 12 periods, extending 
+over a span of 6 hours after the portfolio construction. In contrast, the tenth row demonstrates 
+that tenth decile portfolios lose their persistency right after the initial period, lasting only 30 
+minutes. The eleventh row reports  the persistence of the long -short portfolio, which persists  
+Electronic copy available at: https://ssrn.com/abstract=4731947
+
+22 
+ 
+for the following 7 periods (equivalent to 3.5 hours).  This portfolio achieves a return of 7.7% 
+in the first period and 0.74% in the seventh period, and then the persistency disappears in the 
+eighth period. Overall, it can be interpreted that stocks with negative residuals take more time 
+than stocks with positive residuals to reach a fair price.  
+ 
+IV . Risk versus Residual  
+ 
+A recent paper from Li et al. (2023) finds that risk momentum exists at the intraday level  and 
+that a trading strategy based on the risk momentum can earn positive profits. Then, it is 
+questionable 1) whether the residual -based reversal strategy can survive after controlling the 
+risk and 2) whether the total return, which is the sum of RISK and RESIDUAL, exhibits 
+momentum or reversal at the intraday frequency in general and which component drives such 
+behavior. In this section, we carefully address these two questions. 
+ 
+A. Does Risk Matter? 
+We first examine the robustness of residual reversal to risk. We posit that the significance o f 
+the residual reversal will not be subsumed by risk. If the residual reversal is driven by risk, then 
+we would observe that the residual reversal strategy becomes unprofitable after controlling the 
+risk component. A double-sorting methodology is employed to test whether our residual-based 
+strategy can survive even after we control  the risk component. Stocks are sorted into quintile 
+portfolios based on RISK. Subsequently, within each RISK quintile, stocks are sorted into 
+quintile portfolios based on the RESIDUAL . In addition, we construct 5 risk-momentum 
+strategies for each RESIDUAL quintile, and 5 residual -reversal strategies for each RISK 
+quintile. Table 6 reports the average returns for each of the 25 (5 ×5) portfolios and 10 long-
+Electronic copy available at: https://ssrn.com/abstract=4731947
+
+23 
+ 
+short portfolios based on risk momentum or residual reversal strategies. 
+ 
+[Insert Table 6 here] 
+ 
+In the 6th row of Table 6, regardless of the level of risk , all residual reversal strategies have 
+positive and significant returns, implying that residual reversals are not dominated  by risk. In 
+addition, the performance of the residual reversal strategy increases as the level of risk  
+decreases. It implies that residual reversal is the most pronounced when the compensable 
+portion of the return is smaller. At the same time, in the 6th column of Table 6, all risk -
+momentum strategies also have positive and significant returns. It implies that risk momentum 
+is also not subsumed by residual. In this case, the performance of the risk momentum strategy 
+is higher when the residual is in the middle  level. This result provides evidence that the risk 
+momentum becomes stronger when the noise  of the return gets closer to zero. Overall, the 
+performance of the residual reversal strategy is slightly better than that of the risk momentum 
+strategy (5.1% vs 3.7% on average) and the combined long- short strategy, which buys 
+RISK5/RESIDUAL1 portfolio and sells RISK1/RESIDUAL5 portfolio, can earn an annualized 
+return of 8.57% (4.95% + 3.62%) per period, which is higher than 7.70%, the performance of 
+residual reversal strategy from Table 2. 
+ 
+B. Determinants of Intraday Patterns in Stock Return 
+Table 6 shows that the risk momentum and residual reversal coexist at the intraday level. In the 
+next analysis, we examine  whether the total return itself exhibits momentum, reversal, or no 
+pattern at the intraday level. We also examine  which component of the return drives the 
+Electronic copy available at: https://ssrn.com/abstract=4731947
+
+24 
+ 
+observed pattern of the total return. To test this idea, we first sort stocks into decile portfolios 
+based on their prior period’s total returns. Then, we construct ten portfolios and one long-short 
+portfolio that takes a long position on the lowest decile portfolio and a short position on the 
+highest decile portfolio. 
+Panel A of Table 7 reports the average return of the 11 portfolios. From decile 1 (LOW) to 
+decile 10 (HIGH), the returns of portfolios are monotonically decreasing, implying the return 
+reversal pattern at the intraday level. This result supports that  the total returns are driven by 
+residual reversal rather than risk momentum. Panel B of Table 7 reports the average return of 
+each of the 11 portfolios over 13 periods. Column (11) shows that the return-based reversal 
+strategy earns negative profits only in the first period, but  in most periods, the strategy shows 
+positive and significant returns. In addition, Column (1) to (10) show that the return becomes 
+smaller from decile 1 (LOW) to decile 10 (HIGH) for the majority of periods . This result 
+provides indirect evidence that the residual reversals drive the behavior of intraday stock 
+returns. 
+ 
+[Insert Table 7 here] 
+ 
+Furthermore, to test the determinants of intraday patterns in stock returns,  we decompose the 
+total returns into RISK and RESIDUAL in each return-based decile. Then, we calculate value-
+weighted RISK and RESIDUAL in each return-based decile. Table 8 reports the results. Note 
+that the sum of RISK and RESIDUAL is equal to the total return. Interestingly, risk momentum 
+and residual reversal coexist even after we sort stocks based on the prior period’s return.  The 
+RISK row demonstrates a positive correlation between the return of decile portfolios and the 
+Electronic copy available at: https://ssrn.com/abstract=4731947
+
+25 
+ 
+decile ranking, indicating a momentum pattern. Conversely, the RESIDUAL row illustrates a 
+negative correlation, indicating a reversal pattern.  
+However, we find that stock returns are driven by residual rather than risk. Specifically, in 
+decile 1 (LOW), the RESIDUAL part earns a positive return of 5.29%, and the RISK part earns 
+a negative return of -1.02%. However, as a whole, decile 1 (LOW) earns a positive return of 
+4.28% (=5.29% -1.02%). It suggests  that the residual reversal dominates the behavior of the 
+total return. Other deciles, including the long -short portfolio, also provide evidence that 
+residual reversal is dominant in determining the behavior of the total returns. Except for the 
+middle deciles (5, 6, and 7), where RISK and RESIDUAL parts are likely to have the same 
+sign, all the signs of total  returns are determined by the sign of the RESIDUAL part. This 
+directly supports that the reversal patterns in stock returns are mainly driven by residual 
+reversals despite the existence of risk momentum. 
+ 
+[Insert Table 8 here] 
+ 
+V. Does Liquidity Matter? 
+Existing research has demonstrated that incorporating liquidity or trading costs into trading 
+strategies, regardless of the frequency of data, tends to nullify the effectiveness of momentum 
+or reversal strategies (Pastor and Stambaugh, 2003; Da et al., 2014). In the context of intraday 
+trading, the significance of liquidity or trading costs is even more pronounced compared to 
+lower-frequency trading due to the substantially higher number of trades conducted. Given that 
+the residual reversal strategy adopted in this study utilizes midpoint values instead of more 
+Electronic copy available at: https://ssrn.com/abstract=4731947
+
+26 
+ 
+conservative quotes (employing ask price for buying stocks and bid price for selling stocks), 
+we seek to examine the strategy's viability under more strict liquidity conditions. 
+Following Heston et al. (2010) , which suggests an appropriate trading cost of 4 basis points 
+(bps), we build upon and extend this premise. We proceed to assess our strategy's performance 
+across varying trading cost scenarios. Through this meticulous investigation, our objective is 
+to assess the robustness of our strategy by considering the influence of trading costs and the 
+constraints posed by liquidity. 
+ 
+[Insert Table 9 here] 
+ 
+The n-th column in Table 9 presents the returns if we held a long-short portfolio for the next n 
+periods after constructing the portfolio by purchasing the residual decile 1 portfolio and selling 
+the decile 10 portfolio at t. For example, the 4th column reports the return attained from holding 
+a long-short portfolio, constructed at time t, for the next four periods (2 hours). 
+From the first row to the fifth row in Table 9, the outcomes with varying trading cost scenarios, 
+ranging from 3 to 7 bps, are provided. The first row reports that when trading cost is 3 bps, the 
+residual reversal strategy yields a positive return if an investor holds the portfolio only for the 
+next two periods (1 hour). The second row to the fifth row shows that the more expensive the 
+trade cost is , the more time it naturally takes for the strategy to generate positive return s. 
+Specifically, with trading costs set at 4 or 5 bps, it necessitates 3 or 5 periods, respectively, to 
+have positive returns. However, in the case of trading costs at 7 bps, the re sidual reversal 
+strategy's viability diminishes. 
+While the strategy employing 30- minute rebalancing intervals is unsustainable, even under a 
+Electronic copy available at: https://ssrn.com/abstract=4731947
+
+27 
+ 
+transaction cost of 3 bps, it should be noted that this approach should not be dismissed entirely. 
+With 13 trades executed daily, it is not unexpected because the cumulative daily cost is 
+approximately 40 bps. Nevertheless, the residual reversal strategy exhibits effectiveness in 
+intraday trading if we hold the portfolio longer than 30 minutes. The effectiveness implies that 
+the performance of the residual reversal strategy is sturdy. 
+ 
+VI. Robustness 
+In this section, we provide the robustness of our results. In particular, we first examine whether 
+our residual reversal strategy is effective with different formation and holding periods. We then 
+test how our strategy performs in different years through subsample analysis. Finally, we 
+analyze whether our strategy is still valid even after we employ different sets of anomalies to 
+estimate RESIDUAL. 
+ 
+A. Different Formation & Holding Periods for Residual Reversal Strategy 
+We assess the residual reversal with different formation and holding periods. In our prior tests, 
+we formed portfolios based on resi duals from the previous period and held them for the 
+subsequent period. In simpler terms, both the formation and holding periods were set to 1. We 
+extend the formation and holding periods from 1 to 13 periods. To examine residual reversal 
+strategies based on different formation and holding periods, we describe a K/M strategy as 
+follows. At each period 𝑖𝑖 , we compute cumulative K -period residuals according to the 
+following equation. 
+ 
+Electronic copy available at: https://ssrn.com/abstract=4731947
+
+28 
+ 
+𝐶𝐶𝐶𝐶𝐴𝐴_𝑅𝑅𝑅𝑅𝑅𝑅𝑠𝑠,𝑑𝑑,𝑖𝑖= ��1 + 𝑅𝑅𝑅𝑅𝑅𝑅𝑅𝑅𝑆𝑆𝑆𝑆𝐴𝐴𝑆𝑆𝑠𝑠,𝑑𝑑,𝑖𝑖−𝑘𝑘�
+𝐾𝐾−1
+𝑘𝑘=0
+− 1 (7) 
+where s, d, and i denote stock, date, and period, respectively . K denotes the formation period 
+and takes the value between 1 and 13. 
+We then sort stocks into decile portfolios based on the cumulative K -period residuals 
+(𝐶𝐶𝐶𝐶𝐴𝐴_𝑅𝑅𝑅𝑅𝑅𝑅𝑠𝑠,𝑑𝑑,𝑖𝑖) and construct value-weighted portfolios. We hold these portfolios for the next 
+M period(s) and then rebalance the portfolios. According to this specification, our baseline 
+strategy in Table 2 is a 1/1 strategy. We test the robustness of our residual -based reversal 
+strategy to different choices of K and M. 
+ 
+[Insert Table 10 here] 
+ 
+Table 10 reports the average return of the long -short portfolio (LOW – HIGH) with 169 ( = 
+13x13) different combinations of K and M. Note that for 𝑀𝑀> 1, we report the average return 
+of the long -short portfolio per period for easy comparison across different columns. For 
+instance, the 1/3 strategy generates a return of 3.88% per period. S ince the 1/3 strategy holds 
+the portfolio for three periods, the total return over three periods is 12.1%. 
+Across all values of K and M, our residual reversal strategies earn positive and significant 
+profits. Since the performance per period is always at its highest when M =1 for any given K, 
+it is always better to choose M = 1 and rebalance the portfolio every period when assuming no 
+transaction cost.  
+ 
+B. Subsample Analysis: By Year 
+Electronic copy available at: https://ssrn.com/abstract=4731947
+
+29 
+ 
+Since our sample period spans more than 25 years, it might be possible that certain years drive 
+the previous results or that each year has different results. To address this concern, our second 
+robustness test is a subsample analysis by year. We replicate Table 2 for each year, and Panel 
+A and B of Table 11 report the results for value -weighted and equal -weighted returns, 
+respectively. Except for the year 1997 in Panel A, we find residual reversal exists, and residual 
+reversal strategies earn positive and statistically significant profits in all years regardless of the 
+weighting scheme. It is worth noting that in the first 12 years (1996 – 2007), the residual 
+reversal strategy based on the equal weighting scheme yields higher returns than the value -
+weighting scheme, whereas, in recent  years (2008 – 2022), the strategy with the value -
+weighting scheme earns higher returns than the strategy with the equal weighting scheme. This 
+trend implies that the residual reversal effects at the intraday level were stronger for relatively 
+small stocks in the S&P500 index in the first 12 years, and after th at, the effects became 
+stronger and stronger in the large stocks. As we have shown in Figure 3, it is interesting that 
+the profitability of residual reversal strategies experiences a sharp increase in the case of market 
+downturns: the early 2000s started by the dot -com bubble, the 2008 financial crisis, and 2020 
+due to COVID- 19. Consistent with the conclusion of the result from Section 4.C, t he result 
+implies that the performance of the residual reversal strat egy captures the elevated 
+compensation of liquidity provision during financial downturns. 
+ 
+[Insert Table 11 here] 
+ 
+C. Different Sets of Anomalies 
+Although we follow Li et al. (2023) to estimate residuals, the choice of 1 5 anomalies can be 
+Electronic copy available at: https://ssrn.com/abstract=4731947
+
+30 
+ 
+arbitrary. It is possible that our result s would become insignificant if other  sets of anomalies 
+were used in estimating RESIDUAL. In addition, if the current set of 15 anomalies does not 
+appropriately capture the risk component, then RESIDUAL can be overestimated. To address 
+this concern, we examine the performance of the residual reversal strategy based on different 
+sets of anomalies. In particular, we use Open Source Asset Pricing from Chen and Zimmermann 
+to construct more than 200 anomalies
+3. We select anomalies with ‘Clear predictability’ and 
+‘Good replication’ indicators from the full set of anomalies.  Since some anomalies contain 
+many missing values, we choose the top 100 anomali es based on the fraction of non- missing 
+values and further exclude 3 of them due to no observations in certain years. Our final set 
+contains 97 anomalies, and we randomly choose 15 anomalies from the final set. We add those 
+selected 15 anomalies to our original set of anomalies and estimate residuals based on 30 (= 15 
++ 15) anomalies. Then, we estimate residuals based on the new set of anomalies and examine 
+the performance of the residual reversal strategy. We repeat this operation 15 times, and Table 
+12 shows the results of five of them. A full list of five sets of randomly selected anomalies is 
+reported in Table A2. The other fifteen cases are untabulated , but they have consistent results 
+with the tabulated results. Panel A and B report the value-weighted and equal-weighted returns, 
+respectively. In all cases, the results show the existence of the pattern of residual reversal. From 
+Column (1) to Column (10), returns are monotonically decreasing, and the magnitude of returns 
+is similar to or even stronger than the original result from Table 2. Column (11) shows that 
+regardless of the set of anomalies and weighting scheme, all the residual reversal strategies 
+earn significant returns.  Hence, the results confirm that the residual reversal pattern and the 
+significant performance of the residual reversal strategy is robust to different sets of anomalies 
+used in estimating RESIDUAL. 
+ 
+3 openassetpricing.com 
+Electronic copy available at: https://ssrn.com/abstract=4731947
+
+31 
+ 
+ 
+[Insert Table 12 here] 
+ 
+VII. Conclusion 
+Since the stock market moves toward reducing noise, a residual component of stock returns, 
+which captures the inherent noise, should exhibit reversals in subsequent periods . Consistent 
+with this conjecture, we posit the existence of residual reversal effects at the intraday level and 
+the effectiveness of the residual reversal strategy . We decompose the stock returns into risk 
+and residual components by a cross-sectional regression of 30-minute returns on the set of well-
+known risk anomalies. We show the existence of the residual reversal pattern: Stocks with a 
+low level of residual  have positive returns , and stock s with a high level of residual  have 
+negative returns. We then show that the residual reversal strategy, which buys the stock with 
+the lowest residuals and sells the stock with the highest residuals, earn s an annualized return 
+of 7.7% on average. We find that our strategy earns positive and significant returns in almost 
+all periods rather than a few periods that drive overall profitability. These results suggest that 
+the market moves in a way that decreases the absolute magnitude of the noise part of returns. 
+To see this more clearly , we analyze how long the residual reversal effects persist over time 
+and show the existence of persistency over a few hours. 
+Next, we study the behavior of intraday stock returns to compare the impact of risk and residual 
+components on stock returns . We show that risk momentum and residual reversal effects 
+coexist, and neither strategy drives  the other. However, w e f ind that stock returns exhibit 
+reversals at intraday frequency . We then show  that the reversal pattern of stock returns is 
+Electronic copy available at: https://ssrn.com/abstract=4731947
+
+32 
+ 
+mainly driven by the residual component by showing that the behavior of stock returns is 
+closely aligned with that of residuals. 
+Finally, we test whether the residual reversal strategy can survive even after incorporating the 
+transaction costs. Prior literature finds that most of the trading strategies cannot yield positive 
+profits when the transaction costs are considered. We find that the residual reversal strategy is 
+still profitable if we increase the holding period to longer than 1 hour. Although our strategy 
+loses profitability if we increase the transaction costs to 7bp, the significant profitability of our 
+strategy in other cases provides evidence of how sturdy the residual reversal pattern is.  
+Overall, our results shed light on the existence of residual reversal effects at the intraday 
+frequency and the remarkable profitability of the residual reversal strategy. While prior 
+literature primarily focuses on how large the noise is at different frequencies, the evidence in 
+this paper emphasizes the role of noise in understanding the behavior of stock returns at a high 
+frequency. The fundamental mean-reverting property of noise not only helps us to identify the 
+profitability strategy but also drives the behavior of stock returns.  
+  
+Electronic copy available at: https://ssrn.com/abstract=4731947
+
+33 
+ 
+Figure 1. The Performance of Decile Portfolios by Residual. 
+This figure shows the annualized period return s for each decile portfolio based on the residual 
+component of returns. We report both the returns of value -weighted portfolios (blue line) and equal -
+weighted portfolios (red line). The sample period is from July 1996 to December 2022. 
+  
+Electronic copy available at: https://ssrn.com/abstract=4731947
+
+34 
+ 
+ 
+Figure 2. The Cumulative Performance of the Residual Reversal Strategy. 
+This figure plots the cumulative returns of the residual reversal strategy from July 1996 to December 
+2022. We report both the cumulative returns of value-weighted portfolios (blue line) and equal-weighted 
+portfolios (red line). The unit of the cumulative returns (y-axis) is the log with the base of 10. 
+  
+Electronic copy available at: https://ssrn.com/abstract=4731947
+
+35 
+ 
+ 
+Figure 3. The Performance of the Residual Reversal Strategy and the VIX Index by Year. 
+This figure shows each year’s cumulative returns of the residual reversal strategy and each year’s 
+average of the VIX index from July 1996 to December 2022. We report both the cumulative returns of 
+value-weighted portfolios (blue bar) and equal-weighted portfolios (red bar). The green line represents 
+the average of the VIX index. The unit of both the cumulative returns and volatilities is in percent. 
+ 
+  
+Electronic copy available at: https://ssrn.com/abstract=4731947
+
+36 
+ 
+Table 1. Descriptive Statistics 
+This table reports  the descriptive statistics from July 1996 to December 2022. Panel A shows the 
+distribution of stocks’ one period (30 minutes) returns (RET) and their two components: R ISK and 
+RESIDUAL. RISK and RESIDUAL are computed according to Equations ( 1) and (5). Panel B shows 
+the distribution of 11 anomalies from Stambaugh et al. (2012) and 4 additional anomalies from Li et al. 
+(2023). Details of the anomaly variables are stated in Table A1. Returns are annualized.  
+Panel A: Summary Statistics of Return Variables 
+     N   Mean   SD   p10   Median   p90 
+ RET 27,656,092 0.80 8.59 -126.35 0.00 127.23 
+ RISK 27,656,092 0.04 2.96 -44.21 -0.00 44.43 
+ RESIDUAL 27,656,092 0.76 8.20 -124.75 0.49 125.51 
+ 
+Panel B: Summary Statistics of Anomalies 
+     N   Mean   SD   p10  Median   p90 
+ Accruals 27,656,022 -0.01 0.10 -0.10 -0.02 0.08 
+ Asset Growth 27,656,092 0.11 0.34 -0.06 0.05 0.29 
+ Beta 27,656,006 1.02 0.60 0.35 0.94 1.76 
+ Book-to-market 27,656,053 0.49 0.74 0.10 0.34 0.98 
+ Composite equity issues 27,656,092 0.04 0.25 -0.06 -0.00 0.10 
+ Gross profitability 27,656,092 0.34 0.21 0.11 0.30 0.63 
+ Investment-to-assets 27,656,078 0.05 0.14 -0.02 0.03 0.14 
+ Momentum 27,655,983 0.12 0.36 -0.27 0.10 0.49 
+ Net operating assets 27,656,079 0.62 0.31 0.33 0.62 0.85 
+ Net stock issues 27,656,092 0.00 0.11 -0.05 -0.00 0.04 
+ O-score 27,656,079 -5.58 1.52 -6.68 -5.54 -4.61 
+ Return on assets 27,656,091 0.02 0.03 0.00 0.02 0.04 
+ Reversal 27,656,086 0.01 0.10 -0.10 0.01 0.12 
+ Size 27,656,092 16.34 1.33 14.80 16.30 18.02 
+ 
+ 
+  
+Electronic copy available at: https://ssrn.com/abstract=4731947
+
+37 
+ 
+Table 2. Residual Reversal  
+This table shows the period returns (Ret) of portfolios by residual  deciles. We form decile portfolios 
+every period (30 minutes) based on the residuals computed from Equations (1) to (5). When estimating 
+the level of residuals, w e use 11 anomalies from Stambaugh et al. (2012)  and 4 additional anomalies  
+from Li et al. (2023). The first period is from 10:00 to 10:30, and the last (13th) period is from 16:00 to 
+10:00. Portfolio LOW (HIGH) is the portfolio of stocks with the lowest (highest) residuals. The column 
+L-H refers to the return difference between portfolio LOW and portfolio HIGH. Panel A and Panel B 
+report the annualized period returns of value-weighted and equal-weighted portfolios. The period return 
+refers to a portfolio return for holding one period (30 minutes).  All returns in the table are reported in 
+percentage terms. Newey and West (1987) robust t -statistics are reported in parentheses. ***, and **, 
+and * indicate statistical significance at the 1%, 5%, and 10% levels, respectively. The sample period is 
+from July 1996 to December 2022.  
+Panel A: Residual Reversal, Value-weighted  
+      (1)   (2)   (3)   (4)   (5)   (6)   (7)   (8)   (9)   (10)   (11) 
+       LOW    2    3    4    5    6    7    8    9   HIGH    L-H 
+ Ret 5.39*** 2.35*** 1.65*** 0.97*** 0.67*** 0.38 -0.19 -0.47* -0.80*** -2.31*** 7.70*** 
+   (17.31) (8.64) (6.40) (3.87) (2.73) (1.56) (-0.77) (-1.83) (-2.98) (-7.63) (31.56) 
+ 
+ 
+Panel B: Residual Reversal, Equal-weighted  
+      (1)   (2)   (3)   (4)   (5)   (6)   (7)   (8)   (9)   (10)   (11) 
+       LOW    2    3    4    5    6    7    8    9   HIGH    L-H 
+ Ret 5.71*** 2.34*** 1.55*** 0.93*** 0.60** 0.30 -0.15 -0.29 -0.68*** -2.35*** 8.06*** 
+   (19.30) (9.09) (6.34) (3.89) (2.55) (1.27) (-0.62) (-1.18) (-2.68) (-8.09) (45.67) 
+ 
+Electronic copy available at: https://ssrn.com/abstract=4731947
+
+38 
+ 
+Table 3. Residual Reversal by Period 
+This table shows the period returns of portfolios by residual deciles for each period. We form decile portfolios every period (30 minutes) based on the residuals 
+computed from Equations (1) to (5). When estimating the level of residuals, we use 11 anomalies from Stambaugh et al. (2012) and 4 additional anomalies from 
+Li et al. (2023). The first period is from 10:00 to 10:30, and the last (13th) period is from 16:00 to 10:00. Portfolio LOW (HIGH) is the portfolio of stocks with 
+the lowest (highest) residuals. The column L -H refers to the return difference between portfolio LOW and portfolio HIGH. Panel A and Panel B report the 
+annualized period returns of value -weighted and equal-weighted portfolios. The period return refers to a portfolio return for holding one period (30 minutes). 
+All returns in the table are reported in percentage terms. Newey and West (1987) robust t -statistics are reported in parentheses. ***, and **, and * indicate 
+statistical significance at the 1%, 5%, and 10% levels, respectively. The sample period is from July 1996 to December 2022. 
+Panel A: Residual Reversal by period, Value-weighted 
+ (1) (2) (3) (4) (5) (6) (7) (8) (9) (10) (11) 
+ LOW 2 3 4 5 6 7 8 9 HIGH L-H 
+10:00 -0.52 -0.18 0.43 0.21 0.63 0.11 -0.29 -0.71 -0.25 -0.64 0.12 
+- 10:30 (-0.41) (-0.16) (0.42) (0.21) (0.64) (0.11) (-0.29) (-0.70) (-0.23) (-0.55) (0.12) 
+10:30 2.27** -0.41 -0.39 -0.54 -0.60 -0.38 -0.90 -0.16 0.42 -1.61 3.88*** 
+- 11:00 (2.04) (-0.43) (-0.44) (-0.64) (-0.73) (-0.45) (-1.06) (-0.18) (0.45) (-1.49) (4.35) 
+11:00 2.26** 0.24 0.70 -0.37 -0.54 -0.09 0.36 0.47 -0.54 -1.47 3.73*** 
+- 11:30 (2.40) (0.30) (0.94) (-0.51) (-0.76) (-0.12) (0.49) (0.64) (-0.68) (-1.57) (4.94) 
+11:30 3.24*** 0.26 0.57 0.39 0.46 0.19 0.43 0.41 0.60 0.94 2.30*** 
+- 12:00 (3.62) (0.35) (0.83) (0.56) (0.69) (0.29) (0.65) (0.59) (0.80) (1.11) (3.25) 
+12:00 2.07** 0.04 -0.32 -0.27 -0.64 -0.87 -1.34** -1.02 -1.14* -2.00** 4.07*** 
+- 12:30 (2.46) (0.05) (-0.48) (-0.42) (-1.03) (-1.39) (-2.15) (-1.58) (-1.65) (-2.49) (6.20) 
+12:30 4.32*** 2.15*** 1.75*** 1.35** 1.14* 1.24** 0.87 0.93 0.91 0.30 4.02*** 
+- 13:00 (5.45) (3.22) (2.78) (2.21) (1.91) (2.06) (1.41) (1.47) (1.38) (0.39) (6.83) 
+13:00 2.97*** 0.83 0.62 0.24 0.09 -0.61 -1.09* -1.23** -0.84 -2.03*** 5.01*** 
+- 13:30 (3.82) (1.26) (0.98) (0.39) (0.15) (-1.04) (-1.79) (-1.99) (-1.31) (-2.65) (8.64) 
+13:30 3.01*** 0.46 0.45 -0.20 -0.22 -0.36 -1.07* -1.28* -1.36* -2.82*** 5.83*** 
+- 14:00 (3.59) (0.65) (0.68) (-0.31) (-0.34) (-0.58) (-1.67) (-1.92) (-1.92) (-3.43) (9.45) 
+14:00 2.43*** 0.70 0.03 -0.63 -0.60 -1.34* -1.58** -1.69** -1.57** -3.01*** 5.44*** 
+- 14:30 (2.69) (0.90) (0.04) (-0.88) (-0.86) (-1.90) (-2.17) (-2.31) (-2.00) (-3.28) (8.54) 
+14:30 5.13*** 3.53*** 2.71*** 2.00*** 1.67** 1.21 1.11 0.55 -0.05 0.51 4.62*** 
+- 15:00 (5.41) (4.35) (3.47) (2.67) (2.23) (1.64) (1.50) (0.72) (-0.07) (0.55) (7.07) 
+15:00 4.29*** 2.97*** 2.01** 1.35 1.17 1.00 0.88 -0.04 0.09 -1.38 5.67*** 
+- 15:30 (4.14) (3.27) (2.30) (1.59) (1.40) (1.21) (1.04) (-0.05) (0.10) (-1.35) (8.30) 
+15:30 7.43*** 2.01* 0.96 0.38 -0.55 -1.78* -2.76*** -2.54** -4.61*** -6.89*** 14.32*** 
+- 16:00 (6.44) (1.91) (0.95) (0.38) (-0.56) (-1.80) (-2.78) (-2.52) (-4.33) (-6.01) (18.42) 
+16:00 31.28*** 18.09*** 11.98*** 8.79*** 6.75*** 6.71*** 2.89 0.22 -2.04 -10.00*** 41.28*** 
+- 10:00 (14.09) (8.99) (6.19) (4.63) (3.65) (3.62) (1.53) (0.11) (-1.03) (-4.55) (22.45) 
+ 
+Electronic copy available at: https://ssrn.com/abstract=4731947
+
+39 
+ 
+Panel B: Residual Reversal by period, Equal-weighted  
+ (1) (2) (3) (4) (5) (6) (7) (8) (9) (10) (11) 
+ LOW 2 3 4 5 6 7 8 9 HIGH L-H 
+10:00 3.27*** 1.55 1.74* 0.42 0.42 -0.45 -1.24 -1.92* -2.80*** -4.45*** 7.72*** 
+- 10:30 (2.76) (1.46) (1.73) (0.43) (0.44) (-0.47) (-1.28) (-1.95) (-2.65) (-3.83) (9.67) 
+10:30 2.37** -0.92 -1.26 -0.86 -0.93 -0.50 -0.75 -0.08 0.24 -1.44 3.81*** 
+- 11:00 (2.20) (-1.01) (-1.52) (-1.07) (-1.18) (-0.62) (-0.93) (-0.10) (0.27) (-1.38) (5.72) 
+11:00 2.40*** 0.03 0.08 -0.31 -0.18 -0.47 -0.19 0.36 -0.20 -1.60* 4.00*** 
+- 11:30 (2.59) (0.04) (0.12) (-0.45) (-0.26) (-0.69) (-0.28) (0.51) (-0.27) (-1.74) (6.87) 
+11:30 2.89*** 0.42 0.89 0.09 0.70 0.47 0.44 0.70 1.30* 1.12 1.78*** 
+- 12:00 (3.36) (0.60) (1.34) (0.14) (1.11) (0.76) (0.69) (1.08) (1.87) (1.38) (3.31) 
+12:00 2.36*** 0.16 -0.21 -0.42 -0.46 -0.48 -0.86 -0.52 -0.68 -1.15 3.51*** 
+- 12:30 (2.96) (0.24) (-0.33) (-0.69) (-0.78) (-0.80) (-1.42) (-0.84) (-1.02) (-1.47) (7.16) 
+12:30 4.62*** 2.27*** 1.56*** 1.45** 0.86 0.87 1.02* 1.08* 1.43** 0.66 3.95*** 
+- 13:00 (6.24) (3.61) (2.64) (2.53) (1.53) (1.55) (1.78) (1.84) (2.31) (0.93) (8.86) 
+13:00 3.57*** 0.96 0.71 0.22 0.23 -0.33 -0.61 -0.89 -0.64 -1.98*** 5.55*** 
+- 13:30 (4.80) (1.52) (1.19) (0.39) (0.42) (-0.60) (-1.10) (-1.53) (-1.04) (-2.65) (12.00) 
+13:30 2.62*** 0.52 0.10 -0.34 -0.47 -0.66 -0.86 -1.04* -1.43** -2.49*** 5.11*** 
+- 14:00 (3.30) (0.79) (0.16) (-0.55) (-0.77) (-1.11) (-1.40) (-1.66) (-2.15) (-3.16) (11.01) 
+14:00 3.72*** 1.25* 0.38 -0.05 -0.68 -0.73 -1.05 -1.35* -1.77** -3.39*** 7.11*** 
+- 14:30 (4.34) (1.69) (0.54) (-0.07) (-1.03) (-1.10) (-1.56) (-1.93) (-2.41) (-3.93) (14.91) 
+14:30 5.88*** 3.46*** 2.83*** 2.29*** 1.84*** 1.34* 1.34* 0.77 0.44 -0.40 6.28*** 
+- 15:00 (6.61) (4.51) (3.86) (3.24) (2.62) (1.94) (1.92) (1.06) (0.60) (-0.46) (13.40) 
+15:00 5.54*** 3.32*** 2.67*** 2.05*** 1.61** 0.92 0.70 0.27 -0.21 -1.61* 7.15*** 
+- 15:30 (5.66) (3.94) (3.33) (2.65) (2.07) (1.19) (0.90) (0.34) (-0.24) (-1.67) (14.33) 
+15:30 9.46*** 3.79*** 2.02** 0.90 -0.02 -0.86 -1.76** -2.50*** -3.60*** -6.00*** 15.46*** 
+- 16:00 (9.13) (4.07) (2.24) (1.02) (-0.02) (-0.97) (-1.98) (-2.80) (-3.86) (-5.88) (29.19) 
+16:00 25.69*** 13.66*** 8.73*** 6.63*** 4.89*** 4.79*** 1.91 1.39 -1.00 -7.83*** 33.52*** 
+- 10:00 (11.95) (7.06) (4.65) (3.59) (2.68) (2.63) (1.04) (0.75) (-0.52) (-3.68) (27.60) 
+ 
+ 
+Electronic copy available at: https://ssrn.com/abstract=4731947
+
+40 
+ 
+Table 4. Residual Reversal and VIX 
+This table shows the relationship between  the performance of the residual reversal strategy and market downturns proxied by the VIX index. We form decile 
+portfolios every period (30 minutes) based on the residuals computed from Equations (1) to (5). When estimating the level of residuals, we use 11 anomalies 
+from Stambaugh et al. (2012) and 4 additional anomalies from Li et al. (2023). The first period is from 10:00 to 10:30, and the last (13 th) period is from 16:00 
+to 10:00. The residual reversal strategy is constructed by taking the long position on the lowest decile portfolio and the short positi on on the highest decile 
+portfolio. The VIX index is divided by √252  to match with the daily level returns. Pre  Decimalization is an indicator variable equal to 1 before the 
+decimalization. MKT is the value-weighted stock market return from the CRSP database. Columns (1) to (3) refer to the coefficients from the regression of the 
+value-weighted long-short portfolio’s returns on the VIX index. Columns (4) to (6) refer to the coefficients from the regression of the equal-weighted long-short 
+portfolio’s returns on the VIX index. Newey and West (1987) robust t-statistics are reported in parentheses. ***, and **, and * indicate statistical significance 
+at the 1%, 5%, and 10% levels, respectively. The sample period is from July 1996 to December 2022. 
+Residual Reversal and VIX  
+ Value-weighted Equal-weighted 
+    (1) (2) (3) (4) (5) (6) 
+ VIX 0.44*** 0.48*** 0.48*** 0.36*** 0.36*** 0.36*** 
+   (8.25) (9.41) (9.41) (9.60) (9.18) (9.10) 
+ Pre Decimalization  -0.00*** -0.00***  0.00 0.00 
+    (-5.95) (-5.95)  (0.42) (0.42) 
+ MKT   0.00   -0.00 
+     (0.28)   (-0.01) 
+ Constant -0.00*** -0.00*** -0.00*** -0.00 -0.00 -0.00 
+   (-2.80) (-2.92) (-2.94) (-1.11) (-1.17) (-1.15) 
+ Observations 6628 6623 6623 6628 6623 6623 
+ Adj R2 0.05 0.06 0.06 0.06 0.06 0.06 
+ 
+  
+Electronic copy available at: https://ssrn.com/abstract=4731947
+
+41 
+ 
+Table 5. Persistency of Residual Reversal  
+This table shows the persistency of portfolios by residual deciles. We form decile portfolios every period (30 minutes) based on the residuals computed from 
+Equations (1) to (5). When estimating the level of residuals, we use 11 anomalies from Stambaugh et al. (2012) and 4 additional anomalies from Li et al. (2023). 
+The first period is from 10:00 to 10:30, and the last (13 th) period is from 16:00 to 10:00.  The column Next1 refers to the returns from the first period after the 
+portfolio formation. The column Next2 refers to the returns from the second period after the portfolio formation, and the remaining columns refer to the returns 
+from the third period to the 13th period after the portfolio formation, respectively. The row LOW (HIGH) refers to the annualized return of the portfolio of the 
+stocks with the lowest (highest) residuals. The row L – H refers to the return difference between portfolio LOW and portfolio HIGH. All returns in the table are 
+reported in percentage terms. Newey and West (1987) robust t -statistics are reported in parentheses. ***, and **, and * indicate statistical significance at the 
+1%, 5%, and 10% levels, respectively. The sample period is from July 1996 to December 2022. 
+Persistency of Residual Reversal Strategy  
+      (1)   (2)   (3)   (4)   (5)   (6)   (7)   (8)   (9)   (10)   (11)   (12)   (13) 
+ Next1 Next2 Next3 Next4 Next5 Next6 Next7 Next8 Next9 Next10 Next11 Next12 Next13 
+LOW 5.39*** 2.20*** 1.96*** 1.09*** 1.71*** 1.53*** 1.18*** 0.97*** 1.08*** 1.12*** 0.89*** 0.76** -1.02*** 
+   (17.31) (6.41) (5.67) (3.23) (5.07) (4.58) (3.52) (2.86) (3.23) (3.32) (2.64) (2.24) (-3.03) 
+2 2.35*** 1.36*** 1.01*** 0.94*** 0.75** 1.19*** 1.06*** 0.92*** 0.94*** 0.84*** 0.97*** 0.88*** 0.12 
+   (8.64) (4.64) (3.42) (3.21) (2.55) (3.97) (3.68) (3.15) (3.23) (2.87) (3.26) (2.91) (0.39) 
+3 1.65*** 1.10*** 0.83*** 0.70** 1.08*** 1.03*** 0.91*** 0.76*** 0.89*** 1.18*** 0.85*** 0.58** 0.08 
+   (6.40) (4.01) (3.02) (2.49) (3.87) (3.74) (3.30) (2.74) (3.16) (4.14) (3.06) (2.11) (0.27) 
+4 0.97*** 0.80*** 0.59** 0.72*** 0.81*** 0.86*** 0.68** 0.89*** 0.85*** 0.58** 0.88*** 0.92*** 0.42 
+   (3.87) (3.01) (2.15) (2.61) (3.01) (3.18) (2.50) (3.27) (3.10) (2.13) (3.26) (3.40) (1.55) 
+5 0.67*** 0.43 0.60** 0.74*** 0.81*** 0.45* 0.80*** 0.87*** 0.59** 0.88*** 0.72*** 0.67** 0.53** 
+   (2.73) (1.60) (2.25) (2.79) (2.99) (1.67) (3.00) (3.26) (2.20) (3.29) (2.70) (2.45) (2.00) 
+6 0.38 0.54** 0.40 0.86*** 0.48* 0.69*** 0.60** 0.56** 0.61** 0.63** 0.61** 0.53** 0.76*** 
+   (1.56) (2.04) (1.51) (3.25) (1.77) (2.58) (2.24) (2.08) (2.26) (2.35) (2.23) (1.97) (2.82) 
+7 -0.19 0.11 0.49* 0.47* 0.39 0.40 0.56** 0.50* 0.60** 0.57** 0.50* 0.87*** 0.98*** 
+   (-0.77) (0.41) (1.86) (1.75) (1.44) (1.51) (2.05) (1.84) (2.15) (2.11) (1.84) (3.19) (3.63) 
+8 -0.47* 0.43 0.53* 0.62** 0.68** 0.57** 0.47* 0.48* 0.63** 0.59** 0.69** 0.54* 1.15*** 
+   (-1.83) (1.57) (1.96) (2.28) (2.49) (2.05) (1.70) (1.76) (2.28) (2.15) (2.53) (1.96) (4.19) 
+9 -0.80*** 0.09 0.41 0.55* 0.26 0.48* 0.43 0.59** 0.39 0.45 0.65** 0.65** 1.70*** 
+   (-2.98) (0.32) (1.43) (1.90) (0.89) (1.66) (1.43) (2.03) (1.34) (1.57) (2.24) (2.26) (5.84) 
+HIGH -2.31*** 0.09 0.41 0.36 0.52 0.14 0.44 0.70** 0.58* 0.60* 0.52 0.59* 2.23*** 
+   (-7.63) (0.26) (1.24) (1.09) (1.57) (0.41) (1.35) (2.10) (1.78) (1.82) (1.61) (1.81) (6.96) 
+L - H 7.70*** 2.12*** 1.55*** 0.74*** 1.19*** 1.40*** 0.74*** 0.27 0.50** 0.52** 0.37 0.16 -3.26*** 
+   (31.57) (8.04) (6.00) (2.90) (4.58) (5.53) (2.96) (1.04) (1.98) (2.08) (1.49) (0.66) (-12.56) 
+ 
+  
+Electronic copy available at: https://ssrn.com/abstract=4731947
+
+42 
+ 
+Table 6. Residual Reversal and Risk Momentum 
+This table shows the returns of 25 portfolios double sorted by the risk and residual components computed from Equations (1) to (5) . When estimating both 
+components, we use 11 anomalies from Stambaugh et al. (2012) and 4 additional anomalies from Li et al. (2023).  We first sort stocks into five quintiles based 
+on the RISK. Then, within each RISK quintile, we sort stocks into five portfolios sorted by RESIDUAL. Starting from 10 A.M., portfolios are formed every 30 
+minutes during trading hours (until 4 P.M.). The first period is from 10:00 to 10:30, and the last (13 th) period is from 16:00 to 10:00. RESIDUAL1 (RISK1) is 
+the portfolio of stocks with the lowest residuals (risks). RESIDUAL5 (RISK5) is the portfolio of stocks with the highest residuals (risks). The column 5-1 refers 
+to the return difference between RISK5 and RISK1. The row 1-5 refers to the return difference between RESIDUAL1 and RESIDUAL5. All returns in the table 
+are annualized period return s and are reported in percentage terms. Newey and West (1987) robust t -statistics are reported in parentheses. ***, and **, and * 
+indicate statistical significance at the 1%, 5%, and 10% levels, respectively. The sample period is from July 1996 to December 2022. 
+Double-sorting RISK/RESIDUAL  
+ (1) (2) (3) (4) (5) (6) 
+ RISK1 RISK2 RISK3 RISK4 RISK5 5 – 1 
+RESIDUAL1 3.15*** 3.05*** 3.36*** 3.90*** 4.95*** 1.79*** 
+ (8.65) (9.82) (11.22) (13.31) (16.18) (5.35) 
+RESIDUAL2 -0.84*** 0.41 1.00*** 1.76*** 3.20*** 4.03*** 
+ (-2.62) (1.48) (3.69) (6.51) (11.07) (13.32) 
+RESIDUAL3 -1.79*** -0.44 0.18 1.63*** 2.54*** 4.33*** 
+ (-5.99) (-1.62) (0.67) (6.04) (8.57) (14.68) 
+RESIDUAL4 -2.33*** -0.96*** -0.35 0.87*** 2.29*** 4.61*** 
+ (-7.97) (-3.56) (-1.28) (3.13) (7.21) (15.05) 
+RESIDUAL5 -3.62*** -1.91*** -1.45*** -0.24 0.14 3.76*** 
+ (-11.85) (-6.56) (-4.93) (-0.78) (0.40) (11.31) 
+1 – 5 6.77*** 4.96*** 4.80*** 4.14*** 4.80***  
+ (23.98) (19.22) (18.68) (16.35) (17.30)  
+ 
+  
+Electronic copy available at: https://ssrn.com/abstract=4731947
+
+43 
+ 
+Table 7. Intraday Return-Based Patterns 
+This table shows the returns (Ret) of decile portfolios sorted by the prior period’s returns. We form value-weighted decile portfolios every 30 minutes based on 
+the prior period’s returns. The first period is from 10:00 to 10:30, and the last (13 th) period is from 16:00 to 10:00. Portfolio LOW (HIGH) is the portfolio of 
+stocks with the lowest (highest) returns in the prior period. The column L-H refers to the return difference between portfolio LOW and portfolio HIGH. Panel 
+A reports the annualized period returns of value-weighted portfolios, and Panel B reports the annualized period returns of equal-weighted portfolios. The period 
+return refers to a portfolio return for holding one period (30 minutes). All returns in t he table are reported in percentage terms. Newey and West (1987) robust 
+t-statistics are reported in parentheses. ***, and **, and * indicate statistical significance at the 1%, 5%, and 10% levels, respectively. The sample period is 
+from July 1996 to December 2022. 
+Panel A: Return Reversal, Value-weighted  
+ (1) (2) (3) (4) (5) (6) (7) (8) (9) (10) (11) 
+ LOW 2 3 4 5 6 7 8 9 HIGH L-H 
+Ret 4.28*** 1.43*** 0.75*** 0.45* 0.51** 0.75*** 0.55** -0.01 -0.05 -1.12*** 5.39*** 
+ (13.12) (5.15) (2.89) (1.79) (2.05) (3.00) (2.18) (-0.04) (-0.18) (-3.55) (18.66) 
+ 
+ 
+Panel B: Return Reversal by Period, Value-weighted  
+ (1) (2) (3) (4) (5) (6) (7) (8) (9) (10) (11) 
+ LOW 2 3 4 5 6 7 8 9 HIGH L-H 
+10:00 -3.05** -1.38 -1.06 -0.16 -0.12 0.16 0.50 0.03 1.37 0.55 -3.73*** 
+- 10:30 (-2.26) (-1.27) (-1.04) (-0.16) (-0.12) (0.16) (0.51) (0.03) (1.17) (0.44) (-2.97) 
+10:30 0.74 -2.12** -2.03** -2.26*** -0.29 0.55 0.98 1.15 1.55 0.38 0.36 
+- 11:00 (0.62) (-2.18) (-2.27) (-2.63) (-0.35) (0.65) (1.15) (1.27) (1.60) (0.33) (0.32) 
+11:00 0.95 -1.14 -0.54 -0.69 -0.37 0.16 0.37 1.37* 0.92 -0.08 1.03 
+- 11:30 (0.93) (-1.36) (-0.72) (-0.96) (-0.52) (0.22) (0.50) (1.75) (1.10) (-0.08) (1.07) 
+11:30 1.76* -0.24 -0.83 -0.00 -0.01 0.72 0.91 1.19* 1.99** 2.24** -0.48 
+- 12:00 (1.83) (-0.31) (-1.18) (-0.00) (-0.02) (1.09) (1.33) (1.66) (2.53) (2.54) (-0.57) 
+12:00 1.13 -0.89 -1.05 -1.15* -0.96 -0.77 -0.41 -0.45 -0.63 -0.74 1.88** 
+- 12:30 (1.28) (-1.23) (-1.57) (-1.80) (-1.52) (-1.25) (-0.63) (-0.68) (-0.85) (-0.89) (2.45) 
+12:30 4.19*** 1.42** 0.93 1.18** 1.06* 1.47** 1.45** 1.47** 0.85 1.46* 2.72*** 
+- 13:00 (5.04) (2.03) (1.46) (1.96) (1.73) (2.40) (2.33) (2.25) (1.21) (1.91) (3.97) 
+13:00 2.24*** 0.49 0.19 -0.57 -0.02 -0.08 -0.18 -0.79 -0.19 -1.11 3.36*** 
+- 13:30 (2.78) (0.71) (0.30) (-0.96) (-0.03) (-0.14) (-0.30) (-1.23) (-0.27) (-1.40) (4.86) 
+13:30 1.76** 0.27 -0.61 -0.19 -0.15 -0.11 -0.11 -0.60 -1.57** -1.64* 3.41*** 
+- 14:00 (2.03) (0.36) (-0.93) (-0.29) (-0.23) (-0.17) (-0.16) (-0.85) (-2.02) (-1.92) (4.62) 
+14:00 1.61* 0.26 -0.55 -0.49 -1.09 -0.36 -0.86 -1.38* -1.99** -2.25** 3.85*** 
+- 14:30 (1.70) (0.33) (-0.72) (-0.69) (-1.55) (-0.50) (-1.16) (-1.79) (-2.31) (-2.37) (5.03) 
+14:30 4.98*** 2.54*** 2.07*** 1.94** 1.72** 1.93** 1.66** 0.87 0.68 0.89 4.09*** 
+- 15:00 (5.05) (3.04) (2.62) (2.52) (2.31) (2.53) (2.17) (1.09) (0.78) (0.93) (5.21) 
+15:00 3.09*** 1.25 1.27 0.89 0.98 1.81** 1.29 0.99 1.10 -0.08 3.17*** 
+- 15:30 (2.87) (1.34) (1.48) (1.04) (1.17) (2.16) (1.51) (1.11) (1.14) (-0.07) (3.94) 
+15:30 6.07*** 1.55 0.69 -0.85 -0.70 -0.91 -2.03** -3.25*** -3.96*** -5.16*** 11.23*** 
+Electronic copy available at: https://ssrn.com/abstract=4731947
+
+44 
+ 
+- 16:00 (5.14) (1.46) (0.69) (-0.85) (-0.71) (-0.89) (-2.03) (-3.07) (-3.56) (-4.37) (12.65) 
+16:00 30.24*** 16.68*** 11.31*** 8.28*** 6.63*** 5.21*** 3.62* -0.78 -0.83 -9.08*** 39.32*** 
+- 10:00 (13.18) (8.19) (5.88) (4.41) (3.54) (2.75) (1.88) (-0.39) (-0.39) (-3.95) (18.50) 
+ 
+  
+Electronic copy available at: https://ssrn.com/abstract=4731947
+
+45 
+ 
+Table 8. Intraday Return Decomposition  
+This table shows the returns (RET) and their components (R ISK and RESIDUAL) of decile portfolios sorted by the prior period’s returns. We form value -
+weighted decile portfolios every 30 minutes based on the prior period’s returns. The first period is from 10:00 to 10:30, and the last (13th) period is from 16:00 
+to 10:00. We decompose returns into risk and residual components from Equations (1) to (5). When estimating both components, we use  11 anomalies from 
+Stambaugh et al. (2012)  and 4 additional anomalies  from Li et al. (2023) . At each period, we sort individual stocks into deciles based on returns in the prior 
+period. Portfolio LOW (HIGH) is the portfolio of stocks with the lowest (highest) returns in the prior period. The column L -H refers to the return  difference 
+between portfolio LOW and portfolio HIGH. The row RET refers to the annualized period returns of the decile portfolios. The rows RISK and RESIDUAL 
+refer to the annualized period returns of risk and residual components, respectively. All returns in the table are reported in percentage terms. Newey and West 
+(1987) robust t-statistics are reported in parentheses. ***, and **, and * indicate statistical significance at the 1%, 5%, and 10% levels, respectively. The sample 
+period is from July 1996 to December 2022. 
+Intraday Return Decomposition  
+ (1) (2) (3) (4) (5) (6) (7) (8) (9) (10) (11) 
+ LOW 2 3 4 5 6 7 8 9 HIGH L-H 
+RET 4.28*** 1.43*** 0.75*** 0.45* 0.51** 0.75*** 0.55** -0.01 -0.05 -1.12*** 5.39*** 
+ (13.12) (5.15) (2.89) (1.79) (2.05) (3.00) (2.18) (-0.04) (-0.18) (-3.55) (18.66) 
+RISK -1.02*** -0.71*** -0.45*** -0.19* 0.02 0.31*** 0.43*** 0.59*** 0.90*** 1.25*** -2.26*** 
+ (-9.48) (-7.20) (-4.65) (-1.93) (0.20) (3.12) (4.37) (5.82) (8.52) (11.65) (-16.39) 
+RESIDUAL 5.29*** 2.14*** 1.19*** 0.63** 0.49* 0.44* 0.12 -0.60** -0.95*** -2.37*** 7.65*** 
+ (17.65) (7.69) (4.42) (2.37) (1.83) (1.65) (0.44) (-2.14) (-3.20) (-8.05) (34.57) 
+ 
+  
+Electronic copy available at: https://ssrn.com/abstract=4731947
+
+46 
+ 
+Table 9. Residual Reversal Strategy with Transaction Costs 
+This table shows the annualized returns when holding residual reversal long-short portfolios for the next t period with various transaction costs. We first form 
+decile portfolios every 30 minutes based on the residuals computed from Equations (1) to (5). When estimating the level of residuals, we use 11 anomalies from 
+Stambaugh et al. (2012)  and 4 additional anomalies from Li et al. (2023) . Then, we construct the long -short portfolio by taking a long position on the lowest 
+residual portfolio and a short position on the highest residual portfolio. The first period is from 10:00 to 10:30, and the last (13th) period is from 16:00 to 10:00. 
+The column t refers to the cumulatively annualized returns from holding the long-short portfolio for t periods (t = 1, 2, …, 13) . Each row shows the return after 
+incorporating the transaction costs ranging from 3bp to 7bp. All returns in the table are reported in percentage terms. Newey and West (1987) robust t-statistics 
+are reported in parentheses. ***, and **, and * indicate statistical significance at the 1%, 5%, and 10% levels, respectively. The sample period is from July 1996 
+to December 2022.  
+Residual Reversal Strategy with Transaction Costs  
+ (1) (2) (3) (4) (5) (6) (7) (8) (9) (10) (11) (12) (13) 
+ t = 1 2 3 4 5 6 7 8 9 10 11 12 13 
+3bp 0.14 2.79*** 4.32*** 5.05*** 6.25*** 7.64*** 8.35*** 8.64*** 9.13*** 9.62*** 9.98*** 10.12*** 6.79*** 
+ (0.56) (6.98) (9.05) (9.34) (10.43) (11.73) (12.01) (11.68) (11.71) (11.77) (11.70) (11.37) (7.34) 
+4bp -2.38*** 0.27 1.80*** 2.53*** 3.73*** 5.12*** 5.83*** 6.12*** 6.61*** 7.10*** 7.46*** 7.60*** 4.27*** 
+ (-9.78) (0.68) (3.77) (4.67) (6.23) (7.86) (8.39) (8.27) (8.48) (8.69) (8.74) (8.54) (4.62) 
+5bp -4.90*** -2.25*** -0.72 0.01 1.21** 2.60*** 3.31*** 3.60*** 4.09*** 4.58*** 4.94*** 5.08*** 1.75* 
+ (-20.11) (-5.63) (-1.51) (0.01) (2.02) (3.99) (4.76) (4.87) (5.25) (5.60) (5.79) (5.71) (1.89) 
+6bp -7.42*** -4.77*** -3.24*** -2.51*** -1.31** 0.08 0.79 1.08 1.57** 2.06** 2.42*** 2.56*** -0.77 
+ (-30.44) (-11.93) (-6.79) (-4.65) (-2.18) (0.12) (1.14) (1.46) (2.01) (2.52) (2.83) (2.88) (-0.83) 
+7bp -9.94*** -7.29*** -5.76*** -5.03*** -3.83*** -2.44*** -1.73** -1.44* -0.95 -0.46 -0.10 0.04 -3.29*** 
+ (-40.77) (-18.23) (-12.07) (-9.31) (-6.39) (-3.75) (-2.48) (-1.95) (-1.22) (-0.57) (-0.12) (0.05) (-3.56) 
+ 
+ 
+  
+Electronic copy available at: https://ssrn.com/abstract=4731947
+
+47 
+ 
+Table 10. Residual Reversal with K/M Strategy 
+This table shows the annualized period returns of residual reversal long-short portfolios with different formation (K) /holding (M) periods ranging from 1 to 13. 
+We first form the portfolios every 30 minutes based on the K-period cumulative residuals computed from Equation (7). When estimating the level of residuals, 
+we use 11 anomalies from Stambaugh et al. (2012)  and 4 additional anomalies  from Li et al. (2023) . Then, we construct the long -short portfolio by taking a 
+long position on the lowest cumulative K-period residual portfolio and a short position on the highest K -period cumulative residual portfolio. Then, we hold 
+these portfolios for the next M periods. The first period is from 10:00 to 10:30, and the last (13 th) period is from 16:00 to 10:00. The number in row K and 
+column M refers to the annualized per period returns of the long-short portfolio from the K/M strategy. All returns in the table are reported in percentage terms. 
+Newey and West (1987) robust t -statistics are reported in parentheses. ***, and **, and * indicate statistical significance at the 1%, 5%, and 10% levels, 
+respectively. The sample period is from July 1996 to December 2022.  
+Residual Reversal with K/M Strategy  
+ (1) (2) (3) (4) (5) (6) (7) (8) (9) (10) (11) (12) (13) 
+ M=1 2 3 4 5 6 7 8 9 10 11 12 13 
+K=1 7.70*** 5.11*** 3.88*** 3.06*** 2.67*** 2.44*** 2.17*** 1.92*** 1.75*** 1.62*** 1.49*** 1.37*** 1.00*** 
+ (31.55) (25.62) (24.44) (22.72) (22.30) (22.51) (21.95) (20.87) (20.28) (19.81) (19.28) (18.50) (14.07) 
+2 7.00*** 4.99*** 3.78*** 3.11*** 2.80*** 2.57*** 2.31*** 2.08*** 1.93*** 1.81*** 1.66*** 1.37*** 1.09*** 
+ (28.52) (24.30) (23.21) (22.50) (22.85) (23.13) (22.63) (21.97) (21.69) (21.50) (20.74) (17.86) (14.82) 
+3 6.77*** 4.75*** 3.73*** 3.24*** 2.94*** 2.70*** 2.42*** 2.21*** 2.06*** 1.90*** 1.61*** 1.36*** 1.13*** 
+ (27.50) (23.30) (22.99) (23.39) (23.88) (24.23) (23.58) (22.97) (22.87) (22.27) (19.93) (17.56) (15.25) 
+4 6.00*** 4.41*** 3.74*** 3.30*** 3.04*** 2.77*** 2.49*** 2.27*** 2.11*** 1.79*** 1.57*** 1.38*** 1.19*** 
+ (24.37) (21.26) (22.50) (23.30) (24.27) (24.39) (23.95) (23.49) (23.25) (20.77) (19.22) (17.52) (15.83) 
+5 6.04*** 4.58*** 3.87*** 3.41*** 3.06*** 2.78*** 2.55*** 2.33*** 2.00*** 1.76*** 1.56*** 1.41*** 1.28*** 
+ (24.42) (22.29) (23.42) (24.17) (24.55) (24.60) (24.52) (24.10) (21.90) (20.41) (18.97) (17.98) (17.00) 
+6 5.97*** 4.67*** 3.89*** 3.38*** 3.06*** 2.80*** 2.57*** 2.17*** 1.92*** 1.72*** 1.56*** 1.45*** 1.34*** 
+ (23.89) (22.18) (23.08) (23.65) (24.14) (24.35) (24.27) (22.04) (20.80) (19.70) (18.77) (18.25) (17.55) 
+7 6.03*** 4.76*** 3.92*** 3.38*** 3.11*** 2.84*** 2.38*** 2.07*** 1.86*** 1.69*** 1.56*** 1.47*** 1.37*** 
+ (24.26) (22.69) (23.36) (23.67) (24.63) (24.79) (22.50) (20.99) (20.19) (19.30) (18.81) (18.49) (17.98) 
+8 5.86*** 4.57*** 3.81*** 3.32*** 3.02*** 2.48*** 2.17*** 1.92*** 1.75*** 1.63*** 1.53*** 1.46*** 1.37*** 
+ (23.60) (22.04) (22.72) (23.31) (23.81) (21.62) (20.50) (19.49) (18.98) (18.60) (18.38) (18.38) (18.04) 
+9 5.66*** 4.26*** 3.68*** 3.24*** 2.67*** 2.31*** 2.05*** 1.83*** 1.73*** 1.62*** 1.54*** 1.49*** 1.43*** 
+ (22.73) (20.54) (22.01) (22.71) (21.05) (20.01) (19.28) (18.49) (18.59) (18.48) (18.47) (18.75) (18.72) 
+10 5.71*** 4.34*** 3.69*** 2.91*** 2.48*** 2.19*** 1.94*** 1.79*** 1.70*** 1.64*** 1.58*** 1.52*** 1.45*** 
+ (22.98) (20.74) (21.96) (20.18) (19.40) (18.89) (18.22) (18.08) (18.28) (18.64) (18.87) (19.01) (18.99) 
+11 5.52*** 4.09*** 3.06*** 2.52*** 2.23*** 2.00*** 1.85*** 1.74*** 1.68*** 1.62*** 1.57*** 1.51*** 1.46*** 
+ (22.34) (19.44) (17.91) (17.33) (17.33) (17.13) (17.26) (17.41) (18.03) (18.35) (18.69) (18.89) (18.97) 
+12 5.34*** 3.20*** 2.54*** 2.18*** 1.96*** 1.82*** 1.73*** 1.65*** 1.60*** 1.57*** 1.53*** 1.48*** 1.44*** 
+ (21.64) (15.36) (15.09) (15.16) (15.33) (15.74) (16.29) (16.71) (17.25) (17.82) (18.24) (18.57) (18.80) 
+13 4.18*** 2.72*** 2.33*** 2.05*** 1.93*** 1.84*** 1.77*** 1.69*** 1.66*** 1.63*** 1.57*** 1.53*** 1.49*** 
+ (16.92) (12.88) (13.77) (14.18) (15.04) (15.84) (16.50) (16.98) (17.74) (18.39) (18.73) (19.07) (19.38) 
+Electronic copy available at: https://ssrn.com/abstract=4731947
+
+48 
+ 
+ 
+  
+Electronic copy available at: https://ssrn.com/abstract=4731947
+
+49 
+ 
+Table 11. Residual Reversal by Year 
+This table shows the period returns of portfolios by residual deciles for each year . We form decile portfolios every period (30 minutes) based on the residuals 
+computed from Equations (1) to (5). When estimating the level of residuals, we use 11 anomalies from Stambaugh et al. (2012) and 4 additional anomalies from 
+Li et al. (2023). The first period is from 10:00 to 10:30, and the last (13th) period is from 16:00 to 10:00. Portfolio LOW (HIGH) is the portfolio of stocks with 
+the lowest (highest) residuals. The column L -H refers to the return  difference between portfolio LOW and portfolio HIGH. Panel A and Panel B report the 
+annualized period returns of value-weighted and equal-weighted portfolios for each year, respectively. All returns in the table are reported in percentage terms. 
+Newey and West (1987) robust t -statistics are reported in parentheses. ***, and **, and * indicate statistical significance at the 1%, 5%, and 10% levels, 
+respectively. The sample period is from July 1996 to December 2022. 
+Panel A: Residual Reversal, Value-weighted  
+ (1) (2) (3) (4) (5) (6) (7) (8) (9) (10) (11) 
+ LOW 2 3 4 5 6 7 8 9 HIGH L-H 
+1996 6.15*** 0.87 2.38* 1.44 0.38 0.22 0.38 -0.21 0.76 2.83* 3.33** 
+ (3.88) (0.64) (1.79) (1.13) (0.30) (0.18) (0.31) (-0.17) (0.56) (1.83) (2.38) 
+1997 5.24*** 2.25* 0.75 1.57 0.31 1.23 0.09 2.93** 1.51 4.12*** 1.12 
+ (3.61) (1.70) (0.60) (1.29) (0.26) (1.03) (0.07) (2.32) (1.21) (2.93) (0.97) 
+1998 5.84*** 0.01 0.49 1.44 1.84 2.40* 1.16 3.65** 3.34** 2.87* 2.97** 
+ (3.39) (0.01) (0.34) (1.01) (1.32) (1.71) (0.82) (2.53) (2.29) (1.77) (2.06) 
+1999 6.76*** 0.50 -0.08 0.69 0.40 -0.54 -0.12 2.70* 3.83** 1.61 5.16*** 
+ (3.87) (0.33) (-0.06) (0.50) (0.28) (-0.39) (-0.09) (1.92) (2.56) (0.95) (2.99) 
+2000 6.77*** -0.48 -2.03 -4.04** -1.58 -1.14 -0.10 -0.79 0.99 -2.46 9.24*** 
+ (2.74) (-0.24) (-1.14) (-2.33) (-0.93) (-0.69) (-0.06) (-0.43) (0.52) (-1.09) (3.52) 
+2001 5.94*** -1.53 -0.41 -0.54 0.83 0.42 -2.68* -2.10 0.67 -5.11** 11.05*** 
+ (2.65) (-0.87) (-0.26) (-0.36) (0.58) (0.28) (-1.74) (-1.30) (0.38) (-2.25) (5.50) 
+2002 9.13*** 2.28 1.61 0.32 -0.72 -0.93 -3.00* -5.13*** -5.90*** -10.42*** 19.55*** 
+ (4.08) (1.22) (0.90) (0.18) (-0.43) (-0.57) (-1.80) (-2.89) (-3.15) (-4.88) (11.34) 
+2003 7.66*** 4.23*** 4.18*** 2.07* 1.71 0.62 1.06 -0.18 -1.75 -1.53 9.18*** 
+ (5.24) (3.24) (3.46) (1.78) (1.46) (0.53) (0.91) (-0.15) (-1.37) (-1.07) (8.20) 
+2004 5.22*** 2.08** 0.85 0.60 -0.35 0.01 -0.32 -0.24 0.18 -0.29 5.51*** 
+ (4.85) (2.22) (0.98) (0.72) (-0.43) (0.01) (-0.38) (-0.28) (0.20) (-0.28) (6.30) 
+2005 4.01*** 1.76** 1.33 -0.28 -0.18 0.18 0.26 -0.51 -1.29 -1.17 5.18*** 
+ (3.85) (2.05) (1.59) (-0.35) (-0.24) (0.23) (0.35) (-0.65) (-1.54) (-1.25) (5.76) 
+2006 5.60*** 3.03*** 0.84 1.26* 0.74 1.05 0.50 -0.63 0.11 -1.78* 7.38*** 
+ (5.58) (3.46) (1.05) (1.68) (1.01) (1.43) (0.66) (-0.80) (0.13) (-1.78) (8.54) 
+2007 6.34*** 3.11*** 2.26** 1.35 1.51 -0.12 -0.20 -1.16 -1.74 -3.89*** 10.23*** 
+ (5.29) (2.96) (2.22) (1.37) (1.53) (-0.12) (-0.20) (-1.19) (-1.64) (-3.36) (11.34) 
+2008 5.67** 2.80 1.71 -0.25 -1.96 -2.67 -5.28** -4.81** -6.60*** -11.53*** 17.20*** 
+ (2.03) (1.09) (0.71) (-0.11) (-0.85) (-1.17) (-2.23) (-2.01) (-2.66) (-4.17) (9.85) 
+2009 9.43*** 6.95*** 4.26** 3.36** 1.65 1.35 -0.64 -1.01 -1.33 -3.67* 13.10*** 
+Electronic copy available at: https://ssrn.com/abstract=4731947
+
+50 
+ 
+ (4.71) (3.87) (2.56) (2.04) (1.02) (0.82) (-0.39) (-0.59) (-0.74) (-1.80) (10.29) 
+2010 6.91*** 3.80*** 2.95** 2.00* 1.05 0.14 -0.37 -1.86 -2.34* -3.48** 10.38*** 
+ (5.08) (3.09) (2.44) (1.70) (0.89) (0.12) (-0.32) (-1.53) (-1.89) (-2.47) (12.01) 
+2011 4.20** 2.55* 2.03 1.68 1.15 0.41 -0.40 -0.59 -2.54* -4.12*** 8.31*** 
+ (2.56) (1.71) (1.39) (1.19) (0.84) (0.30) (-0.29) (-0.41) (-1.75) (-2.63) (9.75) 
+2012 5.56*** 3.26*** 2.10** 0.97 0.78 0.22 -0.57 -0.92 -0.97 -3.55*** 9.11*** 
+ (5.05) (3.46) (2.36) (1.09) (0.90) (0.25) (-0.65) (-1.00) (-0.99) (-3.16) (11.37) 
+2013 5.31*** 3.95*** 3.08*** 2.03*** 1.29* 1.34* 0.87 0.42 0.13 -0.82 6.14*** 
+ (5.89) (5.01) (4.00) (2.67) (1.73) (1.74) (1.12) (0.54) (0.17) (-0.94) (8.69) 
+2014 3.81*** 2.19*** 1.33* 1.14 1.05 0.45 0.97 0.46 -0.75 -0.40 4.21*** 
+ (3.90) (2.69) (1.72) (1.46) (1.37) (0.57) (1.25) (0.59) (-0.93) (-0.45) (5.90) 
+2015 2.39** 1.80* 1.26 0.31 -0.27 -0.10 -0.57 -0.93 -2.47** -2.18* 4.58*** 
+ (1.98) (1.66) (1.21) (0.30) (-0.26) (-0.09) (-0.56) (-0.89) (-2.34) (-1.86) (5.65) 
+2016 5.67*** 2.15** 1.81* 2.01** 1.08 1.06 0.13 0.01 -1.32 -2.30** 7.98*** 
+ (4.85) (2.14) (1.86) (2.14) (1.20) (1.14) (0.13) (0.01) (-1.34) (-2.05) (10.20) 
+2017 3.74*** 2.75*** 2.23*** 1.48*** 1.22** 1.67*** 1.42*** 0.39 0.29 -1.66** 5.41*** 
+ (5.52) (4.80) (4.03) (2.79) (2.41) (3.24) (2.70) (0.74) (0.50) (-2.49) (8.75) 
+2018 3.54*** 0.64 1.13 0.27 0.42 0.04 -0.28 -1.91 -1.10 -3.63*** 7.16*** 
+ (2.62) (0.52) (0.95) (0.24) (0.36) (0.03) (-0.24) (-1.64) (-0.93) (-2.82) (7.46) 
+2019 2.88*** 2.81*** 2.23** 2.09** 2.19** 1.59* 1.97** 1.91** 0.77 0.25 2.63*** 
+ (2.80) (2.94) (2.46) (2.30) (2.50) (1.75) (2.21) (2.07) (0.85) (0.25) (3.49) 
+2020 7.54*** 6.12*** 2.67 2.36 2.92 0.83 -0.00 -0.58 -0.98 -4.15* 11.69*** 
+ (3.36) (2.94) (1.31) (1.19) (1.51) (0.42) (-0.00) (-0.29) (-0.47) (-1.89) (7.61) 
+2021 4.51*** 3.49*** 3.01*** 1.71* 0.93 1.76* 1.92** 0.42 0.65 -0.64 5.15*** 
+ (3.74) (3.18) (2.86) (1.72) (0.95) (1.87) (2.03) (0.42) (0.62) (-0.54) (4.77) 
+2022 -0.09 -0.71 0.86 -0.58 -0.45 -1.21 -1.13 -1.95 -2.86 -2.83 2.74** 
+ (-0.04) (-0.40) (0.50) (-0.34) (-0.28) (-0.74) (-0.68) (-1.16) (-1.63) (-1.43) (2.02) 
+ 
+ 
+  
+Electronic copy available at: https://ssrn.com/abstract=4731947
+
+51 
+ 
+Table 11 (continued) 
+Panel B: Residual Reversal, Equal-weighted  
+ (1) (2) (3) (4) (5) (6) (7) (8) (9) (10) (11) 
+ LOW 2 3 4 5 6 7 8 9 HIGH L-H 
+1996 9.61*** 2.15* 1.17 1.48 -0.20 -0.73 -0.52 -1.22 -1.04 -1.48 11.09*** 
+ (7.70) (1.91) (1.13) (1.44) (-0.20) (-0.74) (-0.54) (-1.20) (-0.96) (-1.16) (11.46) 
+1997 7.22*** 2.48** 1.54 1.08 0.40 0.46 0.53 0.47 0.39 1.58 5.64*** 
+ (6.31) (2.46) (1.63) (1.16) (0.45) (0.52) (0.59) (0.50) (0.40) (1.44) (6.79) 
+1998 6.33*** 0.16 -0.46 -1.02 -0.59 -0.15 0.34 1.26 1.57 0.45 5.88*** 
+ (4.44) (0.13) (-0.40) (-0.93) (-0.55) (-0.14) (0.31) (1.11) (1.32) (0.33) (5.69) 
+1999 10.23*** 0.08 -0.45 -0.74 -0.77 -0.76 -0.49 1.06 1.61 -1.72 11.95*** 
+ (7.71) (0.07) (-0.44) (-0.77) (-0.81) (-0.83) (-0.51) (1.09) (1.49) (-1.38) (9.81) 
+2000 10.40*** 1.04 -0.78 -1.22 -0.51 -1.04 -0.08 0.85 0.87 -2.75* 13.15*** 
+ (6.46) (0.85) (-0.71) (-1.21) (-0.52) (-1.05) (-0.08) (0.79) (0.74) (-1.85) (8.34) 
+2001 10.82*** 2.42* 1.06 0.13 0.12 0.46 -1.17 -1.40 -0.61 -5.30*** 16.12*** 
+ (5.81) (1.74) (0.84) (0.11) (0.10) (0.39) (-0.96) (-1.11) (-0.42) (-2.79) (11.07) 
+2002 9.79*** 3.44** 1.47 -0.10 -0.96 -1.26 -2.17 -3.98** -4.75*** -9.87*** 19.66*** 
+ (4.56) (2.01) (0.90) (-0.06) (-0.61) (-0.81) (-1.37) (-2.43) (-2.70) (-4.59) (14.34) 
+2003 9.53*** 4.53*** 4.16*** 2.29** 1.83* 1.61 0.79 0.41 -0.56 0.10 9.43*** 
+ (6.71) (3.73) (3.65) (2.08) (1.66) (1.46) (0.72) (0.36) (-0.45) (0.07) (10.67) 
+2004 4.97*** 1.71* 1.48* 0.96 0.23 0.66 0.19 0.21 0.54 -0.45 5.42*** 
+ (4.55) (1.87) (1.77) (1.18) (0.29) (0.81) (0.24) (0.25) (0.59) (-0.43) (7.91) 
+2005 5.23*** 1.89** 1.11 0.44 0.31 -0.03 -0.21 -0.49 -1.08 -1.66* 6.89*** 
+ (5.39) (2.27) (1.42) (0.57) (0.41) (-0.04) (-0.28) (-0.64) (-1.34) (-1.86) (10.08) 
+2006 5.91*** 2.86*** 1.72** 1.09 0.87 0.92 -0.06 -0.08 -0.43 -2.09** 8.00*** 
+ (6.25) (3.47) (2.29) (1.52) (1.25) (1.31) (-0.08) (-0.11) (-0.54) (-2.17) (12.25) 
+2007 4.58*** 1.85* 1.16 0.70 0.25 -0.21 -0.32 -0.60 -1.01 -2.95*** 7.52*** 
+ (4.04) (1.81) (1.18) (0.73) (0.26) (-0.22) (-0.34) (-0.61) (-0.98) (-2.67) (11.00) 
+2008 2.41 1.68 -0.37 -1.55 -1.66 -3.26 -4.31* -4.36* -6.03** -9.32*** 11.73*** 
+ (0.84) (0.64) (-0.15) (-0.63) (-0.68) (-1.36) (-1.74) (-1.77) (-2.32) (-3.26) (8.53) 
+2009 10.86*** 6.83*** 5.24*** 3.93** 2.97 1.85 -0.30 0.74 -0.36 -2.62 13.48*** 
+ (4.70) (3.39) (2.76) (2.11) (1.61) (1.00) (-0.16) (0.38) (-0.18) (-1.14) (13.39) 
+2010 5.37*** 3.31** 2.99** 2.27* 1.64 0.52 -0.07 -0.78 -1.17 -2.86** 8.23*** 
+ (3.73) (2.53) (2.31) (1.80) (1.30) (0.41) (-0.05) (-0.61) (-0.89) (-1.97) (11.56) 
+2011 2.82* 1.50 1.32 0.67 0.20 0.30 -0.65 -0.32 -1.47 -2.90* 5.71*** 
+ (1.69) (0.96) (0.87) (0.46) (0.13) (0.20) (-0.44) (-0.22) (-0.95) (-1.76) (9.07) 
+2012 4.38*** 2.66*** 1.73* 1.34 0.63 0.14 -0.18 -0.83 -0.73 -2.26** 6.63*** 
+ (3.93) (2.66) (1.83) (1.44) (0.70) (0.16) (-0.20) (-0.88) (-0.72) (-1.99) (11.89) 
+2013 5.62*** 3.71*** 2.83*** 2.33*** 1.65** 1.70** 0.98 0.90 0.54 -0.32 5.94*** 
+ (6.44) (4.74) (3.70) (3.07) (2.18) (2.23) (1.27) (1.15) (0.69) (-0.38) (11.78) 
+2014 3.41*** 1.89** 1.40* 0.89 1.07 0.61 0.53 0.25 -0.13 -0.86 4.27*** 
+Electronic copy available at: https://ssrn.com/abstract=4731947
+
+52 
+ 
+ (3.71) (2.39) (1.82) (1.16) (1.43) (0.80) (0.70) (0.33) (-0.16) (-1.00) (8.21) 
+2015 2.11* 1.43 0.96 0.38 -0.16 -0.43 -0.81 -1.41 -2.32** -2.31* 4.43*** 
+ (1.76) (1.38) (0.95) (0.38) (-0.16) (-0.43) (-0.82) (-1.40) (-2.27) (-1.95) (6.42) 
+2016 5.51*** 2.28** 2.18** 1.69* 1.56 1.00 0.28 0.11 -0.35 -1.58 7.10*** 
+ (4.24) (2.13) (2.18) (1.73) (1.64) (1.03) (0.28) (0.11) (-0.34) (-1.24) (10.01) 
+2017 3.21*** 2.49*** 2.12*** 1.64*** 1.53*** 1.30** 0.80 0.61 -0.14 -1.77*** 4.98*** 
+ (4.54) (4.26) (3.76) (3.09) (2.98) (2.52) (1.55) (1.14) (-0.24) (-2.61) (9.29) 
+2018 2.15* 1.06 0.83 0.03 -0.14 -0.03 -0.25 -1.36 -1.96* -3.78*** 5.92*** 
+ (1.71) (0.90) (0.75) (0.02) (-0.13) (-0.03) (-0.23) (-1.26) (-1.77) (-3.20) (8.74) 
+2019 3.00*** 2.42*** 2.31** 2.46*** 2.34*** 2.15** 1.81** 2.02** 1.33 0.28 2.72*** 
+ (2.93) (2.58) (2.56) (2.78) (2.71) (2.47) (2.09) (2.29) (1.46) (0.28) (4.90) 
+2020 5.63** 4.04* 2.23 2.01 1.97 0.79 0.64 0.37 -0.44 -3.43 9.06*** 
+ (2.29) (1.81) (1.04) (0.93) (0.95) (0.37) (0.30) (0.17) (-0.20) (-1.43) (8.69) 
+2021 4.21*** 3.42*** 2.53** 2.11** 1.65* 2.07** 1.78* 0.90 0.68 -1.22 5.43*** 
+ (3.61) (3.32) (2.56) (2.22) (1.77) (2.23) (1.92) (0.96) (0.70) (-1.14) (7.46) 
+2022 0.77 -0.35 0.23 -0.06 -0.51 -1.06 -1.24 -1.56 -1.61 -1.95 2.72*** 
+ (0.40) (-0.21) (0.13) (-0.04) (-0.32) (-0.66) (-0.76) (-0.96) (-0.94) (-1.05) (3.20) 
+ 
+Electronic copy available at: https://ssrn.com/abstract=4731947
+
+53 
+ 
+Table 12. Residual Reversal Strategy and Random Anomalies 
+This table shows the period returns (Ret) of portfolios by residual deciles  with additional 15 anomalies. We form decile portfolios every 30 minutes based on 
+the residuals computed from Equations (1) to (5). When estimating the level of residuals, we use  11 anomalies from Stambaugh et al. (2012), 4 additional 
+anomalies from Li et al. (2023), and 15 randomly selected anomalies from Open Source Asset Pricing. The first period is from 10:00 to 10:30, and the last (13th) 
+period is from 16:00 to 10:00. Portfolio LOW (HIGH) is the portfolio of stocks with the lowest (highest) residuals. The column L-H refers to the return difference 
+between portfolio LOW and portfolio HIGH. Panel A and Panel B report the annualized period returns of value -weighted and equal-weighted portfolios. Each 
+row reports the results from a different set of randomly selected anomalies. Each set of selected anomalies is reported  in Table A2. All returns in the table are 
+reported in percentage terms. Newey and West (1987) robust t -statistics are reported in parentheses. ***, and **, and * indicate statistical significance at the 
+1%, 5%, and 10% levels, respectively. The sample period is from July 1996 to December 2022.  
+Panel A: Residual Reversal, Value-weighted  
+ (1) (2) (3) (4) (5) (6) (7) (8) (9) (10) (11) 
+ LOW 2 3 4 5 6 7 8 9 HIGH L-H 
+Set 1 5.40*** 2.52*** 1.63*** 1.14*** 0.65** 0.20 -0.31 -0.49* -0.94*** -2.52*** 7.92*** 
+ (17.51) (9.19) (6.15) (4.44) (2.56) (0.79) (-1.19) (-1.85) (-3.46) (-8.24) (33.67) 
+Set 2 5.41*** 2.44*** 1.79*** 0.80*** 0.72*** 0.43* -0.11 -0.47* -0.85*** -2.46*** 7.86*** 
+ (17.41) (8.80) (6.69) (3.06) (2.75) (1.65) (-0.40) (-1.74) (-3.06) (-7.97) (31.74) 
+Set 3 5.32*** 2.77*** 1.64*** 1.10*** 0.69*** 0.20 -0.27 -0.56** -1.12*** -2.68*** 8.01*** 
+ (17.55) (10.22) (6.28) (4.30) (2.72) (0.80) (-1.06) (-2.16) (-4.17) (-8.97) (34.66) 
+Set 4 5.68*** 2.52*** 1.93*** 1.11*** 0.70*** 0.35 -0.15 -0.74*** -1.24*** -2.59*** 8.27*** 
+ (18.26) (9.09) (7.22) (4.24) (2.69) (1.34) (-0.58) (-2.77) (-4.50) (-8.41) (34.46) 
+Set 5 5.41*** 2.74*** 1.76*** 1.25*** 0.92*** 0.19 -0.27 -0.75*** -1.12*** -2.77*** 8.18*** 
+ (17.95) (10.14) (6.78) (4.92) (3.66) (0.75) (-1.05) (-2.88) (-4.16) (-9.25) (35.67) 
+ 
+ 
+Panel B: Residual Reversal, Equal-weighted  
+ (1) (2) (3) (4) (5) (6) (7) (8) (9) (10) (11) 
+ LOW 2 3 4 5 6 7 8 9 HIGH L-H 
+Set 1 5.61*** 2.45*** 1.64*** 1.13*** 0.64*** 0.24 -0.12 -0.43* -0.88*** -2.38*** 7.99*** 
+ (18.88) (9.32) (6.49) (4.58) (2.61) (0.99) (-0.49) (-1.72) (-3.34) (-8.07) (47.84) 
+Set 2 5.63*** 2.27*** 1.71*** 0.92*** 0.72*** 0.29 -0.01 -0.32 -0.78*** -2.35*** 7.98*** 
+ (18.77) (8.50) (6.60) (3.63) (2.87) (1.16) (-0.05) (-1.24) (-2.95) (-7.84) (45.22) 
+Set 3 5.53*** 2.60*** 1.57*** 1.16*** 0.74*** 0.30 -0.08 -0.49* -0.91*** -2.41*** 7.94*** 
+ (19.05) (10.04) (6.27) (4.75) (3.04) (1.26) (-0.31) (-1.95) (-3.52) (-8.34) (47.80) 
+Set 4 5.75*** 2.56*** 1.83*** 1.06*** 0.70*** 0.19 -0.06 -0.63** -0.90*** -2.53*** 8.28*** 
+ (19.36) (9.70) (7.19) (4.29) (2.84) (0.76) (-0.23) (-2.49) (-3.43) (-8.55) (48.93) 
+Set 5 5.78*** 2.65*** 1.68*** 1.15*** 0.67*** 0.23 -0.16 -0.54** -0.89*** -2.73*** 8.50*** 
+ (19.69) (10.18) (6.68) (4.67) (2.74) (0.95) (-0.66) (-2.18) (-3.44) (-9.34) (51.54) 
+ 
+Electronic copy available at: https://ssrn.com/abstract=4731947
+
+54 
+ 
+ 
+Electronic copy available at: https://ssrn.com/abstract=4731947
+
+55 
+ 
+Table A1. Definition of Anomaly Variables 
+Source Anomaly Definition 
+Stambaugh, Yu, and Yuan (2012) 
+Accruals 
+The annual change in noncash 
+working capital minus depreciation 
+and amortization expense, divided by 
+average total assets for the previous 
+two fiscal years 
+Asset Growth The growth rate of total assets in the 
+previous fiscal year 
+Composite equity issues 
+The 12-month growth in equity 
+market capitalization minus the 12-
+month cumulative stock return 
+Failure Probability Strictly following Campbell, Hilscher, 
+and Szilagyi (2008) 
+Gross profitability (Total revenue – the cost of goods 
+sold) / total assets 
+Investment-to-assets The annual change in inventories, 
+scaled by lagged book value of assets 
+Momentum Cumulative return over the past 22 to 
+252 days 
+Net operating assets Operating assets minus operating 
+liabilities, divided by lagged 
+Net stock issues The annual log change in split-
+adjusted shares outstanding 
+O-score Strictly following Ohlson (1980) 
+Return on assets The ratio of quarterly earnings to last 
+quarter’s assets 
+Li, Yuan, and Zhou (2023) 
+Beta 
+The estimated coefficient by 
+regressing monthly stock excess 
+returns on monthly market excess 
+returns using a 60-month rolling 
+window 
+Book-to-market 
+The ratio of the book value of 
+common equity to the market value of 
+equity 
+Reversal The cumulative return over the past 21 
+days 
+Size The natural logarithm of the market 
+value of equity 
+ 
+  
+Electronic copy available at: https://ssrn.com/abstract=4731947
+
+56 
+ 
+Table A2. Sets of Randomly Selected Anomalies 
+This table reports the sets of randomly selected 15 anomalies for Table 12. The names of anomalies 
+come from Open Source Asset Pricing. 
+Set 1 Set 2 Set 3 Set 4 Set 5 
+SmileSlope AnnouncementReturn DelEqu zerotradeAlt12 Illiquidity 
+Tax CompEqulss BetaLiqudityPS ChNNCOA ChNNCOA 
+Mom12m RDS DelCOA BetaLiquidityPS zerotrade 
+hire BPEBM NetDebtFinance Cash IdioV ol3F 
+XFIN MomSeason RlV olSpread TotalAccruals Cash 
+ChEQ dV olCall EntMult MaxRet LReversal 
+dNoa BetaLiquidityPS MomV ol REV6 RealizedV ol 
+IdioV ol3F ChTax dV olCall CPV olSpread EquityDuration 
+DelEqu DelBreadth Zerotrade ReturnSkew3F IntanBM 
+Illiquidity OPLeverage Mom12mOffSeason AnnouncementReturn IntMom 
+RlV olSpread ChNNCOA DelFINL fg5yrLag NetDebtFinance 
+roaq DelEqu PctAcc IntMom grcapx3y 
+MomOffSeason MomV ol MomSeason11YrPlus NetDebtFinance EBM 
+CPV olSpread AssetGrowth BPEBM PriceDelayRsq IntanEP 
+grcapx3y ReturnSkew ChEQ roaq DelCOA 
+ 
+  
+Electronic copy available at: https://ssrn.com/abstract=4731947
+
+57 
+ 
+References 
+Avramov, D., Chordia, T., & Goyal, A. (2006). Liquidity and autocorrelations in individual stock 
+returns. Journal of Finance, 61(5), 2365-2394. 
+Ball, C. A., & Chordia, T. (2001). True spreads and equilibrium prices. Journal of Finance, 56(5), 1801-
+1835. 
+Baltussen, G., Da, Z., Lammers, S., & Martens, M. (2021). Hedging demand and market intraday 
+momentum. Journal of Financial Economics, 142(1), 377-403. 
+Black, F. (1986). Noise. Journal of Finance, 41(3), 528-543. 
+Blitz, D., Huij, J., & Martens, M. (2011). Residual momentum. Journal of Empirical Finance , 18(3), 
+506-521. 
+Blitz, D., Huij, J., Lansdorp, S., & Verbeek, M. (2013). Short-term residual reversal.  Journal of 
+Financial Markets, 16(3), 477-504. 
+Blume, M. E., & Stambaugh, R. F. (1983). Biases in computed returns: An application to the size 
+effect. Journal of Financial Economics, 12(3), 387-404. 
+Brogaard, J., Nguyen, T. H., Putnins, T. J., & Wu, E. (2022). What moves stock prices? The roles of 
+news, noise, and information. Review of Financial Studies, 35(9), 4341-4386. 
+Brunnermeier, M. K., & Pedersen, L. H. (2009). Market liquidity and funding liquidity.  Review of 
+Financial Studies, 22(6), 2201-2238. 
+Campbell, J. Y ., & Kyle, A. S. (1993). Smart money, noise trading and stock price behaviour. Review of 
+Economic Studies, 60(1), 1-34. 
+Campbell, J. Y ., Grossman, S. J., & Wang, J. (1993). Trading volume and serial correlation in stock 
+returns. Quarterly Journal of Economics, 108(4), 905-939. 
+Chen, A. Y ., & Zimmermann, T. (2021). Open source cross -sectional asset pricing. Critical Finance 
+Review, Forthcoming. 
+Chordia, T., Roll, R., & Subrahmanyam, A. (2005). Evidence on the speed of convergence to market 
+efficiency. Journal of Financial Economics, 76(2), 271-292. 
+Conrad, J. S., Hameed, A., & Niden, C. (1994). V olume and autocovariances in short‐horizon individual 
+security returns. Journal of finance, 49(4), 1305-1329. 
+Cooper, M. (1999). Filter rules based on price and volume in individual security overreaction.  Review 
+of Financial Studies, 12(4), 901-935. 
+Da, Z., Liu, Q., & Schaumburg, E. (2014). A closer look at the short-term return reversal. Management 
+Science, 60(3), 658-674. 
+Daniel, K., & Titman, S. (2006). Market reactions to tangible and intangible information. Journal of 
+Finance, 61(4), 1605-1643. 
+Edmans, A., Goldstein, I., & Jiang, W. (2012). The real effects of financial markets: The impact of prices 
+on takeovers. Journal of Finance, 67(3), 933-971. 
+Fama, E. F. (1970). Efficient capital markets: A review of theory and empirical work.  Journal of 
+Finance, 25(2), 383-417. 
+Gao, L., Han, Y ., Li, S. Z., & Zhou, G. (2018). Market intraday momentum. Journal of Financial 
+Electronic copy available at: https://ssrn.com/abstract=4731947
+
+58 
+ 
+Economics, 129(2), 394-414. 
+Grant, J. L., Wolf, A., & Yu, S. (2005). Intraday price reversals in the US stock index futures market: A 
+15-year study. Journal of Banking & Finance, 29(5), 1311-1327. 
+Grossman, S. J., & Miller, M. H. (1988). Liquidity and market structure. Journal of Finance , 43(3), 
+617-633. 
+Grundy, B. D., & Martin, J. S. M. (2001). Understanding the nature of the risks and the source of the 
+rewards to momentum investing. Review of Financial Studies, 14(1), 29-78. 
+Hameed, A., Kang, W., & Viswanathan, S. (2010). Stock market declines and liquidity. Journal of 
+Finance, 65(1), 257-293. 
+Hasbrouck, J. (1991). The summary informativeness of stock trades: An econometric analysis.  Review 
+of Financial Studies, 4(3), 571-595. 
+Hasbrouck, J. (1993). Assessing the quality of a security market: A new approach to transaction -cost 
+measurement. Review of Financial Studies, 6(1), 191-212. 
+Heston, S. L., Korajczyk, R. A., & Sadka, R. (2010). Intraday patterns in the cross‐section of stock 
+returns. Journal of Finance, 65(4), 1369-1407. 
+Jegadeesh, N. (1990). Evidence of predictable behavior of security returns.  Journal of Finance, 45(3), 
+881-898. 
+Jegadeesh, N., & Titman, S. (1993). Returns to buying winners and selling losers: Implications for stock 
+market efficiency. Journal of Finance, 48(1), 65-91. 
+Jegadeesh, N., & Titman, S. (1995a). Overreaction, delayed reaction, and contrarian profits.  Review of 
+Financial Studies, 8(4), 973-993. 
+Jegadeesh, N., & Titman, S. (1995b). Short-horizon return reversals and the bid-ask spread. Journal of 
+Financial Intermediation, 4(2), 116-132. 
+Kozak, S., Nagel, S., & Santosh, S. (2020). Shrinking the cross -section. Journal of Financial 
+Economics, 135(2), 271-292. 
+Lehmann, B. N. (1990). Fads, martingales, and market efficiency.  Quarterly Journal of 
+Economics, 105(1), 1-28. 
+Li, S. Z., Yuan, P., & Zhou, G. (2023). Risk momentum: A new class of price patterns. Available at 
+SSRN 4062260. 
+Lou, D., Polk, C., & Skouras, S. (2019). A tug of war: Overnight versus intraday expected 
+returns. Journal of Financial Economics, 134(1), 192-213. 
+Mase, B. (1999). The predictability of short-horizon stock returns. Review of Finance, 3(2), 161-173. 
+Merton, R. C. (1975). Optimum consumption and portfolio rules in a continuous-time model. Stochastic 
+Optimization Models in Finance, 621-661. 
+Nagel, S. (2012). Evaporating liquidity. Review of Financial Studies, 25(7), 2005-2039. 
+Pástor, Ľ., & Stambaugh, R. F. (2003). Liquidity risk and expected stock returns.  Journal of Political 
+Economy, 111(3), 642-685. 
+Scholes, M., & Williams, J. (1977). Estimating betas from nonsynchronous data.  Journal of Financial 
+Economics, 5(3), 309-327. 
+Stambaugh, R. F., Yu, J., & Yuan, Y . (2012). The short of it: Investor sentiment and anomalies. Journal 
+of Financial Economics, 104(2), 288-302. 
+Electronic copy available at: https://ssrn.com/abstract=4731947
+
+59 
+ 
+Stoll, H. R., & Whaley, R. E. (1990). Stock market structure and volatility. Review of Financial 
+Studies, 3(1), 37-71. 
+Subrahmanyam, A. (2005). Distinguishing between rationales for short‐horizon predictability of stock 
+returns. Financial Review, 40(1), 11-35. 
+Zhang, Y ., Ma, F., & Zhu, B. (2019). Intraday momentum and stock return predictability: Evidence from 
+China. Economic Modelling, 76, 319-329. 
+ 
+Electronic copy available at: https://ssrn.com/abstract=4731947

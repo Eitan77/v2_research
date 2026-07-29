@@ -1,0 +1,107 @@
+run_id: RUN-0002
+campaign_id: CAM-0001
+parent_run_id: RUN-0001
+
+planned_at: "2026-07-28T21:02:04.5086709-07:00"
+status: completed
+
+change_from_parent: >-
+  Batch a prespecified mechanism-diagnostic family across broad formation,
+  confirmation, holding, and breadth choices.
+reason: >-
+  RUN-0001 had strong magnitude but severe month-to-month reversals, late exits,
+  and SOXL concentration. Shorter confirmation and holding horizons may react
+  faster to trend failure; longer formation may reject noise; breadth two tests
+  whether selection concentration is obscuring a shared persistence effect.
+expected_effect: >-
+  A genuine persistence mechanism should show a neighborhood with positive
+  12/15/18-month net returns, improved negative-month count and drawdown, and
+  contribution from both funds. If only isolated SOXL/top-one variants work,
+  the mechanism is likely concentrated beta rather than a robust selector.
+
+configuration:
+  universe: "TQQQ and SOXL; QQQ confirmation; same reconciled cutoff cache as RUN-0001"
+  signal: "Positive trailing return; rank top fund(s); QQQ close above trailing SMA"
+  decision_time: "Completed regular-session close on session t"
+  entry: "Next regular-session open"
+  exit: "Open after the prespecified holding interval"
+  direction: "Long only"
+  sizing: "Fixed base 1.0, equal weight across selected breadth, no reinvestment"
+  filters:
+    lookback_sessions: [5, 20, 60]
+    qqq_sma_sessions: [20, 50, 100, 200]
+    holding_sessions: [1, 3, 5, 10]
+    breadth: [1, 2]
+  stops_or_risk_overlays: "None; diagnose alpha/horizon before overlay design"
+  cost_model: "5 bps per side"
+  execution_model: "Next-open bar fills"
+
+short_selling:
+  direct_stock_or_etf_shorting_used: false
+  strictly_intraday_if_used: "N/A"
+  protective_stop_or_emergency_exit: "N/A"
+  forced_close_before_regular_session_end: "N/A"
+  overnight_direct_short_exposure_detected: false
+
+execution_contract:
+  command: >-
+    python campaigns/CAM-0001/src/sweep_run0002.py
+    --cache campaigns/CAM-0001/artifacts/cache/bars_split_through_20260430.parquet
+    --output-dir campaigns/CAM-0001/artifacts/RUN-0002
+  expected_variant_count: 96
+  output_paths:
+    - "artifacts/RUN-0002/family.csv"
+    - "artifacts/RUN-0002/contract.json"
+
+completed_at: "2026-07-28T21:05:49.8081339-07:00"
+metrics_artifact: "artifacts/RUN-0002/family.csv"
+results_summary:
+  net_full_period_simple_return: >-
+    Diagnostic family range; 5/50/10/breadth-2 neighborhood member = 3.303478
+  average_monthly_net_simple_return: >-
+    5/50/10/breadth-2 recent 12m = 0.114113; 15m = 0.081044; 18m = 0.066075
+  average_calendar_year_net_simple_return: "Pending focused candidate audit"
+  standard_max_drawdown: >-
+    5/50/10/breadth-2 recent 12m = 0.151816; full = 0.368802
+  max_full_recovery_time_days: "Pending focused candidate audit"
+  negative_month_count: >-
+    5/50/10/breadth-2 = 3 of 12, 5 of 15, 6 of 18
+  trade_or_event_count: "Pending focused candidate audit"
+  average_capital_utilization: "Pending focused candidate audit"
+  adverse_cost_net_simple_return: "Pending focused candidate audit"
+
+execution_reconciliation:
+  semantic_tests: "4 passed"
+  actual_command_matches_record: true
+  executed_variant_count: 96
+  expected_variant_count: 96
+  saved_outputs_match_record: true
+  loaded_max_date: "2026-04-30"
+  holdout_rows_loaded: 0
+  sample_attrition: "None versus RUN-0001"
+
+factual_outcome: >-
+  The mechanism improved as a broad neighborhood, not at one isolated point.
+  Four of 96 variants jointly reached >=10% 12-month average monthly net,
+  <20% 12-month drawdown, and <=3 negative months. Three were the same
+  lookback-5/holding-10/breadth-2 construction with QQQ SMA 20, 50, or 100:
+  12-month average monthly net 12.39%/11.41%/10.61%, median month
+  13.75%/12.04%/8.69%, three negative months each, and drawdown
+  13.86%/15.18%/16.19%. Both funds contributed positively. The 15- and
+  18-month averages fell to 5.57%-8.10% and 3.85%-6.61%, so a recent onset is
+  possible but not established. A fourth one-day top-one variant had 89.82%
+  full-history drawdown and is not credible. Longer QQQ confirmation worsened
+  full-history drawdown, while the SMA-20 member had 28.51% full drawdown.
+decision: >-
+  Continue with the robust lookback-5/holding-10/breadth-2 neighborhood,
+  emphasizing SMA 20 and 50 rather than selecting the highest recent return.
+  Audit path, costs, delay, concentration, underlying-vs-leveraged alpha,
+  regime onset, and neighboring signal definitions before candidate status.
+next_question: >-
+  Does the 5-day formation/10-day equal-weight continuation family survive
+  adverse costs, one-session extra latency, component and leave-one-out tests,
+  and causal regime diagnostics without relying on the chosen recent endpoint?
+artifacts:
+  - "artifacts/RUN-0002/family.csv (sha256 69eda1d099cbc182ff3d06f5354532bb8d13c8f40f49d3af38a593627a9bdecb)"
+  - "artifacts/RUN-0002/contract.json (sha256 26d08816fd5d35ac08848cb53dfeab08b7a07bf7eda4c1eef234880b337deddb)"
+  - "src/sweep_run0002.py (sha256 58888ef2f478e14034235f7bd4ee476a1f01f923572ff94cc527348d0277bbf7)"

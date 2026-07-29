@@ -1,0 +1,98 @@
+run_id: RUN-0005
+campaign_id: CAM-0003
+parent_run_id: RUN-0004
+planned_at: "2026-07-28T23:42:00-07:00"
+status: completed
+
+change_from_parent: >-
+  Complete the source's negative-morning SPY short leg with mandatory
+  protective stops and test the paper's predicted monotonic strengthening of
+  the positive-morning long leg with causal signal magnitude.
+reason: >-
+  Long-only source replication is decisively weak, but campaign conclusion
+  requires testing the other source leg and its explicit magnitude
+  implication. This addresses signal construction rather than searching
+  unrelated filters.
+expected_effect: >-
+  A surviving source mechanism should produce positive net short performance
+  across a reasonable 0.5%-2% stop neighborhood and stronger long closing
+  returns in causally high positive-morning magnitude tiers.
+
+configuration:
+  instrument: "SPY"
+  morning_return: "previous regular close to completed 09:59 close"
+  entry: "15:30 raw SIP minute open"
+  exit: "15:59 raw SIP minute close"
+  negative_signal_short:
+    signal: "morning return < 0"
+    protective_stops_pct: [0.005, 0.01, 0.02]
+    stop_fill: "first raw minute open beyond stop, otherwise stop price plus 2 bps adverse slippage"
+    emergency_exit: "15:59 raw SIP minute close"
+    forced_flat_before_close: true
+    costs_bps_per_side: 2
+  positive_signal_long:
+    signal: "morning return > 0"
+    causal_magnitude_states:
+      - "all positive"
+      - "above prior-60-session positive-return median"
+      - "above prior-60-session positive-return 66.7th percentile"
+      - "above prior-60-session positive-return 80th percentile"
+    costs_bps_per_side: 2
+  expected_variant_count: 7
+
+execution_contract:
+  command: >-
+    python campaigns/CAM-0003/src/run0005.py
+    --output-dir campaigns/CAM-0003/artifacts/RUN-0005
+  expected_variant_count: 7
+  output_paths:
+    - "artifacts/RUN-0005/daily_path.parquet"
+    - "artifacts/RUN-0005/source_completion.csv"
+    - "artifacts/RUN-0005/contract.json"
+    - "artifacts/RUN-0005/diagnostics.json"
+
+reconciliation:
+  validation_passed: true
+  executed_variant_count: 7
+  expected_variant_count: 7
+  configuration_match: true
+  closing_path_sessions: 373
+  closing_path_rows: 11190
+  loaded_max_date: "2026-04-30"
+  holdout_rows_loaded: 0
+
+factual_result:
+  negative_signal_short:
+    trades: 164
+    gross_hypothetical_unprotected_mean_per_trade: -0.000206
+    best_stop_pct: 0.02
+    stops_triggered: 0
+    total_18m_net_simple: -0.099289
+    average_month_15m: -0.005500
+    average_month_12m: -0.004197
+    max_drawdown: 0.100655
+  positive_signal_magnitude:
+    all_four_states_lost: true
+    least_bad_state: "above prior-60-session positive-return 80th percentile"
+    trades: 36
+    total_18m_net_simple: -0.023929
+    average_month_15m: -0.001068
+    average_month_12m: -0.001123
+    max_drawdown: 0.028527
+  diagnosis: >-
+    Recent closing returns reverse rather than continue the morning sign.
+    Protective stops cannot repair the source short because its gross
+    direction is wrong, and positive-signal magnitude reduces losses without
+    creating positive expectancy.
+
+decision: >-
+  No source leg, magnitude tier, timing, ETF, or causal activity state retains
+  recent continuation alpha. Complete the mandatory conclusion audit and
+  retire CAM-0003 only; do not spend quote or auction budget.
+
+artifacts:
+  script_sha256: "dda3ce7e55392cd1f9567403ff6800564ad97b01bcfd65793d4f60f0fbb6b582"
+  daily_path_sha256: "3d8728d69c7153668ea7f8cd2fbd8238319fe7d391b17d970b26ebb9a12d751b"
+  source_completion_sha256: "fc744d74e45359cda97759d64e53b4173c9d334beb97f244eb1755d2cfe3cec0"
+  contract_sha256: "9180a204994b67edd477c72fb34be1e6231831b81b7b32589e0eee2a7eef5a1c"
+  diagnostics_sha256: "197fefbee384e8e16eda18380fe3802bf53fd38e282d272dbae3d6daa8d87db1"

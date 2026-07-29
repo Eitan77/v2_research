@@ -1,0 +1,31 @@
+{
+  "status": "passed",
+  "plan_hash_excluding_file_hash_line": "679e435ccb26c990090e87c63f57ca0969c4b91b671b9337f18f60cf41f01261",
+  "raw_auction_membership_rows": 46563,
+  "auction_status_counts": {
+    "missing_official_q": 140,
+    "official_q_without_matching_open": 99,
+    "selected": 46324
+  },
+  "selected_official_auctions_on_valid_sessions": 46322,
+  "selected_symbols": 118,
+  "known_by_0931": 46322,
+  "complete_minute_paths": 23608,
+  "signal_complete_events": 44549,
+  "bar_model_complete_events": 41488,
+  "dense_trade_minute_paths": 23608,
+  "probable_split_rejections": 9,
+  "minimum_date": "2024-07-01",
+  "maximum_loaded_date": "2026-04-30",
+  "holdout_rows_loaded": 0,
+  "full_day_expected_minutes": 386,
+  "early_close_sessions": 6,
+  "hashes": {
+    "official_auctions": "e62a19a8c5fd14c1ca6d3c20467d5c932b460bb0f360dcd2032fb4b4ef597ce7",
+    "auction_statuses": "ab5b2d7b6cc8e061fa98a293174c2eacfa8787eb53768bb6a34b9c63ed2947d9",
+    "daily_raw": "dc97a34df291cb3ec7f1ba4947e03ba8a4407b059d286acd25a5b38f9fabe617",
+    "regular_minutes": "f3110f931ca2d36dea3ce0565eb684df71003016ddf6a3ab59e530761498fbd3",
+    "minute_coverage": "1f0871e17aad60616936793e9d368c2b9abf01957ed7fe9d9bcb7c532a9d5bf8",
+    "event_readiness": "f54f041592ed68d411171944467e4589496808e7e04666f151b7ae81dab90b9c"
+  }
+}

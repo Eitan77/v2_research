@@ -1,0 +1,36 @@
+{
+  "command": "python campaigns/CAM-0004/src/run0003.py --readiness-dir campaigns/CAM-0004/artifacts/readiness --parent-dir campaigns/CAM-0004/artifacts/RUN-0002 --output-dir campaigns/CAM-0004/artifacts/RUN-0003",
+  "resolved_defaults": {
+    "models": [
+      "residual",
+      "raw_return"
+    ],
+    "breadth": [
+      "decile",
+      "quintile"
+    ],
+    "holding_periods": [
+      1,
+      2,
+      3,
+      4,
+      6
+    ],
+    "executions": [
+      "source_cc",
+      "actionable_oc",
+      "protected_oc"
+    ],
+    "cost_bps_per_side": 0
+  },
+  "executed_variant_count": 60,
+  "output_paths": [
+    "outcomes.parquet",
+    "portfolio_decisions.parquet",
+    "variants.csv",
+    "monthly.csv",
+    "by_period.csv",
+    "contract.json",
+    "diagnostics.json"
+  ]
+}

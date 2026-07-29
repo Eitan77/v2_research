@@ -1,0 +1,17 @@
+{
+  "executed_variant_count": 6,
+  "expected_variant_count": 6,
+  "event": "fixed 60-minute decline >4% and >8x causal same-clock normal",
+  "entry": "next minute open",
+  "holds": [
+    30,
+    60
+  ],
+  "costs": [
+    10,
+    20,
+    40
+  ],
+  "loaded_max_date": "2026-04-29",
+  "holdout_rows_loaded": 0
+}

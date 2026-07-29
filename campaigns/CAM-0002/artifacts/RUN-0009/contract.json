@@ -1,0 +1,37 @@
+{
+  "executed_variant_count": 486,
+  "expected_variant_count": 486,
+  "events_sha256": "586276c71e78053726e41706650e85269bcf26cfc8abc2f74f485297abf19d13",
+  "formations": [
+    10,
+    15,
+    30
+  ],
+  "residual_absolute": [
+    0.02,
+    0.04,
+    0.06
+  ],
+  "stock_surprise": [
+    6.0,
+    8.0,
+    10.0
+  ],
+  "volume_thresholds": [
+    0.0,
+    2.0,
+    5.0
+  ],
+  "confirmations": [
+    "reclaim2",
+    "no_new_low5"
+  ],
+  "holds": [
+    15,
+    30,
+    60
+  ],
+  "universe": "stocks",
+  "loaded_max_date": "2026-04-30",
+  "holdout_rows_loaded": 0
+}

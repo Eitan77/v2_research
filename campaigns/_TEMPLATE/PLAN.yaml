@@ -6,6 +6,17 @@ core_hypothesis:
 mechanism:
 why_it_might_work:
 
+intended_strategy_profile:
+  recent_evaluation_window_family:
+  representative_recent_window:
+  representative_window_reason:
+  full_history_role:
+  return_objective:
+  judgment_policy:
+  activation_rule:
+  decay_monitor:
+  retirement_rule:
+
 starting_implementation:
   universe:
   signal:

@@ -1,0 +1,144 @@
+campaign_id: CAM-0008
+title: "Public analyst-revision drift and failed-revision response"
+purpose_profile: "A. Recent Money Printer"
+
+core_hypothesis: >-
+  Explicit public analyst rating and price-target revisions create staggered
+  institutional response because investors differ in analyst access,
+  interpretation, benchmark constraints, and willingness to trade before the
+  revised view is incorporated. A completed post-release price/volume reaction
+  may identify continuation, while a failed negative revision may identify
+  resilient long recovery.
+mechanism: >-
+  The information event is an externally generated change in expected value,
+  distinct from the issuer's earnings release. Direction, timestamp, and named
+  action are public. Price reaction supplies confirmation without relying on
+  unavailable proprietary analyst databases.
+material_difference_from_prior_campaigns: >-
+  CAM-0008 uses analyst recommendation/target revisions as the primary
+  information set and supports intraday event clocks. CAM-0007 used scheduled
+  issuer earnings announcements and next-session gaps; CAM-0006 used auction
+  inventory transfer; earlier campaigns used price/flow mechanisms. A change
+  to analyst text and event-time response is a new campaign by CAM-0007's own
+  boundary.
+
+primary_source:
+  type: "mechanism-first with conservative public-headline contract"
+  source_faithful_requirement: >-
+    Detect only explicit upgrade, downgrade, initiation, or raised/lowered
+    target actions that identify one issuer and a directional analyst action.
+    Preserve provider timestamp and headline; deduplicate same-firm/symbol/
+    action clusters. Validate precision on a deterministic frozen headline
+    sample before using events. Do not infer a rating action from generic
+    analyst commentary, previews, reiterations without directional change, or
+    price movement.
+  incomplete_field_policy: >-
+    Broker identity, old/new rating, and old/new target may be absent. The
+    baseline may use action sign only; any later field requirement must report
+    attrition and cannot silently change the sample.
+
+intended_strategy_profile:
+  representative_recent_window: "2025-02-01 through 2026-04-30"
+  comparison_windows:
+    - "2024-11-01 through 2026-04-30"
+    - "2025-02-01 through 2026-04-30"
+    - "2025-05-01 through 2026-04-30"
+  return_objective: >-
+    Approximately 10%-15% average monthly net fixed-capital return with
+    frequent independent revision events, preferred drawdown below 20%, rapid
+    recovery, realistic marketable execution, and distributed contribution.
+  activation_rule: >-
+    Headline and provider timestamp must exist before decision. Universe,
+    liquidity, state, and thresholds are point-in-time or shifted. Reaction
+    features use only completed bars after public release.
+
+starting_implementation:
+  universe: >-
+    Point-in-time QQQ members on the actionable session with shifted prior20
+    median dollar volume >= $100M.
+  event_source: >-
+    Local Alpaca/Benzinga news through its verified boundary plus one targeted
+    Alpaca news pull for the 118-symbol point-in-time QQQ union from
+    2025-01-03 through 2026-04-30. No S&P or blanket equity pull.
+  event_actions:
+    positive:
+      - "explicit upgrade"
+      - "explicit positive initiation"
+      - "explicit raised price target"
+    negative:
+      - "explicit downgrade"
+      - "explicit negative initiation"
+      - "explicit lowered price target"
+  event_mapping:
+    premarket_or_prior_after_close: "Decision after completed 09:30-09:35 reaction; entry 09:35/09:36."
+    regular_session: >-
+      Decision after the first completed five-minute boundary at least five
+      minutes after release; entry at the following minute boundary.
+    too_late: "Events without a safe reaction and same-session short exit are excluded."
+  baseline_signals:
+    continuation: "Action sign and completed reaction sign agree."
+    failed_revision: "Action sign and completed reaction sign disagree."
+  exits:
+    - "Same-session calendar-aware final exit"
+    - "Next-session open"
+    - "Two-, three-, five-, and ten-session close for long legs"
+  portfolio: >-
+    Fixed capital base 1.0, additive marked-to-market P&L, fixed position sizes,
+    gross<=1.0, causal equal allocation, and cash when no event qualifies.
+  short_safeguards: >-
+    Direct negative-revision continuation shorts are intraday only with a 2%
+    protective stop, adverse stop slippage, and forced liquidation before the
+    regular-session close. No direct overnight stock short.
+  costs: "Screen 5, 10, and 20 bp per side; targeted SIP replay only for a bar-stage survivor."
+
+main_questions:
+  - "Do explicit upgrades/positive target revisions drift after a completed reaction?"
+  - "Do failed downgrades identify resilient long recovery?"
+  - "Are rating changes stronger than target-only changes or initiations?"
+  - "Does premarket versus intraday release timing change the payoff?"
+  - "Which five-minute reaction, entry latency, and same-day-to-ten-session horizon is causal and robust?"
+  - "Do action magnitude, broker repetition, participation, volatility, and market state identify a distributed edge?"
+  - "Can protected intraday negative-action shorts survive full-path stops and costs?"
+  - "Are results stable across months, folds, symbols, firms, action types, and parameter neighbors?"
+
+adaptation_policy:
+  allowed_within_campaign:
+    - "Conservative detector/deduplication refinements justified by frozen audits"
+    - "Action types, release buckets, completed reaction windows, and latency"
+    - "Gap/reaction/participation/volatility/market-state filters"
+    - "Same-day through ten-session long exits"
+    - "Long continuation, long failed-negative, and protected intraday shorts"
+    - "Causal event strength, equal/capped sizing, overlap handling, and stops"
+    - "Marketable cost and targeted exact-event SIP replay"
+  new_campaign_required_when:
+    - "Issuer earnings or generic price action replaces analyst revision as the event"
+    - "Options, transcripts, social sentiment, or proprietary recommendation history becomes primary"
+    - "A strategy no longer requires an explicit public analyst action"
+
+launch_and_conclusion_gates:
+  - "PLAN frozen before targeted pull, detector scan, or return test"
+  - "Detector precision audited on frozen deterministic samples; ambiguous attribution excluded"
+  - "Timestamp, timezone, duplicate, action sign, point-in-time membership, and event clock verified"
+  - "Price adjustment, shifted liquidity, reaction/entry/exit paths, cutoff, and zero holdout verified"
+  - "Fixtures pass for detector, event clock, completed bars, costs, allocation, stops, forced close, and drawdown"
+  - "Every meaningful run frozen and reconciled before interpretation"
+  - "Attrition, legs, action types, timing, months, folds, symbols, firms, concentration, neighbors, and execution audited before conclusion"
+  - "Mandatory eleven-principle and skeptical-quant audit before promotion or retirement"
+
+hard_constraints:
+  fixed_capital_base: 1.0
+  maximum_gross_exposure: 1.0
+  reinvest_pnl: false
+  discovery_cutoff: "2026-04-30"
+  sealed_holdout_start: "2026-05-01"
+  holdout_access_authorized: false
+  direct_overnight_stock_or_etf_shorts: false
+  targeted_data_policy: >-
+    Local declared data first. Remote news may cover only the 118-symbol
+    point-in-time QQQ union and pre-cutoff interval; later execution pulls must
+    use exact frozen event windows. Never pull a blanket S&P universe.
+
+development_period: "Declared pre-cutoff data only"
+status: frozen
+frozen_at: "2026-07-29T06:00:00-07:00"
+file_hash: "sha256 excluding file_hash line: 5ec79aba91dea47584dcd84da1df857d905bbd662c8202d3ce5a435609019c7a"

@@ -1,0 +1,22 @@
+{
+  "campaign_id": "CAM-0005",
+  "plan_hash_excluding_file_hash_line": "d39936a3f3a2d09713c27f249ac4bc022dd2bb52652b9b1b8723322aba8adebd",
+  "catalog": "D:\\AlgoResearch\\data\\catalog.duckdb",
+  "minute_source": {
+    "table": "bars_1m",
+    "feed": "sip",
+    "adjustment": "raw",
+    "symbols": ["QQQ", "TQQQ", "SQQQ", "SMH", "SOXL", "SOXS"],
+    "campaign_hash": "e91feebc50fcf64601acf8dedc338197a24b89401ee0caef5ddcb679de391498"
+  },
+  "daily_adjustment_source": {
+    "table": "bars_1d",
+    "feed": "sip",
+    "adjustments": ["raw", "split"],
+    "factor": "official split close / official raw close",
+    "campaign_hash": "b60d227542935b90587ab117c010b35e13184e5fe6574ca9e417410af159d753"
+  },
+  "maximum_loaded_date": "2026-04-30",
+  "holdout_rows_loaded": 0,
+  "invalid_attempt_preserved": "artifacts/readiness_INVALID_daily_minute_ratio"
+}

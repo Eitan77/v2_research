@@ -1,0 +1,128 @@
+campaign_id: CAM-0009
+run_id: RUN-0001
+parent_run: null
+status: completed
+frozen_at: "2026-07-29T08:48:00-07:00"
+role: "Source-contract five-minute propagation baseline"
+
+question: >-
+  Do large, high-attention completed semiconductor leader moves propagate in
+  the same direction to causally lagging point-in-time QQQ peers over the next
+  five minutes through the session close?
+reason: >-
+  Minute, daily, adjustment, membership, shifted beta/volume, entry, calendar,
+  cutoff, and short-safeguard readiness passed. The source contract must be
+  measured before changing thresholds, formations, peer definitions, sizing,
+  or hedging.
+expected_effect: >-
+  Positive leader shocks should produce long peer continuation. Negative
+  shocks may produce short peer continuation, subject to full-path 2% stops.
+  QQQ/SMH residual controls should distinguish sector information from broad
+  tape beta. A real propagation clock should peak at a short finite horizon.
+
+inputs:
+  formation_features: "artifacts/readiness/features/formation_5m.parquet"
+  minute_paths: "artifacts/readiness/market/minute_regular.parquet"
+  maximum_loaded_date: "2026-04-30"
+  holdout_rows_loaded: 0
+
+frozen_configuration:
+  eligible_peer_universe:
+    point_in_time_qqq_member: true
+    shifted_prior20_median_dollar_volume_minimum: 100000000
+    exact_completed_five_minute_formation: true
+    exact_next_minute_entry: true
+  leader:
+    formation_start_minimum: "09:35"
+    formation_start_maximum: "15:30"
+    residual_modes: [raw, qqq, smh]
+    absolute_residual_minimum: 0.01
+    shifted_prior20_median_dollar_volume_minimum: 250000000
+    shifted_same_bucket_volume_surprise_minimum: 1.5
+    selection: "Largest absolute eligible residual; symbol tiebreak."
+    sector_cooldown_minutes: 30
+  peers:
+    signed_residual_ratio_minimum: -0.25
+    signed_residual_ratio_maximum: 0.50
+    maximum_peers: 3
+    selection: "Highest shifted prior20 median dollar volume; symbol tiebreak."
+  direction_portfolios:
+    - positive_only
+    - negative_only
+    - both
+  entry: "Raw open of the next exact one-minute bar after completed formation."
+  exits_minutes: [5, 15, 30, 60, close]
+  path_contract: >-
+    Require every one-minute bar from entry through the minute before the
+    planned exit plus the exact exit bar. Close exit is the open of the final
+    one-minute bar before the actual calendar close.
+  short_safeguards:
+    stop_fraction: 0.02
+    adverse_stop_slippage_bps: 10
+    overnight: false
+    forced_close: true
+  portfolio:
+    capital_base: 1.0
+    accounting: "additive fixed-size intraday P&L"
+    maximum_gross_exposure: 1.0
+    maximum_symbol_gross: 0.10
+    position_cap: 0.10
+    allocation: "Chronological equal available capacity within exact entry cohort."
+  costs_bps_per_side: [2, 5, 10]
+  expected_variant_count:
+    residual_modes: 3
+    direction_portfolios: 3
+    exits: 5
+    costs: 3
+    total: 135
+
+required_outputs:
+  - "135/135 frozen/default/command/code/data/output reconciliation"
+  - "Leader, peer, path, horizon, sign, and allocation attrition"
+  - "Full/18/15/12-month net fixed-base return, months, drawdown, recovery, and blocks"
+  - "Leader, peer, date, event, sign, stop, and contribution concentration"
+  - "Gross versus net diagnosis and next mechanism-based question"
+
+result:
+  validation: passed
+  reconciliation:
+    expected_variants: 135
+    executed_variants: 135
+    maximum_loaded_date: "2026-04-30"
+    holdout_rows_loaded: 0
+    feature_hash: "d218deda9edb71f2eea31b34db37335453f98e8d1d13c96850f19150cd903f8f"
+    minute_hash: "a142c4f9b023ab74b903a7e4ea6c5cfb0d0da58e6bd7f8f9c5c22ce9fa6395ce"
+  source_contract_finding: >-
+    Same-direction peer propagation was not present at the intended 5, 15,
+    30, or 60 minute horizons: every such portfolio lost even at 2 bps per
+    side. Positive results appeared only at forced session close, so the
+    source's short-delay mechanism is falsified in this sample.
+  strongest_diagnostic_variant:
+    id: "smh__both__close__2bp"
+    recent_15m_average_month: 0.0139767390
+    recent_12m_average_month: 0.0063841138
+    full_average_month: 0.0114889790
+    maximum_drawdown: 0.0407384736
+    recovery_days: 38
+    recent_15m_months: {positive: 8, negative: 7, inactive: 0}
+    blocks: [0.0530162217, 0.1053866583, 0.0528097525, 0.0415449045]
+    allocated_trades: 914
+    events: 360
+    leaders: 18
+    peers: 13
+    stop_rate: 0.1083150985
+    top5_event_positive_share: 0.1677124270
+    top5_day_positive_share: 0.1865651704
+  diagnosis:
+    - "Longs contributed 15.68% and protected shorts 9.60% full-sample P&L, but shorts had only a 46.4% trade win rate and weak recent-period portfolio evidence."
+    - "771/914 allocations occurred before 10:30; the 09:35 cohort supplied 16.59% P&L, while 10:30-11:29 supplied 7.50% from only 70 trades."
+    - "The highest leader-volume-surprise quartiles and largest absolute leader-move quartile were not strongest; this argues against simple threshold escalation."
+    - "Contributions spanned many leaders and liquid peers, but leader NXPI/ASML/MPWR and a few thin peer roles were negative and require causal rather than retrospective subset tests."
+    - "At 10 bps per side the diagnostic variant fell to 0.6830% average month over the recent 15 months and -0.0909% over the recent 12 months."
+decision: >-
+  Do not promote and do not quote replay. Preserve the failed source-contract
+  result. Continue with prespecified, causal diagnostics of time of day,
+  leader strength and attention, peer lag state, sign, formation horizon,
+  cooldown, and sector-hedged expression to determine whether the close-only
+  drift is a stable information-diffusion effect or a selected common-beta
+  artifact.

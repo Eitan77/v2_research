@@ -1,0 +1,4 @@
+{"attempt":1,"status":"interrupted_no_artifact","stage":"market_readiness","reason":"deliberately short command timeout before completion","interpretable":false}
+{"attempt":2,"status":"failed_no_artifact","stage":"market_readiness","reason":"broad bars_1m catalog join exhausted Windows file resources before output","interpretable":false}
+{"attempt":3,"status":"failed_no_artifact","stage":"market_readiness","reason":"exact-date minute loading succeeded but local registry symbols had zero split-adjusted daily rows, causing the fail-fast no-signal-ready gate","interpretable":false}
+{"attempt":4,"status":"passed","stage":"market_readiness","reason":"serial exact-event-date minute partitions plus targeted registry-only Alpaca split-adjusted daily bars","interpretable":true,"registry_events":742,"signal_complete_events":728,"liquidity_eligible_signal_events":720,"maximum_loaded_date":"2026-04-30","holdout_rows_loaded":0}

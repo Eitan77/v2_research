@@ -1,0 +1,88 @@
+run_id: RUN-0003
+campaign_id: CAM-0005
+parent_run_id: RUN-0002
+planned_at: "2026-07-29T02:44:00-07:00"
+status: completed
+
+change_from_parent: >-
+  Restrict diagnosis to the strong SMH family; separate SOXL dip buys, SOXS
+  rally fades, both-leg reversal, and an always-SOXL control across causal
+  magnitude neighbors, entry latency, and opening exit marks. Mirror the
+  decomposition on unlevered SMH, retaining positive-signal short exposure as
+  diagnostic only.
+reason: >-
+  RUN-0002 is close to the Type-A return profile but has unacceptable drawdown,
+  contribution concentration, late-sample strengthening, and asymmetric
+  product legs. The next run must identify whether the edge is genuine
+  overnight mean reversion, generic SOXL overnight drift, or a 09:30 mark.
+expected_effect: >-
+  A genuine SMH dip-reversal mechanism should favor the negative-signal SOXL
+  leg over always-SOXL, persist at 15:59 entry, remain visible through 09:35,
+  match long SMH after negative signals, and form a q40-q67 neighborhood.
+
+configuration:
+  pair: {underlying: SMH, bull: SOXL, inverse: SOXS}
+  thresholds: ["q40", "q50", "q60", "q67"]
+  threshold_history: "Shifted prior-60-session quantile; minimum 40"
+  entries: ["15:56_open", "15:59_open"]
+  exits: ["next_09:30_open", "next_09:30_close", "next_09:34_close"]
+  product_legs:
+    - "both_reversal"
+    - "negative_signal_bull"
+    - "positive_signal_inverse"
+    - "always_bull_control"
+  product_cost_bps_per_side: [2, 5, 10]
+  underlying_diagnostics:
+    - "both_signed_reversal"
+    - "negative_signal_long"
+    - "positive_signal_short_diagnostic"
+  underlying_cost_bps_per_side: 0
+  expected_variant_count: 360
+
+execution_contract:
+  command: >-
+    python campaigns/CAM-0005/src/run0003.py
+    --readiness-dir campaigns/CAM-0005/artifacts/readiness
+    --parent-dir campaigns/CAM-0005/artifacts/RUN-0002
+    --output-dir campaigns/CAM-0005/artifacts/RUN-0003
+  expected_variant_count: 360
+  output_paths:
+    - "artifacts/RUN-0003/positions.parquet"
+    - "artifacts/RUN-0003/variants.csv"
+    - "artifacts/RUN-0003/monthly.csv"
+    - "artifacts/RUN-0003/contract.json"
+    - "artifacts/RUN-0003/diagnostics.json"
+
+completed_at: "2026-07-29T02:50:30-07:00"
+factual_outcome: >-
+  All 360 variants reconciled with maximum date 2026-04-30 and zero holdout.
+  The effect survived 15:59 entry and exits at the next open, 09:30 close, and
+  09:34 close, so it is not an opening-auction-only mark. Best q50 both-leg
+  reversal at 15:59 to 09:30 close and 2 bp/side averaged 9.7983% per month
+  over 15 months and 8.1394% over 12 months, but drawdown was 64.93%.
+  Q40-Q60 and 2-10 bp neighbors were positive. Unlevered q50 signed SMH
+  reversal averaged 2.9059% per month. The q50 SOXL negative-signal leg
+  averaged 7.5197% per month at 2 bp with 33.75% drawdown; its late half was
+  strongly positive but early half was near zero. SOXS positive-signal
+  reversal decayed to negative over the latest 12 months. Always-SOXL was
+  weaker over 15 months and lost in the early half.
+decision: >-
+  Preserve the family as a strong adapted lead but not a candidate. Continue
+  with causal close-location pressure confirmation and shifted trailing
+  unlevered-edge activation to address drawdown/regime decay. Do not yet use
+  quote data.
+next_question: >-
+  Can prespecified pressure confirmation and rolling unlevered reversal
+  activation preserve roughly 10% monthly return while cutting drawdown and
+  concentration to a credible range across neighboring settings?
+artifacts:
+  - "artifacts/RUN-0003/positions.parquet"
+  - "artifacts/RUN-0003/variants.csv"
+  - "artifacts/RUN-0003/monthly.csv"
+  - "artifacts/RUN-0003/contract.json"
+  - "artifacts/RUN-0003/diagnostics.json"
+artifact_hashes:
+  variants_csv: "b53d49d59616a473996ae7abc1e21bebaeb0f26d98ce49daa0d2b9c239b28d0e"
+  monthly_csv: "2bf817f80e8bd29561f54c88a74b5ad1a42c931e1341755cb2f38fcc5b642bec"
+  contract_json: "4b2adb1f397f0c723d02db3e60f8df524d8ed9be34537594087bb6391d2f25e4"
+  diagnostics_json: "fc34dc43b2f2475ad0bc127bbc27af61b8f101995a9c51ec87d7ae05ae5f9128"

@@ -1,0 +1,34 @@
+{
+  "command": "python campaigns/CAM-0004/src/run0002.py --readiness-dir campaigns/CAM-0004/artifacts/readiness --output-dir campaigns/CAM-0004/artifacts/RUN-0002",
+  "resolved_defaults": {
+    "evaluation_start": "2024-11-01",
+    "evaluation_end": "2026-04-30",
+    "features": [
+      "log_price",
+      "log_dollar_volume",
+      "reversal_1d",
+      "momentum_5d",
+      "momentum_20d",
+      "volatility_20d",
+      "beta_60d"
+    ],
+    "cost_bps_per_side": [
+      0,
+      5,
+      10
+    ],
+    "short_stop_fraction": 0.02,
+    "short_stop_slippage_bps": 5.0
+  },
+  "executed_variant_count": 12,
+  "output_paths": [
+    "decision_panel.parquet",
+    "portfolio_decisions.parquet",
+    "positions.parquet",
+    "variants.csv",
+    "monthly.csv",
+    "concentration.csv",
+    "contract.json",
+    "diagnostics.json"
+  ]
+}

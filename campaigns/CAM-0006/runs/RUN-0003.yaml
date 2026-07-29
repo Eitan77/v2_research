@@ -1,0 +1,105 @@
+run_id: RUN-0003
+campaign_id: CAM-0006
+parent_run_id: RUN-0002
+planned_at: "2026-07-29T03:46:00-07:00"
+status: completed
+
+change_from_parent: >-
+  Hold four coherent long-absorption selectors fixed: 5% gap tail with no
+  auction filter, and 5%/10%/15% tails with auction anomaly >= 1; all require
+  at least 25% first-minute reclaim. Test entry at 09:31/09:32/09:33/09:35
+  minute opens and five final-exit risk rules: no stop, fixed 1%/2%/3% stop,
+  or causal absorption-failure exit after a completed minute closes at or
+  below the official auction price. Use equal-weight gross 1.0 portfolios at
+  5/10/20 bp per side.
+reason: >-
+  RUN-0002 found a neighboring, three-block-positive region but weak monthly
+  consistency and material drawdown/concentration. Final exits dominated noon,
+  so the next informative question is whether immediate entry noise or failed
+  absorption paths cause the losses. Fixed and mechanism-defined exits can
+  improve risk only if they preserve the region across selectors and costs.
+expected_effect: >-
+  A credible improvement should occur across neighboring selectors and entry
+  delays, lower drawdown and losing-month count without relying on one block,
+  preserve broad event/symbol contribution, and survive at least 10 bp per
+  side. A single lucky stop/latency cell or material hidden path attrition will
+  be rejected.
+
+configuration:
+  direction: "Long negative-gap absorption only"
+  selectors:
+    - {name: tail05_all, gap_tail: 0.05, reclaim_minimum: 0.25, auction_anomaly_minimum: null}
+    - {name: tail05_anomaly1, gap_tail: 0.05, reclaim_minimum: 0.25, auction_anomaly_minimum: 1.0}
+    - {name: tail10_anomaly1, gap_tail: 0.10, reclaim_minimum: 0.25, auction_anomaly_minimum: 1.0}
+    - {name: tail15_anomaly1, gap_tail: 0.15, reclaim_minimum: 0.25, auction_anomaly_minimum: 1.0}
+  decision_time: "09:31 after completed first minute"
+  entry_minutes: ["09:31", "09:32", "09:33", "09:35"]
+  risk_rules:
+    - "none"
+    - "fixed_stop_1pct"
+    - "fixed_stop_2pct"
+    - "fixed_stop_3pct"
+    - "completed_minute_close_at_or_below_auction_then_next_observed_open"
+  fixed_stop_execution: >-
+    If a minute opens through the stop use that adverse open; otherwise use
+    the stop price. Apply 10 bp additional adverse stop slippage, plus the
+    variant's marketable round-trip cost.
+  missing_trade_minutes: >-
+    An absent SIP trade minute supplies no inferred price and cannot trigger a
+    bar-stage exit. Report observed path density. Exact entry and final marks
+    are required; if any selected event on a date lacks either, the whole
+    variant-day is assigned cash.
+  exit: "calendar close minus five minutes open unless risk rule exits earlier"
+  weighting: "Equal weight simultaneous eligible events, maximum gross 1.0"
+  cost_bps_per_side: [5, 10, 20]
+  expected_variant_count: 240
+
+execution_contract:
+  command: >-
+    python campaigns/CAM-0006/src/run0003.py
+    --signals-path campaigns/CAM-0006/artifacts/RUN-0002/enriched_signals.parquet
+    --minutes-path campaigns/CAM-0006/artifacts/readiness/regular_minutes.parquet
+    --output-dir campaigns/CAM-0006/artifacts/RUN-0003
+  expected_variant_count: 240
+
+completed_at: "2026-07-29T03:49:06-07:00"
+factual_outcome: >-
+  All 240 variants reconciled on 366,390 local pre-cutoff minute rows, maximum
+  date 2026-04-30, and zero holdout. Exact-entry/final attrition was small
+  (one invalid day at 09:31 for each principal selector), while observed trade
+  paths contained about 97.1%-97.7% of expected minutes. No variant reached
+  10% average month: maxima were 6.18% at 5 bp, 4.90% at 10 bp, and 2.61% at
+  20 bp. Immediate 09:31 no-stop entries remained strongest across the
+  neighborhood. The 5%/anomaly>=1/09:31/no-stop cell at 10 bp averaged 4.43%
+  over 15 months, had 11.43% drawdown, 28-day recovery, seven negative months,
+  232 valid events across the broad symbol set, and positive P&L in all three
+  blocks. The 10% neighbor averaged 4.90% with 20.43% drawdown. One-to-three
+  percent stops reduced return and generally worsened drawdown/month
+  consistency; the 3% stop on the 10% selector averaged 3.32%, drew down
+  24.10%, and lost the final block. Auction-failure exits fired on roughly
+  two-thirds of the 10% events and nearly erased the edge, showing that later
+  auction-price recrosses often precede recovery rather than invalidate it.
+decision: >-
+  Reject delayed-entry and protective-exit variants as improvements and do
+  not promote this region. Retain 09:31/no-stop as the mechanism-consistent
+  bar-stage branch. Complete the remaining causal portfolio/state diagnosis:
+  simultaneous-event ranking/sizing, signal breadth, shifted volatility, and
+  broad market state. If those do not produce a distributed Type-A region,
+  proceed to execution evidence for a lower-profile sleeve only if warranted,
+  then close CAM-0006 and start a materially different campaign.
+next_question: >-
+  Can causal within-day event ranking, breadth, shifted volatility, or QQQ
+  market state separate the profitable absorption cases prospectively without
+  relying on full-sample symbols or one favorable six-month block?
+artifacts:
+  - "artifacts/RUN-0003/variants.csv"
+  - "artifacts/RUN-0003/monthly.csv"
+  - "artifacts/RUN-0003/blocks.csv"
+  - "artifacts/RUN-0003/positions.parquet"
+  - "artifacts/RUN-0003/contract.json"
+artifact_hashes:
+  variants_csv: "1892aa59511d6210e7129515e711d7547bd1390ca1d40f07d034522f4e1572ef"
+  monthly_csv: "d435ef0dba7b6865a47b398860ec7a2786fbcc5aa8b5ecce44ff768918e50214"
+  blocks_csv: "592d136d6c7219a7fa271e3c112aeadb4e2b14bac55c4be0c41777659e63982d"
+  positions_parquet: "c3a4658733cd7d9ae05fbd1ae64b36d53dd0aa261fa3d1ddc83b71daf0d06949"
+  contract_json: "4d1b4037634622b0e48d83db33f4a0babbc2dd2ab5dd1eae21dea3001d6594fe"

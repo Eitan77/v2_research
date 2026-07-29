@@ -1,0 +1,19 @@
+{
+  "command": "python campaigns/CAM-0006/src/run0005.py --raw-dir campaigns/CAM-0006/artifacts/RUN-0005/raw --output-dir campaigns/CAM-0006/artifacts/RUN-0005",
+  "resolved_defaults": {
+    "candidates": [
+      "all_state",
+      "vol_high"
+    ],
+    "entry": "first_noncrossed_ask_at_or_after_09:31",
+    "exit": "first_noncrossed_bid_at_or_after_calendar_final_exit",
+    "additional_slippage_bps_per_side": [
+      0,
+      2,
+      5
+    ]
+  },
+  "executed_variant_count": 6,
+  "max_loaded_date": "2026-04-29",
+  "holdout_rows_loaded": 0
+}

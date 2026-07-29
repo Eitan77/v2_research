@@ -1,0 +1,113 @@
+run_id: RUN-0001
+campaign_id: CAM-0001
+parent_run_id:
+
+planned_at: "2026-07-28T20:53:13.9527284-07:00"
+status: completed
+
+change_from_parent: "N/A - source run"
+reason: >-
+  Establish a transparent causal baseline for whether short-horizon directional
+  persistence in liquid long leveraged equity ETFs has recent net economic
+  value after next-open execution and realistic costs.
+expected_effect: >-
+  If the mechanism is present, positive 20-session momentum conditioned on a
+  positive QQQ 200-session trend should produce positive next-five-session net
+  P&L across several funds and recent subperiods, with nearby construction
+  choices showing the same direction.
+
+configuration:
+  universe: >-
+    TQQQ and SOXL, selected from the predeclared TQQQ/UPRO/SPXL/SOXL/TECL/FAS/TNA
+    proposal solely by cutoff-bounded data availability; QQQ is the non-traded
+    market confirmation and beta benchmark. Use SIP split-adjusted daily bars
+    through 2026-04-30, including the documented deterministic reconstruction
+    of 10 common dates missing from the native split stream.
+  signal: >-
+    Rank by trailing 20-session close-to-close return after the completed close;
+    require fund momentum > 0 and QQQ close > trailing 200-session SMA.
+  decision_time: "Completed regular-session close on session t"
+  entry: "Next regular-session open on t+1"
+  exit: "Regular-session open five trading sessions after entry"
+  direction: "Long only"
+  sizing: >-
+    1.0 of original fixed capital in the top-ranked eligible fund, no
+    reinvestment, overlapping signals prevented by five-session holding blocks.
+  filters: "Complete split-adjusted bars and predeclared liquidity/age eligibility only"
+  stops_or_risk_overlays: "None in baseline"
+  cost_model: "5 bps/side base; 10 bps/side adverse; 20 bps/side severe"
+  execution_model: "Next-open marketable bar fill; one-session-delay stress"
+
+short_selling:
+  direct_stock_or_etf_shorting_used: false
+  strictly_intraday_if_used: "N/A"
+  protective_stop_or_emergency_exit: "N/A"
+  forced_close_before_regular_session_end: "N/A"
+  overnight_direct_short_exposure_detected: false
+
+execution_contract:
+  command: >-
+    python campaigns/CAM-0001/src/cam0001.py run
+    --cache campaigns/CAM-0001/artifacts/cache/bars_split_through_20260430.parquet
+    --output-dir campaigns/CAM-0001/artifacts/RUN-0001
+    --lookback 20 --market-sma 200 --holding-sessions 5
+    --entry-delay-sessions 1 --cost-bps-per-side 5 --breadth 1
+  resolved_defaults:
+    require_positive_momentum: true
+    require_market_trend: true
+  expected_variant_count: 1
+  output_paths:
+    - "artifacts/RUN-0001/daily.csv"
+    - "artifacts/RUN-0001/trades.csv"
+    - "artifacts/RUN-0001/metrics.json"
+  record_sha256_before_execution: "sha256 excluding this line: 0464cdb31660e963e05404e0852c288b79fa6c9a0d25e0fa1d97a61b0ebe5e4c"
+
+completed_at: "2026-07-28T21:02:04.5086709-07:00"
+metrics_artifact: "artifacts/RUN-0001/metrics.json"
+results_summary:
+  net_full_period_simple_return: 3.4915198931
+  average_monthly_net_simple_return: 0.0396763624
+  average_calendar_year_net_simple_return: 0.4364399866
+  standard_max_drawdown: 0.2647959486
+  max_full_recovery_time_days: 588
+  negative_month_count: 29
+  trade_or_event_count: 220
+  average_capital_utilization: 0.5971769815
+  adverse_cost_net_simple_return: "Pending cost-family diagnostic"
+
+execution_reconciliation:
+  semantic_tests: "4 passed"
+  actual_command_matches_record: true
+  resolved_defaults_match_record: true
+  executed_variant_count: 1
+  expected_variant_count: 1
+  saved_outputs_match_record: true
+  max_loaded_date: "2026-04-30"
+  holdout_rows_loaded: 0
+  sample_attrition: >-
+    5 of 7 proposed leveraged funds unavailable (71.4% symbol attrition);
+    no date attrition after deterministic reconstruction of 30 rows on 10
+    common sessions documented in readiness.json.
+
+factual_outcome: >-
+  Full history gained 349.15% net simple with 26.48% standard drawdown, but the
+  recent path is not a consistent money printer. The predeclared 18/15/12-month
+  views returned 124.38%/149.57%/168.48% (6.91%/9.97%/14.04% average monthly)
+  with 9/8/6 negative months and recent-window maximum drawdowns of
+  65.02%/35.37%/22.02%. The 12-month median month was only 0.73%. SOXL supplied
+  91.8% of full-period net contribution and more than 100% of 12-month net
+  contribution while TQQQ lost slightly. Large positive and negative months
+  dominate; the result is concentrated embedded leverage, not yet exceptional
+  repeatable income.
+decision: >-
+  Continue. The mechanism has strong gross economic magnitude but weak
+  consistency, slow recovery, concentration, and likely late trend exits.
+  Diagnose horizon and confirmation jointly before adding risk overlays.
+next_question: >-
+  Do broad, mechanism-consistent lookback/holding/trend-confirmation choices
+  improve the complete monthly path and drawdown across both funds and
+  chronological periods, or is the apparent edge simply SOXL beta?
+artifacts:
+  - "artifacts/RUN-0001/daily.csv (sha256 4f557af05f28cbf065e0345a9f18393b839591216ea1ef528cfe7597f71afd39)"
+  - "artifacts/RUN-0001/trades.csv (sha256 eaa3bc55c9be44422433ca1dc31813e45eb87e9709194b339474b996fe3f31f9)"
+  - "artifacts/RUN-0001/metrics.json (sha256 1cf0f1e58c50d61610bcedc3d358b7b8d690cb0e5ff3fe59e75c9cabbce2fe04)"

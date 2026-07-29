@@ -1,0 +1,92 @@
+run_id: RUN-0006
+campaign_id: CAM-0006
+parent_run_id: RUN-0005
+planned_at: "2026-07-29T04:09:00-07:00"
+status: completed
+
+change_from_parent: >-
+  Identify only the 12 RUN-0005 events/phases without a valid noncrossed quote
+  in the original ten-second post-target window. Pull SIP quotes and trades
+  for those missing phases through 120 seconds after the same frozen target,
+  merge with the original raw windows, and rerun the identical ask/bid replay
+  at 0/2/5 bp additional slippage.
+reason: >-
+  Ninety-five percent quote coverage is strong but incomplete. Missing events
+  cannot silently become cash if the strategy claim assumes execution on every
+  causal signal. Actual first-quote delays distinguish a modest window choice
+  from a genuine opening-liquidity failure.
+expected_effect: >-
+  Extended quotes should either close coverage with explicitly delayed fills
+  or document non-executability. Economics must be reported both relative to
+  the 10-second cash treatment and with delayed fills; no delayed quote can be
+  relabeled as a 09:31 fill or used to make a capacity claim.
+
+configuration:
+  request_scope: "Only missing RUN-0005 event-phase pairs"
+  extended_window: "Frozen target through target plus 120 seconds"
+  merge: "Original and extension rows deduplicated; earliest valid post-target quote wins"
+  replay_candidates: ["all_state", "vol_high"]
+  additional_slippage_bps_per_side: [0, 2, 5]
+  expected_variant_count: 6
+
+execution_contract:
+  pull_command: >-
+    python campaigns/CAM-0006/src/pull_run0006_missing.py
+    --run0005-dir campaigns/CAM-0006/artifacts/RUN-0005
+    --output-dir campaigns/CAM-0006/artifacts/RUN-0006/raw
+  replay_command: >-
+    python campaigns/CAM-0006/src/run0006.py
+    --run0005-dir campaigns/CAM-0006/artifacts/RUN-0005
+    --extension-dir campaigns/CAM-0006/artifacts/RUN-0006/raw
+    --output-dir campaigns/CAM-0006/artifacts/RUN-0006
+  expected_variant_count: 6
+
+completed_at: "2026-07-29T04:10:45-07:00"
+factual_outcome: >-
+  The extension requested exactly 12 missing event-phase pairs, returned 1,132
+  quotes and 2,647 trades, and loaded/requested zero holdout. It closed quote
+  and trade coverage to 232/232 events. Eleven entry quotes arrived more than
+  ten seconds after 09:31 and one exit quote arrived more than ten seconds
+  after the target; maximum delays were 32.67 and 20.77 seconds. Including
+  those actual delayed fills reduced the all-state 15-month average month from
+  5.96% to 5.26% at 2 bp extra slippage and raised drawdown from 25.93% to
+  33.39%; the twelve delayed cases contributed -12.12% fixed-base net. In the
+  volatility-high subset, the six delayed cases nearly netted to zero and the
+  same central replay changed only from 5.17% to 5.12%, with 8.11% drawdown.
+  At 5 bp extra slippage the fully covered volatility-high sleeve averaged
+  4.72% over 15 months with 10.07% drawdown. Full coverage had median entry
+  spread 29.04 bp all-state and 32.27 bp volatility-high.
+decision: >-
+  Execution qualification passes only as a delayed-fill-aware development
+  sleeve, not as immediate 09:31 capacity evidence and not as Type A. Reject
+  the high-drawdown all-state branch. Retain volatility-high for the final
+  causal first-minute quality and adversarial review because its delayed
+  events did not drive profit. No capacity claim is permitted.
+next_question: >-
+  Do causally known first-minute activity, range-close quality, or VWAP
+  confirmation form a stable marketable-NBBO region, or is the remaining
+  volatility-high edge economically capped below Type A?
+artifacts:
+  - "artifacts/RUN-0006/raw/tasks.parquet"
+  - "artifacts/RUN-0006/raw/quotes.parquet"
+  - "artifacts/RUN-0006/raw/trades.parquet"
+  - "artifacts/RUN-0006/raw/pull_report.json"
+  - "artifacts/RUN-0006/event_replay.parquet"
+  - "artifacts/RUN-0006/variants.csv"
+  - "artifacts/RUN-0006/monthly.csv"
+  - "artifacts/RUN-0006/blocks.csv"
+  - "artifacts/RUN-0006/comparison.csv"
+  - "artifacts/RUN-0006/diagnostics.json"
+  - "artifacts/RUN-0006/contract.json"
+artifact_hashes:
+  raw_tasks_parquet: "82c6663458d45c3a1c4b9bae4aa15927838d7d33c0a75bda8fc196f56981f565"
+  raw_quotes_parquet: "849fb066a46884dc758db8fd36226dfd86933c64cb659ba5a85ac1478ed1ec6e"
+  raw_trades_parquet: "9229ab1b5ec86defd82ae19037f6eb6ca9c996a6d0dfe1b58167e61c254692dd"
+  raw_pull_report_json: "599a98c2cc18a2309bb3e7a3197ae6bf4b4e7bda7446ea8fe947573e678e5daf"
+  replay_parquet: "d788fe1bd4361cda79c26d20da660a6c7a8cb28437025ff2f28f59dce7bbdd62"
+  variants_csv: "348bdda42e673f3c875d20bac3e0010af88395bf0e2007bb2c1d50c0c6138ad1"
+  monthly_csv: "e2a09430c1d8f5f031f4e9ad7505c1f199a6486ff8a1bdc95424d1d1d793f4fb"
+  blocks_csv: "2caaf46bb1b583461694112cbf330d76e0e106dfd5e3dfad2e521497170d4c5f"
+  comparison_csv: "11fb2d6487919f2ab377dd1990dc623eba9abe91355f4aa781fb3daba2ceea90"
+  diagnostics_json: "7ff2093e94f62008d1df6792d5deb7c5f0b05c9d4d9982d9938b7f3a015bb5fc"
+  contract_json: "3b0196f5e186fa79fe96463279f9f5d31186b5fd72a84f1ab0854d8870b85a89"

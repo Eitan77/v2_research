@@ -1,0 +1,25 @@
+{
+  "command": "python campaigns/CAM-0005/src/run0009.py --replay-path campaigns/CAM-0005/artifacts/RUN-0008/event_replay.parquet --features-path campaigns/CAM-0005/artifacts/RUN-0002/features.parquet --minutes-path campaigns/CAM-0005/artifacts/readiness/targeted_minutes.parquet --daily-path campaigns/CAM-0005/artifacts/readiness/split_daily.parquet --output-dir campaigns/CAM-0005/artifacts/RUN-0009",
+  "resolved_defaults": {
+    "filter_count": 24,
+    "additional_slippage_bps_per_side": [
+      2,
+      5,
+      10
+    ],
+    "rolling_window_sessions": 60,
+    "rolling_minimum_sessions": 40,
+    "rolling_thresholds_shifted": true
+  },
+  "executed_variant_count": 72,
+  "q60_feature_completeness": {
+    "realized_vol": 108,
+    "dollar_volume": 108,
+    "qqq_signal_return": 108,
+    "smh_pre_signal_return": 108,
+    "smh_prior5_return": 108,
+    "smh_prior_sma20": 108,
+    "qqq_prior_sma20": 108
+  },
+  "holdout_rows_loaded": 0
+}

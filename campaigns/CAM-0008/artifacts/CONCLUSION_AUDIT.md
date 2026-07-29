@@ -1,0 +1,28 @@
+# CAM-0008 Conclusion Audit
+
+- Governing checklist and frozen PLAN before research: passed.
+- Conservative explicit-action source contract and frozen precision audit: passed.
+- Recall: unknown by design; no complete independent action database and no recall claim.
+- Timing, timezone, attribution, action sign, clustering, conflicts, and event clock: passed.
+- Point-in-time membership, adjustment lineage, shifted liquidity, bars, exits, and cutoff: passed.
+- Targeted data policy: passed; 118-symbol QQQ union only, no blanket S&P pull.
+- Maximum date April 30, 2026 and zero holdout rows: passed.
+- Baseline before adaptation and separation of alpha/reaction/execution/portfolio: passed.
+- Action types/signs, continuation/failure, combined longs, protected shorts, and earnings confounds: passed.
+- Release clocks, reaction/range, participation, gaps, repetition, stock/QQQ states: passed.
+- Same-day, next-open, two-, three-, five-, and ten-session exits: passed.
+- Completed 1/5/15/30-minute reactions and 0/1/3/5-minute latency: passed.
+- Fixed-base additive P&L, gross<=1.0, symbol<=0.10, 2%-10% caps, overlap and cash: passed.
+- 5/10/20 bp costs, attrition, months, blocks, rolling windows, contributors, neighbors, and concentration: passed.
+- Capacity-aware leave-one-out: passed, 439 resimulations.
+- Moving-block uncertainty: passed, 20,000 replications per profile/window.
+- Invalid/failed attempts preserved or logged and excluded: passed.
+- Action magnitude: inapplicable; old/new pairs are not consistently available and requiring them would silently change the sample.
+- Wider universe/ETF expression: inapplicable; the issuer-specific edge is already distributed across 103-108 constituents and dilution cannot bridge the gap.
+- Long stop overlay: inapplicable to this Type-A stopping decision; caps, states, five-day exits, costs, and drawdown were tested, while low-touch stops lack gap/quote evidence.
+- Targeted SIP quote replay: inapplicable; the bar-stage profile is far below Type A and replay cannot rescue alpha.
+- Capacity: unresolved by design; no displayed-depth/impact evidence and no capacity claim.
+- Prospective/sealed confirmation: not justified for Type A; holdout untouched.
+- Obvious bounded causal experiment: none remains after source, state, timing, horizons, costs, sizing, overlap, risk, and dependence tests.
+- Promotion: rejected.
+- Retirement: justified; the mechanism is genuine but economically incompatible with Type A under gross<=1.

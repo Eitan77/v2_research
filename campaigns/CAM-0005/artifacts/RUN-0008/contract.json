@@ -1,0 +1,16 @@
+{
+  "command": "python campaigns/CAM-0005/src/run0008.py --events-path campaigns/CAM-0005/artifacts/RUN-0006/raw/events.parquet --entry-quotes-path campaigns/CAM-0005/artifacts/RUN-0006/raw/quotes.parquet --entry-trades-path campaigns/CAM-0005/artifacts/RUN-0006/raw/trades.parquet --exit-quotes-path campaigns/CAM-0005/artifacts/RUN-0008/raw/quotes.parquet --exit-trades-path campaigns/CAM-0005/artifacts/RUN-0008/raw/trades.parquet --output-dir campaigns/CAM-0005/artifacts/RUN-0008",
+  "resolved_defaults": {
+    "thresholds": [
+      "q50",
+      "q60"
+    ],
+    "exit": "first_noncrossed_bid_at_or_after_09:35",
+    "additional_slippage_bps_per_side": [
+      2,
+      5,
+      10
+    ]
+  },
+  "executed_variant_count": 6
+}

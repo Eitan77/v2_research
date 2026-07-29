@@ -1,0 +1,34 @@
+{
+  "status": "passed",
+  "profiles_reproduced": 3,
+  "bootstrap_replications_per_profile_and_window": 20000,
+  "leave_one_out_resimulations": 439,
+  "leave_one_out_counts": {
+    "combined_midwindow|entry_day": 10,
+    "combined_midwindow|event": 20,
+    "combined_midwindow|firm": 10,
+    "combined_midwindow|symbol": 108,
+    "failed_negative_fast|entry_day": 10,
+    "failed_negative_fast|event": 20,
+    "failed_negative_fast|firm": 10,
+    "failed_negative_fast|symbol": 108,
+    "failed_negative_slow|entry_day": 10,
+    "failed_negative_slow|event": 20,
+    "failed_negative_slow|firm": 10,
+    "failed_negative_slow|symbol": 103
+  },
+  "frozen_configuration_hash": "cf81526d43ceb08efc7ae6fb5072e8a6c29bc6b3a0fc44cd551dbf223e175951",
+  "input_hashes": {
+    "source_trades": "8c23a49e5ec8a1ade1ad5e709c3628a103dacfa6926cd415af6de9304ab2031f",
+    "source_daily": "af7d6d0033fd69f2211980dd251fcbd43025480c7793a19fe6170abe8f377f6c",
+    "source_metrics": "c2c1e2bb835193519aa94e2ef1fb3a555d8ca6af5b1367aba3c35f954e4de197",
+    "daily_split": "bc45566ebaa4cfaae2d63121b283b46585ff3fe42b8b25c463c2bdacc4d703f2"
+  },
+  "executed_code_hashes": {
+    "run0005.py": "62cab5233419d5d24bb010ce6eb2d237cc5a6368169f9cf99e987ef2c414477f",
+    "run0001.py": "921ae27eaced405c42f89e9180489fbc42fbd4dd86313178dd3051a57de08bb2",
+    "cam0008.py": "9ee4beb14733552285a444287817673341ae4bb188840cde35153edf432545ed"
+  },
+  "maximum_loaded_date": "2026-04-30",
+  "holdout_rows_loaded": 0
+}

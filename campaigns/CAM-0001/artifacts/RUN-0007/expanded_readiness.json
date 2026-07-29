@@ -1,0 +1,54 @@
+{
+  "status": "passed",
+  "symbols": [
+    "QQQ",
+    "SMH",
+    "SOXL",
+    "SOXS",
+    "SQQQ",
+    "TQQQ"
+  ],
+  "source_filter": "bars_1d date <= 2026-04-30, feed=sip, adjustment in raw/split, symbols QQQ/SMH/TQQQ/SOXL/SQQQ/SOXS",
+  "max_loaded_date": "2026-04-30",
+  "holdout_rows_loaded": 0,
+  "rows": 11052,
+  "sessions_per_symbol": {
+    "QQQ": 1842,
+    "SMH": 1842,
+    "SOXL": 1842,
+    "SOXS": 1842,
+    "SQQQ": 1842,
+    "TQQQ": 1842
+  },
+  "date_attrition_vs_shared_calendar": {
+    "QQQ": 0,
+    "SMH": 0,
+    "SOXL": 0,
+    "SOXS": 0,
+    "SQQQ": 0,
+    "TQQQ": 0
+  },
+  "invalid_ohlc_rows": 0,
+  "duplicate_symbol_dates": 0,
+  "reconciliation": {
+    "raw_rows": 10344,
+    "native_split_rows": 10992,
+    "reconstructed_rows": 60,
+    "missing_native_split_dates": [
+      "2019-11-25",
+      "2020-01-28",
+      "2020-02-27",
+      "2020-03-30",
+      "2020-04-24",
+      "2021-01-11",
+      "2021-03-29",
+      "2024-03-13",
+      "2025-01-08",
+      "2025-08-21"
+    ],
+    "maximum_neighbor_split_factor_relative_drift": 0.0005513721289265305,
+    "method": "For a raw symbol-date absent from the split stream, multiply raw OHLC/VWAP by the mean of the immediately preceding and following native split/raw close ratios; require relative ratio drift <= 0.1%. Volume and trade_count remain raw. The reconstruction is deterministic and is not a strategy parameter."
+  },
+  "loaded_frame_sha256": "b12e91479edf9aa1c55300f39f0103ff7079252cb4acd8ffcfe4ca69171a920b",
+  "failures": []
+}

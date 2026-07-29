@@ -1,0 +1,107 @@
+campaign_id: CAM-0002
+title: Extreme intraday sell-shock reversal
+purpose_profile: "A. Recent Money Printer"
+
+core_hypothesis: >-
+  A large, completed intraday decline in a liquid U.S. stock can temporarily
+  overshoot fundamental value because urgent selling and uncertainty remove
+  liquidity; once the shock ends, competitive liquidity provision produces a
+  measurable 30-60 minute rebound.
+mechanism: >-
+  Behavioral overreaction and/or rational price concession under uncertainty
+  creates temporary price pressure. The mechanism predicts larger rebounds
+  after larger declines, elevated post-event volatility/volume, and strong
+  dependence on spread and displayed liquidity.
+material_difference_from_CAM_0001: >-
+  This is cross-sectional, intraday, event-driven mean reversion using completed
+  price shocks and microstructure data. CAM-0001 was multi-session directional
+  continuation in leveraged ETFs.
+
+primary_source:
+  citation: >-
+    Zawadowski, Andor, and Kertesz (2004), Short-term market reaction after
+    extreme price changes of liquid stocks.
+  local_pdf: "artifacts/source/zawadowski_andor_kertesz_2004.pdf"
+  pdf_sha256: "48bcc30ead18eea368dd811c14ac76598515393b7c3d08cdb973fbe18aab3d32"
+  source_contract: >-
+    Liquid stocks over $10; completed maximum-60-minute decline exceeding both
+    4% and eight times the same-clock 60-minute volatility over the prior 60
+    trading days; omit opening five minutes and events ending within 60 minutes
+    of close; first event per stock-day; included events at least 60 minutes
+    apart; buy after the event and exit 30-60 minutes later. The paper used ask
+    entry and bid exit and found spreads decisive.
+  source_component_used: >-
+    The long-after-decline component is reproduced. The paper's short-after-rise
+    component is outside the starting implementation; no overnight or unprotected
+    direct short is allowed.
+
+recent_profile:
+  standard_views:
+    - "2024-11-01 through 2026-04-30"
+    - "2025-02-01 through 2026-04-30"
+    - "2025-05-01 through 2026-04-30"
+  representative_policy: >-
+    Use the neutral 15-month view unless a causal, pre-entry market-state onset
+    is independently supported. Inspect every month, event, symbol, cluster,
+    drawdown, recovery, and zero-trade month.
+  objective: >-
+    Roughly 10%-15% average monthly net fixed-capital simple return with credible
+    execution, preferably sub-20% drawdown and fast recovery.
+  older_history_role: "Mechanism, decay, tail, and regime diagnostic only."
+
+starting_implementation:
+  universe: >-
+    Point-in-time liquid U.S. stocks present in cutoff-bounded SIP minute bars;
+    price above $10 and trade-bearing bars in at least 90% of regular-session
+    minutes over the prior 60 sessions.
+  event: >-
+    Earliest completed rolling window of at most 60 minutes whose decline
+    exceeds 4% and eight times its causal same-clock prior-60-session mean
+    absolute return.
+  decision_time: "After the event-ending minute is complete"
+  entry: "Next minute open for efficient bar screen; first actionable SIP ask for quote qualification"
+  exit: "30 and 60 minute diagnostics; next-minute open/bar screen and actionable SIP bid for qualification"
+  sizing: >-
+    Fixed original capital 1.0 divided causally among simultaneous eligible
+    events; no reinvestment and no account-level leverage.
+  overlap: >-
+    First event per symbol-day; portfolio events are clustered within 60 minutes
+    for dependence reporting and exposure is capped at 1.0.
+  cost_model: "10 bps per side base; 20 and 40 bps per side adverse screens"
+  execution_model: >-
+    Bar fills are only an efficient screen. Any close or strong candidate
+    requires downloaded SIP trades and NBBO quotes with process-justified
+    latency, ask entry, bid exit, quote conditions, and size/capacity checks.
+
+main_questions:
+  - "Does the source-faithful long component still reverse in 2024-2026?"
+  - "Is net profit broad across months, symbols, and independent event clusters?"
+  - "Do larger causal shocks, volatility states, or liquidity states identify stronger rebounds?"
+  - "Does the result survive spread, latency, quote size, halts, and market-wide clustering?"
+  - "Can a prospective activation and decay rule be defined without favorable-date selection?"
+
+adaptation_policy:
+  allowed:
+    - "30/60 minute exits and short process delays"
+    - "broad 2%-6% absolute and 6x-10x relative source neighborhoods"
+    - "causal liquidity, spread, shock-duration, market-residual, and volatility states"
+    - "portfolio clustering, sizing, stops, and capacity limits"
+    - "appropriate liquid-stock and ETF expressions of the same sell-shock reversal"
+  new_campaign_required:
+    - "overnight-gap reversal"
+    - "continuation rather than reversal"
+    - "news/text or options information as the primary signal"
+    - "materially different mechanism or information set"
+
+hard_constraints:
+  fixed_capital_base: 1.0
+  reinvest_pnl: false
+  discovery_cutoff: "2026-04-30"
+  sealed_holdout_start: "2026-05-01"
+  holdout_access_authorized: false
+  direct_shorting_starting_component: false
+  quote_budget_policy: "Only close, strong, or execution-questionable bar candidates"
+
+status: frozen
+frozen_at: "2026-07-28T22:05:00-07:00"
+file_hash: "sha256 excluding file_hash line: 85767825af6c862a3587125f44e8595fc3bb77ba3993ebc86e610433402cce66"

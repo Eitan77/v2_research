@@ -1,0 +1,48 @@
+{
+  "raw_paths": [
+    "D:/AlgoResearch/data/raw/alpaca/market/stocks/bars_1m/feed=sip/year=2024/month=10/date=*/*.parquet",
+    "D:/AlgoResearch/data/raw/alpaca/market/stocks/bars_1m/feed=sip/year=2024/month=11/date=*/*.parquet",
+    "D:/AlgoResearch/data/raw/alpaca/market/stocks/bars_1m/feed=sip/year=2024/month=12/date=*/*.parquet",
+    "D:/AlgoResearch/data/raw/alpaca/market/stocks/bars_1m/feed=sip/year=2025/month=01/date=*/*.parquet",
+    "D:/AlgoResearch/data/raw/alpaca/market/stocks/bars_1m/feed=sip/year=2025/month=02/date=*/*.parquet",
+    "D:/AlgoResearch/data/raw/alpaca/market/stocks/bars_1m/feed=sip/year=2025/month=03/date=*/*.parquet",
+    "D:/AlgoResearch/data/raw/alpaca/market/stocks/bars_1m/feed=sip/year=2025/month=04/date=*/*.parquet",
+    "D:/AlgoResearch/data/raw/alpaca/market/stocks/bars_1m/feed=sip/year=2025/month=05/date=*/*.parquet",
+    "D:/AlgoResearch/data/raw/alpaca/market/stocks/bars_1m/feed=sip/year=2025/month=06/date=*/*.parquet",
+    "D:/AlgoResearch/data/raw/alpaca/market/stocks/bars_1m/feed=sip/year=2025/month=07/date=*/*.parquet",
+    "D:/AlgoResearch/data/raw/alpaca/market/stocks/bars_1m/feed=sip/year=2025/month=08/date=*/*.parquet",
+    "D:/AlgoResearch/data/raw/alpaca/market/stocks/bars_1m/feed=sip/year=2025/month=09/date=*/*.parquet",
+    "D:/AlgoResearch/data/raw/alpaca/market/stocks/bars_1m/feed=sip/year=2025/month=10/date=*/*.parquet",
+    "D:/AlgoResearch/data/raw/alpaca/market/stocks/bars_1m/feed=sip/year=2025/month=11/date=*/*.parquet",
+    "D:/AlgoResearch/data/raw/alpaca/market/stocks/bars_1m/feed=sip/year=2025/month=12/date=*/*.parquet",
+    "D:/AlgoResearch/data/raw/alpaca/market/stocks/bars_1m/feed=sip/year=2026/month=01/date=*/*.parquet",
+    "D:/AlgoResearch/data/raw/alpaca/market/stocks/bars_1m/feed=sip/year=2026/month=02/date=*/*.parquet",
+    "D:/AlgoResearch/data/raw/alpaca/market/stocks/bars_1m/feed=sip/year=2026/month=03/date=*/*.parquet",
+    "D:/AlgoResearch/data/raw/alpaca/market/stocks/bars_1m/feed=sip/year=2026/month=04/date=*/*.parquet"
+  ],
+  "symbol": "SPY",
+  "adjustment": "raw",
+  "feed": "sip",
+  "calendar": "XNYS",
+  "calendar_version": "4.13.2",
+  "sessions_loaded": 396,
+  "evaluation_sessions": 373,
+  "early_close_sessions": 5,
+  "observed_minutes_min": 210,
+  "observed_minutes_median": 390.0,
+  "expected_minutes_min": 210,
+  "key_field_nulls_evaluation": {
+    "previous_close": 0,
+    "close_0959": 0,
+    "entry_1530": 0,
+    "exit_1559": 0
+  },
+  "exact_raw_key_missing_evaluation": {
+    "raw_close_0959": 0,
+    "raw_entry_1530": 0,
+    "raw_exit_1559": 0
+  },
+  "min_session_trades": 210029,
+  "loaded_max_date": "2026-04-30",
+  "holdout_rows_loaded": 0
+}

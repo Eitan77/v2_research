@@ -1,0 +1,22 @@
+{
+  "status": "passed",
+  "profiles_reproduced": 3,
+  "bootstrap_replications_per_profile_and_window": 20000,
+  "leave_one_out_resimulations": 414,
+  "frozen_configuration_hash": "a1c9f19ab16d67167f75c1787a5948eb8fe80cae17e4950f0a86a9a63b95a8ea",
+  "input_hashes": {
+    "event_readiness": "e220113a410bb2116d846189cfac6daaf649ed83c9c2ae40e5f9238fd90eaa69",
+    "event_minutes": "2332e471db5000bfe709871d7eb7b57131e63a0329ce68f4f9ecb1c704959bd5",
+    "causal_features": "a482b34173f954b55452e77694c4dc44be535d0074f21542261436f2495c9311",
+    "daily_split": "91c539ae8c8c7e9207887f8412cc788b5db4ef930fda8e32036dc4c8a24c13a6"
+  },
+  "executed_code_hashes": {
+    "run0005.py": "629bf0a3c15d960acb5b7c127ca2508d5872a3d4b42f30b768e44d8c8f6468be",
+    "run0004.py": "5e70e2e35a0e1dac0effe44156b31a19c69fba3cf7b120c3cd7c67147b7c44ea",
+    "run0003.py": "f9b66ca574777d58e46a54e7a29440cab7fbc351d517c26ef3390f126ffa9ee6",
+    "run0001.py": "fb4cc9459cc0542b98e346d1b61774fe11f0ac4e4c916a7360682090c5627e70",
+    "cam0007.py": "938e796cdb86887f828efad737f5978b17323bf08b3cd9c1102bbe9373915b45"
+  },
+  "maximum_loaded_date": "2026-04-30",
+  "holdout_rows_loaded": 0
+}

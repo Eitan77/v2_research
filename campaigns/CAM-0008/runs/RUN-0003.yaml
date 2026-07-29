@@ -1,0 +1,109 @@
+campaign_id: CAM-0008
+run_id: RUN-0003
+parent_run: RUN-0002
+status: completed
+frozen_at: "2026-07-29T07:35:00-07:00"
+role: "Bounded sizing and overlap-capacity diagnosis"
+
+question: >-
+  Does the analyst-revision long edge become Type-A-like when causally
+  selective event books use more of the fixed capital base, without violating
+  gross/symbol caps or becoming sparse and concentrated?
+reason: >-
+  RUN-0002 found no alpha screen above 1.8% recent average month at 2% per
+  event, but the interpretable selective ten-day books averaged only 29%-53%
+  close gross exposure. A 2% event cap may be hiding economically relevant
+  fixed-capital profit. The broad book averaged about 80% close gross and is a
+  saturation control.
+expected_effect: >-
+  Increasing the cap should approximately scale selective-book return until
+  concurrency binds. If returns fail to approach the Type-A range or
+  drawdown/concentration deteriorates disproportionately, under-allocation is
+  not the limiting weakness.
+
+inputs:
+  event_readiness: "artifacts/readiness/market/event_readiness.parquet"
+  daily_split: "artifacts/readiness/market/daily_split.parquet"
+  qqq_state: "Same exact pre-cutoff local QQQ query as RUN-0002"
+  maximum_loaded_date: "2026-04-30"
+  holdout_rows_loaded: 0
+
+frozen_configuration:
+  base_eligibility:
+    signal_complete: true
+    shifted_prior20_median_dollar_volume_minimum: 100000000
+    reaction_sign: "strictly positive"
+  portfolios:
+    - positive_continuation_long
+    - negative_failure_long
+    - all_longs
+  screen_ids:
+    - baseline
+    - stock_vol_high
+    - qqq_vol_high
+    - target_intraday
+    - gap_down1pct
+    - participation_le1pct
+    - reaction_ge50bp
+  horizons: [five_close, ten_close]
+  costs_bps_per_side: [10, 20]
+  position_caps: [0.02, 0.0333333333333333, 0.05, 0.10]
+  portfolio:
+    capital_base: 1.0
+    accounting: "fixed-size additive marked-to-market"
+    maximum_gross_exposure: 1.0
+    maximum_symbol_gross: 0.10
+    allocation: >-
+      Chronological equal available capacity within exact entry cohort;
+      position cap is the only changed parameter.
+  expected_variant_count:
+    portfolios: 3
+    screens: 7
+    horizons: 2
+    costs: 2
+    position_caps: 4
+    total: 336
+
+required_outputs:
+  - "336/336 configuration, command, code/data, and P&L reconciliation"
+  - "Maximum actual gross/symbol exposure and utilization by variant"
+  - "Return, months, drawdown, recovery, folds, sample, and concentration"
+  - "Smooth cap neighborhoods and central/adverse cost comparison"
+  - "Decision whether latency/risk refinement remains economically justified"
+
+result:
+  reconciliation: >-
+    Passed 336/336 variants with frozen screen/horizon/cost/cap lists,
+    code/data/query hashes, fixed-base marked-to-market P&L, actual gross and
+    symbol exposure checks, maximum date 2026-04-30, and zero holdout rows.
+  highest_recent_return: >-
+    Target-only intraday revisions held five sessions at a 10% event cap and
+    10 bp per side averaged 2.8264% per month over 15 months and 3.3794% over
+    12 months, but had 22.67% drawdown, 156-day recovery, three negative
+    months, and a -9.11% first block. At 20 bp it fell to 2.1197% with 28.59%
+    drawdown. This is neither a robust neighborhood nor Type A.
+  smoother_neighbor: >-
+    Gap-down-at-least-1% all-longs at a 5% event cap and ten-session exit
+    averaged 2.3143% per recent month at 10 bp, 2.8026% over 12 months, 1.9435%
+    full sample, 16.91% drawdown, 34-day recovery, 11 positive and four
+    negative recent months, 520 allocations across 100 symbols, and all four
+    coarse blocks positive. At 20 bp it retained 2.0795%. Caps of 3.33% and
+    10% were nearby in return but showed the expected risk/concentration
+    tradeoff.
+  timing_neighbor: >-
+    Strong-reaction all-longs at 10% cap and ten sessions averaged 2.7126% per
+    recent month at 10 bp with 18.17% drawdown, 35-day recovery, nine positive
+    and six negative months, 632 allocations across 107 symbols, and a
+    negative first block. Adverse cost retained 2.3604%.
+  diagnosis: >-
+    Raising event caps increased selected-book returns but no variant reached
+    3% average month, while aggressive caps caused capacity ordering,
+    contributor share, drawdown, or block instability to worsen. The broad
+    book saturated without scaling materially. Under-allocation is not the
+    missing factor needed for the 10%-15% Type-A profile.
+decision: >-
+  Do not promote or tune cap/screens further. Perform one source-mechanism
+  timing run across completed 1/5/15/30-minute reactions and 0/1/3/5-minute
+  entry latency, with 2%/5%/10% caps and five/ten-session exits. If timing
+  cannot produce a qualitatively stronger neighborhood, proceed to robustness
+  and retire the campaign rather than chart-fit.

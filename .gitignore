@@ -1,0 +1,11 @@
+# Local credentials and machine-specific environment overrides
+.env.local
+.env.*.local
+
+# Local research caches and generated binary outputs
+tmp/
+__pycache__/
+*.pyc
+*.parquet
+*.log
+.pytest_cache/

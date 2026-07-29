@@ -1,0 +1,114 @@
+campaign_id: CAM-0009
+run_id: RUN-0003
+parent_run: RUN-0002
+status: completed
+frozen_at: "2026-07-29T09:46:00-07:00"
+role: "Independent formation-clock, threshold, liquidity, and cooldown screen"
+
+question: >-
+  Does slower intraday semiconductor information diffusion strengthen
+  coherently at independent 1/5/10/15/30-minute formation clocks and across
+  scaled shock, attention, leader-liquidity, and sector-cooldown neighbors?
+reason: >-
+  RUN-0002 found broad but modest close drift and no monotonic benefit from
+  simply selecting the largest or highest-attention five-minute shocks.
+  Formation clock and overlap remain obvious unresolved mechanism questions.
+expected_effect: >-
+  Genuine diffusion should show an interpretable formation-clock peak with
+  profitable adjacent scaled thresholds, not a single isolated cell. Cooldown
+  should reveal whether overlapping detections duplicate one information event.
+
+inputs:
+  features:
+    1: "artifacts/readiness/features/formation_1m.parquet"
+    5: "artifacts/readiness/features/formation_5m.parquet"
+    10: "artifacts/readiness/features/formation_10m.parquet"
+    15: "artifacts/readiness/features/formation_15m.parquet"
+    30: "artifacts/readiness/features/formation_30m.parquet"
+  minute_paths: "artifacts/readiness/market/minute_regular.parquet"
+  maximum_loaded_date: "2026-04-30"
+  holdout_rows_loaded: 0
+
+adaptation_label: >-
+  In-sample mechanism diagnosis after five-minute results; no output is
+  independent confirmation.
+
+frozen_configuration:
+  residual_mode: smh
+  direction: both
+  formations_minutes: [1, 5, 10, 15, 30]
+  base_absolute_residual_by_length: "0.0045 * square_root(formation_minutes)"
+  residual_threshold_multipliers: [0.75, 1.0, 1.5]
+  leader_volume_surprise_minimums: [1.0, 1.5, 2.5]
+  leader_prior20_median_dollar_volume_minimums: [100000000, 250000000, 1000000000]
+  sector_cooldown_minutes: [0, 15, 30, 60]
+  formation_start_minimum: "09:35"
+  peer:
+    prior20_median_dollar_volume_minimum: 100000000
+    signed_residual_ratio: [-0.25, 0.50]
+    maximum_peers: 3
+    ranking: "Highest shifted prior20 median dollar volume; symbol tiebreak."
+  entry: "Next exact one-minute open after completed formation."
+  exit: "Open of final one-minute bar before actual session close."
+  cost_bps_per_side: 5
+  short_safeguards:
+    stop_fraction: 0.02
+    adverse_stop_slippage_bps: 10
+    forced_close: true
+    overnight: false
+  portfolio:
+    capital_base: 1.0
+    accounting: "additive fixed-size intraday P&L"
+    position_cap: 0.10
+    symbol_cap: 0.10
+    gross_cap: 1.0
+  expected_variant_count:
+    formations: 5
+    threshold_multipliers: 3
+    attention: 3
+    leader_liquidity: 3
+    cooldown: 4
+    total: 540
+
+required_outputs:
+  - "540/540 configuration, code, data, date, and holdout reconciliation"
+  - "Feature and path attrition by formation and variant"
+  - "Full/recent windows, months, drawdown, recovery, blocks, and concentration"
+  - "Formation/threshold/cooldown neighbor surfaces"
+  - "Decision whether an expression/risk follow-up remains justified"
+
+result:
+  validation: passed
+  reconciliation:
+    expected_variants: 540
+    executed_variants: 540
+    maximum_loaded_date: "2026-04-30"
+    holdout_rows_loaded: 0
+  strongest_variant:
+    id: "f5__m0.75__v1.5__liq250m__cd15__5bp"
+    recent_15m_average_month: 0.021428
+    recent_12m_average_month: 0.009606
+    full_average_month: 0.015305
+    maximum_drawdown: 0.048864
+    recovery_days: 10
+    recent_15m_months: {positive: 10, negative: 5}
+    allocated_trades: 1513
+    events: 689
+    leaders: 18
+    peers: 12
+    blocks: [0.026169, 0.172631, 0.064400, 0.073512]
+  formation_diagnosis:
+    1m: "Recent-12-month median negative; only 2.8% of cells positive in all blocks."
+    5m: "Highest return region; 34.3% of cells positive in all blocks."
+    10m: "All cells positive recent 15m and 90.7% positive recent 12m, but lower return and higher drawdown."
+    15m: "Broadly positive but modest; adjacent support for slower diffusion."
+    30m: "Low return and zero all-block-positive cells."
+  other_findings:
+    - "Residual threshold 0.75-1.0 multipliers outperformed 1.5; stronger shocks did not improve the mechanism."
+    - "Volume surprise 1.0-1.5 outperformed 2.5; extreme attention was not the edge."
+    - "15-minute cooldown was a small improvement near the five-minute peak; 30/60-minute cooldowns reduced return."
+    - "100m and 250m leader liquidity cells were identical in the strongest region; a 1bn minimum weakened the median."
+decision: >-
+  Do not promote or quote replay. Continue with entry delay, finite exit,
+  lag-state, breadth, sign, symmetric long-risk, and cost diagnostics on the
+  strongest five-minute stable region.

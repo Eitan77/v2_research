@@ -1,0 +1,17 @@
+{
+  "status": "passed",
+  "scope": "CAM-0009 declared 18 semiconductor symbols plus QQQ/SMH/SOXX",
+  "source": "Alpaca historical SIP daily bars API",
+  "adjustment": "split",
+  "start": "2024-05-01",
+  "end_exclusive": "2026-05-01",
+  "symbols_requested": 21,
+  "symbols_returned": 21,
+  "rows": 10521,
+  "pages": 2,
+  "minimum_date": "2024-05-01",
+  "maximum_loaded_date": "2026-04-30",
+  "holdout_rows_loaded": 0,
+  "data_sha256": "1f5e364d79de397848052091b9cffe2120ce8fc0c30dd214f8d0df6123bb6470",
+  "credentials_recorded": false
+}

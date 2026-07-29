@@ -1,0 +1,63 @@
+run_id: RUN-0002
+campaign_id: CAM-0002
+parent_run_id: RUN-0001
+planned_at: "2026-07-28T22:10:56.3125558-07:00"
+status: completed
+
+change_from_parent: "Diagnose gross reversal by causal event characteristics before changing the trigger."
+reason: >-
+  RUN-0001 showed weak gross alpha and worse 30-minute performance. The next
+  experiment must determine whether aggregation hides a mechanism-consistent
+  subset or whether the recent phenomenon is broadly absent.
+expected_effect: >-
+  Temporary-liquidity-pressure reversal should strengthen monotonically with
+  shock magnitude/relative surprise and may vary by time of day; profits should
+  not depend on one symbol or one simultaneous market event.
+
+configuration:
+  input: "All 301 source-trigger events from RUN-0001 before portfolio non-overlap"
+  diagnostics:
+    - "4-5%, 5-6%, 6-8%, and >=8% shock bins"
+    - "8-10x and >=10x causal-normal surprise"
+    - "event-ending time-of-day bins"
+    - "same-minute cluster size"
+    - "symbol and top-event concentration"
+    - "30/60 minute gross and 10bps net outcomes"
+  adaptation: "None; descriptive diagnosis only"
+
+execution_contract:
+  command: >-
+    python campaigns/CAM-0002/src/audit_run0002.py
+    --events campaigns/CAM-0002/artifacts/RUN-0001/events.parquet
+    --output-dir campaigns/CAM-0002/artifacts/RUN-0002
+  expected_strategy_variant_count: 0
+  output_paths:
+    - "artifacts/RUN-0002/diagnostics.json"
+    - "artifacts/RUN-0002/groups.csv"
+    - "artifacts/RUN-0002/symbols.csv"
+    - "artifacts/RUN-0002/contract.json"
+
+completed_at: "2026-07-28T22:13:00-07:00"
+factual_outcome: >-
+  The 301 unclustered events had a small +0.220% mean 30-minute gross rebound,
+  only +0.020% after a 10-bps-per-side screen, and a negative -0.209% mean
+  60-minute gross return. The source prediction was not monotonic: >=8% shocks
+  lost 0.565% gross at 30 minutes, while 6%-8% shocks gained 0.418%. Apparent
+  strength in clusters larger than ten was almost entirely the April 7, 2025
+  market-wide tariff episode (four consecutive minute clusters containing
+  12-25 symbols). Solo events lost 0.090% gross at 30 minutes. Top ten events
+  supplied 30.7% of positive gross P&L.
+decision: >-
+  Do not select the large-cluster or April 7 subset; it is episode-concentrated
+  and not a general causal edge. Expand the prespecified source threshold and
+  exit neighborhoods, including shorter exits, to determine whether the recent
+  reversal occurs earlier or under less extreme but more repeatable shocks.
+next_question: >-
+  Does any broad source-neighbor combination show net fixed-capital profit
+  across months after excluding dependence on the April 7 market episode?
+artifacts:
+  - "artifacts/RUN-0002/diagnostics.json (sha256 f3d61c2af31b48888b8d4439c8600376043062a8d7bf646ef8a0104a8675fd00)"
+  - "artifacts/RUN-0002/groups.csv (sha256 c902d9e9a342bb6cc91fcd72022101a0523c6a12d8e48a804d55bbe9bdbe09be)"
+  - "artifacts/RUN-0002/symbols.csv (sha256 ae8478aa73e500d673c958d67af821817190e15f5ac7f193f698f9811df16f7d)"
+  - "artifacts/RUN-0002/contract.json (sha256 ab392f7a0311c02fc6bf048e9cc14c5d602f1b59a6a03017f8d3e2cc878dac7b)"
+  - "src/audit_run0002.py (sha256 8251fd5331524098e2f6a9f6b5552e5d6272b6beec9bf8edef6f148b55c81be1)"

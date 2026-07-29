@@ -1,0 +1,102 @@
+run_id: RUN-0002
+campaign_id: CAM-0004
+parent_run_id: RUN-0001
+planned_at: "2026-07-29T01:00:00-07:00"
+status: completed
+
+change_from_parent: >-
+  Replace unavailable exact S&P 500 characteristics with a predeclared,
+  causally lagged price/liquidity proxy factor model in point-in-time QQQ
+  members. This is an adapted mechanism test, not a source replication.
+reason: >-
+  The exact source data are unavailable, but the core mechanism can be
+  falsified by testing whether movement unexplained by observable prior-day
+  risk/liquidity proxies reverses more strongly than raw return.
+expected_effect: >-
+  Residual tails should produce a larger following-30-minute gross spread than
+  raw-return tails. Longer-run potential requires the spread to remain positive
+  after 5 bp per side, with distributed monthly and symbol contribution.
+
+configuration:
+  evaluation_start: "2024-11-01"
+  evaluation_end: "2026-04-30"
+  universe: "Point-in-time QQQ members with complete 13-bar regular sessions"
+  proxy_features:
+    - log_price
+    - log_dollar_volume
+    - reversal_1d
+    - momentum_5d
+    - momentum_20d
+    - volatility_20d
+    - beta_60d
+  feature_availability: "All proxy features shifted one trading day"
+  signal: >-
+    At each completed decision interval, cross-sectionally rank/L1-normalize
+    proxy features, regress the formation return on them, and sort the
+    source-style residual into deciles. Compare raw-return deciles.
+  decision_intervals: >-
+    Source-compatible same-session decisions from 10:00 through 15:30 Eastern;
+    formation at 16:00 is excluded because its next holding interval is
+    overnight.
+  entry: "Following 30-minute bar open after the completed signal bar"
+  exit: "Following 30-minute bar close, no overnight exposure"
+  directions:
+    - long_low_residual
+    - protected_short_high_residual
+    - half_long_half_short_residual
+    - half_long_half_short_raw_return_control
+  weights: "Equal within tails; long-short legs each 0.5 of fixed base"
+  stop: "2% per-name short emergency stop with 5 bp adverse stop slippage"
+  cost_bps_per_side: [0, 5, 10]
+  expected_variant_count: 12
+  accounting: "Original base 1.0, additive P&L, no reinvestment"
+  recent_views_months: [18, 15, 12]
+  bar_screen_limitation: >-
+    Thirty-minute high models whether the emergency stop was crossed but does
+    not qualify exact execution. Strong results require one-minute path and
+    SIP NBBO/trade replay.
+
+execution_contract:
+  command: >-
+    python campaigns/CAM-0004/src/run0002.py
+    --readiness-dir campaigns/CAM-0004/artifacts/readiness
+    --output-dir campaigns/CAM-0004/artifacts/RUN-0002
+  expected_variant_count: 12
+  output_paths:
+    - "artifacts/RUN-0002/decision_panel.parquet"
+    - "artifacts/RUN-0002/portfolio_decisions.parquet"
+    - "artifacts/RUN-0002/positions.parquet"
+    - "artifacts/RUN-0002/variants.csv"
+    - "artifacts/RUN-0002/monthly.csv"
+    - "artifacts/RUN-0002/concentration.csv"
+    - "artifacts/RUN-0002/contract.json"
+    - "artifacts/RUN-0002/diagnostics.json"
+
+completed_at: "2026-07-29T01:08:00-07:00"
+factual_outcome: >-
+  Six technical attempts culminated in seven passing semantic fixtures and a
+  fully reconciled 12-variant run on 4,404 accepted decision cross-sections,
+  367 trading days, 110 symbols, data through 2026-04-30, and zero holdout
+  rows. All gross variants failed. The residual long-low leg lost 21.65%
+  fixed-base simple P&L; the protected short-high leg lost 34.95%; and the
+  half-long/half-short residual portfolio lost 28.30%. The raw-return
+  long-short control lost 25.31%. The best residual long leg averaged -0.60%
+  per month over 15 months, had 9/15 negative months, 36.84% drawdown, and an
+  unresolved recovery. At 5 bp per side, the residual long-short lost 468.70%.
+  The source-style proxy residual did not improve on raw reversal.
+decision: >-
+  Do not spend quote budget or infer execution viability. Diagnose whether the
+  failure is absent close-to-close alpha, following-open discontinuity,
+  emergency-stop distortion, tail breadth, or an incorrect one-period horizon.
+  Batch the paper-supported holding horizons and execution definitions before
+  considering retirement.
+next_question: >-
+  Does residual reversal appear in close-to-close returns or at longer
+  same-session horizons before costs, and if so where is it lost?
+artifacts:
+  - "src/run0002.py (sha256 78821ea7eb24b5d8fb184a4461136f6d4f134aefc921d230b4cde1198fe80c81)"
+  - "artifacts/RUN-0002/variants.csv (sha256 f74be4b75200d0809a7e07adfa33b61920a077fc97238090745b2f2c1fdec845)"
+  - "artifacts/RUN-0002/monthly.csv (sha256 ee2d937796a0a9aecb441d6ba1128a477cd42827284d94150ef3370242fcaaf9)"
+  - "artifacts/RUN-0002/concentration.csv (sha256 8c7000af054b623e4a45e25e92b650fe315aa1707a9ba33e40e865ba3026c51d)"
+  - "artifacts/RUN-0002/contract.json (sha256 529518c893a2025fd043829a9b2403113e977cdb83e4509e3aedcedfd7e36826)"
+  - "artifacts/RUN-0002/diagnostics.json (sha256 4def2b025284e07e9c9ab1cfc299533d1f5f49495d4c127d9210cffa9a0fa495)"

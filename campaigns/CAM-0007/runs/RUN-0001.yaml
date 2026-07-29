@@ -1,0 +1,149 @@
+campaign_id: CAM-0007
+run_id: RUN-0001
+parent_run: null
+status: completed
+frozen_at: "2026-07-29T04:50:00-07:00"
+role: "Source-contract bar-stage baseline"
+
+question: >-
+  Does the frozen earnings-event contract show economically meaningful
+  continuation or failed-reaction alpha after the completed first 30 minutes,
+  before any outcome-conditioned adaptation?
+reason: >-
+  Event-source, mapping, point-in-time universe, adjustment, minute-path,
+  liquidity, and sealed-boundary readiness all passed. A faithful baseline is
+  required before diagnosing announcement alpha, execution, or portfolio
+  construction.
+expected_effect: >-
+  If staggered information absorption is present, positive-gap confirmation
+  should produce long drift and negative-gap confirmation may support a
+  protected same-day short. If opening overreaction dominates, the two
+  failed-reaction controls should outperform. Holding-horizon comparisons
+  should localize the payoff rather than merely maximize a chart.
+
+inputs:
+  event_readiness: "artifacts/readiness/market/event_readiness.parquet"
+  daily_split: "artifacts/readiness/market/daily_split.parquet"
+  event_minutes: "artifacts/readiness/market/event_minutes.parquet"
+  maximum_loaded_date: "2026-04-30"
+  holdout_rows_loaded: 0
+
+frozen_configuration:
+  eligibility:
+    signal_complete: true
+    shifted_prior20_median_dollar_volume_minimum: 100000000
+    absolute_gap_minimum: 0.02
+    first30_zero_return_policy: "exclude"
+  signal_legs:
+    long_positive_continuation: "gap >= +2% and first30_return > 0"
+    long_negative_failure: "gap <= -2% and first30_return > 0"
+    protected_short_negative_continuation: "gap <= -2% and first30_return < 0"
+    protected_short_positive_failure: "gap >= +2% and first30_return < 0"
+  decision_and_entry:
+    decision_time: "10:00 Eastern after 09:59 bar completion"
+    bar_entry: "10:00 raw minute open, transformed by same-session official split factor"
+  same_day_exit: "open of calendar-derived final bar five minutes before actual close"
+  multiday_long_exits:
+    next_open: 1
+    three_close: 2
+    five_close: 4
+    ten_close: 9
+  short_safeguards:
+    overnight: false
+    protective_stop_fraction: 0.02
+    stop_trigger: "any 10:00 through final-exit minute high reaches entry * 1.02"
+    stop_fill: "stop price plus 10 bp adverse slippage"
+    forced_close: true
+  portfolio:
+    capital_base: 1.0
+    reinvest_pnl: false
+    accounting: "additive marked-to-market P&L"
+    maximum_gross_exposure: 1.0
+    maximum_position_fraction: 0.20
+    simultaneous_entry_allocation: >-
+      Equal allocation of available capacity across the same-session cohort,
+      each capped at 0.20; positions retain frozen size until exit and unused
+      capacity remains cash.
+    overlap: >-
+      Existing multiday positions consume capacity until their causal exit;
+      next-open exits release capacity before the same session's 10:00 entries,
+      close exits do not.
+  costs_bps_per_side: [5, 10, 20]
+  portfolios:
+    intraday:
+      - long_positive_continuation
+      - long_negative_failure
+      - protected_short_negative_continuation
+      - protected_short_positive_failure
+      - all_longs
+      - all_shorts
+      - directional_continuation
+      - failed_reaction
+      - all_legs
+    multiday_long:
+      - long_positive_continuation
+      - long_negative_failure
+      - all_longs
+  expected_variant_count:
+    intraday: 27
+    multiday_long: 36
+    total: 63
+
+required_outputs:
+  - "Reconciliation of run record, resolved defaults, commands, variant count, and artifacts"
+  - "Eligibility and horizon attrition versus the 742-event registry"
+  - "Net fixed-base additive return and monthly average over full, 18-, 15-, and 12-month windows"
+  - "Drawdown, recovery, positive/negative/inactive months, chronological blocks, and costs"
+  - "Leg, announcement bucket, symbol, event, day, and stop concentration"
+  - "Factual diagnosis and next mechanism-based question without promotion"
+
+result:
+  validation: "passed after one invalid pre-interpretation drawdown attempt was preserved"
+  executed_variant_count: 63
+  registry_events: 742
+  signal_complete_events: 728
+  liquidity_eligible_signal_events: 720
+  absolute_gap_and_nonzero_reaction_events: 536
+  leg_counts:
+    long_positive_continuation: 126
+    long_negative_failure: 130
+    protected_short_negative_continuation: 141
+    protected_short_positive_failure: 139
+  best_representative_10bp_variant:
+    variant_id: "five_close__long_positive_continuation__10bp"
+    allocated_trades: 114
+    symbols: 70
+    recent_15m_average_month: 0.008640200913780783
+    recent_15m_net_return: 0.12960301370671173
+    recent_15m_months: "10 positive / 4 negative / 1 inactive"
+    recent_12m_average_month: 0.010981
+    full_average_month: 0.005408
+    maximum_drawdown: 0.07304139252111085
+    recovery_days: 20
+    top5_event_positive_share: 0.21053732685044624
+    top_symbol: "CHTR"
+  cost_neighbor:
+    at_20bp_per_side_recent_15m_average_month: 0.006600200913780784
+    at_20bp_per_side_maximum_drawdown: 0.07827818061839947
+  other_diagnostic:
+    ten_close_long_negative_failure_10bp_average_month: 0.0057340180914260295
+    ten_close_long_negative_failure_months: "11 positive / 4 negative / 0 inactive"
+    ten_close_long_negative_failure_maximum_drawdown: 0.10758653125197748
+    all_protected_short_legs_10bp_average_month: -0.006338
+  factual_interpretation: >-
+    The broad event population is ample and distributed, but the frozen source
+    contract is far below the Type-A return objective. Positive-gap
+    continuation localizes around a five-session exit and survives 20 bp at
+    low absolute return. Negative-gap failure is slower and less stable.
+    Protected intraday shorts are negative in aggregate. Combining the two
+    long mechanisms increases recent return but imports severe early-period
+    losses and drawdown, so the recent chart is not sufficient evidence.
+  artifacts:
+    valid: "artifacts/RUN-0001/"
+    invalid_drawdown_attempt: "artifacts/RUN-0001_INVALID_INITIAL_PEAK/"
+decision: >-
+  Do not promote. Diagnose long positive continuation and long negative
+  failure separately using causal gap magnitude, reaction strength, volume,
+  announcement bucket, market state, and horizon/position-cap neighbors.
+  Retain protected shorts only as controls unless a principled state explains
+  their losses.

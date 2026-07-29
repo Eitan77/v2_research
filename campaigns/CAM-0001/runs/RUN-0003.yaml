@@ -1,0 +1,112 @@
+run_id: RUN-0003
+campaign_id: CAM-0001
+parent_run_id: RUN-0002
+
+planned_at: "2026-07-28T21:05:49.8081339-07:00"
+status: completed
+
+change_from_parent: >-
+  Focus the broad neighborhood on QQQ SMA 20 and 50 and audit adverse costs,
+  extra latency, single-fund components, formation neighbors, and a broad
+  holding-period neighbor.
+reason: >-
+  RUN-0002's improvement clustered around one coherent construction, but the
+  12-month strength could still be recent-endpoint luck, SOXL dependence,
+  embedded beta, or favorable execution.
+expected_effect: >-
+  A credible family should retain material net return and similar monthly shape
+  at 10-20 bps per side, one extra session of delay, lookbacks 3/5/10, holds
+  7/10, and should reveal whether each fund independently contributes. Failure
+  under small perturbations would downgrade the result.
+
+configuration:
+  universe: "TQQQ and SOXL jointly plus each fund as a component diagnostic; QQQ confirmation"
+  signal: "Positive short formation return with QQQ close above SMA 20 or 50"
+  decision_time: "Completed regular-session close"
+  entry: "Next open; two-session-delay stress"
+  exit: "Open after 7 or 10 trading sessions"
+  direction: "Long only"
+  sizing: "Fixed base 1.0; equal weight when both qualify; no reinvestment"
+  filters:
+    qqq_sma_sessions: [20, 50]
+    cost_bps_per_side: [5, 10, 20]
+    entry_delay_sessions: [1, 2]
+    component_universes: ["TQQQ+SOXL", "TQQQ", "SOXL"]
+    lookback_neighbors: [3, 5, 10]
+    holding_neighbors: [7, 10]
+  stops_or_risk_overlays: "None; test basic persistence robustness first"
+  cost_model: "Explicit 5/10/20 bps per side"
+  execution_model: "Next-open bar fill plus one-extra-session delay stress"
+
+short_selling:
+  direct_stock_or_etf_shorting_used: false
+  strictly_intraday_if_used: "N/A"
+  protective_stop_or_emergency_exit: "N/A"
+  forced_close_before_regular_session_end: "N/A"
+  overnight_direct_short_exposure_detected: false
+
+execution_contract:
+  command: >-
+    python campaigns/CAM-0001/src/audit_run0003.py
+    --cache campaigns/CAM-0001/artifacts/cache/bars_split_through_20260430.parquet
+    --output-dir campaigns/CAM-0001/artifacts/RUN-0003
+  expected_variant_count: 18
+  output_paths:
+    - "artifacts/RUN-0003/audit_family.csv"
+    - "artifacts/RUN-0003/contract.json"
+    - "artifacts/RUN-0003/sma20_cost5/"
+    - "artifacts/RUN-0003/sma50_cost5/"
+
+completed_at: "2026-07-28T21:08:43.8996188-07:00"
+metrics_artifact: "artifacts/RUN-0003/audit_family.csv"
+results_summary:
+  net_full_period_simple_return: "SMA20 core 3.975306; SMA50 core 3.303478"
+  average_monthly_net_simple_return: "12m SMA20 0.123896; SMA50 0.114113"
+  average_calendar_year_net_simple_return: "Pending final focused audit"
+  standard_max_drawdown: >-
+    12m SMA20 0.138576; SMA50 0.151816; full 0.285113/0.368802
+  max_full_recovery_time_days: "12m 78/79; full 599/821 for SMA20/SMA50"
+  negative_month_count: "3 of 12 for both core variants"
+  trade_or_event_count: "12m 20/21 independent entries for SMA20/SMA50"
+  average_capital_utilization: "Pending final focused audit"
+  adverse_cost_net_simple_return: >-
+    At 20 bps/side, 12m average month remained 0.118771/0.108863
+
+execution_reconciliation:
+  semantic_tests: "4 passed"
+  actual_command_matches_record: true
+  executed_variant_count: 18
+  expected_variant_count: 18
+  saved_outputs_match_record: true
+  loaded_max_date: "2026-04-30"
+  holdout_rows_loaded: 0
+  sample_attrition: >-
+    No data attrition. Single-fund component variants intentionally reduce
+    eligible symbols from two to one and are labeled diagnostics.
+
+factual_outcome: >-
+  The recent effect survived severe daily-bar cost stress and extra latency.
+  At 20 bps per side, SMA20/SMA50 still averaged 11.88%/10.89% monthly over
+  12 months, though each rose to four negative months. A two-session entry
+  delay did not weaken returns. Lookbacks 3/5/10 were directionally consistent,
+  while a seven-day hold fell to 8.21%/8.80% average monthly and had worse
+  drawdown; the edge appears to need roughly two weeks to develop. Both funds
+  were independently positive, but SOXL-only produced 17.38%-18.12% average
+  monthly versus TQQQ-only 6.09%-6.30%, confirming substantial semiconductor
+  concentration. In the joint core, the top five profitable legs supplied
+  64.7%-71.6% of 12-month net, 20-21 independent decisions existed, and full
+  recovery remained 599-821 days. Recent recovery was 78-79 days, missing the
+  preferred one-month profile.
+decision: >-
+  Continue. Execution margin and nearby formation definitions are credible,
+  but recovery, SOXL dependence, limited independent decisions, and the abrupt
+  pre-May-2025 weakness block candidate status. Test causal signal-invalidation
+  exits and then regime/selectability evidence.
+next_question: >-
+  Can a predeclared daily signal-invalidation exit reduce loss duration and
+  recovery without sacrificing the broad cost/delay robustness or merely
+  overfit the recent reversals?
+artifacts:
+  - "artifacts/RUN-0003/audit_family.csv (sha256 ac36f90354ec33d181f07c7a69b89131f263589beb1f59117bb2f1933ea38fb2)"
+  - "artifacts/RUN-0003/contract.json (sha256 4fe08302f4b1cf65fc4b02d42cc0ba10d140a1ce5046069369c591e1463ba37c)"
+  - "src/audit_run0003.py (sha256 9de86b06773f659b4b5dbe08d9678d09859668f6486eab92f223eeecbaaa9850)"

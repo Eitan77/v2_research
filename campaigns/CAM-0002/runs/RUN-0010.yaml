@@ -1,0 +1,88 @@
+run_id: RUN-0010
+campaign_id: CAM-0002
+parent_run_id: RUN-0009
+planned_at: "2026-07-28T22:58:00-07:00"
+status: completed
+
+change_from_parent: >-
+  Apply a prespecified stop-loss/take-profit neighborhood to the extreme
+  15-minute residual-stock reclaim2 family using complete one-minute OHLC
+  paths and adverse ordering when both barriers touch in one bar.
+reason: >-
+  RUN-0009 established an event-frequency ceiling. The final unresolved
+  portfolio question is whether tail continuation after entry is masking a
+  better risk/return expression or whether the profitable events require the
+  full 60-minute path.
+expected_effect: >-
+  A useful risk overlay should improve drawdown/recovery and preserve net
+  return across neighboring barriers and surprise/volume states. It cannot be
+  judged a Strategy A rescue if it merely trims risk while rare-event income
+  stays near 1%-2% per month.
+
+configuration:
+  formation_minutes: 15
+  residual_decline: 0.06
+  stock_surprise_thresholds: [6, 8, 10]
+  causal_volume_ratio_thresholds: [0, 2, 5]
+  confirmation: "reclaim2"
+  entry_delay_minutes: 2
+  maximum_holding_minutes: 60
+  stop_loss_fractions: [null, 0.02, 0.04, 0.06]
+  take_profit_fractions: [null, 0.02, 0.04, 0.06]
+  variants: 144
+  cost_bps_per_side: 10
+  intrabar_rule: >-
+    Stops precede targets when both touch within one minute. A gap through a
+    barrier fills at the adverse/actual minute open; otherwise fill at the
+    barrier. Untriggered positions exit at the offset-62 minute open.
+  diagnostics:
+    - "Full 144-cell table"
+    - "Trigger counts and holding times"
+    - "Monthly path, drawdown, recovery, events, and clusters"
+    - "Barrier-neighborhood breadth"
+
+execution_contract:
+  command: >-
+    python campaigns/CAM-0002/src/run0010.py
+    --paths campaigns/CAM-0002/artifacts/RUN-0009/path_prices.parquet
+    --output-dir campaigns/CAM-0002/artifacts/RUN-0010
+  expected_variant_count: 144
+  output_paths:
+    - "artifacts/RUN-0010/risk_grid.csv"
+    - "artifacts/RUN-0010/contract.json"
+    - "artifacts/RUN-0010/diagnostics.json"
+
+completed_at: "2026-07-28T23:01:00-07:00"
+factual_outcome: >-
+  All 144 frozen TP/SL cells executed with adverse stop-first intrabar
+  ordering, data through the last qualifying event on 2026-04-29, and zero
+  holdout rows. A 4% take-profit with no stop was the best adapted cell:
+  21.36% total over 18 months, 1.58% average month over 15 months, 1.29% over
+  12 months, 2.33% drawdown, and 91-day recovery. Only four of 13 trades hit
+  the target; nine used the 60-minute exit. It had eight zero months in the
+  representative window and seven in the recent 12 months. The top five
+  trades supplied 74.5% of positive contribution across 12 symbols. Stops did
+  not improve the return ceiling and generally worsened net return/drawdown;
+  the 4% target was a small improvement over the 1.50% parent, not a
+  qualitative change. Three raw-high path rows used conservative fallback
+  across the full grid (one in the leader audit). Six semantic tests passed.
+decision: >-
+  Retire CAM-0002 as economically incapable of the Strategy A objective.
+  The stabilized extreme-residual reversal is a reusable diagnostic lead, but
+  it is too sparse and adapted for promotion, and common events lose the edge.
+  Quote replay cannot close an approximately eightfold return gap and is not
+  warranted. Complete the conclusion audit and move the broader Strategy A
+  search to a materially different mechanism.
+next_question: >-
+  Which materially different, more frequent causal mechanism should CAM-0003
+  test without importing CAM-0002 candidates or conclusions?
+artifacts:
+  - "artifacts/RUN-0010/risk_grid.csv (sha256 7a86d3b3191ce35a4533269120fe3fe6563c176865246c2ba9e2e6bead280dae)"
+  - "artifacts/RUN-0010/contract.json (sha256 3e6f06743b1140d2abe999f8c451b4939b7896c505835a992814f2e0baf85e78)"
+  - "artifacts/RUN-0010/diagnostics.json (sha256 614b62490b5f22112083cffae6bbcad31eb326a4134a314bc21117c2adf4e317)"
+  - "artifacts/RUN-0010/leader_events.csv (sha256 ea45f1ed5f8f17cd6c4ca38d2868b9546b7c7f8d8be117ce601ddc3494ab75fb)"
+  - "artifacts/RUN-0010/leader_symbols.csv (sha256 3d36ab66733042bcee8407b8000badcd33bf030cc7d6bf25a5b659a856a650da)"
+  - "artifacts/RUN-0010/leader_monthly.csv (sha256 08075ff45cf6d619dc44e1584c61673d9910952bbcaa94ad03eb6913ebaf4044)"
+  - "artifacts/RUN-0010/leader_audit.json (sha256 a166e06b26d813951ce332c9f4798777f2a27f3ad88366472f572d4569963791)"
+  - "src/run0010.py (sha256 c7bf162f8c56a8559c1a0200f4669f8df9303fd0f03fae683306ba748941e5ac)"
+  - "src/audit_run0010.py (sha256 c22fd73bb920840d67d980336176cf9f634e8a4c60a98dcc3101f03cf2cc00db)"

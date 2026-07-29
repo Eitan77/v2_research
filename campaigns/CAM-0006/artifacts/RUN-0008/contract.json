@@ -1,0 +1,19 @@
+{
+  "command": "python campaigns/CAM-0006/src/run0008.py --variants campaigns/CAM-0006/artifacts/RUN-0007/variants.csv --monthly campaigns/CAM-0006/artifacts/RUN-0007/monthly.csv --blocks campaigns/CAM-0006/artifacts/RUN-0007/blocks.csv --positions campaigns/CAM-0006/artifacts/RUN-0007/positions.parquet --output-dir campaigns/CAM-0006/artifacts/RUN-0008",
+  "resolved_defaults": {
+    "central_variant": "vol_high_dollar_q50_range50_nbbo_slip2",
+    "neighbor_variants": [
+      "vol_high_dollar_q50_range50_nbbo_slip2",
+      "vol_high_dollar_q50_nbbo_slip2",
+      "vol_high_dollar_q67_nbbo_slip2",
+      "vol_high_dollar_q50_range50_nbbo_slip0",
+      "vol_high_dollar_q50_range50_nbbo_slip5"
+    ],
+    "bootstrap_resamples": 20000,
+    "bootstrap_block_length_months": 3,
+    "bootstrap_seed": 6008
+  },
+  "executed_resamples": 20000,
+  "max_loaded_date": "2026-04-29",
+  "holdout_rows_loaded": 0
+}

@@ -1,0 +1,20 @@
+{
+  "status": "passed",
+  "calendar": "XNYS via exchange_calendars 4.13.2",
+  "regular_session_rule": "[market_open, market_close), including early closes",
+  "warmup_start": "2024-08-01",
+  "evaluation_start": "2024-11-01",
+  "max_loaded_date": "2026-04-30",
+  "holdout_rows_loaded": 0,
+  "calendar_sessions": 438,
+  "coverage_symbol_dates": 79278,
+  "union_symbols": 181,
+  "evaluation_sessions": 373,
+  "eligible_symbols_per_date": {
+    "min": 143,
+    "median": 153.0,
+    "max": 168
+  },
+  "zero_eligible_dates": 0,
+  "early_close_sessions": 5
+}

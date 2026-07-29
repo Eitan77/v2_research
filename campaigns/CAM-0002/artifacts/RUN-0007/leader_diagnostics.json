@@ -1,0 +1,125 @@
+{
+  "configuration": "abrupt_residual15 volume>=5 stocks hold60 cost10",
+  "metrics": {
+    "hold_minutes": 60,
+    "cost_bps_per_side": 10.0,
+    "net": 0.14014284696597118,
+    "events": 28,
+    "clusters": 27,
+    "max_drawdown": 0.04507536601636212,
+    "recovery_days": 286,
+    "unresolved": true,
+    "positive_event_fraction": 0.5357142857142857,
+    "windows": {
+      "18m": {
+        "net": 0.14014284696597118,
+        "avg_month": 0.007785713720331732,
+        "median_month": -0.0013120124804991687,
+        "negative_months": 9,
+        "zero_months": 3,
+        "events": 28
+      },
+      "15m": {
+        "net": 0.17779571899454433,
+        "avg_month": 0.011853047932969622,
+        "median_month": 0.0,
+        "negative_months": 7,
+        "zero_months": 3,
+        "events": 24
+      },
+      "12m": {
+        "net": 0.1314540179462021,
+        "avg_month": 0.010954501495516841,
+        "median_month": -0.0013120124804991687,
+        "negative_months": 6,
+        "zero_months": 2,
+        "events": 18
+      }
+    },
+    "monthly": {
+      "2024-11": -0.005681392235609149,
+      "2024-12": 0.00226276335094089,
+      "2025-01": -0.034234243143904886,
+      "2025-02": 0.0939347201013706,
+      "2025-03": -0.047593019053028374,
+      "2025-04": 0.0,
+      "2025-05": 0.0,
+      "2025-06": 0.0,
+      "2025-07": 0.02335278641473315,
+      "2025-08": -0.0077650279578350655,
+      "2025-09": -0.0026240249609983373,
+      "2025-10": 0.016934310501606542,
+      "2025-11": -0.026358226371061888,
+      "2025-12": -0.003559089491736776,
+      "2026-01": 0.07495551150954771,
+      "2026-02": 0.07672468001693522,
+      "2026-03": -0.00997306931474051,
+      "2026-04": -0.010233832400247942
+    }
+  },
+  "top1_positive_contribution_fraction": 0.16868354007097064,
+  "top5_positive_contribution_fraction": 0.6141850026641347,
+  "unique_symbols": 22,
+  "top_symbols": [
+    {
+      "symbol": "SMCI",
+      "events": 3,
+      "net_contribution": 0.08058909629083577,
+      "mean_event_net": 0.026863032096945256
+    },
+    {
+      "symbol": "CSGP",
+      "events": 1,
+      "net_contribution": 0.050754510309278356,
+      "mean_event_net": 0.050754510309278356
+    },
+    {
+      "symbol": "FTNT",
+      "events": 1,
+      "net_contribution": 0.04130254041570436,
+      "mean_event_net": 0.04130254041570436
+    },
+    {
+      "symbol": "ZM",
+      "events": 1,
+      "net_contribution": 0.024997693664360554,
+      "mean_event_net": 0.024997693664360554
+    },
+    {
+      "symbol": "INSM",
+      "events": 1,
+      "net_contribution": 0.024201001200269356,
+      "mean_event_net": 0.024201001200269356
+    },
+    {
+      "symbol": "SIRI",
+      "events": 1,
+      "net_contribution": 0.02335278641473315,
+      "mean_event_net": 0.02335278641473315
+    },
+    {
+      "symbol": "INCY",
+      "events": 1,
+      "net_contribution": 0.01905568445475625,
+      "mean_event_net": 0.01905568445475625
+    },
+    {
+      "symbol": "APP",
+      "events": 2,
+      "net_contribution": 0.016920511741164268,
+      "mean_event_net": 0.008460255870582134
+    },
+    {
+      "symbol": "VRSN",
+      "events": 1,
+      "net_contribution": 0.014266507093233627,
+      "mean_event_net": 0.028533014186467254
+    },
+    {
+      "symbol": "MTCH",
+      "events": 1,
+      "net_contribution": 0.01042444593687031,
+      "mean_event_net": 0.01042444593687031
+    }
+  ]
+}

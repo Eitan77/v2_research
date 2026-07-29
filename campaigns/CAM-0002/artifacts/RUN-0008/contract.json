@@ -1,0 +1,33 @@
+{
+  "executed_variant_count": 256,
+  "expected_variant_count": 256,
+  "events_sha256": "586276c71e78053726e41706650e85269bcf26cfc8abc2f74f485297abf19d13",
+  "anchors": [
+    "source60",
+    "abrupt_residual15",
+    "slow_residual120",
+    "episode_control45"
+  ],
+  "volume_thresholds": [
+    0,
+    5
+  ],
+  "universes": [
+    "all",
+    "stocks"
+  ],
+  "confirmations": {
+    "immediate": 1,
+    "reclaim2": 2,
+    "reclaim5": 5,
+    "no_new_low5": 5
+  },
+  "holds": [
+    5,
+    15,
+    30,
+    60
+  ],
+  "loaded_max_date": "2026-04-29",
+  "holdout_rows_loaded": 0
+}

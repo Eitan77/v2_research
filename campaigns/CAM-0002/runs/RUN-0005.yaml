@@ -1,0 +1,84 @@
+run_id: RUN-0005
+campaign_id: CAM-0002
+parent_run_id: RUN-0004
+planned_at: "2026-07-28T22:23:00-07:00"
+status: completed
+
+change_from_parent: >-
+  Replace the fixed 60-minute event clock with a prespecified causal formation
+  family spanning 10-120 minutes, while retaining the same extreme-decline
+  relative-to-normal mechanism.
+reason: >-
+  RUN-0004 showed that neither faster exits nor modest entry delays rescued the
+  fixed-60-minute trigger. A fixed clock can detect a move long after the
+  actual liquidity shock or before a slower liquidation has finished. The
+  source describes a maximum move within 60 minutes, so formation localization
+  is a required source-mechanism test.
+expected_effect: >-
+  A real overreaction should appear across neighboring formation horizons,
+  severity filters, and exits, rather than in a single isolated cell. Shorter
+  horizons may localize abrupt shocks; longer horizons may identify completed
+  liquidation rather than an actively falling knife.
+
+configuration:
+  formation_minutes: [10, 15, 30, 45, 60, 90, 120]
+  absolute_decline_thresholds: [0.02, 0.04, 0.06]
+  relative_surprise_thresholds: [6, 8, 10]
+  holding_minutes: [5, 15, 30, 60]
+  cost_bps_per_side: 10
+  variants: 252
+  event_rules: >-
+    For each formation horizon, compare the completed-bar return with the
+    causal prior-60-session same-clock mean absolute return; require point-in-
+    time liquidity eligibility and price above $10; take the first qualifying
+    event per symbol-day separately for each frozen threshold combination.
+  portfolio: >-
+    Next-minute open entry, equal weight within simultaneous clusters, no new
+    cluster before exit, fixed-base additive P&L.
+  diagnostics:
+    - "Full 252-cell table, not just the maximum"
+    - "18m/15m/12m monthly paths and negative months"
+    - "Drawdown, recovery, event count, and attrition"
+    - "April 7, 2025 exclusion"
+    - "Formation/threshold/hold neighborhood breadth"
+
+execution_contract:
+  command: >-
+    python campaigns/CAM-0002/src/run0005.py
+    --coverage campaigns/CAM-0002/artifacts/readiness_session/daily_coverage.parquet
+    --output-dir campaigns/CAM-0002/artifacts/RUN-0005
+  expected_variant_count: 252
+  output_paths:
+    - "artifacts/RUN-0005/candidate_events.parquet"
+    - "artifacts/RUN-0005/formation_grid.csv"
+    - "artifacts/RUN-0005/contract.json"
+    - "artifacts/RUN-0005/diagnostics.json"
+
+completed_at: "2026-07-28T22:31:00-07:00"
+factual_outcome: >-
+  The executed 252-cell formation/threshold/exit grid matched the frozen
+  contract, loaded through 2026-04-30, and loaded zero holdout rows. Only
+  11 cells were positive over 18 months; none remained positive after
+  excluding April 7, 2025, and no cell approached the Strategy A return
+  objective. All nine positive 45-minute cells and both positive 120-minute
+  cells were episode-dependent. The headline cell (45-minute formation,
+  6% decline, 10x surprise, 30-minute hold) earned 10.62% total over 18
+  months and averaged only 0.68% per month over the representative 15 months,
+  with 17.72% drawdown and unresolved 386-day recovery; excluding April 7
+  changed it to -6.00%. Formations of 10, 15, 30, 60, and 90 minutes had zero
+  positive cells.
+decision: >-
+  Reject event-clock localization as a viable standalone rescue. The dominant
+  episode dependence implies that absolute shocks are mixing market-wide
+  repricing with idiosyncratic liquidity dislocations. Test a causal
+  market-residual shock definition and contemporaneous breadth controls before
+  judging the overreaction mechanism exhausted.
+next_question: >-
+  Do stock-specific declines relative to the market reverse more reliably than
+  raw declines, while broad market shocks continue rather than rebound?
+artifacts:
+  - "artifacts/RUN-0005/candidate_events.parquet (sha256 fe1f256233128590c4874ddd8842f49a866fa11a5d22933d2e562501742165f6)"
+  - "artifacts/RUN-0005/formation_grid.csv (sha256 64c525dbe618247268aa89e74099c6ff5df8a3af61dfddc82a37689b6b2e5807)"
+  - "artifacts/RUN-0005/contract.json (sha256 6598f49e59c376ec6cb28739b44c02802d8ce1caeb95aab4b520db71565a1e4a)"
+  - "artifacts/RUN-0005/diagnostics.json (sha256 9085631a2dc885c0a5b20718e20fa7aa44a8584921e692c6124d3b793ef660ce)"
+  - "src/run0005.py (sha256 28fb7ca8fba50d66f8e951e1607e112376a4341063cc3d8723c7a6f869ee5086)"

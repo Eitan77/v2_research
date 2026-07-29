@@ -1,0 +1,98 @@
+campaign_id: CAM-0009
+run_id: RUN-0006
+parent_run: RUN-0005
+status: completed
+frozen_at: "2026-07-29T10:31:00-07:00"
+role: "Sample-routing correction and final adversity audit"
+
+question: >-
+  Does the best balanced unhedged profile survive corrected sample routing,
+  capacity-aware leader/peer removals, and resampled recent paths?
+reason: >-
+  RUN-0005 required an SMH hedge path even for unhedged variants, unnecessarily
+  dropping 18 of 3,358 otherwise peer-executable rows. That 0.54% attrition is
+  small but must be corrected before interpretation. The 20% signal-cap,
+  three-peer, both-sign, 5bp profile is frozen for adversity because it offered
+  the best return/drawdown/month balance before the correction.
+expected_effect: >-
+  A robust candidate should remain materially profitable after exact routing
+  correction, every leader/peer removal, and conservative resampling. A Type-A
+  claim would additionally require far stronger recent monthly profit than the
+  observed range and execution confirmation.
+
+inputs:
+  parent_trade_details: "artifacts/RUN-0003/trade_details.parquet"
+  formation_features: "artifacts/readiness/features/formation_5m.parquet"
+  minute_paths: "artifacts/readiness/market/minute_regular.parquet"
+  maximum_loaded_date: "2026-04-30"
+  holdout_rows_loaded: 0
+
+frozen_configuration:
+  corrected_expression_grid: "Identical 288 configurations to RUN-0005."
+  routing_correction: >-
+    Unhedged variants require only a complete peer path. Hedged variants require
+    both peer and SMH paths. Shifted-beta variants additionally require beta.
+  adversity_candidate: "both__unhedged__p3__cap0.2000__5bp"
+  leave_one_out:
+    leader: "Remove each leader and rerun chronological capacity allocation."
+    peer: "Remove each peer and rerun chronological capacity allocation."
+  bootstrap:
+    recent_window_start: "2025-02-01"
+    replicates: 20000
+    moving_block_sessions: 5
+    seed: 9006
+    statistic: "Average monthly additive fixed-base net P&L over 15 months."
+  costs_bps_per_side: 5
+  holdout_access: forbidden
+  expected_variant_count:
+    directions: 3
+    hedge_expressions: 4
+    peer_breadths: 2
+    signal_caps: 4
+    costs: 3
+    total: 288
+
+required_outputs:
+  - "288/288 corrected reconciliation and explicit parent-relative attrition"
+  - "Exact corrected candidate profile and delta versus RUN-0005"
+  - "Capacity-aware leader and peer leave-one-out distributions"
+  - "20,000-replicate moving-block bootstrap quantiles and Type-A exceedance"
+  - "Final campaign conclusion audit and promotion/retirement decision"
+
+result:
+  validation: passed
+  corrected_variants: 288
+  maximum_loaded_date: "2026-04-30"
+  holdout_rows_loaded: 0
+  corrected_candidate:
+    id: "both__unhedged__p3__cap0.2000__5bp"
+    recent_15m_average_month: 0.0421288251
+    recent_12m_average_month: 0.0197560223
+    full_average_month: 0.0311959556
+    maximum_drawdown: 0.1071284275
+    recovery_days: 38
+    recent_months: {positive: 11, negative: 4}
+    allocated_trades: 1918
+    events: 665
+    leaders: 18
+    peers: 12
+  leave_one_out:
+    leaders_tested: 18
+    worst_recent_15m_average_month: 0.0349544990
+    peers_tested: 12
+    worst_recent_15m_average_month_peer: 0.0310671673
+  bootstrap:
+    replications: 20000
+    q05_average_month: 0.0141227347
+    median_average_month: 0.0408710181
+    q95_average_month: 0.0754775955
+    probability_at_least_13pct_month: 0.0001
+  concentration:
+    best_month: "2025-04"
+    best_month_return: 0.2972897179
+    worst_month: "2025-08"
+    worst_month_return: -0.0905314848
+    recent_average_without_best_month: 0.0239030470
+decision: >-
+  Retire for Type A. Preserve as a common-sector intraday drift lead only; no
+  quote replay, holdout access, live allocation, or promotion.

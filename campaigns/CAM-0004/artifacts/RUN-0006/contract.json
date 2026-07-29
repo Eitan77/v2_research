@@ -1,0 +1,44 @@
+{
+  "command": "python campaigns/CAM-0004/src/run0006.py --parent-dir campaigns/CAM-0004/artifacts/RUN-0002 --outcomes-path campaigns/CAM-0004/artifacts/RUN-0003/outcomes.parquet --output-dir campaigns/CAM-0004/artifacts/RUN-0006",
+  "resolved_defaults": {
+    "models": [
+      "full_proxy",
+      "beta_only",
+      "price_liquidity",
+      "return_risk"
+    ],
+    "K": [
+      4,
+      6
+    ],
+    "M": [
+      2,
+      3,
+      4,
+      6
+    ],
+    "breadth": [
+      "decile",
+      "quintile"
+    ],
+    "weights": [
+      "equal",
+      "strength_capped"
+    ],
+    "cost_bps_per_side": [
+      1,
+      3
+    ],
+    "state": "high_market_vol",
+    "direction": "actionable_long_low",
+    "cohort_capital_scale": "1/M"
+  },
+  "executed_variant_count": 256,
+  "output_paths": [
+    "portfolio_decisions.parquet",
+    "variants.csv",
+    "monthly.csv",
+    "contract.json",
+    "diagnostics.json"
+  ]
+}

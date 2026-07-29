@@ -1,0 +1,15 @@
+{
+  "status": "passed",
+  "scope": "CAM-0007 event-registry symbols only",
+  "source": "Alpaca historical SIP daily bars API",
+  "adjustment": "split",
+  "start": "2024-05-01",
+  "end_exclusive": "2026-05-01",
+  "symbols_requested": 113,
+  "symbols_returned": 113,
+  "rows": 55975,
+  "min_loaded_date": "2024-05-01",
+  "max_loaded_date": "2026-04-30",
+  "holdout_rows_loaded": 0,
+  "sha256": "a78507cf89c5d4d3683b4a5853d28eda9e973524f729bbbe39c240b7848f531a"
+}

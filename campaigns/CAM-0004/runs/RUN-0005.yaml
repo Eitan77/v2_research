@@ -1,0 +1,88 @@
+run_id: RUN-0005
+campaign_id: CAM-0004
+parent_run_id: RUN-0004
+planned_at: "2026-07-29T01:49:00-07:00"
+status: completed
+
+change_from_parent: >-
+  Subject the coherent K4/K6, M2-M6 high-lagged-volatility branch to
+  protected-short paths, explicit costs, overlapping-cohort capital control,
+  long/short-leg decomposition, and equal versus capped signal-strength
+  weighting.
+reason: >-
+  RUN-0004 found a chronologically positive but sparse conditional gross
+  reversal neighborhood. Its best break-even cost was only about 1 bp per side
+  and its gross monthly return was below 1%, so executable economics and
+  portfolio construction must be resolved before spending quote data.
+expected_effect: >-
+  A viable branch must remain positive after a conservative 1-3 bp per-side
+  marketable cost screen and after dividing each M-period cohort by M to cap
+  concurrent gross capital. The result should not depend entirely on one leg,
+  a few days, or unbounded signal weights.
+
+configuration:
+  formation_periods_K: [4, 6]
+  holding_periods_M: [2, 3, 4, 6]
+  tail_breadth: ["decile", "quintile"]
+  state: "Frozen RUN-0004 high_market_vol causal flag"
+  legs: ["long_low", "protected_short_high", "half_long_short"]
+  weights:
+    - "equal within each selected tail"
+    - "absolute cumulative residual strength capped at the within-tail 90th percentile"
+  cost_bps_per_side: [0, 1, 3]
+  capital_rule: >-
+    Scale each M-period cohort by 1/M so staggered concurrent cohorts use at
+    most the original 1.0 gross-capital base. P&L remains additive with no
+    reinvestment.
+  expected_variant_count: 288
+  execution_status: "30-minute protected bar screen, not quote qualified"
+
+execution_contract:
+  command: >-
+    python campaigns/CAM-0004/src/run0005.py
+    --parent-dir campaigns/CAM-0004/artifacts/RUN-0002
+    --outcomes-path campaigns/CAM-0004/artifacts/RUN-0003/outcomes.parquet
+    --output-dir campaigns/CAM-0004/artifacts/RUN-0005
+  expected_variant_count: 288
+  output_paths:
+    - "artifacts/RUN-0005/portfolio_decisions.parquet"
+    - "artifacts/RUN-0005/variants.csv"
+    - "artifacts/RUN-0005/monthly.csv"
+    - "artifacts/RUN-0005/contract.json"
+    - "artifacts/RUN-0005/diagnostics.json"
+
+completed_at: "2026-07-29T01:56:35-07:00"
+factual_outcome: >-
+  Validation passed with maximum date 2026-04-30, zero holdout rows, and all
+  288 declared variants reconciled. The conditional effect was carried by the
+  long-low leg; every protected-short neighborhood lost even before costs.
+  After 1/M concurrent-capital scaling, the best 1 bp/side variant was K4/M4
+  decile long-low with capped strength weights: +13.32% total fixed-base net,
+  +0.8880% average month over 15 months, five negative months, and 5.94%
+  drawdown. At 3 bp/side the same branch fell to +6.60% total and +0.4400%
+  average month with six negative months and 7.32% drawdown. The best gross
+  long-only result averaged 1.2767% per month. Top-five profitable days
+  exceeded total net profit for the leading variants because the remaining
+  days netted negative, demonstrating material event/day concentration.
+decision: >-
+  Reject the conditional branch as a Strategy A candidate and do not spend
+  quote replay budget. Preserve it as evidence that cumulative negative
+  residuals can rebound in high-volatility states, but the short leg, cost
+  coverage, monthly income, and contribution distribution fail. Before
+  campaign retirement, challenge whether the adapted daily factor model is
+  the wrong residual definition using a bounded source-consistent model set.
+next_question: >-
+  Can a simpler market/beta, price-liquidity, or return-risk residual model
+  produce a materially larger and less concentrated high-volatility long-low
+  edge than the full adapted proxy residual?
+artifacts:
+  - "artifacts/RUN-0005/portfolio_decisions.parquet"
+  - "artifacts/RUN-0005/variants.csv"
+  - "artifacts/RUN-0005/monthly.csv"
+  - "artifacts/RUN-0005/contract.json"
+  - "artifacts/RUN-0005/diagnostics.json"
+artifact_hashes:
+  variants_csv: "09a14b789ef8e142cf32303a0960a822ca8db2b249f60bb523e912b7dd8d4c6c"
+  monthly_csv: "590e7159a183e3676e9bf6b9e5faa643964fbf09222e828d2b02813a687d33e7"
+  contract_json: "e742fed613124f3715ae2c5ee524d59832743883e32dbb46847f153986c5b551"
+  diagnostics_json: "bec25d524358e2a4d7efa6921dfcd9047755608f691dc78d7fab7a20d243f0b3"

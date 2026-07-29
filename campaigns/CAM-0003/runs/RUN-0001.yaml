@@ -1,0 +1,66 @@
+run_id: RUN-0001
+campaign_id: CAM-0003
+parent_run_id: null
+planned_at: "2026-07-28T23:12:00-07:00"
+status: completed
+
+change_from_parent: "Source-faithful positive-first-half-hour SPY long component."
+reason: >-
+  Establish whether the paper's primary predictive sign survives in the recent
+  discovery sample before any interval, filter, ETF, or leveraged adaptation.
+expected_effect: >-
+  Positive previous-close-to-10:00am SPY returns should predict positive
+  3:30-4:00pm net returns, outperform always-long closing exposure, and retain
+  expectancy at neighboring liquid-ETF cost assumptions.
+
+configuration:
+  instrument: "SPY"
+  evaluation_start: "2024-11-01"
+  evaluation_end: "2026-04-30"
+  signal_return: "prior regular-session 15:59 close to current 09:59 close"
+  signal: "long if signal_return > 0; cash otherwise"
+  entry: "15:30 raw SIP minute open"
+  exit: "15:59 raw SIP minute close"
+  cost_bps_per_side: [2, 5, 10]
+  benchmarks:
+    - "always long 15:30-15:59 at identical costs"
+  variants: 6
+  accounting: "fixed original capital 1.0, additive P&L, no reinvestment"
+  short_selling: "none"
+
+execution_contract:
+  command: >-
+    python campaigns/CAM-0003/src/run0001.py
+    --output-dir campaigns/CAM-0003/artifacts/RUN-0001
+  expected_variant_count: 6
+  output_paths:
+    - "artifacts/RUN-0001/daily_signals.parquet"
+    - "artifacts/RUN-0001/variants.csv"
+    - "artifacts/RUN-0001/contract.json"
+    - "artifacts/RUN-0001/diagnostics.json"
+
+completed_at: "2026-07-28T23:19:00-07:00"
+factual_outcome: >-
+  All six frozen variants executed on 373 sessions with zero field attrition,
+  data through 2026-04-30, and zero holdout rows. The positive-morning source
+  component failed: at 2 bps per side it lost 9.21% over 18 months, averaged
+  -0.39% per month over the representative 15 months and -0.56% over 12
+  months, had 14 negative months over 18 months, 9.40% drawdown, and an
+  unresolved ending recovery. The gross predictive slope was -0.0187 and
+  correlation -0.059; mean gross closing-half-hour return was -0.0043% after
+  positive mornings versus +0.0208% after nonpositive mornings. Always-long
+  closing exposure also lost after costs. Four semantic tests passed.
+decision: >-
+  The recent source sign is inverted, but a first failure does not retire the
+  mechanism. Separate overnight and opening-session information, test
+  15/30/60-minute morning and closing intervals, and add the source's r12
+  pre-close confirmation before judging whether the effect decayed or migrated.
+next_question: >-
+  Is modern closing continuation predicted by a different morning component,
+  interval, or same-sign pre-close confirmation?
+artifacts:
+  - "artifacts/RUN-0001/daily_signals.parquet (sha256 6181b592d9d43c84ba04fd720b70d4816c378738333d3846f2b6926db17d81a8)"
+  - "artifacts/RUN-0001/variants.csv (sha256 b58946d3ab21dad921e7c0f6616e84b69ec6184c2aac70e09dcefdf005256a23)"
+  - "artifacts/RUN-0001/contract.json (sha256 6292090c51ce21032f21dba5413e6e0232c28675e40760bc3a1fad44211a2424)"
+  - "artifacts/RUN-0001/diagnostics.json (sha256 e131167fa62e3236d920747502fdbadcc628087744b76d0d4d3d7468f3718e7d)"
+  - "src/run0001.py (sha256 ddf92b01aeadbdc1695de48833c5a51864fdaa4d9b151267673e3fc476eefa29)"

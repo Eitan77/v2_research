@@ -1,0 +1,32 @@
+{
+  "executed_variant_count": 144,
+  "expected_variant_count": 144,
+  "paths_sha256": "91503474dad141b3ff1d376572d359a21fa4cf7125c3025e58f282f23db6e744",
+  "surprises": [
+    6.0,
+    8.0,
+    10.0
+  ],
+  "volume_thresholds": [
+    0.0,
+    2.0,
+    5.0
+  ],
+  "stops": [
+    null,
+    0.02,
+    0.04,
+    0.06
+  ],
+  "targets": [
+    null,
+    0.02,
+    0.04,
+    0.06
+  ],
+  "max_hold": 60,
+  "intrabar_order": "adverse_stop_first",
+  "raw_high_missing_rows": 3,
+  "loaded_max_date": "2026-04-29",
+  "holdout_rows_loaded": 0
+}

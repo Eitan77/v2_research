@@ -1,0 +1,44 @@
+run_id: RUN-0001
+campaign_id: CAM-0004
+parent_run_id: null
+planned_at: "2026-07-29T00:39:24-07:00"
+status: blocked_by_readiness
+
+change_from_parent: "Exact source-faithful Brogaard-Han-Kim replication."
+reason: >-
+  Recover the paper's cross-sectional factor residuals, deciles, weights,
+  30-minute timing, components, and costs before interpreting adaptations.
+expected_effect: >-
+  Negative residual deciles should outperform positive residual deciles in the
+  following period, with a gross spread near the source result but severe
+  sensitivity to realistic turnover costs.
+
+configuration:
+  universe: "Point-in-time S&P 500 using annual end-June snapshots"
+  characteristics: "Exact 15 paper characteristics with causal availability lags"
+  signal: "Source Equations (1)-(5), residual deciles"
+  decision_time: "Completed source 30-minute quote observation"
+  entry: "Following actionable quote"
+  exit: "Next 30-minute quote; overnight short diagnostic-only"
+  direction: "Long-low, short-high, and long-short components"
+  sizing: "Source value/equal weights plus fixed-base normalization"
+  cost_model: "Paper 3-7 bp label and explicit marketable execution"
+
+completed_at: "2026-07-29T00:55:00-07:00"
+factual_outcome: >-
+  The declared workspace has neither point-in-time S&P 500 membership nor the
+  exact 15 causally lagged characteristics. Public Open Source Asset Pricing
+  characteristics use CRSP PERMNO and no declared license-clean symbol mapping
+  exists in this workspace. The exact run was blocked before signal formation
+  or backtesting. No source replication result is claimed.
+decision: >-
+  Preserve the exact-source blocker. Proceed only with an explicitly labeled
+  same-mechanism adaptation using point-in-time QQQ membership and predeclared
+  causal price/liquidity proxy factors, with raw-return reversal as a control.
+next_question: >-
+  Does cross-sectional residual reversal survive gross and realistic costs in
+  the causally available recent large-cap universe?
+artifacts:
+  - "artifacts/readiness/readiness.json"
+  - "artifacts/readiness_attempt1_invalid/INVALID.md"
+  - "SOURCE_FIDELITY.md"

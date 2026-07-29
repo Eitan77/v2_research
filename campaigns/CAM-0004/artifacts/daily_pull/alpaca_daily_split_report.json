@@ -1,0 +1,17 @@
+{
+  "status": "passed",
+  "source": "Alpaca historical SIP daily bars",
+  "adjustment": "split",
+  "start": "2024-05-01",
+  "end_exclusive": "2026-05-01",
+  "max_loaded_date": "2026-04-30",
+  "holdout_rows_loaded": 0,
+  "symbols_requested": 120,
+  "symbols_returned": 120,
+  "rows": 58335,
+  "calendar_membership_rows_excluded": 23127,
+  "member_trading_symbol_dates": 50603,
+  "covered_member_symbol_dates": 50173,
+  "missing_member_symbol_dates": 430,
+  "invalid_ohlc_rows": 0
+}

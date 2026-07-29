@@ -1,0 +1,89 @@
+run_id: RUN-0004
+campaign_id: CAM-0005
+parent_run_id: RUN-0003
+planned_at: "2026-07-29T02:54:00-07:00"
+status: completed
+
+change_from_parent: >-
+  Add symmetric close-location pressure confirmation and causal trailing
+  unlevered-reversal activation to q40/q50/q60 product legs, retaining frozen
+  15:59 entry, next-open/09:34 exits, and 5/10 bp costs.
+reason: >-
+  RUN-0003 establishes a real but high-drawdown mechanism. Diagnostic
+  decomposition shows returns are strongest when the completed final-hour
+  close remains near the directionally pressured range edge. A rolling
+  unlevered SMH reversal mean provides a causal suspension rule for regime
+  decay without using leveraged-product profit to label its own state.
+expected_effect: >-
+  Pressure confirmation should remove weak/incomplete imbalances; trailing
+  activation should avoid extended sign inversions. A credible candidate
+  region must preserve return across cutoff/window neighbors while materially
+  reducing drawdown, negative months, and top-day dependence.
+
+configuration:
+  thresholds: ["q40", "q50", "q60"]
+  pressure_states:
+    all: "No close-location filter"
+    edge20: "negative close-location <=0.20 or positive >=0.80"
+    edge25: "negative close-location <=0.25 or positive >=0.75"
+    edge33: "negative close-location <=0.33 or positive >=0.67"
+  activation_states:
+    always: "No rolling activation"
+    edge10: "Prior 10-session mean unlevered signed SMH reversal > 0"
+    edge20: "Prior 20-session mean unlevered signed SMH reversal > 0"
+    edge40: "Prior 40-session mean unlevered signed SMH reversal > 0"
+  activation_timing: "Rolling mean shifted one full session"
+  product_legs:
+    ["both_reversal", "negative_signal_bull", "positive_signal_inverse"]
+  entry: "15:59 open"
+  exits: ["next_open", "next_0934_close"]
+  cost_bps_per_side: [5, 10]
+  expected_variant_count: 576
+
+execution_contract:
+  command: >-
+    python campaigns/CAM-0005/src/run0004.py
+    --readiness-dir campaigns/CAM-0005/artifacts/readiness
+    --features-path campaigns/CAM-0005/artifacts/RUN-0002/features.parquet
+    --parent-positions campaigns/CAM-0005/artifacts/RUN-0003/positions.parquet
+    --output-dir campaigns/CAM-0005/artifacts/RUN-0004
+  expected_variant_count: 576
+  output_paths:
+    - "artifacts/RUN-0004/positions.parquet"
+    - "artifacts/RUN-0004/variants.csv"
+    - "artifacts/RUN-0004/monthly.csv"
+    - "artifacts/RUN-0004/contract.json"
+    - "artifacts/RUN-0004/diagnostics.json"
+
+completed_at: "2026-07-29T02:58:30-07:00"
+factual_outcome: >-
+  All 576 variants reconciled with zero holdout rows. Close-location pressure
+  confirmation materially improved risk. Q60/edge25 both-leg reversal at
+  15:59-to-next-open and 5 bp/side averaged 8.4482% per month over 15 months
+  with 18.45% drawdown, four negative months, 108 trades, and 51.69% top-five
+  day contribution. Q50/edge25 averaged 8.5434% with 22.83% drawdown. Edge20,
+  edge25, and edge33 formed a positive neighborhood and 10 bp costs survived.
+  Aggregate 10/20/40-session activation reduced drawdown to roughly 12%-16%
+  but return fell to 4.9%-6.6%. The q60/edge25 latest-12-month average was
+  5.93%, including -17.11% in April 2026. April decomposed to -26.68% across
+  eight SOXS positions while two SOXL positions gained +9.57%.
+decision: >-
+  Preserve pressure-confirmed reversal as candidate-shaped but not confirmed.
+  Test leg-specific causal suspension because the inverse leg decays while the
+  bull leg remains healthy; aggregate activation is structurally unable to
+  distinguish them. No quote replay yet.
+next_question: >-
+  Can shifted trailing unlevered positive- and negative-signal reversal means
+  suspend the decayed SOXS leg while retaining the healthy SOXL leg across
+  10/20/40-event and pressure/threshold neighbors?
+artifacts:
+  - "artifacts/RUN-0004/positions.parquet"
+  - "artifacts/RUN-0004/variants.csv"
+  - "artifacts/RUN-0004/monthly.csv"
+  - "artifacts/RUN-0004/contract.json"
+  - "artifacts/RUN-0004/diagnostics.json"
+artifact_hashes:
+  variants_csv: "329f15dac6341be3738d7ed9217094ded5cae277070b530be15c150fd23f7b92"
+  monthly_csv: "29e7d3d3af74fd8d038fd5d99ff5f30c19ff4ff9b7fb521d97c3c76a49fae3d6"
+  contract_json: "d45da332ed96a9e55cc761b48018d11764fa8cf34baa1f23db55fd7d81a0a638"
+  diagnostics_json: "84797c8028967a2977e88b55f22793a176ed7fb2fe54e3e38a7e6e8848389496"

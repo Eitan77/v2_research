@@ -1,0 +1,112 @@
+campaign_id: CAM-0008
+run_id: RUN-0004
+parent_run: RUN-0003
+status: completed
+frozen_at: "2026-07-29T07:45:00-07:00"
+role: "Completed-reaction window and entry-latency diagnosis"
+
+question: >-
+  Is the weak analyst-revision edge an artifact of using the wrong causal
+  reaction horizon or entering too soon after the completed signal?
+reason: >-
+  Screens and event sizing could not raise recent average return above 3%.
+  The plan explicitly requires completed-reaction and latency investigation.
+  A one-minute response may preserve information before diffusion, while
+  15-30 minutes may reject noise; delayed entry tests whether the effect is
+  tradeable rather than an instantaneous bar artifact.
+expected_effect: >-
+  A genuine diffusion mechanism should form a smooth neighborhood across
+  adjacent completed windows and small entry delays. A lone cell, deterioration
+  with one minute of delay, or results still far below Type A would reject
+  reaction timing as the missing factor.
+
+inputs:
+  event_readiness: "artifacts/readiness/market/event_readiness.parquet"
+  event_minutes: "artifacts/readiness/market/event_minutes.parquet"
+  daily_split: "artifacts/readiness/market/daily_split.parquet"
+  parent_metrics: "artifacts/RUN-0003/variant_metrics.parquet"
+  maximum_loaded_date: "2026-04-30"
+  holdout_rows_loaded: 0
+
+frozen_configuration:
+  base_eligibility:
+    market_day_available: true
+    shifted_prior20_median_dollar_volume_minimum: 100000000
+    reaction_sign: "strictly positive"
+  portfolios:
+    - positive_continuation_long
+    - negative_failure_long
+    - all_longs
+  reaction_windows_minutes: [1, 5, 15, 30]
+  entry_latency_minutes_after_reaction: [0, 1, 3, 5]
+  timing_contract: >-
+    Reaction begins at the predeclared first causal minute. It must contain
+    every exact one-minute SIP bar in the frozen window. Entry is the raw open
+    of the minute immediately after that completed window plus the stated
+    latency. Missing reaction or entry bars and entries at/after the
+    calendar-derived final-exit minute are excluded.
+  horizons: [five_close, ten_close]
+  costs_bps_per_side: [10, 20]
+  position_caps: [0.02, 0.05, 0.10]
+  portfolio:
+    capital_base: 1.0
+    accounting: "fixed-size additive marked-to-market"
+    maximum_gross_exposure: 1.0
+    maximum_symbol_gross: 0.10
+    allocation: "RUN-0001 chronological equal available capacity"
+  expected_variant_count:
+    portfolios: 3
+    reaction_windows: 4
+    latencies: 4
+    horizons: 2
+    costs: 2
+    position_caps: 3
+    total: 576
+
+required_outputs:
+  - "576/576 frozen/default/command/code/data/output reconciliation"
+  - "Exact reproduction of all comparable 5-minute zero-latency RUN-0003 baseline cells"
+  - "Timing-specific signal, long-leg, horizon, and allocation attrition"
+  - "Window/latency/cap/cost neighborhoods, months, folds, drawdown, recovery, and concentration"
+  - "Decision whether any principled alpha/execution question remains"
+
+result:
+  reconciliation: >-
+    Passed 576/576 variants with exact frozen timing/cost/cap lists,
+    code/data hashes, P&L and exposure reconciliation, maximum date
+    2026-04-30, and zero holdout rows. All 36 comparable five-minute,
+    zero-latency RUN-0003 baseline cells reproduced with maximum numeric
+    difference 0.0.
+  best_combined_timing: >-
+    A completed 15-minute reaction, zero-delay entry, ten-session exit, 10 bp
+    cost, and 10% cap averaged 2.6672% per recent month, 3.5277% over 12
+    months, and 1.9530% full sample, with 18.78% drawdown, 34-day recovery,
+    nine positive and six negative months, 1,098 allocations across 108
+    symbols, and four positive coarse blocks. Adjacent 1/3/5-minute entry
+    delays retained 2.5003%-2.5758%, so the timing effect is not a lone cell;
+    however monthly consistency remained weak.
+  stable_failed_negative_neighborhood: >-
+    The strongest stable leg used a one-minute reaction and three-minute
+    delay: 2.6337% recent average month, 3.3550% over 12 months, 2.3092% full
+    sample, 17.70% drawdown, 34-day recovery, 11 positive/four negative
+    months, 557 allocations across 108 symbols, and four positive blocks.
+    Five-minute delay retained 2.5935%. A 30-minute reaction with three/five
+    minute delay retained 2.6015%/2.5762% with about 16% drawdown and four
+    positive blocks. At 20 bp the one-minute/three-delay profile retained
+    2.2760% per recent month.
+  attrition: >-
+    Exact signal completeness ranged from 7,362-7,382 events for one-minute
+    windows to 6,476-6,503 for 30-minute windows. Liquidity-eligible positive
+    reaction samples ranged from 3,160 to 3,490; the timing comparison
+    therefore reports its sample change rather than treating it as pure entry
+    improvement.
+  diagnosis: >-
+    Fifteen- and 30-minute windows plus delayed one-minute failed-negative
+    signals form credible neighborhoods, but the best return remains below
+    2.7% per month and no configuration approaches Type A. Timing and modest
+    latency are not the missing 7%-12% monthly alpha.
+decision: >-
+  Freeze three representative development profiles for exact reproduction,
+  capacity-aware symbol/firm/event/day removal, rolling-window and moving-block
+  validation. Do not spend SIP quote budget unless that adversarial run
+  unexpectedly changes the bar-stage Type-A conclusion.

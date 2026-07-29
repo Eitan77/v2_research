@@ -1,0 +1,23 @@
+{
+  "status": "passed",
+  "run_id": "RUN-0005",
+  "expected_variant_count": 288,
+  "executed_variant_count": 288,
+  "parent_candidates": 3358,
+  "path_beta_complete_candidates": 3340,
+  "missing_peer_paths": 0,
+  "missing_hedge_paths": 18,
+  "missing_shifted_betas": 0,
+  "frozen_configuration_hash": "7434dfdaf62b46cb5afc971541b9f493b64a35a5cfec3250771998414da291cf",
+  "input_hashes": {
+    "parent_trade_details": "b1d796d45f869d5190b72f7509b711f4d3fd563dadbfaac75615af505c159889",
+    "features": "d218deda9edb71f2eea31b34db37335453f98e8d1d13c96850f19150cd903f8f",
+    "minute": "a142c4f9b023ab74b903a7e4ea6c5cfb0d0da58e6bd7f8f9c5c22ce9fa6395ce"
+  },
+  "executed_code_hashes": {
+    "run0005.py": "f745eb04794a8e63279072f2a78dfa4c015ef6788fa52fc36bd6d6c4739e5b19",
+    "cam0009.py": "662953309a0bff395bfedd93030706ae3d6d5830a3581edb811253224a9896bd"
+  },
+  "maximum_loaded_date": "2026-04-30",
+  "holdout_rows_loaded": 0
+}

@@ -1,0 +1,78 @@
+{
+  "status": "passed",
+  "run_id": "RUN-0002",
+  "expected_variant_count": 720,
+  "executed_variant_count": 720,
+  "resolved_portfolios": [
+    "positive_continuation_long",
+    "negative_failure_long",
+    "all_longs"
+  ],
+  "resolved_screens": [
+    "baseline",
+    "standalone",
+    "target_only",
+    "rating_only",
+    "initiation_only",
+    "target_raise",
+    "target_lower",
+    "rating_upgrade",
+    "rating_downgrade",
+    "premarket",
+    "intraday",
+    "after_close",
+    "reaction_le25bp",
+    "reaction_ge10bp",
+    "reaction_ge25bp",
+    "reaction_ge50bp",
+    "reaction_ge100bp",
+    "close_location67",
+    "close_location80",
+    "participation_le1pct",
+    "participation_le2pct",
+    "participation_ge5pct",
+    "participation_ge10pct",
+    "gap_down1pct",
+    "gap_down2pct",
+    "gap_up1pct",
+    "gap_abs2pct",
+    "single_firm",
+    "multifirm2",
+    "multifirm3",
+    "stock_vol_low",
+    "stock_vol_high",
+    "qqq_trend_down",
+    "qqq_trend_up",
+    "qqq_vol_low",
+    "qqq_vol_high",
+    "standalone_target",
+    "standalone_intraday",
+    "target_intraday",
+    "standalone_participation_le2pct"
+  ],
+  "resolved_horizons": [
+    "three_close",
+    "five_close",
+    "ten_close"
+  ],
+  "resolved_costs": [
+    10,
+    20
+  ],
+  "frozen_configuration_hash": "67c2b8578755b110ca1f08589ebd4f3eb8f4b176a061d8dfb3957632be4488d5",
+  "input_hashes": {
+    "event_readiness": "a05d40233dc86d1a5df4e2f37a2387bedf240090fcc96f6b7e6d337054f440e6",
+    "daily_split": "bc45566ebaa4cfaae2d63121b283b46585ff3fe42b8b25c463c2bdacc4d703f2",
+    "catalog_file": "8ace63df1ad5b3335945bad7d6220bc27a34203adfc49e4324d1383f6c286664"
+  },
+  "executed_code_hashes": {
+    "run0002.py": "236b9aa8e8278cbd995c9c1c32565c4b267ddfd9633003aec3460b8e9069d629",
+    "run0001.py": "921ae27eaced405c42f89e9180489fbc42fbd4dd86313178dd3051a57de08bb2",
+    "cam0008.py": "9ee4beb14733552285a444287817673341ae4bb188840cde35153edf432545ed"
+  },
+  "qqq_rows": 499,
+  "qqq_minimum_date": "2024-05-01",
+  "qqq_maximum_date": "2026-04-30",
+  "maximum_loaded_date": "2026-04-30",
+  "holdout_rows_loaded": 0
+}

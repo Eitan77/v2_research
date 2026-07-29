@@ -1,0 +1,48 @@
+{
+  "status": "passed",
+  "run_id": "RUN-0001",
+  "run_record_status": "frozen",
+  "resolved_costs_bps_per_side": [
+    5,
+    10,
+    20
+  ],
+  "resolved_position_cap": 0.2,
+  "resolved_intraday_portfolios": [
+    "long_positive_continuation",
+    "long_negative_failure",
+    "protected_short_negative_continuation",
+    "protected_short_positive_failure",
+    "all_longs",
+    "all_shorts",
+    "directional_continuation",
+    "failed_reaction",
+    "all_legs"
+  ],
+  "resolved_multiday_long_portfolios": [
+    "long_positive_continuation",
+    "long_negative_failure",
+    "all_longs"
+  ],
+  "resolved_horizons": [
+    "next_open",
+    "three_close",
+    "five_close",
+    "ten_close"
+  ],
+  "expected_variant_count": 63,
+  "executed_variant_count": 63,
+  "input_hashes": {
+    "run_record": "a101bdf3b01e05034022de430d75e819e545f6a018cc5bdd7114a94135a7f026",
+    "event_readiness": "e220113a410bb2116d846189cfac6daaf649ed83c9c2ae40e5f9238fd90eaa69",
+    "daily_split": "91c539ae8c8c7e9207887f8412cc788b5db4ef930fda8e32036dc4c8a24c13a6"
+  },
+  "output_hashes": {
+    "variant_metrics.parquet": "cfdccfda54aeecd758a33fac7fbae1b298cbbc79ac5a7c87d203449c92ce3e52",
+    "trade_details.parquet": "b24ae3c3066c4011d6cdb03bf1d29eb4e3ce63dad61112d1cb1a15c3bd49418d",
+    "daily_pnl.parquet": "30554af337303f335fb8a0ae290d0836b09e61308e8ad858aeda968317500c88",
+    "attrition.json": "becd89f0a5a686d079aa4e9f4d7d69fd400f067e894fc47a97c2217d851b7094"
+  },
+  "maximum_loaded_date": "2026-04-30",
+  "holdout_rows_loaded": 0
+}

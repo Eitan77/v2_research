@@ -1,0 +1,10 @@
+{
+  "registry_events": 7641,
+  "signal_complete_events": 7116,
+  "signal_incomplete_events": 525,
+  "reaction_window_not_exactly_five_rows": 480,
+  "reaction_complete_but_entry_minute_missing": 40,
+  "reaction_and_entry_complete_but_split_or_prior_close_missing": 4,
+  "reaction_and_entry_complete_but_shifted_liquidity_missing": 1,
+  "note": "Categories are mutually exclusive in the order shown and reconcile exactly to 525."
+}

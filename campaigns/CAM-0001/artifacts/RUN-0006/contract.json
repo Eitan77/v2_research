@@ -1,0 +1,40 @@
+{
+  "executed_variant_count": 12,
+  "expected_variant_count": 12,
+  "schemes": [
+    [
+      "equal",
+      "equal",
+      "none"
+    ],
+    [
+      "inverse_vol",
+      "inverse_vol",
+      "none"
+    ],
+    [
+      "soxl_cap50",
+      "soxl_cap50",
+      "none"
+    ],
+    [
+      "equal_scaled",
+      "equal",
+      "qqq_median_ratio"
+    ],
+    [
+      "inverse_vol_scaled",
+      "inverse_vol",
+      "qqq_median_ratio"
+    ],
+    [
+      "soxl_cap50_scaled",
+      "soxl_cap50",
+      "qqq_median_ratio"
+    ]
+  ],
+  "volatility_scaling": "Exposure = min(1, prior rolling 252-session median QQQ 20-session volatility / current completed-bar QQQ 20-session volatility); unavailable early reference leaves exposure at 1.",
+  "soxl_cap": "SOXL weight capped at 0.5; unused weight remains cash when SOXL is the sole eligible fund.",
+  "loaded_max_date": "2026-04-30",
+  "holdout_rows_loaded": 0
+}

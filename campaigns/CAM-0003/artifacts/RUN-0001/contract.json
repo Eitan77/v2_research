@@ -1,0 +1,19 @@
+{
+  "executed_variant_count": 6,
+  "expected_variant_count": 6,
+  "readiness_sha256": "19e327c2a38b199eb13af16a3dd3aee29d0aa1056afd8629ae40450ed21a81d4",
+  "signal": "prior regular-session last-minute close to 09:59 close > 0",
+  "entry": "15:30 raw SIP minute open",
+  "exit": "15:59 raw SIP minute close",
+  "strategies": [
+    "positive_morning_long",
+    "always_long"
+  ],
+  "costs": [
+    2,
+    5,
+    10
+  ],
+  "loaded_max_date": "2026-04-30",
+  "holdout_rows_loaded": 0
+}

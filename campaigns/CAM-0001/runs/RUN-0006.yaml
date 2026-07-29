@@ -1,0 +1,108 @@
+run_id: RUN-0006
+campaign_id: CAM-0001
+parent_run_id: RUN-0005
+
+planned_at: "2026-07-28T21:13:53.2986990-07:00"
+status: completed
+
+change_from_parent: >-
+  Apply causal portfolio sizing to the rising-SMA activation family: equal
+  weight, inverse volatility, SOXL weight cap, and continuous QQQ-volatility
+  exposure scaling.
+reason: >-
+  RUN-0005 improved broad context but retained 85-day recent recovery and
+  semiconductor concentration. Risk-aware sizing directly targets those
+  portfolio weaknesses without changing the alpha signal or adding leverage.
+expected_effect: >-
+  Inverse-volatility or SOXL-capped weights should reduce contributor
+  concentration. Continuous volatility scaling should reduce high-risk losses
+  and recovery time while preserving enough return to remain near the recent
+  profile. If return falls proportionally with no path improvement, retain the
+  simpler equal-weight construction.
+
+configuration:
+  universe: "TQQQ and SOXL; QQQ confirmation"
+  signal: "Positive 5-session fund momentum; QQQ above and rising SMA 20 or 50"
+  decision_time: "Completed daily close"
+  entry: "Next open"
+  exit: "Open after 10 trading sessions"
+  direction: "Long only"
+  sizing:
+    schemes:
+      - equal_weight
+      - inverse_20_session_volatility
+      - soxl_weight_capped_at_0.5
+    exposure:
+      - fixed_1.0
+      - "min(1, prior 252-session median QQQ volatility / current QQQ volatility)"
+    capital_rule: "Original fixed base 1.0; no reinvestment; no account leverage"
+  filters: "Rising QQQ SMA 20 or 50"
+  stops_or_risk_overlays: "Continuous exposure scaling only"
+  cost_model: "5 bps per side on actual traded weight"
+  execution_model: "Next-open marketable bar fill"
+
+short_selling:
+  direct_stock_or_etf_shorting_used: false
+  strictly_intraday_if_used: "N/A"
+  protective_stop_or_emergency_exit: "N/A"
+  forced_close_before_regular_session_end: "N/A"
+  overnight_direct_short_exposure_detected: false
+
+execution_contract:
+  command: >-
+    python campaigns/CAM-0001/src/audit_run0006.py
+    --cache campaigns/CAM-0001/artifacts/cache/bars_split_through_20260430.parquet
+    --output-dir campaigns/CAM-0001/artifacts/RUN-0006
+  expected_variant_count: 12
+  output_paths:
+    - "artifacts/RUN-0006/sizing_family.csv"
+    - "artifacts/RUN-0006/metrics.json"
+    - "artifacts/RUN-0006/contract.json"
+
+completed_at: "2026-07-28T21:16:25.6474062-07:00"
+metrics_artifact: "artifacts/RUN-0006/sizing_family.csv"
+results_summary:
+  net_full_period_simple_return: "SMA20 equal 3.737990; scaled equal 3.147661"
+  average_monthly_net_simple_return: >-
+    SMA20 12m equal 0.105528; cap 0.098478; inverse vol 0.092539; scaled <=0.082363
+  average_calendar_year_net_simple_return: "See metrics.json"
+  standard_max_drawdown: "SMA20 12m equal 0.128471; alternatives 0.129817-0.148985"
+  max_full_recovery_time_days: "SMA20 recent equal/cap/scaled 85; inverse vol 170"
+  negative_month_count: "SMA20 equal/cap/scaled 3; inverse-vol variants 4"
+  trade_or_event_count: "19 recent independent entries across SMA20 variants"
+  average_capital_utilization: "Full SMA20 equal 0.662324; scaled equal 0.607098"
+  adverse_cost_net_simple_return: "RUN-0003 cost evidence applies to equal sizing"
+
+execution_reconciliation:
+  semantic_tests: "5 passed"
+  actual_command_matches_record: true
+  executed_variant_count: 12
+  expected_variant_count: 12
+  saved_outputs_match_record: true
+  loaded_max_date: "2026-04-30"
+  holdout_rows_loaded: 0
+  sample_attrition: "No dates, symbols, rows, or independent entries removed"
+
+factual_outcome: >-
+  Equal fixed exposure remained best. The SOXL cap reduced 12-month average
+  monthly net from 10.55% to 9.85% and slightly worsened drawdown without
+  changing 85-day recovery. Inverse-volatility weighting fell to 9.25%, added
+  a fourth negative month, and doubled recovery to 170 days. Continuous QQQ
+  volatility scaling cut average monthly net to 7.10%-8.24% and did not shorten
+  recovery. These changes lowered embedded beta but did not improve the actual
+  loss path. Recent SOXL/TQQQ contributions under equal sizing were
+  91.27%/35.36% of capital; the high return remains meaningfully semiconductor
+  dependent.
+decision: >-
+  Reject risk-sizing changes as candidate improvements and retain transparent
+  equal fixed-base sizing. Continue to the required asset/universe and bearish
+  expression audit.
+next_question: >-
+  Is the effect genuine continuation across unleveraged proxies and bearish
+  inverse products, or is the apparent A-profile return mainly a leveraged
+  semiconductor bull-regime artifact?
+artifacts:
+  - "artifacts/RUN-0006/sizing_family.csv (sha256 c3e605c61870b6adb513ee2a7c6ab7a03bde45e2a5d46af2d7fd3633a59b4062)"
+  - "artifacts/RUN-0006/metrics.json (sha256 51a93f87752de85aea9ca2edb7ed02f4edad65407f21237de89e80af9e281c72)"
+  - "artifacts/RUN-0006/contract.json (sha256 c19e620f51e27488bce73a68749481e35fc0c3645f7d5ce0d90ee4f091c437d6)"
+  - "src/audit_run0006.py (sha256 80d53b0e51b6366f02e008fa0d44183270b1320a22acb1defb669c83057e082a)"

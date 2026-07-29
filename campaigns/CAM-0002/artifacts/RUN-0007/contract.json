@@ -1,0 +1,33 @@
+{
+  "executed_variant_count": 256,
+  "expected_variant_count": 256,
+  "events_sha256": "9ec2e1e5f4cf8ebe54e29be090804cea7932c271823cad96c5c40419a1d9faca",
+  "coverage_sha256": "80276cc1412309855f3d616262066b5b5111ee9e5aad29919f73ac40e0bb9569",
+  "anchors": [
+    "source60",
+    "abrupt_residual15",
+    "slow_residual120",
+    "episode_control45"
+  ],
+  "volume_thresholds": [
+    0.0,
+    2.0,
+    5.0,
+    10.0
+  ],
+  "asset_classes": [
+    "all",
+    "stocks",
+    "unlevered_etfs",
+    "leveraged_inverse_vol_etfs"
+  ],
+  "holds": [
+    5,
+    15,
+    30,
+    60
+  ],
+  "loaded_max_date": "2026-04-30",
+  "holdout_rows_loaded": 0,
+  "volume_annotation_missing_rows": 0
+}

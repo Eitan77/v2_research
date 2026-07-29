@@ -1,0 +1,79 @@
+run_id: RUN-0006
+campaign_id: CAM-0002
+parent_run_id: RUN-0005
+planned_at: "2026-07-28T22:34:00-07:00"
+status: completed
+
+change_from_parent: >-
+  Separate idiosyncratic sell shocks from broad market repricing by subtracting
+  the simultaneous SPY return over each event's frozen formation horizon.
+reason: >-
+  Every positive RUN-0005 cell disappeared when April 7, 2025 was excluded.
+  That episode generated large simultaneous clusters, indicating that the raw
+  decline trigger conflates market-wide repricing with stock-specific
+  liquidity dislocations. The paper's reversal mechanism is more plausible
+  for the latter.
+expected_effect: >-
+  If idiosyncratic overreaction exists, large negative stock-minus-SPY
+  residuals should improve net returns across adjacent thresholds and holds,
+  remain positive outside April 7, and reduce broad-cluster dependence.
+
+configuration:
+  source_candidates: >-
+    Frozen RUN-0005 candidate rows, which already require a raw decline of at
+    least 2% and at least 6x causal same-clock normal. This is a diagnostic
+    subset test; any positive result requires an unbiased residual-event
+    extraction before interpretation.
+  market_proxy: "SPY raw SIP completed one-minute closes on the same XNYS grid"
+  residual_definition: "stock formation return minus synchronous SPY formation return"
+  formation_minutes: [10, 15, 30, 45, 60, 90, 120]
+  residual_decline_thresholds: [0.02, 0.04, 0.06]
+  stock_surprise_thresholds: [6, 8, 10]
+  holding_minutes: [5, 15, 30, 60]
+  cost_bps_per_side: 10
+  variants: 252
+  diagnostics:
+    - "SPY data attrition"
+    - "Full grid and neighborhood breadth"
+    - "April 7 exclusion"
+    - "Monthly path, drawdown, recovery, event and cluster counts"
+
+execution_contract:
+  command: >-
+    python campaigns/CAM-0002/src/run0006.py
+    --candidates campaigns/CAM-0002/artifacts/RUN-0005/candidate_events.parquet
+    --output-dir campaigns/CAM-0002/artifacts/RUN-0006
+  expected_variant_count: 252
+  output_paths:
+    - "artifacts/RUN-0006/residual_events.parquet"
+    - "artifacts/RUN-0006/residual_grid.csv"
+    - "artifacts/RUN-0006/contract.json"
+    - "artifacts/RUN-0006/diagnostics.json"
+
+completed_at: "2026-07-28T22:36:00-07:00"
+factual_outcome: >-
+  The SPY-adjusted diagnostic executed all 252 frozen cells with zero SPY
+  attrition, data through 2026-04-30, and zero holdout rows. Eleven cells were
+  positive overall, but only three were also positive excluding April 7.
+  Those three were economically small and unstable: the best representative
+  average was 0.15% per month (15-minute formation, 6% residual decline,
+  6x stock surprise, 5-minute hold), which lost 9.88% over the recent 12
+  months and had 12.78% drawdown. Two 120-minute cells earned only 3.24%-5.36%
+  total and had negative recent-window averages in at least one standard
+  window. The apparent 45-minute leaders still became negative outside
+  April 7. No result approached Strategy A.
+decision: >-
+  Reject simple SPY residualization as a standalone edge. Before retiring the
+  mechanism, test whether causal liquidity-shock intensity and post-shock
+  stabilization distinguish genuine temporary dislocations from information
+  moves, and audit asset/universe concentration rather than assuming all
+  liquid stocks are the right expression.
+next_question: >-
+  Are reversals confined to high-volume liquidity shocks that visibly stop
+  falling before entry, or to a causally identifiable asset class?
+artifacts:
+  - "artifacts/RUN-0006/residual_events.parquet (sha256 9ec2e1e5f4cf8ebe54e29be090804cea7932c271823cad96c5c40419a1d9faca)"
+  - "artifacts/RUN-0006/residual_grid.csv (sha256 0df6abc3c5627a1a57b24f3dbb5d9badacba3fe1e8585472078498f1fdd1c576)"
+  - "artifacts/RUN-0006/contract.json (sha256 4ef974f0e15f3535e04d8df33031f6a65c418e34fbd1dae7463bc0e7b6da46a2)"
+  - "artifacts/RUN-0006/diagnostics.json (sha256 e59a31e743dca4f7e2380af177d85e82f9c5b14259484d4625c5932fa23e3e02)"
+  - "src/run0006.py (sha256 755c8cb59be4351e11d1e28f6c04f0b93fdea52aa0928a466e8bec87d4e51f76)"

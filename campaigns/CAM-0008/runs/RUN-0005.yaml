@@ -1,0 +1,134 @@
+campaign_id: CAM-0008
+run_id: RUN-0005
+parent_run: RUN-0004
+status: completed
+frozen_at: "2026-07-29T08:18:00-07:00"
+role: "Adversarial dependence validation and stopping gate"
+adaptation_label: "Three development-selected profiles; no untouched/OOS claim"
+
+question: >-
+  Do the best stable timing profiles survive exact capacity-aware removal and
+  time-sequence uncertainty, and is there any credible chance that the
+  measured mechanism reaches the Type-A return range under gross exposure
+  capped at 1.0?
+reason: >-
+  Four runs tested the source baseline, causal subsets and states, sizing and
+  overlap, reaction windows, entry latency, horizons, and costs. The remaining
+  skeptical questions are contributor dependence, chronological instability,
+  and whether the observed 2.6% recent average could plausibly mask a
+  10%-15% process.
+expected_effect: >-
+  A credible modest event premium should remain positive after removing any
+  symbol and the largest firm/event/day contributors. A Type-A-compatible
+  process should show nontrivial mass near a 10% average month under a
+  three-month moving-block bootstrap; zero probability and low upper
+  quantiles would establish an economic return ceiling.
+
+frozen_profiles:
+  failed_negative_fast:
+    source_variant: "negative_failure_long__w1__l3__ten_close__10bp__cap0.1"
+    reaction_window_minutes: 1
+    entry_latency_minutes: 3
+    horizon: ten_close
+    cost_bps_per_side: 10
+    position_cap: 0.10
+  failed_negative_slow:
+    source_variant: "negative_failure_long__w30__l3__ten_close__10bp__cap0.1"
+    reaction_window_minutes: 30
+    entry_latency_minutes: 3
+    horizon: ten_close
+    cost_bps_per_side: 10
+    position_cap: 0.10
+  combined_midwindow:
+    source_variant: "all_longs__w15__l0__ten_close__10bp__cap0.1"
+    reaction_window_minutes: 15
+    entry_latency_minutes: 0
+    horizon: ten_close
+    cost_bps_per_side: 10
+    position_cap: 0.10
+
+frozen_validation:
+  exact_reproduction: "Source daily P&L, trade count, and total P&L must match."
+  capacity_aware_removal:
+    symbols: "Every allocated symbol."
+    firms: "Five highest and five lowest net-contributing primary firms."
+    events: "Ten highest and ten lowest allocated event P&Ls."
+    entry_days: "Five highest and five lowest event-cohort P&Ls."
+    method: "Remove from candidate set and rerun chronological allocation and marked-to-market P&L."
+  moving_block_bootstrap:
+    replications: 20000
+    seed: 8005
+    block_months: 3
+    samples:
+      - "Full 22-month development sequence"
+      - "Representative recent 15-month sequence"
+  rolling_windows_months: [3, 6, 12]
+  adverse_cost_check: "Matched 20 bp per-side source variant."
+  quote_replay_gate: >-
+    Do not spend exact-event SIP quote budget when the candidate remains a
+    bar-stage Type-A loser; quote validation cannot create missing alpha.
+  expected_leave_one_out_resimulations: >-
+    Determined from frozen source allocations as all symbols plus exactly
+    10 firms, 20 events, and 10 entry days per profile.
+
+required_outputs:
+  - "Exact source reproduction and actual LOO count reconciliation"
+  - "Worst/median/best LOO recent return and drawdown by profile/type"
+  - "20,000-rep full/recent moving-block distributions and 10% probability"
+  - "Rolling 3/6/12-month extrema and matched 20bp performance"
+  - "Mandatory conclusion audit and explicit continue/retire decision"
+
+result:
+  validation: >-
+    Passed. All three profiles reproduced exactly; 439 capacity-aware
+    leave-one-out resimulations completed; 20,000 three-month moving-block
+    samples were generated per profile and full/recent window; maximum date
+    was 2026-04-30 and zero holdout rows were loaded.
+  failed_negative_fast:
+    recent_15m_average_month: 0.026337489334191076
+    full_average_month: 0.023092473063919917
+    maximum_drawdown: 0.17698142226888344
+    recent_months: "11 positive / 4 negative / 0 inactive"
+    worst_symbol_loo_average_month: 0.022440018975944113
+    worst_firm_loo_average_month: 0.021116254605646083
+    worst_event_loo_average_month: 0.02461643128478108
+    worst_entry_day_loo_average_month: 0.024801167362030398
+    recent_bootstrap_q05_median_q95: [0.0100043, 0.0263359, 0.0430974]
+    recent_bootstrap_probability_at_least_10pct: 0.0
+    adverse_20bp_average_month: 0.022759711556413296
+  failed_negative_slow:
+    recent_15m_average_month: 0.026014695412341683
+    full_average_month: 0.02197906701727573
+    maximum_drawdown: 0.16101591583617622
+    recent_months: "11 positive / 4 negative / 0 inactive"
+    worst_symbol_loo_average_month: 0.02203917497199678
+    recent_bootstrap_q05_median_q95: [0.0101732, 0.0257916, 0.0427147]
+    recent_bootstrap_probability_at_least_10pct: 0.0
+    adverse_20bp_average_month: 0.022563362079008338
+  combined_midwindow:
+    recent_15m_average_month: 0.026672339115883792
+    full_average_month: 0.019530498321807695
+    maximum_drawdown: 0.1878341935330447
+    recent_months: "9 positive / 6 negative / 0 inactive"
+    worst_symbol_loo_average_month: 0.020182184555055285
+    recent_bootstrap_q05_median_q95: [0.0086720, 0.0262542, 0.0462208]
+    recent_bootstrap_probability_at_least_10pct: 0.0
+    adverse_20bp_average_month: 0.022616470274026062
+  concentration: >-
+    Top-five event shares were 7.82%-9.61%, top-five entry-day shares
+    10.30%-13.14%, top-five symbol shares 15.18%-17.34%, and top-five firm
+    shares 16.47%-24.26%. Every tested contributor removal remained positive.
+  rolling: >-
+    Every profile had a negative worst rolling three-month average. Fast
+    failed-negative also had a slightly negative worst six-month average;
+    combined had -0.91%. Slow failed-negative's six-month minimum was positive
+    0.17% but its best 12-month average was only 3.03%.
+  quote_replay: >-
+    Inapplicable. Exact marketable SIP replay cannot raise a bar-stage
+    2.6%-per-month estimate into the 10%-15% profile; it can only validate or
+    lower execution. No quote budget was spent.
+decision: >-
+  Retire CAM-0008 as a genuine, distributed, modest analyst-revision event
+  premium but not a Type-A candidate. Preserve the failed-negative revision
+  lesson, keep the May 1, 2026 holdout sealed, make no live/capacity claim, and
+  begin a materially different mechanism.

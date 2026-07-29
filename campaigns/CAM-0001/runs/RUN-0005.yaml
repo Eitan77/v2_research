@@ -1,0 +1,115 @@
+run_id: RUN-0005
+campaign_id: CAM-0001
+parent_run_id: RUN-0004
+
+planned_at: "2026-07-28T21:11:23.7096817-07:00"
+status: completed
+
+change_from_parent: >-
+  Replace failed exit intervention with causal entry-state diagnostics for
+  broad participation, QQQ momentum, rising trend, orderly volatility, and
+  trend efficiency.
+reason: >-
+  Fixed holds work better than reacting to ordinary reversals. The unresolved
+  weakness may instead be entering rebound noise rather than persistent
+  information/flow states, especially before the apparent recent regime.
+expected_effect: >-
+  A valid activation state should improve 12/15/18-month consistency and
+  recovery across SMA 20 and 50, retain meaningful sample size, and show
+  directionally useful full-history behavior. A filter that only removes the
+  pre-May-2025 losses or sharply shrinks entries is not adequate.
+
+configuration:
+  universe: "TQQQ and SOXL; QQQ confirmation; unchanged cutoff cache"
+  signal: "Positive 5-session fund momentum, fixed 10-session exit"
+  decision_time: "Completed daily close"
+  entry: "Next open"
+  exit: "Open after 10 trading sessions"
+  direction: "Long only"
+  sizing: "Fixed base 1.0; equal weight among qualifying funds; no reinvestment"
+  filters:
+    base_qqq_sma_sessions: [20, 50]
+    causal_states:
+      - none
+      - all_funds_positive
+      - qqq_positive_5_session
+      - all_funds_and_qqq_positive
+      - qqq_sma_rising_over_5_sessions
+      - qqq_20_session_volatility_below_prior_252_session_median
+      - qqq_20_session_trend_efficiency_above_prior_252_session_median
+      - all_funds_positive_and_trend_efficient
+      - qqq_positive_and_orderly_volatility
+  stops_or_risk_overlays: "None"
+  cost_model: "5 bps per side"
+  execution_model: "Next-open marketable bar fill"
+
+short_selling:
+  direct_stock_or_etf_shorting_used: false
+  strictly_intraday_if_used: "N/A"
+  protective_stop_or_emergency_exit: "N/A"
+  forced_close_before_regular_session_end: "N/A"
+  overnight_direct_short_exposure_detected: false
+
+execution_contract:
+  command: >-
+    python campaigns/CAM-0001/src/audit_run0005.py
+    --cache campaigns/CAM-0001/artifacts/cache/bars_split_through_20260430.parquet
+    --output-dir campaigns/CAM-0001/artifacts/RUN-0005
+  expected_variant_count: 18
+  output_paths:
+    - "artifacts/RUN-0005/activation_family.csv"
+    - "artifacts/RUN-0005/metrics.json"
+    - "artifacts/RUN-0005/contract.json"
+
+completed_at: "2026-07-28T21:13:53.2986990-07:00"
+metrics_artifact: "artifacts/RUN-0005/activation_family.csv"
+results_summary:
+  net_full_period_simple_return: >-
+    SMA20 rising-state 3.737990 versus baseline 3.975306
+  average_monthly_net_simple_return: >-
+    SMA20 rising-state 12m 0.105528, 15m 0.085919, 18m 0.061284
+  average_calendar_year_net_simple_return: "See metrics.json"
+  standard_max_drawdown: "SMA20 rising-state 12m 0.128471; full 0.258301"
+  max_full_recovery_time_days: "SMA20 rising-state 12m 85; full 434"
+  negative_month_count: "SMA20 rising-state 3/12, 3/15, 5/18"
+  trade_or_event_count: "SMA20 rising-state 19 recent and 122 full independent entries"
+  average_capital_utilization: "SMA20 rising-state full 0.662324"
+  adverse_cost_net_simple_return: "Not rerun; RUN-0003 established broad cost margin"
+
+execution_reconciliation:
+  semantic_tests: "5 passed"
+  actual_command_matches_record: true
+  executed_variant_count: 18
+  expected_variant_count: 18
+  saved_outputs_match_record: true
+  loaded_max_date: "2026-04-30"
+  holdout_rows_loaded: 0
+  sample_attrition: >-
+    No row/date/symbol attrition. Eligibility reduced full independent entries
+    by 2-65 depending on filter; every count is in activation_family.csv.
+
+factual_outcome: >-
+  Causal state filters did not manufacture a perfect path. Requiring the QQQ
+  SMA to be rising was the most balanced result: 10.55% 12-month average
+  monthly net, 11.24% median month, three negative months, 12.85% drawdown,
+  and improved 15/18-month averages of 8.59%/6.13% with 3/5 negative months.
+  It removed 19 of 141 full-history entries and lowered full drawdown from
+  28.51% to 25.83%, but recent recovery remained 85 days. Participation plus
+  trend efficiency cut negative months to two and drawdown to 11.11%, but
+  reduced average monthly net to 8.55%, removed 65 entries, and lengthened
+  recovery to 168 days. Volatility filters harmed the edge. No filter supports
+  an honest claim that the regime began exactly at the favorable 12-month start.
+decision: >-
+  Retain rising-SMA as a plausible activation candidate, not a selected final
+  rule. Continue with causal risk sizing, universe/leg alternatives, and
+  chronological evidence. Do not claim candidate status from the fixed 12-month
+  endpoint.
+next_question: >-
+  Can continuous volatility-aware exposure or component weighting improve
+  recovery and SOXL concentration while preserving about 10% recent average
+  monthly net across the broader 15/18-month context?
+artifacts:
+  - "artifacts/RUN-0005/activation_family.csv (sha256 dca68aa60dd8e032a6121748de244c4d18249624d5f7a40aa2f22af55aaa0952)"
+  - "artifacts/RUN-0005/metrics.json (sha256 737c8ccba019f11cc5a3d32c9b7e1841e14e73bf66fe8921f48d32bb76b37de7)"
+  - "artifacts/RUN-0005/contract.json (sha256 42c1687a1990f7e932d65bcde82612b4071fda5994e4ff91b46dca829c67ee08)"
+  - "src/audit_run0005.py (sha256 2a6b3b06fe92324b34c4519cf1b8a35f5ba4e677237ab4f25ecb99cb6149d302)"

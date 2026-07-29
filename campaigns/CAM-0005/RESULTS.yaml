@@ -1,0 +1,146 @@
+campaign_id: CAM-0005
+updated_at: "2026-07-29T04:02:00-07:00"
+status: "development_sleeves_frozen_not_type_a"
+intended_profile: "A. Recent Money Printer"
+current_profile_fit: >-
+  Not a genuine Strategy A candidate. A causal SMH late-day reversal expressed
+  through long SOXL/SOXS survived marketable SIP execution, chronological
+  blocks, both product legs, and high costs. The strongest capped
+  lower-drawdown allocation averaged about 5% per month, roughly half the
+  reference objective, and older history exposed severe drawdown and adverse
+  inverse-leg behavior.
+run_count: 11
+meaningful_variant_count: 1250
+
+readiness:
+  symbols: ["QQQ", "TQQQ", "SQQQ", "SMH", "SOXL", "SOXS"]
+  minute_rows: 133925
+  daily_rows_raw_and_split: 9990
+  minimum_session: "2023-01-03"
+  maximum_loaded_date: "2026-04-30"
+  holdout_rows_loaded: 0
+  invalidated_attempt: >-
+    RUN-0001 used a mixed daily/minute adjustment ratio and was invalidated
+    before interpretation. Its files were preserved. Clean readiness uses
+    official split-daily divided by official raw-daily close factors.
+
+mechanism_evidence:
+  direction: >-
+    Completed late-SMH pressure reverses overnight: negative late SMH selects
+    long SOXL and positive late SMH selects long SOXS. The matching signed
+    unlevered SMH relationship was positive, so leveraged products amplify a
+    real underlying effect rather than create it.
+  breadth: >-
+    QQQ did not provide comparable candidate economics. SOXL contributed most
+    profit, while SOXS was positive in the recent frozen replay but weaker and
+    historically adverse.
+  timing: >-
+    The edge survived 15:56 and 15:59 entries and next-open, 09:30-complete,
+    and 09:34-complete exits. The preferred executable exit is first valid bid
+    after 09:35 because it avoids the wider opening-transition spread.
+  state: >-
+    Edge25 close-location pressure and q50/q60 magnitude form a stable region.
+    High final-hour dollar volume relative to a shifted prior-60-session median
+    materially reduces drawdown. Volatility, trend, stronger magnitude, and
+    combined states did not improve Type-A economics.
+
+execution:
+  targeted_scope: >-
+    SIP quotes and trades only for 134 frozen SOXL/SOXS events, with 15-second
+    entry, 09:30 exit, and later 09:35 exit windows. No broad universe pull.
+  coverage:
+    event_count: 134
+    entry_exit_quote_complete: 134
+    entry_exit_trade_complete: 134
+  replay: >-
+    Buy at the first noncrossed SIP ask at or after 15:59 and sell at the first
+    noncrossed SIP bid at or after 09:35, then subtract 2/5/10 bp additional
+    slippage per side. Median q60 spread was 4.49 bp at entry and 4.88 bp at
+    the preferred exit.
+  capacity_warning: >-
+    Alpaca SIP quote sizes are preserved only in raw API units. No dollar
+    capacity claim is made without an independently verified unit contract and
+    depth/impact model.
+
+frozen_development_sleeves:
+  unit_q60:
+    configuration: >-
+      q60 shifted magnitude, edge25 pressure, unit exposure, both reversal
+      product legs, first ask after 15:59 to first bid after 09:35.
+    net_assumption: "Marketable NBBO plus 5 bp additional slippage per side"
+    recent_months: 18
+    trades: 108
+    average_month: 0.060066
+    median_month: 0.031641
+    positive_months: 12
+    negative_months: 6
+    max_drawdown: 0.180725
+    recovery: "Unresolved at 2026-04-30"
+    top_5_day_profit_share: 0.529208
+    status: "execution_qualified_development_only"
+  lower_drawdown_allocation:
+    configuration: >-
+      Same q60/edge25 signal and execution; size high-volume events at 1.0,
+      low-volume events at 0.25, and multiply SOXS exposure by 0.75.
+    net_assumption: "Marketable NBBO plus 5 bp additional slippage per side"
+    recent_months: 18
+    trades: 108
+    average_event_exposure: 0.625
+    average_month: 0.050398
+    median_month: 0.023784
+    positive_months: 13
+    negative_months: 5
+    max_drawdown: 0.059072
+    max_recovery_days: 5
+    top_5_day_profit_share: 0.479627
+    soxl_net_simple_return: 0.619631
+    soxs_net_simple_return: 0.287528
+    ten_bp_average_month: 0.046648
+    ten_bp_max_drawdown: 0.066276
+    status: "adapted_lower_drawdown_development_sleeve"
+
+robustness:
+  chronology: >-
+    Unit q60 at 5 bp earned 62.31%, 33.56%, and 12.25% in three consecutive
+    six-month blocks; the combined lower-drawdown allocation earned 34.49%,
+    21.15%, and 35.07%.
+  concentration: >-
+    Unit q60 loses about 88.7% of total profit after removing its ten best
+    days. The combined allocation improves top-five share to 47.96% but does
+    not eliminate event concentration.
+  block_bootstrap: >-
+    For unit q60 with 2 bp extra slippage, circular 20-session and 60-session
+    bootstrap positive-return frequencies were 96.97% and 98.25%. Their
+    95th-percentile maximum drawdowns were 48.87% and 39.43%.
+  older_context: >-
+    March 2023-October 2024 q60/high-volume bar context averaged 1.62% per
+    month at 5 bp, with 36.24% drawdown, unresolved recovery, and a losing
+    SOXS leg. The recent result is regime-specific rather than durable.
+
+activation_and_decay:
+  causal_event_activation: >-
+    q60 magnitude, direction-consistent edge25 close location, and optional
+    dollar volume above its shifted prior-60-session median are available at
+    the decision time.
+  regime_activation: >-
+    No separate causal regime-onset rule was validated. Trailing unlevered
+    10/20/40-event activation reduced return and failed to preempt the first
+    inverse tail, so the favorable recent start cannot be claimed prospectively.
+  forward_monitor: >-
+    Paper only. Monitor rolling 20 qualifying-event net expectancy, underlying
+    signed SMH expectancy, SOXL/SOXS separately, monthly path, marketable
+    spread coverage, and top-day share. Suspend rather than retune when either
+    the underlying relationship or a product leg becomes nonpositive over a
+    completed monitoring window; retirement thresholds require prospective
+    evidence and must be frozen before use.
+
+holdout:
+  sealed_start: "2026-05-01"
+  rows_loaded: 0
+  accessed: false
+
+current_judgment: >-
+  Freeze the two development sleeves for prospective paper observation only.
+  Do not promote, holdout-test, or tune further. CAM-0005 is complete for
+  Strategy A, but the broader objective remains active and moves to a
+  materially different mechanism.

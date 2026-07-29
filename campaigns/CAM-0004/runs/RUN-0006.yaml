@@ -1,0 +1,87 @@
+run_id: RUN-0006
+campaign_id: CAM-0004
+parent_run_id: RUN-0005
+planned_at: "2026-07-29T02:01:00-07:00"
+status: completed
+
+change_from_parent: >-
+  Challenge the adapted residual definition with a bounded set of
+  source-consistent cross-sectional models while retaining the causal
+  high-volatility long-low expression, K4/K6 formation, M2-M6 holdings,
+  capital scaling, and costs.
+reason: >-
+  Exact source characteristics are unavailable. The full daily proxy model may
+  mix risk dimensions poorly, so a skeptical conclusion requires checking
+  whether beta-only, price/liquidity, or return-risk controls reveal a larger
+  transitory residual than the full proxy model.
+expected_effect: >-
+  A hidden residual-reversal edge should appear across a coherent model and
+  K/M neighborhood, raise net monthly return materially above RUN-0005, and
+  reduce rather than worsen top-day dependence. A small isolated improvement
+  remains non-promotable.
+
+configuration:
+  residual_models:
+    full_proxy: "Frozen RUN-0002 seven-feature residual"
+    beta_only: ["beta_60d"]
+    price_liquidity: ["log_price", "log_dollar_volume"]
+    return_risk:
+      ["reversal_1d", "momentum_5d", "momentum_20d", "volatility_20d", "beta_60d"]
+  cross_section_contract: >-
+    Winsorized 30-minute return; within-decision paper rank/L1 normalization;
+    source-style residual retaining the fitted intercept.
+  formation_periods_K: [4, 6]
+  holding_periods_M: [2, 3, 4, 6]
+  breadth: ["decile", "quintile"]
+  state: "Frozen causal high_market_vol definition"
+  direction: "Actionable long-low, cash otherwise"
+  weights: ["equal", "strength_capped"]
+  cost_bps_per_side: [1, 3]
+  capital_rule: "Each M-period cohort scaled by 1/M"
+  expected_variant_count: 256
+
+execution_contract:
+  command: >-
+    python campaigns/CAM-0004/src/run0006.py
+    --parent-dir campaigns/CAM-0004/artifacts/RUN-0002
+    --outcomes-path campaigns/CAM-0004/artifacts/RUN-0003/outcomes.parquet
+    --output-dir campaigns/CAM-0004/artifacts/RUN-0006
+  expected_variant_count: 256
+  output_paths:
+    - "artifacts/RUN-0006/portfolio_decisions.parquet"
+    - "artifacts/RUN-0006/variants.csv"
+    - "artifacts/RUN-0006/monthly.csv"
+    - "artifacts/RUN-0006/contract.json"
+    - "artifacts/RUN-0006/diagnostics.json"
+
+completed_at: "2026-07-29T02:10:20-07:00"
+factual_outcome: >-
+  Validation passed with maximum date 2026-04-30, zero holdout rows, and all
+  256 variants reconciled. The return-risk model was best, but only marginally:
+  K4/M4 decile capped-strength long-low at 1 bp/side earned +14.29% total,
+  +0.9525% average month over 15 months, five negative months, 6.46% drawdown,
+  and a 133.5% top-five-day profit share. At 3 bp/side its best average month
+  was +0.5045%. Full-proxy, beta-only, and price/liquidity residual models had
+  similar or weaker surfaces. No residual model approached the Strategy A
+  monthly objective or resolved contribution concentration.
+decision: >-
+  Stop the adapted CAM-0004 branch as economically weak for Strategy A. Do not
+  promote, forward test, or quote replay. Preserve exact source replication as
+  blocked by missing point-in-time S&P 500 membership, the exact 15 causal
+  characteristics, and source midpoint data; do not claim the paper itself was
+  disproven. Begin a materially different campaign.
+next_question: >-
+  Which untested mechanism can plausibly generate frequent 10%-15% fixed-base
+  monthly net return without relying on direct overnight shorts or leverage to
+  rescue weak underlying alpha?
+artifacts:
+  - "artifacts/RUN-0006/portfolio_decisions.parquet"
+  - "artifacts/RUN-0006/variants.csv"
+  - "artifacts/RUN-0006/monthly.csv"
+  - "artifacts/RUN-0006/contract.json"
+  - "artifacts/RUN-0006/diagnostics.json"
+artifact_hashes:
+  variants_csv: "3e1280c9a580a9c43f815f1ef728ac911df4251df66f652a050aba0d99df98c6"
+  monthly_csv: "111ba76759528fbfe4c3a96c57da66a50a6f8a77bcaa7429d4cfdce9d7b065b2"
+  contract_json: "2066973373febd9e0bb594347218d6bee9cc29730e1701a2d5357f89c5cc9221"
+  diagnostics_json: "8bb3549e987088c36ad4ca9c50e901427967b5f73b352cb0fbedb29cec591287"

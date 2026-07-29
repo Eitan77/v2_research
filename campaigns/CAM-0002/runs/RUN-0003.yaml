@@ -1,0 +1,52 @@
+run_id: RUN-0003
+campaign_id: CAM-0002
+parent_run_id: RUN-0002
+planned_at: "2026-07-28T22:13:00-07:00"
+status: completed
+
+change_from_parent: "Prespecified source threshold neighborhood at 30/60-minute exits."
+reason: >-
+  RUN-0002 found a thin early rebound, nonmonotonic shock severity, and one
+  dominant market episode. Test broad source filters without selecting exact
+  profitable cases and report every result with and without April 7.
+expected_effect: >-
+  A genuine overreaction mechanism should retain positive net performance over
+  neighboring absolute/relative thresholds and outside the dominant episode.
+
+configuration:
+  absolute_decline_thresholds: [0.04, 0.05, 0.06, 0.08]
+  relative_surprise_thresholds: [8, 10]
+  holding_minutes: [30, 60]
+  cost_bps_per_side: 10
+  variants: 16
+  episode_sensitivity: "Repeat metrics excluding 2025-04-07; not a selection filter"
+
+execution_contract:
+  command: >-
+    python campaigns/CAM-0002/src/run0003.py
+    --events campaigns/CAM-0002/artifacts/RUN-0001/events.parquet
+    --output-dir campaigns/CAM-0002/artifacts/RUN-0003
+  expected_variant_count: 16
+  output_paths:
+    - "artifacts/RUN-0003/neighborhood.csv"
+    - "artifacts/RUN-0003/contract.json"
+
+completed_at: "2026-07-28T22:15:00-07:00"
+factual_outcome: >-
+  Fifteen of sixteen source-neighbor variants lost money at 10 bps/side.
+  The sole positive result (4% absolute, 10x relative, 60m) earned only 2.01%
+  total over 18 months, averaged 0.29% per month over 15 months, had nine
+  negative months over 18 months, 40 events, and 221-day recovery. It remained
+  small after excluding April 7 (+3.45% total). Larger absolute shocks and the
+  30-minute exit were consistently negative; no A-type neighborhood exists.
+decision: >-
+  Reject threshold tightening as a viable rescue. Inspect the post-event path
+  at 5-60 minutes and realistic 1/2/5-minute entry delays to determine whether
+  reversal is faster than the source's 30-minute measurement.
+next_question: >-
+  Is there a short-lived executable rebound immediately after event completion,
+  or does the recent sample continue falling before any recovery?
+artifacts:
+  - "artifacts/RUN-0003/neighborhood.csv (sha256 de3efc922c7cd9b74e5a82fe4553edeff42f3b053596fcb19e4902a2a3c0a989)"
+  - "artifacts/RUN-0003/contract.json (sha256 72cc02a3b6bae12481896c3269e525cb2e6f3e08b81f59c30d52e7c1db45da86)"
+  - "src/run0003.py (sha256 e78ddd9ead2112c0aaa21750f76dc1abe27f1ef03d5d0c50cc95ffdaf8f14a5e)"

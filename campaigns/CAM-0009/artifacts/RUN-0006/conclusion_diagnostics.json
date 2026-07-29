@@ -1,0 +1,93 @@
+{
+  "status": "passed",
+  "state_complete_trades": 1816,
+  "state_attrition_trades": 102,
+  "qqq_smh_trend": [
+    {
+      "qqq_trend_up": false,
+      "smh_trend_up": false,
+      "trades": 438,
+      "days": 84,
+      "net_pnl": 0.4947814167426682,
+      "recent_15m_net_pnl": 0.46809935564341465,
+      "average_trade_pnl": 0.0011296379377686487
+    },
+    {
+      "qqq_trend_up": false,
+      "smh_trend_up": true,
+      "trades": 159,
+      "days": 30,
+      "net_pnl": 0.020515470813098867,
+      "recent_15m_net_pnl": 0.024529639352043744,
+      "average_trade_pnl": 0.0001290281183213765
+    },
+    {
+      "qqq_trend_up": true,
+      "smh_trend_up": false,
+      "trades": 160,
+      "days": 31,
+      "net_pnl": 0.010083354319199208,
+      "recent_15m_net_pnl": 0.028811116101162607,
+      "average_trade_pnl": 6.302096449499505e-05
+    },
+    {
+      "qqq_trend_up": true,
+      "smh_trend_up": true,
+      "trades": 1059,
+      "days": 198,
+      "net_pnl": 0.13787027064828178,
+      "recent_15m_net_pnl": 0.11049226467735856,
+      "average_trade_pnl": 0.00013018911298232462
+    }
+  ],
+  "qqq_volatility": [
+    {
+      "qqq_high_vol": false,
+      "trades": 892,
+      "days": 173,
+      "net_pnl": 0.18678536148830177,
+      "recent_15m_net_pnl": 0.16072342857877336,
+      "average_trade_pnl": 0.00020940062947119034
+    },
+    {
+      "qqq_high_vol": true,
+      "trades": 924,
+      "days": 170,
+      "net_pnl": 0.47646515103494624,
+      "recent_15m_net_pnl": 0.47120894719520623,
+      "average_trade_pnl": 0.000515654925362496
+    }
+  ],
+  "qqq_gap": [
+    {
+      "qqq_gap_up": false,
+      "trades": 741,
+      "days": 142,
+      "net_pnl": 0.32151665688571407,
+      "recent_15m_net_pnl": 0.40136633263757265,
+      "average_trade_pnl": 0.00043389562332754936
+    },
+    {
+      "qqq_gap_up": true,
+      "trades": 1075,
+      "days": 201,
+      "net_pnl": 0.341733855637534,
+      "recent_15m_net_pnl": 0.230566043136407,
+      "average_trade_pnl": 0.0003178919587325898
+    }
+  ],
+  "concentration": {
+    "total_net_pnl": 0.6863110242560788,
+    "best_month": "2025-04",
+    "best_month_net_pnl": 0.2972897179264703,
+    "worst_month": "2025-08",
+    "worst_month_net_pnl": -0.09053148479506601,
+    "top_day": "2025-04-09",
+    "top_day_net_pnl": 0.16926685920336254,
+    "top_two_day_net_pnl": 0.23245085340520644,
+    "top_event": "5|2025-04-09|575|TXN",
+    "top_event_net_pnl": 0.09926907223263431,
+    "without_best_month_net_pnl": 0.3890213063296085,
+    "recent_15m_average_month_without_best_month": 0.02390304698910781
+  }
+}

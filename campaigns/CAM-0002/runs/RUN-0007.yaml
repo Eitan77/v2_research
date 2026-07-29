@@ -1,0 +1,99 @@
+run_id: RUN-0007
+campaign_id: CAM-0002
+parent_run_id: RUN-0006
+planned_at: "2026-07-28T22:40:00-07:00"
+status: completed
+
+change_from_parent: >-
+  Test causal event-minute abnormal volume and predeclared asset classes across
+  four representative raw/residual shock anchors.
+reason: >-
+  Price-only triggers cannot distinguish temporary liquidity dislocations from
+  information-driven repricing. The hypothesized reversal should be stronger
+  when the completed shock minute has unusually high volume. The mixed
+  stock/ETF universe also requires an explicit expression audit rather than an
+  assumption that aggregation is optimal.
+expected_effect: >-
+  Genuine liquidity shocks should improve monotonically or broadly as causal
+  event-volume surprise rises. Any profitable asset-class expression should
+  have repeat events, neighboring holds/volume thresholds, and performance
+  outside April 7 rather than a retrospectively selected ticker.
+
+configuration:
+  anchors:
+    - "source60: raw 60m decline >=4%, stock surprise >=8x"
+    - "abrupt_residual15: SPY-residual 15m decline >=6%, stock surprise >=6x"
+    - "slow_residual120: SPY-residual 120m decline >=6%, stock surprise >=8x"
+    - "episode_control45: raw 45m decline >=6%, stock surprise >=10x"
+  causal_event_volume_ratio_thresholds: [0, 2, 5, 10]
+  asset_classes:
+    - "all"
+    - "stocks"
+    - "unlevered_etfs"
+    - "leveraged_inverse_vol_etfs"
+  holding_minutes: [5, 15, 30, 60]
+  cost_bps_per_side: 10
+  variants: 256
+  volume_definition: >-
+    Event-minute raw SIP volume divided by the causal prior-60-session
+    same-clock mean, with a complete regular-session symbol grid and missing
+    minute volume set to zero.
+  universe_definition: >-
+    Financial-product classes are frozen from instrument identity, not
+    historical performance. Stock is the complement of the two explicit ETF
+    lists inside the declared 181-symbol point-in-time eligible panel.
+  diagnostics:
+    - "Parent sample and filter attrition"
+    - "Full 256-cell table"
+    - "April 7 exclusion"
+    - "Monthly path, drawdown, recovery, event and cluster counts"
+
+execution_contract:
+  command: >-
+    python campaigns/CAM-0002/src/run0007.py
+    --events campaigns/CAM-0002/artifacts/RUN-0006/residual_events.parquet
+    --coverage campaigns/CAM-0002/artifacts/readiness_session/daily_coverage.parquet
+    --output-dir campaigns/CAM-0002/artifacts/RUN-0007
+  expected_variant_count: 256
+  output_paths:
+    - "artifacts/RUN-0007/annotated_events.parquet"
+    - "artifacts/RUN-0007/volume_universe_grid.csv"
+    - "artifacts/RUN-0007/contract.json"
+    - "artifacts/RUN-0007/diagnostics.json"
+
+completed_at: "2026-07-28T22:44:00-07:00"
+factual_outcome: >-
+  All 256 frozen cells executed with zero volume-annotation attrition, data
+  through 2026-04-30, and zero holdout rows. The strongest repeatable
+  expression was the 15-minute abrupt residual shock in stocks, event-volume
+  ratio at least 5x, and 60-minute hold: 14.01% total over 18 months, 1.19%
+  average month over the representative 15 months, 1.10% average over 12
+  months, 4.51% drawdown, and unresolved 286-day recovery. Its median month
+  was -0.13%, with nine negative and three zero months over 18 months. It had
+  28 portfolio events across 22 symbols; the top event supplied 16.9% and the
+  top five 61.4% of positive contribution. No cell approached Strategy A.
+  Apparent unlevered-ETF strength used only two or three events and is rejected
+  as sparse. The episode-control high-volume leader remained almost entirely
+  April-7 dependent. An initial implementation attempt failed safely on empty
+  asset-class cells before outputs were interpreted; the empty-cell handling
+  was corrected and the full frozen grid rerun.
+decision: >-
+  Abnormal volume improves the abrupt residual-stock expression but leaves it
+  an order of magnitude below the income objective with weak monthly
+  consistency and modest sample size. Test causal stabilization/reclaim
+  confirmations, including the observed >=5x volume state and its unfiltered
+  parent, before rejecting the falling-knife explanation.
+next_question: >-
+  Can waiting for a completed-bar reclaim or absence of a new low materially
+  improve the abrupt residual-volume edge without collapsing sample size, and
+  does the effect generalize to the other anchor families?
+artifacts:
+  - "artifacts/RUN-0007/annotated_events.parquet (sha256 586276c71e78053726e41706650e85269bcf26cfc8abc2f74f485297abf19d13)"
+  - "artifacts/RUN-0007/volume_universe_grid.csv (sha256 58b38d9410a3c141d66aed894c47278c630c3a866ab1aaba066a62c703ecabe5)"
+  - "artifacts/RUN-0007/contract.json (sha256 505686904461c2b6f227e70d2a611bc4898fbcf97559e8afd65a9081d5c61448)"
+  - "artifacts/RUN-0007/diagnostics.json (sha256 1f2c8653a869a6d7b802898291c531e5e16ce17650416ee590614c9ba1eb8ecb)"
+  - "artifacts/RUN-0007/leader_events.csv (sha256 691893b18557311d4667cad7e031e6ddedebe01a91a5938c847c0f9caa9c07dc)"
+  - "artifacts/RUN-0007/leader_symbols.csv (sha256 c81a7f7951d55b2ed10cf35259ad139bbdc4b967bb0dea696a4a566c60b0428e)"
+  - "artifacts/RUN-0007/leader_diagnostics.json (sha256 1590bdfdb5d359fa25b8eeafdcf6c3a35676fef132e9153d941a2a59572f4402)"
+  - "src/run0007.py (sha256 59b99e5a7ac5e4763243a8e4826d374bb69723f38729e6c1edfd04cae36942f4)"
+  - "src/audit_run0007.py (sha256 971cef62f6d79942e29c3e7c8bcf0f728ff3ab59421f849568d55e2ccf94e8a9)"

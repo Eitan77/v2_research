@@ -1,0 +1,231 @@
+{
+  "status": "passed",
+  "confirmations": {
+    "recent_best": {
+      "source_variant": "combined__p4_n8__1001__10bp__cap50",
+      "candidate_events": 132,
+      "allocated_trades": 87,
+      "symbols": 59,
+      "full_average_month": 0.02034034957074318,
+      "recent_15m_average_month": 0.0316307256094353,
+      "recent_15m_positive_months": 11,
+      "recent_15m_negative_months": 4,
+      "recent_15m_inactive_months": 0,
+      "maximum_drawdown": 0.14429249436863362,
+      "recovery_days": 101,
+      "recovery_unresolved": false
+    },
+    "full_history_stable": {
+      "source_variant": "combined__p5_n10__1001__10bp__cap50",
+      "candidate_events": 132,
+      "allocated_trades": 73,
+      "symbols": 53,
+      "full_average_month": 0.022332552213940825,
+      "recent_15m_average_month": 0.028673928820958323,
+      "recent_15m_positive_months": 10,
+      "recent_15m_negative_months": 5,
+      "recent_15m_inactive_months": 0,
+      "maximum_drawdown": 0.13757363006530082,
+      "recovery_days": 40,
+      "recovery_unresolved": false
+    },
+    "lower_concentration": {
+      "source_variant": "strength_priority__p9_n7__1001__10bp__cap33",
+      "candidate_events": 128,
+      "allocated_trades": 86,
+      "symbols": 56,
+      "full_average_month": 0.015635934990865793,
+      "recent_15m_average_month": 0.028235375129443654,
+      "recent_15m_positive_months": 8,
+      "recent_15m_negative_months": 6,
+      "recent_15m_inactive_months": 1,
+      "maximum_drawdown": 0.14326001101707198,
+      "recovery_days": 197,
+      "recovery_unresolved": false
+    }
+  },
+  "leave_one_out": {
+    "full_history_stable|event": {
+      "removals": 73,
+      "recent_15m_average_month_min": 0.021610245533821973,
+      "recent_15m_average_month_median": 0.028673928820958323,
+      "recent_15m_average_month_max": 0.0324138903769895,
+      "worst_removal": "SBUX|2025-01-28 21:05:00+00:00",
+      "best_removal": "ROP|2025-10-23 10:56:02+00:00",
+      "maximum_drawdown_max": 0.24676258611001328
+    },
+    "full_history_stable|symbol": {
+      "removals": 53,
+      "recent_15m_average_month_min": 0.01955644626929137,
+      "recent_15m_average_month_median": 0.028673928820958323,
+      "recent_15m_average_month_max": 0.0324138903769895,
+      "worst_removal": "SBUX",
+      "best_removal": "ROP",
+      "maximum_drawdown_max": 0.24676258611001328
+    },
+    "lower_concentration|event": {
+      "removals": 86,
+      "recent_15m_average_month_min": 0.018629721273684965,
+      "recent_15m_average_month_median": 0.028235375129443654,
+      "recent_15m_average_month_max": 0.03213918820649827,
+      "worst_removal": "PLTR|2025-02-03 21:05:00+00:00",
+      "best_removal": "CDNS|2026-02-17 21:02:30+00:00",
+      "maximum_drawdown_max": 0.1966359273402001
+    },
+    "lower_concentration|symbol": {
+      "removals": 56,
+      "recent_15m_average_month_min": 0.01741022881839203,
+      "recent_15m_average_month_median": 0.028235375129443654,
+      "recent_15m_average_month_max": 0.03395805758409672,
+      "worst_removal": "PLTR",
+      "best_removal": "AXON",
+      "maximum_drawdown_max": 0.1966359273402001
+    },
+    "recent_best|event": {
+      "removals": 87,
+      "recent_15m_average_month_min": 0.02479413232387837,
+      "recent_15m_average_month_median": 0.0316307256094353,
+      "recent_15m_average_month_max": 0.035114885901412714,
+      "worst_removal": "ADI|2025-11-25 12:02:07+00:00",
+      "best_removal": "ROP|2025-10-23 10:56:02+00:00",
+      "maximum_drawdown_max": 0.17268215961106664
+    },
+    "recent_best|symbol": {
+      "removals": 59,
+      "recent_15m_average_month_min": 0.02479413232387837,
+      "recent_15m_average_month_median": 0.0316307256094353,
+      "recent_15m_average_month_max": 0.035176286939265194,
+      "worst_removal": "ADI",
+      "best_removal": "MSTR",
+      "maximum_drawdown_max": 0.17268215961106664
+    }
+  },
+  "bootstrap": {
+    "recent_best": {
+      "full": {
+        "months": 22,
+        "replications": 20000,
+        "block_months": 3,
+        "average_month_q05": 0.0014842475562926332,
+        "average_month_median": 0.020513719772533162,
+        "average_month_q95": 0.03900708096156943,
+        "probability_average_month_positive": 0.96195,
+        "probability_average_month_at_least_10pct": 0.0
+      },
+      "recent_15m": {
+        "months": 15,
+        "replications": 20000,
+        "block_months": 3,
+        "average_month_q05": 0.011761781449193544,
+        "average_month_median": 0.031898093010855944,
+        "average_month_q95": 0.05142126875913073,
+        "probability_average_month_positive": 0.9953,
+        "probability_average_month_at_least_10pct": 0.0
+      },
+      "rolling": {
+        "3": {
+          "worst_average_month": -0.035651001364465924,
+          "worst_end_month": "2024-10",
+          "best_average_month": 0.07342159168130893,
+          "best_end_month": "2025-12"
+        },
+        "6": {
+          "worst_average_month": -0.00718319789262853,
+          "worst_end_month": "2025-01",
+          "best_average_month": 0.06086181256556796,
+          "best_end_month": "2026-03"
+        },
+        "12": {
+          "worst_average_month": 0.006005241847141826,
+          "worst_end_month": "2025-06",
+          "best_average_month": 0.043168729451275256,
+          "best_end_month": "2026-04"
+        }
+      }
+    },
+    "full_history_stable": {
+      "full": {
+        "months": 22,
+        "replications": 20000,
+        "block_months": 3,
+        "average_month_q05": 0.0054523993891025845,
+        "average_month_median": 0.022094419219572687,
+        "average_month_q95": 0.04016249624656741,
+        "probability_average_month_positive": 0.9883,
+        "probability_average_month_at_least_10pct": 0.0
+      },
+      "recent_15m": {
+        "months": 15,
+        "replications": 20000,
+        "block_months": 3,
+        "average_month_q05": 0.006252601096867411,
+        "average_month_median": 0.028540634380554604,
+        "average_month_q95": 0.05126573451731934,
+        "probability_average_month_positive": 0.98365,
+        "probability_average_month_at_least_10pct": 0.0
+      },
+      "rolling": {
+        "3": {
+          "worst_average_month": -0.015616212582766768,
+          "worst_end_month": "2025-04",
+          "best_average_month": 0.07810989498644454,
+          "best_end_month": "2025-12"
+        },
+        "6": {
+          "worst_average_month": 0.006568713146807313,
+          "worst_end_month": "2025-04",
+          "best_average_month": 0.050254610305746794,
+          "best_end_month": "2025-12"
+        },
+        "12": {
+          "worst_average_month": 0.01348338159037431,
+          "worst_end_month": "2025-06",
+          "best_average_month": 0.04082072763040741,
+          "best_end_month": "2026-03"
+        }
+      }
+    },
+    "lower_concentration": {
+      "full": {
+        "months": 22,
+        "replications": 20000,
+        "block_months": 3,
+        "average_month_q05": -0.0011522600763645484,
+        "average_month_median": 0.015819387739941453,
+        "average_month_q95": 0.03215224674265128,
+        "probability_average_month_positive": 0.9373,
+        "probability_average_month_at_least_10pct": 0.0
+      },
+      "recent_15m": {
+        "months": 15,
+        "replications": 20000,
+        "block_months": 3,
+        "average_month_q05": 0.01208992597751005,
+        "average_month_median": 0.028809249574062685,
+        "average_month_q95": 0.042498992574239815,
+        "probability_average_month_positive": 0.9978,
+        "probability_average_month_at_least_10pct": 0.0
+      },
+      "rolling": {
+        "3": {
+          "worst_average_month": -0.03271071358943441,
+          "worst_end_month": "2024-09",
+          "best_average_month": 0.055295697213374205,
+          "best_end_month": "2026-02"
+        },
+        "6": {
+          "worst_average_month": -0.012610535238194213,
+          "worst_end_month": "2025-01",
+          "best_average_month": 0.045747771015365514,
+          "best_end_month": "2026-03"
+        },
+        "12": {
+          "worst_average_month": 0.009096823294486736,
+          "worst_end_month": "2025-06",
+          "best_average_month": 0.030137889491837294,
+          "best_end_month": "2026-04"
+        }
+      }
+    }
+  }
+}

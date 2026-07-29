@@ -1,0 +1,130 @@
+campaign_id: CAM-0008
+run_id: RUN-0001
+parent_run: null
+status: completed
+frozen_at: "2026-07-29T06:34:00-07:00"
+role: "Source-contract action/reaction baseline"
+
+question: >-
+  Do explicit analyst actions produce continuation or failed-action recovery
+  after a completed five-minute reaction, and does the effect remain after
+  excluding the first 36 hours following earnings?
+reason: >-
+  Detector precision, event timing, burst consolidation, point-in-time
+  membership, adjustment, liquidity, minute paths, horizon exits, and sealed
+  boundary have passed. The source contract must be measured before adapting
+  action types, thresholds, or portfolio construction.
+expected_effect: >-
+  Positive actions with positive reaction may drift long; negative actions
+  whose reaction turns positive may identify resilient long recovery.
+  Negative-action continuation and positive-action failure are protected
+  intraday short controls. Excluding post-earnings revisions tests whether
+  analyst information adds beyond issuer news.
+
+inputs:
+  event_readiness: "artifacts/readiness/market/event_readiness.parquet"
+  daily_split: "artifacts/readiness/market/daily_split.parquet"
+  event_minutes: "artifacts/readiness/market/event_minutes.parquet"
+  maximum_loaded_date: "2026-04-30"
+  holdout_rows_loaded: 0
+
+frozen_configuration:
+  eligibility:
+    signal_complete: true
+    shifted_prior20_median_dollar_volume_minimum: 100000000
+    zero_reaction_policy: "exclude from confirmed/failed legs"
+  scopes:
+    all_events: "Include earnings-confounded and standalone analyst revisions."
+    standalone_analyst: "Exclude events within 36 hours after a verified earnings release."
+  legs:
+    positive_continuation_long: "action_sign=+1 and reaction_return>0"
+    negative_failure_long: "action_sign=-1 and reaction_return>0"
+    negative_continuation_short: "action_sign=-1 and reaction_return<0"
+    positive_failure_short: "action_sign=+1 and reaction_return<0"
+    positive_action_all_long: "action_sign=+1 regardless reaction; unconfirmed control"
+  intraday_portfolios:
+    - positive_continuation_long
+    - negative_failure_long
+    - negative_continuation_short
+    - positive_failure_short
+    - all_longs
+    - all_shorts
+    - aligned_action
+    - failed_action
+    - all_legs
+  multiday_long_portfolios:
+    - positive_continuation_long
+    - negative_failure_long
+    - all_longs
+    - positive_action_all_long
+  exits:
+    intraday: "calendar-derived final exit five minutes before actual close"
+    multiday: [next_open, two_close, three_close, five_close, ten_close]
+  short_safeguards:
+    stop_fraction: 0.02
+    adverse_stop_slippage_bps: 10
+    overnight: false
+    forced_close: true
+  portfolio:
+    capital_base: 1.0
+    reinvest_pnl: false
+    accounting: "additive marked-to-market"
+    maximum_gross_exposure: 1.0
+    maximum_symbol_gross: 0.10
+    intraday_position_cap: 0.10
+    multiday_position_cap: 0.02
+    allocation: >-
+      Process causal event entry clocks chronologically; equal available
+      capacity within an exact entry cohort, bounded by position and symbol
+      caps; fixed size until exit and unused capacity stays cash.
+  costs_bps_per_side: [5, 10, 20]
+  expected_variant_count:
+    intraday: 54
+    multiday: 120
+    total: 174
+
+required_outputs:
+  - "174/174 run/default/command/code/data/output reconciliation"
+  - "Scope, leg, action-type, event-clock, horizon, and allocation attrition"
+  - "Full/18/15/12-month net fixed-base return, months, drawdown, recovery, and blocks"
+  - "Earnings-confounded versus standalone decomposition"
+  - "Action type, release bucket, symbol, firm, event/day concentration, and short stops"
+  - "Factual diagnosis and next mechanism-based question without promotion"
+
+result:
+  reconciliation: >-
+    Passed 174/174 variants; actual command, resolved defaults, frozen
+    configuration, code/data hashes, marked-to-market P&L, maximum loaded date
+    2026-04-30, and zero holdout rows reconciled. An independent audit found
+    maximum gross 1.0000000000000058, maximum symbol exposure
+    0.10000000000000003, minimum positive allocation 0.00095238, and
+    trade/daily/metric P&L differences below 2.3e-16.
+  invalid_attempt: >-
+    The preserved first attempt counted floating residual allocations near
+    7e-17. The corrected run changed only allocated-trade counts, by at most
+    nine; every economic metric was identical.
+  central_10bp_all_events: >-
+    The strongest central-cost baseline was all confirmed long legs held ten
+    sessions: 1.7424% average month over 2025-02 through 2026-04, 2.2899% over
+    12 months, 1.3916% full-sample average month, 16.38% maximum drawdown,
+    34-day recovery, 10 positive and five negative recent months, 2,278
+    allocated events, 111 symbols, and positive returns in all four coarse
+    blocks.
+  standalone_10bp: >-
+    Excluding the first 36 hours after earnings retained 1.6472% average month
+    over 15 months, 12.77% drawdown, 31-day recovery, 10 positive and five
+    negative months, 1,890 allocations, and 111 symbols.
+  component_diagnosis: >-
+    Negative-action failures were the stronger isolated long mechanism
+    (1.1293% recent average month all-events and 1.0401% standalone at 10 bp),
+    while positive continuation added breadth. All protected intraday
+    portfolios and both short legs lost; raw positive-action long controls
+    were weaker than reaction-confirmed combined longs. Five-event positive
+    contribution share was only 2.95% in the central leader, but the return
+    level and monthly consistency remained far below Type A.
+decision: >-
+  Reject direct shorts and do not promote the baseline. Continue within
+  CAM-0008 by testing causally observable action type, release clock, reaction
+  strength/quality, repetition, participation, market state, latency, horizon,
+  and sizing, with the negative-failure and positive-continuation long legs
+  diagnosed separately.

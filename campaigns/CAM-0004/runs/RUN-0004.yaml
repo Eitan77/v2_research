@@ -1,0 +1,93 @@
+run_id: RUN-0004
+campaign_id: CAM-0004
+parent_run_id: RUN-0003
+planned_at: "2026-07-29T01:40:00-07:00"
+status: completed
+
+change_from_parent: >-
+  Test the paper-prespecified cumulative K-period residual formation rule
+  against M-period same-session holdings, with broad tails and two causal
+  liquidity-stress proxies. Do not use the profitable clock periods observed
+  after RUN-0003.
+reason: >-
+  RUN-0003 rejected execution-gap, one-period-only, and narrow-tail
+  explanations, but the source explicitly reports robustness across cumulative
+  formation and holding periods and predicts stronger reversal when the
+  absolute residual/noise level or market volatility is high.
+expected_effect: >-
+  A real liquidity-provision mechanism should produce positive LOW-minus-HIGH
+  gross returns for at least a coherent neighborhood of K/M choices, improve
+  in a prespecified high-noise or high-volatility state, and remain visible at
+  actionable following-open marks. Isolated cells without chronological and
+  monthly stability will not qualify.
+
+configuration:
+  signal_model: "Frozen adapted proxy residual from RUN-0002"
+  cumulative_formation_periods_K: [1, 2, 3, 4, 6]
+  holding_periods_M: [1, 2, 3, 4, 6]
+  cumulative_formula: "product(1 + residual) - 1 within the same session"
+  tail_breadth: ["decile", "quintile"]
+  execution_definitions:
+    - "source_close_to_close_unprotected_diagnostic"
+    - "following_open_to_close_unprotected_diagnostic"
+  states:
+    all: "Every otherwise eligible decision"
+    high_noise: >-
+      Current cross-sectional mean absolute one-period residual exceeds the
+      expanding prior 67th percentile for that decision clock, shifted one
+      observation with at least 40 prior sessions.
+    high_market_vol: >-
+      Cross-sectional median lagged 20-day daily volatility exceeds its
+      expanding prior 67th percentile for that decision clock, shifted one
+      observation with at least 40 prior sessions.
+  portfolio: "Half fixed base long-low, half short-high; equal within legs"
+  cost_bps_per_side: 0
+  expected_variant_count: 300
+  short_rule: >-
+    Both execution definitions are unprotected predictive diagnostics only.
+    All holdings end by the regular close. Any promising branch must next pass
+    the frozen protected-short and minute-path screen before executable status.
+
+execution_contract:
+  command: >-
+    python campaigns/CAM-0004/src/run0004.py
+    --parent-dir campaigns/CAM-0004/artifacts/RUN-0002
+    --outcomes-path campaigns/CAM-0004/artifacts/RUN-0003/outcomes.parquet
+    --output-dir campaigns/CAM-0004/artifacts/RUN-0004
+  expected_variant_count: 300
+  output_paths:
+    - "artifacts/RUN-0004/portfolio_decisions.parquet"
+    - "artifacts/RUN-0004/variants.csv"
+    - "artifacts/RUN-0004/monthly.csv"
+    - "artifacts/RUN-0004/contract.json"
+    - "artifacts/RUN-0004/diagnostics.json"
+
+completed_at: "2026-07-29T01:44:30-07:00"
+factual_outcome: >-
+  Validation passed with maximum date 2026-04-30, zero holdout rows, and all
+  300 declared variants reconciled. Eighty-one gross variants were positive,
+  almost entirely in the prespecified high-noise and high-market-volatility
+  states; the unconditional K/M surface remained negative except for two
+  negligible cells. The coherent branch was K6 with M2-M4 under high lagged
+  market volatility. K6/M3 decile source-close earned +11.76% fixed-base gross
+  and +0.7842% average month over 15 months with two negative months among
+  active/zero months; actionable open-to-close was similar at +11.41%.
+  Break-even cost was only about 1.02-1.05 bp per side. The best five days
+  contributed 66%-69% of total profit in the leading K6/M3 variants.
+decision: >-
+  Preserve the conditional K6/M2-M4 neighborhood for a protected, costed,
+  capital-constrained leg/weight screen. Do not promote and do not quote replay.
+next_question: >-
+  Does the branch survive protected shorts, realistic costs, concurrent-cohort
+  capital control, and contribution analysis, and which leg actually carries it?
+artifacts:
+  - "artifacts/RUN-0004/portfolio_decisions.parquet"
+  - "artifacts/RUN-0004/variants.csv"
+  - "artifacts/RUN-0004/monthly.csv"
+  - "artifacts/RUN-0004/contract.json"
+  - "artifacts/RUN-0004/diagnostics.json"
+artifact_hashes:
+  variants_csv: "237afb62e1b3718c6b20c18cbc7d87a029979c1536c5cfe8f69de43393b2e48c"
+  monthly_csv: "791db57bd9f3f5315a4ce7184eb7159afea38b0b7ecb048e4a3b44ea07627357"
+  contract_json: "31383dee24b7ea2c2de1ea32b131475ccf81880995f11d1527d88c9b460b9621"
+  diagnostics_json: "b78b2575ef61f263c4811c5557473cad6c79a31548604194b6c7c337b5613c59"

@@ -1,0 +1,328 @@
+{
+  "status": "passed",
+  "confirmations": {
+    "failed_negative_fast": {
+      "source_variant": "negative_failure_long__w1__l3__ten_close__10bp__cap0.1",
+      "candidate_events": 1320,
+      "allocated_trades": 557,
+      "symbols": 108,
+      "full_average_month": 0.023092473063919917,
+      "recent_15m_average_month": 0.026337489334191076,
+      "recent_15m_positive_months": 11,
+      "recent_15m_negative_months": 4,
+      "recent_15m_inactive_months": 0,
+      "maximum_drawdown": 0.17698142226888344,
+      "recovery_days": 34,
+      "recovery_unresolved": false
+    },
+    "failed_negative_slow": {
+      "source_variant": "negative_failure_long__w30__l3__ten_close__10bp__cap0.1",
+      "candidate_events": 1155,
+      "allocated_trades": 496,
+      "symbols": 103,
+      "full_average_month": 0.02197906701727573,
+      "recent_15m_average_month": 0.026014695412341683,
+      "recent_15m_positive_months": 11,
+      "recent_15m_negative_months": 4,
+      "recent_15m_inactive_months": 0,
+      "maximum_drawdown": 0.16101591583617622,
+      "recovery_days": 34,
+      "recovery_unresolved": false
+    },
+    "combined_midwindow": {
+      "source_variant": "all_longs__w15__l0__ten_close__10bp__cap0.1",
+      "candidate_events": 3243,
+      "allocated_trades": 1098,
+      "symbols": 108,
+      "full_average_month": 0.019530498321807695,
+      "recent_15m_average_month": 0.026672339115883792,
+      "recent_15m_positive_months": 9,
+      "recent_15m_negative_months": 6,
+      "recent_15m_inactive_months": 0,
+      "maximum_drawdown": 0.1878341935330447,
+      "recovery_days": 34,
+      "recovery_unresolved": false
+    }
+  },
+  "concentration": {
+    "failed_negative_fast": {
+      "top5_event_positive_share": 0.08636442546819263,
+      "top5_entry_day_positive_share": 0.10303934536368775,
+      "top5_symbol_positive_share": 0.1518340941909065,
+      "top5_firm_positive_share": 0.24260331033886784
+    },
+    "failed_negative_slow": {
+      "top5_event_positive_share": 0.09607670390871871,
+      "top5_entry_day_positive_share": 0.12762110999285492,
+      "top5_symbol_positive_share": 0.16944179286607017,
+      "top5_firm_positive_share": 0.17776887419012172
+    },
+    "combined_midwindow": {
+      "top5_event_positive_share": 0.07824151542580246,
+      "top5_entry_day_positive_share": 0.13137936587441687,
+      "top5_symbol_positive_share": 0.17341239048036708,
+      "top5_firm_positive_share": 0.1646941711242494
+    }
+  },
+  "leave_one_out": {
+    "combined_midwindow|entry_day": {
+      "removals": 10,
+      "recent_15m_average_month_min": 0.02123658040240436,
+      "recent_15m_average_month_median": 0.02632239429153368,
+      "recent_15m_average_month_max": 0.02962461543458465,
+      "worst_removal": "2026-01-20",
+      "best_removal": "2025-02-26",
+      "maximum_drawdown_max": 0.21583176036707785
+    },
+    "combined_midwindow|event": {
+      "removals": 20,
+      "recent_15m_average_month_min": 0.025319590550616777,
+      "recent_15m_average_month_median": 0.026671092604140544,
+      "recent_15m_average_month_max": 0.028285325804472138,
+      "worst_removal": "WBD|2025-09-11 12:47:52+00:00",
+      "best_removal": "CEG|2026-03-19 20:13:31+00:00",
+      "maximum_drawdown_max": 0.1909006168816135
+    },
+    "combined_midwindow|firm": {
+      "removals": 10,
+      "recent_15m_average_month_min": 0.020889002591304034,
+      "recent_15m_average_month_median": 0.02563086278378683,
+      "recent_15m_average_month_max": 0.027681340796357524,
+      "worst_removal": "cantor fitzgerald",
+      "best_removal": "rbc capital",
+      "maximum_drawdown_max": 0.20941769722251105
+    },
+    "combined_midwindow|symbol": {
+      "removals": 108,
+      "recent_15m_average_month_min": 0.020182184555055285,
+      "recent_15m_average_month_median": 0.02639271759886018,
+      "recent_15m_average_month_max": 0.029443113673490045,
+      "worst_removal": "META",
+      "best_removal": "LULU",
+      "maximum_drawdown_max": 0.21788426143688266
+    },
+    "failed_negative_fast|entry_day": {
+      "removals": 10,
+      "recent_15m_average_month_min": 0.024801167362030398,
+      "recent_15m_average_month_median": 0.026337489334191076,
+      "recent_15m_average_month_max": 0.027448561312214206,
+      "worst_removal": "2026-04-07",
+      "best_removal": "2026-01-05",
+      "maximum_drawdown_max": 0.18247177704826484
+    },
+    "failed_negative_fast|event": {
+      "removals": 20,
+      "recent_15m_average_month_min": 0.02461643128478108,
+      "recent_15m_average_month_median": 0.026337489334191076,
+      "recent_15m_average_month_max": 0.028026661639076904,
+      "worst_removal": "ISRG|2025-10-15 15:23:15+00:00",
+      "best_removal": "MSTR|2025-10-31 13:31:21+00:00",
+      "maximum_drawdown_max": 0.18124192115447568
+    },
+    "failed_negative_fast|firm": {
+      "removals": 10,
+      "recent_15m_average_month_min": 0.021116254605646083,
+      "recent_15m_average_month_median": 0.026020378366317792,
+      "recent_15m_average_month_max": 0.027988721052705143,
+      "worst_removal": "truist securities",
+      "best_removal": "seaport global",
+      "maximum_drawdown_max": 0.2038568063325902
+    },
+    "failed_negative_fast|symbol": {
+      "removals": 108,
+      "recent_15m_average_month_min": 0.022440018975944113,
+      "recent_15m_average_month_median": 0.026266429710048948,
+      "recent_15m_average_month_max": 0.02877711825057381,
+      "worst_removal": "FANG",
+      "best_removal": "LULU",
+      "maximum_drawdown_max": 0.19483977775010203
+    },
+    "failed_negative_slow|entry_day": {
+      "removals": 10,
+      "recent_15m_average_month_min": 0.024221554184409654,
+      "recent_15m_average_month_median": 0.024674311777889212,
+      "recent_15m_average_month_max": 0.0269140231723925,
+      "worst_removal": "2025-03-24",
+      "best_removal": "2026-03-09",
+      "maximum_drawdown_max": 0.1693412494970325
+    },
+    "failed_negative_slow|event": {
+      "removals": 20,
+      "recent_15m_average_month_min": 0.023993160240204054,
+      "recent_15m_average_month_median": 0.02597149322020496,
+      "recent_15m_average_month_max": 0.027340486186140437,
+      "worst_removal": "MU|2026-03-31 18:41:52+00:00",
+      "best_removal": "PLTR|2026-02-03 16:27:11+00:00",
+      "maximum_drawdown_max": 0.16426910790365454
+    },
+    "failed_negative_slow|firm": {
+      "removals": 10,
+      "recent_15m_average_month_min": 0.023647347483399653,
+      "recent_15m_average_month_median": 0.025999937143671884,
+      "recent_15m_average_month_max": 0.02772680375644705,
+      "worst_removal": "jp morgan",
+      "best_removal": "bernstein",
+      "maximum_drawdown_max": 0.16716982187728646
+    },
+    "failed_negative_slow|symbol": {
+      "removals": 103,
+      "recent_15m_average_month_min": 0.02203917497199678,
+      "recent_15m_average_month_median": 0.026014695412341683,
+      "recent_15m_average_month_max": 0.02881968464067767,
+      "worst_removal": "TSLA",
+      "best_removal": "TEAM",
+      "maximum_drawdown_max": 0.17990013837693078
+    }
+  },
+  "bootstrap": {
+    "failed_negative_fast": {
+      "full": {
+        "months": 22,
+        "replications": 20000,
+        "block_months": 3,
+        "average_month_q05": 0.01128601190735893,
+        "average_month_median": 0.02308841127468382,
+        "average_month_q95": 0.035215639726881354,
+        "probability_average_month_positive": 0.99975,
+        "probability_average_month_at_least_10pct": 0.0
+      },
+      "recent_15m": {
+        "months": 15,
+        "replications": 20000,
+        "block_months": 3,
+        "average_month_q05": 0.010004328464395399,
+        "average_month_median": 0.02633586328186218,
+        "average_month_q95": 0.04309738311524604,
+        "probability_average_month_positive": 0.99785,
+        "probability_average_month_at_least_10pct": 0.0
+      },
+      "rolling": {
+        "3": {
+          "worst_average_month": -0.005853500283620258,
+          "worst_end_month": "2026-02",
+          "best_average_month": 0.05621578033301947,
+          "best_end_month": "2025-07"
+        },
+        "6": {
+          "worst_average_month": -0.0001266407894234614,
+          "worst_end_month": "2025-03",
+          "best_average_month": 0.046969656397252056,
+          "best_end_month": "2025-10"
+        },
+        "12": {
+          "worst_average_month": 0.01624334453296489,
+          "worst_end_month": "2026-02",
+          "best_average_month": 0.033549704272943806,
+          "best_end_month": "2026-04"
+        }
+      }
+    },
+    "failed_negative_slow": {
+      "full": {
+        "months": 22,
+        "replications": 20000,
+        "block_months": 3,
+        "average_month_q05": 0.009959625660353877,
+        "average_month_median": 0.021717836848017362,
+        "average_month_q95": 0.03500507721796199,
+        "probability_average_month_positive": 0.9994,
+        "probability_average_month_at_least_10pct": 0.0
+      },
+      "recent_15m": {
+        "months": 15,
+        "replications": 20000,
+        "block_months": 3,
+        "average_month_q05": 0.010173187272225973,
+        "average_month_median": 0.025791637482213404,
+        "average_month_q95": 0.042714676617297886,
+        "probability_average_month_positive": 0.99765,
+        "probability_average_month_at_least_10pct": 0.0
+      },
+      "rolling": {
+        "3": {
+          "worst_average_month": -0.007988649595986448,
+          "worst_end_month": "2026-03",
+          "best_average_month": 0.06977221658426393,
+          "best_end_month": "2025-06"
+        },
+        "6": {
+          "worst_average_month": 0.001659469098070065,
+          "worst_end_month": "2025-03",
+          "best_average_month": 0.043425919647721585,
+          "best_end_month": "2025-09"
+        },
+        "12": {
+          "worst_average_month": 0.01895993296470037,
+          "worst_end_month": "2026-02",
+          "best_average_month": 0.03026442758298073,
+          "best_end_month": "2026-04"
+        }
+      }
+    },
+    "combined_midwindow": {
+      "full": {
+        "months": 22,
+        "replications": 20000,
+        "block_months": 3,
+        "average_month_q05": 0.004063024651573276,
+        "average_month_median": 0.01940029977212161,
+        "average_month_q95": 0.03622792539679405,
+        "probability_average_month_positive": 0.98095,
+        "probability_average_month_at_least_10pct": 0.0
+      },
+      "recent_15m": {
+        "months": 15,
+        "replications": 20000,
+        "block_months": 3,
+        "average_month_q05": 0.008672047278316062,
+        "average_month_median": 0.026254191976620565,
+        "average_month_q95": 0.046220779912733455,
+        "probability_average_month_positive": 0.99445,
+        "probability_average_month_at_least_10pct": 0.0
+      },
+      "rolling": {
+        "3": {
+          "worst_average_month": -0.027030603479284477,
+          "worst_end_month": "2025-03",
+          "best_average_month": 0.08522166045800357,
+          "best_end_month": "2025-06"
+        },
+        "6": {
+          "worst_average_month": -0.009088292511259645,
+          "worst_end_month": "2025-03",
+          "best_average_month": 0.06296516067480072,
+          "best_end_month": "2025-09"
+        },
+        "12": {
+          "worst_average_month": 0.014739960278786997,
+          "worst_end_month": "2025-06",
+          "best_average_month": 0.03527669584991898,
+          "best_end_month": "2026-04"
+        }
+      }
+    }
+  },
+  "adverse_cost": {
+    "failed_negative_fast": {
+      "source_variant": "negative_failure_long__w1__l3__ten_close__20bp__cap0.1",
+      "recent_15m_average_month": 0.022759711556413296,
+      "maximum_drawdown": 0.1864200867975519,
+      "positive_months": 11,
+      "negative_months": 4
+    },
+    "failed_negative_slow": {
+      "source_variant": "negative_failure_long__w30__l3__ten_close__20bp__cap0.1",
+      "recent_15m_average_month": 0.022563362079008338,
+      "maximum_drawdown": 0.16942823512421495,
+      "positive_months": 9,
+      "negative_months": 6
+    },
+    "combined_midwindow": {
+      "source_variant": "all_longs__w15__l0__ten_close__20bp__cap0.1",
+      "recent_15m_average_month": 0.022616470274026062,
+      "maximum_drawdown": 0.2000505599765427,
+      "positive_months": 8,
+      "negative_months": 7
+    }
+  }
+}

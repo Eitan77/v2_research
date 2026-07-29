@@ -1,0 +1,50 @@
+{
+  "status": "passed",
+  "run_id": "RUN-0004",
+  "expected_variant_count": 540,
+  "executed_variant_count": 540,
+  "resolved_horizons": [
+    7,
+    8,
+    9
+  ],
+  "resolved_entry_minutes": [
+    "10:00",
+    "10:01",
+    "10:05"
+  ],
+  "resolved_costs_bps_per_side": [
+    10,
+    20
+  ],
+  "resolved_shared_caps": [
+    0.33,
+    0.5,
+    0.67,
+    1.0
+  ],
+  "resolved_reserved_caps": [
+    0.25,
+    0.5
+  ],
+  "resolved_allocation_rules": [
+    "equal_cohort",
+    "strength_priority",
+    "reserved_half"
+  ],
+  "frozen_configuration_hash": "574c83cfa7e0bcc222c112d4709124cfcf1bcd42481b8f53e906573094efa092",
+  "input_hashes": {
+    "event_readiness": "e220113a410bb2116d846189cfac6daaf649ed83c9c2ae40e5f9238fd90eaa69",
+    "event_minutes": "2332e471db5000bfe709871d7eb7b57131e63a0329ce68f4f9ecb1c704959bd5",
+    "causal_features": "a482b34173f954b55452e77694c4dc44be535d0074f21542261436f2495c9311",
+    "daily_split": "91c539ae8c8c7e9207887f8412cc788b5db4ef930fda8e32036dc4c8a24c13a6"
+  },
+  "executed_code_hashes": {
+    "run0004.py": "5e70e2e35a0e1dac0effe44156b31a19c69fba3cf7b120c3cd7c67147b7c44ea",
+    "run0003.py": "f9b66ca574777d58e46a54e7a29440cab7fbc351d517c26ef3390f126ffa9ee6",
+    "run0001.py": "fb4cc9459cc0542b98e346d1b61774fe11f0ac4e4c916a7360682090c5627e70",
+    "cam0007.py": "938e796cdb86887f828efad737f5978b17323bf08b3cd9c1102bbe9373915b45"
+  },
+  "maximum_loaded_date": "2026-04-30",
+  "holdout_rows_loaded": 0
+}

@@ -1,0 +1,86 @@
+run_id: RUN-0011
+campaign_id: CAM-0005
+parent_run_id: RUN-0010
+planned_at: "2026-07-29T03:52:00-07:00"
+status: completed
+
+change_from_parent: >-
+  Hold q60/edge25 and 15:59-to-09:35 marketable execution fixed while testing
+  eight bounded allocations: unit size, high-volume-only, low-volume at 0.25
+  or 0.50 size, SOXS at 0.50 or 0.75 size, a combined low-volume/inverse
+  reduction, and causal q60/q67/q80 signal tiers. Every event remains at or
+  below 1.0 original-capital exposure. Evaluate each at 2/5/10 bp additional
+  slippage.
+reason: >-
+  The final unresolved campaign question is whether portfolio construction can
+  improve consistency and tail risk without leverage or date selection. The
+  high-volume mask reduced drawdown, while older and recent diagnostics show
+  asymmetric inverse risk. A compact continuous-sizing neighborhood tests
+  whether those observations support a better bounded sleeve.
+expected_effect: >-
+  A useful allocation should preserve positive returns in every six-month
+  block, both product-leg contribution, and meaningful monthly return while
+  lowering drawdown, negative months, and top-day dependence. Because sizes
+  never exceed the base, no allocation can legitimately claim a higher return
+  merely through leverage.
+
+configuration:
+  base_signal: "q60 edge25"
+  execution_source: "RUN-0008 marketable 15:59 ask to 09:35 bid"
+  allocations:
+    - "fixed_1"
+    - "high_volume_only"
+    - "low_volume_025"
+    - "low_volume_050"
+    - "soxs_050"
+    - "soxs_075"
+    - "low_volume_025_soxs_075"
+    - "signal_tier_q60_050_q67_075_q80_100"
+  maximum_event_exposure: 1.0
+  additional_slippage_bps_per_side: [2, 5, 10]
+  expected_variant_count: 24
+
+execution_contract:
+  command: >-
+    python campaigns/CAM-0005/src/run0011.py
+    --enriched-path campaigns/CAM-0005/artifacts/RUN-0009/enriched_events.parquet
+    --output-dir campaigns/CAM-0005/artifacts/RUN-0011
+  expected_variant_count: 24
+
+completed_at: "2026-07-29T03:56:00-07:00"
+factual_outcome: >-
+  All 24 capped allocation variants reconciled with maximum event exposure
+  1.0 and zero holdout. No allocation improved return above fixed size. At 5
+  bp additional slippage, fixed q60 averaged 6.01% per month with 18.07%
+  drawdown and an unresolved ending drawdown. Sizing low-volume events at 0.25
+  retained 5.57% average month while reducing drawdown to 7.60% and recovery
+  to five days; all three six-month blocks remained positive. The strongest
+  balanced allocation combined low-volume size 0.25 with SOXS size 0.75:
+  5.04% average month, 5.91% drawdown, five-day recovery, 13 positive and five
+  negative months, 47.96% top-five-day contribution, positive SOXL and SOXS
+  legs, and positive returns in all blocks. It survived 10 bp at 4.66%
+  average month and 6.63% drawdown. High-volume-only, inverse downweights, and
+  signal tiers trace the same return-risk tradeoff; none approaches the
+  approximate 10%-15% Type-A objective.
+decision: >-
+  Freeze the combined low-volume-0.25/SOXS-0.75 specification only as an
+  adapted lower-drawdown development sleeve. It is not a genuine Type-A
+  candidate and is not holdout-approved. Reject leverage beyond 1.0 and stop
+  adapting this campaign: further bounded downscaling can only trade away
+  more of the already sub-target return, while the alpha, execution, state,
+  leg, timing, history, concentration, cost, and sizing questions have been
+  answered.
+next_question: >-
+  Complete the campaign conclusion audit and checkpoint, then move Strategy A
+  to a materially different mechanism while preserving this sleeve for
+  prospective paper observation only.
+artifacts:
+  - "artifacts/RUN-0011/variants.csv"
+  - "artifacts/RUN-0011/monthly.csv"
+  - "artifacts/RUN-0011/blocks.csv"
+  - "artifacts/RUN-0011/contract.json"
+artifact_hashes:
+  variants_csv: "c85f22677279e5f3babbdb6e56c54de92b2af00f0ec3d732a6e7c9e96bbbd868"
+  monthly_csv: "99946cf1910f4b81ba1a6aed4cf185124c38bb903498dee59f98bd8e4c6e70ab"
+  blocks_csv: "ac5ec0f17b4162047062d19cdfd09b84310303b8e826a3b4147b0c19140d094c"
+  contract_json: "5324fd0b50a06c7a8aaf1afcb0b00caf8a379903e998aecd71785cbb7bfcbf21"

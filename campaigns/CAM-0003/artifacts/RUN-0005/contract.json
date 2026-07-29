@@ -1,0 +1,20 @@
+{
+  "executed_variant_count": 7,
+  "expected_variant_count": 7,
+  "short_stops": [
+    0.005,
+    0.01,
+    0.02
+  ],
+  "short_forced_flat": true,
+  "short_cost_bps_per_side": 2,
+  "long_magnitude_states": [
+    "all_positive",
+    "q50",
+    "q667",
+    "q80"
+  ],
+  "long_cost_bps_per_side": 2,
+  "loaded_max_date": "2026-04-30",
+  "holdout_rows_loaded": 0
+}

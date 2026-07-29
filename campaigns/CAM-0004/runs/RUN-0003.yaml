@@ -1,0 +1,90 @@
+run_id: RUN-0003
+campaign_id: CAM-0004
+parent_run_id: RUN-0002
+planned_at: "2026-07-29T01:08:00-07:00"
+status: completed
+
+change_from_parent: >-
+  Decompose the losing one-period bar result into source close-to-close alpha,
+  following-open alpha, and emergency-stop effects while testing paper-supported
+  1/2/3/4/6-period holdings and decile versus quintile breadth.
+reason: >-
+  Both baseline legs lost, but RUN-0002 combined signal failure, a following
+  open, a one-period horizon, narrow tails, and an emergency stop. The next run
+  must identify which layer fails before modifying the mechanism or retiring it.
+expected_effect: >-
+  If residual liquidity provision exists but execution or horizon obscures it,
+  source close-to-close residual spreads should be positive, exceed raw-return
+  controls, persist for multiple periods, and imply a positive cost budget. If
+  all gross definitions remain negative, the recent mechanism lacks support.
+
+configuration:
+  parent_signal: "Frozen RUN-0002 residual and raw-return ranks"
+  models: ["residual", "raw_return"]
+  tail_breadth: ["decile", "quintile"]
+  holding_periods_30m: [1, 2, 3, 4, 6]
+  execution_definitions:
+    - "source_close_to_close_unprotected_diagnostic"
+    - "following_open_to_close_unprotected_diagnostic"
+    - "following_open_to_close_protected_bar_screen"
+  portfolio: "Half fixed base long-low, half short-high; equal within legs"
+  cost_bps_per_side: 0
+  expected_variant_count: 60
+  short_rule: >-
+    Unprotected variants are predictive diagnostics only. The protected
+    bar-screen uses the frozen 2% emergency stop and 5 bp adverse stop
+    slippage. All holdings end by the regular close.
+
+execution_contract:
+  command: >-
+    python campaigns/CAM-0004/src/run0003.py
+    --readiness-dir campaigns/CAM-0004/artifacts/readiness
+    --parent-dir campaigns/CAM-0004/artifacts/RUN-0002
+    --output-dir campaigns/CAM-0004/artifacts/RUN-0003
+  expected_variant_count: 60
+  output_paths:
+    - "artifacts/RUN-0003/outcomes.parquet"
+    - "artifacts/RUN-0003/portfolio_decisions.parquet"
+    - "artifacts/RUN-0003/variants.csv"
+    - "artifacts/RUN-0003/monthly.csv"
+    - "artifacts/RUN-0003/by_period.csv"
+    - "artifacts/RUN-0003/contract.json"
+    - "artifacts/RUN-0003/diagnostics.json"
+
+completed_at: "2026-07-29T01:35:32-07:00"
+factual_outcome: >-
+  Validation passed with maximum loaded date 2026-04-30 and zero holdout rows.
+  The executed contract reconciled to 60 variants: two signal models, two tail
+  breadths, five holding horizons, and three execution definitions. All 60
+  gross variants lost. The least-negative result was residual quintile K1/M1
+  source-close at -9.0638% fixed-base simple P&L over 18 months, -0.2058 bps
+  per decision, -0.1638% average month over the representative 15-month view,
+  10 of 15 negative months, and 16.50% maximum drawdown. Its actionable
+  open-to-close version lost 11.5957%. No model, breadth, horizon, or execution
+  definition had positive gross P&L or a positive break-even cost budget.
+  Residual source-close period means were negative through most of the morning
+  and locally positive around 12:00, 13:30-14:00, and 15:30, but those clock
+  subsets were observed after the run and are not candidate evidence.
+decision: >-
+  Reject execution-gap, one-period-only, and decile-only explanations for
+  RUN-0002. Do not promote or quote replay any variant. Continue with the
+  paper-prespecified cumulative formation/holding grid and causal
+  liquidity-stress conditioning before judging the adapted mechanism.
+next_question: >-
+  Can cumulative K-period residual displacement or a prespecified causal
+  high-noise/liquidity-stress state recover a positive, chronologically stable
+  gross reversal spread without selecting clock periods from this result?
+artifacts:
+  - "artifacts/RUN-0003/outcomes.parquet"
+  - "artifacts/RUN-0003/portfolio_decisions.parquet"
+  - "artifacts/RUN-0003/variants.csv"
+  - "artifacts/RUN-0003/monthly.csv"
+  - "artifacts/RUN-0003/by_period.csv"
+  - "artifacts/RUN-0003/contract.json"
+  - "artifacts/RUN-0003/diagnostics.json"
+artifact_hashes:
+  variants_csv: "92a0beff01317097428f1a66b72fabd4310360b29c8a74d7531dbe413fcb8e3c"
+  monthly_csv: "c78f8a2f00bdad3d0598b8cf65568c7de1c18b2dc3d7a2c50622bb8553bea105"
+  by_period_csv: "b20454a21325a474844d41d99393d3d73e0fa37f107421da61c6bcd310a53e6c"
+  contract_json: "47cddf4356312de7d27396edbbcd2c47f9bd3679cddab15bde8c6a21f4f4928b"
+  diagnostics_json: "f573e7d24b7aa885138b657b6295a66e2eae58c616f8fba12fa10529f567be01"

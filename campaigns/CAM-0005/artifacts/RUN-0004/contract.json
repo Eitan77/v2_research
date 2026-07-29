@@ -1,0 +1,44 @@
+{
+  "command": "python campaigns/CAM-0005/src/run0004.py --readiness-dir campaigns/CAM-0005/artifacts/readiness --features-path campaigns/CAM-0005/artifacts/RUN-0002/features.parquet --parent-positions campaigns/CAM-0005/artifacts/RUN-0003/positions.parquet --output-dir campaigns/CAM-0005/artifacts/RUN-0004",
+  "resolved_defaults": {
+    "thresholds": [
+      "q40",
+      "q50",
+      "q60"
+    ],
+    "pressure_states": [
+      "all",
+      "edge20",
+      "edge25",
+      "edge33"
+    ],
+    "activation_states": [
+      "always",
+      "edge10",
+      "edge20",
+      "edge40"
+    ],
+    "legs": [
+      "both_reversal",
+      "negative_signal_bull",
+      "positive_signal_inverse"
+    ],
+    "entry": "15:59",
+    "exits": [
+      "next_open",
+      "next_0934_close"
+    ],
+    "cost_bps_per_side": [
+      5,
+      10
+    ]
+  },
+  "executed_variant_count": 576,
+  "output_paths": [
+    "positions.parquet",
+    "variants.csv",
+    "monthly.csv",
+    "contract.json",
+    "diagnostics.json"
+  ]
+}

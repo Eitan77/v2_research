@@ -1,0 +1,9 @@
+{
+  "status": "passed",
+  "max_loaded_date": "2026-04-30",
+  "holdout_rows_loaded": 0,
+  "decision_rows": 150528,
+  "variant_count": 256,
+  "exact_source_model_tested": false,
+  "models_are_labeled_adaptations": true
+}

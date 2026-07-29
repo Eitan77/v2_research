@@ -1,0 +1,91 @@
+run_id: RUN-0008
+campaign_id: CAM-0005
+parent_run_id: RUN-0007
+planned_at: "2026-07-29T03:26:00-07:00"
+status: completed
+
+change_from_parent: >-
+  Keep the frozen q50/q60 edge25 signals and 15:59 marketable entries, but
+  replace the first 09:30 bid with the first noncrossed SIP bid at or after
+  09:35, after the 09:34 minute is complete. Pull only the missing SOXL/SOXS
+  exit quote and trade windows for the same 134 events and compare 2, 5, and
+  10 bp additional slippage per side.
+reason: >-
+  The 09:30 replay pays a 15 bp median exit spread. The prespecified bar-stage
+  09:34-complete exit had fewer negative months and lower drawdown with only a
+  small full-return reduction. A five-minute delay may exchange auction
+  transition noise for tighter executable spreads without changing the
+  overnight absorption mechanism.
+expected_effect: >-
+  If auction transition is the main execution drag, the 09:35 marketable exit
+  should materially tighten spreads, preserve most net return, and improve
+  monthly consistency or drawdown. If returns vanish, the apparent bar-stage
+  benefit was not executable.
+
+configuration:
+  candidates: ["q50_edge25", "q60_edge25"]
+  entry_source: "RUN-0006 first noncrossed SIP ask at or after 15:59"
+  targeted_pull:
+    symbols: ["SOXL", "SOXS"]
+    events: 134
+    exit_window: "09:34:55 through 09:35:10 Eastern next session"
+  exit: "First noncrossed SIP bid at or after 09:35:00 Eastern"
+  additional_slippage_bps_per_side: [2, 5, 10]
+  expected_variant_count: 6
+
+execution_contract:
+  pull_command: >-
+    python campaigns/CAM-0005/src/pull_run0008_0935.py
+    --events-path campaigns/CAM-0005/artifacts/RUN-0006/raw/events.parquet
+    --output-dir campaigns/CAM-0005/artifacts/RUN-0008/raw
+  replay_command: >-
+    python campaigns/CAM-0005/src/run0008.py
+    --events-path campaigns/CAM-0005/artifacts/RUN-0006/raw/events.parquet
+    --entry-quotes-path campaigns/CAM-0005/artifacts/RUN-0006/raw/quotes.parquet
+    --entry-trades-path campaigns/CAM-0005/artifacts/RUN-0006/raw/trades.parquet
+    --exit-quotes-path campaigns/CAM-0005/artifacts/RUN-0008/raw/quotes.parquet
+    --exit-trades-path campaigns/CAM-0005/artifacts/RUN-0008/raw/trades.parquet
+    --output-dir campaigns/CAM-0005/artifacts/RUN-0008
+  expected_variant_count: 6
+
+completed_at: "2026-07-29T03:31:00-07:00"
+factual_outcome: >-
+  The targeted pull reconciled to the same 134 frozen events, 329,045 SIP
+  quotes, 95,638 trades, and zero holdout requests. Every event had a valid
+  post-09:35 quote and trade. For q60 with 2 bp additional slippage per side,
+  median exit spread fell from 15.00 bp at 09:30 to 4.88 bp at 09:35, standard
+  drawdown fell from 19.58% to 17.40%, and negative months fell from seven to
+  five over 18 months. Net average month was 6.37% over 18 months, 7.34% over
+  15 months, and 4.18% over 12 months. Top-five-day contribution improved to
+  50.19%. The final drawdown remained unresolved at the discovery boundary.
+  Q50 was weaker. All q50/q60 variants remained positive through 10 bp extra
+  slippage per side.
+decision: >-
+  Prefer the 09:35 exit for lower spread, drawdown, and concentration, but do
+  not promote q60. It remains an execution-qualified development candidate
+  below the Type-A return and consistency objectives, with recent decay and an
+  unresolved ending drawdown. Continue only through the still-unanswered
+  causal state and portfolio-construction questions declared in the campaign;
+  do not add leverage.
+next_question: >-
+  Do prespecified causal volume, volatility, signal-strength, and market-state
+  observables identify a stable higher-expectancy subset across chronological
+  blocks, or do they merely reduce sample size and overfit the same leading
+  events?
+artifacts:
+  - "artifacts/RUN-0008/raw/quotes.parquet"
+  - "artifacts/RUN-0008/raw/trades.parquet"
+  - "artifacts/RUN-0008/raw/pull_report.json"
+  - "artifacts/RUN-0008/event_replay.parquet"
+  - "artifacts/RUN-0008/variants.csv"
+  - "artifacts/RUN-0008/monthly.csv"
+  - "artifacts/RUN-0008/diagnostics.json"
+  - "artifacts/RUN-0008/contract.json"
+artifact_hashes:
+  raw_quotes_parquet: "5f71c1e4ab2c88a7e5c15f98f01806625176e225fddec5b873e8466b048328a3"
+  raw_trades_parquet: "66b3b0e6c79c670ae6307455f5b521b9c3e87d461bf4c1deedf8477b9c84e3ce"
+  replay_parquet: "b54c5af74d0fbba6cfa3a90e1cfe34c2ab7166e13122078d0b2d00b5228bb1be"
+  variants_csv: "b9014755d05d204a166af64879635c83c72c9db43dd3219d30f6595cffb52d16"
+  monthly_csv: "aa009f89cfad467969a874673bcea53652c7f32433b0fc8016362aa94fc6a211"
+  diagnostics_json: "9e7fbe6eb8991d759745e86a13be7131f6faf851821435f6400787f39c12bcae"
+  contract_json: "2e2ae27e55bd162e4509baeb6dfc0a2da8531d3658052c4c204e77bec785d512"

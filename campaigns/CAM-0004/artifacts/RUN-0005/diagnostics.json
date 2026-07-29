@@ -1,0 +1,9 @@
+{
+  "status": "passed",
+  "max_loaded_date": "2026-04-30",
+  "holdout_rows_loaded": 0,
+  "decision_rows": 169344,
+  "variant_count": 288,
+  "capital_scaling": "each M-period cohort divided by M",
+  "execution_limit": "protected 30-minute bar screen, not quote qualified"
+}

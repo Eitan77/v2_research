@@ -1,0 +1,91 @@
+campaign_id: CAM-0009
+run_id: RUN-0005
+parent_run: RUN-0004
+status: completed_with_sample_routing_caveat
+frozen_at: "2026-07-29T10:23:00-07:00"
+role: "Capital utilization and causal sector-hedge expression audit"
+
+question: >-
+  Is the slower peer drift economically limited only by conservative
+  per-position sizing, and does it survive causal SMH hedging strongly enough
+  to identify information diffusion rather than common sector beta?
+reason: >-
+  RUN-0004's best close variant allocated exactly 10% to every filled peer and
+  left many otherwise executable candidates unallocated. The same result used
+  SMH only to form residuals, not to hedge subsequent sector exposure.
+expected_effect: >-
+  A scalable diffusion edge should improve net fixed-capital profit under
+  larger but unlevered signal caps without explosive drawdown or concentration.
+  Dollar/beta hedges should retain meaningful alpha if the result is not just
+  sector continuation.
+
+inputs:
+  parent_trade_details: "artifacts/RUN-0003/trade_details.parquet"
+  parent_variant: "f5__m0.75__v1.5__liq250m__cd15__5bp"
+  formation_features: "artifacts/readiness/features/formation_5m.parquet"
+  minute_paths: "artifacts/readiness/market/minute_regular.parquet"
+  maximum_loaded_date: "2026-04-30"
+  holdout_rows_loaded: 0
+
+adaptation_label: >-
+  In-sample capital and expression adaptation after RUN-0004; no result is
+  untouched confirmation.
+
+frozen_configuration:
+  signal:
+    additional_entry_delay_minutes: 3
+    exit: close
+    peer_signed_ratio: [-0.25, 0.50]
+    long_stop: null
+    short_stop_fraction: 0.02
+    adverse_stop_slippage_bps: 10
+  direction: [positive_only, negative_only, both]
+  hedge_expression:
+    unhedged: 0.0
+    half_dollar_smh: 0.5
+    dollar_neutral_smh: 1.0
+    shifted_beta_smh: "Prior-session 60-day beta, clipped to [0.25, 2.0]."
+  maximum_peers: [1, 3]
+  signal_total_gross_cap: [0.10, 0.20, 0.3333333333, 0.50]
+  costs_bps_per_side: [2, 5, 10]
+  allocation:
+    portfolio_gross_cap: 1.0
+    peer_symbol_gross_cap: 0.3333333333
+    aggregate_smh_hedge_gross_cap: 0.50
+    pair_gross: "Peer and hedge absolute notionals; no leverage."
+  safeguards:
+    direct_short_stop_fraction: 0.02
+    adverse_stop_slippage_bps: 10
+    forced_intraday_exit: true
+    overnight: false
+  accounting: "Fixed base 1.0, additive noncompounded P&L."
+  expected_variant_count:
+    directions: 3
+    hedge_expressions: 4
+    peer_breadths: 2
+    signal_caps: 4
+    costs: 3
+    total: 288
+
+required_outputs:
+  - "288/288 reconciliation, causal beta and exact hedge-path attrition"
+  - "Return, months, drawdown/recovery, blocks, utilization, and concentration"
+  - "Unhedged versus half/dollar/beta hedge decomposition"
+  - "Sizing neighbors and 2/5/10bp cost survival"
+  - "Freeze at most one diagnostic candidate for adversity or retire"
+
+result:
+  validation: passed
+  variants: 288
+  maximum_loaded_date: "2026-04-30"
+  holdout_rows_loaded: 0
+  strongest_unhedged_5bp:
+    recent_15m_average_month: 0.041488
+    maximum_drawdown: 0.106521
+  hedge_diagnosis: >-
+    Half-dollar hedging reduced recent average return below 1% and produced a
+    negative recent-12-month average; dollar- and beta-neutral variants lost.
+  caveat: >-
+    Eighteen peer-complete rows were unnecessarily routed through the hedge
+    completeness requirement. RUN-0006 preserves and corrects this.
+decision: "Block final interpretation until RUN-0006 correction."

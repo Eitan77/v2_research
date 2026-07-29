@@ -1,0 +1,42 @@
+{
+  "executed_variant_count": 18,
+  "expected_variant_count": 18,
+  "loaded_max_date": "2026-04-30",
+  "holdout_rows_loaded": 0,
+  "dimensions": {
+    "qqq_sma": [
+      20,
+      50
+    ],
+    "cost_bps_per_side": [
+      5,
+      10,
+      20
+    ],
+    "entry_delay_sessions": [
+      1,
+      2
+    ],
+    "component_universes": [
+      [
+        "TQQQ",
+        "SOXL"
+      ],
+      [
+        "TQQQ"
+      ],
+      [
+        "SOXL"
+      ]
+    ],
+    "lookback_neighbors": [
+      3,
+      5,
+      10
+    ],
+    "holding_neighbors": [
+      7,
+      10
+    ]
+  }
+}

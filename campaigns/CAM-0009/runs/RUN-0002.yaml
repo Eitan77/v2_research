@@ -1,0 +1,150 @@
+campaign_id: CAM-0009
+run_id: RUN-0002
+parent_run: RUN-0001
+status: completed
+frozen_at: "2026-07-29T09:28:00-07:00"
+role: "Close-drift causal selectivity and stability screen"
+
+question: >-
+  Is RUN-0001's close-only SMH-residual result a stable information-diffusion
+  effect across causal sign, clock, attention, shock, peer-lag, breadth, and
+  cost neighbors, or a fragile full-sample aggregate?
+reason: >-
+  The faithful 5-60 minute propagation mechanism failed. Forced-close returns
+  were positive, but only 8/15 recent months were positive and simple
+  escalation of leader magnitude or attention was contradicted by the
+  decomposition. A broad prespecified diagnostic screen is required before
+  changing formation construction or abandoning the slower-drift lead.
+expected_effect: >-
+  A credible information-diffusion effect should remain positive in multiple
+  adjacent causal regions, show a coherent lag-state shape, survive modest
+  breadth/cost changes, and not depend on one narrow post-open interval.
+
+inputs:
+  parent_trade_details: "artifacts/RUN-0001/trade_details.parquet"
+  parent_variant: "smh__both__close__2bp"
+  market_sessions: "artifacts/readiness/market/minute_regular.parquet"
+  maximum_loaded_date: "2026-04-30"
+  holdout_rows_loaded: 0
+
+adaptation_label: >-
+  In-sample mechanism diagnosis after RUN-0001; none of these results can be
+  called untouched or independently confirmed.
+
+frozen_configuration:
+  direction:
+    positive_only: ["long"]
+    negative_only: ["short"]
+    both: ["long", "short"]
+  formation_time:
+    all: [575, 930]
+    open_hour: [575, 629]
+    post_open: [630, 930]
+    mid_morning: [600, 719]
+  leader_volume_surprise:
+    all: [1.5, null]
+    moderate: [1.5, 6.5]
+    focused: [2.0, 6.5]
+  absolute_leader_residual:
+    all: [0.01, null]
+    moderate: [0.01, 0.02]
+    strong: [0.0125, 0.025]
+  peer_signed_ratio:
+    baseline: [-0.25, 0.50]
+    strict_lag: [-0.10, 0.10]
+    not_opposite: [0.00, 0.50]
+    partly_caught_up: [0.10, 0.50]
+  maximum_peers: [1, 3]
+  costs_bps_per_side: [2, 5, 10]
+  position_cap: 0.10
+  symbol_cap: 0.10
+  gross_cap: 1.0
+  exit: "Open of final minute bar before actual session close"
+  short_safeguards: "Inherited exact RUN-0001 2% stop, 10bp adverse stop slippage, forced intraday exit."
+  expected_variant_count:
+    direction: 3
+    formation_time: 4
+    leader_volume_surprise: 3
+    absolute_leader_residual: 3
+    peer_signed_ratio: 4
+    maximum_peers: 2
+    costs: 3
+    total: 2592
+
+freeze_correction:
+  at: "2026-07-29T09:35:00-07:00"
+  issue: >-
+    The frozen dimensions multiply to 2,592, not the mistakenly transcribed
+    total of 864. The first execution fail-fast stopped before writing result
+    artifacts when the actual enumerated count reached 2,592.
+  correction: >-
+    Correct only the arithmetic total and required reconciliation count.
+    No dimension, threshold, input, ranking, or result was changed or inspected.
+
+required_outputs:
+  - "2,592/2,592 reconciliation and parent/data/code hashes"
+  - "Parent-relative sample attrition for every variant"
+  - "Full/recent windows, months, drawdown, recovery, blocks, and concentration"
+  - "Neighbor-region and 2/5/10bp stability"
+  - "Mechanism diagnosis and next question"
+
+result:
+  validation: passed
+  reconciliation:
+    expected_variants: 2592
+    executed_variants: 2592
+    parent_candidates: 1300
+    maximum_loaded_date: "2026-04-30"
+    holdout_rows_loaded: 0
+  grid_landscape:
+    at_2bps:
+      positive_recent_15m_share: 0.796
+      positive_recent_12m_share: 0.688
+      all_four_blocks_positive_share: 0.269
+    at_5bps:
+      positive_recent_15m_share: 0.745
+      positive_recent_12m_share: 0.591
+      all_four_blocks_positive_share: 0.212
+    at_10bps:
+      positive_recent_15m_share: 0.661
+      positive_recent_12m_share: 0.411
+      all_four_blocks_positive_share: 0.104
+  highest_recent_variant:
+    id: "both__all__all__moderate__baseline__p3__2bp"
+    recent_15m_average_month: 0.016164
+    recent_12m_average_month: 0.009675
+    full_average_month: 0.012314
+    maximum_drawdown: 0.042075
+    recovery_days: 38
+    recent_15m_months: {positive: 8, negative: 7}
+    allocated_trades: 860
+    events: 335
+    leaders: 18
+    peers: 13
+    blocks: [0.032221, 0.102997, 0.065808, 0.069882]
+    at_5bps_recent_15m_average_month: 0.013628
+    at_10bps_recent_15m_average_month: 0.009401
+    at_10bps_recent_12m_average_month: 0.002822
+  more_consistent_lower_risk_region:
+    id: "both__all__all__moderate__partly_caught_up__p1__5bp"
+    recent_15m_average_month: 0.006967
+    recent_12m_average_month: 0.005312
+    full_average_month: 0.005746
+    maximum_drawdown: 0.014697
+    recovery_days: 37
+    recent_15m_months: {positive: 10, negative: 5}
+    allocated_trades: 230
+    events: 230
+    blocks: [0.020471, 0.039355, 0.034337, 0.032253]
+  diagnosis:
+    - "The close drift is broad enough to survive many neighboring filters, but the median variant is economically tiny and only 21.2% of 5bp variants are positive in all four coarse blocks."
+    - "Both-sign and long-only regions are materially stronger than short-only; negative-only median recent performance is approximately flat."
+    - "All-time and open-hour regions dominate; post-open and mid-morning medians are much weaker, although isolated post-open variants remain positive."
+    - "Higher attention and stronger shock filters reduce the median result; the edge does not strengthen monotonically with information intensity."
+    - "Three-peer breadth raises the highest return, while one partly-caught-up peer gives the cleanest drawdown/month tradeoff at much lower return."
+decision: >-
+  Do not promote and do not quote replay. Treat the close drift as a modest,
+  adaptation-exposed effect rather than a Type-A candidate. Continue with
+  independently constructed 1/10/15/30-minute formations and broad scaled
+  leader thresholds/cooldowns; then test the best stable region's expression
+  and market/sector hedging before retirement.

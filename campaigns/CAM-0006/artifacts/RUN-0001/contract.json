@@ -1,0 +1,37 @@
+{
+  "command": "python campaigns/CAM-0006/src/run0001.py --readiness-dir campaigns/CAM-0006/artifacts/readiness --output-dir campaigns/CAM-0006/artifacts/RUN-0001",
+  "resolved_defaults": {
+    "liquidity_floor": 100000000.0,
+    "tail_each_side": 0.1,
+    "minimum_absolute_gap": 0.005,
+    "directions": [
+      "continuation",
+      "absorption"
+    ],
+    "horizons": [
+      "0945",
+      "1000",
+      "1200",
+      "final"
+    ],
+    "portfolios": [
+      "long_only",
+      "short_only",
+      "balanced"
+    ],
+    "cost_bps_per_side": [
+      0,
+      5,
+      10,
+      20
+    ],
+    "short_stop_fraction": 0.02,
+    "adverse_stop_slippage_bps": 10
+  },
+  "executed_variant_count": 96,
+  "causal_universe_events": 44075,
+  "continuation_signal_events": 3486,
+  "absorption_signal_events": 4033,
+  "max_loaded_date": "2026-04-30",
+  "holdout_rows_loaded": 0
+}

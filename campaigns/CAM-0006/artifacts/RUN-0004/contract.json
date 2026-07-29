@@ -1,0 +1,19 @@
+{
+  "command": "python campaigns/CAM-0006/src/run0004.py --parent-positions campaigns/CAM-0006/artifacts/RUN-0003/positions.parquet --catalog D:/AlgoResearch/data/catalog.duckdb --output-dir campaigns/CAM-0006/artifacts/RUN-0004",
+  "resolved_defaults": {
+    "parents": [
+      "tail05_anomaly1",
+      "tail10_anomaly1"
+    ],
+    "diagnostic_configurations_per_parent": 16,
+    "cost_bps_per_side": [
+      5,
+      10,
+      20
+    ]
+  },
+  "executed_variant_count": 96,
+  "max_loaded_date": "2026-04-30",
+  "holdout_rows_loaded": 0,
+  "qqq_state_rows": 584
+}

@@ -1,0 +1,142 @@
+campaign_id: CAM-0009
+title: "Intraday semiconductor information-lead propagation"
+purpose_profile: "A. Recent Money Printer"
+
+core_hypothesis: >-
+  When a highly liquid semiconductor stock experiences an idiosyncratic,
+  high-attention move over a completed short interval, common industry
+  information is incorporated into related constituents with heterogeneous
+  delay. Peers that have not yet reflected the leader shock may continue in
+  the leader direction over the next several minutes.
+mechanism: >-
+  Semiconductor firms share demand, supply-chain, capital-spending, and
+  valuation information, but trade at different attention and liquidity.
+  A causally identified leader shock, net of contemporaneous QQQ and
+  semiconductor-ETF movement, can transmit to peers. This is a continuation
+  mechanism, not cross-sectional liquidity-provision reversal.
+material_difference_from_prior_campaigns: >-
+  CAM-0009 uses within-industry intraday lead-lag transmission among multiple
+  securities. CAM-0004 traded reversal of cross-sectional factor residuals;
+  CAM-0005 traded a late-session ETF-to-overnight relationship; CAM-0006 used
+  opening auctions; CAM-0007/0008 used public event text. The signal identity,
+  information set, direction, and holding clock are new.
+
+primary_source:
+  type: "Mechanism-first causal industry propagation contract"
+  source_faithful_requirement: >-
+    Use only completed SIP bars and shifted liquidity/beta/volume states.
+    Identify the leader and lagging peers from the declared industry basket
+    without full-sample return ranking. Enter no earlier than the next
+    one-minute bar open after the completed formation interval.
+  basket_basis: >-
+    Fixed semiconductor business identity, declared before return analysis,
+    then filtered by point-in-time QQQ membership and shifted liquidity.
+
+intended_strategy_profile:
+  representative_recent_window: "2025-02-01 through 2026-04-30"
+  comparison_windows:
+    - "2024-11-01 through 2026-04-30"
+    - "2025-02-01 through 2026-04-30"
+    - "2025-05-01 through 2026-04-30"
+  return_objective: >-
+    Approximately 10%-15% average monthly net fixed-capital return with high
+    event frequency, preferred drawdown below 20%, fast recovery, stable
+    months, realistic marketable execution, and distributed peer contribution.
+
+starting_implementation:
+  declared_semiconductor_basket:
+    - ADI
+    - AMD
+    - AMAT
+    - ARM
+    - ASML
+    - AVGO
+    - INTC
+    - KLAC
+    - LRCX
+    - MCHP
+    - MPWR
+    - MRVL
+    - MU
+    - NVDA
+    - NXPI
+    - "ON"
+    - QCOM
+    - TXN
+  controls_and_hedges: [QQQ, SMH, SOXX]
+  universe: >-
+    Declared semiconductor symbols that are point-in-time QQQ members on the
+    session and clear shifted prior-20 median dollar volume. QQQ/SMH/SOXX are
+    controls or hedges, not retrospectively selected profit contributors.
+  formation: >-
+    Completed five-minute returns during the regular session. Estimate
+    shifted rolling exposure to QQQ and SMH, identify the largest absolute
+    liquid-member residual as the leader, and require a minimum residual and
+    shifted attention/volume condition.
+  peer_signal: >-
+    A peer must causally underreact in the leader direction relative to the
+    completed leader residual. Rank peers using only the completed formation
+    window and shifted liquidity.
+  entry: "Next available one-minute SIP bar open after completed formation."
+  exits:
+    - "Five, 15, 30, and 60 minutes after entry"
+    - "Calendar-derived forced liquidation before the regular-session close"
+  portfolio: >-
+    Fixed capital base 1.0, additive P&L, no reinvestment, gross<=1.0,
+    symbol<=0.10, equal or causal-strength allocation, and cash when no valid
+    transmission event exists.
+  short_safeguards: >-
+    Negative leader propagation may use direct intraday peer shorts only with
+    a predefined 2% protective stop, adverse stop slippage, halt/missing-path
+    exclusion, and forced liquidation before close. No overnight direct short.
+  costs: "Screen 2, 5, and 10 bp per side; exact SIP replay only for a bar-stage survivor."
+
+main_questions:
+  - "Do positive and negative idiosyncratic leader shocks propagate to lagging peers?"
+  - "Does residualizing against QQQ, SMH, or both improve causal specificity?"
+  - "Which completed formation and 5-60-minute exit clocks form a smooth neighborhood?"
+  - "Do leader liquidity rank, residual magnitude, volume surprise, dispersion, and market state identify the effect?"
+  - "Should the expression be directional peers, peer-minus-SMH relative value, or a bounded hybrid?"
+  - "Are direct short legs credible after full-path stops, forced close, costs, and missing/halt checks?"
+  - "Are results distributed across leaders, peers, dates, periods, and parameter neighbors?"
+
+adaptation_policy:
+  allowed_within_campaign:
+    - "One-, five-, 10-, 15-, and 30-minute completed formation windows"
+    - "Leader definitions based on shifted liquidity and causal residual magnitude"
+    - "QQQ, SMH, SOXX, or combined causal controls"
+    - "Peer lag thresholds, breadth, ranking, and causal strength sizing"
+    - "Directional long, protected intraday short, and sector-hedged expressions"
+    - "Five-minute through same-day exits, stops, costs, and market state"
+    - "Basket members added only for predeclared semiconductor business identity, never historical profitability"
+  new_campaign_required_when:
+    - "The signal becomes cross-industry, overnight, public-text event-driven, or reversal rather than propagation"
+    - "Options, order-book imbalance, or non-semiconductor relationships become primary"
+
+launch_and_conclusion_gates:
+  - "PLAN frozen before minute return or performance scan"
+  - "Verify declared symbols, point-in-time membership, minute/daily schema, adjustment, calendars, and coverage"
+  - "Confirm maximum loaded date April 30, 2026 and zero holdout rows"
+  - "Pass fixtures for completed bars, shifted beta/volume, leader/peer exclusion, entry, costs, stops, forced close, allocation, and drawdown"
+  - "Freeze and reconcile every meaningful run before interpretation"
+  - "Report attrition, periods, leaders, peers, dates, signs, controls, concentration, and neighbors"
+  - "Mandatory eleven-principle and skeptical-quant audit before promotion or retirement"
+
+hard_constraints:
+  fixed_capital_base: 1.0
+  maximum_gross_exposure: 1.0
+  maximum_symbol_gross: 0.10
+  reinvest_pnl: false
+  discovery_cutoff: "2026-04-30"
+  sealed_holdout_start: "2026-05-01"
+  holdout_access_authorized: false
+  direct_overnight_stock_or_etf_shorts: false
+  targeted_data_policy: >-
+    Use local declared bars first. If gaps block readiness, Alpaca retrieval
+    may cover only the 18 declared semiconductor symbols plus QQQ/SMH/SOXX and
+    the pre-cutoff interval. Never pull a blanket S&P universe.
+
+development_period: "2024-07-01 through 2026-04-30, declared pre-cutoff data only"
+status: frozen
+frozen_at: "2026-07-29T08:30:00-07:00"
+file_hash: "sha256 excluding file_hash line: 02691561b5cfa4ee4b0af7887995fd39b2b6fca4c47da1ddffa13726f681b928"

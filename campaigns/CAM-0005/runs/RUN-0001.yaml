@@ -1,0 +1,72 @@
+run_id: RUN-0001
+campaign_id: CAM-0005
+parent_run_id:
+planned_at: "2026-07-29T02:25:00-07:00"
+status: invalidated_before_interpretation
+
+change_from_parent: "First causal sign-and-magnitude baseline."
+reason: >-
+  Establish whether the late-day-to-next-open relationship is continuation or
+  reversal, whether it exists in the unlevered underlying diagnostic, and
+  whether observed bull/inverse ETF products retain it after costs before
+  testing state, timing, or portfolio refinements.
+expected_effect: >-
+  A credible mechanism should have the same sign in QQQ/SMH diagnostics and
+  matching product expressions, improve monotonically with causal signal
+  magnitude without collapsing opportunity, and survive a neighborhood of
+  2-10 bp per-side costs.
+
+configuration:
+  signal_window: "15:00 open through completed 15:54 close Eastern"
+  decision_time: "15:55 Eastern"
+  entry: "15:56 minute open"
+  exit: "next XNYS session 09:30 minute open"
+  mappings: ["continuation", "reversal"]
+  magnitude_states:
+    all: "Every nonzero signal"
+    q50: "Absolute signal >= shifted prior-60-session 50th percentile"
+    q67: "Absolute signal >= shifted prior-60-session 67th percentile"
+    q80: "Absolute signal >= shifted prior-60-session 80th percentile"
+  pair_portfolios: ["qqq", "smh", "combined_available"]
+  expressions:
+    product_long_only: >-
+      Long TQQQ/SQQQ or SOXL/SOXS according to the mapping; no direct short.
+    underlying_signed_diagnostic: >-
+      Signed QQQ/SMH return used only to verify underlying alpha. Negative
+      signed exposure is diagnostic and cannot be held overnight.
+  product_cost_bps_per_side: [2, 5, 10]
+  underlying_diagnostic_cost_bps_per_side: 0
+  fixed_capital: "1.0; split equally across available qualifying pairs"
+  evaluation_start: "2024-11-01"
+  expected_variant_count: 96
+
+execution_contract:
+  command: >-
+    python campaigns/CAM-0005/src/run0001.py
+    --readiness-dir campaigns/CAM-0005/artifacts/readiness
+    --output-dir campaigns/CAM-0005/artifacts/RUN-0001
+  expected_variant_count: 96
+  output_paths:
+    - "artifacts/RUN-0001/features.parquet"
+    - "artifacts/RUN-0001/positions.parquet"
+    - "artifacts/RUN-0001/portfolio_decisions.parquet"
+    - "artifacts/RUN-0001/variants.csv"
+    - "artifacts/RUN-0001/monthly.csv"
+    - "artifacts/RUN-0001/concentration.csv"
+    - "artifacts/RUN-0001/contract.json"
+    - "artifacts/RUN-0001/diagnostics.json"
+
+completed_at: "2026-07-29T02:34:00-07:00"
+factual_outcome: >-
+  The executable contract produced 96 variants, but the parent readiness
+  adjustment divided official split-adjusted daily close by the last minute
+  close. This contaminated overnight returns with ordinary official-close
+  versus minute-close differences. Every numerical result is withdrawn.
+decision: >-
+  Preserve the attempt as invalid. Rebuild minute adjustment from official
+  split-daily close divided by official raw-daily close, rerun the identical
+  frozen baseline as RUN-0002, and do not cite RUN-0001 performance.
+next_question: "Does the unchanged baseline survive correct corporate-action lineage?"
+artifacts:
+  - "artifacts/readiness_INVALID_daily_minute_ratio/INVALID.md"
+  - "artifacts/RUN-0001_INVALID_daily_minute_ratio/INVALID.md"

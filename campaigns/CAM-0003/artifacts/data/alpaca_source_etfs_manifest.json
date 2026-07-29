@@ -1,0 +1,29 @@
+{
+  "provider": "Alpaca Market Data API",
+  "feed": "sip",
+  "adjustment": "raw",
+  "timeframe": "1Min",
+  "symbols": [
+    "EEM",
+    "FXI",
+    "EFA",
+    "VWO",
+    "IYR"
+  ],
+  "requested_start": "2024-08-01T00:00:00Z",
+  "requested_end_exclusive": "2026-05-01T00:00:00Z",
+  "rows": 991191,
+  "pages": 100,
+  "min_timestamp": "2024-08-01T08:00:00+00:00",
+  "max_timestamp": "2026-04-30T23:58:00+00:00",
+  "rows_on_or_after_holdout": 0,
+  "rows_by_symbol": {
+    "EEM": 193024,
+    "EFA": 178487,
+    "FXI": 271565,
+    "IYR": 172748,
+    "VWO": 175367
+  },
+  "data_sha256": "d6e9a21856d550d06939ca5cf46d6204111e9b8006f124c1d10bce2768bda091",
+  "credentials_recorded": false
+}

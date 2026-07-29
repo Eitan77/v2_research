@@ -1,0 +1,14 @@
+{
+  "status": "passed",
+  "event_count": 134,
+  "window_count": 134,
+  "quote_rows": 329045,
+  "trade_rows": 95638,
+  "symbols": [
+    "SOXL",
+    "SOXS"
+  ],
+  "max_exit_session": "2026-04-29",
+  "holdout_rows_requested": 0,
+  "scope": "same frozen candidate events, 09:35 exits only"
+}

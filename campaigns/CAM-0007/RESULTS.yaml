@@ -1,0 +1,130 @@
+campaign_id: CAM-0007
+updated_at: "2026-07-29T05:55:00-07:00"
+status: "retired_genuine_modest_event_premium_not_type_a"
+intended_profile: "A. Recent Money Printer"
+meaningful_runs: 5
+meaningful_variants: 2421
+bootstrap_replications: 20000
+exact_leave_one_out_resimulations: 414
+
+current_profile_fit: >-
+  Not a genuine Type-A candidate. Earnings-conditioned long drift/recovery is
+  causally measurable, survives practical bar latency, 20 bp per-side costs,
+  broad exit neighbors, and exact leave-one-out tests. Under fixed capital,
+  gross<=1, and development-selected rules, however, the best credible recent
+  average month is only about 3.16%, with four losing months and 14.43%
+  drawdown. Zero of 20,000 recent moving-block samples reaches 10%.
+
+readiness:
+  local_earnings_candidates: 593
+  combined_unique_news_rows: 72787
+  explicit_news_event_clusters: 849
+  eligible_registry_events: 742
+  eligible_symbols: 113
+  signal_complete_events: 728
+  liquidity_eligible_signal_events: 720
+  market_day_available_events: 742
+  detector_apparent_precision: 0.9776119402985075
+  detector_ground_truth_recall: 0.8821548821548821
+  announcement_buckets:
+    after_close: 469
+    premarket: 273
+  maximum_loaded_date: "2026-04-30"
+  holdout_rows_loaded: 0
+  targeted_remote_data:
+    news_rows_usable: 48341
+    split_daily_rows: 55975
+    symbols: 113
+    scope: "Point-in-time QQQ event-registry symbols only; no blanket S&P pull"
+  invalid_attempts:
+    - "First news pagination attempt stopped before artifacts due retry accounting."
+    - "Provider returned three older news rows; raw response preserved invalid and explicit window filtering produced usable data."
+    - "Two market-readiness attempts stopped before artifacts due short timeout and Windows broad-scan file resources."
+    - "First RUN-0001 output preserved invalid because drawdown omitted original capital peak."
+    - "First RUN-0003 attempt stopped before artifacts on a latency-column merge collision."
+
+mechanism_evidence:
+  broad_baseline: >-
+    A balanced 536-event baseline separated positive/negative gaps,
+    continuation/failure, long, and protected intraday-short legs. Protected
+    shorts lost; the best 10 bp baseline was positive-gap continuation to the
+    five-session close at 0.864% average month and 7.30% drawdown.
+  positive_sleeve: >-
+    Positive gaps confirmed in the first 30 minutes drift most coherently after
+    after-close announcements. The payoff forms a broad seven-to-nine-session
+    plateau and survives entry at 10:05, but a concentrated cap50 expression
+    has only roughly 41 allocated trades and three inactive months.
+  negative_sleeve: >-
+    Negative gaps that reclaim during the first 30 minutes recover most
+    coherently when prior stock volatility is above its shifted state median.
+    The payoff peaks around eight sessions and decays by ten, supporting a
+    finite recovery clock. It is broader than one symbol but contributor
+    dependence remains material.
+  portfolio: >-
+    Combining the two sleeves under one overlap-aware gross cap removes
+    inactive months and raises recent return. Equal cap50 beats cap67/cap100,
+    causal strength priority, and half-capital sleeve reservation. Extreme
+    concentration reduces rather than reveals alpha.
+
+strongest_development_profile:
+  configuration: >-
+    Equal shared capacity; positive after-close continuation held four
+    inclusive sessions; negative high-volatility reclaim held eight sessions;
+    10:01 split-adjusted bar entry; 10 bp per-side cost; 50% maximum position;
+    fixed sizes and total gross<=1.
+  candidate_events: 132
+  allocated_trades: 87
+  symbols: 59
+  full_average_month: 0.02034034957074318
+  recent_15m_average_month: 0.0316307256094353
+  recent_12m_average_month: 0.04316872945127526
+  recent_months: "11 positive / 4 negative / 0 inactive"
+  maximum_drawdown: 0.14429249436863362
+  recovery_days: 101
+  chronological_block_returns: [-0.019853, 0.091916, 0.257760, 0.117664]
+  at_20bp_per_side_average_month: 0.028586
+  at_10_05_entry_average_month: 0.029639
+  top5_event_positive_share: 0.3260687679555815
+  full_return_without_top_symbol: 0.34338795571625563
+  full_return_without_top_event: 0.34493879127299576
+
+robustness:
+  exact_leave_one_out: >-
+    All three frozen validation profiles remain positive under their worst
+    capacity-aware symbol and event removals. The recent-best profile falls
+    from 3.163% to 2.479% average month under its worst symbol/event removal.
+    This rejects a one-name illusion but does not establish exceptional return.
+  moving_block_bootstrap:
+    recent_best_recent_q05_median_q95: [0.0117618, 0.0318981, 0.0514213]
+    full_history_stable_recent_q05_median_q95: [0.0062526, 0.0285406, 0.0512657]
+    lower_concentration_recent_q05_median_q95: [0.0120899, 0.0288092, 0.0424990]
+    probability_at_least_10pct_average_month: 0.0
+  rolling: >-
+    Three-month averages can be negative for every profile. The recent-best
+    six-month minimum is -0.72% average month; the stable profile's six-month
+    minimum is +0.66%, but its recent average remains only 2.87%.
+
+execution:
+  evidence: >-
+    Causal completed-window entries at 10:00, 10:01, 10:03, and 10:05 were
+    tested. The best combined neighborhood remains positive at 20 bp per side.
+  quote_replay: "Not performed because every profile fails the Type-A bar-stage return gate."
+  rationale: >-
+    Marketable replay can validate or lower an existing estimate; it cannot
+    create the missing 7%-12% monthly alpha. Quote replay is not used to rescue
+    a bar-stage loser.
+  capacity: >-
+    No capacity claim. Gross exposure is capped at 1.0, but cap50 profiles are
+    concentrated and would require security-specific depth/impact evidence
+    before any implementation claim.
+
+holdout:
+  sealed_start: "2026-05-01"
+  accessed: false
+  rows_loaded: 0
+
+current_judgment: >-
+  Retire CAM-0007. Preserve the event-reaction lessons as possible ingredients
+  for lower-return profiles, but do not freeze a Type-A candidate, allocate
+  live capital, access the holdout, or spend quote budget. Continue Strategy A
+  with a materially different mechanism.

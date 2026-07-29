@@ -1,0 +1,20 @@
+{
+  "status": "passed",
+  "variant_count": 174,
+  "minimum_positive_position_fraction": 0.0009523809523809268,
+  "maximum_concurrent_gross_exposure": 1.0,
+  "maximum_concurrent_symbol_exposure": 0.1,
+  "maximum_absolute_trade_daily_pnl_difference": 1.734723475976807e-16,
+  "maximum_absolute_metric_daily_pnl_difference": 2.220446049250313e-16,
+  "invalid_to_valid_changed_numeric_columns": {
+    "allocated_trades": 9.0
+  },
+  "valid_hashes": {
+    "variant_metrics.parquet": "13eeea16688c9f4a5cf3091c3eb8ced7f9cd88c9e29edf24b48f80553ecfaad5",
+    "trade_details.parquet": "077881b88c61ce926c57ec805ad61f4a874d0fcf435e6837a82116ebebacb1cf",
+    "daily_pnl.parquet": "9ad3cd6d3b2aabbf6d1247cc99ae2001b359a2b24b88b5c58d8e6c89e40ffc1b",
+    "reconciliation.json": "20821612fa3321a4b87ff3260adbed3f0f97af28e08c4add8a74249de203cc00"
+  },
+  "maximum_loaded_date": "2026-04-30",
+  "holdout_rows_loaded": 0
+}

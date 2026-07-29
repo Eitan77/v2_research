@@ -1,0 +1,18 @@
+{
+  "status": "passed",
+  "max_loaded_date": "2026-04-30",
+  "holdout_rows_loaded": 0,
+  "feature_rows": 1645,
+  "position_rows": 12117,
+  "decision_rows": 18922,
+  "variant_count": 96,
+  "feature_pair_session_rows": {
+    "qqq": 823,
+    "smh": 822
+  },
+  "position_pair_rows": {
+    "qqq": 6053,
+    "smh": 6064
+  },
+  "underlying_negative_signed_exposure_is_diagnostic_only": true
+}

@@ -1,0 +1,77 @@
+run_id: RUN-0004
+campaign_id: CAM-0002
+parent_run_id: RUN-0003
+planned_at: "2026-07-28T22:18:00-07:00"
+status: completed
+
+change_from_parent: >-
+  Map the source-trigger events across realistic 1/2/5-minute entry delays
+  and 5/10/15/20/30/45/60-minute holding periods.
+reason: >-
+  RUN-0003 rejected threshold tightening, while RUN-0002 showed a small
+  30-minute gross rebound that disappeared by 60 minutes. The full immediate
+  path is needed to distinguish a brief executable reversal from continued
+  falling-knife behavior.
+expected_effect: >-
+  If the mechanism is a rapid liquidity rebound, neighboring short holds
+  should show positive net returns at more than one delay, with tolerable
+  drawdown and without dependence on April 7, 2025. If entry latency destroys
+  it or performance is isolated to one cell, the effect is not prospective.
+
+configuration:
+  source_events: "Frozen RUN-0001 source-faithful event set; no event reselection"
+  entry_delays_minutes: [1, 2, 5]
+  holding_minutes: [5, 10, 15, 20, 30, 45, 60]
+  cost_bps_per_side: 10
+  variants: 21
+  execution: >-
+    Enter at the raw SIP minute open at event minute plus delay, or the prior
+    observed price only when that minute has no bar; exit analogously after
+    the frozen hold. Omit events whose required path exceeds the regular close
+    and report attrition.
+  diagnostics:
+    - "All-event gross and net path"
+    - "Nonoverlapping equal-weight cluster portfolio"
+    - "Monthly path and 18m/15m/12m windows"
+    - "April 7, 2025 exclusion"
+    - "Latency and path attrition"
+
+execution_contract:
+  command: >-
+    python campaigns/CAM-0002/src/run0004.py
+    --events campaigns/CAM-0002/artifacts/RUN-0001/events.parquet
+    --output-dir campaigns/CAM-0002/artifacts/RUN-0004
+  expected_variant_count: 21
+  output_paths:
+    - "artifacts/RUN-0004/path_prices.parquet"
+    - "artifacts/RUN-0004/path_grid.csv"
+    - "artifacts/RUN-0004/contract.json"
+    - "artifacts/RUN-0004/diagnostics.json"
+
+completed_at: "2026-07-28T22:21:00-07:00"
+factual_outcome: >-
+  All 21 delay/hold variants lost money at 10 bps per side. The least-bad
+  representative-window result was delay 1/hold 45, which lost 25.11% over
+  18 months, averaged -1.03% per month over 15 months, had nine negative
+  months and 30.83% drawdown. The source delay 1/hold 30 all-event mean was
+  +0.220% gross but only +0.020% net; the nonoverlapping portfolio lost
+  44.96%. The shortest delay 1/hold 5 portfolio lost 25.30%. Delaying entry
+  never produced a stable improvement. Excluding April 7 did not rescue any
+  leading cell. Only five path cells were lost across the entire grid
+  (two at delay 2/hold 60 and three at delay 5/hold 60); other cells had zero
+  attrition. The executed count was 21, loaded maximum event date was
+  2026-04-29, and zero holdout rows were loaded.
+decision: >-
+  Reject post-event exit timing and modest execution latency as a viable
+  rescue of the fixed-60-minute source trigger. Next test whether the source
+  event clock is mislocalized by comparing causal 10-120-minute shock
+  formation horizons and broad severity/surprise neighborhoods.
+next_question: >-
+  Does reversal exist when the extreme move is identified over its actual
+  shorter or longer causal formation interval rather than a fixed 60 minutes?
+artifacts:
+  - "artifacts/RUN-0004/path_prices.parquet (sha256 79886e73c9bf8e1d3fd9fb018ea2d405c33f010aa85409ecffe8b8882d9cc963)"
+  - "artifacts/RUN-0004/path_grid.csv (sha256 f543283cab96f6593dd1ad84c3d428122b5a3be76f1866660f7ca33aa6643085)"
+  - "artifacts/RUN-0004/contract.json (sha256 dfec73155c662fe990c9c2df7f02c6e775ddf1bb5780099a1b0dd4755887289a)"
+  - "artifacts/RUN-0004/diagnostics.json (sha256 c1b161875e8f4e4b2926a7bb06e9e6bc1e20299297655bae575e74cdd5a45661)"
+  - "src/run0004.py (sha256 e5e9c12c74190a21f00ab9ab2b52981c9dcf82f2111e4c92b54fe927451ab11e)"

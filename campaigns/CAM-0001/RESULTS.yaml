@@ -1,0 +1,124 @@
+campaign_id: CAM-0001
+updated_at: "2026-07-28T21:33:42.6090539-07:00"
+status: "development_complete_forward_confirmation_required"
+intended_profile: "A. Recent Money Printer"
+current_profile_fit: >-
+  Promising adapted recent leveraged continuation candidate, but not genuinely
+  exceptional and not promotion-ready: the representative 15-month return is
+  below the reference objective, recovery is slow, decisions are concentrated,
+  and SIP NBBO execution is unqualified.
+
+run_count: 11
+current_best_run: RUN-0008
+current_baseline_run: RUN-0001
+
+current_best:
+  specification: >-
+    TQQQ/SOXL equal fixed-base weights when each has positive five-session
+    momentum and QQQ is above a rising SMA20; decide after close, enter next
+    regular-session open, exit open after ten sessions, 5 bps per side.
+  representative_recent_window: "2025-02-01 through 2026-04-30 (15 months)"
+  representative_window_reason: >-
+    This was the plan's neutral starting reference. No causal change near May
+    2025 justified discarding the weak February-April lead-in; the 12-month
+    endpoint was at the 98.7th percentile of rolling 12-month windows.
+  net_full_period_simple_return: 3.737990
+  average_monthly_net_simple_return: "15m 0.085919; 12m 0.105528; 18m 0.061284"
+  median_monthly_net_simple_return: "15m 0.022452; 12m 0.112425; 18m 0.012645"
+  average_calendar_year_net_simple_return: 0.467249
+  standard_max_drawdown: "15m 0.127050; 12m 0.128471; 18m 0.340186; full 0.258301"
+  max_full_recovery_time_days: "15m/12m 85; 18m 187; full 434"
+  negative_month_count: "15m 3; 12m 3; 18m 5; full 27"
+  zero_month_count: "15m 3; 12m 1; 18m 3"
+  monthly_return_consistency: >-
+    The 12-month path had large positive May/June/October/January/April returns,
+    negative November/December/February, and zero March. It is profitable but
+    episodic rather than smooth monthly income.
+  trade_or_event_count: "122 full-history decisions; 19 in 12m; 20 in 15m"
+  positive_recent_decision_fraction: 0.684211
+  top_decision_share_of_recent_net: 0.256004
+  top_five_decision_share_of_recent_net: 0.869704
+  net_excluding_best_recent_decision: 0.942146
+  average_capital_utilization: 0.662324
+  maximum_gross_exposure: 1.0
+  gross_notional_turnover: 244.0
+  net_pnl_per_turnover: 0.015320
+  embedded_leverage: "TQQQ/SOXL product leverage; no account-level leverage"
+  base_cost_net_simple_return: "12m 1.266332 at 5 bps/side"
+  adverse_cost_net_simple_return: "12m 1.247332 at 10 bps/side"
+  severe_cost_net_simple_return: "12m 1.209332 at 20 bps/side"
+  market_beta: 3.212310
+  execution: >-
+    SIP minute-bar open replays at 0/1/5/30 minutes retained 10.38%-10.55%
+    average month. Adverse 1m/5m entry-high/exit-low bounds retained
+    9.34%-9.72%. Required TQQQ/SOXL SIP NBBO coverage was 0/45, so quote
+    qualification, spread, displayed size, and queue evidence remain absent.
+  selection_status: >-
+    Adapted after 171 meaningful variants before the selection audit; the
+    result is not untouched or out-of-sample.
+
+notable_runs:
+  - "RUN-0001: source-independent baseline exposed high return but poor monthly consistency and SOXL concentration."
+  - "RUN-0002: 96-variant broad family identified the five-session/ten-session/equal-breadth neighborhood."
+  - "RUN-0005: rising SMA20 improved the balanced path without a tuned numeric threshold."
+  - "RUN-0007: unleveraged QQQ/SMH preserved the path at roughly one-third magnitude; inverse legs failed."
+  - "RUN-0008: selection, chronology, concentration, benchmarks, bootstrap, and decay audit."
+  - "RUN-0010: SIP minute-bar execution replay; ETF quote coverage blocker."
+  - "RUN-0011: exact-candidate cost and extra-session delay reconciliation."
+failed_or_rejected_directions:
+  - "One-session holds: catastrophic full-history drawdown."
+  - "Signal-invalidation exits: reduced return and worsened recovery."
+  - "Stricter participation, volatility, and efficiency filters: sample/return loss without decisive risk benefit."
+  - "Inverse-volatility, SOXL cap, and volatility scaling: lower return without faster recovery."
+  - "Long inverse ETFs and bull/bear regime switches: deeply negative."
+  - "Trailing 3m/6m P&L decay filters: more zero months and no recovery improvement."
+  - "Gap-aware 10%-20% price stops: lower return, higher drawdown, and slower recovery."
+
+adaptation_summary:
+  main_changes_tried:
+    - "lookback, market SMA, holding period, breadth, cost, and entry delay"
+    - "causal participation, rising-trend, volatility, and efficiency filters"
+    - "fixed, inverse-volatility, capped, and volatility-scaled sizing"
+    - "leveraged, unleveraged, inverse, and regime-switched universe expressions"
+    - "invalidation exits, price stops, and causal decay monitors"
+    - "SIP minute-bar latency and adverse-price execution"
+  improvements_that_held_up:
+    - "Short five-session formation with ten-session hold was a broad neighborhood, not a single precise point."
+    - "Requiring QQQ above a rising SMA20 reduced recent drawdown while preserving strong return."
+    - "Equal fixed-base sizing dominated the tested risk-sizing alternatives."
+    - "The long continuation path persisted in unleveraged QQQ/SMH, supporting an underlying mechanism."
+    - "The exact candidate retained the 12-month objective at 20 bps per side."
+  weaknesses_not_resolved:
+    - "Representative 15-month average month is 8.59%, below the nominal 10%-15% objective."
+    - "Recent recovery is 85 days and the ending drawdown was unresolved."
+    - "Top five of 19 decisions supplied 87.0% of recent net."
+    - "The favorable 12-month endpoint is historically unusual and heavily adapted."
+    - "Complete TQQQ/SOXL SIP NBBO data and dollar-capacity evidence are missing."
+  selection_and_overfitting_notes: >-
+    The chosen result followed 171 variants and later focused diagnostics.
+    Rolling-window and event-bootstrap results are descriptive, not a correction
+    for researcher selection. May 2026 onward remained sealed.
+
+short_selling_compliance:
+  direct_stock_or_etf_shorts_used: false
+  all_shorts_strictly_intraday: "N/A"
+  stops_or_emergency_exits_defined: "N/A"
+  all_shorts_closed_before_regular_session_end: "N/A"
+  compliance_errors: []
+
+current_judgment: >-
+  Do not promote or call this an exceptional A-type money printer. Freeze it as
+  an adapted, execution-uncertain forward-paper specification. No further
+  in-sample variation within this mechanism is justified; confirmation requires
+  missing pre-cutoff ETF NBBO or genuinely prospective observations.
+next_question: >-
+  Can complete ETF SIP NBBO and an independently observed forward paper period
+  confirm next-open execution, monthly stability, and retirement triggers
+  without modifying the frozen rule?
+artifacts:
+  - "PLAN.yaml"
+  - "RULE_CHECKLIST.md"
+  - "artifacts/CONCLUSION_AUDIT.md"
+  - "artifacts/RUN-0008/diagnostics.json"
+  - "artifacts/RUN-0010/execution_report.json"
+  - "artifacts/RUN-0011/final_family.csv"

@@ -1,0 +1,66 @@
+run_id: RUN-0001
+campaign_id: CAM-0002
+parent_run_id:
+planned_at: "2026-07-28T22:05:00-07:00"
+status: completed
+
+change_from_parent: "Source-faithful long-after-extreme-drop bar-screen baseline."
+reason: >-
+  Establish whether the documented 2000-2002 reversal mechanism remains present
+  in the recent cutoff-bounded SIP universe before any adaptation.
+expected_effect: >-
+  If temporary sell pressure persists, completed extreme declines should have
+  positive 30-60 minute forward returns, increasing with shock severity; costs
+  and clustering may materially reduce portfolio profit.
+
+configuration:
+  universe: "Causal prior-60-session liquid U.S. stocks, nominal price >$10"
+  event: "Maximum 60m decline >4% and >8x same-clock prior-60-session mean absolute return"
+  decision_time: "Completed event-ending minute"
+  entry: "Next one-minute bar open"
+  exits_minutes: [30, 60]
+  direction: "Long only"
+  sizing: "Fixed base 1.0, simultaneous-event allocation capped at 1.0"
+  overlap: "First symbol-day event; report 60-minute market clusters"
+  cost_bps_per_side: [10, 20, 40]
+  execution: "SIP minute bars; quote replay deferred until bar result warrants"
+
+short_selling:
+  direct_stock_or_etf_shorting_used: false
+  overnight_short_exposure: false
+
+execution_contract:
+  command: >-
+    python campaigns/CAM-0002/src/run0001.py
+    --config campaigns/CAM-0002/runs/RUN-0001.yaml
+    --output-dir campaigns/CAM-0002/artifacts/RUN-0001
+  expected_variant_count: 6
+  output_paths:
+    - "artifacts/RUN-0001/contract.json"
+    - "artifacts/RUN-0001/events.parquet"
+    - "artifacts/RUN-0001/variants.csv"
+    - "artifacts/RUN-0001/diagnostics.json"
+
+completed_at: "2026-07-28T22:10:56.3125558-07:00"
+factual_outcome: >-
+  The recent source-faithful long component failed economically. At 60 minutes
+  and 10 bps/side it lost 21.61% across 135 independent clusters, with 46.7%
+  positive events, 33.17% drawdown, and unresolved 520-day recovery. The 15m
+  average month was -1.05%; 11/15 months were negative. Thirty-minute holding
+  was worse at -47.48%. Higher costs deteriorated monotonically. Gross 60-minute
+  rebound before 10-bps round-trip costs was only about +5.4%, so weak gross
+  alpha rather than bar-fill optimism is the first diagnosed problem.
+decision: >-
+  Do not retire from one baseline. Separate gross-alpha cases by shock size,
+  duration, time of day, symbol, market clustering, and causal volatility/
+  liquidity state; then test the source threshold and horizon neighborhoods.
+next_question: >-
+  Is the weak aggregate hiding a causally identifiable subset or a different
+  shock duration/exit horizon consistent with temporary liquidity pressure?
+artifacts:
+  - "artifacts/RUN-0001/contract.json (sha256 8a9289daa1a497f189a58aa9d6e11507f6ba78977a0ff1186ed45e3ac0b7e58b)"
+  - "artifacts/RUN-0001/events.parquet (sha256 a248fc84c4d338eb72d419c3a1a7827ae939dcb9970a5d276baaf613906b356b)"
+  - "artifacts/RUN-0001/variants.csv (sha256 123f54544ee49c1282c58e077aaa2bd06c44b82d23eeaa35542f2eab07ab9f7d)"
+  - "artifacts/RUN-0001/diagnostics.json (sha256 c7c9d368d40274174f70b1ad6419170bf1fc8c29a8cfadd2d3518328f45052ab)"
+  - "artifacts/RUN-0001/selected_events.parquet (sha256 fb72759d03b578bfa92ee990af333ecaf10f3ada94a0796257ea13ecf730d9fa)"
+  - "src/run0001.py (sha256 cfcf96b96dfb63414829e26a7d0af0d5c152f78367d6f62dbdadca20c791abc3)"

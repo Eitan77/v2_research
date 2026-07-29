@@ -1,0 +1,118 @@
+{
+  "timing_counts": {
+    "window1|latency0": {
+      "registry_events": 7641,
+      "signal_complete_events": 7362,
+      "liquidity_eligible_positive_reaction_events": 3462,
+      "positive_continuation_long": 2109,
+      "negative_failure_long": 1353
+    },
+    "window1|latency1": {
+      "registry_events": 7641,
+      "signal_complete_events": 7382,
+      "liquidity_eligible_positive_reaction_events": 3461,
+      "positive_continuation_long": 2109,
+      "negative_failure_long": 1352
+    },
+    "window1|latency3": {
+      "registry_events": 7641,
+      "signal_complete_events": 7380,
+      "liquidity_eligible_positive_reaction_events": 3471,
+      "positive_continuation_long": 2116,
+      "negative_failure_long": 1355
+    },
+    "window1|latency5": {
+      "registry_events": 7641,
+      "signal_complete_events": 7377,
+      "liquidity_eligible_positive_reaction_events": 3467,
+      "positive_continuation_long": 2110,
+      "negative_failure_long": 1357
+    },
+    "window5|latency0": {
+      "registry_events": 7641,
+      "signal_complete_events": 7116,
+      "liquidity_eligible_positive_reaction_events": 3482,
+      "positive_continuation_long": 2169,
+      "negative_failure_long": 1313
+    },
+    "window5|latency1": {
+      "registry_events": 7641,
+      "signal_complete_events": 7110,
+      "liquidity_eligible_positive_reaction_events": 3490,
+      "positive_continuation_long": 2175,
+      "negative_failure_long": 1315
+    },
+    "window5|latency3": {
+      "registry_events": 7641,
+      "signal_complete_events": 7111,
+      "liquidity_eligible_positive_reaction_events": 3486,
+      "positive_continuation_long": 2176,
+      "negative_failure_long": 1310
+    },
+    "window5|latency5": {
+      "registry_events": 7641,
+      "signal_complete_events": 7090,
+      "liquidity_eligible_positive_reaction_events": 3472,
+      "positive_continuation_long": 2165,
+      "negative_failure_long": 1307
+    },
+    "window15|latency0": {
+      "registry_events": 7641,
+      "signal_complete_events": 6786,
+      "liquidity_eligible_positive_reaction_events": 3366,
+      "positive_continuation_long": 2095,
+      "negative_failure_long": 1271
+    },
+    "window15|latency1": {
+      "registry_events": 7641,
+      "signal_complete_events": 6789,
+      "liquidity_eligible_positive_reaction_events": 3371,
+      "positive_continuation_long": 2099,
+      "negative_failure_long": 1272
+    },
+    "window15|latency3": {
+      "registry_events": 7641,
+      "signal_complete_events": 6778,
+      "liquidity_eligible_positive_reaction_events": 3363,
+      "positive_continuation_long": 2091,
+      "negative_failure_long": 1272
+    },
+    "window15|latency5": {
+      "registry_events": 7641,
+      "signal_complete_events": 6769,
+      "liquidity_eligible_positive_reaction_events": 3360,
+      "positive_continuation_long": 2089,
+      "negative_failure_long": 1271
+    },
+    "window30|latency0": {
+      "registry_events": 7641,
+      "signal_complete_events": 6503,
+      "liquidity_eligible_positive_reaction_events": 3172,
+      "positive_continuation_long": 1977,
+      "negative_failure_long": 1195
+    },
+    "window30|latency1": {
+      "registry_events": 7641,
+      "signal_complete_events": 6498,
+      "liquidity_eligible_positive_reaction_events": 3170,
+      "positive_continuation_long": 1975,
+      "negative_failure_long": 1195
+    },
+    "window30|latency3": {
+      "registry_events": 7641,
+      "signal_complete_events": 6491,
+      "liquidity_eligible_positive_reaction_events": 3165,
+      "positive_continuation_long": 1972,
+      "negative_failure_long": 1193
+    },
+    "window30|latency5": {
+      "registry_events": 7641,
+      "signal_complete_events": 6476,
+      "liquidity_eligible_positive_reaction_events": 3160,
+      "positive_continuation_long": 1969,
+      "negative_failure_long": 1191
+    }
+  },
+  "maximum_loaded_date": "2026-04-30",
+  "holdout_rows_loaded": 0
+}

@@ -1,0 +1,49 @@
+{
+  "local_earnings_candidates": 593,
+  "combined_unique_news_rows": 72787,
+  "explicit_news_event_clusters": 849,
+  "news_clusters_matched_to_local_earnings": 464,
+  "unmatched_news_clusters_added": 385,
+  "combined_candidates_before_mapping": 978,
+  "during_session_excluded": 4,
+  "unmapped_session": 7,
+  "not_point_in_time_qqq": 225,
+  "actionable_entry_after_cutoff": 0,
+  "eligible_registry_events": 742,
+  "eligible_symbols": 113,
+  "minimum_entry_session": "2024-07-11",
+  "maximum_entry_session": "2026-04-30",
+  "source_counts": {
+    "local_earnings_yfinance": 396,
+    "alpaca_benzinga_explicit_release": 346
+  },
+  "announcement_bucket_counts": {
+    "after_close": 469,
+    "premarket": 273
+  },
+  "monthly_counts": {
+    "2024-07": 40,
+    "2024-08": 53,
+    "2024-09": 9,
+    "2024-10": 48,
+    "2024-11": 42,
+    "2024-12": 12,
+    "2025-01": 24,
+    "2025-02": 64,
+    "2025-03": 13,
+    "2025-04": 36,
+    "2025-05": 58,
+    "2025-06": 6,
+    "2025-07": 45,
+    "2025-08": 44,
+    "2025-09": 10,
+    "2025-10": 49,
+    "2025-11": 40,
+    "2025-12": 12,
+    "2026-01": 24,
+    "2026-02": 62,
+    "2026-03": 10,
+    "2026-04": 41
+  },
+  "holdout_rows_loaded": 0
+}

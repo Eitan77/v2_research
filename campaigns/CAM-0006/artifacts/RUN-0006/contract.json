@@ -1,0 +1,18 @@
+{
+  "command": "python campaigns/CAM-0006/src/run0006.py --run0005-dir campaigns/CAM-0006/artifacts/RUN-0005 --extension-dir campaigns/CAM-0006/artifacts/RUN-0006/raw --output-dir campaigns/CAM-0006/artifacts/RUN-0006",
+  "resolved_defaults": {
+    "candidates": [
+      "all_state",
+      "vol_high"
+    ],
+    "extension_seconds": 120,
+    "additional_slippage_bps_per_side": [
+      0,
+      2,
+      5
+    ]
+  },
+  "executed_variant_count": 6,
+  "max_loaded_date": "2026-04-29",
+  "holdout_rows_loaded": 0
+}

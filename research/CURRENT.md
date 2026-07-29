@@ -47,6 +47,38 @@ Within a campaign, Codex may adjust holding periods, entries, exits, thresholds,
 
 Start a new campaign only when the core hypothesis, mechanism, information set, or strategy identity changes materially.
 
+### Hard process requirement
+
+The agent must not stop at a few broad variants or substitute its default
+research habits for the documented workflow. For every active campaign:
+
+- Build and use a checklist of the applicable governing instructions.
+- Verify any source-faithful baseline before interpreting it.
+- Diagnose weak results and attempt reasonable mechanism-consistent
+  improvements.
+- Investigate relevant timeframes, universes, assets, confirmations, filters,
+  indicators, sizing, risk, and execution choices.
+- Analyze results by period, symbol, event, leg, and portfolio component.
+- Treat concentration as both a risk and a possible source of a specialized
+  edge.
+- Test whether profitable stocks or events can be selected causally.
+- Report date, symbol, event, and row attrition caused by new fields,
+  indicators, joins, filters, or completeness requirements.
+- Stop execution when any test, schema, readiness, timing, or holdout
+  validation fails.
+- Reconcile the planned configuration with the actual command, resolved
+  defaults, executed variant count, and saved outputs before interpretation.
+- Do not promote, retire, or pivot while an obvious principled experiment
+  remains.
+
+The strategy may trade a single stock, a fixed stock set, a causal ranking
+universe, a changing point-in-time subset, ETFs, leveraged or inverse ETFs, a
+hybrid expression, or remain in cash. Select intelligently based on the
+mechanism and maximize credible net fixed-capital profit after realistic costs,
+risk, stability, capacity, and execution. Do not require broad participation
+when a concentrated edge is causally identifiable, and do not use full-sample
+winners as if they had been known in advance.
+
 ## Hard current risk constraint — direct short selling
 
 Until explicitly changed by the user:
@@ -70,9 +102,28 @@ These are reference objectives, not isolated pass/fail gates.
 
 **Purpose:** Find a recently effective strategy that produces unusually high and consistently positive monthly income.
 
+**Recent-regime evaluation:** Class A is explicitly a temporary, recent
+phenomenon profile. Judge its approximately 10% to 15% average-month objective
+over a representative recent period normally spanning **about 12 to 18
+months** before the sealed holdout. Twelve, fifteen, and eighteen months are
+useful views, but none is a hard cutoff or automatic pass/fail gate. Use AI
+judgment to decide whether the evidence reflects a genuine exploitable recent
+regime, considering consistency, drawdown, recovery, breadth, concentration,
+execution, and mechanism. A clearly justified causal regime-onset window
+inside or near that band may be more informative than an arbitrary exact
+endpoint; never choose the start merely because it maximizes historical
+returns. Do not dilute the recent objective by averaging it over the entire
+historical backtest. Older history remains mandatory context for mechanism,
+tail risk, regime change, and failure diagnosis, but weak old performance does
+not by itself disqualify a genuine recent money printer. A Class A claim must
+define causal activation, decay monitoring, and retirement logic because the
+opportunity is expected to be temporary.
+
 Reference objectives:
 
-- Average monthly net simple return: approximately **10% to 15%**
+- Average monthly net simple return over a representative recent 12-to-18-month
+  regime: approximately **10% to 15%**, interpreted as a reference objective
+  rather than a rigid numerical gate
 - Preferred standard maximum drawdown: **below 20%**
 - Preferred full drawdown-recovery time: **less than approximately one month**
 - Ideally no negative months in the main recent evaluation period
@@ -126,7 +177,7 @@ Intraday market-neutral, pairs, statistical-arbitrage, and relative-value strate
 
 | Profile | Primary value | Return objective | Preferred maximum drawdown |
 |---|---|---:|---:|
-| Recent Money Printer | Consistent exceptional recent income | 10%–15% monthly | Below 20% |
+| Recent Money Printer | Consistent exceptional recent income | Approximately 10%–15% monthly over a representative recent 12-to-18-month regime; AI judgment, not a hard gate | Below 20% |
 | High-Quality Overall Strategy | Strong standalone growth | About 50% annually | Below 10% |
 | Institutional Low-Risk Quant Sleeve | Stability, scaling, and combination | About 10% annually | About 2% |
 
@@ -158,3 +209,107 @@ The agent may research broadly, including:
 - Record every meaningful run compactly, but reserve full reviews for checkpoints.
 - Keep the ledger at the campaign level.
 - Do not add old conclusions to V2 memory without independently checking their underlying evidence.
+- Cache shared data, batch related experiments, and keep narration sparse to
+  conserve the user's limited token and compute budget. Efficiency must not
+  become incomplete research.
+- Before any checkpoint, promotion, retirement, or pivot, complete the
+  conclusion audit in `AGENTS.md` and `research/CONSTITUTION.md`.
+
+## Active V2 campaign
+
+`CAM-0001` completed in-sample development of recent leveraged-ETF directional
+persistence. Its adapted frozen specification is TQQQ/SOXL equal fixed-base
+weights when each has positive five-session momentum and QQQ is above a rising
+SMA20, entered next open and exited ten sessions later.
+
+It is not promoted. The neutral 15-month view averaged 8.59% net simple return
+per month with 12.70% drawdown and 85-day recovery; the favorable 12-month view
+averaged 10.55% but was a 98.7th-percentile rolling endpoint and concentrated
+in 19 decisions. SIP minute-bar latency held up, but required ETF SIP NBBO
+coverage was 0/45. Status is
+`development_complete_forward_confirmation_required`: do not tune further;
+obtain complete pre-cutoff ETF NBBO or collect genuinely prospective paper
+evidence. The sealed interval beginning 2026-05-01 remains inaccessible.
+
+`CAM-0002` completed and is retired for Strategy A. Its source-faithful
+intraday reversal lost money. A heavily adapted 15-minute residual-stock
+reclaim with a 4% target averaged 1.58% net simple return per month over the
+neutral 15-month view with 2.33% drawdown, but only 13 events and eight zero
+months. Lower shock thresholds increased frequency and destroyed the edge.
+No quote budget or holdout data was used; the sealed interval beginning
+2026-05-01 remains untouched.
+
+`CAM-0003` completed and is retired. Its source-faithful positive-morning SPY
+continuation lost 9.21%; all 54 timing/confirmation cells lost, zero of 810
+ETF/state cells survived the latest 12 months, and protected source-direction
+shorts also lost. The recent relationship is inverted rather than hidden by
+timing, source-emphasized ETF coverage, opening activity, or signal magnitude.
+No quote/auction budget or sealed data was used.
+
+`CAM-0004` completed and its adapted QQQ proxy branch is retired. Exact
+Brogaard-Han-Kim replication remains blocked by unavailable point-in-time
+S&P 500 June membership, exact causal characteristics, and source-equivalent
+midpoints; it was not silently proxied and the paper itself was not disproven.
+All unconditional adapted reversal variants lost gross. A prespecified
+high-volatility cumulative-residual state recovered a modest long-low rebound,
+but every protected short neighborhood lost. After concurrent-capital scaling,
+the best bounded residual model averaged only 0.95% net per month at 1 bp/side,
+had five negative months and 6.46% drawdown, and its top five profitable days
+exceeded total profit. No quote or sealed data was used.
+
+The broader Strategy A search is not exhausted. Begin a materially different
+campaign; do not retune CAM-0001 through CAM-0004 without genuinely new causal
+information or newly declared exact-source inputs.
+
+`CAM-0005` is complete with two frozen development sleeves, neither Type A.
+The causal q60/edge25 late-SMH reversal passed marketable SIP replay on all 134
+events. A capped rule that sizes low-volume events at 0.25 and SOXS at 0.75
+averaged 5.04% net simple return per month at 5 bp additional slippage per
+side, with 5.91% drawdown, five-day recovery, 13 positive and five negative
+months, positive product legs, and all three six-month blocks positive.
+However, it earns roughly half the reference return, remains adapted, and its
+older high-volume bar context had 36.24% drawdown and a losing inverse leg.
+No causal regime-onset rule survived. Status is
+`development_sleeves_frozen_not_type_a`: paper-observe only, no more tuning,
+no holdout access, and no capacity claim from unverified raw quote-size units.
+
+`CAM-0006` is complete with one frozen development sleeve, not Type A. A
+point-in-time QQQ long-stock rule combines official negative opening-gap
+absorption, elevated auction size, high prior QQQ volatility, strongest
+same-day reclaim, and strong first-minute participation. Fully covered
+first-ask/first-bid SIP replay plus 2 bp additional slippage per side averaged
+5.53% net simple return per month over 15 months with 9.83% drawdown, five-day
+recovery, 94 events across 59 symbols, three positive six-month blocks, three
+negative months, and three inactive months. Twenty thousand moving-block
+samples had a 4.34% median average month and only 0.05% reached 10%. Status is
+`development_sleeve_frozen_not_type_a`: paper-observe only; no more tuning,
+holdout access, live allocation, or capacity claim.
+
+`CAM-0007` is complete and retired for Strategy A. Public earnings reactions
+revealed after-close positive continuation and high-volatility negative-gap
+recovery, but the best overlap-aware combined book averaged only 3.16% per
+month over 15 months at 10 bp per side with 14.43% drawdown. Every worst exact
+symbol/event removal remained positive, yet zero of 20,000 recent moving-block
+samples reached a 10% average month. No quote replay or holdout access was
+used; execution work cannot rescue the missing alpha.
+
+`CAM-0008` is complete and retired for Strategy A. Explicit public analyst
+revisions produce a genuine failed-negative resilience premium: a one-minute
+positive reaction, three-minute delay, and ten-session long exit averaged
+2.63% per month over 15 months at 10 bp per side, with 17.70% drawdown, four
+negative months, 557 trades, and 108 symbols. All 439 capacity-aware removal
+tests remained positive, but zero of 20,000 recent block-bootstrap samples
+reached a 10% average month. No quote replay or holdout data was used.
+
+`CAM-0009` is complete and retired for Strategy A. Rapid 5-60-minute peer
+propagation failed. A corrected slower unhedged close-drift profile averaged
+4.21% per month over 15 months at 5 bp, with 10.71% drawdown and 11/15 positive
+months, but April 2025 earned 29.73%, removing it cuts the average to 2.39%,
+SMH hedges fail, and only 2/20,000 bootstrap paths reach 13%. No quote replay
+or holdout data was used.
+
+The broader active objective is to continue governed, materially distinct
+campaigns until two or three genuine Type-A candidates survive causal timing,
+fixed-base additive accounting, realistic net costs, monthly consistency,
+drawdown/recovery, concentration, robustness, and execution evidence. A
+campaign completion is not itself a candidate and does not end Strategy A.

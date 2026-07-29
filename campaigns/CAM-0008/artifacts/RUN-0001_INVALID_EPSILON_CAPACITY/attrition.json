@@ -1,0 +1,16 @@
+{
+  "registry_events": 7641,
+  "signal_complete_events": 7116,
+  "liquidity_eligible_signal_events": 7094,
+  "classified_leg_counts": {
+    "positive_failure_short": 2179,
+    "positive_continuation_long": 2169,
+    "negative_continuation_short": 1383,
+    "negative_failure_long": 1313,
+    "nan": 50
+  },
+  "standalone_events": 4732,
+  "earnings_confound_events": 2362,
+  "maximum_loaded_date": "2026-04-30",
+  "holdout_rows_loaded": 0
+}

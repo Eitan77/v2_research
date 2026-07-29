@@ -1,0 +1,118 @@
+run_id: RUN-0008
+campaign_id: CAM-0001
+parent_run_id: RUN-0007
+
+planned_at: "2026-07-28T21:19:20.6295399-07:00"
+status: completed
+
+change_from_parent: >-
+  Perform the selection-adjusted chronological, concentration, benchmark, and
+  decay-monitor audit on the balanced SMA20 rising bullish configuration.
+reason: >-
+  The configuration is the strongest honest expression after alpha, execution,
+  portfolio, universe, and inverse-leg diagnosis, but it is adapted from 171
+  prior variants and its favorable 12-month endpoint may be unusually lucky.
+expected_effect: >-
+  A genuine recent phenomenon should show multiple supportive recent
+  subperiods, tolerable decision concentration, positive event-bootstrap
+  expectancy, return beyond passive leveraged exposure, and a causal shadow
+  monitor that can suspend decay without being defined from a favorable date.
+
+configuration:
+  universe: "TQQQ and SOXL; QQQ confirmation"
+  signal: "Positive 5-session fund momentum; QQQ above and rising 20-session SMA"
+  decision_time: "Completed daily close"
+  entry: "Next open"
+  exit: "Open after 10 trading sessions"
+  direction: "Long only"
+  sizing: "Fixed base 1.0, equal weight among qualifying funds, no reinvestment"
+  filters:
+    candidate: "above and rising QQQ SMA20"
+    shadow_decay_monitors:
+      - "prior trailing 3-month shadow net P&L > 0"
+      - "prior trailing 6-month shadow net P&L > 0"
+  stops_or_risk_overlays: "None"
+  cost_model: "5 bps per side"
+  execution_model: "Next-open bar fill"
+
+short_selling:
+  direct_stock_or_etf_shorting_used: false
+  strictly_intraday_if_used: "N/A"
+  protective_stop_or_emergency_exit: "N/A"
+  forced_close_before_regular_session_end: "N/A"
+  overnight_direct_short_exposure_detected: false
+
+execution_contract:
+  command: >-
+    python campaigns/CAM-0001/src/audit_run0008.py
+    --cache campaigns/CAM-0001/artifacts/cache/bars_expanded_through_20260430.parquet
+    --output-dir campaigns/CAM-0001/artifacts/RUN-0008
+  expected_variant_count: 5
+  bootstrap_seed: 20260728
+  bootstrap_samples: 20000
+  output_paths:
+    - "artifacts/RUN-0008/diagnostics.json"
+    - "artifacts/RUN-0008/halfyears.csv"
+    - "artifacts/RUN-0008/rolling12.csv"
+    - "artifacts/RUN-0008/candidate_daily.csv"
+    - "artifacts/RUN-0008/candidate_trades.csv"
+    - "artifacts/RUN-0008/contract.json"
+
+completed_at: "2026-07-28T21:22:49.4231081-07:00"
+metrics_artifact: "artifacts/RUN-0008/diagnostics.json"
+results_summary:
+  net_full_period_simple_return: 3.737990
+  average_monthly_net_simple_return: "12m 0.105528; 15m 0.085919; 18m 0.061284"
+  average_calendar_year_net_simple_return: "See diagnostics.json"
+  standard_max_drawdown: "12m 0.128471; 15m 0.127050; 18m 0.340186; full 0.258301"
+  max_full_recovery_time_days: "12m 85; full 434"
+  negative_month_count: "3/12, 3/15, 5/18"
+  trade_or_event_count: "19 independent recent entries; 122 full"
+  average_capital_utilization: 0.662324
+  adverse_cost_net_simple_return: "RUN-0003: 20 bps/side retained >10% 12m average month"
+
+execution_reconciliation:
+  semantic_tests: "5 passed"
+  actual_command_matches_record: true
+  executed_variant_count: 5
+  expected_variant_count: 5
+  saved_outputs_match_record: true
+  loaded_max_date: "2026-04-30"
+  holdout_rows_loaded: 0
+  sample_attrition: >-
+    Candidate sample unchanged. Three/six-month shadow monitors reduced full
+    entries from 122 to 90/99; all zero months and entry counts are reported.
+
+factual_outcome: >-
+  The final fixed 12-month view is unusually favorable: it ranks at the 98.7th
+  percentile among 77 rolling 12-month endpoints, and only 2 endpoints jointly
+  achieved >=10% average month, <=3 negative months, and <20% drawdown. The
+  12-month candidate produced 126.63% net, 10.55% average and 11.24% median
+  month, three negative months, 12.85% drawdown, and 19 non-overlapping entry
+  decisions. The top decision supplied 25.6% and top five 87.0% of net.
+  Event-bootstrap 95% net interval was 32.6%-226.4% with 0.315% nonpositive
+  probability, but only 54.8% of resamples reached 10% average monthly and the
+  bootstrap does not correct the 171-variant selection. The 15-month view is
+  more representative: 8.59% average month, three negatives, and 12.70%
+  drawdown. The candidate improved risk versus unconditional fixed-notional
+  leveraged exposure (15m drawdown 12.70% versus 84.47%) but returned less
+  (8.59% versus 9.72% average month); in the favorable 12m, unconditional
+  exposure returned 17.03% average month at 16.31% drawdown. Shadow 3m/6m
+  decay gates added many zero months and did not improve recovery. The candidate
+  ended 5.60% below its April 27 equity peak; the longest recent recovery was
+  85 days.
+decision: >-
+  Do not freeze or promote yet. The mechanism and cost margin are real, but the
+  headline window is a near-extreme endpoint, contributor concentration is
+  high, the honest 15-month return is below the nominal objective, and recovery
+  remains too slow. Complete one broad price-stop audit and execution evidence
+  before the conclusion audit.
+next_question: >-
+  Can broad, realistically gap-filled protective stops shorten the 85-day
+  recovery without simply truncating the two-week continuation payoff?
+artifacts:
+  - "artifacts/RUN-0008/diagnostics.json (sha256 9ef5ede9b296dbe2d2f451854148680fbc24588bcca918750dc00891df0cab97)"
+  - "artifacts/RUN-0008/halfyears.csv (sha256 cf3b0375b1221de28fa4df949c2b6bb3ecc3017f9b6ff5077c16ed79251e13ef)"
+  - "artifacts/RUN-0008/rolling12.csv (sha256 255d76d25c70288203433ee2905ccb4a7c8ca5e3f7226c36c5fc67400ec23e26)"
+  - "artifacts/RUN-0008/contract.json (sha256 6ff64c275f1caac82e41672a89ba542d87622d6cfacf7201412e99a21993517b)"
+  - "src/audit_run0008.py (sha256 80d7cedfbdba552d80bbabe862fc6a88f6e9172a2d0288f240bb9449d6bc61ee)"

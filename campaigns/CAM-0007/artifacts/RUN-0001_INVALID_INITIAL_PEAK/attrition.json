@@ -1,0 +1,21 @@
+{
+  "registry_events": 742,
+  "signal_complete_events": 728,
+  "liquidity_eligible_signal_events": 720,
+  "absolute_gap_and_nonzero_reaction_events": 536,
+  "leg_counts": {
+    "protected_short_negative_continuation": 141,
+    "protected_short_positive_failure": 139,
+    "long_negative_failure": 130,
+    "long_positive_continuation": 126
+  },
+  "same_day_complete_eligible_events": 536,
+  "horizon_complete_eligible_events": {
+    "next_open": 528,
+    "three_close": 517,
+    "five_close": 516,
+    "ten_close": 505
+  },
+  "maximum_loaded_date": "2026-04-30",
+  "holdout_rows_loaded": 0
+}

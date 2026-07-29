@@ -8,6 +8,13 @@ The local data locations and date boundaries are recorded in `research/DATA_SOUR
 
 Reference source code and tests copied from the existing local projects are under `reference_code/`. Read `research/CODE_SOURCES.yaml` and `reference_code/README.md` before reusing them. Results, reports, runs, caches, credentials, and generated outputs were not copied.
 
+Local Alpaca credentials are stored in the gitignored `.env.local` file. The
+research agent may use them autonomously to acquire any bars, trades, quotes,
+or related market-data evidence needed for a campaign. Credentials must never
+be printed, copied into campaign artifacts, or committed. Existing governance
+still applies, including the sealed-holdout boundary unless the user explicitly
+authorizes holdout access for a frozen purpose.
+
 - `AGENTS.md` — operating instructions
 - `research/CONSTITUTION.md` — research principles and hard constraints
 - `research/CURRENT.md` — active objectives and strategy profiles

@@ -1,0 +1,28 @@
+{
+  "status": "passed",
+  "plan_hash_excluding_file_hash_line": "679e435ccb26c990090e87c63f57ca0969c4b91b671b9337f18f60cf41f01261",
+  "raw_auction_membership_rows": 46563,
+  "auction_status_counts": {
+    "missing_official_q": 140,
+    "official_q_without_matching_open": 99,
+    "selected": 46324
+  },
+  "selected_official_auctions": 46324,
+  "selected_symbols": 118,
+  "known_by_0931": 46322,
+  "complete_minute_paths": 23299,
+  "feature_complete_events": 23269,
+  "corporate_action_rejections": 28,
+  "minimum_date": "2024-07-01",
+  "maximum_loaded_date": "2026-04-30",
+  "holdout_rows_loaded": 0,
+  "expected_regular_minutes": 386,
+  "hashes": {
+    "official_auctions": "23f2a46837673a301d2c1cbafbda5e5bef68ac4abf15f27a53e6f2490110478f",
+    "auction_statuses": "ab5b2d7b6cc8e061fa98a293174c2eacfa8787eb53768bb6a34b9c63ed2947d9",
+    "daily_raw": "dc97a34df291cb3ec7f1ba4947e03ba8a4407b059d286acd25a5b38f9fabe617",
+    "regular_minutes": "83ec199233aa40346e377d8377cd31572503a599dfc5bed812749206aa1cf339",
+    "minute_coverage": "82bb8cc3613dfa6a275b90a43a38723f9bbc03d7aa237ba5d56ace1f72c24f38",
+    "event_readiness": "09e7453d29a1d36619ab5759ce938f86e55ac9c60ae24cf9b58a74ff2be9eb31"
+  }
+}

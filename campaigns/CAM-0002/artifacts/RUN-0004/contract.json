@@ -1,0 +1,23 @@
+{
+  "executed_variant_count": 21,
+  "expected_variant_count": 21,
+  "source_events_sha256": "a248fc84c4d338eb72d419c3a1a7827ae939dcb9970a5d276baaf613906b356b",
+  "entry_delays": [
+    1,
+    2,
+    5
+  ],
+  "holds": [
+    5,
+    10,
+    15,
+    20,
+    30,
+    45,
+    60
+  ],
+  "cost_bps_per_side": 10.0,
+  "loaded_max_date": "2026-04-29",
+  "holdout_rows_loaded": 0,
+  "price_rule": "raw minute open at offset; prior observed close/event price fallback"
+}

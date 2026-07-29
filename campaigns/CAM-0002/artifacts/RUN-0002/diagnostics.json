@@ -1,0 +1,26 @@
+{
+  "all_30": {
+    "events": 301,
+    "gross_sum": 0.6615318057934069,
+    "gross_mean": 0.0021977800856923814,
+    "median": 0.003766895634832901,
+    "positive_fraction": 0.5880398671096345,
+    "net_mean_10bps": 0.0001977800856923814
+  },
+  "all_60": {
+    "events": 301,
+    "gross_sum": -0.6304344698976295,
+    "gross_mean": -0.0020944666774007623,
+    "median": 0.00017299042786289576,
+    "positive_fraction": 0.5049833887043189,
+    "net_mean_10bps": -0.004094466677400762
+  },
+  "event_count": 301,
+  "symbols": 135,
+  "same_minute_clusters": 199,
+  "largest_same_minute_cluster": 25,
+  "top_1_positive_share": 0.05400167210743926,
+  "top_10_positive_share": 0.3069665304193107,
+  "loaded_max_date": "2026-04-29",
+  "holdout_rows_loaded": 0
+}

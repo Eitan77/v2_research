@@ -1,0 +1,13 @@
+{
+  "replicates": 20000,
+  "block_sessions": 5,
+  "seed": 9006,
+  "sessions": 312,
+  "q01_average_month": 0.004570669423054955,
+  "q05_average_month": 0.014122734738292628,
+  "median_average_month": 0.040871018131053295,
+  "q95_average_month": 0.07547759551963978,
+  "q99_average_month": 0.09295158652443479,
+  "probability_nonpositive": 0.0034,
+  "probability_at_least_13pct_month": 0.0001
+}

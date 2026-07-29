@@ -1,0 +1,78 @@
+run_id: RUN-0010
+campaign_id: CAM-0005
+parent_run_id: RUN-0009
+planned_at: "2026-07-29T03:44:00-07:00"
+status: completed
+
+change_from_parent: >-
+  Backcast the now-frozen q60/edge25 base and high-volume state, plus q50 and
+  q67 magnitude neighbors, through March 2023-October 2024 using the same
+  causal shifted thresholds, 15:59 bar-open entry, 09:34-complete exit, long
+  SOXL/SOXS expression, and 5/10 bp per-side bar costs. Compare the older
+  context with the declared November 2024-April 2026 recent regime.
+reason: >-
+  Strategy A may be a temporary recent phenomenon, but older history remains
+  mandatory context for mechanism, tails, and causal onset/decay logic. The
+  older interval was not used to select the q60/high-volume state and is
+  diagnostic backcast evidence, not untouched forward confirmation.
+expected_effect: >-
+  Supportive older behavior would strengthen mechanism durability; weak older
+  behavior would require an honest recent-regime label and causal activation
+  rule. Severe adverse tails or sign reversal would weaken or retire the
+  development sleeve even if recent results remain positive.
+
+configuration:
+  filters: ["q50_edge25", "q60_edge25", "q67_edge25", "q60_edge25_volume_high50"]
+  older_context: ["2023-03-01", "2024-10-31"]
+  recent_context: ["2024-11-01", "2026-04-30"]
+  entry: "15:59 minute open"
+  exit: "Next session 09:34 minute close"
+  cost_bps_per_side: [5, 10]
+  adjustment: "Official split-adjusted factor applied in readiness"
+  execution_label: "Bar-stage historical context only; no older quote claim"
+  expected_variant_count: 8
+
+execution_contract:
+  command: >-
+    python campaigns/CAM-0005/src/run0010.py
+    --features-path campaigns/CAM-0005/artifacts/RUN-0002/features.parquet
+    --minutes-path campaigns/CAM-0005/artifacts/readiness/targeted_minutes.parquet
+    --output-dir campaigns/CAM-0005/artifacts/RUN-0010
+  expected_variant_count: 8
+
+completed_at: "2026-07-29T03:48:00-07:00"
+factual_outcome: >-
+  All eight bar-context variants reconciled with zero holdout. The q60/edge25
+  base was positive but weak before the recent window: at 5 bp it averaged
+  2.53% per month over March 2023-October 2024, with eight negative months,
+  46.43% drawdown, 188-day recovery, +54.70% from SOXL and -4.14% from SOXS.
+  In the recent bar window it averaged 6.58%, with five negative months and
+  17.24% drawdown. The frozen high-volume state averaged 1.62% in older
+  history, with seven negative and two zero months, 36.24% drawdown, an
+  unresolved ending drawdown, +54.14% SOXL and -21.76% SOXS. Its recent bar
+  view improved to 5.79% average month, three negative and two zero months,
+  6.08% drawdown, five-day recovery, and positive contributions from both
+  product legs. Q50/q67 neighbors show the same older weakness; q67 was
+  approximately flat at 10 bp in older history.
+decision: >-
+  Treat the q60/high-volume sleeve strictly as a recent-regime development
+  result. Older history supports the sign of the bull-leg mechanism but reveals
+  severe historical drawdown, slow or unresolved recovery, and adverse inverse
+  contribution. It cannot be promoted as durable or genuine Type A. The prior
+  causal activation experiments could not identify the onset before outcomes,
+  so no retroactive regime start is accepted.
+next_question: >-
+  Within the fixed 1.0 gross-exposure cap, do causal volume-tier,
+  signal-strength, or asymmetric inverse-leg allocations offer a superior
+  return-consistency-drawdown tradeoff, or do they only reduce an already
+  below-target return?
+artifacts:
+  - "artifacts/RUN-0010/positions.parquet"
+  - "artifacts/RUN-0010/variants.csv"
+  - "artifacts/RUN-0010/monthly.csv"
+  - "artifacts/RUN-0010/contract.json"
+artifact_hashes:
+  positions_parquet: "4e85b8a824b626df7c901c55b4f6dba8115bb6431819b3193a56c97a22a6c467"
+  variants_csv: "5a1c030b1173abb4e44d568b78b1814499a31b9b3db19ddb94fe69ccacc858da"
+  monthly_csv: "9f264b4f503e231cddac92d1c856aeab1a4aef4363c425b26c4342c351fa61bf"
+  contract_json: "63615015e5489d874ebde71346b931ff0f3a40f71e6f7865fe056fcbb4625f2c"

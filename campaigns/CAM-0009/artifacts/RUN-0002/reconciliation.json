@@ -1,0 +1,19 @@
+{
+  "status": "passed",
+  "run_id": "RUN-0002",
+  "expected_variant_count": 2592,
+  "executed_variant_count": 2592,
+  "parent_candidates": 1300,
+  "frozen_configuration_hash": "bb15bd2874456359a1a80c769fc4823faebc91f6fa1b500660b065551f698770",
+  "input_hashes": {
+    "parent_trade_details": "79f79c1ce40e4cdbc812ac976e75e237f0d44591a97e4389d25a2ca6212868cd",
+    "minute": "a142c4f9b023ab74b903a7e4ea6c5cfb0d0da58e6bd7f8f9c5c22ce9fa6395ce"
+  },
+  "executed_code_hashes": {
+    "run0002.py": "c3f61e0d8ef7357ff96372d0c809754d75a3fe2ca8eebbac7bc5609fd261a403",
+    "cam0009.py": "cad889dd129b79e627e123ddd05ec7173aacf50af5f80d6601484c6581a7d2e9",
+    "run0001.py": "a6195f0b4b84438bc2e19f4e1c3c21e3cc869f924b2f30847b0539bd37f4ff7c"
+  },
+  "maximum_loaded_date": "2026-04-30",
+  "holdout_rows_loaded": 0
+}

@@ -1,0 +1,13 @@
+{
+  "status": "passed",
+  "event_count": 232,
+  "quote_complete_events": 232,
+  "trade_complete_events": 232,
+  "late_entry_quote_events_over_10s": 11,
+  "late_exit_quote_events_over_10s": 1,
+  "maximum_entry_delay_ms": 32673.404,
+  "maximum_exit_delay_ms": 20767.585,
+  "max_session": "2026-04-29",
+  "holdout_rows_loaded": 0,
+  "interpretation": "Quotes after 10 seconds are actual delayed fills and do not establish 09:31 or final-target immediacy."
+}

@@ -1,0 +1,64 @@
+run_id: RUN-0002
+campaign_id: CAM-0003
+parent_run_id: RUN-0001
+planned_at: "2026-07-28T23:21:00-07:00"
+status: completed
+
+change_from_parent: >-
+  Decompose the morning signal into overnight, opening-session, and combined
+  returns; compare 15/30/60-minute morning and closing intervals with and
+  without same-length positive pre-close confirmation.
+reason: >-
+  RUN-0001 found an inverted recent source slope. The paper's mechanism may now
+  reside in overnight news, the cash-open response, or a shifted boundary
+  interval, while its joint r12 signal may filter late-day reversals.
+expected_effect: >-
+  A surviving information-diffusion effect should be positive across adjacent
+  morning/closing intervals and improve under causal same-sign pre-close
+  confirmation without collapsing the sample.
+
+configuration:
+  instrument: "SPY"
+  morning_components: ["combined_previous_close", "overnight_to_open", "open_session"]
+  morning_intervals_minutes: [15, 30, 60]
+  closing_holds_minutes: [15, 30, 60]
+  confirmations: ["none", "positive_preclose_same_length"]
+  signal: "long when selected morning component return > 0"
+  cost_bps_per_side: 2
+  variants: 54
+  accounting: "fixed capital 1.0, additive P&L"
+
+execution_contract:
+  command: >-
+    python campaigns/CAM-0003/src/run0002.py
+    --output-dir campaigns/CAM-0003/artifacts/RUN-0002
+  expected_variant_count: 54
+  output_paths:
+    - "artifacts/RUN-0002/daily_features.parquet"
+    - "artifacts/RUN-0002/interval_grid.csv"
+    - "artifacts/RUN-0002/contract.json"
+    - "artifacts/RUN-0002/diagnostics.json"
+
+completed_at: "2026-07-28T23:25:00-07:00"
+factual_outcome: >-
+  All 54 interval/component/confirmation cells executed with zero feature
+  attrition and zero holdout rows. Every cell lost at 2 bps per side. The
+  least-bad representative result (15-minute open-session signal, 30-minute
+  close hold, positive same-length pre-close confirmation) still averaged
+  -0.063% per month over 15 months and -0.141% over 12 months, with eight of
+  15 months negative. Combined previous-close and overnight signals were
+  consistently worse. No modern interval migration or r12 rescue appeared.
+decision: >-
+  Reject SPY interval/component migration as a rescue. Test the source's
+  cross-ETF pervasiveness and causal high opening-volume/volatility states,
+  which are its strongest mechanism-predicted conditions, before considering
+  the core effect unsupported.
+next_question: >-
+  Does recent intraday momentum survive in another broad/sector ETF or only on
+  causally high opening-volume/volatility days?
+artifacts:
+  - "artifacts/RUN-0002/daily_features.parquet (sha256 0f314fd3f11c9cbb2d8807f57ac11aea514ce7c9354ca301906692c7f843e939)"
+  - "artifacts/RUN-0002/interval_grid.csv (sha256 5551c549fc84bed9a19390f14a5448e00a95e1134a9a4d54e85facdcde633bf8)"
+  - "artifacts/RUN-0002/contract.json (sha256 e64a0e6d3757fb19d64bf6888afe6807d5591f1740d30d55bd84b215458112bc)"
+  - "artifacts/RUN-0002/diagnostics.json (sha256 8364bcd06adc0c2ad731f9a4bbc4acd38480c8b04906555524ad746a78d24442)"
+  - "src/run0002.py (sha256 30f29fda9d45119af4d1114b3fb671a369726800e50aae33e17f6a0f3b5fc454)"

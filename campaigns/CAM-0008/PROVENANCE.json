@@ -1,0 +1,56 @@
+{
+  "campaign_id": "CAM-0008",
+  "created_at": "2026-07-29T06:00:00-07:00",
+  "workspace": "C:/Users/decla/Desktop/AlgoResearch/v2_research",
+  "declared_catalog": "D:/AlgoResearch/data/catalog.duckdb",
+  "local_sources": [
+    "catalog.news",
+    "catalog.qqq_pit_membership_daily",
+    "catalog.bars_1m",
+    "catalog.bars_1d",
+    "catalog.calendar"
+  ],
+  "remote_source_if_readiness_requires": {
+    "provider": "Alpaca market-data news",
+    "scope": "118-symbol point-in-time QQQ union, 2025-01-03 through 2026-04-30 only",
+    "credentials": ".env.local",
+    "credentials_copied_or_printed": false
+  },
+  "preplan_feasibility_only": {
+    "local_news_rows": 94820,
+    "local_news_min_timestamp": "2013-04-11T18:23:54",
+    "local_news_max_timestamp": "2025-01-02T23:17:56",
+    "point_in_time_qqq_union_symbols_2024_07_through_2026_04": 118,
+    "note": "Schema and boundary counts only; no detector hits, returns, rankings, or strategy outcomes inspected before PLAN freeze."
+  },
+  "discovery_cutoff": "2026-04-30",
+  "sealed_holdout_start": "2026-05-01",
+  "holdout_access_authorized": false
+  ,
+  "targeted_news_pull": {
+    "status": "passed_after_one_process_timeout",
+    "symbol_union_count": 118,
+    "usable_rows": 49472,
+    "provider_out_of_window_rows_rejected": 3,
+    "maximum_created_at_utc": "2026-05-01T03:41:35Z",
+    "maximum_local_date": "2026-04-30",
+    "holdout_rows_requested": 0
+  },
+  "detector_audit": {
+    "status": "passed",
+    "detected_reviewed": 90,
+    "false_positives": 0,
+    "near_miss_rejections_reviewed": 40,
+    "incorrect_rejections_under_frozen_contract": 0,
+    "recall_claim": false
+  },
+  "daily_split_readiness_adaptation": {
+    "reason": "Local catalog has raw but not complete split-adjusted daily lineage for the 117 event-registry symbols.",
+    "scope": "117 CAM-0008 event-registry symbols only, 2024-05-01 through 2026-04-30",
+    "implementation": "Reused and revalidated campaigns/CAM-0007/src/pull_daily_split.py as generic infrastructure.",
+    "rows": 57239,
+    "maximum_loaded_date": "2026-04-30",
+    "holdout_rows_loaded": 0,
+    "disclosure": "The frozen PLAN named remote news and exact execution windows but did not anticipate missing adjustment lineage. This pre-performance adaptation is authorized by the user's targeted-missing-data instruction and is not an outcome-driven strategy change."
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "command": "python campaigns/CAM-0004/src/run0004.py --parent-dir campaigns/CAM-0004/artifacts/RUN-0002 --outcomes-path campaigns/CAM-0004/artifacts/RUN-0003/outcomes.parquet --output-dir campaigns/CAM-0004/artifacts/RUN-0004",
+  "resolved_defaults": {
+    "K": [
+      1,
+      2,
+      3,
+      4,
+      6
+    ],
+    "M": [
+      1,
+      2,
+      3,
+      4,
+      6
+    ],
+    "breadth": [
+      "decile",
+      "quintile"
+    ],
+    "executions": [
+      "source_cc",
+      "actionable_oc"
+    ],
+    "states": [
+      "all",
+      "high_noise",
+      "high_market_vol"
+    ],
+    "cost_bps_per_side": 0
+  },
+  "executed_variant_count": 300,
+  "output_paths": [
+    "portfolio_decisions.parquet",
+    "variants.csv",
+    "monthly.csv",
+    "contract.json",
+    "diagnostics.json"
+  ]
+}

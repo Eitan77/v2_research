@@ -1,0 +1,113 @@
+campaign_id: CAM-0003
+title: Morning-information to closing-flow intraday momentum
+purpose_profile: "A. Recent Money Printer"
+
+core_hypothesis: >-
+  Information revealed overnight and during the first half-hour is only partly
+  incorporated at the open. Informed traders and intraday liquidity providers
+  concentrate activity near both market boundaries, so a positive morning
+  market move predicts renewed same-direction buying in the closing half-hour.
+mechanism: >-
+  Late-informed trading, U-shaped institutional execution, and forced covering
+  by day traders create positive dependence between the first and last
+  half-hours. The mechanism predicts stronger continuation after positive
+  morning returns, high causal opening volatility/volume, and on broad equity
+  ETFs with economically meaningful opens and closes.
+material_difference_from_prior_campaigns: >-
+  CAM-0003 is daily-frequency, intraday time-series continuation driven by
+  overnight/morning information and closing flows. CAM-0001 was multi-session
+  leveraged-ETF continuation; CAM-0002 was cross-sectional sell-shock reversal.
+
+primary_source:
+  citation: >-
+    Gao, Han, Li, and Zhou (2015), Intraday Momentum: The First
+    Half-Hour Return Predicts the Last Half-Hour Return.
+  local_pdf: "artifacts/source/gao_han_li_zhou_intraday_momentum.pdf"
+  pdf_sha256: "050d5680d1424a5f53aeb175de283bc796b130be3874abf319aa1980941cc374"
+  pages: 44
+  source_contract: >-
+    SPY transaction prices from 1993-2013; first half-hour return from prior
+    4:00pm close to 10:00am; last half-hour return from 3:30pm to 4:00pm.
+    Time the last half-hour long when the first half-hour return is positive
+    and short otherwise, closing at the same-day close. The joint version also
+    requires the 3:00-3:30 return to have the same sign. Effects are stronger
+    for positive morning returns and high within-year opening volume/volatility.
+    The paper uses the 3:30 ask/bid and the unique closing clearing price for
+    transaction-cost analysis.
+  source_component_used: >-
+    Start with the source-faithful positive-morning long component and cash
+    otherwise. The paper's negative-signal short lacks a protective stop and
+    cannot be executed under current hard rules until an intraday stop and
+    emergency exit are frozen and realistically modeled.
+
+recent_profile:
+  standard_views:
+    - "2024-11-01 through 2026-04-30"
+    - "2025-02-01 through 2026-04-30"
+    - "2025-05-01 through 2026-04-30"
+  representative_policy: >-
+    Use the neutral 15-month view unless a causal observable supports a
+    different onset. Inspect all monthly returns, drawdown/recovery, daily and
+    macro-event concentration, ETF contribution, utilization, and execution.
+  objective: >-
+    Roughly 10%-15% average monthly net fixed-capital simple return over an
+    honestly representative recent regime, with credible execution and no
+    leverage used to rescue weak unlevered alpha.
+  older_history_role: "Mechanism, decay, tail, and regime diagnostic only."
+
+starting_implementation:
+  universe: "SPY source-faithful starting instrument"
+  first_half_hour_return: >-
+    Previous XNYS regular-session last-minute close to the completed 09:59
+    minute close, approximating the source's 4:00pm-to-10:00am transaction
+    return.
+  decision_time: "10:00am; signal is fully known hours before entry"
+  entry: "15:30 raw SIP minute open"
+  exit: >-
+    15:59 raw SIP minute close as the efficient bar approximation to the 4:00pm
+    closing price. Official closing/auction trades are required for a close or
+    strong candidate.
+  signal: "Long when the first-half-hour return is positive; cash otherwise"
+  sizing: "Full original capital 1.0 while active; additive P&L; no reinvestment"
+  cost_model: "2 bps per side base for SPY; 5 and 10 bps per side adverse screens"
+  execution_model: >-
+    Bars are an efficient screen. A close or strong candidate requires SIP NBBO
+    at entry and official/last-sale closing evidence, with a process-justified
+    latency rather than a universal delay.
+
+main_questions:
+  - "Does the exact positive-morning SPY component persist net in 2024-2026?"
+  - "Is predictability in overnight information, the opening half-hour, or both?"
+  - "Do causal opening volatility/volume and the 3:00-3:30 return strengthen it?"
+  - "Does it generalize across broad/sector ETFs and unleveraged underlyings?"
+  - "Can leveraged ETF expression add magnitude only after unleveraged alpha survives?"
+  - "Can daily frequency create consistent recent income without episode concentration?"
+
+adaptation_policy:
+  allowed:
+    - "15/30/45/60-minute opening and closing intervals"
+    - "overnight versus open-session decomposition"
+    - "positive sign and broad causal magnitude neighborhoods"
+    - "causal opening volume/volatility, market state, and 3:00-3:30 confirmation"
+    - "broad, sector, and leveraged ETF expressions after unleveraged verification"
+    - "entry/exit latency, costs, quote/auction replay, and capacity"
+    - "strictly intraday negative-signal component only with frozen stop/emergency and pre-close liquidation"
+  new_campaign_required:
+    - "cross-sectional individual-stock momentum as the primary identity"
+    - "multi-session or overnight holding"
+    - "sell-shock reversal"
+    - "news/text/options data as the primary signal"
+
+hard_constraints:
+  fixed_capital_base: 1.0
+  reinvest_pnl: false
+  discovery_cutoff: "2026-04-30"
+  sealed_holdout_start: "2026-05-01"
+  holdout_access_authorized: false
+  starting_component_direct_short: false
+  leverage_policy: "Never use product/account leverage to rescue weak base alpha"
+  quote_budget_policy: "Only close, strong, or execution-questionable bar candidates"
+
+status: frozen
+frozen_at: "2026-07-28T23:12:00-07:00"
+file_hash: "sha256 excluding file_hash line: e9ab7155b38bc5fa4d540d661f964707e72e8e0e9d1f2fe381e58b46d9007eb5"

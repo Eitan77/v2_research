@@ -1,0 +1,107 @@
+campaign_id: CAM-0007
+run_id: RUN-0004
+parent_run: RUN-0003
+status: completed
+frozen_at: "2026-07-29T05:38:00-07:00"
+role: "Missing exit combination and capacity-allocation stress test"
+adaptation_label: "development-selected from RUN-0002 and RUN-0003"
+
+observed_parent_weakness: >-
+  RUN-0003's combined grid omitted the newly observed seven-to-nine-session
+  plateau of the after-close positive sleeve. Return increased with position
+  cap but event coverage fell, and the best p4/n8 book remained only 3.16%
+  monthly with a negative first block.
+question: >-
+  Does combining the two independently observed seven-to-nine-session payoff
+  clocks produce a robust improvement, or does any apparent gain require
+  extreme single-event concentration or a favorable capacity-allocation
+  accident?
+reason: >-
+  Testing the omitted neighbor lattice is mandatory before stopping. Shared
+  equal capacity is compared with a causal strength-priority stress test and a
+  half-capital reservation per sleeve so portfolio construction, event alpha,
+  and concentration remain separable.
+expected_effect: >-
+  A robust combined mechanism should form a broad p7-p9/n7-n9 plateau, survive
+  10:05 entry and 20 bp/side, and remain useful under sleeve-reserved capital.
+  Returns that appear only at cap67-cap100 or strength priority should be
+  rejected as concentration-driven.
+
+frozen_configuration:
+  sleeves: "Identical causal filtered sleeves and feature timing to RUN-0003"
+  positive_close_horizons_inclusive: [7, 8, 9]
+  negative_close_horizons_inclusive: [7, 8, 9]
+  entry_minutes: ["10:00", "10:01", "10:05"]
+  costs_bps_per_side: [10, 20]
+  shared_capacity_position_caps: [0.33, 0.50, 0.67, 1.00]
+  shared_capacity_rules:
+    equal_cohort: >-
+      Equal available capacity across the entry cohort, bounded by the cap.
+    strength_priority: >-
+      Sequentially allocate available capacity by descending
+      abs(gap_return)+first30_return, bounded by the cap; this is causal but
+      explicitly a concentration stress test.
+  reserved_half_capacity:
+    sleeve_gross_budget: 0.50
+    position_caps: [0.25, 0.50]
+    allocation: "Equal cohort within each sleeve; unused sleeve budget stays cash."
+  fixed_constraints:
+    maximum_total_gross: 1.0
+    capital_base: 1.0
+    reinvest_pnl: false
+    accounting: "fixed-size additive marked-to-market"
+  expected_variant_count:
+    shared_equal_and_strength: 432
+    reserved_half: 108
+    total: 540
+
+required_outputs:
+  - "540/540 reconciliation with exact gross exposure"
+  - "Full neighbor topology by horizon, latency, cost, cap, and allocation rule"
+  - "Chronological blocks, months, drawdown/recovery, and contribution sensitivity"
+  - "Explicit determination whether concentration is improving alpha or merely scaling selected events"
+  - "Go/no-go gate for adversarial validation and quote replay"
+
+result:
+  validation: "passed"
+  executed_variant_count: 540
+  strongest_10bp_variant:
+    variant_id: "equal_cohort__p7_n8__1000__10bp__cap50"
+    allocated_trades: 65
+    symbols: 45
+    recent_15m_average_month: 0.02914415277309163
+    recent_12m_average_month: 0.03965253027963877
+    full_average_month: 0.016545448739092063
+    recent_15m_months: "10 positive / 5 negative / 0 inactive"
+    maximum_drawdown: 0.15374427727430362
+    recovery_days: 269
+    top5_event_positive_share: 0.34735789243521625
+    full_return_without_top_symbol: 0.2602182077075537
+  concentration_stress:
+    equal_cap33_best_average_month: 0.027598
+    equal_cap67_best_average_month: 0.024167
+    equal_cap100_best_average_month: 0.014827
+    equal_cap100_drawdown: 0.347539
+    strength_cap33_best_average_month: 0.028235
+    strength_cap100_best_average_month: 0.006093
+    strength_cap100_full_average_month: -0.008698
+    strength_cap100_drawdown: 0.368330
+  reserved_capacity:
+    best_10bp_average_month: 0.028642
+    best_20bp_average_month: 0.026842
+    interpretation: >-
+      Reserving half capital per sleeve remains profitable but does not improve
+      the prior shared-capacity maximum.
+  diagnosis: >-
+    The omitted p7-p9/n7-p9 lattice is broadly positive but does not exceed
+    RUN-0003's p4/n8 recent result. Scaling beyond cap50 sharply worsens return,
+    drawdown, coverage, and concentration; strength priority is not a hidden
+    alpha source. The mechanism has a real but modest event premium whose
+    credible ceiling is far below Type A under gross<=1.
+  artifacts: "artifacts/RUN-0004/"
+decision: >-
+  Do not promote. Freeze a small adversarial validation set from the recent,
+  full-history, and lower-concentration profiles. Use exact leave-one-out,
+  moving-block bootstrap, fold/rolling diagnostics, and existing 20bp/10:05
+  execution stresses. If no candidate approaches the Type-A return gate, stop
+  without quote replay and retire the campaign.

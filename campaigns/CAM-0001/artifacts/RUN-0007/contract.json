@@ -1,0 +1,10 @@
+{
+  "executed_variant_count": 10,
+  "expected_variant_count": 10,
+  "expanded_readiness_status": "passed",
+  "loaded_frame_sha256": "b12e91479edf9aa1c55300f39f0103ff7079252cb4acd8ffcfe4ca69171a920b",
+  "loaded_max_date": "2026-04-30",
+  "holdout_rows_loaded": 0,
+  "direct_shorts_used": false,
+  "inverse_note": "SQQQ/SOXS are purchased long; no direct short position exists."
+}

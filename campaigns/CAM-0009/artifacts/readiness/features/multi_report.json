@@ -1,0 +1,48 @@
+{
+  "status": "passed",
+  "lengths": {
+    "1": {
+      "complete_stock_rows": 3115473,
+      "point_in_time_member_rows": 2979578,
+      "entry_complete_member_rows": 2931859,
+      "volume_state_complete_member_rows": 2880128,
+      "control_return_missing_member_rows": 95,
+      "holdout_rows_loaded": 0,
+      "sha256": "a3c17ef9e0b8094d8ee0bdaaa4330c7a5d6e241213237a8e6feb593ab1418d11"
+    },
+    "10": {
+      "complete_stock_rows": 283792,
+      "point_in_time_member_rows": 277570,
+      "entry_complete_member_rows": 268830,
+      "volume_state_complete_member_rows": 267625,
+      "control_return_missing_member_rows": 71,
+      "holdout_rows_loaded": 0,
+      "sha256": "cb34fa2621d24aa243915607d25f2cad2d020093bcc39db1e18c7e026ba85569"
+    },
+    "15": {
+      "complete_stock_rows": 185169,
+      "point_in_time_member_rows": 181550,
+      "entry_complete_member_rows": 173462,
+      "volume_state_complete_member_rows": 174920,
+      "control_return_missing_member_rows": 83,
+      "holdout_rows_loaded": 0,
+      "sha256": "c030190f15cd9b01e32a21d5b81f0a1a657856fd2d66b54eed6b44182661e6d2"
+    },
+    "30": {
+      "complete_stock_rows": 89088,
+      "point_in_time_member_rows": 87604,
+      "entry_complete_member_rows": 80119,
+      "volume_state_complete_member_rows": 84272,
+      "control_return_missing_member_rows": 67,
+      "holdout_rows_loaded": 0,
+      "sha256": "a1ec6812d42438ee9d257fb0b043b76091580e073e45500926b40a8321863858"
+    }
+  },
+  "input_hashes": {
+    "minute": "a142c4f9b023ab74b903a7e4ea6c5cfb0d0da58e6bd7f8f9c5c22ce9fa6395ce",
+    "membership": "8d7787044c6e7d449a0bf3f9af889947f6a218d1cd09f9176b23638515ec091d",
+    "daily_state": "4c8499cef5dcccaf529b117cb05ff8c763c973ac1c3d8300734e6d78fab82832"
+  },
+  "maximum_loaded_date": "2026-04-30",
+  "holdout_rows_loaded": 0
+}

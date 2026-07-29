@@ -1,0 +1,119 @@
+run_id: RUN-0002
+campaign_id: CAM-0006
+parent_run_id: RUN-0001
+planned_at: "2026-07-29T04:48:00-07:00"
+status: completed
+
+change_from_parent: >-
+  Hold the only coherent parent branch fixed—long absorption after a negative
+  opening gap, entered 09:31—and test a bounded causal state neighborhood:
+  negative gap tails 2/5/10/15%, first-minute reclaim fractions
+  0/10/25/50%, and seven auction states (all; same-day auction-participation
+  ranks q50/q67/q80; or auction-dollar value at least 1.0/1.5/2.0 times its
+  shifted prior-60-event symbol median). Test 12:00 and final exits at
+  5/10/20 bp per side.
+reason: >-
+  RUN-0001 found that broad portfolios are cost-negative, but event
+  decomposition identified a mechanism-consistent gradient: the most negative
+  gaps, higher opening-auction participation, and stronger immediate reclaim
+  have higher gross long expectancy. This run challenges whether those
+  observables define a stable net region or merely isolate a few windfalls.
+expected_effect: >-
+  A genuine absorption state should survive adjacent gap, reclaim, and auction
+  thresholds; 10-20 bp costs; both 12:00 and final exits; all three
+  chronological blocks; broad symbol/event contribution; and conservative
+  post-signal exit attrition. A lone extreme cell or top-event-dependent
+  maximum will not qualify.
+
+configuration:
+  direction: "Long negative-gap absorption only"
+  decision_time: "09:31 after completed first minute"
+  entry: "09:31 minute open"
+  gap_tail_each_side: [0.02, 0.05, 0.10, 0.15]
+  minimum_absolute_gap: 0.005
+  minimum_reclaim_fraction: [0.0, 0.10, 0.25, 0.50]
+  auction_states:
+    - "all"
+    - "participation_q50"
+    - "participation_q67"
+    - "participation_q80"
+    - "anomaly_ge1"
+    - "anomaly_ge1_5"
+    - "anomaly_ge2"
+  auction_anomaly:
+    formation: "Prior 60 official symbol auctions"
+    minimum: 40
+    shifted: true
+  exits: ["12:00_open", "calendar_close_minus_5m_open"]
+  cost_bps_per_side: [5, 10, 20]
+  maximum_gross_exposure: 1.0
+  expected_variant_count: 672
+
+execution_contract:
+  command: >-
+    python campaigns/CAM-0006/src/run0002.py
+    --signals-path campaigns/CAM-0006/artifacts/RUN-0001/signals.parquet
+    --event-readiness-path campaigns/CAM-0006/artifacts/readiness/event_readiness.parquet
+    --output-dir campaigns/CAM-0006/artifacts/RUN-0002
+  expected_variant_count: 672
+
+pre_completion_reconciliation:
+  invalid_attempt: >-
+    The first execution inherited RUN-0001's precomputed absorption_signal,
+    which already imposed a 10% gap tail. Consequently, planned 15% cells were
+    duplicates of 10% cells and the executed scope did not match this frozen
+    record. No result was interpreted or used for strategy judgment.
+  preserved_at: "artifacts/RUN-0002_INVALID_parent_tail"
+  correction: >-
+    Reconstruct long negative-gap absorption directly from raw_gap <= -0.5%
+    and completed first_minute_return > 0, then apply each planned causal
+    gap-rank threshold independently.
+  timestamp_note: >-
+    The planned_at text was transcribed one hour ahead of the host clock.
+    Filesystem evidence shows this frozen record existed at 03:16:33, before
+    the invalid attempt at 03:25:58 and corrected attempt at 03:38:19. The
+    original planned_at field is preserved rather than silently rewritten.
+
+completed_at: "2026-07-29T03:38:19-07:00"
+factual_outcome: >-
+  The corrected contract reconciled all 672 planned variants, expanded the
+  15% tail beyond the 10% parent gate, loaded through 2026-04-30, and loaded
+  zero holdout rows. No cell reached the Type-A return reference: maximum
+  15-month average net month was 6.31% at 5 bp, 5.02% at 10 bp, and 2.77% at
+  20 bp per side. At 10 bp, 22 cells were positive in all three six-month
+  blocks. The coherent neighborhood was a 5%-15% negative-gap tail, at least
+  25% first-minute reclaim, elevated auction anomaly/participation, and final
+  exit. Its strongest broad cell (10% tail, reclaim 25%, anomaly >= 1, final,
+  10 bp) averaged 5.02% over 15 months and 4.11% over 12 months, returned
+  57.45% over 18 months, had 20.38% drawdown, 7 negative months, 7-day maximum
+  recovery, 457 events across 105 symbols, 66.62% top-five-day share, and
+  19.41% top-symbol share. The less aggressive 5% tail neighbor averaged
+  4.50% over 15 months with 11.65% drawdown and 28-day recovery. The final
+  horizon was consistently better than noon, but the middle chronological
+  block supplied most profit and 20 bp results became highly concentrated.
+decision: >-
+  Do not promote or quote-replay a Type-A candidate. Preserve the genuine
+  causal absorption region as a development lead and continue within the
+  campaign. Diagnose whether 09:31-09:35 entry latency, mechanism-consistent
+  strength/breadth sizing, and full-path risk exits can improve consistency
+  and drawdown without turning the search into maximum-cell selection.
+next_question: >-
+  Across a small prespecified neighborhood anchored on the 5%-15% gap tails,
+  25% reclaim, and elevated auction states, do entry latency, causal sizing,
+  and protective risk rules produce a distributed 10 bp net improvement that
+  survives chronological blocks and adverse 20 bp costs?
+artifacts:
+  - "artifacts/RUN-0002/enriched_signals.parquet"
+  - "artifacts/RUN-0002/variants.csv"
+  - "artifacts/RUN-0002/monthly.csv"
+  - "artifacts/RUN-0002/blocks.csv"
+  - "artifacts/RUN-0002/positions.parquet"
+  - "artifacts/RUN-0002/contract.json"
+  - "artifacts/RUN-0002_INVALID_parent_tail/"
+artifact_hashes:
+  enriched_signals_parquet: "272460da47e3ba352b8e5522b3d9ec23df5f7a51dc6fb0b659d09d72cca4e563"
+  variants_csv: "6b333e5e2df560c366b4e8583580a06b67548224dc34fb3f564c133d64ee3833"
+  monthly_csv: "542e9e9cdff22f09b831c7ce5db66d5caeb65c30c38e551c5cce4cf4fef36a3d"
+  blocks_csv: "9f5d10bb2eceffadb55d15532ef36590dc484641a660e678db4340b516f49c98"
+  positions_parquet: "99b1c7246cbad6cf9c7a07864ade51b404323d02ebc0a44fdf1bcd23cf60bf05"
+  contract_json: "aef061cac0cbf3d1eb76d684e2ddd676a2e480747f5f2484e07ae088ab828d66"

@@ -1,0 +1,9 @@
+{
+  "status": "passed",
+  "max_loaded_date": "2026-04-30",
+  "holdout_rows_loaded": 0,
+  "decision_rows": 444880,
+  "variant_count": 300,
+  "clock_periods_selected_from_run0003": false,
+  "unprotected_variants_are_diagnostic_only": true
+}

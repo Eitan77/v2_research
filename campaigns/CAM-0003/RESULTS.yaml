@@ -1,0 +1,71 @@
+campaign_id: CAM-0003
+updated_at: "2026-07-28T23:49:00-07:00"
+status: "retired_recent_source_mechanism_inverted"
+intended_profile: "A. Recent Money Printer"
+current_profile_fit: >-
+  Not a Strategy A candidate. The source-faithful positive-morning SPY
+  continuation lost money, every latest-12-month ETF/state cell lost, and the
+  protected source short leg also lost because recent closing returns moved
+  opposite the historical continuation prediction.
+run_count: 5
+recorded_parameter_cells: 877
+source_faithful_baseline:
+  specification: >-
+    SPY long when prior regular close to completed 09:59 close is positive;
+    enter 15:30 raw SIP minute open, exit 15:59 raw SIP minute close, cash
+    otherwise, 2 bps per side.
+  result: >-
+    Lost 9.2087% net simple over 18 months, averaged -0.3921% per month over
+    15 months and -0.5613% over 12 months, with 9.3994% drawdown and 14 of 18
+    negative months. Gross predictive slope was -0.0187.
+least_bad_adaptation:
+  specification: >-
+    SPY positive first-half-hour return above the causal 80th percentile of
+    positive returns in the prior 60 sessions; same source entry/exit and
+    2 bps per side.
+  total_18m_net_simple: -0.023929
+  average_monthly_net_simple_return: {"15m": -0.001068, "12m": -0.001123}
+  max_drawdown: 0.028527
+  trades: 36
+cross_etf_evidence:
+  local_grid:
+    cells: 540
+    positive_full_period_unlevered_cells: 1
+    positive_latest_12m_cells: 0
+    leveraged_diagnostic: >-
+      SOXL high-opening-volatility open-session continuation averaged 1.02%
+      per month over 15 months but -0.47% over 12 months; SMH was near zero.
+  source_identified_grid:
+    acquired_raw_sip_rows: 991191
+    instruments: ["EEM", "FXI", "EFA", "VWO", "IYR"]
+    cells: 270
+    positive_full_period_cells: 0
+    positive_latest_12m_cells: 0
+short_leg:
+  safeguards: >-
+    Strictly intraday; 0.5%, 1%, and 2% protective stops; adverse stop
+    slippage; emergency 15:59 exit; forced flat before close; 2 bps per side.
+  result: >-
+    All three variants lost. The least bad 2% stop lost 9.9289% over 18
+    months, averaged -0.55% per month over 15 months, and had 10.07% drawdown.
+data_quality:
+  required_price_attrition: 0
+  local_grid_missing_minutes: >-
+    528 of 1,454,700 expected symbol-minutes across 136 of 3,730 rows, mostly
+    DIA; all required signal/entry/exit fields remained present.
+  source_grid_missing_minutes: >-
+    670 of 727,350 expected symbol-minutes across 349 of 1,865 rows; all
+    required signal/entry/exit fields remained present.
+execution:
+  bar_model: "Raw SIP one-minute opens/closes/highs with explicit costs."
+  quote_replay: >-
+    Not performed. No bar candidate was close or strong and quotes cannot
+    reverse a negative gross relationship.
+holdout:
+  sealed_start: "2026-05-01"
+  rows_loaded: 0
+  accessed: false
+current_judgment: >-
+  Retire CAM-0003. Reopening requires new causal evidence that modern
+  morning-to-close continuation has returned; do not retune the failed recent
+  family. The broader Strategy A search continues in a new campaign.

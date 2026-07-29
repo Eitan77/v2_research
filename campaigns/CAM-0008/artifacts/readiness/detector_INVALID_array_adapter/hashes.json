@@ -1,0 +1,6 @@
+{
+  "detected_candidates.parquet": "909f674e9b2da201b0b3cae169980872e53abe0c4e26717714338774a0169092",
+  "combined_scoped_news.parquet": "47476fb969d0f45667b076fbf4a67098ee5cd3781372cd9a261b889789a6e78b",
+  "frozen_audit_sample.csv": "da5f15044fe027a65e32d60004e6641bfd4ef658249156b8476a83d30d13c655",
+  "detector_report.json": "240de7f0e3f7e36cb9bb16efb5aaec5590450944945912a9bbe731f75be78622"
+}

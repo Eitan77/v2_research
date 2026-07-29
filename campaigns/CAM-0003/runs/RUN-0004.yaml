@@ -1,0 +1,99 @@
+run_id: RUN-0004
+campaign_id: CAM-0003
+parent_run_id: RUN-0003
+planned_at: "2026-07-28T23:36:00-07:00"
+status: completed
+
+change_from_parent: >-
+  Acquire cutoff-bounded raw SIP minute bars from Alpaca and reproduce the
+  source-positive continuation family on EEM, FXI, EFA, VWO, and IYR.
+reason: >-
+  The primary paper specifically reports ETF pervasiveness and unusually large
+  effects for emerging-market and real-estate ETFs. Those instruments were
+  absent from the local raw-bar inventory, so concluding from RUN-0003 would
+  leave a source-identified universe omission.
+expected_effect: >-
+  If closing-flow continuation remains economically alive where the source
+  found it strongest, positive-morning cells should be profitable across
+  neighboring intervals and not depend on a single hindsight-selected ETF or
+  state.
+
+configuration:
+  instruments: ["EEM", "FXI", "EFA", "VWO", "IYR"]
+  data_source: "Alpaca historical SIP 1-minute raw bars"
+  requested_start: "2024-08-01T00:00:00Z"
+  requested_end_exclusive: "2026-05-01T00:00:00Z"
+  morning_components: ["combined_previous_close", "open_session"]
+  morning_intervals_minutes: [15, 30, 60]
+  closing_holds_minutes: [15, 30, 60]
+  causal_states: ["all", "high_opening_volume", "high_opening_volatility"]
+  state_definition: >-
+    Current opening-window value above the causal 66.7th percentile of the
+    prior 60 sessions for the same instrument and interval.
+  signal: "long selected ETF when selected morning return > 0"
+  costs_bps_per_side: 5
+  variants: 270
+
+execution_contract:
+  pull_command: >-
+    python campaigns/CAM-0003/src/pull_source_etfs.py
+    --output campaigns/CAM-0003/artifacts/data/alpaca_source_etfs.parquet
+  run_command: >-
+    python campaigns/CAM-0003/src/run0004.py
+    --input campaigns/CAM-0003/artifacts/data/alpaca_source_etfs.parquet
+    --output-dir campaigns/CAM-0003/artifacts/RUN-0004
+  expected_variant_count: 270
+  output_paths:
+    - "artifacts/data/alpaca_source_etfs.parquet"
+    - "artifacts/data/alpaca_source_etfs_manifest.json"
+    - "artifacts/RUN-0004/source_etf_daily_features.parquet"
+    - "artifacts/RUN-0004/source_etf_grid.csv"
+    - "artifacts/RUN-0004/contract.json"
+    - "artifacts/RUN-0004/diagnostics.json"
+
+reconciliation:
+  validation_passed: true
+  executed_variant_count: 270
+  expected_variant_count: 270
+  configuration_match: true
+  raw_rows_loaded: 991191
+  loaded_max_timestamp_utc: "2026-04-30T23:58:00+00:00"
+  holdout_rows_loaded: 0
+  required_price_attrition: 0
+
+factual_result:
+  positive_full_period_variants: 0
+  positive_15m_variants: 1
+  positive_12m_variants: 0
+  least_bad_15m_cell:
+    symbol: "FXI"
+    component: "combined_previous_close"
+    morning_minutes: 30
+    closing_hold_minutes: 60
+    state: "high_opening_volatility"
+    signal_days: 55
+    total_18m_net_simple: -0.017370
+    average_month_15m: 0.000187
+    average_month_12m: -0.001210
+    max_drawdown: 0.024494
+    recovery_unresolved: true
+  diagnosis: >-
+    The source-identified ETF coverage gap did not conceal continuation alpha.
+    None of 270 cells was positive over 18 months or the latest 12 months, and
+    the lone positive 15-month cell averaged only 0.019% per month before
+    decaying in the latest 12 months.
+
+decision: >-
+  Reject universe omission as the explanation. Complete the exact source
+  negative-signal short component under mandatory protective-stop rules and
+  test source-predicted positive-signal magnitude before conclusion audit.
+
+artifacts:
+  data_sha256: "d6e9a21856d550d06939ca5cf46d6204111e9b8006f124c1d10bce2768bda091"
+  data_manifest_sha256: "7c9220424aafeb49ab0e77bcaee1cdc886adbe9b97cea729d9692e7d76b45be6"
+  pull_script_sha256: "444e73433b596cc345d2cf05d37f8e1122aaa713ba967a5736f1a7b63e9f4637"
+  run_script_sha256: "6a26d9a6760e38ac5438bfd94bc5ac6d9910be866ebc979723e898ef43b6234a"
+  daily_features_sha256: "c7ed6df7b98b5fdd8f7a530d23769ba8fdcc6f17da8ae593b98de40ed26b53c0"
+  grid_sha256: "59cbe05af3840a69746bb8d01bf0a99e073e7d0e68f8816e7ec9245d3072193d"
+  contract_sha256: "5b52ad8c8b389a16a97c5fd5fbd37257d81db12e984d0b6c92764e4ef88b3f4b"
+  diagnostics_sha256: "35244f8e4453b10f467408f70aa0109ed6332d1ca7fc506782b69ff0a4384b30"

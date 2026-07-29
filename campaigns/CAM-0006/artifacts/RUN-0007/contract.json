@@ -1,0 +1,29 @@
+{
+  "command": "python campaigns/CAM-0006/src/run0007.py --signals-path campaigns/CAM-0006/artifacts/RUN-0002/enriched_signals.parquet --minutes-path campaigns/CAM-0006/artifacts/readiness/regular_minutes.parquet --replay-path campaigns/CAM-0006/artifacts/RUN-0006/event_replay.parquet --output-dir campaigns/CAM-0006/artifacts/RUN-0007",
+  "resolved_defaults": {
+    "candidate_event_sets": [
+      "all_state",
+      "vol_high"
+    ],
+    "eligibility_rules": [
+      "all",
+      "dollar_q50",
+      "dollar_q67",
+      "dollar_q80",
+      "trade_q50",
+      "range50",
+      "range75",
+      "close_vwap",
+      "dollar_q50_range50"
+    ],
+    "additional_slippage_bps_per_side": [
+      0,
+      2,
+      5
+    ]
+  },
+  "executed_variant_count": 54,
+  "causal_feature_universe_rows": 36025,
+  "max_loaded_date": "2026-04-30",
+  "holdout_rows_loaded": 0
+}

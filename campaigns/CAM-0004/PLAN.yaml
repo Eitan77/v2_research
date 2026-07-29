@@ -1,0 +1,213 @@
+campaign_id: CAM-0004
+title: Cross-sectional intraday factor-residual liquidity provision
+purpose_profile: "A. Recent Money Printer"
+
+core_hypothesis: >-
+  The component of a liquid stock's completed 30-minute return that is not
+  explained by its lagged point-in-time risk characteristics contains
+  transitory price pressure. Cross-sectional negative residuals should
+  subsequently outperform positive residuals as liquidity providers move
+  prices back toward fair value.
+mechanism: >-
+  Short-lived inventory imbalances, limited risk-bearing capacity, and noisy
+  order flow temporarily displace individual S&P 500 stocks from prices
+  implied by observable risk characteristics. The reversal should be strongest
+  in the residual component, persist for several 30-minute periods, strengthen
+  when market liquidity is scarce, and decay as the displacement is absorbed.
+material_difference_from_prior_campaigns: >-
+  CAM-0004 is a continuous cross-sectional residual-decile strategy built from
+  a factor model at every intraday decision. CAM-0002 was a sparse absolute
+  sell-shock/reclaim event strategy and did not estimate source-style
+  cross-sectional residuals. CAM-0001 was multi-session directional ETF
+  persistence; CAM-0003 was intraday time-series continuation.
+
+primary_source:
+  citation: >-
+    Brogaard, Jonathan, Jaehee Han, and Hanjun Kim (2024), Intraday Residual
+    Reversal in the U.S. Stock Market, SSRN 4731947.
+  local_pdf: "artifacts/source/brogaard_han_kim_2024.pdf"
+  pdf_sha256: "011f199bad3817945d118def1e418d71574d29e817588f0467b75a8fa2f1c1ca"
+  text_sha256: "aa5abf190263cd699956c2c2ce6f1e18b6d553e7b2590cb3232f287df5b4e8e6"
+  pages: 59
+  source_sample: "TAQ quotes, July 1996 through December 2022"
+  source_universe: >-
+    S&P 500 constituents fixed at each end of June and used from the following
+    July through June.
+  source_price_grid: >-
+    Last bid and ask every 30 minutes from 10:00 through 16:00 Eastern; use
+    midpoint, carry the prior observation when no quote occurs, adjust splits
+    with CRSP CFACPR, and winsorize 30-minute returns at 0.5%.
+  source_factor_model: >-
+    At each stock-date-period, regress the cross-section of 30-minute returns
+    on 15 lagged daily characteristics. Transform each characteristic to its
+    within-day cross-sectional rank, demean it, and divide by the cross-section
+    sum of absolute deviations. RISK excludes the fitted intercept; RESIDUAL is
+    return minus RISK and therefore includes the intercept.
+  source_characteristics:
+    - accruals
+    - asset_growth
+    - book_to_market
+    - composite_equity_issuance
+    - failure_probability
+    - gross_profitability
+    - investment_to_assets
+    - momentum
+    - net_operating_assets
+    - net_stock_issues
+    - o_score
+    - return_on_assets
+    - beta
+    - short_term_reversal
+    - size
+  source_portfolio: >-
+    Sort residuals into deciles at each formation, long the lowest residual
+    decile, short the highest, compare value and equal weights, hold the next
+    30-minute period, and rebalance at each observation. The source also tests
+    all 13x13 cumulative formation/holding combinations.
+  source_accounting_warning: >-
+    The source's 162.3% headline is not an observed 13.5% monthly simple return.
+    It compounds a 7.70% annualized one-period spread across 13 daily periods:
+    (1.077)^13-1. The implied gross one-period spread is about 3.06 bps before
+    trading costs. Table 9 shows the one-period result falls to 0.14%
+    annualized at the paper's 3 bp cost and becomes negative at 4 bp.
+  source_timing_warning: >-
+    The thirteenth source holding interval is 16:00 to next-day 10:00. It
+    cannot be an executable direct-short position under the current hard
+    no-overnight-short rule and may be retained only as a labeled predictive
+    diagnostic. Executable direct-short tests end before the regular close.
+
+intended_strategy_profile:
+  recent_evaluation_window_family:
+    - "2024-11-01 through 2026-04-30"
+    - "2025-02-01 through 2026-04-30"
+    - "2025-05-01 through 2026-04-30"
+  representative_recent_window: "2025-02-01 through 2026-04-30"
+  representative_window_reason: >-
+    The neutral 15-month view is fixed before testing; 12- and 18-month views
+    remain mandatory context. A different onset may be emphasized only when a
+    causal observable supports it, never because it maximizes return.
+  full_history_role: >-
+    Use all declared pre-cutoff history available for mechanism, decay,
+    liquidity-regime, tail, and walk-forward diagnostics; do not dilute the
+    recent-income objective into a lifetime average.
+  return_objective: >-
+    Approximately 10%-15% average monthly net fixed-capital simple return in a
+    representative recent regime, with credible execution, acceptable
+    drawdown/recovery, frequent opportunity, and distributed contribution.
+  judgment_policy: >-
+    Treat the objective as a reference profile, not a mechanical gate. No
+    source annualization, compounded projection, gross spread, or leverage may
+    substitute for measured additive monthly net P&L.
+  activation_rule: >-
+    Any candidate must define a causal liquidity/noise state using only
+    information available before entry and must work outside the single best
+    state or endpoint.
+  decay_monitor: >-
+    Monitor rolling net residual spread, long/short components, cost coverage,
+    breadth, top-contributor share, realized spread, and recent monthly hit
+    rate.
+  retirement_rule: >-
+    Suspend when a frozen rolling rule shows net spread below costs, sign
+    inversion, unacceptable concentration, or execution deterioration; retire
+    only after the governed completeness audit finds no principled test left.
+
+starting_implementation:
+  source_replication_layer: >-
+    Reconstruct the exact factor-residual relationship and decile return spread
+    before interpreting adaptations. Preserve the overnight thirteenth interval
+    only as a non-executable diagnostic.
+  executable_layer: >-
+    Trade only same-session formations from 10:00 through 15:30 Eastern, enter
+    after the completed decision observation, and liquidate by 15:59.
+  universe: >-
+    Point-in-time S&P 500 membership using the paper's annual end-June snapshot
+    convention, intersected with causally available data and reported with
+    date/symbol/row attrition.
+  signal: >-
+    Cross-sectional residual from the source's lagged 15-characteristic model;
+    lowest versus highest residual deciles. Do not replace missing source
+    characteristics silently.
+  decision_time: "Each completed 30-minute observation from 10:00 through 15:30 Eastern"
+  entry: >-
+    First actionable marketable price after the decision observation; minute
+    bars are the efficient screen and SIP NBBO/trades qualify strong results.
+  exit: >-
+    Source holding is one 30-minute period; same-session variants may extend to
+    1-12 periods but every direct short is force-closed before the regular
+    close.
+  direction: >-
+    Report long-low, short-high, and long-short components separately. Direct
+    shorts are executable only in the protected same-session layer.
+  sizing: >-
+    Fixed original capital 1.0 with additive P&L and no reinvestment. Report
+    both source weights and implementable equal-risk/equal-weight alternatives;
+    cap gross and net exposure explicitly.
+  short_protection: >-
+    Before any executable short run, freeze a 2% per-name emergency stop,
+    evaluate it on full one-minute paths with adverse slippage, reject
+    unobservable/halting exits, and force liquidation no later than 15:59.
+  cost_model: >-
+    Reproduce the source's labeled 3-7 bp convention for comparability, then
+    evaluate explicit per-side marketable costs and SIP NBBO spreads. Never
+    present midpoint or paper-cost results as execution-qualified.
+  execution_model: >-
+    Completed-bar causality, following-action entry, full-path stop and forced
+    exit, conservative missing-data rejection, and quote/trade replay for any
+    close, strong, or execution-questionable candidate.
+
+main_questions:
+  - "Can the exact source factor-residual relationship be constructed causally from declared data?"
+  - "Does gross residual reversal survive in the recent sample by period and by long/short leg?"
+  - "Does any same-session implementation cover realistic spread, slippage, and turnover?"
+  - "Do longer holding/netting intervals preserve alpha while reducing costs?"
+  - "Are value, equal, volatility, or constrained weights superior without retrospective selection?"
+  - "Does a causal liquidity, dispersion, volatility, or information state improve cost coverage?"
+  - "Is performance distributed across months, symbols, sectors, periods, and independent days?"
+  - "Can profitable subsets be selected prospectively from observable characteristics?"
+  - "Does the long-only low-residual leg offer a safer implementation if the short leg is weak?"
+
+adaptation_policy:
+  allowed_within_campaign:
+    - "30-minute formation and 30-minute through same-close holding horizons"
+    - "paper-defined 13x13 formation/holding diagnostics where legally executable"
+    - "long-only, protected-short, and dollar-neutral treatment"
+    - "value, equal, volatility, liquidity, and exposure-constrained weighting"
+    - "decile, quintile, and broad tail breadth"
+    - "source characteristics and predeclared causally available proxy models"
+    - "market, sector, and statistical residual controls"
+    - "causal liquidity, spread, volatility, dispersion, volume, and information states"
+    - "turnover netting, staggered books, entry latency, costs, and quote replay"
+    - "point-in-time stock subsets, sector expressions, and related liquid ETFs"
+    - "emergency stops, exposure caps, and forced-close rules"
+  new_campaign_required_when:
+    - "the edge no longer depends on reversal of cross-sectional intraday residuals"
+    - "news, options, text, or another information set becomes the primary signal"
+    - "the strategy becomes overnight direct short or multi-session direct short"
+    - "the primary identity changes to time-series momentum, sparse shock reclaim, or event trading"
+
+launch_and_conclusion_gates:
+  - "Source paper fully read, visually inspected, hashed, and exact contract recorded"
+  - "PLAN frozen before market-data readiness or backtesting"
+  - "Exact schemas, timestamps, point-in-time membership, characteristics, and availability lags verified"
+  - "Maximum loaded date <= 2026-04-30 and zero holdout rows"
+  - "Semantic fixtures pass for rank normalization, intercept treatment, residuals, deciles, timing, costs, fixed-base accounting, stops, and drawdown"
+  - "Every meaningful run is frozen, reconciled, and preserves parent/reason/expectation/result/decision"
+  - "Attrition, alpha, execution, portfolio, concentration, and causal subset evidence completed"
+  - "Mandatory eleven-principle and skeptical-quant conclusion audit completed before promotion, retirement, or pivot"
+
+hard_constraints:
+  fixed_capital_base: 1.0
+  reinvest_pnl: false
+  discovery_cutoff: "2026-04-30"
+  sealed_holdout_start: "2026-05-01"
+  holdout_access_authorized: false
+  overnight_direct_stock_or_etf_shorts: false
+  intraday_direct_shorts_require_stop_and_forced_close: true
+  source_missing_fields_may_not_be_silently_proxied: true
+  leverage_policy: "Never use leverage to rescue weak unlevered alpha"
+  quote_budget_policy: "Reserve quote/trade pulls for close, strong, or execution-questionable candidates"
+
+development_period: "Declared pre-cutoff data only; standard recent views end 2026-04-30"
+status: frozen
+frozen_at: "2026-07-29T00:39:24-07:00"
+file_hash: "sha256 excluding file_hash line: a81491f24faa9ef3002b73c73662713016d41765e0d49a6ebbef0ab87a21fd07"

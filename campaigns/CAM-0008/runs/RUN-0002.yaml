@@ -1,0 +1,149 @@
+campaign_id: CAM-0008
+run_id: RUN-0002
+parent_run: RUN-0001
+status: completed
+frozen_at: "2026-07-29T07:05:00-07:00"
+role: "Causal long-mechanism diagnosis"
+
+question: >-
+  Can observable analyst-action class, release clock, completed reaction
+  quality, attention, gap context, broker repetition, or shifted stock/market
+  state isolate a materially stronger and still distributed long edge?
+reason: >-
+  RUN-0001's all-long ten-session baseline was broad and positive in all four
+  coarse blocks but averaged only 1.74% per recent month at 10 bp and had five
+  negative months. Negative-action failure was the stronger isolated leg;
+  protected intraday shorts all lost. The next informative step is to diagnose
+  causal long subsets before changing sizing or execution.
+expected_effect: >-
+  Failed negative revisions may be strongest in target cuts, negative gaps,
+  and low-attention reactions that the market subsequently rejects. Positive
+  continuation may be strongest for rating actions, strong completed
+  reactions, and high-attention states. Standalone and market-state variants
+  test whether issuer news or regime exposure explains the baseline.
+
+inputs:
+  event_readiness: "artifacts/readiness/market/event_readiness.parquet"
+  daily_split: "artifacts/readiness/market/daily_split.parquet"
+  qqq_state: >-
+    Declared local catalog bars_1d, symbol QQQ, SIP, split adjusted, 1Day,
+    2024-05-01 through 2026-04-30 only.
+  maximum_loaded_date: "2026-04-30"
+  holdout_rows_loaded: 0
+
+frozen_configuration:
+  base_eligibility:
+    signal_complete: true
+    shifted_prior20_median_dollar_volume_minimum: 100000000
+    reaction_sign: "strictly positive for both long legs"
+  portfolios:
+    - positive_continuation_long
+    - negative_failure_long
+    - all_longs
+  screen_ids:
+    - baseline
+    - standalone
+    - target_only
+    - rating_only
+    - initiation_only
+    - target_raise
+    - target_lower
+    - rating_upgrade
+    - rating_downgrade
+    - premarket
+    - intraday
+    - after_close
+    - reaction_le25bp
+    - reaction_ge10bp
+    - reaction_ge25bp
+    - reaction_ge50bp
+    - reaction_ge100bp
+    - close_location67
+    - close_location80
+    - participation_le1pct
+    - participation_le2pct
+    - participation_ge5pct
+    - participation_ge10pct
+    - gap_down1pct
+    - gap_down2pct
+    - gap_up1pct
+    - gap_abs2pct
+    - single_firm
+    - multifirm2
+    - multifirm3
+    - stock_vol_low
+    - stock_vol_high
+    - qqq_trend_down
+    - qqq_trend_up
+    - qqq_vol_low
+    - qqq_vol_high
+    - standalone_target
+    - standalone_intraday
+    - target_intraday
+    - standalone_participation_le2pct
+  state_contract:
+    stock_vol20: >-
+      Annualized standard deviation of the prior 20 completed close-to-close
+      returns, compared with its shifted prior-60 median.
+    qqq_trend: "Prior completed close versus the close 20 sessions earlier."
+    qqq_vol20: >-
+      Annualized standard deviation of the prior 20 completed QQQ returns,
+      compared with its shifted prior-60 median.
+    missing_state_policy: "Screen-specific exclusion with explicit attrition."
+  horizons: [three_close, five_close, ten_close]
+  costs_bps_per_side: [10, 20]
+  portfolio:
+    capital_base: 1.0
+    accounting: "fixed-size additive marked-to-market"
+    maximum_gross_exposure: 1.0
+    maximum_symbol_gross: 0.10
+    position_cap: 0.02
+    allocation: "RUN-0001 chronological equal available capacity"
+  expected_variant_count:
+    portfolios: 3
+    screens: 40
+    horizons: 3
+    costs: 2
+    total: 720
+
+required_outputs:
+  - "720/720 frozen/default/command/code/data/output reconciliation"
+  - "Screen attrition by portfolio and missing-state attrition"
+  - "Full/18/15/12-month net return, months, drawdown, recovery, and four blocks"
+  - "Leg, action, clock, state, symbol, firm, event, and day concentration"
+  - "Neighborhood rather than isolated-best diagnosis"
+  - "A justified sizing/latency question or campaign-level rejection"
+
+result:
+  reconciliation: >-
+    Passed 720/720 variants after three preserved fail-fast implementation
+    attempts. The final command, frozen lists, code/data/catalog hashes, 499
+    pre-cutoff QQQ rows, marked-to-market P&L, maximum date 2026-04-30, and
+    zero holdout rows reconciled. Of 3,482 base long events, stock state was
+    complete for all and QQQ state was missing for 23.
+  best_central_variant: >-
+    All long legs in the shifted high-stock-volatility state, ten-session exit,
+    and 10 bp per side averaged 1.7511% per month over 15 months, 1.8786% over
+    12 months, and 1.5770% full sample, with 9.84% drawdown, 24-day recovery,
+    10 positive and five negative recent months, 1,404 allocations, 110
+    symbols, and four positive coarse blocks. At 20 bp it retained 1.4906% per
+    recent month and 10.35% drawdown.
+  neighborhood: >-
+    The unfiltered parent remained essentially tied at 1.7424% per recent
+    month. QQQ-up, single-firm, close-location, standalone, QQQ-high-vol,
+    intraday, target-only, reaction, gap, repetition, and participation
+    screens did not create a materially stronger neighborhood; no central-cost
+    variant reached 1.8% per recent month. Five- and three-session exits
+    weakened sharply. The apparent best is therefore risk refinement rather
+    than a new alpha level.
+  allocation_diagnosis: >-
+    At the unchanged 2% cap, ten-session close gross exposure averaged about
+    79.9% for baseline but only 53.4% for high-stock-volatility, 42.3% for
+    high-QQQ-volatility, 28.6% for gap-down, and 32.9% for low-participation
+    screens. Selective variants leave enough causal capacity for a bounded
+    sizing test.
+decision: >-
+  Do not select a narrow screen or promote. Carry the broad baseline and four
+  interpretable risk/attention neighborhoods into a bounded 2%-10% position
+  cap and portfolio-construction test. Retain ten sessions as the primary
+  horizon, with five sessions as a turnover control, and keep 10/20 bp costs.

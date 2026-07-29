@@ -1,0 +1,76 @@
+run_id: RUN-0002
+campaign_id: CAM-0005
+parent_run_id: RUN-0001
+planned_at: "2026-07-29T02:35:00-07:00"
+status: completed
+
+change_from_parent: >-
+  No strategy change. Rerun the exact 96-variant RUN-0001 configuration using
+  official split-adjusted daily close divided by official raw daily close for
+  each symbol/session minute adjustment.
+reason: >-
+  RUN-0001 was invalidated before interpretation because its adjustment factor
+  incorporated official-close versus minute-close differences. Scientific
+  integrity requires an unchanged clean rerun before any strategy adaptation.
+expected_effect: >-
+  Genuine late-day/overnight relationships should retain their sign and broad
+  magnitude. Results that depended on daily/minute marking contamination will
+  disappear.
+
+configuration: "Identical to RUN-0001; see frozen parent configuration."
+data_change_only: "official SIP split daily close / official SIP raw daily close"
+expected_variant_count: 96
+execution_contract:
+  command: >-
+    python campaigns/CAM-0005/src/run0001.py
+    --readiness-dir campaigns/CAM-0005/artifacts/readiness
+    --output-dir campaigns/CAM-0005/artifacts/RUN-0002
+  expected_variant_count: 96
+  output_paths:
+    - "artifacts/RUN-0002/features.parquet"
+    - "artifacts/RUN-0002/positions.parquet"
+    - "artifacts/RUN-0002/portfolio_decisions.parquet"
+    - "artifacts/RUN-0002/variants.csv"
+    - "artifacts/RUN-0002/monthly.csv"
+    - "artifacts/RUN-0002/concentration.csv"
+    - "artifacts/RUN-0002/contract.json"
+    - "artifacts/RUN-0002/diagnostics.json"
+
+completed_at: "2026-07-29T02:40:20-07:00"
+factual_outcome: >-
+  Corrected readiness passed on 133,925 targeted SIP minute rows and 9,990
+  official raw/split daily rows, maximum date 2026-04-30 and zero holdout.
+  All 96 variants reconciled. The dominant result was SMH late-day reversal:
+  q50 product long-only earned +90.90% fixed-base net at 2 bp/side over 187
+  decisions, averaging +9.2857% per month over 15 months and +7.3959% over
+  12 months. At 5 bp it averaged +8.6337% over 15 months. The unlevered signed
+  SMH q50 diagnostic averaged +2.6714% per month with the same sign. However,
+  the product drawdown was 61.77%, three recent months were negative, the first
+  four campaign months all lost, and top-five days contributed 74.32%.
+  SOXL after negative SMH signals contributed +81.64% across 86 trades; SOXS
+  after positive signals contributed only +9.26% across 101 trades.
+decision: >-
+  Preserve SMH overnight reversal as a strong lead, not a candidate. Continue
+  within campaign to separate bull/inverse legs, entry/exit auction marking,
+  threshold neighbors, chronology, and risk-state causes before any promotion
+  or quote pull.
+next_question: >-
+  Is the edge a robust SOXL dip-buy overnight effect or an opening mark, and
+  can causal state/risk controls reduce the unacceptable drawdown without
+  destroying the Type-A return profile?
+artifacts:
+  - "artifacts/readiness/readiness.json"
+  - "artifacts/RUN-0002/features.parquet"
+  - "artifacts/RUN-0002/positions.parquet"
+  - "artifacts/RUN-0002/portfolio_decisions.parquet"
+  - "artifacts/RUN-0002/variants.csv"
+  - "artifacts/RUN-0002/monthly.csv"
+  - "artifacts/RUN-0002/concentration.csv"
+  - "artifacts/RUN-0002/contract.json"
+  - "artifacts/RUN-0002/diagnostics.json"
+artifact_hashes:
+  variants_csv: "e3a8272a9ca64c6bffea4527af4f8774a7972b7997cfa0ce19d4e8240a534f97"
+  monthly_csv: "300d8fc7e44c7bfd8c73bbb4236b02586940f7f64682b79a22aefc273104e6a0"
+  concentration_csv: "c997eb3ec415d9a7673619999f8e68a645f220e517caeba5686734ed97c65001"
+  contract_json: "16e79c1abbbe8baf7c9eb29e03c14ed9341c62e24052536fc610d4aebe2af1bc"
+  diagnostics_json: "caa6b7af52cce274051e5fcef8f5d85f7af575f6566a92d420afc9866c705695"

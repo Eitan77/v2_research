@@ -1,0 +1,39 @@
+{
+  "central_variant": "vol_high_dollar_q50_range50_nbbo_slip2",
+  "central_event_count": 94,
+  "central_symbol_count": 59,
+  "positive_event_fraction": 0.6276595744680851,
+  "median_event_return": 0.0053654011400238845,
+  "worst_event_return": -0.06248591579397304,
+  "best_event_return": 0.11427260884470343,
+  "bootstrap": {
+    "resamples": 20000,
+    "block_length_months": 3,
+    "seed": 6008,
+    "probability_total_positive": 0.9979,
+    "probability_average_month_ge_3pct": 0.7722,
+    "probability_average_month_ge_5pct": 0.35755,
+    "probability_average_month_ge_10pct": 0.0005,
+    "probability_monthly_path_drawdown_lt_20pct": 0.9999,
+    "total_return_quantiles": {
+      "0.05": 0.27752807767405396,
+      "0.25": 0.5639958407126489,
+      "0.5": 0.7813127082613098,
+      "0.75": 0.9991736569033173,
+      "0.95": 1.3146820957565002
+    },
+    "average_month_quantiles": {
+      "0.05": 0.015418226537447443,
+      "0.25": 0.03133310226181382,
+      "0.5": 0.04340626157007277,
+      "0.75": 0.05550964760573985,
+      "0.95": 0.07303789420869446
+    },
+    "monthly_drawdown_quantiles": {
+      "0.5": 0.039042605030832025,
+      "0.9": 0.07516751250819642,
+      "0.95": 0.08448648734351458
+    }
+  },
+  "holdout_rows_loaded": 0
+}

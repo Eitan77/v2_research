@@ -1,0 +1,126 @@
+{
+  "configuration": "f15 residual6 surprise10 stocks reclaim2 hold60 target4 no_stop cost10",
+  "metrics": {
+    "net": 0.21364312721704615,
+    "events": 13,
+    "clusters": 13,
+    "max_drawdown": 0.023301205218495435,
+    "recovery_days": 91,
+    "unresolved": false,
+    "windows": {
+      "18m": {
+        "net": 0.21364312721704615,
+        "avg_month": 0.011869062623169231,
+        "median_month": 0.0,
+        "negative_months": 1,
+        "zero_months": 10
+      },
+      "15m": {
+        "net": 0.23694433243554158,
+        "avg_month": 0.015796288829036106,
+        "median_month": 0.0,
+        "negative_months": 0,
+        "zero_months": 8
+      },
+      "12m": {
+        "net": 0.15503690573254114,
+        "avg_month": 0.012919742144378429,
+        "median_month": 0.0,
+        "negative_months": 0,
+        "zero_months": 7
+      }
+    },
+    "stops": 0,
+    "targets": 4,
+    "time_exits": 9,
+    "median_exit_offset": 62.0
+  },
+  "raw_high_missing_rows_with_fallback": 1,
+  "unique_symbols": 12,
+  "top1_positive_contribution_fraction": 0.16037522235454849,
+  "top5_positive_contribution_fraction": 0.7450099364498778,
+  "leave_one_symbol_out_min_net": 0.1756431272170461,
+  "leave_one_symbol_out_max_net": 0.23333871276670082,
+  "top_symbols": [
+    {
+      "symbol": "CSGP",
+      "events": 1,
+      "net_contribution": 0.038000000000000034,
+      "mean_net": 0.038000000000000034
+    },
+    {
+      "symbol": "EBAY",
+      "events": 1,
+      "net_contribution": 0.038000000000000034,
+      "mean_net": 0.038000000000000034
+    },
+    {
+      "symbol": "FTNT",
+      "events": 1,
+      "net_contribution": 0.038000000000000034,
+      "mean_net": 0.038000000000000034
+    },
+    {
+      "symbol": "PLTR",
+      "events": 1,
+      "net_contribution": 0.038000000000000034,
+      "mean_net": 0.038000000000000034
+    },
+    {
+      "symbol": "SMCI",
+      "events": 1,
+      "net_contribution": 0.024525882049961423,
+      "mean_net": 0.024525882049961423
+    },
+    {
+      "symbol": "VRSN",
+      "events": 1,
+      "net_contribution": 0.016837209302325684,
+      "mean_net": 0.016837209302325684
+    },
+    {
+      "symbol": "INCY",
+      "events": 1,
+      "net_contribution": 0.013783410138248799,
+      "mean_net": 0.013783410138248799
+    },
+    {
+      "symbol": "SIRI",
+      "events": 1,
+      "net_contribution": 0.01011401425178149,
+      "mean_net": 0.01011401425178149
+    },
+    {
+      "symbol": "ODFL",
+      "events": 2,
+      "net_contribution": 0.010036089420496944,
+      "mean_net": 0.005018044710248472
+    },
+    {
+      "symbol": "MRNA",
+      "events": 1,
+      "net_contribution": 0.009647727272727115,
+      "mean_net": 0.009647727272727115
+    }
+  ],
+  "monthly": {
+    "2024-11": -0.023301205218495435,
+    "2024-12": 0.0,
+    "2025-01": 0.0,
+    "2025-02": 0.07217360932268857,
+    "2025-03": 0.0,
+    "2025-04": 0.009733817380311873,
+    "2025-05": 0.0,
+    "2025-06": 0.0,
+    "2025-07": 0.01011401425178149,
+    "2025-08": 0.0,
+    "2025-09": 0.0,
+    "2025-10": 0.013783410138248799,
+    "2025-11": 0.0,
+    "2025-12": 0.0,
+    "2026-01": 0.038000000000000034,
+    "2026-02": 0.07600000000000007,
+    "2026-03": 0.0,
+    "2026-04": 0.017139481342510754
+  }
+}

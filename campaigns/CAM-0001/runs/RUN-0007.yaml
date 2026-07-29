@@ -1,0 +1,117 @@
+run_id: RUN-0007
+campaign_id: CAM-0001
+parent_run_id: RUN-0006
+
+planned_at: "2026-07-28T21:16:25.6474062-07:00"
+status: completed
+
+change_from_parent: >-
+  Expand the mechanism-consistent universe to unleveraged QQQ/SMH proxies and
+  long inverse SQQQ/SOXS, with a bullish/bearish causal regime-switch
+  construction.
+reason: >-
+  The bullish leveraged result is semiconductor-heavy. Source-of-edge and
+  universe completeness require separating underlying continuation from
+  embedded leverage and testing whether the same persistence exists in bearish
+  states without prohibited direct shorts.
+expected_effect: >-
+  Unleveraged proxies should preserve directionally positive alpha at lower
+  magnitude if the mechanism is real. Long inverse products should add value
+  specifically below a falling QQQ trend. A credible regime switch should
+  improve weak bullish periods without overlapping gross exposure above 1.0.
+
+configuration:
+  universe:
+    bullish_leveraged: [TQQQ, SOXL]
+    bullish_unleveraged: [QQQ, SMH]
+    bearish_long_inverse: [SQQQ, SOXS]
+  signal: "Positive 5-session momentum within the active directional group"
+  decision_time: "Completed daily close"
+  entry: "Next open"
+  exit: "Open after 10 trading sessions"
+  direction: "Long positions only, including long inverse ETFs"
+  sizing: "Fixed base 1.0, equal weight among up to two qualifying funds"
+  filters:
+    qqq_sma_sessions: [20, 50]
+    bullish_state: "QQQ above rising SMA"
+    bearish_states: ["QQQ below SMA", "QQQ below falling SMA"]
+    switch_state: "bullish group above/rising; bearish group below/falling; otherwise cash"
+  stops_or_risk_overlays: "None"
+  cost_model: "5 bps per side"
+  execution_model: "Next-open marketable bar fill"
+
+short_selling:
+  direct_stock_or_etf_shorting_used: false
+  strictly_intraday_if_used: "N/A"
+  protective_stop_or_emergency_exit: "N/A"
+  forced_close_before_regular_session_end: "N/A"
+  overnight_direct_short_exposure_detected: false
+
+execution_contract:
+  command: >-
+    python campaigns/CAM-0001/src/audit_run0007.py
+    --cache campaigns/CAM-0001/artifacts/cache/bars_expanded_through_20260430.parquet
+    --readiness-json campaigns/CAM-0001/artifacts/RUN-0007/expanded_readiness.json
+    --output-dir campaigns/CAM-0001/artifacts/RUN-0007
+  expected_variant_count: 10
+  output_paths:
+    - "artifacts/RUN-0007/expanded_readiness.json"
+    - "artifacts/RUN-0007/universe_family.csv"
+    - "artifacts/RUN-0007/metrics.json"
+    - "artifacts/RUN-0007/contract.json"
+
+completed_at: "2026-07-28T21:19:20.6295399-07:00"
+metrics_artifact: "artifacts/RUN-0007/universe_family.csv"
+results_summary:
+  net_full_period_simple_return: >-
+    SMA20 bullish leveraged 3.737990; unleveraged 1.355468; inverse legs negative
+  average_monthly_net_simple_return: >-
+    12m bullish leveraged 0.105528; unleveraged 0.037038; best inverse -0.033023
+  average_calendar_year_net_simple_return: "See metrics.json"
+  standard_max_drawdown: >-
+    Full unleveraged 0.138207 versus leveraged 0.258301; inverse >2.5
+  max_full_recovery_time_days: "12m bullish leveraged/unleveraged both 85"
+  negative_month_count: "12m bullish leveraged/unleveraged both 3"
+  trade_or_event_count: "19 recent bullish entries; best inverse only 5"
+  average_capital_utilization: "Bullish 0.662324 full"
+  adverse_cost_net_simple_return: "Not repeated; RUN-0003 established cost margin"
+
+execution_reconciliation:
+  semantic_tests: "5 passed"
+  expanded_readiness: "passed"
+  actual_command_matches_record: true
+  executed_variant_count: 10
+  expected_variant_count: 10
+  saved_outputs_match_record: true
+  loaded_max_date: "2026-04-30"
+  holdout_rows_loaded: 0
+  sample_attrition: >-
+    Expanded QQQ/SMH/TQQQ/SOXL/SQQQ/SOXS panel has 1,842 aligned sessions per
+    symbol, zero date attrition, and 60 reconstructed rows on the same 10
+    documented split-stream-omission dates.
+
+factual_outcome: >-
+  The bullish continuation direction exists in unleveraged QQQ/SMH but at
+  roughly one-third the magnitude: 3.70% 12-month average monthly net, 6.14%
+  drawdown, the same three negative months, and the same 85-day recovery.
+  This supports a real directional mechanism but shows the A-profile headline
+  is largely embedded leverage. Long inverse SQQQ/SOXS variants were
+  catastrophically negative (best recent average -3.30%; full equity loss
+  exceeded the original capital), and regime switches inherited those losses,
+  reaching 22%-25% recent drawdown and much worse full-history risk. No direct
+  shorts were used.
+decision: >-
+  Reject the bearish inverse leg and regime switch. Retain bullish leveraged
+  continuation as the only viable expression, explicitly labeled as leveraged
+  amplification of a smaller underlying edge.
+next_question: >-
+  Does the adapted SMA20 rising candidate have sufficient chronological,
+  concentration, benchmark-relative, and selection-adjusted evidence to justify
+  freezing for forward confirmation, and can a causal shadow-decay monitor
+  improve prospective retirement without hindsight?
+artifacts:
+  - "artifacts/RUN-0007/expanded_readiness.json (sha256 fd30f521cded48c8e411a5c025cc4eade15c4b08edf61055a2199127ace09afb)"
+  - "artifacts/RUN-0007/universe_family.csv (sha256 1df3b462b264f0bb1e57709ef943f214c8fb977d92c2f0f4adc34e0abf79798a)"
+  - "artifacts/RUN-0007/metrics.json (sha256 314dabeb77c3db4945f28428d6976f8951fda7262b58380afed3d8ee7bf78da1)"
+  - "artifacts/RUN-0007/contract.json (sha256 fb61898068f076a98aa6c07c1cd3081731553e7d2571c532c537964e14f507ba)"
+  - "src/audit_run0007.py (sha256 9be3ec49a79a7386ba37391ae7daf5ca2b68d8f07e725bf8a98ee282ec48dcbe)"

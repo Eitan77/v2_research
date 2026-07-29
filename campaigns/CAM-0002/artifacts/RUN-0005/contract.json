@@ -1,0 +1,33 @@
+{
+  "executed_variant_count": 252,
+  "expected_variant_count": 252,
+  "formations": [
+    10,
+    15,
+    30,
+    45,
+    60,
+    90,
+    120
+  ],
+  "absolute": [
+    0.02,
+    0.04,
+    0.06
+  ],
+  "relative": [
+    6.0,
+    8.0,
+    10.0
+  ],
+  "holds": [
+    5,
+    15,
+    30,
+    60
+  ],
+  "cost_bps_per_side": 10.0,
+  "loaded_max_date": "2026-04-30",
+  "holdout_rows_loaded": 0,
+  "coverage_sha256": "80276cc1412309855f3d616262066b5b5111ee9e5aad29919f73ac40e0bb9569"
+}

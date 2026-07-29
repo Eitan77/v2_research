@@ -1,0 +1,39 @@
+{
+  "status": "passed",
+  "run_id": "RUN-0001",
+  "expected_variant_count": 135,
+  "executed_variant_count": 135,
+  "resolved_modes": [
+    "raw",
+    "qqq",
+    "smh"
+  ],
+  "resolved_directions": [
+    "positive_only",
+    "negative_only",
+    "both"
+  ],
+  "resolved_horizons": [
+    "5",
+    "15",
+    "30",
+    "60",
+    "close"
+  ],
+  "resolved_costs": [
+    2,
+    5,
+    10
+  ],
+  "frozen_configuration_hash": "c224117e960e7ea4fa03c7065c111d70488e263759fc2ab0c210da003597067c",
+  "input_hashes": {
+    "features": "d218deda9edb71f2eea31b34db37335453f98e8d1d13c96850f19150cd903f8f",
+    "minute": "a142c4f9b023ab74b903a7e4ea6c5cfb0d0da58e6bd7f8f9c5c22ce9fa6395ce"
+  },
+  "executed_code_hashes": {
+    "run0001.py": "a6195f0b4b84438bc2e19f4e1c3c21e3cc869f924b2f30847b0539bd37f4ff7c",
+    "cam0009.py": "cad889dd129b79e627e123ddd05ec7173aacf50af5f80d6601484c6581a7d2e9"
+  },
+  "maximum_loaded_date": "2026-04-30",
+  "holdout_rows_loaded": 0
+}

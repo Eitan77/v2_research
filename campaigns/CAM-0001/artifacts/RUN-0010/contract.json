@@ -1,0 +1,9 @@
+{
+  "executed_bar_variants": 6,
+  "expected_bar_variants": 6,
+  "quote_stage": "not_executable_missing_etf_quotes",
+  "required_quote_symbol_dates": 45,
+  "covered_quote_symbol_dates": 0,
+  "loaded_max_date": "2026-04-28",
+  "holdout_rows_loaded": 0
+}

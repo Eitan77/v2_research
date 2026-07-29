@@ -1,0 +1,24 @@
+{
+  "command": "python campaigns/CAM-0005/src/run0011.py --enriched-path campaigns/CAM-0005/artifacts/RUN-0009/enriched_events.parquet --output-dir campaigns/CAM-0005/artifacts/RUN-0011",
+  "resolved_defaults": {
+    "allocations": [
+      "fixed_1",
+      "high_volume_only",
+      "low_volume_025",
+      "low_volume_050",
+      "soxs_050",
+      "soxs_075",
+      "low_volume_025_soxs_075",
+      "signal_tier_q60_050_q67_075_q80_100"
+    ],
+    "additional_slippage_bps_per_side": [
+      2,
+      5,
+      10
+    ],
+    "maximum_event_exposure": 1.0
+  },
+  "executed_variant_count": 24,
+  "q60_event_count": 108,
+  "holdout_rows_loaded": 0
+}

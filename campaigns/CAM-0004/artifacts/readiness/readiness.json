@@ -1,0 +1,80 @@
+{
+  "status": "passed_for_labeled_adapted_mechanism_only",
+  "source_faithful_replication_status": "blocked",
+  "source_faithful_blockers": {
+    "missing_exact_point_in_time_sp500_membership": true,
+    "missing_exact_causally_lagged_characteristics": [
+      "accruals",
+      "asset_growth",
+      "book_to_market",
+      "composite_equity_issuance",
+      "failure_probability",
+      "gross_profitability",
+      "investment_to_assets",
+      "momentum",
+      "net_operating_assets",
+      "net_stock_issues",
+      "o_score",
+      "return_on_assets",
+      "beta",
+      "short_term_reversal",
+      "size"
+    ],
+    "open_source_characteristics_not_loaded": "Public Open Source Asset Pricing files use CRSP PERMNO and do not provide a declared, license-clean symbol mapping in this workspace; the current exact source data cannot be joined causally."
+  },
+  "adapted_mechanism": {
+    "universe": "point-in-time QQQ members",
+    "features": [
+      "log_price",
+      "log_dollar_volume",
+      "reversal_1d",
+      "momentum_5d",
+      "momentum_20d",
+      "volatility_20d",
+      "beta_60d"
+    ],
+    "label": "price/liquidity proxy residual; not source replication"
+  },
+  "max_loaded_date": "2026-04-30",
+  "holdout_rows_loaded": 0,
+  "membership": {
+    "rows": 73730,
+    "trading_session_rows": 50603,
+    "calendar_rows_excluded": 23127,
+    "dates": 730,
+    "symbols": 119,
+    "min_date": "2024-05-01",
+    "max_date": "2026-04-30",
+    "known_before_session_rows": 50603,
+    "known_after_or_at_session_rows": 0
+  },
+  "regular_30m_bars": {
+    "rows": 479396,
+    "dates": 501,
+    "symbols": 119,
+    "min_date": "2024-05-01",
+    "max_date": "2026-04-30",
+    "member_symbol_dates": 50603,
+    "complete_13_symbol_dates": 25131,
+    "incomplete_symbol_dates": 25472,
+    "zero_bar_symbol_dates": 3693,
+    "null_ohlc_rows": 0
+  },
+  "daily_split_adjustment": {
+    "source": "cutoff-bounded Alpaca split-adjusted daily cache",
+    "path": "campaigns\\CAM-0004\\artifacts\\daily_pull\\alpaca_daily_split.parquet",
+    "rows": 58335
+  },
+  "proxy_feature_coverage": {
+    "member_symbol_dates": 50603,
+    "complete_rows": 46064,
+    "incomplete_rows": 4539,
+    "attrition_fraction": 0.089698239234828
+  },
+  "hashes": {
+    "membership": "c70f21cc9ee79b148a5a9fd84e7fa1c87ea7777a3528e606babe639b7df9ebd5",
+    "bars": "2588310bedb9a2acdb0383beb839832f2ab1061e1e7023162306c86127f9b10e",
+    "daily": "b4a0989b43fcbc4267ca1a3e1ae59074cb46e4f816d4ee4859ae0d226b9dfe54",
+    "features": "49f73ab127dd50b6db5d08ec3e53a912b4e48390596f32afa76cbf537cdb108c"
+  }
+}

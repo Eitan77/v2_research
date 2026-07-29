@@ -1,0 +1,18 @@
+{
+  "executed_strategy_variants": 5,
+  "candidate": "SMA20 above/rising, 5-session positive fund momentum, 10-session hold",
+  "monitor_variants": [
+    "prior trailing 3m shadow net > 0",
+    "prior trailing 6m shadow net > 0"
+  ],
+  "diagnostics": [
+    "half-year chronology",
+    "all rolling 12-month windows",
+    "decision concentration",
+    "20,000-sample decision bootstrap",
+    "leveraged/unleveraged buy-hold benchmarks",
+    "leveraged/unleveraged fixed-notional 10-session unconditional benchmarks"
+  ],
+  "loaded_max_date": "2026-04-30",
+  "holdout_rows_loaded": 0
+}

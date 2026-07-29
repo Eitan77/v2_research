@@ -1,0 +1,109 @@
+run_id: RUN-0010
+campaign_id: CAM-0001
+parent_run_id: RUN-0009
+
+planned_at: "2026-07-28T21:25:30.2923006-07:00"
+status: completed
+
+change_from_parent: >-
+  Qualify recent entry and exit execution against the local cutoff-bounded SIP
+  quote archive; if ETF quotes are unavailable, record the blocker and perform
+  SIP one-minute bar latency/adverse-price replay without claiming quote fills.
+reason: >-
+  The candidate is strong enough that next-open bar assumptions require
+  execution evidence. Decisions occur after the prior close, so a market-on-open
+  order is operationally plausible; 1/5/30-minute marketable delays test
+  alternative processes rather than imposing a universal delay.
+expected_effect: >-
+  A credible daily candidate should retain material recent net return under
+  short delays and adverse within-minute entry-high/exit-low bounds. Missing ETF
+  quote coverage blocks quote-qualified status even if minute bars are robust.
+
+configuration:
+  universe: "Actual TQQQ/SOXL candidate trade legs from 2025-05-01 through 2026-04-30"
+  signal: "Frozen RUN-0008 candidate decisions"
+  decision_time: "Prior completed close"
+  entry: "SIP marketable execution near next regular-session open"
+  exit: "SIP marketable execution near scheduled regular-session open"
+  direction: "Long only"
+  sizing: "Frozen fixed-base candidate weights"
+  filters:
+    quote_coverage: "All required symbol-dates"
+    minute_bar_latency_minutes: [0, 1, 5, 30]
+    adverse_bar_bounds: ["1-minute entry high / exit low", "5-minute entry high / exit low"]
+  stops_or_risk_overlays: "None"
+  cost_model: "5 bps per side plus realized replay fill difference"
+  execution_model: >-
+    Prefer first eligible SIP NBBO quote for marketable ask/bid replay. If the
+    archive has no ETF coverage, do not fabricate it; use SIP one-minute bar
+    open and adverse high/low bounds and label execution unqualified.
+
+short_selling:
+  direct_stock_or_etf_shorting_used: false
+  strictly_intraday_if_used: "N/A"
+  protective_stop_or_emergency_exit: "N/A"
+  forced_close_before_regular_session_end: "N/A"
+  overnight_direct_short_exposure_detected: false
+
+execution_contract:
+  command: >-
+    python campaigns/CAM-0001/src/audit_run0010.py
+    --candidate-trades campaigns/CAM-0001/artifacts/RUN-0008/candidate_trades.csv
+    --daily-cache campaigns/CAM-0001/artifacts/cache/bars_expanded_through_20260430.parquet
+    --output-dir campaigns/CAM-0001/artifacts/RUN-0010
+  expected_bar_variant_count: 6
+  quote_variant_count: "N/A unless all required ETF symbol-dates have SIP quote coverage"
+  output_paths:
+    - "artifacts/RUN-0010/execution_report.json"
+    - "artifacts/RUN-0010/fills.csv"
+    - "artifacts/RUN-0010/contract.json"
+
+completed_at: "2026-07-28T21:33:42.6090539-07:00"
+metrics_artifact: "artifacts/RUN-0010/execution_report.json"
+results_summary:
+  net_full_period_simple_return: "Recent execution window only; 0m SIP minute replay 1.265788"
+  average_monthly_net_simple_return: "0m 0.105482; 1m 0.103843; 5m 0.105493; 30m 0.103772"
+  average_calendar_year_net_simple_return: "N/A: execution replay is the fixed 12-month candidate interval"
+  standard_max_drawdown: "0m 0.128491; 30m 0.130629; adverse 1m 0.133896"
+  max_full_recovery_time_days: "85 at 0/1/5m; 91 at 30m and adverse bounds"
+  negative_month_count: "3 at open scenarios; 4 at adverse 1m/5m bounds"
+  trade_or_event_count: "19 independent decisions; 45 required symbol-dates"
+  average_capital_utilization: 0.76
+  adverse_cost_net_simple_return: "Adverse 1m 1.121284; adverse 5m 1.166493"
+
+execution_reconciliation:
+  semantic_tests: "6 passed"
+  actual_command_matches_record: true
+  executed_bar_variant_count: 6
+  expected_bar_variant_count: 6
+  quote_variant_count: 0
+  quote_variant_reason: "No TQQQ/SOXL SIP quote coverage on required dates"
+  saved_outputs_match_record: true
+  loaded_max_date: "2026-04-28"
+  holdout_rows_loaded: 0
+  sample_attrition: >-
+    All 45 candidate symbol-dates were represented in the SIP minute-bar replay.
+    SIP quote coverage was 0/45, so no quote-fill sample was interpreted.
+
+factual_outcome: >-
+  Open-based SIP minute replay retained 10.38%-10.55% average monthly net simple
+  return at 0/1/5/30-minute process delays, three negative months, and
+  12.43%-13.06% drawdown. Deliberately adverse entry-high/exit-low bounds
+  retained 9.34%-9.72%, four negative months, 13.12%-13.39% drawdown, and
+  91-day recovery. Entry-minute volume was at least 132,663 shares in the tested
+  delay scenarios, but normalized capital does not establish dollar capacity.
+  The local SIP quote archive contained none of the 45 required TQQQ/SOXL
+  symbol-dates. The configured Alpaca client could fetch the missing historical
+  NBBO, but no API credentials were present in this session.
+decision: >-
+  Execution remains uncertain, not failed and not quote-qualified. Bar-based
+  latency is robust, but missing NBBO spread, size, and quote-condition evidence
+  blocks promotion.
+next_question: >-
+  Does the exact adapted candidate retain its result at severe cost and a full
+  extra-session operational delay before the mandatory conclusion audit?
+artifacts:
+  - "artifacts/RUN-0010/execution_report.json (sha256 4308976406cc972cb2cc7f9ab4cbadb4c50639ab81eaa65fdd53fd5b18bcdadf)"
+  - "artifacts/RUN-0010/fills.csv (sha256 c6b37f6f8d9fe7dd582dfe7d6f40dacb3c1ef9cfccb8e0c7524714cbabda6410)"
+  - "artifacts/RUN-0010/contract.json (sha256 f6a2b568e57aede8a6412f55b8d005033d60c27c0c8fc809c4f3337ff82fb50b)"
+  - "src/audit_run0010.py (sha256 e757e3173fa09426f09ec80461fa0d7204e5e55e5bc9963e80c8558ae2e96964)"

@@ -1,0 +1,16 @@
+variant,block,net_pnl,event_count
+vol_high_dollar_q50_nbbo_slip2,block_1,0.2275068037395852,38
+vol_high_dollar_q50_nbbo_slip2,block_2,0.225480461146681,22
+vol_high_dollar_q50_nbbo_slip2,block_3,0.316964224357584,37
+vol_high_dollar_q67_nbbo_slip2,block_1,0.2046482103915463,30
+vol_high_dollar_q67_nbbo_slip2,block_2,0.2329860348752486,19
+vol_high_dollar_q67_nbbo_slip2,block_3,0.3478648030950953,30
+vol_high_dollar_q50_range50_nbbo_slip0,block_1,0.2381576440374835,36
+vol_high_dollar_q50_range50_nbbo_slip0,block_2,0.2342804611466811,22
+vol_high_dollar_q50_range50_nbbo_slip0,block_3,0.3498695821310101,36
+vol_high_dollar_q50_range50_nbbo_slip2,block_1,0.2237576440374835,36
+vol_high_dollar_q50_range50_nbbo_slip2,block_2,0.225480461146681,22
+vol_high_dollar_q50_range50_nbbo_slip2,block_3,0.3354695821310102,36
+vol_high_dollar_q50_range50_nbbo_slip5,block_1,0.2021576440374834,36
+vol_high_dollar_q50_range50_nbbo_slip5,block_2,0.2122804611466811,22
+vol_high_dollar_q50_range50_nbbo_slip5,block_3,0.3138695821310101,36

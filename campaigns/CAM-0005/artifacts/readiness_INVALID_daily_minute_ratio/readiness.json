@@ -1,0 +1,32 @@
+{
+  "status": "passed",
+  "catalog": "D:\\AlgoResearch\\data\\catalog.duckdb",
+  "symbols": [
+    "QQQ",
+    "TQQQ",
+    "SQQQ",
+    "SMH",
+    "SOXL",
+    "SOXS"
+  ],
+  "source": "local catalog cutoff-bounded SIP raw one-minute plus SIP split daily",
+  "minute_rows": 133925,
+  "daily_rows": 4986,
+  "min_session": "2023-01-03",
+  "max_loaded_date": "2026-04-30",
+  "holdout_rows_loaded": 0,
+  "adjustment_factor_min": 0.49887410440122826,
+  "adjustment_factor_max": 2004.3379826797336,
+  "coverage": {
+    "session_symbol_rows": 5004,
+    "sessions": 834,
+    "signal_incomplete_underlying_rows": 18,
+    "entry_incomplete_rows": 47,
+    "opening_incomplete_rows": 18,
+    "zero_targeted_rows": 18
+  },
+  "hashes": {
+    "minutes": "65f5758ba81380fded4c3c1736e7ce38fb923a5cbfe602c2654114336a7a3cbf",
+    "daily": "0f8052d5c18f245dea491c1e7e08a8462094371bb39ae4a43f374d70f6981863"
+  }
+}

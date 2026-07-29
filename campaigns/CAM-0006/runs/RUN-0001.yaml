@@ -1,0 +1,96 @@
+run_id: RUN-0001
+campaign_id: CAM-0006
+parent_run_id:
+planned_at: "2026-07-29T04:34:00-07:00"
+status: completed
+
+change_from_parent: >-
+  Implement the frozen source-contract baseline. Rank the causal
+  signal-complete, prior-$100M-dollar-volume point-in-time QQQ universe by
+  official opening gap each session; require top/bottom decile and at least
+  0.5% absolute gap. Split first-minute-confirmed continuation from
+  first-minute absorption. Enter at the 09:31 minute open and test 09:45,
+  10:00, 12:00, and five-minutes-before-actual-close exits in long-only,
+  protected-short-only, and balanced portfolios at 0/5/10/20 bp per side.
+reason: >-
+  The mechanism sign and horizon are unknown. A faithful baseline must test
+  both directions, all declared starting exits, and all economic legs before
+  auction-size or state adaptation. The liquidity floor is causal and frozen
+  from readiness; it removes almost no events while supporting marketable
+  execution.
+expected_effect: >-
+  A real opening-inventory mechanism should show a coherent gross sign in at
+  least one continuation/absorption family, survive neighboring horizons and
+  realistic costs, and not depend entirely on unsafe shorts or a few days.
+  If a selected event lacks an exact horizon exit mark, the entire variant-day
+  is assigned no trade and recorded as post-signal attrition.
+
+configuration:
+  universe:
+    membership: "Point-in-time QQQ daily membership"
+    signal_complete_only: true
+    shifted_prior_20d_median_dollar_volume_minimum: 100000000
+  gap:
+    cross_sectional_tail_each_side: 0.10
+    minimum_absolute_gap: 0.005
+  first_minute:
+    continuation: "Sign(first-minute auction-to-09:30-close return) equals sign(gap)"
+    absorption: "Signs are opposite"
+  decision_time: "09:31 after completed 09:30 bar"
+  entry: "09:31 minute open"
+  exits: ["09:45_open", "10:00_open", "12:00_open", "calendar_close_minus_5m_open"]
+  portfolios: ["long_only", "short_only", "balanced"]
+  cost_bps_per_side: [0, 5, 10, 20]
+  short_stop_fraction: 0.02
+  adverse_stop_slippage_bps: 10
+  maximum_gross_exposure: 1.0
+  expected_variant_count: 96
+
+execution_contract:
+  command: >-
+    python campaigns/CAM-0006/src/run0001.py
+    --readiness-dir campaigns/CAM-0006/artifacts/readiness
+    --output-dir campaigns/CAM-0006/artifacts/RUN-0001
+  expected_variant_count: 96
+
+completed_at: "2026-07-29T04:41:00-07:00"
+factual_outcome: >-
+  All 96 frozen variants reconciled on 44,075 causal universe events, 3,486
+  continuation signals, 4,033 absorption signals, and zero holdout. Gross
+  auction effects exist, but broad costs overwhelm them: 16/24 zero-cost
+  variants were positive over 18 months, only 2/24 at 5 bp, and none at 10 or
+  20 bp. The best central-cost branch was absorption/final/long-only at 5 bp:
+  0.66% average month over 18 months, 2.00% over 15 months, 2.02% over 12
+  months, ten negative 18-month months, 43.25% drawdown, and 248.5% top-five-
+  day profit share. Its gross version averaged 3.96% over 15 months, so the
+  portfolio is frequent but thin-edge. Protected short absorption was only
+  slightly positive gross, stopped on 32.6% of events, and lost after costs;
+  balanced portfolios also failed net. The only coherent gross opportunity is
+  long negative-gap absorption held toward the close.
+decision: >-
+  Reject broad continuation, every net short/balanced branch, and unfiltered
+  absorption as Type-A candidates. Continue the campaign because long
+  absorption has a diagnosed causal state structure: the most negative gap
+  quintile, larger auction participation, and stronger first-minute reclaim
+  show materially higher gross expectancy. Freeze a bounded long-only state
+  matrix before judging whether this is a real cost-surviving region or
+  concentrated subset selection.
+next_question: >-
+  Do causal negative-gap rank, reclaim fraction, and auction-size/participation
+  neighbors produce a stable long-absorption region that survives 5-20 bp,
+  chronological blocks, symbol/event concentration, and post-signal exit-mark
+  attrition?
+artifacts:
+  - "artifacts/RUN-0001/signals.parquet"
+  - "artifacts/RUN-0001/variants.csv"
+  - "artifacts/RUN-0001/monthly.csv"
+  - "artifacts/RUN-0001/decisions.parquet"
+  - "artifacts/RUN-0001/positions.parquet"
+  - "artifacts/RUN-0001/contract.json"
+artifact_hashes:
+  signals_parquet: "42af9b66c9e977141d8a26945676bf54d3297aac79290aff60473b60d459e3e6"
+  variants_csv: "26cc72bb3b7e07292116bf74003359605a8762b623771f02fc94e2062566d50d"
+  monthly_csv: "a93f8c3977c8a748d38a5b50c8a29e43934e323979eebcdff269a2a359d63441"
+  decisions_parquet: "71a54f4a8ee27a303319efc6296cc152883d5891005fcc4f4e923872448c61cd"
+  positions_parquet: "3b40c1ea9d116feb63ee00dddad2606cfe6729ee8e69254b655bdfce9af6170e"
+  contract_json: "10ba95d450f1a56de02ab32d34fc3dc6f4360caa113523b97791500fc5e71eea"

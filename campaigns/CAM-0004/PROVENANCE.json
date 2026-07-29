@@ -1,0 +1,21 @@
+{
+  "campaign_id": "CAM-0004",
+  "created_at": "2026-07-29T00:39:24-07:00",
+  "plan_canonical_sha256": "a81491f24faa9ef3002b73c73662713016d41765e0d49a6ebbef0ab87a21fd07",
+  "source_pdf": {
+    "path": "artifacts/source/brogaard_han_kim_2024.pdf",
+    "sha256": "011f199bad3817945d118def1e418d71574d29e817588f0467b75a8fa2f1c1ca",
+    "text_path": "artifacts/source/brogaard_han_kim_2024.txt",
+    "text_sha256": "aa5abf190263cd699956c2c2ce6f1e18b6d553e7b2590cb3232f287df5b4e8e6",
+    "source_fidelity_path": "SOURCE_FIDELITY.md",
+    "source_fidelity_sha256": "b6700192c12f3be7adc63267505cf409b13450c4de2bb07c7bbf0441ceac9935",
+    "pages": 59,
+    "visual_review": "all pages rendered into five contact sheets and inspected",
+    "origin": "user-provided C:\\Users\\decla\\Downloads\\ssrn-4731947.pdf"
+  },
+  "data": {
+    "status": "not_loaded",
+    "pending_gate": "Exact characteristic, membership, schema, timing, and sealed-cutoff readiness"
+  },
+  "browser_use": false
+}

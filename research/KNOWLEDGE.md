@@ -603,6 +603,27 @@ Investigate:
 
 Do not exclude the concentrated loser or winner and then call the revised result independent.
 
+Concentration can also reveal the correct strategy identity. A mechanism may
+belong to one stock, a stable stock set, an observable stock class, a ranked
+tail, or an ETF rather than the full starting universe. Do not automatically
+dilute a profitable specialized edge to obtain superficial breadth.
+
+For a concentrated result, compare:
+
+- A fixed basket supported by an ex-ante economic rationale
+- Causal walk-forward symbol eligibility using only prior outcomes and
+  characteristics
+- A point-in-time ranking universe
+- Top-one, top-three, top-five, and broader constructions
+- Mechanism-specific liquidity, volatility, sector, factor, behavioral, and
+  event subsets when the necessary point-in-time data exist
+- Stock, ETF, leveraged or inverse ETF, and hybrid implementations when they
+  express the same edge
+
+Judge which construction maximizes credible net fixed-capital profit after
+costs, consistency, drawdown, capacity, and execution. Never choose tickers
+from their full-sample future performance and label the basket prospective.
+
 ## 4.7 Broad parameter stability
 
 A credible mechanism often works across a neighborhood of reasonable implementations.
@@ -850,6 +871,19 @@ Concentration diagnostics should describe:
 
 Do not encode one universal concentration cutoff. Judge whether the concentration is compatible with the claimed mechanism and intended use.
 
+Required concentration diagnostics include per-symbol or per-event gross and
+net contribution, sample size, win rate, independent-period stability,
+top-contributor share, leave-one-out performance, common observable
+characteristics, and causal selectability. Separate:
+
+- Broadly robust edge
+- Concentrated but causally selectable edge
+- One-off accidental concentration
+- Ex-post symbol or event cherry-picking
+
+A handful of causally identifiable profitable stocks can be the intended
+strategy. A broad universe is not inherently superior.
+
 ---
 
 # 10. Additional validation tools
@@ -1086,3 +1120,143 @@ The agent should choose among them only after reviewing the repository, data, ou
 - Can strategies with different failure regimes be combined to improve total portfolio behavior?
 
 Update this section as the project learns.
+
+## V2 verified campaign lessons
+
+### Leveraged-ETF continuation needs an unleveraged mechanism check
+
+When a leveraged-ETF continuation candidate is strong, replay the same causal
+state in the corresponding unleveraged underlyings before attributing the
+result to fund rebalancing. A matching path at lower magnitude supports a real
+directional effect while showing how much of the headline is embedded product
+leverage and market beta.
+
+### A favorable recent endpoint is not a causal regime onset
+
+Compare all rolling windows and retain the neutral predeclared recent view
+unless an observable state known before entry justifies a different onset.
+Strong final-window percentile, low event count, and top-event contribution
+must remain visible even when the arithmetic objective is met.
+
+### Bar-delay robustness does not substitute for ETF NBBO evidence
+
+SIP minute-bar open and adverse high/low replays can bound timing sensitivity,
+but they cannot establish spread, displayed size, quote conditions, queue
+position, or dollar capacity. Missing quote coverage should yield
+`execution_uncertain`, never a fabricated fill or automatic strategy failure.
+
+### Extreme intraday reversal can improve after a causal reclaim but remain economically sparse
+
+For completed extreme stock sell shocks, separate raw moves from synchronous
+market returns and test a completed-bar reclaim before entry. In the verified
+recent campaign, this changed a losing source baseline into modest positive
+expectancy with low drawdown, but only near 6% residual severity. Lower 2%-4%
+thresholds created hundreds of events and diluted the edge, while the extreme
+family produced mostly zero months. Treat frequency and expectancy as a joint
+falsification test: leverage, winning-ticker selection, or one market-wide
+reversal episode must not bridge a structural income gap.
+
+### Historical morning-to-close ETF continuation can invert in a modern sample
+
+When reproducing first-half-hour to last-half-hour continuation, test the gross
+conditional sign before refining execution. Decompose overnight from
+open-session information, complete both source directions under current short
+safeguards, and include ETFs the source identifies as strongest. In the
+verified recent campaign, the gross relation was negative; timing neighbors,
+same-sign pre-close confirmation, causal opening activity, magnitude tiers,
+and 810 ETF/state cells did not restore it. A temporary leveraged-product
+pocket without unlevered alpha and with negative latest-12-month performance
+is decay evidence, not a candidate.
+
+### Intraday residual reversal may survive only as a small conditional long leg
+
+When an unconditional residual-reversal baseline loses, separate source-close
+alpha from following-open latency and the protected short path before changing
+the signal. Then test cumulative formation/holding and causal stress states
+with expanding shifted thresholds. In the verified recent proxy campaign,
+high lagged volatility recovered a coherent cumulative loser rebound, but only
+the long-low leg survived. Concurrent-capital scaling, 1-3 bp per-side costs,
+four residual control sets, and top-day decomposition left less than 1% average
+monthly net return with severe profitable-day concentration. Preserve the
+conditional liquidity lesson, but do not spend quote budget when execution
+cannot bridge an order-of-magnitude profile gap. Missing exact source inputs
+must remain a replication blocker, not be silently replaced or called a paper
+failure.
+
+### Opening-transition spreads can change the preferred overnight exit without creating alpha
+
+For close-to-open ETF strategies, replay both the first actionable opening
+quote and a completed post-open minute before choosing an exit. In the verified
+semiconductor campaign, first-ask entry and first-bid exit were fully covered,
+but the median bid-ask spread near 09:30 was roughly three times the 09:35
+spread. Waiting five minutes lowered drawdown and profitable-day concentration
+without materially increasing return. Treat this as execution selection, not
+signal improvement, and retain quote-size fields in raw units until their
+capacity contract is independently verified.
+
+### Causal volume conditioning can reveal a low-drawdown sleeve without rescuing a money-printer profile
+
+Compare current completed-window dollar volume with a shifted trailing
+distribution, then report the filtered sample's attrition, chronological
+blocks, product legs, zero months, and older context. In the verified
+late-day-to-overnight reversal campaign, above-median volume sharply reduced
+recent drawdown and preserved both legs, but average monthly return remained
+near half the Type-A reference and older inverse behavior was adverse. Capped
+continuous sizing improved the return-risk tradeoff further but could not
+create missing alpha. Preserve such a rule as a development sleeve rather than
+levering it into the requested profile.
+
+### Official opening-auction absorption can be real while opening execution caps the profile
+
+Match official auction conditions to the primary opening print, rank the full
+causal universe before checking later exit availability, and use the completed
+first minute to distinguish confirmation from absorption. In the verified
+point-in-time QQQ campaign, only long negative-gap absorption survived costs;
+protected shorts, continuation, delayed entry, tight stops, and auction-price
+failure exits did not. High shifted market volatility, auction anomaly,
+top-reclaim allocation, and strong first-minute participation produced a
+distributed low-drawdown sleeve, but marketable opening spreads were roughly
+ten times closing spreads and the fully replayed edge remained near half the
+Type-A return reference. Treat missing post-target quotes as delayed fills,
+not cash or fabricated immediacy, and do not confuse a robust modest bootstrap
+distribution with evidence for an exceptional-return profile.
+
+### Earnings reactions can contain two durable long clocks without approaching an exceptional-income profile
+
+Map public earnings releases to the next actionable session, require a
+completed opening reaction, and separate confirmed positive gaps from
+reclaimed negative gaps before combining them. In the verified point-in-time
+QQQ campaign, after-close positive continuation formed a seven-to-nine-session
+drift plateau, while high-prior-volatility negative gaps that reclaimed in the
+first 30 minutes formed a finite recovery clock near eight sessions. Both
+survived 10:05 entry, 20 bp per-side bar costs, broad exit neighbors, and exact
+leave-one-out resimulation. Combining them improved utilization and removed
+inactive months, but gross-capped return remained near 3% per month; cap67-
+cap100 and causal strength priority worsened return and drawdown. When zero of
+20,000 block-bootstrap paths reaches the target return, preserve the modest
+event-premium lesson and stop before quote replay rather than using execution
+work to rescue missing alpha.
+
+### Failed negative analyst revisions can reveal resilience without producing a money-printer profile
+
+Detect only explicit public rating, initiation, and maintained-target actions,
+consolidate same-sign firm bursts, and separate issuer earnings confounds before
+using the completed price response. In the verified point-in-time QQQ
+campaign, negative actions followed by a positive one-minute reaction and a
+small additional delay produced a distributed ten-session long premium.
+One-minute and 30-minute confirmation neighborhoods, 20 bp per-side costs, 108
+symbols, and capacity-aware symbol/firm/event/day removals all stayed positive.
+However, gross-capped return remained near 2.6% per month, four recent months
+lost, and zero of 20,000 block-bootstrap paths reached 10%. Preserve
+revision-rejection as a lower-return event feature; do not use larger event
+caps, quote replay, or broader-universe dilution to manufacture a Type-A claim.
+
+### Apparent peer propagation can actually be slower common-sector drift
+
+Reproduce short-delay propagation before interpreting close-to-close profits.
+In the semiconductor campaign, every 5-60-minute continuation portfolio lost,
+while a delayed close exit became profitable. Formation, lag, sizing, and
+contributor neighbors were positive, but SMH dollar/beta hedging removed the
+edge and one month supplied 29.73% of capital return. Preserve capacity-aware
+removals and bootstrap evidence, but do not call an unhedged sector move
+idiosyncratic propagation or a Type-A money printer.

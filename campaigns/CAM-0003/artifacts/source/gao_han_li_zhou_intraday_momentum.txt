@@ -1,0 +1,1515 @@
+=== PAGE 1 ===
+Intraday Momentum: The First Half-Hour
+Return Predicts the Last Half-Hour Return ∗
+Lei Gao
+Iowa State University
+and
+Yufeng Han
+University of Colorado Denver
+and
+Sophia Zhengzi Li
+Michigan State University
+and
+Guofu Zhou
+Washington University in St. Louis †
+First Draft: March, 2014
+Current Version: December, 2015
+∗We are grateful to Phil Dybvig, Campbell Harvey, Steve Hesto n, Ryan Israelsen, Andrew
+Karolyi, Aditya Kaul, Naveen Khanna, Zhongjin Lu, Stefan Na gel, Matthew Ringgenberg, Ronnie
+Sadka, Robert Stambaugh, Jack Vogel, Mao Ye, seminar partic ipants at Michigan State University,
+Shanghai Advanced Institute of Finance, Singapore Managem ent University, Southwestern Univer-
+sity of Finance and Economics, University of Missouri, and W ashington University in St. Louis,
+and conference participants at the 2014 Tsinghua Universit y Workshop, 2014 International Sym-
+posium on Financial Engineering and Risk Management, 2014 F inancial Management Association
+meeting, 2015 Mid-Atlantic Research Conference in Finance , 2015 ITAM Finance Conference, and
+2015 NF A Conference for helpful comments.
+†Correspondence: Guofu Zhou, Olin School of Business, Washi ngton University, St. Louis, MO
+63130; e-mail: zhou@wustl.edu, phone: (314)935-6384.
+
+=== PAGE 2 ===
+Intraday Momentum: The First Half-Hour
+Return Predicts the Last Half-Hour Return
+Abstract
+Based on high frequency data of the S&P 500 ETF from 1993 – 2013 , we document
+an intraday momentum pattern: the ﬁrst half-hour return on t he market predicts the
+last half-hour return. The predictability, both statistic ally and economically signiﬁcant,
+is stronger on more volatile days, on higher volume days, on r ecession days, and on
+major macroeconomic news release days. This intraday momen tum is also strong
+for ten other most actively traded domestic and internation al ETFs, and two major
+international equity index futures. Theoretically, the in traday momentum is consistent
+with the trading behavior of informed traders.
+JEL Classiﬁcation: G11, G14
+Keywords: Predictability, Intraday, Momentum, Economic Value
+
+=== PAGE 3 ===
+Introduction
+Since the seminal work of Jegadeesh and Titman (1993), it has been well-known that winners
+(losers) over the past six months to a year tend to continue to be w inners (losers) over the
+next six months to a year. Griﬃn, Ji, and Martin (2003) show that mo mentum like this is
+common in global stock markets. In addition to this cross-section m omentum, Moskowitz,
+Ooi, and Pedersen (2012) and Asness, Moskowitz, and Pedersen ( 2013) recently ﬁnd evidence
+that time series momentum, where past returns of an asset positiv ely predict its own future
+returns, is pervasive across asset classes such as equities, bond s, and currencies. To the
+best of our knowledge, however, almost all momentum studies are c onﬁned to the monthly
+or weekly frequency. An open question is whether there is any mome ntum at the intraday
+level. This question is of interest not only for examining the robustne ss of various momentum
+strategies, but also for understanding intraday market eﬃciency and the role played by
+daytraders including high-frequency traders.
+In this paper, we provide the ﬁrst study on intraday momentum, co ntributing in a unique
+way to the large literature of momentum studies. 1 Speciﬁcally, we ﬁnd that the ﬁrst half-
+hour return on the market signiﬁcantly predicts the last half-hour return on the market. 2
+We measure the market return by the actively traded S&P 500 ETF. The predictive R2 of
+the ﬁrst half-hour return on the last half-hour return is 1.6%, a lev el matching or exceeding
+a typical predictive R2 at the monthly frequency (see, e.g., Rapach and Zhou, 2013). If t he
+ﬁrst half-hour return is combined with the twelfth half-hour retur n (the half-hour before
+the last half-hour), the R2 increases further to 2.6%. We also ﬁnd that predictability rises
+generally with volatility and volume. For instance, when the ﬁrst half- hour volatility is high,
+the R2 increases to 3.3% for the combined predictors. The predictability is s tronger during
+recessions and on days with certain major economic news. Finally, we observe that intraday
+momentum is stronger on days when the ﬁrst half-hour returns ar e positive than on days
+when the ﬁrst half-hour returns are negative.
+For out-of-sample (OOS) predictability, the R2 is 1.2% using the ﬁrst half-hour return
+as the only predictor, and 1.8% when this predictor is combined with th e twelfth half-hour
+return predictor. Similar to the in-sample results, the OOS predicta bility is also greater
+than those typically found at the monthly frequency. In terms of e conomic signiﬁcance,
+predictability based on either the ﬁrst half-hour return alone or its combination with the
+twelfth half-hour return can generate certainty equivalent gains of 6.35% and 6.44% per
+annum, respectively, over ignoring the predictors for a mean-var iance investor with a risk
+aversion of 5. In terms of market timing, the economic value is also su bstantial – the average
+return of the timing strategy using the sign of the ﬁrst half-hour r eturn is 6.67% per annum
+with a standard deviation of 6.19%. The Sharpe ratio is thus 1.08, whic h is remarkable
+compared to a level of 0.29 of a daily Buy-and-Hold strategy which delivers an average return
+of 6.04% per annum with a standard deviation of 20.57%. Moreover, t he outperformance
+1For example, the latest number of Google citations of Jegadeesh an d Titman (1993) is over 7360.
+2In a recent study, Lou, Polk, and Skouras (2015) examine the intr aday property of the cross-section
+momentum of stocks. In contrast, we study here the time-series momentum of the market.
+1
+
+=== PAGE 4 ===
+remains signiﬁcant even after accounting for transaction costs, which become increasingly
+lower due to quote decimalization in 2001 and advances in trading tech nology. Overall, the
+intraday momentum is both statistically and economically signiﬁcant ou t of sample.
+What are the economic forces that drive the intraday momentum? T heoretically, Admati
+and Pﬂeiderer (1988) show that informed traders will act strateg ically by timing their trades
+for high trading volume periods, which occur during the ﬁrst and the last half-hours in
+our context due to the well-known intraday U-shaped trading volum e pattern of the stock
+market. Hora (2006) demonstrates further that an optimal tra ding strategy is to trade
+rapidly at the beginning and at the end of the trading day, and trade more slowly in the
+middle of the day. Therefore, suppose there are good economic ne ws in the ﬁrst half-hour,
+informed traders are likely to bid up asset prices substantially. Then , in the last half-hour,
+their continued buying is likely to push the price further up, yielding ou r observed market
+intraday momentum. Moreover, this explanation is also consistent w ith the fact that the
+market intraday momentum is stronger when the ﬁrst half-hour re turns are positive than
+otherwise. In short, the trading behavior of informed traders ex plains the market intraday
+momentum.
+The market intraday momentum is also consistent with the trading be havior of day-
+traders. Most major macroeconomic announcements, such as GD P and CPI, are released
+prior to 8:30am Eastern time, one hour before stock market tradin g starts. There is in ad-
+dition various overnight news. Hence, a substantial rise in the ﬁrst half-hour return is likely
+due to good economic news. In response to such a rise, some daytr aders may go short to
+provide liquidity to the market, but they will unwind their positions late r before the mar-
+ket closes. Shefrin and Statman (1985), Odean (1998), Locke an d Mann (2000), Coval and
+Shumway (2005), and Haigh and List (2005) all suggest that daytr aders can be subject to
+the disposition eﬀect – they may be more reluctant to unwind losing po sitions than winning
+ones. Thus, as many of them are doing so during the last half-hour, their trading is likely
+to drive prices higher. The empirical evidence is consistent with this e xplanation. On a
+day when the ﬁrst half-hour return is up substantially, the twelfth half-hour return is on
+average positive, making those who procrastinate have to unwind in the last half-hour. This
+also helps to understand the fact that the opening price on the follo wing day is on average
+lower, which suggests that there is an adjustment of the price fro m the previous day’s buying
+pressure in the last half-hour.
+The intraday momentum is quite robust. It persists after account ing for reasonable
+transaction costs and market microstructure noises. Its econo mic value is signiﬁcant for
+various risk aversion parameters and leverage constraints. More over, it is not limited to the
+S&P 500 ETF, but is also strong and signiﬁcant for ten other most ac tively traded ETFs.
+These ETFs represent alternative stock indices, such as the Dow, the NASDAQ, and the
+Russell 2000. They also cover ﬁnancial, real estate, bond and cer tain international equity
+indices. Interestingly, perhaps due to their lower liquidity, the out- of-sample predictability
+and the certainty equivalent gains on these ETFs are often greate r than those on the S&P500
+ETF. Furthermore, the intraday momentum exists in two major inte rnational equity index
+futures, the FTSE 100 and EuroStockXX 50. However, the intrad ay momentum does not
+2
+
+=== PAGE 5 ===
+show up in major currency pairs or commodity futures. This is perha ps expected because,
+unlike the stock market, the daily open and close for currency and c ommodity futures are
+unclear because they are traded globally around the clock.
+Our paper is related to the literature on intraday asset prices. Man y of the existing
+studies have been focused on trading activity and volatility (see, e.g ., Chordia, Roll, and
+Subrahmanyam, 2011; Corwin and Schultz, 2012). Heston, Koraj czyk, and Sadka (2010)
+seem to be the only study that is closely related to ours. They ﬁnd a s triking pattern that
+returns on certain individual stocks tend to be persistent at the s ame half-hour intervals
+across trading days, and that this pattern can last for up to 40 tr ading days. In contrast
+to their study, we analyze intraday market momentum, namely, the predictability of the
+market’s ﬁrst half-hour return for the market’s last half-hour re turn on the same day.
+Our work is also related to the literature on price discovery. Barclay and Warner (1993),
+Chakravarty (2001), and Boehmer and Wu (2013) study how trad ing and traders of diﬀerent
+types contribute to price discovery during a trading day and over lo nger horizons. Our paper
+by comparison suggests that the price discovery process can tak e at least a full trading day
+for the market to digest information, resulting in the intraday mome ntum.
+The rest of the paper is organized as follows. Section 1 provides a de scription of the
+data. Section 2 documents the intraday momentum both in- and out -of-sample, and its
+property over volatility or volume regimes, and proposes two explan ations. Section 3 provides
+an economic evaluation. Section 4 investigates its behavior over bus iness cycles and news
+announcements. Section 5 examines the robustness of the result s and Section 6 concludes.
+1 Data
+The intraday trading prices of the actively traded S&P 500 ETF (tick er SPY) are from
+the Trade and Quote database (TAQ) to compute half-hour retur ns. The sample period
+spans from February 1, 1993 through December 31, 2013. We exc lude any trading days
+with fewer than 500 trades. For major news releases, we obtain th e historical release dates
+of the Michigan Consumer Sentiment Index (MCSI) from the Univers ity of Michigan; the
+historical release dates of the GDP estimate from the Bureau of Ec onomic Analysis; the
+historical release dates of the CPI from the Bureau of Labor Stat istics; and the historical
+release dates of the Federal Open Market Committee (FOMC) minut es from the Federal
+Reserve Bank. 3
+Speciﬁcally, to examine the intraday return predictability, on any tr ading day t, we
+calculate the ﬁrst half-hour return using previous day’s close price and the price at 10:00am
+Eastern time, and then every half-hour (30-minute) returns fro m 10:00am to 4:00pm Eastern
+3The website for historical MCSI releases is http://www.sca.isr.umich.e du/data-archive/mine.php,
+for GDP releases is bea.gov/newsreleases/relsarchivegdp.htm, fo r Bureau of Labor Statis-
+tics announcements is www.bls.gov/bls/archived sched.htm, and for FOMC minutes releases is
+www.federalreserve.gov/monetarypolicy/fomccalendars.htm.
+3
+
+=== PAGE 6 ===
+time, a total of 13 observations per day, from
+rj,t = pj,t
+pj−1,t
+− 1, j = 1, · · ·, 13, (1)
+where pj,t is the price at the j-th half-hour, and pj−1,t is the price at the previous half-
+hour, for j = 1,... , 13. 4 Note that p0,t is the previous trading day’s price at the 13 th
+half-hour (4:00pm Eastern time). That is, we use the previous trad ing day’s closing price
+as the starting price in calculating the ﬁrst half-hour return on day t, i.e., p0,t = p13,t−1, so
+that the ﬁrst half-hour return captures the impact of informatio n released after the previous
+day’s market close. To assess the impact of return volatility on retu rn predictability, we
+also compute the volatility of the ﬁrst half-hour return in two steps . First, we calculate the
+returns minute by minute within the ﬁrst half-hour. Then, we compu te the realized volatility
+using the estimated one-minute returns within the ﬁrst half hour to obtain an estimate of
+the volatility of the ﬁrst half-hour.
+2 Intraday momentum
+We ﬁrst run predictive regressions to uncover the intraday momen tum, and next investigate
+its out-of-sample performance. Then we examine the impact of vola tility and volume on this
+momentum. Finally, we provide two intuitive explanations.
+2.1 Predictive regressions
+Consider ﬁrst the simple predictive regression of the last half-hour return on the ﬁrst half-
+hour return:
+r13,t =α +βr 1,t +ǫt, t = 1, · · ·,T, (2)
+where r13,t and r1,t are the last half-hour return and the ﬁrst half-hour return on da y t,
+respectively, and T is the total number of trading days in the sample.
+The ﬁrst column of Table 1 reports the results. The ﬁrst half-hour return positively
+predicts the last half-hour return with a scaled (by 100) slope of 6.9 4, statistically signiﬁcant
+at the 1% level, and an R2 of 1.6%. Such a high predictive R2 is impressive, as almost all
+typical predictors have lower R2’s (see, e.g., Rapach and Zhou, 2013).
+The twelfth half-hour (i.e., the second-to-last half-hour) may aﬀe ct the last half-hour
+return too if there is a strong price persistence during the day. Th e second column of
+Table 1 reports the regression result using this predictor. It is clea r that the twelfth half-
+hour return predicts the last half-hour return at the 1% signiﬁcan ce level with an R2 of 1.1%.
+We later show that this predictability largely comes from the recent ﬁ nancial crisis period,
+4Similar results are obtained using log returns.
+4
+
+=== PAGE 7 ===
+while that of the ﬁrst half-hour return is always signiﬁcant whether there is a crisis or not.
+Asr1 orr12 predictsr13 individually, it is of interest to examine wether they can predict
+r13 jointly. The third column in Table 1 reports the predictive regression results using
+both predictors. Surprisingly, the slopes are barely changed from their individual regression
+values. Moreover, the R2 of 2.6% is roughly equal to the sum of the individual R2’s. The
+evidence suggests that r1 andr12 are independent and complementary in forecasting the last
+half-hour return.
+The standard monthly momentum strategy is known to have perfor med poorly during
+the recent ﬁnancial crisis. How well the intraday momentum perfor ms in this period is
+an interesting question. Panel B of Table 1 reports the predictive r egression results from
+December 2, 2007, through June 30, 2009. The predictive power o f r1 in fact becomes
+stronger, with a larger slope of 13.6 and a higher R2 of 4.1%. Moreover, the two predictors
+combined yield an amazingly high R2 of 6.9%, rarely seen anywhere else. It may be noted
+that the predictive powers of r1 and r12 are complementary during the crisis period too.
+As the performance during the crisis period is so remarkable, a legitim ate question is how
+the crisis aﬀects the results of the whole sample period. Panel C of T able 1 addresses this
+question. Excluding those crisis days, performance clearly become s much weaker. Although
+r12 is less signiﬁcant, r1 remains a powerful predictor of r13 with a sizable R2 of 0.8%,
+comparable to many good predictors at the monthly frequency. Th e combined predictors
+yield a higher R2 of 1.1%. Therefore, similar to studies on other trading strategies, although
+the predictability is time-varying due to, for example, the ﬁnancial c risis, there is no doubt
+for the validity of intraday momentum over the entire sample period.
+If the ﬁrst and the twelfth half-hour returns can predict the last half-hour return, a
+natural question is whether any of the other ten half-hour retur ns can also predict r13. To
+test the predictability of r2,r 3,..., andr11, we ﬁrst examine if any of them used alone predicts
+r13 by performing a simple predictive regression analysis similar to Equatio n (2). Second, we
+examine if the explanatory power of r1 and r12 on r13 remains after controlling for returns
+over other half-hour intervals by running a multiple regression that regressesr13 onr1,r 2,... ,
+and r12 simultaneously. To address the concern of data snooping, both sim ple and multiple
+regression analyses are performed not only for SPY but also for te n other most heavily traded
+index ETFs. 5 Table IA.1 and Table IA.2 in the Internet Appendix report the results . Across
+all 11 ETFs, the predictability of r1 is always statistically signiﬁcant at the 1% level, and
+that of r12 is signiﬁcant except for TLT. In contrast, none of the other 10 ha lf-hour returns
+can signiﬁcantly and consistently predict r13 across the board. In short, only the ﬁrst and
+the twelfth half-hour returns can contribute to the intraday mom entum.
+2.2 Out-of-sample predictability
+Our previous intraday momentum analysis is based on the entire samp le (in-sample) estima-
+tion. While in-sample estimation is econometrically more eﬃcient if regre ssions are stable
+5Information on these index ETFs is detailed in Subsection 5.5 of Sectio n 5.
+5
+
+=== PAGE 8 ===
+over time, the ﬁnancial crisis clearly destabilizes the estimation. At t he monthly frequency,
+Welch and Goyal (2008) ﬁnd that many macroeconomic predictors s uﬀer from an instability
+problem, and their predictability largely vanishes once predictive reg ressions are estimated
+recursively out of sample (OOS). Thus, in-sample predictability does not necessarily imply
+OOS predictability.
+To assess whether the intraday momentum persists out of sample, we run recursive re-
+gressions similar to other predictability studies at the monthly frequ ency. That is, to forecast
+return at any time t, we use data only up to time t − 1. Starting the regression using re-
+turns before January 3, 1998, we progressively add one more mon th of returns each time
+to form the OOS forecasts. Following Campbell and Thompson (2008 ), Rapach, Strauss,
+and Zhou (2010), Ferreira and Santa-Clara (2011), Henkel, Mart in, and Nardari (2011), and
+Neely, Rapach, Tu, and Zhou (2014), among others, we use the OO SR2 to measure the OOS
+predictability, deﬁned as:
+OOS R2 = 1 −
+∑T
+t=1(r13,t − ˆr13,t)2
+∑T
+t=1(r13,t − ¯r13,t)2
+, (3)
+where ˆr13,t is the forecasted last half-hour return from the predictive regre ssion estimated
+through period t − 1, and ¯r13,t is the historical average forecast estimated from the sample
+mean through period t − 1. A positive OOS R2 indicates that the predictive regression
+forecast beats the simple historical average.
+Table 2 reports the results. When we use the ﬁrst half-hour retur n alone, the OOS R2
+is 1.2%. When we use the twelfth half-hour return alone, the OOS R2 is 0.7%. When we
+use both of them, the OOS R2 achieves its highest value of 1.8%. 6 The OOS R2’s match
+or exceed those at the monthly frequency. As shown by Campbell a nd Thompson (2008)
+for monthly returns and conﬁrmed later here, these levels of OOS R2 are of substantial
+economic signiﬁcance.
+2.3 Volatility
+Given that ﬁnancial crisis is characterized by high volatility, earlier re sults during the crisis
+period are a special case of how intraday momentum performs unde r high volatility. In
+general, we can examine the impact of volatility by sorting all the trad ing days into three
+groups (terciles): low, medium, and high, according to the ﬁrst half -hour volatility. For
+brevity, we consider the case of joint predictors of r1 and r12 only.
+Panel A of Table 3 reports the results. The predictability appears t o be an increasing
+function of volatility. When the ﬁrst half-hour volatility is low, the pre dictability is minimal
+with an R2 of 0.6% and an insigniﬁcant coeﬃcient for r1. At the intermediate volatility level,
+theR2 rises to 1.0%, which is economically signiﬁcant, and the coeﬃcient of r1 becomes highly
+6Stronger results are obtained if we start the regression in later pe riod. For example, the OOS R 2 is
+2.08%, 1.19%, and 3.18%, respectively, if the regression is started a fter January 3, 2004.
+6
+
+=== PAGE 9 ===
+signiﬁcant. Finally, when the ﬁrst half-hour volatility is high, the R2 increases more than
+ﬁve times to as high as 3.3% compared to the low volatility case.
+Overall, the intraday momentum seems highly related to volatility. The higher the volatil-
+ity, the greater the predictability. This appears consistent with th e theoretical model of
+Zhang (2006) that the greater the uncertainty, the stronger t he persistence of a trend. In
+our context, the greater the volatility, the greater the likelihood t hat the ﬁrst half-hour trend
+carries over to the last half-hour.
+2.4 Explanations
+Statistically, both the in- and out-of-sample analyses provide stro ng evidence on the intraday
+momentum. From an economic point of view, an interesting question is to ﬁnd out what
+economic forces drive it. We provide below two explanations.
+Our ﬁrst explanation is based on the strategic trading of informed t raders. Admati and
+Pﬂeiderer (1988) show theoretically that informed traders will time their trades for high
+trading volume periods. With a diﬀerent preference speciﬁcation, H ora (2006) also shows
+that an optimal trading strategy is to trade rapidly at the beginning and the end of the
+trading horizon, and to trade more slowly in the middle of the day. Figu re 1A plots the
+average trading volume of the S&P 500 ETF every half-hour. Both t he ﬁrst and the last
+half hours have trading volume of close to 15 million shares, but the mid dle of the day
+has only about 5 million shares. The plot has a perfect U-shape, cons istent with earlier
+ﬁndings about intraday trading activity (see, e.g., Jain and Joh, 198 8). Now, according to
+the theories, given good economic news, informed traders are likely to trade more actively
+in the ﬁrst half hour and thus bid up the price substantially. In the las t half hour, they
+become active again and then their continued buying is likely to push th e price up again.
+Figure 1B shows that the U-shape trading volume pattern is strong er on high volatility days,
+suggesting a stronger impact of informed trading as volatility rises. This is consistent with
+our earlier ﬁnding that intraday momentum is greater under greate r volatility.
+A direct assessment of the impact of volume on intraday momentum is given in Panel B
+of Table 3. Because trading volume has recently exhibited an upward trend largely because
+of substantially lower trading cost (Chordia, Roll, and Subrahmanya m, 2011), we need to
+control for the time trend eﬀect in studying the volume and intrada y momentum interaction.
+To do so, we ﬁrst sort all trading days within each year into terciles b ased on the ﬁrst half-
+hour trading volume, and then combine each volume tercile across all years to form the
+three volume groups. The predictive regression results in Panel B c onﬁrm that the intraday
+momentum is stronger when the ﬁrst half-hour trading volume is high er. The R2 increases
+from 1.1% when trading volume is low to 2.3% when trading volume is at an in termediate
+level, and then to 3.1% when trading volume is the highest.
+Our second explanation is based on the trading behavior of daytrad ers. On a day when
+the ﬁrst half-hour return is up substantially (e.g., due to overnight or early morning news),
+some traders may expect price reversion and go short. As they will almost surely unwind
+7
+
+=== PAGE 10 ===
+to go ﬂat before the market closes, some of them may wait to unwind in the last half-hour.
+Due to the disposition eﬀect (see, e.g., Shefrin and Statman, 1985; Odean, 1998; Locke and
+Mann, 2000; Coval and Shumway, 2005; Haigh and List, 2005), the y may be more reluctant
+to unwind losing positions than winning ones. On the other hand, on da ys with a substantial
+rise in price, the twelfth half-hour return is on average positive, ma king those who plan to
+unwind during this period wait to do so until the last half-hour. There fore, there is likely even
+more unwinding of losing positions than usual in the last half-hour. Co llectively, daytraders’
+buying is likely to push the last half-hour return higher than otherwis e. Indeed, the opening
+price on the following day is on average lower, suggesting an adjustm ent of the price from
+the last half-hour buying pressure.
+Both of our explanations provide an economic basis for the strong s tatistical evidence for
+the intraday momentum that the ﬁrst half-hour return on the mar ket predicts the last half-
+hour return on the market. Clearly, our explanations are limited in sc ope. Future research
+is called for to develop more models in understanding the trading motiv es, risk factors and
+the equilibrium factor risk premia.
+3 Economic signiﬁcance
+In this section, to explore the economic signiﬁcance of intraday mom entum, we use the ﬁrst
+half-hour and twelfth half-hour returns as timing signals either indiv idually or jointly to
+examine the performance relative to a passive strategy that alway s holds the market (SPY)
+during the last half-hour. Then we use the predicted last half-hour returns from the OOS
+recursive predictive regressions to assess the certainty equivale nt utility gains for a mean-
+variance investor.
+3.1 Market timing
+How well a predictor performs in market timing is a way to assess the v alue of the predictor.
+In our case, we use the ﬁrst and twelfth half-hour returns as a tim ing signal to trade the
+market in the last half-hour. Speciﬁcally, we will take a long position in t he market at the
+beginning of the last half-hour if the timing signal is positive, and take a short position
+otherwise. It is worth noting that the position (long or short) is clos ed at the market close
+on each trading day.
+Consider ﬁrst the use of the ﬁrst half-hour return r1 as the trading signal. Mathematically,
+the market timing strategy based on signal r1 on dayt will have a return in the last half-hour:
+η(r1) =
+{ r13, if r1 > 0;
+−r13, if r1 ≤ 0. (4)
+The formula is clearly similar when using r12 as the timing signal.
+When using both r1 andr12 as the trading signal, we buy only if both returns are positive,
+8
+
+=== PAGE 11 ===
+and sell when both are negative. Otherwise, we stay out of the mar ket. Mathematically, the
+return is computed from
+η(r1,r 12) =
+{ r13, if r1 > 0 & r12> 0;
+−r13, if r1 ≤ 0 & r12 ≤ 0;
+0, otherwise.
+(5)
+3.1.1 Out-of-sample performance
+Panel A of Table 4 reports summary statistics on returns generat ed from the three timing
+strategies. When we use the ﬁrst half-hour return as the timing sig nal to trade in the last
+half hour, the average return is 6.67% on an annual basis. 7 At ﬁrst glance, this does not seem
+very high. To gauge the performance, we report three benchmar k returns. The ﬁrst is an
+Always Long strategy where we always take a long position in the market at the be ginning
+of the last half-hour and close it at the market close. The ﬁrst row in Panel B of Table 4
+shows that the annualized average return of this strategy is only −1. 11%. Hence, the timing
+strategy η(r1) outperforms this passive strategy substantially.
+The second benchmark is a Buy-and-Hold strategy, where we simply take a long position
+in the market from the beginning of the sample, and hold it until the en d of the whole
+sample period. The results are reported in the second row of Panel B. The average return
+is 6.04% per year, which is still below the average return delivered by t he timing strategy,
+η(r1). Hence, 6.67% is remarkable, considering that we are in the market only for a half-hour
+each trading day instead of six and half-hours each day or all the tim e.
+The third benchmark is a Random Timing strategy, where we use a random coin ﬂip as
+the trade signal for the last half hour. The last row of Panel B show s that the average return
+is −0. 68% per year. Therefore, the good performance of the timing str ategyη(r1) is unlikely
+to be random.
+Of course, we have to take risk into consideration. The standard d eviation is 6.19%
+per annum for the timing strategy η(r1), resulting in a Sharpe ratio of 1.08. In contrast,
+the Always Long (Random Timing ) strategy has a comparable standard deviation of 6.21%
+(5.79%), but a negative Sharpe ratio of −0. 18 (−0. 12). The long-term Buy-and-Hold strategy
+has a much higher standard deviation of 20.57%, and a much lower Sha rpe ratio of 0.29.
+Note that the timing strategy η(r1) also enjoys a high positive skewness of 0.90 (versus
+−0. 46, −0. 16 and −0. 26 for the Always Long, Buy-and-Hold and Random Timing strategies,
+respectively) and a kurtosis of 15.65, suggesting that it often deliv ers high positive returns.
+Note that the timing strategy trades only for the last half-hour ev en though we annualize
+the returns the same way as the daily return. However, since the t iming strategy is exposed
+to market risk for only the last half-hour, its standard deviation is m uch lower and the Sharpe
+ratio is much higher than daily returns. As the Sharpe ratio is not ver y informative when
+7Even though we are only in the market for the last half-hour, we still annualize the returns multiplying
+by a factor of 252 because we only trade once per day.
+9
+
+=== PAGE 12 ===
+used to compare diﬀerent strategies, we adopt another perform ance measure, the Modigliani-
+Modigliani measure (M2), which is related to the Sharpe ratio by
+M2 = SRatio ×σb +rf, (6)
+where SRatio is the Sharpe ratio of the measured strategy, σb is the standard deviation of
+the benchmark portfolio, and rf is the risk-free rate. Here we use the daily market return
+as the benchmark and assume the daily risk-free rate is zero. The e conomic interpretation
+of the M2 measure is that M2 is the average return of the measured strategy if the strategy
+is leveled up (down) to have the same volatility as the benchmark port folio:
+M2 = (µ s −rf ) × σb
+σs
++rf, (7)
+where µ s and σs are the average return and standard deviation of the measured s trategy.
+Table 4 shows that the M2 of the timing strategy η(r1) is 22.16% per annum, which suggests
+that this timing strategy would deliver an average return of 22.16% p er annum if the timing
+strategy is leveled up to have the same risk (volatility) as the daily mar ket returns ( Buy-
+and-Hold strategy), which yields only 6.04% per annum.
+Finally, we report the success rate, which is deﬁned as the percent age of trading days with
+zero or positive returns. The success rate of the Always Long strategy is 50.42%, suggesting
+that the unconditional probability for the last half-hour returns is roughly 50-50. However,
+the success rate of the timing strategy η(r1) is higher at 54.37%.
+Using the twelfth half-hour return as the timing signal yields similar bu t weaker results.
+The average return is about 1.77% per annum, Sharpe ratio is 0.29, s kewness is 0.38, kurtosis
+is 15.73, and success rate is 50.93%. Overall, it still has a higher Sharp e ratio and a higher
+M2 measure than the Always Long benchmark.
+Combining the two returns, r1 and r12, delivers improved performance over using only
+the twelfth half-hour return, but the performance is slightly weak er than using just the ﬁrst
+half-hour return signal. For example, the average daily return is no w 4.39% vs. 6.67% per
+annum, but the success rate is now much higher at an impressive valu e of 77.05%. This
+means that combining both r1 and r12 does substantially improve the percentage of being
+right. Then, why does higher success rate yield lower average retu rns? The reason is that,
+when we combine the two signals, we take the long or short position on ly when both of them
+are positive or negative, which substantially reduces the number of days when we are in the
+market.8
+8If we exclude the non-trading days with zero returns in the calculat ion, the strategy performs the best
+as expected, with an annualized average return of 8.85%, a standa rd deviation of 6.36%, and thus a Sharpe
+ratio of 1.39, a comparable skewness of 1.19, and a kurtosis of 18.30 .
+10
+
+=== PAGE 13 ===
+3.1.2 Impact of volatility or volume
+We have observed in the in-sample predictive regression analysis that the intraday momentum
+is more pronounced on high volatility or volume days. To examine the imp act of volatility
+on out-of-sample performance, we ﬁrst sort all trading days into terciles based on the ﬁrst
+half-hour volatility and report the out-of-sample timing results in Pa nel A of Table 5.
+Overall, Panel A shows that timing strategies based on return pred ictability outperform
+the Always Long strategy under all scenarios, as is evident by higher average retu rns and
+Sharpe ratios. By looking at the impact of volatility, we ﬁnd that the t iming performance
+based on the ﬁrst half-hour return is much better when the ﬁrst h alf-hour volatility is higher.
+The average return per annum (and its t-statistic) of the η(r1) strategy rises substantially
+from 0. 54% (0.43) in the low volatility group, to 4 . 75% (2.27) in the medium volatility group,
+and then to 14 . 73% (3.80) in the high volatility group. The Sharpe ratio (M2 measure) also
+rises from 0.18 (1.79% per annum) to 0.97 (15.48% per annum) and the n to 1.63 (49.30%
+per annum). This enhanced out-of-sample performance of η(r1) on high volatility days is
+consistent with the better in-sample explanatory power of r1 on high volatility days reported
+in Panel A of Table 3. Combining the ﬁrst and twelfth half-hour retur ns as the timing signal
+conﬁrms the positive interaction between the volatility and the pred ictability of the ﬁrst
+half-hour return. Under the η(r1,r 12) strategy, both the average return and the Sharpe ratio
+monotonically increase from the low to the high volatility groups.
+Note that the ﬁrst half-hour return predicts the last half-hour r eturn both in sample
+and out of sample. If the predictability is due to the strategic tradin g of informed traders,
+as suggested by our ﬁrst explanation, we would expect the intrada y momentum eﬀect to
+be stronger when the ﬁrst half-hour trading volume is higher. To te st this, we further form
+tercile volume groups, similar to Panel B of Table 3, run an out-of-sa mple timing performance
+analysis for days within each volume group, and report the results in Panel B of Table 5.
+Comparing the three volume terciles in Panel B, we see that proﬁtab ility of the η(r1)
+strategy improves both statistically and economically as the ﬁrst ha lf-hour trading volume
+increases. The average return per annum (and its t-statistic) of the η(r1) strategy increases
+from 1.67% (0.98) on low volume days to 6.46% (3.03) on medium volume da ys, and then
+further to a much higher level of 11.87% (3.23) on high volume days. T he increase in the
+Sharpe ratio (M2 measure) from 0.42 (5.64% per annum) to 1.29 (23.9 3% per annum) and
+to 1.38 (37.67% per annum) of the η(r1) strategy also supports the implication that the
+ﬁrst half-hour return predicts better on high trading volume days . Under the combined
+signal strategy of η(r1,r 12), the average return rises from 2.10% per annum to 3.35% and
+then to 7.73% across the low, medium, and high volume terciles. All in all, these ﬁndings
+are consistent with the explanation that informed traders might tim e their trades for high
+volume periods such as the beginning and the end of the trading day, thus inducing a positive
+correlation between returns in the ﬁrst and last half-hours.
+11
+
+=== PAGE 14 ===
+3.2 Mean-variance portfolios
+Instead of using only the signs to form timing strategies, here we us e both the signs and
+magnitudes of the predictors to forecast the expected returns . Then we apply these expected
+returns to construct the optimal portfolio for a mean-variance in vestor who allocates funds
+between the market (SPY) and the risk-free asset (the Treasur y T-bill).
+The mean-variance eﬃcient portfolio weights are given as
+wt = 1
+γ
+ˆr13,t+1
+ˆσ 2
+13,t+1
+, (8)
+where ˆr13,t+1 is the forecasted last half-hour return on day t + 1 conditional on information
+available at or before t and the predictor(s) at t + 1, and ˆσ13,t+1 is the standard deviation of
+the last half-hour return, both of which are estimated from the re cursive regression; and the
+relative risk aversion coeﬃcient, γ, is set at 5. To be more realistic, we impose the portfolio
+constraint that weights on the risky asset must be between −0. 5 and 1.5, meaning that the
+investor is allowed to borrow or short 50% on margin. This will limit the po tential economic
+gains from the usual unconstrained weights. 9
+Over the out-of-sample period, the realized utility is
+U = ˆµ p −γ
+2 ˆσ 2
+p, (9)
+where ˆµ p and ˆσp are computed based on the realized portfolio returns. In the out- of-sample
+forecasting literature, the historical average is usually the bench mark, and the certainty
+equivalent gain of predictability is computed from
+CER =U2 −U1, (10)
+where U2 is the realized utility of using the forecasted return ˆ r13,t+1, and U1 is the realized
+utility of using the historical average mean forecast. From an econ omic perspective, CER
+can be interpreted as the gains of an investor who switches from be lieving in a random walk
+model of the intraday prices to believing in intraday momentum.
+The results are reported in Table 6. Using the ﬁrst half-hour retur ns to forecast the
+last half-hour returns yields an average return of 6.85% per annum , a standard deviation
+of 5.62% per annum, and thus a Sharpe ratio of 1.22, as well as large p ositive skewness
+and kurtosis. In sharp contrast, using historical average ¯ r13 to predict the last half-hour
+return only generates an average return of 0.46% per annum, a st andard deviation of 3.06%
+per annum, and hence a Sharpe ratio of merely 0.15. The CER using th e ﬁrst half-hour
+return is 6.35% per annum (the realized utility of using the historical a verage is only 0. 46%),
+indicating sizable economic gains when investors switch from following a random walk model
+to following intraday momentum.
+9The performance of the unrestricted portfolios is much stronger , which, although not reported for brevity,
+is indicated in Table IA.4 in the Internet Appendix.
+12
+
+=== PAGE 15 ===
+When both the ﬁrst and the twelfth half-hour returns are used to forecast the last half-
+hour returns, the portfolio delivers the best result, with an avera ge return of 6.94% per
+annum, a Sharpe ratio of 1.13, and a CER of 6.44% per annum. Note th at, unlike the case
+with market timing, using both predictors is slightly better than using the ﬁrst half-hour
+return alone. This is because we are now always in the market. It is ju st that the allocation
+varies daily.
+4 Macroeconomic events
+In this section, we examine the performance of intraday momentum ﬁrst over business cycles,
+and then on macroeconomic news releases.
+4.1 Business cycles
+We use the NBER dates for expansions and recessions to divide all tr ading days into these
+two types, and ask whether the intraday momentum eﬀect interac ts with the business cycle.
+We perform both in-sample predictive regression and out-of-samp le timing performance for
+the two periods, and summarize the results in Table 7.
+The comparison between these two periods suggests that intrada y momentum has a
+more signiﬁcant impact during recessions than expansions. Panel A shows that, during
+expansions, only the ﬁrst half-hour return can predict the last ha lf-hour return in sample.
+Albeit statistically signiﬁcant, the predictability of r1 is relatively weak, with an R2 of 1.0%
+when using r1 andr12 as joint predictors. During recessions, however, both the ﬁrst a nd the
+twelfth half-hour returns are highly signiﬁcant, and the R2 increases more than six times to
+6.6%. Such stronger predictability during recessions also translate s into higher proﬁts for
+market timing. For example, Panel B shows that, using the ﬁrst and the twelfth half-hour
+returns as the timing signal (strategy η(r1,r 12)), the average return of the timing strategy
+in recessions is 16.79% per annum, seven times as high as 2.35%, the av erage return for
+the expansion periods. As a result, the Sharpe ratio is 2.10 in the rec ession periods, more
+than three times higher than the Sharpe ratio in the expansion perio d (0.66), despite the
+high volatility of the strategy (8.01% versus 3.57%). The performan ce of the timing strategy
+η(r1) also shows that the intraday momentum strategies perform bett er during recessions
+than during expansions.
+4.2 News releases
+Previously, we have found that intraday momentum is stronger on d ays with higher volatility
+or higher trading volume. One possible source of high volatility or trad ing volume may be
+the release of major economic news. It is hence of interest how new s releases aﬀect intraday
+momentum.
+13
+
+=== PAGE 16 ===
+While there are many regular news releases, we here focus on four im portant news whose
+release times span across diﬀerent time frames of the day. The ﬁrs t is the Michigan Con-
+sumer Sentiment Index (MCSI), released monthly at 10:00am. The n ext two are the major
+macroeconomic variables, the gross domestic product (GDP) and t he consumer price index
+(CPI). Both of these are released monthly on pre-speciﬁed dates at 8:30am before the market
+opens, like most other macroeconomic news. The last is the minutes o f the Federal Open
+Market Committee (FOMC), released regularly at 2:15pm about ever y six weeks. We ana-
+lyze the impact of the news releases by dividing all the trading days int o two groups: days
+with news releases, and days without.
+Panel A of Table 8 reports the performance of intraday momentum for the two groups of
+trading days. On days without MCSI news, the R2 is 2.6%. On days with MCSI releases, the
+R2 more than doubles to 5.5%. That is, the intraday momentum becomes stronger. The same
+holds true when we compare the R2s on days without and on days with news announcements
+for GDP and CPI. These results seem to suggest that there is an inf ormation carryover eﬀect
+of the news on market prices during the whole trading day.
+The most astonishing result is for the releases of the FOMC minutes. While the no-
+release days have an R2 of only 2.5%, the R2 increases enormously to 11.0% on release
+days. There are two reasons why this result is astonishing. First, t he R2 is high by any
+standard, exceeding by far almost all predictors at the usual mon thly frequency. Second,
+market participants seem to anticipate correctly in the ﬁrst half-h our the message the Fed
+is going to send out to the market. Lucca and Moench (2015) ﬁnd th at pre-announcement
+excess equity returns account for sizable fractions of total rea lized stock returns, which is
+also a global phenomenon. Bernile, Hu, and Tang (2015) investigate market activity minutes
+prior to the release of the FOMC minutes. Unlike these studies, we fo cus on the intraday
+momentum. The high R2 indicates that, even after the FOMC news release, there is a stron g
+tendency of the market to continue the trend of the same directio n anticipated in the ﬁrst
+half-hour.
+Will the higher R2s on the news release days imply greater economic gains? To answer
+this question, we examine the performance of the earlier market tim ing strategies on days
+with and without news release. Panel B of Table 8 reports only the re sults of using the ﬁrst
+half-hour return, η(r1), for brevity. For the MCSI and CPI news, the gains are around th ree
+times the gains on the days without news releases. For the GDP news , the proﬁts on release
+days are about twice as much. The greatest economic gains are deliv ered on the release days
+of the FOMC minutes. The annualized average return reaches a high level of 20.04%. This
+is close to four times the level on days without FOMC news. Overall, th e performance of the
+intraday momentum is much stronger economically on the days with th e four news releases.
+5 Robustness
+In this section, we examine the robustness of the intraday moment um on several dimen-
+sions. First, we analyze the intraday predictability conditional on th e sign of the ﬁrst
+14
+
+=== PAGE 17 ===
+half-hour return. Second, we examine whether the gains of the int raday momentum can
+survive transaction costs. Third, we evaluate whether the intrad ay momentum is aﬀected
+by microstructure noise. Further, we examine how the economic va lue measure may vary
+for various parameters and constraints on the mean-variance po rtfolio. Finally, we explore
+the evidence of intraday momentum on a set of the most actively tra ded ETFs, two popular
+international equity index futures, and other asset classes such as currencies and commodity
+prices.10
+5.1 Conditional predictability
+If either of our explanations holds, we would expect the intraday mo mentum to be con-
+centrated mainly on days when the ﬁrst half-hour returns are pos itive, and perhaps to be
+nonexistent when the ﬁrst half-hour returns are negative. We te st this implication by running
+predictive regressions conditioning on whether or not the ﬁrst half -hour return is positive.
+The results are reported in Table 9. During the whole sample period, t he R2s for the
+three predictive regressions are 2.3%, 2.6%, and 4.5%, respectively , when the ﬁrst half-hour
+return is positive. In sharp contrast, the R2s are only 0.5%, 0.3%, and 0.9% when the ﬁrst
+half-hour return is negative. In addition, the ﬁrst half-hour retu rn, r1, is only marginally
+signiﬁcant, and the twelfth half-hour return, r12, is insigniﬁcant. An even greater diﬀerence
+is observed during the ﬁnancial crisis period – the R2s increase to 4.5%, 11.0%, and 14.1%,
+respectively, for the three predictive regressions when r1 is positive. On the other hand, the
+R2s are only 0.7%, 0.0%, and 0.9% when r1 is negative, respectively, and both r1 and r12
+are insigniﬁcant. Finally, a similarly large diﬀerence is observed for per iods excluding the
+ﬁnancial crisis. For example, using r1 as the predictor yields a R2 of 1.1% when r1 is positive
+compared to 0.1% when r1 is negative. Neither r1 nor r12 is signiﬁcant conditional on r1
+being negative.
+The results suggest that intraday momentum is a phenomenon spec iﬁc to days when the
+ﬁrst half-hour returns are positive, presumably because of good economic news, which is
+consistent with the two explanations we have proposed.
+5.2 Transaction costs
+What are the impacts of transaction costs on our results? With tec hnological advancements
+and ever increasing competition in the ﬁnancial industry, we have wit nessed a signiﬁcant
+decline in transaction costs over the past decades. This trend bec omes even more evident
+after decimalization of quotations.
+We examine the impact of transaction costs on the proﬁtability of th e intraday momentum
+using the market timing strategy as an example. To this end, we collec t from the TAQ
+database the bid and ask prices at 3:30pm on each trading day and us e the ask (bid) price
+10Our study focuses on the intraday time-series momentum of the ma rket or major indices. For the usual
+cross-section momentum, see Griﬃn, Ji, and Martin (2003), Schwe rt (2003) and references therein.
+15
+
+=== PAGE 18 ===
+to calculate the last half-hour return if the market timing strategy takes a long (short)
+position.11 Since the closing of the SPY is uniquely traded at the market clearing p rice
+for all the buys and sells, there will be no bid/ask spread eﬀect for t he price at 4:00pm. 12
+Because of autoquotes of non-NYSE securities in the TAQ data bef ore decimalization, we
+examine the eﬀect of transaction costs only after decimalization (a fter July 1, 2001). 13 The
+results are reported in Table 10.
+Panel A of Table 10 shows that, using the ﬁrst half-hour return as the timing signal,
+the average return reduces to 4.46% per annum, 2.47% lower than t he average return before
+transaction costs, while the standard deviation remains the same a t 6.10%. Nevertheless, the
+proﬁts are still economically signiﬁcant. Indeed, from the M2 measu re, the strategy would
+yield an average return of 14.88% per annum if leveled up to have the s ame volatility as
+the daily returns. In contrast, the Always Long strategy which always invests in the market
+during the last half-hour yields an M2 of −2. 45% per annum, and the daily market return
+(Buy-and-Hold ) is 4.90% per annum for the same period. A slightly better result can b e
+obtained when both the ﬁrst and the twelfth half-hour returns ar e used to time the market;
+after adjusting for transaction costs, the average return is re duced by only 1.22% to 4.30%
+per annum with an M2 of 19 . 87%.
+Figure 2 plots the time-series of the proportional spread after de cimalization (after July
+1, 2001). It shows clearly that the proportional spread narrowe d after decimalization, and
+stabilized at around 1.2 basis point after 2005. To more closely captu re the impact of
+transaction costs on future performance of the intraday momen tum, we therefore consider
+the performance after January 1, 2005, reported in Panel B of T able 10. The average return of
+market timing using the ﬁrst half-hour return is 6.52% after transa ction costs compared with
+7.96% before transaction costs. Similarly, the average return usin g both the ﬁrst and twelfth
+half-hour returns is 4.74% after transaction costs versus 5.50% b efore transaction costs.
+Again, the leveraged average return (M2) is 20.77% and 20.82% per a nnum, respectively,
+much higher than the benchmark returns (-3.25% for the Always Long strategy and 6.75%
+for the Buy-and-Hold strategy).
+5.3 Microstructure noise
+Bid-ask bounce is known to induce negative autocorrelation, espec ially the ﬁrst-order auto-
+correlation in high-frequency returns. If the bid-ask bounce eﬀe ct is present in our data, it
+11We measure the bid and ask prices at 3:30pm using the median bid and as k prices at 3:30:00pm. If there
+is no quote at 3:30:00pm, we use the median bid and ask prices from the nearest previous second.
+12We ignore the commission component of the transaction costs. At a n online broker, such as Tradestation,
+an active individual investor may pay only $4.99 commission for trading thousands of shares. The cost to
+active institutional investors can be even lower. In addition, some b rokers even provide retail investors
+commission-free purchases and very low fees to sell.
+13Autoquotes in the TAQ data are passive quotes by oﬃcial dealers wh o are not making the market. Such
+quotes usually add a mechanical fraction on either side of the poste d primary market quote, and hence will
+artiﬁcially inﬂate the quoted spread. The autoquotes issue is more s evere in the pre-decimalization period,
+see Appendix B and Figure B-1 in Chordia, Roll, and Subrahmanyam (20 01).
+16
+
+=== PAGE 19 ===
+would indeed bias against our ﬁndings, which are based on returns fo rmed from transaction
+prices. This is because the negative autocorrelation due to bid-ask bounce could attenu-
+ate the positive relation between r1 and r13 and even more likely between r12 and r13. To
+gauge this impact, we re-estimate the main predictive regressions in Table 1 using bid-to-bid,
+ask-to-ask, and midquote-to-midquote returns, and report th e results in Panels B through
+D of Table IA.3 in the Internet Appendix. For completeness and to ea se comparison, we
+also present the results using transaction price based returns (a s in Table 1) in Panel A
+of the same table. 14 As expected, the predictive power of r12 increases when returns are
+computed using bid, ask, or midquote prices over when returns are from transaction prices.
+For example, for the whole sample period regressions using only r12 as the predictor, the
+coeﬃcient (t-statistic) of r12 increases from 11.94 (2.62) using transaction returns to 13.49
+(2.88) using bid-to-bid returns, to 13.18 (2.80) using ask-to-ask r eturns, and to 13.65 (2.90)
+using midquote-to-midquote returns. The associated regression R2 also increases from 1 . 1%
+in Panel A to 1 . 4% in Panel B, to 1 . 3% in Panel C, and to 1.4% in Panel D. The impact of
+bid-ask bounce on the predictive power of r1 is minimal, however, as the estimated coeﬃcient
+and t-statistic of r1 stay largely the same across the four panels, and so does the R2. In
+short, the intraday momentum pattern cannot be induced by the b id-ask bounce but could
+actually be stronger after controlling for it.
+5.4 Risk aversion and leverage
+In Table IA.4 in the Internet Appendix, we examine the robustness o f the out-of-sample
+mean-variance portfolio performance by varying the relative risk a version coeﬃcient, γ,
+and/or imposing diﬀerent leverage restrictions on portfolio weights . For brevity, we con-
+sider only portfolios based on forecasts from using both the ﬁrst a nd the twelfth half-hour
+returns. In Panel A, we keep γ = 5 and change the portfolio weight restrictions. The ﬁrst
+alternative restriction is no-short sell and no-borrowing ( ψ 2 : 0 ≤ w ≤ 1. 0), which is more
+restrictive than the approach used in Table 6. Not surprisingly, the performance is poorer
+with an average return of 3.22% per annum but a Sharpe ratio of 0.82 . The Sharpe ratio does
+not drop much because of the lower volatility of the portfolio. Relaxin g the restriction by al-
+lowing shorting (ψ 3 : −1. 0 ≤w ≤ 1. 0) increases the average return but also the volatility. In
+this case, the average return is around 7.35% per annum, CER is 6.61 % per annum, and the
+Sharpe ratio is 1.26. Finally, we allow both shorting and borrowing ( ψ 4 : −1. 0 ≤w ≤ 2. 0),
+which delivers a much higher return (10.33% per annum), Sharpe rat io (1.19), and CER
+(9.55% per annum).
+In Panel B, we set γ = 2 and impose various portfolio weight restrictions, and in Panel
+C, we allow γ to have a high value of 10. Overall, the results are very similar to Pane l A
+where γ = 5. Of course, when no restriction is imposed, the average return and standard
+deviation are diﬀerent for diﬀerent γ as expected, and the lower γ is, the higher the average
+return and standard deviation are. But the Sharpe ratio should re main the same because
+14The estimates in Panel A of Table IA.3 slightly diﬀer from those in Table 1 because we here exclude
+days with fewer than one quote per half-hour to ensure the same s ample across Panels A through D.
+17
+
+=== PAGE 20 ===
+they are all on the same eﬃcient frontier. Imposing portfolio restr ictions, on the other hand,
+makesγ more or less irrelevant, and the portfolio performance is very close .
+5.5 Other ETFs
+Is the intraday momentum a special case for the S&P 500 ETF or a ge neral phenomenon
+of the stock market? To address this question, we analyze the intr aday returns of ten
+alternative ETFs. 15 We choose the ten ETFs with highest average daily trading volume
+from their inception dates to December 31, 2013. 16 Table 11 describes these ETFs. The
+asset classes are diverse. They include domestic alternative stock indices such as the Dow,
+the NASDAQ, and the Russell 2000 (DIA, QQQ, and IWM); internatio nal equity indices
+(EEM, FXI, EF A, VWO); two sector indices (XLF, IYR); and one bon d index (TLT). If the
+intraday momentum found in SPY is also present in this diverse set of E TFs, it should lend
+more support to our trading behavior explanations.
+We evaluate both the statistical and the economic signiﬁcance of th e intraday momentum
+in the same way as before. Table 12 reports the in-sample R2 and out-of-sample performance
+measures for each ETF. 17 We see a consistent pattern: the ﬁrst half-hour return signiﬁcan tly
+predicts the last half-hour return. Moreover, utilizing such predic tability generates substan-
+tial economic values. When the ﬁrst half-hour return r1 is used alone as a predictor, the
+in-sample R2 ranges from 1 . 16% for DIA to 8 . 54% for EEM, and the out-of-sample R2 is
+from 0. 70% for QQQ to 6 . 53% for EEM. All the R2s strongly suggest that the ﬁrst half-
+hour returns predict the last half-hour returns. In terms of eco nomic value, the CER can
+be as high as 17 . 71% per annum for FXI, and many are greater than 10.0%. In compa rison
+with the S&P 500 ETF, these ETFs are less liquid, so the price impact of the last half-hour
+trading is likely greater. This might help to explain their higher CERs in ge neral. Adding
+r12 to r1 as an additional predictor, we ﬁnd a slight improvement over the sing le predictor
+r1, but the improvement is not uniform. In short, the results for var ious ETFs indicate a
+pervasive intraday momentum pattern in the stock market.
+5.6 International Stock Futures
+Another robustness analysis is to examine the intraday momentum in two other major in-
+ternational stock markets. To this end, we obtain from OneMarke tData 30-minute intraday
+price and volume information for FTSE 100 index futures (FT) and Eu roStockXX 50 index
+futures (XX) from July 1, 2003 to October 31, 2015. 18 The trading hours of both futures
+have extended several times during the sample period. The curren t trading hour is from
+15For the S&P 500, using futures data instead of the S&P 500 ETF pro duces similar results.
+16We exclude a couple of heavily traded ETFs, which yield similar results, w ith inception dates later than
+2005 and a few others to have a diverse and manageable set of ETFs .
+17We delete trading days with fewer than 100 trades.
+18Due to limited resources, those are the only international intraday data we have. We use the data from
+July 1, 2003 because, prior to this date, there is no volume informat ion.
+18
+
+=== PAGE 21 ===
+1:00am to 9:00pm local time for FT futures and from 7:50am to 10:00pm local time for XX
+futures, respectively.
+However, trading activities are not evenly distributed over the ent ire trading day. Figure 3
+plots the average trading volume every 30 minutes during the tradin g day for FT (Panel A)
+and XX (Panel B) futures, respectively. For FT futures, trading volume suddenly increases
+from almost zero and peaks at 8:30am (labeled as “1” in Panel A), simila r to the ﬁrst half-
+hour trading ending at 10:00am for SPY in the US stock market. Late r in the afternoon, the
+trading volume increases again and peaks at 4:30pm (labeled as “17” in Panel A), similar
+to the last half-hour trading ending at 4:00pm for SPY. Between 8:30 am and 4:30pm, the
+trading volume follows a U-shape, again, very much similar to the trad ing volume pattern
+of SPY. Similar pattern is observed for XX futures but at diﬀerent t ime intervals. The
+trading volume drastically increases in the half-hour ending at 9:20am (labeled as “1” in
+Panel B), and then it peaks again at 5:50pm (labeled as “18” in Panel B ). These trading
+volume patterns suggest that even though these index futures a re traded in extended hours,
+traders/investors tend to trade with their regular working sched ule. Therefore we designate
+8:30am (9:20am) as the “ﬁrst half hour”, and 4:30pm (5:50pm) as the “last half hour” for FT
+(XX) futures, and calculate the ﬁrst half-hour return r1 for FF (XX) futures from 4:30pm
+(5:50pm) of the previous trading day to 8:30am (9:20am) of the curr ent trading day, and the
+last half-hour return from 4:00pm to 4:30pm (5:20pm to 5:50pm), den oted as r17 (r18).
+Table 13 reports the results. Panel A and B report the in-sample an d out-of-sample
+predictive regression results, respectively, and Panel C reports the performance of mean-
+variance analysis. We denote the second to the last half-hour retu rn for FT (XX) futures
+byr16 (r17). For FT futures, r16 is not signiﬁcant in the in-sample regression but signiﬁcant
+(negative though) in the out-of-sample recursive regressions. H owever, the ﬁrst half-hour
+return r1, is always signiﬁcant and positive. Using r1 as the only predictor, the in-sample
+R2 is 1.90% and the out-of-sample R2 is 1.87%, respectively. Similarly, for XX futures, r1
+is always signiﬁcant and positive both in sample and out of sample. The s econd to the last
+half-hour return r17 is also signiﬁcant and positive.
+Panel C evidences the economic value of intraday momentum in FT and XX futures.
+For FT futures, the strategy that uses the ﬁrst half-hour retu rn to predict the last half-hour
+return delivers an average return of 1.84% and a Sharpe ratio of 0.4 3, compared to −0. 72%
+and −0. 29 of the strategy that uses the historical average (¯ r17) to predict the last half-hour
+return. Similar results are obtained for XX futures. The intraday m omentum strategy uses
+r1 (r1 andr17) delivers an average return of 2.47% (3.03%) and a Sharpe ratio of 0 .49 (0.61),
+compared to 0.28% and 0.05 of the strategy using the historical ave rage (¯r18).19 Overall, it
+is quite interesting that the intraday market momentum is not only co nﬁned in the US, but
+also evident in the UK and in the Europe.
+19The results are weaker than those for the US equity market proba bly due to the change of trading hours
+over time, which adds noise to the deﬁnition of the ﬁrst and last half h our based on volume.
+19
+
+=== PAGE 22 ===
+5.7 Currencies and Commodities
+In this subsection, we further investigate the intraday momentum pattern beyond the stock
+and stock futures markets by examining nine major currencies and two major commodities.
+The nine currencies are Australia, Canada, Euro, Japan, New Zeala nd, Norway, Sweden,
+Switzerland, and the United Kingdom, all of which are also examined by Moskowitz, Ooi,
+and Pedersen (2012). When these currencies are traded in the mo st liquid interbank cash
+market against the US dollar, they are quoted conventionally either in their own currencies or
+in US dollars: AUDUSD, USDCAD, EUROUS, USDJPY, NZDUSD, USDNOK, USDSEK,
+USDCHF, and GBPUSD. We obtain the intraday prices of these nine cu rrency pairs from
+a major brokerage ﬁrm. Most of the pairs are available from Novemb er 11, 2004, through
+December 31, 2014, and the rest from January 6, 2005, through December 31, 2014. For
+commodities, the most liquid market is the futures market. We obtain intraday crude oil
+and gold futures prices from the same brokerage ﬁrm. The sample s pans from September
+1, 2005, through December 31, 2014. On each trading day, we use only the front-month
+contracts, i.e., the most traded and liquid ones.
+Table 14 provides the results. For the currency pairs, the in-samp le R2s are in general
+low and close to zero except for AUDUSD and USDJPY when using r1 as the only pre-
+dictor. R2s are improved substantially with the additional predictor r12, suggesting strong
+autocorrelations between r12 and r13 in currency markets. However, for the out-of-sample
+tests, even lower and more negative R2s are observed. Again, this is especially true when r1
+is the only predictor. Results are marginally better when r12 is added to the regression. In
+addition, the CERs are small and even become negative in some cases . Similar results are
+obtained for the commodities. R2s are essentially zero when r1 is used as the only predictor.
+Overall, intraday momentum does not appear to exist in currency ma rkets or commod-
+ity futures markets. These results are of no surprise, given the t wo explanations we have
+proposed, which critically depend on the structure of the stock ma rket. In general, the
+majority of stock market participants can trade only when the exc hanges are open from
+9:30am to 4:00pm Eastern time, which helps generate the intraday mo mentum. Currency
+markets, however, trade 24 hours a day and 7 days a week. There fore, traders do not have
+to wait until the market opens, or close their positions before the m arket closes. Similarly,
+even though commodity futures are still traded in the pit, electron ic trading of commodity
+futures has become the dominant platform. Therefore, eﬀective ly, there are no open and
+close of the markets, and traders can trade continuously.
+On the other hand, if we deﬁne the ﬁrst and last half-hours for the currency pairs and
+commodity futures based on trading volume similar to the internation al stock index futures,
+we may ﬁnd strong evidence for intraday momentum. Unfortunate ly, volume information
+is unavailable for the currency pairs and commodity futures. Howev er, we do see some
+weak evidence of intraday momentum in the currency markets, par ticularly, for AUDUSD,
+EUROUS, USDJPY, and USDSEK. This predictability of the ﬁrst half-h our return on the
+last half-hour return could be due to an artiﬁcial open and close of t he markets. For example,
+a large proportion of currency traders work for prop trading des ks of large US banks, and
+20
+
+=== PAGE 23 ===
+most of their trades are submitted during regular working hours. W e have observed similar
+pattern in the international stock index futures markets.
+5.8 Data-snooping issues
+Could our ﬁndings be caused by data snooping? 20 We argue that the intraday momentum
+pattern is strong and persistent, and so it is unlikely be explained by c hance alone. First, the
+intraday momentum shows that r1 is a powerful predictor. In Panel A of Table 1, the robust
+t-statistics of r1 is 4.08, substantially exceeding the usual values of t-statistics between 2 and
+3 seen in the return predictive regressions. Moreover, the in-sam pleR2 of 1. 6% is exceedingly
+high for an short-horizon return prediction problem. Such signiﬁca nt levels not only guard
+against the false discovery (see, e.g., Harvey, Liu, and Zhu, 2015) , but also should bear
+less discount or “haircut” due to backtesting biases (see, e.g., Har vey and Yan Liu, 2015).
+Second, the performance of the intraday momentum is persistent throughout our sample,
+and, as summarized in Tables 1–8, the intraday momentum consisten tly emerges under vastly
+diﬀerent market conditions characterized by ﬁnancial crisis, volat ility levels, trading volume
+levels, business cycles or macro news releases. Third, the intraday momentum is pervasive.
+As shown in Sections 5.5 and 5.6, the predicative power of the ﬁrst ha lf-hour return on the
+last half-hour return not only exists in SPY but also in a range of othe r most actively traded
+ETFs and two major international stock futures. 21 In short, due to the plausible economic
+explanations and strong statistical evidence, the intraday momen tum is likely to be a genuine
+phenomenon.
+6 Conclusion
+On the stock market intraday returns, we document in this paper t hat the ﬁrst half-hour
+return on the market predicts the market return in the last half-h our. This intraday pre-
+dictability is statistically signiﬁcant both in- and out-of-sample. In te rms of market timing
+and asset allocation, the economic gains of using the predictability ar e substantial. We also
+ﬁnd that the market intraday momentum is stronger on high volatility days, high trading vol-
+ume days, recession days, and important economic news (MCSI, GD P, CPI, FOMC) release
+days. Moreover, the intraday momentum is strong not only for the S&P 500 ETF, but also
+for ten of the most actively traded ETFs and two major internation al equity index futures.
+Finally, intraday momentum is more signiﬁcant on days when the ﬁrst h alf-hour returns are
+positive than otherwise. Theoretically, the market intraday momen tum is consistent with
+the trading behavior of informed traders.
+There are a number of open issues on intraday momentum. First, th e documented em-
+20A related yet diﬀerent concern is the overﬁtting bias, which is a resu lt of using too many signals. Since
+the intraday momentum relies on a single or two signals, the overﬁttin g issue is not relevant here.
+21In fact, the ﬁrst draft of this paper only considered SPY, and the robustness results on other ETFs and
+stock futures were found much later in responding to various helpf ul comments.
+21
+
+=== PAGE 24 ===
+pirical facts in this paper call for new theoretical models of intrada y trading to explain
+intraday momentum in a general equilibrium setting and to identify fac tors that determine
+its risk premium. Second, as trading costs become increasingly lower and trading execution
+becomes more automated, it is important to assess the asset pricin g implications of intraday
+trading strategies and the associated implication for portfolio mana gement. Thirdly, there is
+a huge literature on predictability at the monthly frequency, but it is unknown how intraday
+predictability imply monthly predictability. These are interesting topic s for future research.
+22
+
+=== PAGE 25 ===
+References
+Admati, A. R., and P. Pﬂeiderer. 1988. A theory of intraday patter ns: Volume and price
+variability. Review of Financial Studies 1:3–40.
+Asness, C. S., T. J. Moskowitz, and L. H. Pedersen. 2013. Value an d momentum everywhere.
+Journal of Finance 68:929–85.
+Barclay, M. J., and J. B. Warner. 1993. Stealth trading and volatility : Which trades move
+prices? Journal of Financial Economics 34:281–305.
+Bernile, G., J. Hu, and Y. Tang. 2015. Can information be locked-up? Informed volume
+and price variability trading ahead of macro-news announcements. Journal of Financial
+Economics forthcoming.
+Boehmer, E., and J. Wu. 2013. Short selling and the price discovery p rocess. Review of
+Financial Studies 26:287–322.
+Campbell, J. Y., and S. B. Thompson. 2008. Predicting excess stock returns out of sample:
+Can anything beat the historical average? Review of Financial Studies 21:1509–31.
+Chakravarty, S. 2001. Stealth-trading: Which traders’ trades move stock prices? Journal of
+Financial Economics 61:289–307.
+Chordia, T., R. Roll, and A. Subrahmanyam. 2001. Market liquidity and trading activity.
+Journal of Finance 56:501–30.
+———. 2011. Recent trends in trading activity and market quality. Journal of Financial
+Economics 101:243–63.
+Corwin, S. A., and P. Schultz. 2012. A simple way to estimate bid-ask s preads from daily
+high and low prices. Journal of Finance 67:719–60.
+Coval, J. D., and T. Shumway. 2005. Do behavioral biases aﬀect pric es? Journal of Finance
+60:1–34.
+Ferreira, M. A., and P. Santa-Clara. 2011. Forecasting stock mar ket returns: The sum of
+the parts is more than the whole. Journal of Financial Economics 100:514–37.
+Griﬃn, J. M., X. Ji, and J. S. Martin. 2003. Momentum investing and bu siness cycle risk:
+Evidence from pole to pole. Journal of Finance 58:2515–47.
+Haigh, M. S., and J. A. List. 2005. Do professional traders exhibit m yopic loss aversion? An
+experimental analysis. Journal of Finance 60:523–34.
+Harvey, C. R., Y. Liu, and H. Zhu. 2015. ...and the cross-section of e xpected returns. Review
+of Financial Studies, forthcoming.
+Harvey, C. R., and Yan Liu. 2015. Backtesting. Working paper, Duk e University.
+23
+
+=== PAGE 26 ===
+Henkel, S. J., J. S. Martin, and F. Nardari. 2011. Time-varying shor t-horizon predictability.
+Journal of Financial Economics 99:560–80.
+Heston, S. L., R. A. Korajczyk, and R. Sadka. 2010. Intraday pa tterns in the cross-section
+of stock returns. Journal of Finance 65:1369–407.
+Hora, M. 2006. Tactical liquidity trading and intraday volume. Workin g paper, Credit Suisse
+Group.
+Jain, P. C., and G.-H. Joh. 1988. The dependence between hourly pr ices and trading volume.
+Journal of Financial and Quantitative Analysis 23:269–83.
+Jegadeesh, N., and S. Titman. 1993. Returns to buying winners and selling losers: Implica-
+tions for stock market eﬃciency. Journal of Finance 48:65–91.
+Locke, P. R., and S. C. Mann. 2000. Do professional traders exhib it loss realization aversion?
+Working paper, Texas Christian University.
+Lou, D., C. Polk, and S. Skouras. 2015. A tug of war: Overnight ver sus intraday expected
+returns. Working paper, London School of Economics and Athens University of Economics
+and Business.
+Lucca, D. O., and E. Moench. 2015. The pre-FOMC announcement d rift. Journal of Finance
+70:329–71.
+Moskowitz, T. J., Y. H. Ooi, and L. H. Pedersen. 2012. Time series mo mentum. Journal of
+Financial Economics 104:228–50.
+Neely, C. J., D. E. Rapach, J. Tu, and G. Zhou. 2014. Forecasting t he equity risk premium:
+The role of technical indicators. Management Science 60:1772–91.
+Newey, W. K., and K. D. West. 1987. A simple, positive semi-deﬁnite, h eteroskedasticity
+and autocorrelation consistent covariance matrix. Econometrica 55:703–8.
+Odean, T. 1998. Are investors reluctant to realize their losses? Journal of Finance 53:1775–
+98.
+Rapach, D., and G. Zhou. 2013. Forecasting stock returns. In G. Elliott and A. Timmer-
+mann, eds., Handbook of Economic Forecasting , vol. 2A, chap. 6, 328–83. North-Holland,
+Amsterdam: Elsevier.
+Rapach, D. E., J. K. Strauss, and G. Zhou. 2010. Out-of-sample e quity premium prediction:
+Combination forecasts and links to the real economy. Review of Financial Studies 23:821–
+62.
+Schwert, G. W. 2003. Anomalies and market eﬃciency. In G. M. Cons tantinides, M. Harris,
+and R. M. Stulz, eds., Handbook of the Economics of Finance , vol. 1, chap. 15, 939–74.
+Amsterdam, Netherlands: Elsevier.
+24
+
+=== PAGE 27 ===
+Shefrin, H., and M. Statman. 1985. The disposition to sell winners to o early and ride losers
+too long: Theory and evidence. Journal of Finance 40:777–90.
+Welch, I., and A. Goyal. 2008. A comprehensive look at the empirical p erformance of equity
+premium prediction. Review of Financial Studies 21:1455–508.
+Zhang, X. F. 2006. Information uncertainty and stock returns. Journal of Finance 61:105–37.
+25
+
+=== PAGE 28 ===
+Panel A: Average 30-Minute Trading Volume
+0 5.0e+06 1.0e+07 1.5e+07
+Volume
+1 2 3 4 5 6 7 8 9 10 11 12 13
+Panel B: Average 30-Minute Trading Volume Under High and Low Volatility
+High
+Low
+High
+Low
+High
+Low
+High
+Low
+High
+Low
+High
+Low
+High
+Low
+High
+Low
+High
+Low
+High
+Low
+High
+Low
+High
+Low
+High
+Low
+0 5.0e+06 1.0e+07 1.5e+07
+Volume
+1 2 3 4 5 6 7 8 9 10 11 12 13
+Figure 1: Average 30-Minute Trading Volume of SPY
+For every 30-minute period from 9:30am to 4:00pm Eastern tim e, Panel A shows the average
+trading volume for SPY from February 1, 1993 through Decembe r 31, 2013. Each 30-minute period
+is labeled from 1 to 13 sequentially. Panel B plots the same 30 -minute average trading volume on
+high volatility (top tercile) and low volatility (bottom te rcile) days.
+26
+
+=== PAGE 29 ===
+0 10 20 30 40
+Proportional Spread (bp)
+07/01/2001 07/01/2004 07/01/2007 07/01/2010 07/01/2013
+Date
+Time Series of SPY Proportional Spread at 3:30 pm
+Figure 2: Time Series of Proportional Spread for SPY
+This ﬁgure plots the proportional spread at 3:30pm on each tr ading day for SPY after decimalization
+(after July 1, 2001). The proportional spread is deﬁned as (A sk − Bid)/Midquote, where the
+midquote price is the average of the bid and ask prices, (Ask + Bid)/2.
+27
+
+=== PAGE 30 ===
+Panel A: Average 30-Minute Trading Volume for FT
+0 2,000 4,000 6,000 8,000 10,000
+volume
+−13−12−11−10 −9 −8 −7 −6 −5 −4 −3 −2 −1 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26
+Panel B: Average 30-Minute Trading Volume for XX
+0 20,000 40,000 60,000 80,000 100000
+volume
+−1 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28
+Figure 3: Average 30-Minute Trading Volume of FT and XX index futures
+For every 30-minute period during trading hours, Panel A and B respectively show the average
+trading volume for FT and XX index futures from July 1, 2003 th rough October 31, 2015. Each
+30-minute period is labeled sequentially, with “1” denotin g the ﬁrst half hour for both panels, and
+“17” (“18”) denoting the last half hour for Panel A (B).
+28
+
+=== PAGE 31 ===
+Table 1: Predictability of the Last Half-Hour Returns
+This table reports the results of regressing the last half-h our return ( r13) on the ﬁrst half-hour return ( r1) and the twelfth half-hour
+return ( r12) of the day. The ﬁrst half-hour return ( r1) is calculated from the closing of the previous trading day a t 4:00pm to 10:00am
+Eastern time. Panels A, B, and C show results for three period s: the whole sample period, the ﬁnancial crisis period from D ecember
+3, 2007, through June 30, 2009, and the periods excluding the ﬁnancial crisis. The returns are annualized and in percenta ge, and the
+regression coeﬃcients are scaled by 100. Newey and West (198 7) robust t-statistics are in parentheses, and signiﬁcance at the 1%, 5 %,
+or 10% level is given by an ***, an ** or an *, respectively. The sample period is from February 1, 1993, through December 31, 2013,
+excluding days with fewer than 500 trades.
+Predictor r1 r12 r1 and r12 r1 r12 r1 and r12 r1 r12 r1 and r12
+Panel A Panel B Panel C
+Whole Sample Period Financial Crisis (12/2007–6/2009) Excluding Financial Crisis
+Intercept -1.63 -1.33 -1.82 2.29 -1.66 1.36 -1.63 -1.25 -1.7 2
+(-1.16) (-0.94) (-1.28) (0.29) (-0.20) (0.17) (-1.25) (-0. 97) (-1.31)
+βr1 6.94∗∗∗ 6.81∗∗∗ 13.6∗∗∗ 13.2∗∗∗ 4.45∗∗∗ 4.40∗∗∗
+(4.08) (4.14) (2.76) (2.88) (3.38) (3.36)
+βr12 11.8∗∗∗ 11.4∗∗∗ 21.1∗ 20.2∗∗ 6.32∗ 6.13∗
+(2.62) (2.60) (1.95) (1.99) (1.88) (1.83)
+R2 (%) 1.6 1.1 2.6 4.1 3.1 6.9 0.8 0.3 1.1
+29
+
+=== PAGE 32 ===
+Table 2: Out-of-Sample Predictability
+This table examines the out-of-sample predictability of th e last half-hour return ( r13) by the ﬁrst
+half-hour return ( r1) and the twelfth half-hour return ( r12) based on recursive estimations. The
+window of the estimation initially uses observations up to D ecember 31, 1997, and progressively
+includes one more month of returns. The out-of-sample predi ctability is measured by the out-of-
+sample R-squared (OOS R2):
+OOS R 2 = 1 −
+∑T
+t=1(r13,t − ˆr13,t)2
+∑T
+t=1(r13,t − ¯r13,t)2 ,
+where ˆr13,t is the forecasted last half-hour return from the predictive regression estimated through
+period t − 1, and ¯r13,t is the historical average return of the last half-hour estim ated through period
+t − 1. The returns are annualized and in percentage, and the regr ession coeﬃcients are scaled by
+100. Newey and West (1987) robust t-statistics are in parentheses, and signiﬁcance at the 1%, 5 %,
+or 10% level is given by an ***, an ** or an *, respectively. The sample period is from February 1,
+1993, through December 31, 2013, excluding days with fewer t han 500 trades.
+r1 r12 r1 and r12
+βr1 4.51∗∗∗ 4.38∗∗∗
+(29.5) (29.2)
+βr12 6.88∗∗∗ 6.59∗∗∗
+(22.8) (22.2)
+OOS R2(%) 1.2 0.7 1.8
+30
+
+=== PAGE 33 ===
+Table 3: Impact of Volatility or Volume
+This table reports the results of regressing the last half-h our return ( r13) on the ﬁrst half-hour
+return ( r1) and the twelfth half-hour return ( r12), under diﬀerent levels of return volatility (Panel
+A) or trading volume (Panel B) in the ﬁrst half-hour. The ﬁrst half-hour volatility is estimated
+using one-minute returns within the ﬁrst half-hour period, and then all the trading days are ranked
+into three terciles by their ﬁrst half-hour volatility: low , medium, and high. For trading volume, we
+rank the trading days into low, medium, and high terciles by t heir ﬁrst half-hour trading volume
+year by year to take into account the increasing trading volu me over time, and then combine each
+volume tercile across all years to form three volume groups. The returns are annualized and in
+percentage, and the regression coeﬃcients are scaled by 100 . Newey and West (1987) robust t-
+statistics are in parentheses, and signiﬁcance at the 1%, 5% , or 10% level is given by an ***, an
+** or an *, respectively. The sample period is from February 1 , 1993, through December 31, 2013,
+excluding days with fewer than 500 trades.
+Panle A: V olatility Panel B: V olume
+Low Medium High Low Medium High
+Intercept -2.18 ∗ -3.07 0.26 -4.36 ∗∗∗ 1.22 -2.27
+(-1.76) (-1.51) (0.07) (-2.62) (0.58) (-0.66)
+βr1 2.34 5.40 ∗∗∗ 7.20∗∗∗ 4.32∗∗ 7.22∗∗∗ 7.08∗∗∗
+(1.03) (2.93) (3.76) (2.31) (3.32) (3.01)
+βr12 8.81∗∗ 8.39∗∗ 12.7∗∗ 10.1∗∗ 6.16 13.7 ∗∗
+(2.07) (2.29) (2.05) (2.11) (1.39) (2.05)
+R2 (%) 0.6 1.0 3.3 1.1 2.3 3.1
+31
+
+=== PAGE 34 ===
+Table 4: Out-of-Sample Market Timing
+This table reports the economic value of timing the last half -hour market return using the ﬁrst half-
+hour return, the twelfth half-hour return, or both jointly. For the timing strategy η(r1) ( η(r12)),
+we use the sign of the ﬁrst (twelfth) half-hour return as the t iming signal – when the ﬁrst (twelfth)
+half-hour return is positive (negative), we take a long (sho rt) position in the market. When both
+returns are used jointly ( η(r1, r12)), we trade only when both returns have the same sign – long
+when both are positive and short when both are negative. The b enchmark Always Long is to invest
+in the market during the last half-hour on each trading day, Buy-and-Hold is to buy and hold the
+market on a daily basis, and Random Timing is to time the last half-hour return using the toss of
+a coin as the signal. For each strategy, we report the average return ( Avg Ret), standard deviation
+(Std Dev), Sharpe ratio ( SRatio), skewness, kurtosis, M2 measure, and success rate ( Success). The
+M2 measure is estimated as the average return of the strategy wi th volatility leveled up to be
+the same as the volatility of the daily Buy-and-Hold strategy. The returns are annualized and in
+percentage. Newey and West (1987) robust t-statistics are in parentheses, and signiﬁcance at the
+1%, 5%, or 10% level is given by an ***, an ** or an *, respective ly. The sample period is from
+February 1, 1993, through December 31, 2013, excluding days with fewer than 500 trades.
+Timing Avg Ret(%) Std Dev(%) SRatio Skewness Kurtosis M2(%) Success(%)
+Panel A: Market Timing
+η(r1) 6.67 ∗∗∗ 6.19 1.08 0.90 15.65 22.16 54.37
+(4.36)
+η(r12) 1.77 6.20 0.29 0.38 15.73 5.88 50.93
+(1.16)
+η(r1, r12) 4.39 ∗∗∗ 4.49 0.98 1.87 34.10 20.13 77.05
+(3.96)
+Panel B: Benchmark
+Always Long -1.11 6.21 -0.18 -0.46 15.73 -3.69 50.42
+(-0.73)
+Buy-and-Hold 6.04 20.57 0.29 -0.16 6.61
+(1.19)
+Random Timing -0.68 5.79 -0.12 -0.26 16.79 -2.23
+(-0.54)
+32
+
+=== PAGE 35 ===
+Table 5: Impact of Volatility or Volume on Out-of-Sample Timing Performance
+This table reports the impact of the ﬁrst half-hour volatili ty (Panel A) or trading volume (Panel B) on the economic value of timing
+the last half-hour market return using the ﬁrst half-hour re turn ( r1), or the ﬁrst half-hour return and the twelfth half-hour ret urn ( r1
+and r12). The timing strategy is described in Table 4. We report the t iming performance for three diﬀerent levels of the ﬁrst half- hour
+volatility or volume. For each strategy, we report the avera ge return ( Avg Ret ), standard deviation ( Std Dev ), Sharpe ratio ( SRatio),
+skewness, and M2 measure, which is the average return of the strategy with vol atility leveled up to be the same as the volatility of the
+daily Buy-and-Hold strategy (not shown). The returns are annualized and in perc entage. Newey and West (1987) robust t-statistics are
+in parentheses, and signiﬁcance at the 1%, 5%, or 10% level is given by an ***, an ** or an *, respectively. The sample period is from
+February 1, 1993, through December 31, 2013, excluding days with fewer than 500 trades.
+Panel A: V olatility Panel B: V olume
+Timing Avg Ret(%) Std Dev(%) SRatio Skewness Kurtosis M2(%) Avg R et(%) Std Dev(%) SRatio Skewness Kurtosis M2(%)
+Low V olatility Low V olume
+Always Long -2.04 2.95 -0.69 -0.51 2.48 -6.80 -4.03 ∗∗ 3.98 -1.01 -0.78 6.08 -13.64
+(-1.62) (-2.37)
+η(r1) 0.54 2.95 0.18 -0.29 2.57 1.79 1.67 3.98 0.42 -0.54 6.30 5.64
+(0.43) (0.98)
+η(r1, r12) 0.97 1.93 0.50 0.12 5.87 4.94 2.10 ∗∗ 2.53 0.83 1.08 13.25 11.14
+(1.17) (1.93)
+Medium V olatility Medium V olume
+Always Long -2.36 4.89 -0.48 -0.25 2.83 -7.66 1.96 5.01 0.39 -0.02 3.94 7.23
+(-1.13) (0.92)
+η(r1) 4.75 ∗∗ 4.89 0.97 -0.14 2.91 15.48 6.46 ∗∗∗ 5.00 1.29 0.09 3.95 23.93
+(2.27) (3.03)
+η(r1, r12) 3.78 ∗∗∗ 3.28 1.15 0.79 9.07 18.32 3.35 ∗∗ 3.50 0.96 0.74 14.09 17.68
+(2.69) (2.24)
+High V olatility High V olume
+Always Long 1.05 9.10 0.12 -0.42 8.64 3.51 -1.29 8.63 -0.15 -0.44 10.84 -4.08
+(0.27) (-0.35)
+η(r1) 14.73 ∗∗∗ 9.06 1.63 0.76 8.50 49.30 11.87 ∗∗∗ 8.60 1.38 0.96 10.68 37.67
+(3.80) (3.23)
+η(r1, r12) 8.42 ∗∗∗ 6.77 1.24 1.44 17.62 37.75 7.73 ∗∗∗ 6.45 1.20 1.63 21.00 32.69
+(2.91) (2.80)
+33
+
+=== PAGE 36 ===
+Table 6: Mean-Variance Portfolio Performance
+This table reports the economic value of recursively predic ting the last half-hour market return
+using the ﬁrst half-hour return or combining with the twelft h half-hour return. We use the predicted
+returns to form a constrained mean-variance optimal portfo lio for a mean-variance investor with
+a relative risk aversion of 5. Portfolio weights are restric ted to between -0.5 and 1.5. For each
+strategy, we report the average return ( Avg Ret ), standard deviation ( Std Dev ), Sharpe ratio
+(SRatio), skewness, kurtosis, and the certainty equivalent gain of return, CER, calculated as the
+diﬀerence in the certainty equivalent rate of return between the optimal mean-variance strategy and
+the benchmark (which uses the recursively estimated averag e returns of the last half hour returns
+instead of the forecasted last half-hour returns). The retu rns are annualized and in percentage.
+Newey and West (1987) robust t-statistics are in parentheses, and signiﬁcance at the 1%, 5 %, or
+10% level is given by an ***, an ** or an *, respectively. The sa mple period is from February 1,
+1993, through December 31, 2013, excluding days with fewer t han 500 trades.
+Predictor Avg Ret(%) Std Dev(%) SRatio Skewness Kurtosis CE R(%)
+¯r13 0.46 3.06 0.15 0.48 18.05 0.46
+(0.57)
+β1r1 6.85∗∗∗ 5.62 1.22 1.74 48.81 6.35
+(4.55)
+β1r1 + β2r12 6.94∗∗∗ 6.12 1.13 0.56 59.84 6.44
+(4.23)
+34
+
+=== PAGE 37 ===
+Table 7: Impact of the Business Cycle
+This table reports the impact of business cycles on the predi ctability of the last half-hour return
+(r13) by the ﬁrst half-hour return ( r1) and the twelfth half-hour return ( r12). The expansion and
+recession periods are deﬁned by the NBER. Panel A reports the results of the predictive regressions,
+while Panel B reports the results on the economic value of mar ket timing. The timing strategy
+is described in Table 4. For each strategy, we report the aver age return ( Avg Ret ), standard
+deviation ( Std Dev ), Sharpe ratio ( SRatio), skewness, and kurtosis. The returns are annualized
+and in percentage, and the regression coeﬃcients in Panel A a re scaled by 100. Newey and West
+(1987) robust t-statistics are in parentheses, and signiﬁcance at the 1%, 5 %, or 10% level is given by
+an ***, an ** or an *, respectively. The sample period is from F ebruary 1, 1993, through December
+31, 2013, excluding days with fewer than 500 trades.
+Panel A: Predictive Regression
+Predictor Intercept βr1 βr12 R2(%)
+Expansion
+r1 -2.34∗ 4.83∗∗∗ 0.9
+(-1.76) (3.39)
+r1 and r12 -2.41∗ 4.80∗∗∗ 4.32 1.0
+(-1.80) (3.39) (1.26)
+Recession
+r1 5.42 11.4 ∗∗∗ 3.2
+(0.89) (2.76)
+r1 and r12 4.79 11.0 ∗∗∗ 21.6∗∗ 6.6
+(0.78) (2.87) (2.30)
+Panel B: Market Timing Performance
+Timing Avg Ret(%) Std Dev(%) SRatio Skewness Kurtosis
+Expansion
+Always Long -1.73 5.05 -0.34 -0.03 8.53
+(-1.29)
+η(r1) 4.63 ∗∗∗ 5.04 0.92 -0.13 8.61
+(3.44)
+η(r1, r12) 2.35 ∗∗∗ 3.57 0.66 0.26 23.26
+(2.46)
+Recession
+Always Long 2.64 10.83 0.24 -0.65 8.10
+(0.37)
+η(r1) 19.05 ∗∗∗ 10.77 1.77 1.13 7.75
+(2.70)
+η(r1, r12) 16.79 ∗∗∗ 8.01 2.10 1.96 15.88
+(3.19)
+35
+
+=== PAGE 38 ===
+Table 8: Impact of Macro News Release
+This table reports the impact of macro news releases on the predict ability of the last half-hour market
+return. Panel A contrasts the results of regressing the last half -hour return ( r13) on the ﬁrst and twelfth
+half-hour returns ( r1 and r12) when there are macro news releases with those when there are no macro news
+releases. Panel B reports the proﬁtability of timing the last half-ho ur market return using the ﬁrst half-hour
+return, contrasting the days with certain macro news release with the days with no macro news release. The
+timing strategy is described in Table 4. We report the average retur n ( Avg Ret ), standard deviation ( Std
+Dev), Sharpe ratio ( SRatio), skewness, and kurtosis. MCSI: Surveys of consumer conﬁden ce by University of
+Michigan release at 10:00 am Eastern time; GDP: monthly GDP estimate release at 8:30 am Eastern time;
+CPI: monthly release of CPI at 8:30 am Eastern time; FOMC: Federal Open Market Committee minutes
+release at 2:15 pm Eastern time. The returns are annualized and in pe rcentage, and the regression coeﬃcients
+in Panel A are scaled by 100. Newey and West (1987) robust t-statistics are in parentheses, and signiﬁcance
+at the 1%, 5%, or 10% level is given by an ***, an ** or an *, respectiv ely. The sample period is from
+February 1, 1993, through December 31, 2013, excluding days wit h fewer than 500 trades.
+Panel A: Predictive Regression
+No-Release Release No-Release Release No-Release Release No-Rele ase Release
+MCSI GDP CPI FOMC
+Intercept -1.70 -7.16 -1.72 -6.75 -1.93 0.42 -1.49 -12.6
+(-1.15) (-1.21) (-1.17) (-0.94) (-1.31) (0.06) (-1.03) (-1.61)
+βr1 6.61∗∗∗ 14.4∗∗∗ 6.60∗∗∗ 11.7∗∗ 6.63∗∗∗ 10.4∗ 6.68∗∗∗ 14.4∗∗
+(3.90) (3.40) (3.90) (2.37) (3.90) (1.95) (3.98) (2.35)
+βr12 11.9∗∗∗ -5.51 12.0 ∗∗∗ -3.03 11.4 ∗∗ 11.7 10.9 ∗∗ 34.1∗
+(2.64) (-0.48) (2.64) (-0.24) (2.56) (0.78) (2.51) (1.69)
+R2 (%) 2.6 5.5 2.7 3.0 2.5 5.0 2.5 11.0
+Panel B: Impact of Macro News Release on Timing Performance
+Macro News Avg Ret(%) Std Dev(%) SRatio Skewness Kurtosis
+Non-Release MCSI 6.05 ∗∗∗ 6.24 0.97 0.91 15.83
+(3.83)
+Release MCSI 19.09 ∗∗∗ 4.94 3.86 0.91 2.28
+(3.41)
+Non-Release GDP 6.28 ∗∗∗ 6.19 1.01 0.91 16.26
+(4.01)
+Release GDP 14.40 ∗∗ 6.14 2.35 0.83 3.41
+(2.08)
+Non-Release CPI 6.10 ∗∗∗ 6.21 0.98 0.91 16.11
+(3.88)
+Release CPI 18.03 ∗∗∗ 5.80 3.11 0.90 3.84
+(2.75)
+Non-Release FOMC 6.24 ∗∗∗ 6.20 1.01 0.90 15.88
+(4.01)
+Release FOMC 20.04 ∗∗ 5.84 3.43 1.07 7.22
+(2.46)
+36
+
+=== PAGE 39 ===
+Table 9: Conditional Predictability
+This table reports the results of regressing the last half-h our return ( r13) on the ﬁrst half-hour return ( r1) and the twelfth half-hour
+return ( r12) of the day conditioned on the sign of the ﬁrst half-hour retu rn. Panels A, B, and C show results for three periods: the
+whole sample period, the ﬁnancial crisis period from Decemb er 3, 2007, through June 30, 2009, and the periods excluding t he ﬁnancial
+crisis. The top panel reports the regression results when r1 is positive, while the bottom panel reports the regression r esults when r1 is
+negative. The returns are annualized and in percentage, and the regression coeﬃcients are scaled by 100. Newey and West ( 1987) robust
+t-statistics are in parentheses, and signiﬁcance at the 1%, 5 %, or 10% level is given by an ***, an ** or an *, respectively. T he sample
+period is from February 1, 1993, through December 31, 2013, e xcluding days with fewer than 500 trades.
+Panel A Panel B Panel C
+Whole Sample Period Financial Crisis (12/2007–6/2009) Excluding Financial Crisis
+Predictor r1 r12 r1 and r12 r1 r12 r1 and r12 r1 r12 r1 and r12
+When r1 > 0
+Intercept -8.85 ∗∗ 4.56∗∗ -8.47∗∗ -14.2 21.7 ∗ -14.4 -5.70 ∗∗ 2.77 -5.62 ∗∗
+(-2.52) (2.41) (-2.50) (-0.82) (1.82) (-0.91) (-2.16) (1.6 4) (-2.15)
+βr1 11.3∗∗∗ 10.5∗∗∗ 21.0∗∗ 17.8∗∗ 7.41∗∗∗ 7.19∗∗∗
+(3.63) (3.58) (2.15) (2.02) (3.60) (3.58)
+βr12 18.4∗∗∗ 17.2∗∗∗ 41.9∗∗∗ 39.5∗∗∗ 7.49 6.93
+(2.97) (2.85) (3.14) (2.98) (1.52) (1.44)
+R2 (%) 2.3 2.6 4.5 4.5 11.0 14.1 1.1 0.4 1.5
+When r1 < 0
+Intercept -1.07 -8.27 ∗∗∗ -0.83 -5.07 -26.2 ∗∗ -2.82 -2.77 -5.90 ∗∗∗ -2.75
+(-0.28) (-3.44) (-0.21) (-0.25) (-1.97) (-0.13) (-0.87) (- 2.81) (-0.86)
+βr1 5.72∗ 5.90∗ 9.74 10.5 2.73 2.79
+(1.73) (1.78) (1.19) (1.26) (0.89) (0.91)
+βr12 6.60 6.93 7.78 8.98 5.45 5.53
+(1.06) (1.11) (0.58) (0.66) (1.16) (1.16)
+R2 (%) 0.5 0.3 0.9 0.7 0.0 0.9 0.1 0.2 0.3
+37
+
+=== PAGE 40 ===
+Table 10: Market Timing with Transaction Costs
+This table reports the economic value of timing the last half -hour market return using the ﬁrst half-
+hour return or combining with the twelfth half-hour return, incorporating the transaction costs due
+to the bid–ask spread. The timing strategy is described in Ta ble 4. The benchmark Always Long
+is to always invest in the market during the last half-hour on each trading day, and the benchmark
+Buy-and-Hold is to buy and hold the market on a daily basis. For each strateg y, we report the
+average return ( Avg Ret), standard deviation ( Std Dev), Sharpe ratio ( SRatio), skewness, kurtosis,
+and M2 measure, which is the average return of the strategy with vol atility leveled up to be the same
+as the volatility of the daily Buy-and-Hold strategy. Panel A is for the period after decimalization
+(after July 1, 2001), and Panel B is for the period when the spr ead is stabilized (after January 1,
+2005). The returns are annualized and in percentage. Newey a nd West (1987) robust t-statistics
+are in parentheses, and signiﬁcance at the 1%, 5%, or 10% leve l is given by an ***, an ** or an *,
+respectively.
+Timing Avg Ret(%) Std Dev(%) SRatio Skewness Kurtosis M2(%)
+Panel A: After July 1, 2001
+η(r1) 4.46 ∗∗∗ 6.10 0.73 1.21 19.82 14.88
+(2.58)
+η(r1, r12) 4.30 ∗∗∗ 4.40 0.98 2.58 40.65 19.87
+(3.44)
+Always Long -0.74 6.12 -0.12 -0.53 20.06 -2.45
+(-0.42)
+Buy-and-Hold 4.90 20.34 0.24 -0.17 8.07
+(0.85)
+Panel B: After January 1, 2005
+η(r1) 6.52 ∗∗∗ 6.51 1.00 1.42 20.48 20.77
+(3.00)
+η(r1, r12) 4.74 ∗∗∗ 4.72 1.00 2.89 41.10 20.82
+(3.01)
+Always Long -1.03 6.54 -0.16 -0.54 20.78 -3.25
+(-0.47)
+Buy-and-Hold 6.75 20.72 0.33 -0.26 9.78
+(0.98)
+38
+
+=== PAGE 41 ===
+Table 11: Summary of Other ETFs
+This table describes the ten index ETFs used for the robustne ss analysis in Table 12. These ETFs
+are the most heavily traded ETFs as measured by their average daily trading volume from their
+inception dates to December 31, 2013.
+Symbol Name Inception
+QQQ Powershare NASDAQ 100 03/10/1999
+XLF Financial Select Sector SPDR 12/22/1998
+IWM iShares Russell 2000 ETF 05/26/2000
+DIA Dow Jones Industrial Average ETF 01/20/1998
+EEM iShares MSCI Emerging Markets ETF 04/11/2003
+FXI iShares China Large-Cap ETF 10/8/2004
+EF A iShares MSCI EAFE ETF 08/17/2001
+VWO Emerging Markets ETF 03/10/2005
+IYR iShares U.S. Real Estate ETF 06/19/2000
+TLT 20+ Year Treasury Bond ETF 07/26/2002
+39
+
+=== PAGE 42 ===
+Table 12: Out-of-Sample Portfolio Performance – Other ETFs
+This table reports the average return ( Avg Ret), standard deviation ( Std Dev), in-sample R2 (INS R2), out-of-sample R2 (OOS R2), and
+CER, with the same analysis as Table 6 except replacing the marke t return by one of ten most heavily traded ETFs. All quantitie s are
+in percentage, and returns and standard deviations are annu alized. Panel A reports the results using the ﬁrst half-hour return ( r1) to
+forecast, and Panel B reports the results using both r1 and r12 to forecast. Newey and West (1987) robust t-statistics are in parentheses,
+and signiﬁcance at the 1%, 5%, or 10% level is given by an ***, a n ** or an *, respectively. The sample period for each ETF is fr om its
+inception date to December 31, 2013, excluding days with few er than 100 trades.
+Fund Avg Ret(%) Std Dev(%) INS R2(%) OOS R2(%) CER(%) Avg Ret(%) Std Dev(%) INS R2(%) OOS R2(%) CER(%)
+Panel A: β1r1 Panel B: β1r1 + β2r12
+QQQ 7.75 ∗∗∗ 7.89 1.43 0.70 7.38 8.34 ∗∗∗ 8.08 2.26 0.50 7.96
+(3.65) (3.83)
+XLF 12.04 ∗∗∗ 9.95 3.64 3.55 12.44 8.73 ∗∗∗ 9.70 4.37 2.19 9.13
+(4.36) (3.24)
+IWM 11.72 ∗∗∗ 7.70 2.51 2.43 11.72 12.12 ∗∗∗ 9.26 4.53 3.81 12.09
+(5.18) (4.45)
+DIA 3.46 ∗∗ 5.69 1.16 1.03 4.16 4.63 ∗∗∗ 6.40 2.25 1.81 5.31
+(2.35) (2.79)
+EEM 14.76 ∗∗∗ 9.01 8.54 6.53 14.69 18.46 ∗∗∗ 9.20 13.27 10.43 18.38
+(4.91) (6.01)
+FXI 18.42 ∗∗∗ 10.17 7.80 5.90 17.71 15.98 ∗∗∗ 10.54 10.42 7.52 15.26
+(5.20) (4.35)
+EF A 7.45 ∗∗∗ 5.82 3.53 1.90 7.18 6.53 ∗∗∗ 5.76 4.79 1.43 6.27
+(4.16) (3.69)
+VWO 12.18 ∗∗∗ 8.72 5.72 4.39 12.12 13.61 ∗∗∗ 8.83 8.45 6.29 13.55
+(3.76) (4.15)
+IYR 24.22 ∗∗∗ 12.29 5.29 4.60 14.98 29.80 ∗∗∗ 13.78 11.77 9.82 20.52
+(5.86) (6.43)
+TLT 4.03 ∗∗∗ 2.89 1.77 1.65 2.26 4.50 ∗∗∗ 2.71 1.81 1.51 2.73
+(4.32) (5.14)
+40
+
+=== PAGE 43 ===
+Table 13: Out-of-Sample Portfolio Performance – International
+This table reports the results of using international index futures. Panel A reports the in-sample
+predictive regressions results, while Panel B reports the o ut-of-sample predictive rolling regression
+results. Panel C reports the performance of the mean-varian ce analysis. Returns and standard
+deviations are annualized. Newey and West (1987) robust t-statistics are in parentheses, and
+signiﬁcance at the 1%, 5%, or 10% level is given by an ***, an ** or an *, respectively. The sample
+period is from July 1, 2003 through October 31, 2015.
+Panel A: In-Sample Panel B: Out-of-Sample
+Predictive Regression βr1 βr16 R2(%) βr1 βr16 R2(%)
+FTSE 100 Index Futures
+r1 4.93∗∗∗ 1.90 4.38 ∗∗∗ 1.87
+(7.73) (25.15)
+r1 and r16 4.93∗∗∗ -0.01 1.90 4.38 ∗∗∗ -1.09∗∗∗ 1.39
+(7.71) (-0.01) (24.40) (-4.41)
+EuroStockXX 50 Index Futures
+r1 3.02∗∗∗ 0.84 3.12 ∗∗∗ 0.67
+(5.17) (22.08)
+r1 and r17 2.96∗∗∗ 2.75∗ 0.93 3.05 ∗∗∗ 3.59∗∗∗ 0.60
+(5.05) (1.65) (21.56) (22.84)
+Panel C: Mean-V ariance Performance
+Variable Avg Ret(%) Std Dev(%) SRatio Skewness Kurtosis CER (%)
+FTSE 100 Index Futures
+¯r17 -0.72 2.48 -0.29 -1.54 19.43 -0.73
+(-1.02)
+β1r1 1.84 4.31 0.43 0.68 13.11 1.82
+(1.49)
+β1r1 and β2r16 1.67 4.29 0.39 0.79 11.69 1.65
+(1.35)
+EuroStockXX 50 Index Futures
+¯r18 0.28 5.97 0.05 -0.28 5.69 0.24
+(0.16)
+β1r1 2.47∗ 5.04 0.49 -0.09 9.42 2.45
+(1.72)
+β1r1 and β2r17 3.03∗∗ 4.96 0.61 -0.09 9.76 3.00
+(2.14)
+41
+
+=== PAGE 44 ===
+Table 14: Out-of-Sample Portfolio Performance – Other Assets
+This table reports the same analysis as in Table 12 except tha t the underlying asset is one of the 9 currency pairs, Austral ia, Euro, UK,
+New Zealand, Canada, Switzerland, Japan, Norway and Sweden versus the US dollar, and two commodity futures, crude oil an d gold.
+All quantities are in percentage, and returns and standard d eviations are annualized. Panel A reports the results using the ﬁrst half-hour
+return ( r1) to forecast, and Panel B reports the results using both r1 and r12 to forecast. Newey and West (1987) robust t-statistics are
+in parentheses, and signiﬁcance at the 1%, 5%, or 10% level is given by an ***, an ** or an *, respectively.
+Fund Avg Ret(%) Std Dev(%) INS R2(%) OOS R2(%) CER(%) Avg Ret(%) Std Dev(%) INS R2(%) OOS R2(%) CER(%)
+Panel A: β1r1 Panel B: β1r1 + β2r12
+AUDUSD 1.34 2.45 0.69 0.31 1.57 3.13 ∗∗∗ 2.87 5.32 0.30 3.36
+(1.51) (3.02)
+EUROUS 0.66 1.31 0.34 0.05 0.87 0.50 1.33 2.82 1.44 0.71
+(1.43) (1.07)
+GBPUSD 0.46 1.19 0.14 0.02 0.24 0.46 1.30 2.39 0.45 0.23
+(1.11) (1.01)
+NZDUSD -0.34 2.57 0.03 -0.24 -0.05 1.84 3.13 4.04 0.73 2.12
+(-0.35) (1.54)
+USDCAD -1.26 ∗∗ 1.63 -0.01 -0.77 -1.12 -0.33 1.71 0.18 -1.32 -0.19
+(-2.19) (-0.56)
+USDCHF 0.43 0.94 0.20 -0.36 0.10 0.39 1.03 0.29 -0.31 0.05
+(0.91) (0.74)
+USDJPY 0.75 ∗ 1.30 0.82 0.28 0.86 0.66 1.25 1.69 0.16 0.77
+(1.66) (1.51)
+USDNOK 0.65 0.88 0.04 0.01 0.14 0.40 1.41 1.88 0.25 -0.11
+(1.54) (0.59)
+USDSEK 1.08 ∗ 1.36 0.25 0.09 0.81 -0.09 1.54 2.05 0.13 -0.36
+(1.66) (-0.13)
+OIL 1.05 3.10 0.01 -0.06 1.60 0.73 2.98 0.09 -0.78 1.28
+(0.86) (0.62)
+GOLD -0.20 3.31 0.05 -0.20 0.71 2.54 ∗∗ 3.07 3.33 2.82 3.45
+(-0.15) (2.03)
+42

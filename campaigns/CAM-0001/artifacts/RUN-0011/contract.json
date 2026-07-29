@@ -1,0 +1,25 @@
+{
+  "executed_variant_count": 4,
+  "expected_variant_count": 4,
+  "variants": {
+    "candidate_5bps_delay1": {
+      "cost_bps_per_side": 5.0,
+      "entry_delay_sessions": 1
+    },
+    "candidate_10bps_delay1": {
+      "cost_bps_per_side": 10.0,
+      "entry_delay_sessions": 1
+    },
+    "candidate_20bps_delay1": {
+      "cost_bps_per_side": 20.0,
+      "entry_delay_sessions": 1
+    },
+    "candidate_5bps_delay2": {
+      "cost_bps_per_side": 5.0,
+      "entry_delay_sessions": 2
+    }
+  },
+  "loaded_max_date": "2026-04-30",
+  "holdout_rows_loaded": 0,
+  "sample_policy": "Costs do not change eligibility. The two-session entry variant uses the same causal decisions but necessarily drops any terminal decision that cannot complete its full ten-session hold before the cutoff."
+}

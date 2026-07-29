@@ -1,0 +1,99 @@
+run_id: RUN-0007
+campaign_id: CAM-0006
+parent_run_id: RUN-0006
+planned_at: "2026-07-29T04:14:00-07:00"
+status: completed
+
+change_from_parent: >-
+  On the fully covered all-state and volatility-high marketable-NBBO event
+  sets, compute first-minute activity and price-quality features across the
+  full causal signal-complete universe at 09:31. Test nine prespecified
+  eligibility rules: all; first-minute dollar-participation rank q50/q67/q80;
+  trade-count rank q50; close range-position >=50%/75%; close >= first-minute
+  VWAP; and dollar-participation q50 plus range-position >=50%. Evaluate
+  0/2/5 bp additional slippage per side.
+reason: >-
+  RUN-0006 revealed wide opening spreads and delayed quotes for some events.
+  First-minute volume, trade count, VWAP, high/low, and close are known when
+  the signal is formed and are mechanism-consistent measures of whether
+  inventory absorption has sufficient participation and a strong completed
+  close. They have not yet been tested.
+expected_effect: >-
+  A genuine quality filter should improve both 5%/10% gap-tail context or both
+  all-state/volatility-high expressions, remain positive across all three
+  blocks and adverse slippage, improve month consistency/concentration, and
+  retain a credible event/day/symbol sample. One sparse maximum will fail.
+
+configuration:
+  candidate_event_sets: ["all_state", "vol_high"]
+  feature_rank_universe: >-
+    Full causal signal-complete point-in-time QQQ universe with shifted prior
+    dollar volume >= $100M; same-day ranks use only the completed 09:30 minute.
+  first_minute_features:
+    - "Dollar volume / shifted prior-20 median daily dollar volume"
+    - "Trade-count cross-sectional rank"
+    - "Close position within observed high-low range"
+    - "Close versus first-minute VWAP"
+  eligibility_rules:
+    - "all"
+    - "dollar_participation_q50"
+    - "dollar_participation_q67"
+    - "dollar_participation_q80"
+    - "trade_count_q50"
+    - "range_close_ge50"
+    - "range_close_ge75"
+    - "close_ge_vwap"
+    - "dollar_q50_and_range50"
+  execution: "Fully covered RUN-0006 first-ask/first-bid NBBO"
+  additional_slippage_bps_per_side: [0, 2, 5]
+  expected_variant_count: 54
+
+execution_contract:
+  command: >-
+    python campaigns/CAM-0006/src/run0007.py
+    --signals-path campaigns/CAM-0006/artifacts/RUN-0002/enriched_signals.parquet
+    --minutes-path campaigns/CAM-0006/artifacts/readiness/regular_minutes.parquet
+    --replay-path campaigns/CAM-0006/artifacts/RUN-0006/event_replay.parquet
+    --output-dir campaigns/CAM-0006/artifacts/RUN-0007
+  expected_variant_count: 54
+
+completed_at: "2026-07-29T04:14:43-07:00"
+factual_outcome: >-
+  All 54 variants reconciled on 36,025 causal feature-universe rows through
+  2026-04-30 and zero holdout. No rule reached the Type-A return reference:
+  maximum 15-month average month was 5.93% at marketable NBBO, 5.53% with 2
+  bp, and 5.21% with 5 bp additional slippage per side. The most balanced
+  central cell was volatility-high plus first-minute dollar-participation q50
+  and range-close >=50%: 5.53% average month over 15 months, 4.67% over 12,
+  9.83% drawdown, 5-day recovery, three negative and three inactive months,
+  94 events across 59 symbols, 50.10% top-five-day share, and 16.00%
+  top-symbol share. Its three blocks were 22.38%, 22.55%, and 33.55%. The
+  adjacent dollar-q50 and q67 rules were nearly identical (5.40% and 5.47%
+  average month at 2 bp), showing a real neighborhood but no missing order of
+  magnitude. All-state quality filters remained high-drawdown. Close>=VWAP
+  was nonselective because every already-positive reclaim minute satisfied it.
+decision: >-
+  Freeze the volatility-high/dollar-q50/range50 marketable-NBBO sleeve for
+  adversarial confirmation and possible forward paper observation, not Type A.
+  First-minute quality improves the risk/return balance but confirms that this
+  mechanism is economically capped near half the profile objective. Perform
+  leave-out, concentration, chronological, and moving-block tests; absent a
+  contradiction, close CAM-0006 and begin a materially different campaign.
+next_question: >-
+  Does the frozen sleeve remain positive after leading day/month/symbol
+  removal and moving-block resampling, and does its robustness justify a
+  development checkpoint despite non-promotion?
+artifacts:
+  - "artifacts/RUN-0007/first_minute_features.parquet"
+  - "artifacts/RUN-0007/variants.csv"
+  - "artifacts/RUN-0007/monthly.csv"
+  - "artifacts/RUN-0007/blocks.csv"
+  - "artifacts/RUN-0007/positions.parquet"
+  - "artifacts/RUN-0007/contract.json"
+artifact_hashes:
+  first_minute_features_parquet: "d5377085cf8eda2e5dfaf8845162b04659e0d2143ced020f3a461b6c70e6aea6"
+  variants_csv: "a268efd3706fb917c14336dd9bddba995cdc2c43d71ed58b0fb0f90e6fe5f23e"
+  monthly_csv: "e4410ae65977db323a75811fec84c8917c08666dbef4f4d229a18650bcda3eeb"
+  blocks_csv: "10e4dc110ff20b9db735f270b7c55a02d0dda42e1fc15b6a0c55b5b45fee8284"
+  positions_parquet: "c1cc628b395cbd25b864fb892110a3db13ede584b107c4554ba0dc8a51ac51db"
+  contract_json: "bb8ddad20947fc237f05ab98a6f1ef997a58376ef6aa9bbdc9e824b83ae5bff6"

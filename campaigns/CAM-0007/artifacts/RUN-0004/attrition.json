@@ -1,0 +1,25 @@
+{
+  "signal_liquidity_ready_events": 720,
+  "candidate_counts": {
+    "positive_after_close_continuation|10:00|7": 71,
+    "positive_after_close_continuation|10:00|8": 70,
+    "positive_after_close_continuation|10:00|9": 70,
+    "positive_after_close_continuation|10:01|7": 71,
+    "positive_after_close_continuation|10:01|8": 70,
+    "positive_after_close_continuation|10:01|9": 70,
+    "positive_after_close_continuation|10:05|7": 71,
+    "positive_after_close_continuation|10:05|8": 70,
+    "positive_after_close_continuation|10:05|9": 70,
+    "negative_high_vol_reclaim|10:00|7": 58,
+    "negative_high_vol_reclaim|10:00|8": 58,
+    "negative_high_vol_reclaim|10:00|9": 58,
+    "negative_high_vol_reclaim|10:01|7": 58,
+    "negative_high_vol_reclaim|10:01|8": 58,
+    "negative_high_vol_reclaim|10:01|9": 58,
+    "negative_high_vol_reclaim|10:05|7": 58,
+    "negative_high_vol_reclaim|10:05|8": 58,
+    "negative_high_vol_reclaim|10:05|9": 58
+  },
+  "maximum_loaded_date": "2026-04-30",
+  "holdout_rows_loaded": 0
+}

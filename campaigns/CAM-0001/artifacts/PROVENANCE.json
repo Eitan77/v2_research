@@ -1,0 +1,22 @@
+{
+  "recorded_at": "2026-07-28T20:53:13.9527284-07:00",
+  "workspace_git_head": "d466a66c0a9ec1e9b6e61de765b436fed716c60c",
+  "workspace_note": "The worktree already contained user-owned modified governance files; they were preserved.",
+  "catalog": "D:\\AlgoResearch\\data\\catalog.duckdb",
+  "catalog_sha256": "8ace63df1ad5b3335945bad7d6220bc27a34203adfc49e4324d1383f6c286664",
+  "catalog_view": "bars_1d",
+  "query_boundary": "date <= 2026-04-30",
+  "loaded_frame_sha256": "0e6d0bec8f86898e7c8350ed3e6e4bbc8b2c408ec19b827d43d3081e72b0f1e1",
+  "cache_file_sha256": "e5124ab17b770a27336d5cff5557cdfe971c27d76929f18e099c0fb22574deab",
+  "implementation_sha256": "57019d27e411c28eade073d359f2c72c57a53ca83116926490f4f48a37a940c5",
+  "tests_sha256": "fbfb7ac8bcc67616405c386bd5d1f3422b1089bfe22e3b090560c1fecc9eab6a",
+  "readiness_artifact_sha256": "77842b8a60abcaf64348f7ed2be514c27cb59623e20e36dc303cd23a94912859",
+  "readiness_status": "passed",
+  "max_loaded_date": "2026-04-30",
+  "holdout_rows_loaded": 0,
+  "semantic_tests": "4 passed",
+  "data_reconciliation": "30 symbol-date rows across 10 sessions reconstructed from raw prices using bracketing native split/raw factors; maximum factor drift 0.0552%; full method in readiness.json",
+  "integrity_incidents": [
+    "A pre-run recursive source-directory listing was not cutoff-bounded. No holdout values or displayed holdout filenames were observed; conservatively logged in research/HOLDOUT_ACCESS.md."
+  ]
+}

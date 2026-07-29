@@ -14,6 +14,24 @@ sources:
   reference: "D:\\AlgoResearch\\data\\reference"
   manifests: "D:\\AlgoResearch\\data\\manifests"
 
+remote_sources:
+  alpaca_market_data:
+    base_url: "https://data.alpaca.markets"
+    credential_file: ".env.local"
+    credential_variables:
+      - "ALPACA_API_KEY_ID"
+      - "ALPACA_API_SECRET_KEY"
+    local_only_and_gitignored: true
+    access_verified: "2026-07-28"
+    verified_capabilities:
+      - "historical SIP trades"
+      - "historical SIP quotes"
+    authorization: >-
+      The research agent may autonomously pull any Alpaca bars, trades, quotes,
+      or related market-data evidence useful to an active campaign. Never print,
+      copy into artifacts, or commit credentials. All campaign governance and
+      sealed-holdout restrictions remain in force.
+
 indicator_timeframes:
   - 5m
   - 10m

@@ -1,0 +1,14 @@
+{
+  "status": "passed",
+  "event_count": 134,
+  "window_count": 268,
+  "quote_rows": 442764,
+  "trade_rows": 576988,
+  "symbols": [
+    "SOXL",
+    "SOXS"
+  ],
+  "max_exit_session": "2026-04-29",
+  "holdout_rows_requested": 0,
+  "scope": "candidate event windows only"
+}

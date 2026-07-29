@@ -1,0 +1,29 @@
+{
+  "command": "python campaigns/CAM-0005/src/run0010.py --features-path campaigns/CAM-0005/artifacts/RUN-0002/features.parquet --minutes-path campaigns/CAM-0005/artifacts/readiness/targeted_minutes.parquet --output-dir campaigns/CAM-0005/artifacts/RUN-0010",
+  "resolved_defaults": {
+    "filters": [
+      "q50_edge25",
+      "q60_edge25",
+      "q67_edge25",
+      "q60_edge25_volume_high50"
+    ],
+    "cost_bps_per_side": [
+      5,
+      10
+    ],
+    "older_context": [
+      "2023-03-01",
+      "2024-10-31"
+    ],
+    "recent_context": [
+      "2024-11-01",
+      "2026-04-30"
+    ],
+    "entry": "15:59_open",
+    "exit": "next_09:34_close",
+    "execution_label": "bar_stage_context_only"
+  },
+  "executed_variant_count": 8,
+  "max_loaded_date": "2026-04-30",
+  "holdout_rows_loaded": 0
+}

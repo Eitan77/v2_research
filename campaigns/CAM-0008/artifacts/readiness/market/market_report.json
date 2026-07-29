@@ -1,0 +1,27 @@
+{
+  "status": "passed",
+  "registry_events": 7641,
+  "registry_symbols": 117,
+  "unique_event_symbol_days": 5147,
+  "daily_raw_rows": 57678,
+  "daily_split_rows": 57239,
+  "daily_join_both_rows": 57239,
+  "daily_raw_only_rows": 439,
+  "event_minute_rows": 1917936,
+  "market_day_available_events": 7641,
+  "signal_complete_events": 7116,
+  "same_day_complete_events": 7113,
+  "liquidity_eligible_signal_events": 7094,
+  "horizon_complete": {
+    "next_open": 7572,
+    "two_close": 7572,
+    "three_close": 7525,
+    "five_close": 7485,
+    "ten_close": 7373
+  },
+  "minimum_entry_session": "2024-07-01",
+  "maximum_entry_session": "2026-04-30",
+  "maximum_loaded_date": "2026-04-30",
+  "holdout_rows_loaded": 0,
+  "multiday_attrition_policy": "Targets after April 30 remain missing; sealed rows are never loaded."
+}

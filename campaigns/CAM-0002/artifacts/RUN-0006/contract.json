@@ -1,0 +1,36 @@
+{
+  "executed_variant_count": 252,
+  "expected_variant_count": 252,
+  "source_candidates_sha256": "fe1f256233128590c4874ddd8842f49a866fa11a5d22933d2e562501742165f6",
+  "market_proxy": "SPY",
+  "formations": [
+    10,
+    15,
+    30,
+    45,
+    60,
+    90,
+    120
+  ],
+  "residual_absolute": [
+    0.02,
+    0.04,
+    0.06
+  ],
+  "stock_surprise": [
+    6.0,
+    8.0,
+    10.0
+  ],
+  "holds": [
+    5,
+    15,
+    30,
+    60
+  ],
+  "cost_bps_per_side": 10.0,
+  "loaded_max_date": "2026-04-30",
+  "holdout_rows_loaded": 0,
+  "source_candidate_rows": 111883,
+  "spy_missing_rows": 0
+}

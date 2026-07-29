@@ -1,0 +1,10 @@
+{
+  "status": "passed",
+  "max_loaded_date": "2026-04-30",
+  "holdout_rows_loaded": 0,
+  "outcome_rows": 951482,
+  "decision_rows": 215796,
+  "variant_count": 60,
+  "unprotected_variants_are_diagnostic_only": true,
+  "protected_variants_are_bar_screens_not_execution_qualified": true
+}

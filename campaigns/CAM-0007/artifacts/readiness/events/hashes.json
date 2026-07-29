@@ -1,0 +1,7 @@
+{
+  "detector_validation.json": "63d7fdf00f9c09921acf5271a4c5f76f33cd9dc3e5ac6bcac3c3c4c14af22a81",
+  "detector_validation_events.parquet": "fa62ea858c6387116fcfff8b6c616b4ad5cc830d429686c0039c827bb6286025",
+  "event_attrition.json": "a6e05ddfe115d2a2930f04372b5db9925d9f52dd4487d1510c17f02bd0732a4c",
+  "event_registry.parquet": "cccf0e9cfcafc1c2d1da9365924ddddb7674e671156cf086c8e3c39a525f97c3",
+  "mapped_event_candidates.parquet": "2e6c22ffddae9f30d6d96f92a60cc93a3ae2dc2b2d0b8a7cf33fbd1e0554531b"
+}

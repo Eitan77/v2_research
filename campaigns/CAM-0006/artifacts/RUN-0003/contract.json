@@ -1,0 +1,33 @@
+{
+  "command": "python campaigns/CAM-0006/src/run0003.py --signals-path campaigns/CAM-0006/artifacts/RUN-0002/enriched_signals.parquet --minutes-path campaigns/CAM-0006/artifacts/readiness/regular_minutes.parquet --output-dir campaigns/CAM-0006/artifacts/RUN-0003",
+  "resolved_defaults": {
+    "selectors": [
+      "tail05_all",
+      "tail05_anomaly1",
+      "tail10_anomaly1",
+      "tail15_anomaly1"
+    ],
+    "entry_minutes": [
+      "09:31",
+      "09:32",
+      "09:33",
+      "09:35"
+    ],
+    "risk_rules": [
+      "none",
+      "stop1",
+      "stop2",
+      "stop3",
+      "auction_failure"
+    ],
+    "cost_bps_per_side": [
+      5,
+      10,
+      20
+    ]
+  },
+  "executed_variant_count": 240,
+  "max_loaded_date": "2026-04-30",
+  "holdout_rows_loaded": 0,
+  "loaded_path_rows": 366390
+}

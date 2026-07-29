@@ -1,0 +1,93 @@
+run_id: RUN-0009
+campaign_id: CAM-0005
+parent_run_id: RUN-0008
+planned_at: "2026-07-29T03:36:00-07:00"
+status: completed
+
+change_from_parent: >-
+  Enrich the frozen 09:35 q60 replay with only causal observables declared in
+  the campaign: signal magnitude, close-location pressure, final-hour
+  volatility and dollar volume relative to shifted 60-session distributions,
+  QQQ late-day confirmation, same-day pre-signal direction, prior five-day
+  direction, and SMH/QQQ position relative to prior-close SMA20. Test 24
+  prespecified single-state or mechanism-linked masks at 2, 5, and 10 bp
+  additional slippage, without changing entry, exit, or quote selection.
+reason: >-
+  The unconditional q60 edge is executable and chronologically positive but
+  misses Type-A return and consistency objectives. The campaign plan requires
+  testing whether current causal volume, volatility, magnitude, and market
+  states distinguish high-expectancy absorption events. This is the remaining
+  alpha-selection question before portfolio construction or retirement.
+expected_effect: >-
+  A genuine state should improve monthly consistency and drawdown while
+  retaining meaningful event count, positive net return in every six-month
+  block, both-leg support, cost survival, and distributed contribution.
+  Filters that merely isolate the best historical dates should fail attrition,
+  chronology, or concentration diagnostics.
+
+configuration:
+  execution_source: "RUN-0008 first ask 15:59, first bid 09:35"
+  base_signal: "q60 edge25 late-SMH reversal"
+  filter_count: 24
+  additional_slippage_bps_per_side: [2, 5, 10]
+  causal_feature_contract:
+    rolling_window_sessions: 60
+    rolling_minimum_sessions: 40
+    rolling_thresholds_shifted: true
+    prior_five_day_return_ends: "Previous session close"
+    sma20_ends: "Previous session close"
+    same_day_direction_ends: "15:00 open, before signal window"
+  expected_variant_count: 72
+
+execution_contract:
+  command: >-
+    python campaigns/CAM-0005/src/run0009.py
+    --replay-path campaigns/CAM-0005/artifacts/RUN-0008/event_replay.parquet
+    --features-path campaigns/CAM-0005/artifacts/RUN-0002/features.parquet
+    --minutes-path campaigns/CAM-0005/artifacts/readiness/targeted_minutes.parquet
+    --daily-path campaigns/CAM-0005/artifacts/readiness/split_daily.parquet
+    --output-dir campaigns/CAM-0005/artifacts/RUN-0009
+  expected_variant_count: 72
+
+completed_at: "2026-07-29T03:40:00-07:00"
+factual_outcome: >-
+  All 72 variants reconciled with complete features for all 108 q60 events and
+  zero holdout rows. No causal state reached the Type-A return objective.
+  Same-sign QQQ confirmation removed only two losing events and raised the
+  5-bp q60 average month from 6.01% to 6.32%; 106/108 events already shared
+  QQQ's sign, so this is not a selective independent confirmation. The most
+  useful state was final-hour dollar volume above its shifted prior-60-session
+  median. At 5 bp it retained 68 events, averaged 5.43% per month, had 11
+  positive, five negative, and two zero months, 6.23% drawdown, 20-day
+  recovery, 52.64% top-five-day contribution, and positive SOXL/SOXS legs.
+  Its three six-month blocks earned 33.33%, 17.93%, and 46.44%. It survived
+  10 bp at 5.05% average month and 6.54% drawdown. Higher volume, volatility,
+  magnitude, trend, and combined masks reduced total profit or increased
+  concentration; several apparently attractive subsets had zero months,
+  losing legs, unresolved drawdowns, or extreme attrition.
+decision: >-
+  Freeze q60/edge25/volume-above-prior-median with the 09:35 marketable exit as
+  a lower-drawdown execution-qualified development sleeve, not a genuine
+  Type-A candidate. It is adapted, earns roughly half the profile's reference
+  return, and still has five negative months. Reject the other tested states
+  as either nonselective, lower-quality, or sparse. Do not add gross exposure
+  beyond the plan's 1.0 cap. Complete older-history context before the
+  campaign conclusion audit.
+next_question: >-
+  Did the frozen q60/edge25 base and volume state have supportive or adverse
+  behavior before the recent evaluation window, and does older history reveal
+  a tail or regime dependence that changes its development status?
+artifacts:
+  - "artifacts/RUN-0009/enriched_events.parquet"
+  - "artifacts/RUN-0009/variants.csv"
+  - "artifacts/RUN-0009/monthly.csv"
+  - "artifacts/RUN-0009/blocks.csv"
+  - "artifacts/RUN-0009/attrition.csv"
+  - "artifacts/RUN-0009/contract.json"
+artifact_hashes:
+  enriched_events_parquet: "7f8e14df83e21ff549ebcbad4e28a25a4581ea4e00f3357ab41a300286ead62d"
+  variants_csv: "493d266a8fbe48ca31b9465abfed3e075104870386d9a77ea00b76a3090cf7d5"
+  monthly_csv: "b5177f92921fde8f9ab819e1300f022a0c56d9f27565fad56eef185044ef1105"
+  blocks_csv: "6820b7052be86e460c6afe28d2f9214926523a269fdcceb0e3dfb74d4d30afbf"
+  attrition_csv: "8da286aa962c8bfe7fcbe8045f6a8bc7aa85328a1a15a8f1fd08a79dd3b56b75"
+  contract_json: "ec2e94c6626d841405c050b9c38ae23dabb86dda75f0cc4de20ddccf3008abe7"

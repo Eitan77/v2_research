@@ -1,0 +1,118 @@
+campaign_id: CAM-0007
+run_id: RUN-0003
+parent_run: RUN-0002
+status: completed
+frozen_at: "2026-07-29T05:22:00-07:00"
+role: "Filtered-sleeve latency, exit, sizing, and combined-book topology"
+adaptation_label: "development-selected from RUN-0002; not untouched evidence"
+
+observed_parent_weakness: >-
+  The high-volatility negative-gap reclaim sleeve improved all four blocks but
+  had only 47 allocated trades, three inactive recent months, and 41.4%
+  top-five positive contribution. The after-close positive continuation sleeve
+  was broader and lower drawdown but had a negative first block. Both returned
+  only roughly 1%-1.5% per month at the standard 20% cap.
+question: >-
+  Are these two mechanism-consistent sleeves robust to practical entry delay
+  and neighboring exits, can causal sizing improve capital use without
+  unacceptable concentration/drawdown, and do their distinct event states
+  diversify under one actual gross-exposure cap?
+reason: >-
+  RUN-0002 localized different payoff clocks: slow recovery after negative
+  high-volatility gaps and faster drift after positive after-close releases.
+  A finer time lattice challenges those interpretations, while the combined
+  book tests portfolio construction rather than pretending independent sleeve
+  returns can simply be added.
+expected_effect: >-
+  A genuine event edge should remain positive at 10:01-10:05 entries and show
+  a broad exit plateau. Higher position caps may raise return approximately
+  proportionally until event overlap binds, but should reveal concentration
+  through drawdown and leave-one-out sensitivity. A useful combination should
+  improve consistency or return/drawdown without exceeding gross 1.0.
+
+frozen_configuration:
+  sleeves:
+    positive_after_close_continuation:
+      rule: >-
+        gap >= +2%, first30_return > 0, announcement_bucket=after_close,
+        shifted prior20 median dollar volume >= $100M
+    negative_high_vol_reclaim:
+      rule: >-
+        gap <= -2%, first30_return > 0, stock prior20 annualized volatility
+        >= its shifted prior60-session median, shifted prior20 median dollar
+        volume >= $100M
+  decision_time: "10:00 Eastern after 09:59 bar completion"
+  entry_minutes: ["10:00", "10:01", "10:03", "10:05"]
+  entry_price: "named raw minute open times same-session official split factor"
+  single_sleeve_close_horizons_inclusive: [2, 3, 4, 5, 6, 7, 8, 9, 10]
+  combined_book_horizons:
+    positive_after_close_continuation: [4, 5, 6]
+    negative_high_vol_reclaim: [8, 9, 10]
+  costs_bps_per_side: [5, 10, 20]
+  maximum_position_fractions: [0.10, 0.20, 0.33, 0.50]
+  maximum_gross_exposure: 1.0
+  allocation: >-
+    Equal available-capacity allocation across each entry cohort, bounded by
+    the position cap; fixed size through exit, overlap-aware across both
+    sleeves, unused capacity in cash, additive marked-to-market P&L.
+  expected_variant_count:
+    single_sleeves: 864
+    combined_book: 432
+    total: 1296
+
+required_outputs:
+  - "1296/1296 frozen-command/default/artifact reconciliation"
+  - "Entry-minute and exit-horizon missingness/attrition"
+  - "Return, drawdown, recovery, months, costs, blocks, gross utilization, and cap topology"
+  - "Combined-book results from one allocation simulation, never arithmetic sleeve addition"
+  - "Top event/day/symbol concentration and leave-one-event/symbol contribution sensitivity"
+  - "Clear Type-A gate and next alpha/execution question"
+
+result:
+  validation: "passed after one merge-collision attempt stopped before artifacts"
+  executed_variant_count: 1296
+  strongest_10bp_variant:
+    variant_id: "combined__p4_n8__1001__10bp__cap50"
+    allocated_trades: 87
+    symbols: 59
+    recent_15m_average_month: 0.0316307256094353
+    recent_12m_average_month: 0.04316872945127526
+    full_average_month: 0.02034034957074318
+    recent_15m_months: "11 positive / 4 negative / 0 inactive"
+    maximum_drawdown: 0.14429249436863362
+    recovery_days: 101
+    chronological_block_returns: [-0.019853, 0.091916, 0.257760, 0.117664]
+    at_20bp_per_side_average_month: 0.028586
+    at_20bp_per_side_maximum_drawdown: 0.149296
+    top5_event_positive_share: 0.3260687679555815
+    full_return_without_top_symbol: 0.34338795571625563
+    full_return_without_top_event: 0.34493879127299576
+  topology:
+    entry_latency: >-
+      The p4/n8 cap50 combined book averaged 3.163%, 3.163%, 3.012%, and
+      2.964% per month at 10:00, 10:01, 10:03, and 10:05 at 10 bp.
+    cap_neighbor_10bp_1001: >-
+      Average month rose from 1.406% at cap10 to 2.082% at cap20, 2.607% at
+      cap33, and 3.163% at cap50 while drawdown rose from 7.65% to 14.43%.
+    positive_exit: >-
+      The adapted after-close positive sleeve unexpectedly formed a broad
+      seven-to-nine-session plateau, peaking at h8 near 3.07% monthly at
+      cap50 but with only 41 allocated trades and three inactive recent months.
+    negative_exit: >-
+      The high-volatility reclaim sleeve peaked around h8 and declined at
+      h9-h10, supporting a finite recovery clock rather than indefinite drift.
+  diagnosis: >-
+    Practical one-to-five-minute entry delay does not erase the edge, and the
+    two sleeves diversify enough to remove inactive months. Higher caps improve
+    return but reduce allocated event coverage and raise concentration/risk.
+    The strongest combined run still has a negative first block and reaches
+    only 3.16% monthly, so it is not Type A. RUN-0003 did not combine the newly
+    discovered h7-h9 positive plateau because combined horizons were frozen at
+    h4-h6.
+  artifacts: "artifacts/RUN-0003/"
+decision: >-
+  Do not promote. Perform the obvious missing combined h7-h9 by h7-h9 exit
+  lattice, test cap33-cap100 and shared versus sleeve-reserved causal capacity,
+  then subject any survivor to chronological/leave-one-out/bootstrap and
+  marketable quote replay. If return remains far below Type A or depends on
+  extreme concentration, retire the campaign.

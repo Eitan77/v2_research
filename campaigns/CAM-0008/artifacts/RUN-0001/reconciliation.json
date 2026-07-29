@@ -1,0 +1,50 @@
+{
+  "status": "passed",
+  "run_id": "RUN-0001",
+  "expected_variant_count": 174,
+  "executed_variant_count": 174,
+  "resolved_scopes": [
+    "all_events",
+    "standalone_analyst"
+  ],
+  "resolved_intraday_selectors": [
+    "positive_continuation_long",
+    "negative_failure_long",
+    "negative_continuation_short",
+    "positive_failure_short",
+    "all_longs",
+    "all_shorts",
+    "aligned_action",
+    "failed_action",
+    "all_legs"
+  ],
+  "resolved_multiday_selectors": [
+    "positive_continuation_long",
+    "negative_failure_long",
+    "all_longs",
+    "positive_action_all_long"
+  ],
+  "resolved_horizons": [
+    "next_open",
+    "two_close",
+    "three_close",
+    "five_close",
+    "ten_close"
+  ],
+  "resolved_costs": [
+    5,
+    10,
+    20
+  ],
+  "frozen_configuration_hash": "7241c521b44eaf9677d8d150315837fbe373ef79bf176e00c049f8219bced473",
+  "input_hashes": {
+    "event_readiness": "a05d40233dc86d1a5df4e2f37a2387bedf240090fcc96f6b7e6d337054f440e6",
+    "daily_split": "bc45566ebaa4cfaae2d63121b283b46585ff3fe42b8b25c463c2bdacc4d703f2"
+  },
+  "executed_code_hashes": {
+    "run0001.py": "921ae27eaced405c42f89e9180489fbc42fbd4dd86313178dd3051a57de08bb2",
+    "cam0008.py": "9ee4beb14733552285a444287817673341ae4bb188840cde35153edf432545ed"
+  },
+  "maximum_loaded_date": "2026-04-30",
+  "holdout_rows_loaded": 0
+}

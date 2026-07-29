@@ -1,0 +1,108 @@
+run_id: RUN-0004
+campaign_id: CAM-0001
+parent_run_id: RUN-0003
+
+planned_at: "2026-07-28T21:08:43.8996188-07:00"
+status: completed
+
+change_from_parent: >-
+  Add causal daily signal-invalidation exits while preserving the 10-session
+  maximum hold and original decision-block schedule.
+reason: >-
+  RUN-0003 retained strong cost/delay performance but recent recovery lasted
+  78-79 days. Large losses followed positive short-term momentum that reversed
+  during the fixed hold. Exiting next open after the market trend, fund
+  momentum, or either condition invalidates directly targets that mechanism.
+expected_effect: >-
+  A valid invalidation rule should shorten recovery and reduce drawdown across
+  SMA 20 and 50 without destroying average/median months, and should survive
+  20 bps per side. If it only removes a few observed losses while damaging
+  other periods, retain the simpler fixed exit.
+
+configuration:
+  universe: "TQQQ and SOXL; QQQ confirmation"
+  signal: "Positive 5-session fund momentum and QQQ above SMA 20 or 50"
+  decision_time: "Completed daily close"
+  entry: "Next open"
+  exit: >-
+    Fixed 10-session open exit versus next-open exit after QQQ trend
+    invalidation, fund 5-session momentum invalidation, or either; maximum 10
+    sessions in all cases.
+  direction: "Long only"
+  sizing: "Fixed base 1.0, equal weight among qualifying funds, no reinvestment"
+  filters:
+    qqq_sma_sessions: [20, 50]
+    exit_rule: [fixed, market, fund_momentum, either]
+  stops_or_risk_overlays: "Signal invalidation only; no price-optimized stop"
+  cost_model: "5 and 20 bps per side"
+  execution_model: "Completed-close decision, next-open exit"
+
+short_selling:
+  direct_stock_or_etf_shorting_used: false
+  strictly_intraday_if_used: "N/A"
+  protective_stop_or_emergency_exit: "N/A"
+  forced_close_before_regular_session_end: "N/A"
+  overnight_direct_short_exposure_detected: false
+
+execution_contract:
+  command: >-
+    python campaigns/CAM-0001/src/audit_run0004.py
+    --cache campaigns/CAM-0001/artifacts/cache/bars_split_through_20260430.parquet
+    --output-dir campaigns/CAM-0001/artifacts/RUN-0004
+  expected_variant_count: 16
+  output_paths:
+    - "artifacts/RUN-0004/exit_family.csv"
+    - "artifacts/RUN-0004/contract.json"
+    - "artifacts/RUN-0004/sma20_*_cost5/"
+    - "artifacts/RUN-0004/sma50_*_cost5/"
+
+completed_at: "2026-07-28T21:11:23.7096817-07:00"
+metrics_artifact: "artifacts/RUN-0004/exit_family.csv"
+results_summary:
+  net_full_period_simple_return: >-
+    Fixed SMA20/SMA50 3.975306/3.303478; best invalidation 2.600794/3.217925
+  average_monthly_net_simple_return: >-
+    12m fixed 0.123896/0.114113; market invalidation 0.071731/0.095199
+  average_calendar_year_net_simple_return: "See detailed metrics artifacts"
+  standard_max_drawdown: >-
+    12m fixed 0.138576/0.151816; market invalidation 0.207076/0.141625
+  max_full_recovery_time_days: >-
+    12m fixed 78/79; market invalidation 183/170
+  negative_month_count: "Fixed 3/3; market invalidation 4/3"
+  trade_or_event_count: "Fixed 20/21 recent independent entries"
+  average_capital_utilization: "Full fixed 0.765472/0.722041"
+  adverse_cost_net_simple_return: "Fixed result remained strongest at 20 bps/side"
+
+execution_reconciliation:
+  semantic_tests: "5 passed, including completed-close/next-open invalidation"
+  actual_command_matches_record: true
+  executed_variant_count: 16
+  expected_variant_count: 16
+  saved_outputs_match_record: true
+  loaded_max_date: "2026-04-30"
+  holdout_rows_loaded: 0
+  sample_attrition: >-
+    No data rows removed. Early exits reduced utilization by rule; the original
+    decision-block schedule was preserved to isolate the exit change.
+
+factual_outcome: >-
+  Signal-invalidation exits did not solve recovery. Fund-momentum or combined
+  invalidation roughly halved utilization and cut 12-month average monthly net
+  to about 4.9%-5.3%, while worsening drawdown/recovery. Market-only
+  invalidation retained more return but delivered 7.17%/9.52% average monthly
+  and 170-183-day recent recovery. The fixed 10-session exit remained superior
+  at both 5 and 20 bps per side. This falsifies the idea that slow reaction to
+  a daily signal reversal caused the main recovery weakness; normal interim
+  reversals appear part of the continuation payoff.
+decision: >-
+  Reject daily invalidation exits and retain the fixed 10-session exit. Diagnose
+  causal entry-state selectivity and regime activation rather than fitting a
+  stop or exit to observed losses.
+next_question: >-
+  Can broad causal participation, market-momentum, trend-quality, or volatility
+  states distinguish persistent flows from unstable rebounds across the full
+  chronology and improve recent recovery without favorable date selection?
+artifacts:
+  - "artifacts/RUN-0004/exit_family.csv (sha256 6f9ac4923429794f62bfe6ae47266327db115326433bd92b46cdb1f4d5590a4a)"
+  - "artifacts/RUN-0004/contract.json (sha256 29f6df6e97ce42027c611e51797058f965ee0f4b8b765795f4bc756d9cb3a1ff)"
+  - "src/audit_run0004.py (sha256 dd68d7dc6c126beb310fae2d72e73d877650dff9ea7a840fa2b41f5e4b0d54c0)"

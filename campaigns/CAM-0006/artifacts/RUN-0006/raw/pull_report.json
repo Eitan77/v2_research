@@ -1,0 +1,10 @@
+{
+  "status": "passed",
+  "missing_event_count": 12,
+  "requested_phase_count": 12,
+  "quote_rows": 1132,
+  "trade_rows": 2647,
+  "max_session": "2026-04-29",
+  "holdout_rows_requested": 0,
+  "scope": "RUN-0005 missing event phases only"
+}

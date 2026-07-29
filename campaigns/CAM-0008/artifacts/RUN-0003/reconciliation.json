@@ -1,0 +1,48 @@
+{
+  "status": "passed",
+  "run_id": "RUN-0003",
+  "expected_variant_count": 336,
+  "executed_variant_count": 336,
+  "resolved_portfolios": [
+    "positive_continuation_long",
+    "negative_failure_long",
+    "all_longs"
+  ],
+  "resolved_screens": [
+    "baseline",
+    "stock_vol_high",
+    "qqq_vol_high",
+    "target_intraday",
+    "gap_down1pct",
+    "participation_le1pct",
+    "reaction_ge50bp"
+  ],
+  "resolved_horizons": [
+    "five_close",
+    "ten_close"
+  ],
+  "resolved_costs": [
+    10,
+    20
+  ],
+  "resolved_position_caps": [
+    0.02,
+    0.03333333333333333,
+    0.05,
+    0.1
+  ],
+  "frozen_configuration_hash": "a1a2de4a7ca8b66379bab2b9c5ebb77d0fe514272b7eb44c1b96c35ef3cc0218",
+  "input_hashes": {
+    "event_readiness": "a05d40233dc86d1a5df4e2f37a2387bedf240090fcc96f6b7e6d337054f440e6",
+    "daily_split": "bc45566ebaa4cfaae2d63121b283b46585ff3fe42b8b25c463c2bdacc4d703f2",
+    "qqq_query_output": "8116630a963d883a8f558de56626afe888372c84695eb05ab3f7fb66e1578673"
+  },
+  "executed_code_hashes": {
+    "run0003.py": "2cbd70e82897f90780f0d94457d442721daf2b9c18e46f942a06d440816ad1bd",
+    "run0002.py": "236b9aa8e8278cbd995c9c1c32565c4b267ddfd9633003aec3460b8e9069d629",
+    "run0001.py": "921ae27eaced405c42f89e9180489fbc42fbd4dd86313178dd3051a57de08bb2",
+    "cam0008.py": "9ee4beb14733552285a444287817673341ae4bb188840cde35153edf432545ed"
+  },
+  "maximum_loaded_date": "2026-04-30",
+  "holdout_rows_loaded": 0
+}

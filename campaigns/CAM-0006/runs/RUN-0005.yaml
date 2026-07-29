@@ -1,0 +1,114 @@
+run_id: RUN-0005
+campaign_id: CAM-0006
+parent_run_id: RUN-0004
+planned_at: "2026-07-29T03:57:00-07:00"
+status: completed
+
+change_from_parent: >-
+  Freeze the 10% gap-tail top-reclaim all-state and volatility-high branches.
+  Pull targeted Alpaca SIP quotes and trades only for their union of exact
+  event windows. Replay entry at the first valid noncrossed ask at or after
+  09:31:00 Eastern and exit at the first valid noncrossed bid at or after the
+  calendar-aware final-exit minute (15:54 normally, 12:54 on early closes),
+  with 0/2/5 bp additional slippage per side.
+reason: >-
+  RUN-0004 produced two close/strong development sleeves whose bar economics
+  warrant execution evidence even though neither is Type A. Both trade
+  marketably near the open and close, and minute-open assumptions can conceal
+  spread, delay, displayed-size, or auction-transition costs.
+expected_effect: >-
+  A credible sleeve should have near-complete post-signal quote/trade coverage,
+  reasonable noncrossed spreads and delays, distributed contribution, and
+  positive economics after ask-to-bid crossing plus 2-5 bp additional
+  slippage. Quote replay cannot upgrade a sub-Type-A return profile by itself.
+
+configuration:
+  candidates:
+    - "tail10_anomaly1 top1_reclaim all_state"
+    - "tail10_anomaly1 top1_reclaim qqq_vol_high"
+  source_events: "RUN-0004 c10 allocated positions; union only"
+  quote_windows:
+    entry: "09:30:55 through 09:31:10 Eastern"
+    exit: "final-exit target minus 5 seconds through plus 10 seconds"
+  replay:
+    entry: "First noncrossed positive SIP ask at or after target"
+    exit: "First noncrossed positive SIP bid at or after target"
+  additional_slippage_bps_per_side: [0, 2, 5]
+  data_scope: >-
+    Exact selected symbols, dates, and two 15-second windows per union event;
+    no broad universe and no request on or after 2026-05-01.
+  size_warning: >-
+    Preserve Alpaca quote-size fields in raw API units and make no capacity
+    claim without a separately verified unit and depth contract.
+  expected_variant_count: 6
+
+execution_contract:
+  pull_command: >-
+    python campaigns/CAM-0006/src/pull_run0005_nbbo.py
+    --parent-positions campaigns/CAM-0006/artifacts/RUN-0004/positions.parquet
+    --signals-path campaigns/CAM-0006/artifacts/RUN-0002/enriched_signals.parquet
+    --output-dir campaigns/CAM-0006/artifacts/RUN-0005/raw
+  replay_command: >-
+    python campaigns/CAM-0006/src/run0005.py
+    --raw-dir campaigns/CAM-0006/artifacts/RUN-0005/raw
+    --output-dir campaigns/CAM-0006/artifacts/RUN-0005
+  expected_variant_count: 6
+
+execution_notes:
+  first_pull_attempt: >-
+    Alpaca returned JSON null rather than an empty list for at least one
+    no-record window. The parser stopped before writing raw data or producing
+    results. Its stderr log is preserved; the parser now treats null as zero
+    records and the identical frozen request set is rerun.
+
+completed_at: "2026-07-29T04:07:05-07:00"
+factual_outcome: >-
+  The targeted pull requested 232 frozen union events and 464 fifteen-second
+  windows, returned 110,006 SIP quotes and 132,567 SIP trades, ended
+  2026-04-29, and requested/loaded zero holdout rows. Valid post-target
+  noncrossed quotes covered 220/232 all-state events and 116/122 volatility-
+  high events; trade evidence was complete for 230/232 union events. The
+  missing quotes were concentrated in 11 entry windows and one exit window.
+  First-ask/first-bid replay had median entry spread 27.96 bp all-state and
+  29.54 bp volatility-high, versus about 3.0-3.3 bp at exit; median quote
+  delays were about 0.41 seconds entry and 0.04-0.05 seconds exit. Marketable
+  NBBO plus 2 bp additional slippage per side produced 5.96% average month
+  over 15 months for all-state with 25.93% drawdown and 5.17% for volatility-
+  high with 8.87% drawdown. At 5 bp additional slippage those figures were
+  5.23%/29.48% and 4.79%/10.95%. The volatility-high branch retained only one
+  negative active month at zero/5 bp views but three inactive months. Quote
+  size remains in unverified raw API units, so no capacity claim is made.
+decision: >-
+  Execution is economically plausible for covered events but cannot promote
+  either sleeve to Type A; open-entry spreads consume meaningful alpha and
+  the return objective remains well short. Resolve the 12 missing quote events
+  with a separately frozen, targeted longer-window sensitivity. Treat delayed
+  first quotes as actual delayed fills, not as evidence supporting 09:31
+  capacity. Then finish adversarial campaign review and close or freeze the
+  mechanism.
+next_question: >-
+  How long after the target do valid quotes first appear for the 12 incomplete
+  events, and do inclusion at those actual delayed fills materially change
+  sleeve economics or reveal an execution eligibility rule?
+artifacts:
+  - "artifacts/RUN-0005/raw/events.parquet"
+  - "artifacts/RUN-0005/raw/quotes.parquet"
+  - "artifacts/RUN-0005/raw/trades.parquet"
+  - "artifacts/RUN-0005/raw/pull_report.json"
+  - "artifacts/RUN-0005/event_replay.parquet"
+  - "artifacts/RUN-0005/variants.csv"
+  - "artifacts/RUN-0005/monthly.csv"
+  - "artifacts/RUN-0005/blocks.csv"
+  - "artifacts/RUN-0005/contract.json"
+  - "artifacts/RUN-0005/diagnostics.json"
+artifact_hashes:
+  raw_events_parquet: "5acfc01b0fcad51097999e108b4a3e9b61309dc6db0c2175ff82e4337824b8d8"
+  raw_quotes_parquet: "5b8d4e1e102dcceb7f1ce018e7ef11f38bb12d8d9d29b937de51fa2c809f1321"
+  raw_trades_parquet: "67f564a5d0e392fedeca2d202c9a131a475029b28c8391d4e07aa70de52846c7"
+  raw_pull_report_json: "9cdc84ef00f4d09186f4bece1635af11b4bbd645284d24eef4157108d8d5b119"
+  replay_parquet: "23d46ce77b3f70b09aa83605efafc25d5042bbf7772168f8288a30d0d2e3b4e2"
+  variants_csv: "57352b149b774445b04c47ef8d985a552fdfa6f1aaf447364c26207600c0d86e"
+  monthly_csv: "06d83d418f82d760a42e6806cd06c35cc0659dc1467af36fade6e5c8d468183e"
+  blocks_csv: "3a8900f2650cd5f66ec6f245142c93199a0f5ccd2c2b5c122449eefcf3520220"
+  contract_json: "32f306d647fe44aab04c1535feaeaa2fd10824c5f76a5e23744e1afc25e663ca"
+  diagnostics_json: "e09c5301dbf6fd38ff61f06335fad4e2521ff33e8cae50ecd2479a0a1809de04"

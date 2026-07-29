@@ -1,0 +1,27 @@
+{
+  "status": "passed",
+  "label": "adapted proxy residual mechanism; not source replication",
+  "max_loaded_date": "2026-04-30",
+  "holdout_rows_loaded": 0,
+  "variant_count": 12,
+  "panel": {
+    "complete_symbol_dates": 25131,
+    "adjusted_symbol_dates": 24833,
+    "decision_rows_before_features": 297420,
+    "decision_rows_after_features_and_eval": 233328,
+    "decision_row_attrition": 64092,
+    "symbols_after": 110,
+    "dates_after": 368,
+    "adjustment_factor_min": 0.03997486912797165,
+    "adjustment_factor_max": 10.036630036630036
+  },
+  "signals": {
+    "accepted_cross_sections": 4404,
+    "rejected_cross_sections_lt30_or_invalid": 12,
+    "decision_rows": 233016,
+    "cross_section_size_min": 30,
+    "cross_section_size_median": 50.0,
+    "cross_section_size_max": 83
+  },
+  "bar_screen_execution_limit": "30-minute bars test gross/net economics and adverse stop crossing; they do not qualify spread, exact stop path, or capacity."
+}

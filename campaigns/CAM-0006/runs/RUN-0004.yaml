@@ -1,0 +1,111 @@
+run_id: RUN-0004
+campaign_id: CAM-0006
+parent_run_id: RUN-0003
+planned_at: "2026-07-29T03:55:00-07:00"
+status: completed
+
+change_from_parent: >-
+  Hold the 09:31/no-stop/final-exit implementation and the two central
+  auction-confirmed selectors fixed (5% and 10% negative-gap tails, reclaim
+  >=25%, auction anomaly >=1). Evaluate three prespecified diagnostic
+  families without crossing every filter: (1) all-state allocation by equal
+  weight, top reclaim, top auction anomaly, or top composite rank; (2) equal
+  and top-reclaim allocation on singleton versus clustered signal days; and
+  (3) equal and top-reclaim allocation in causally known QQQ trend-up,
+  trend-down, shifted-volatility-high, and shifted-volatility-low states.
+  Test 5/10/20 bp per side.
+reason: >-
+  RUN-0003 rejected delayed entries and path exits. Parent decomposition shows
+  simultaneous events are not interchangeable, and the campaign has not yet
+  tested portfolio ranking, breadth, shifted volatility, or broad market
+  state. These observables are known by 09:31 and could distinguish isolated
+  inventory transfer from systemic risk-off openings without selecting future
+  winners.
+expected_effect: >-
+  A genuine state/allocation improvement should repeat across both 5% and 10%
+  selectors, adjacent costs, and chronological blocks; improve losing months
+  and concentration as well as return; and retain adequate event/day/symbol
+  coverage. Sparse intersections, full-sample symbols, or one favorable block
+  cannot qualify.
+
+configuration:
+  parent_implementations:
+    - "tail05_anomaly1_0931_none"
+    - "tail10_anomaly1_0931_none"
+  allocation_rules:
+    - "equal"
+    - "top1_reclaim"
+    - "top1_auction_anomaly"
+    - "top1_composite_within_day_rank"
+  breadth_rules:
+    - "all"
+    - "singleton"
+    - "clustered_two_or_more"
+  qqq_states:
+    - "all"
+    - "trend_up: prior QQQ close >= 20-session mean of prior closes"
+    - "trend_down: prior QQQ close < 20-session mean of prior closes"
+    - "vol_high: prior-20-return volatility >= shifted prior-60-state median"
+    - "vol_low: prior-20-return volatility < shifted prior-60-state median"
+  family_design:
+    all_state_allocation: "All four allocations, breadth all, QQQ state all"
+    breadth_diagnosis: "Equal/top1-reclaim, singleton/clustered, QQQ state all"
+    qqq_state_diagnosis: "Equal/top1-reclaim, breadth all, four non-all QQQ states"
+  qqq_data: >-
+    Local declared catalog bars_1d, QQQ SIP raw, through 2026-04-30 only.
+    All state features use prices available before the current session open.
+  cost_bps_per_side: [5, 10, 20]
+  maximum_gross_exposure: 1.0
+  expected_variant_count: 96
+
+execution_contract:
+  command: >-
+    python campaigns/CAM-0006/src/run0004.py
+    --parent-positions campaigns/CAM-0006/artifacts/RUN-0003/positions.parquet
+    --catalog D:/AlgoResearch/data/catalog.duckdb
+    --output-dir campaigns/CAM-0006/artifacts/RUN-0004
+  expected_variant_count: 96
+
+completed_at: "2026-07-29T03:55:18-07:00"
+factual_outcome: >-
+  All 96 variants reconciled on 584 local raw QQQ daily rows through
+  2026-04-30 and zero holdout. No variant reached the Type-A return reference.
+  On the 10% gap-tail parent, causal top-reclaim allocation improved the
+  all-state 15-month average month from 4.90% to 7.38% at 5 bp and 6.10% at
+  10 bp, but retained five/six negative months and 23.93%/29.04% drawdown.
+  The strongest risk-balanced state was prior-Q20 volatility above its shifted
+  prior-60 median: top-reclaim averaged 6.38% over 15 months at 5 bp, 5.72% at
+  10 bp, and 4.40% at 20 bp; corresponding drawdowns were 5.66%, 6.60%, and
+  12.87%. It traded 122 days across 73 symbols, was positive in all three
+  six-month blocks (0.2634/0.2874/0.2697 at 10 bp), had 48.73% top-five-day
+  and 15.33% top-symbol profit share, but was inactive in three months and
+  had five negative months at 10 bp. The 5% tail, breadth, trend, and
+  alternative allocation neighbors were positive but weaker; no causal state
+  supplied the missing order of magnitude.
+decision: >-
+  Freeze the all-state top-reclaim and volatility-high top-reclaim branches
+  for targeted execution qualification as development sleeves, not Type-A
+  candidates. The volatility-high branch is the portfolio-quality choice;
+  the all-state branch retains more return but excessive drawdown. Pull only
+  their exact 09:31 and calendar-aware final-exit SIP windows. If executable,
+  close CAM-0006 after adversarial concentration/neighbor review because
+  timing, exits, legs, state, breadth, allocation, costs, and risk overlays
+  have been investigated without finding a Type-A return/consistency profile.
+next_question: >-
+  Do first marketable SIP ask/bid fills at the frozen entry and exit timestamps
+  preserve the two branches under additional slippage, and does execution
+  evidence reveal any hidden spread, latency, or capacity failure?
+artifacts:
+  - "artifacts/RUN-0004/qqq_state.parquet"
+  - "artifacts/RUN-0004/variants.csv"
+  - "artifacts/RUN-0004/monthly.csv"
+  - "artifacts/RUN-0004/blocks.csv"
+  - "artifacts/RUN-0004/positions.parquet"
+  - "artifacts/RUN-0004/contract.json"
+artifact_hashes:
+  qqq_state_parquet: "1acc88b9c6fcfd98dc283f60eb7f68781c940b56e25f7ea445582f0ab39b7975"
+  variants_csv: "8ad936c1cfc118780def530bfcdabe991ad8c3f10ba6d1be824f4634d37ac8b3"
+  monthly_csv: "b20aaeadcc7079e874995f19cb0e10b314ffccbbce85fb36bf8a7743a8972451"
+  blocks_csv: "194b837e97baecc0109eaf99e7909a57bf1d7565fa59090bde68f3eda6b4bea0"
+  positions_parquet: "7e11f1f22054c7c80d60a0482028d9a572ebfd6275a307736d39080a5c031aae"
+  contract_json: "3f3e89510c08b4c4680df006134eeca3478de2fcf072a7d1ef7f37157eda49e9"

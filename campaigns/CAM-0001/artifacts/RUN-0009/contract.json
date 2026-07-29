@@ -1,0 +1,17 @@
+{
+  "executed_variant_count": 14,
+  "expected_variant_count": 14,
+  "stops": [
+    0.1,
+    0.15,
+    0.2
+  ],
+  "stop_slippage_bps": [
+    10,
+    100
+  ],
+  "fill_rule": "If bar open is at/below stop, fill at open. Otherwise if daily low touches stop, fill at stop less adverse slippage. Otherwise hold.",
+  "decision_schedule": "Original 10-session blocks preserved after a stop.",
+  "loaded_max_date": "2026-04-30",
+  "holdout_rows_loaded": 0
+}
