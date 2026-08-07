@@ -1,0 +1,17 @@
+run_id: RUN-0002
+parent_run: RUN-0001
+stage: adaptation
+question: Does residual momentum survive broader selection and a causal market trend
+  gate?
+reason: Baseline had 30.7% drawdown, substantial inactivity, and moderate contributor
+  concentration.
+expected_effect: Breadth and cash in adverse regimes should improve stability without
+  ticker selection.
+configuration: ../CAM-0600/ADAPTATION_CONTRACT.yaml#CAM-0605
+status: completed
+actual_adaptation_variants: 12
+actual_variant_cost_rows: 72
+selected_execution_qualified_variant: qqq__residual_mom__q10__regime0
+selected_net_return_at_2bps: 0.6386119645588125
+decision: profitable_but_fragile_quote_gate
+holdout_rows_loaded: 0

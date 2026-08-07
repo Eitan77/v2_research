@@ -1,0 +1,27 @@
+campaign_id: CAM-0610
+paper_section: '3.11'
+strategy: Single moving average
+status: execution_sensitive_unpromoted
+promotion_ready: false
+maximum_loaded_date: '2026-04-30'
+holdout_rows_loaded: 0
+broker_margin_used: false
+baseline:
+  variant: etf__sma200__long
+  net_return_2bps: 0.8921431718220567
+adaptation:
+  variant: etf__sma200__long
+  net_return_2bps: 0.7986736071512267
+  maximum_drawdown: 0.2291831087185553
+  post2024_return: 0.3029144949593503
+  walk_forward_return: 0.5250019622063538
+quote:
+  run_id: RUN-0005
+  model: 09:30 marketable daily reset
+  net_return: 0.0076538962360366
+  extra_2bps_return: -0.0919461037639633
+  maximum_drawdown: 0.1880596147988857
+  positive_months: 8.0
+  negative_months: 4.0
+  coverage_rate: 1.0
+conclusion: execution_sensitive_unpromoted

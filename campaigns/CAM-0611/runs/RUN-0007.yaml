@@ -1,0 +1,12 @@
+run_id: RUN-0007
+parent_run: RUN-0003
+stage: quote_replay
+configuration: ../CAM-0600/QUOTE_CONTRACT.yaml
+status: completed
+quote_model: 09:40 marketable daily reset
+quote_net_return: 0.0715265259421856
+quote_extra_2bps_return: -0.0280734740578143
+quote_coverage_rate: 1.0
+decision: quote_survives_complete
+promotion_ready: false
+holdout_rows_loaded: 0

@@ -1,0 +1,17 @@
+run_id: RUN-0002
+parent_run: RUN-0001
+stage: adaptation
+question: Can broad horizon, hold, universe, and regime choices reduce momentum drawdown
+  and concentration?
+reason: Baseline ETF momentum was profitable but had 67.4% drawdown and 85.5% top-five
+  positive contribution share.
+expected_effect: Unlevered and risk-on variants should trade return for materially
+  lower path risk.
+configuration: ../ADAPTATION_CONTRACT.yaml#CAM-0600
+status: completed
+actual_adaptation_variants: 40
+actual_variant_cost_rows: 240
+selected_execution_qualified_variant: etf__mom252_skip0_hold3_q10__all__regime0
+selected_net_return_at_2bps: 2.9524759759508497
+decision: profitable_but_fragile_quote_gate
+holdout_rows_loaded: 0

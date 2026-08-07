@@ -1,0 +1,19 @@
+campaign_id: CAM-0606
+paper_section: '3.8'
+strategy: Pairs trading
+status: retired_mechanism_exhausted
+promotion_ready: false
+maximum_loaded_date: '2026-04-30'
+holdout_rows_loaded: 0
+broker_margin_used: false
+baseline:
+  variant: etf__corr126__dislocation5__pair_dollar_neutral
+  net_return_2bps: -0.1779458019023293
+adaptation:
+  variant: null
+  net_return_2bps: null
+  maximum_drawdown: null
+  post2024_return: 0.0374040025405091
+  walk_forward_return: null
+quote: null
+conclusion: retired_mechanism_exhausted

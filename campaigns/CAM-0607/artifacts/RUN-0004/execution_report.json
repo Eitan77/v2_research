@@ -1,0 +1,30 @@
+{
+  "status": "completed",
+  "campaign_id": "CAM-0607",
+  "run_id": "RUN-0004",
+  "generated_utc": "2026-08-07T01:46:45.807852+00:00",
+  "source_reports": {
+    "5m": {
+      "rows": 2139582,
+      "symbols": 22,
+      "minimum_timestamp": "2021-05-03T13:30:00+00:00",
+      "maximum_timestamp": "2026-04-30T19:55:00+00:00",
+      "holdout_rows_loaded": 0
+    },
+    "15m": {
+      "rows": 710075,
+      "symbols": 22,
+      "minimum_timestamp": "2021-05-03T13:30:00+00:00",
+      "maximum_timestamp": "2026-04-30T19:45:00+00:00",
+      "holdout_rows_loaded": 0
+    }
+  },
+  "variant_cost_rows": 648,
+  "best_2bps_variant": "15m__r6__z0__long_short__stop0.005",
+  "best_2bps_net_return": -10.467709959679567,
+  "maximum_loaded_date": "2026-04-30",
+  "holdout_rows_loaded": 0,
+  "broker_margin": false,
+  "short_safeguard": "predefined per-bar stop and forced next-bar-close exit",
+  "quote_replay_required_for_any_survivor": true
+}

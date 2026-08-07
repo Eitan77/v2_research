@@ -1,0 +1,22 @@
+version: 1
+frozen_at: '2026-08-06T18:48:00-07:00'
+run_id: RUN-0003
+parent_run: RUN-0002
+purpose: development-only adversarial stability audit
+checks:
+  - fixed selected variant before versus after 2024-01-01
+  - annual sign and worst year
+  - 2, 5, and 10 bps per-side cost stress
+  - positive fraction across the prespecified adaptation grid
+  - top-five day and symbol contribution
+  - leave-best-symbol-out return
+  - expanding walk-forward parameter selection using prior history only
+walk_forward:
+  minimum_prior_active_rows: 50
+  selection: highest prior net return among execution-qualified RUN-0002 variants
+  execution: next calendar year unchanged
+labels:
+  untouched_oos: false
+  sealed_holdout: not_accessed
+  purpose: fragility diagnosis only
+promotion: prohibited_from_this_run_alone

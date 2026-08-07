@@ -1,0 +1,38 @@
+campaign_id: CAM-0610
+run_id: RUN-0001
+status: completed
+parent_run: null
+paper_section: '3.11'
+question: Does the frozen source-faithful Single moving average baseline have credible
+  net fixed-capital alpha in any applicable declared universe?
+reason: Establish the source baseline before any adaptation or interpretation.
+expected_effect: If the documented mechanism is present, the intended leg or rank
+  should show a stable monotone relationship and survive low-cost sensitivity without
+  depending on a few symbols, trades, or months.
+configuration:
+  source_faithful_baseline: as_frozen_in_PLAN
+  costs_bps_per_side:
+  - -1
+  - 0
+  - 1
+  - 2
+  - 5
+  - 10
+  capital_base: 1.0
+  maximum_gross_exposure: 1.0
+  margin: none
+  discovery_cutoff: 2026-04-30
+  holdout_access: false
+planned_variants: to_be_resolved_by_readiness
+command: python campaigns/CAM-0600/src/run_suite.py --campaign CAM-0610 --stage baseline
+actual_command: to_be_recorded_after_execution
+resolved_defaults: to_be_recorded_after_execution
+executed_variants: to_be_recorded_after_execution
+artifacts: to_be_recorded_after_execution
+result: pending
+decision: continue_to_mechanism_driven_adaptation
+actual_source_variants: 24
+actual_variant_cost_rows: 144
+best_variant_at_2bps: etf__sma200__long
+best_net_return_at_2bps: 0.8921431718220567
+holdout_rows_loaded: 0

@@ -1,0 +1,17 @@
+run_id: RUN-0002
+parent_run: RUN-0001
+stage: adaptation
+question: Does cluster reversal persist across horizons and on an executable long-only
+  sleeve?
+reason: Baseline ETF long-short profit depended heavily on a few ETF contributors
+  and unqualified shorts.
+expected_effect: A long-only negative-residual sleeve tests whether the signal exists
+  without direct shorts.
+configuration: ../CAM-0600/ADAPTATION_CONTRACT.yaml#CAM-0607
+status: completed
+actual_adaptation_variants: 24
+actual_variant_cost_rows: 144
+selected_execution_qualified_variant: etf__cluster_reversal_r1__long
+selected_net_return_at_2bps: 2.342658693794359
+decision: profitable_but_fragile_quote_gate
+holdout_rows_loaded: 0

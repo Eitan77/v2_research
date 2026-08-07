@@ -1,0 +1,19 @@
+campaign_id: CAM-0613
+paper_section: '3.14'
+strategy: Support and resistance
+status: retired_mechanism_exhausted
+promotion_ready: false
+maximum_loaded_date: '2026-04-30'
+holdout_rows_loaded: 0
+broker_margin_used: false
+baseline:
+  variant: sp500__prior_pivot__target_exit__long
+  net_return_2bps: -0.5060399003606286
+adaptation:
+  variant: sp500__pivot_target__long__atr0.5
+  net_return_2bps: -0.2183293754425601
+  maximum_drawdown: 0.226855782684694
+  post2024_return: -0.1503776981698188
+  walk_forward_return: -0.2864222187074569
+quote: null
+conclusion: retired_mechanism_exhausted

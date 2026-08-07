@@ -1,0 +1,17 @@
+run_id: RUN-0002
+parent_run: RUN-0001
+stage: adaptation
+question: Is alpha-combination performance stable across estimation and expected-return
+  windows?
+reason: Baseline was profitable but inconsistent, concentrated, and dependent on overnight
+  short weights.
+expected_effect: Stability across M/E choices would challenge the parameter-specific
+  explanation.
+configuration: ../CAM-0600/ADAPTATION_CONTRACT.yaml#CAM-0617
+status: completed
+actual_adaptation_variants: 10
+actual_variant_cost_rows: 60
+selected_execution_qualified_variant: null
+selected_net_return_at_2bps: null
+decision: execution_blocked_signal_only
+holdout_rows_loaded: 0

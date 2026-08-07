@@ -1,0 +1,27 @@
+campaign_id: CAM-0623
+paper_section: '15.3'
+strategy: Distress risk puzzle
+status: profitable_but_fragile_unpromoted
+promotion_ready: false
+maximum_loaded_date: '2026-04-30'
+holdout_rows_loaded: 0
+broker_margin_used: false
+baseline:
+  variant: qqq__chs_annual_proxy__reversal_long
+  net_return_2bps: 1.114243592136951
+adaptation:
+  variant: qqq__chs_safe__q10__none
+  net_return_2bps: 1.114243592136951
+  maximum_drawdown: 0.3889253356436405
+  post2024_return: 0.8633460470950248
+  walk_forward_return: 0.5232312604927596
+quote:
+  run_id: RUN-0007
+  model: 09:40 marketable daily reset
+  net_return: 0.580092949457045
+  extra_2bps_return: 0.480181838345934
+  maximum_drawdown: 0.1313456900947883
+  positive_months: 6.0
+  negative_months: 6.0
+  coverage_rate: 0.9991111111111112
+conclusion: profitable_but_fragile_unpromoted

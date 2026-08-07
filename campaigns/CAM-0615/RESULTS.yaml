@@ -1,0 +1,27 @@
+campaign_id: CAM-0615
+paper_section: '3.18'
+strategy: Statistical-arbitrage optimization
+status: retired_quote_execution_failure
+promotion_ready: false
+maximum_loaded_date: '2026-04-30'
+holdout_rows_loaded: 0
+broker_margin_used: false
+baseline:
+  variant: qqq__momentum20__diag_cov60__unconstrained
+  net_return_2bps: 0.1178695134728083
+adaptation:
+  variant: qqq__fullcov_shrink50__mom60__long
+  net_return_2bps: 0.6558464668476881
+  maximum_drawdown: 0.2960979756038668
+  post2024_return: 0.1676499540932065
+  walk_forward_return: 0.2583812083941685
+quote:
+  run_id: RUN-0007
+  model: 09:40 marketable daily reset
+  net_return: -0.2635445686111814
+  extra_2bps_return: -0.3634028540535083
+  maximum_drawdown: 0.3092193127243425
+  positive_months: 4.0
+  negative_months: 8.0
+  coverage_rate: 0.9980732177263968
+conclusion: retired_quote_execution_failure

@@ -1,0 +1,16 @@
+run_id: RUN-0002
+parent_run: RUN-0001
+stage: adaptation
+question: Does value survive broader baskets, longer holds, and causal profitability
+  or momentum confirmation?
+reason: Baseline return was large but drawdown and symbol/day concentration were high.
+expected_effect: Mechanism-consistent filters should improve contributor breadth and
+  path stability if the edge is real.
+configuration: ../CAM-0600/ADAPTATION_CONTRACT.yaml#CAM-0602
+status: completed
+actual_adaptation_variants: 36
+actual_variant_cost_rows: 216
+selected_execution_qualified_variant: qqq__btp__profitable__hold1__q10
+selected_net_return_at_2bps: 5.132447105704215
+decision: profitable_but_fragile_quote_gate
+holdout_rows_loaded: 0

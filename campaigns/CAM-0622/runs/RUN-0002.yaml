@@ -1,0 +1,17 @@
+run_id: RUN-0002
+parent_run: RUN-0001
+stage: source_repair_and_adaptation
+question: Does no-margin volatility targeting remain stable across forecasts, targets,
+  rebalances, and a real BIL sleeve?
+reason: Baseline treated unused capital as zero-return cash and activity metrics were
+  not informative for a persistent allocation.
+expected_effect: A BIL remainder and shorter forecasts should provide a more faithful
+  path comparison.
+configuration: ../CAM-0600/ADAPTATION_CONTRACT.yaml#CAM-0622
+status: completed
+actual_adaptation_variants: 48
+actual_variant_cost_rows: 288
+selected_execution_qualified_variant: QQQ__target15__vol63__monthly__BIL
+selected_net_return_at_2bps: 1.0131003632366442
+decision: robust_development_candidate_quote_gate
+holdout_rows_loaded: 0

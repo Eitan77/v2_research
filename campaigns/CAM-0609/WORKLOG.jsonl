@@ -1,0 +1,4 @@
+{"timestamp_utc": "2026-08-07T02:15:23.186039+00:00", "run_id": "RUN-0001", "event": "source_baseline_completed", "best_2bps": -0.3980999897875303}
+{"timestamp_utc": "2026-08-07T02:15:23.186039+00:00", "run_id": "RUN-0002", "event": "adaptation_completed", "selected_2bps": -0.2067576260951008}
+{"timestamp_utc": "2026-08-07T02:15:23.186039+00:00", "run_id": "RUN-0003", "event": "robustness_completed", "decision": "mechanism_failed_after_adaptation"}
+{"timestamp_utc": "2026-08-07T02:15:23.186039+00:00", "run_id": "FINAL", "event": "campaign_checkpoint", "decision": "retired_mechanism_exhausted"}

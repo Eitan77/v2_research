@@ -1,0 +1,189 @@
+{
+  "status": "passed",
+  "generated_utc": "2026-08-07T01:49:58.526604+00:00",
+  "campaigns": 19,
+  "position_rows": 84838,
+  "unique_quote_roles": 96349,
+  "symbols": 334,
+  "minimum_session": "2025-05-01",
+  "maximum_exit_session": "2026-04-30",
+  "holdout_rows_loaded": 0,
+  "broker_margin": false,
+  "fundamental_coverage_reconciled": [
+    "sp500",
+    "qqq"
+  ],
+  "campaign_reports": [
+    {
+      "campaign_id": "CAM-0600",
+      "variant_id": "etf__mom252_skip0_hold3_q10__all__regime0",
+      "position_rows": 994,
+      "symbols": 9,
+      "minimum_weight": 0.1111111111111111,
+      "maximum_gross": 1.0,
+      "broker_margin": false
+    },
+    {
+      "campaign_id": "CAM-0601",
+      "variant_id": "qqq__sue_sec__hold1__q20__long",
+      "position_rows": 5000,
+      "symbols": 27,
+      "minimum_weight": 0.05,
+      "maximum_gross": 1.0,
+      "broker_margin": false
+    },
+    {
+      "campaign_id": "CAM-0602",
+      "variant_id": "qqq__btp__profitable__hold1__q10",
+      "position_rows": 2169,
+      "symbols": 16,
+      "minimum_weight": 0.1111111111111111,
+      "maximum_gross": 1.0,
+      "broker_margin": false
+    },
+    {
+      "campaign_id": "CAM-0603",
+      "variant_id": "qqq__lowvol63__hold1__q10",
+      "position_rows": 2750,
+      "symbols": 31,
+      "minimum_weight": 0.09090909090909091,
+      "maximum_gross": 1.0000000000000002,
+      "broker_margin": false
+    },
+    {
+      "campaign_id": "CAM-0604",
+      "variant_id": "qqq__mom50_val50__profitable__q10",
+      "position_rows": 2169,
+      "symbols": 19,
+      "minimum_weight": 0.1111111111111111,
+      "maximum_gross": 1.0,
+      "broker_margin": false
+    },
+    {
+      "campaign_id": "CAM-0605",
+      "variant_id": "qqq__residual_mom__q10__regime0",
+      "position_rows": 2750,
+      "symbols": 39,
+      "minimum_weight": 0.09090909090909091,
+      "maximum_gross": 1.0,
+      "broker_margin": false
+    },
+    {
+      "campaign_id": "CAM-0607",
+      "variant_id": "etf__cluster_reversal_r1__long",
+      "position_rows": 3401,
+      "symbols": 27,
+      "minimum_weight": 1.4784661738312612e-05,
+      "maximum_gross": 1.0000000000000002,
+      "broker_margin": false
+    },
+    {
+      "campaign_id": "CAM-0610",
+      "variant_id": "etf__sma200__long",
+      "position_rows": 5045,
+      "symbols": 26,
+      "minimum_weight": 0.04,
+      "maximum_gross": 1.0000000000000002,
+      "broker_margin": false
+    },
+    {
+      "campaign_id": "CAM-0611",
+      "variant_id": "etf__sma50_200__long",
+      "position_rows": 4819,
+      "symbols": 27,
+      "minimum_weight": 0.04,
+      "maximum_gross": 1.0000000000000004,
+      "broker_margin": false
+    },
+    {
+      "campaign_id": "CAM-0612",
+      "variant_id": "etf__sma10_50_200__long",
+      "position_rows": 3555,
+      "symbols": 25,
+      "minimum_weight": 0.041666666666666664,
+      "maximum_gross": 1.0000000000000004,
+      "broker_margin": false
+    },
+    {
+      "campaign_id": "CAM-0614",
+      "variant_id": "qqq__donchian10__long",
+      "position_rows": 11628,
+      "symbols": 111,
+      "minimum_weight": 0.009900990099009901,
+      "maximum_gross": 1.0000000000000002,
+      "broker_margin": false
+    },
+    {
+      "campaign_id": "CAM-0615",
+      "variant_id": "qqq__fullcov_shrink50__mom60__long",
+      "position_rows": 11937,
+      "symbols": 106,
+      "minimum_weight": 2.704605886059885e-06,
+      "maximum_gross": 1.0000000000000004,
+      "broker_margin": false
+    },
+    {
+      "campaign_id": "CAM-0618",
+      "variant_id": "sector11__mom252__hold6__top1",
+      "position_rows": 749,
+      "symbols": 7,
+      "minimum_weight": 0.16666666666666666,
+      "maximum_gross": 1.0,
+      "broker_margin": false
+    },
+    {
+      "campaign_id": "CAM-0619",
+      "variant_id": "sector11__mom126__sma200__top1",
+      "position_rows": 249,
+      "symbols": 5,
+      "minimum_weight": 1.0,
+      "maximum_gross": 1.0,
+      "broker_margin": false
+    },
+    {
+      "campaign_id": "CAM-0620",
+      "variant_id": "sector11__mom126__sma200__fallback_GLD",
+      "position_rows": 249,
+      "symbols": 6,
+      "minimum_weight": 1.0,
+      "maximum_gross": 1.0,
+      "broker_margin": false
+    },
+    {
+      "campaign_id": "CAM-0621",
+      "variant_id": "etf__ibs_le20__trend0__long",
+      "position_rows": 1358,
+      "symbols": 27,
+      "minimum_weight": 0.04,
+      "maximum_gross": 1.0000000000000002,
+      "broker_margin": false
+    },
+    {
+      "campaign_id": "CAM-0622",
+      "variant_id": "QQQ__target15__vol63__monthly__BIL",
+      "position_rows": 393,
+      "symbols": 2,
+      "minimum_weight": 0.015378652674806093,
+      "maximum_gross": 1.0,
+      "broker_margin": false
+    },
+    {
+      "campaign_id": "CAM-0623",
+      "variant_id": "qqq__chs_safe__q10__none",
+      "position_rows": 2250,
+      "symbols": 25,
+      "minimum_weight": 0.1111111111111111,
+      "maximum_gross": 1.0,
+      "broker_margin": false
+    },
+    {
+      "campaign_id": "CAM-0624",
+      "variant_id": "sp500__chs_safe_q20__target15__vol126",
+      "position_rows": 23373,
+      "symbols": 245,
+      "minimum_weight": 0.006282041214500101,
+      "maximum_gross": 1.0,
+      "broker_margin": false
+    }
+  ]
+}

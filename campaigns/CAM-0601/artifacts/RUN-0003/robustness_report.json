@@ -1,0 +1,92 @@
+{
+  "campaign_id": "CAM-0601",
+  "run_id": "RUN-0003",
+  "parent_run": "RUN-0002",
+  "status": "completed",
+  "generated_utc": "2026-08-07T01:43:06.487757+00:00",
+  "development_only": true,
+  "holdout_rows_loaded": 0,
+  "maximum_loaded_date": "2026-04-30",
+  "fixed_variant_diagnostics": {
+    "baseline_best_2bps_return": 0.3141052278324922,
+    "raw_best_variant": "qqq__sue_sec__hold1__q20__long",
+    "raw_best_2bps_return": 0.9142014341370832,
+    "selected_executable_variant": "qqq__sue_sec__hold1__q20__long",
+    "selected_2bps_return": 0.9142014341370832,
+    "selected_5bps_return": 0.909172486768662,
+    "selected_10bps_return": 0.9007909078212938,
+    "maximum_drawdown": 0.3696941284272901,
+    "monthly_average": 0.0110144751100853,
+    "monthly_median": 0.0090871140661245,
+    "positive_month_rate": 0.5783132530120482,
+    "recent12_average_month": 0.0291018621443823,
+    "entries": 171.0,
+    "top5_symbol_positive_share": 0.3366956882360074,
+    "top5_day_positive_share": 0.0454461097646596,
+    "leave_best_symbol_out_return": 0.7556760191708871,
+    "positive_variant_fraction_at_2bps": 1.0,
+    "profitable_variant_fraction_at_10bps": 1.0,
+    "quote_gate": true,
+    "basic_candidate_screen": false,
+    "positive_years": 7,
+    "negative_years": 1,
+    "years": 8,
+    "worst_year": -0.4495237901683838,
+    "best_year": 0.339854178964293,
+    "pre2024_return": 0.5469273623793134,
+    "post2024_return": 0.3672740717577697,
+    "post2024_green_day_rate": 0.535958904109589
+  },
+  "walk_forward_parameter_selection": {
+    "status": "completed",
+    "net_return": 0.4367415814638172,
+    "positive_years": 4,
+    "negative_years": 3,
+    "years": [
+      {
+        "year": 2020,
+        "selected_variant": "qqq__sue_sec__hold3__q10__long",
+        "prior_net_return": 0.15553566391457452,
+        "year_net_return": 0.26523449652150566
+      },
+      {
+        "year": 2021,
+        "selected_variant": "qqq__sue_sec__hold6__q20__long",
+        "prior_net_return": 0.5274660249557803,
+        "year_net_return": 0.22551437125109247
+      },
+      {
+        "year": 2022,
+        "selected_variant": "qqq__sue_sec__hold6__q20__long",
+        "prior_net_return": 0.7529803962068727,
+        "year_net_return": -0.48116228776007025
+      },
+      {
+        "year": 2023,
+        "selected_variant": "qqq__sue_sec__hold6__q20__long",
+        "prior_net_return": 0.27181810844680243,
+        "year_net_return": 0.37499635589154
+      },
+      {
+        "year": 2024,
+        "selected_variant": "qqq__sue_sec__hold1__q10__long",
+        "prior_net_return": 0.6696979262671999,
+        "year_net_return": -0.0620613347440071
+      },
+      {
+        "year": 2025,
+        "selected_variant": "qqq__sue_sec__hold6__q20__long",
+        "prior_net_return": 0.6726442543757785,
+        "year_net_return": 0.13646440135381444
+      },
+      {
+        "year": 2026,
+        "selected_variant": "qqq__sue_sec__hold1__q10__long",
+        "prior_net_return": 0.8846264517659272,
+        "year_net_return": -0.02224442105005805
+      }
+    ]
+  },
+  "decision": "profitable_but_fragile_quote_gate",
+  "promotion_ready": false
+}

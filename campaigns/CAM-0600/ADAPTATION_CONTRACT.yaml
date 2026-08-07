@@ -1,0 +1,28 @@
+version: 1
+frozen_at: '2026-08-06T18:32:00-07:00'
+parent_run: RUN-0001
+run_id: RUN-0002
+purpose: mechanism-driven adaptation and source-fidelity repair
+shared_rules:
+  capital_base: 1.0
+  accounting: fixed_base_additive
+  broker_margin: false
+  maximum_gross_exposure: 1.0
+  costs_bps_per_side: [-1, 0, 1, 2, 5, 10]
+  discovery_cutoff: '2026-04-30'
+  holdout_access: false
+  universes: [point_in_time_sp500, point_in_time_qqq, etf]
+  executable_short_rule: intraday_only_with_protective_stop_and_forced_close
+  quote_gate: positive_at_2bps_and_not_otherwise_execution_blocked
+  selection_rule: prioritize 2bps net, then recent regime, drawdown, monthly consistency, and concentration
+source_repairs:
+  CAM-0601: SEC filing-date-causal diluted EPS extension with disclosed Q4 derivation
+  CAM-0615: full shrinkage covariance formula replacing diagonal diagnostic
+  CAM-0616: full shrinkage covariance constrained formula replacing diagonal diagnostic
+  CAM-0618_to_CAM-0622: complete eleven-sector set and BIL cash sleeve from cutoff-bounded Alpaca pull
+anti_overfit:
+  - all parameter values are broad conventional choices
+  - no full-sample winning ticker subset is permitted
+  - causal filters only
+  - no holdout access
+  - later robustness must test periods and contributors without changing this grid

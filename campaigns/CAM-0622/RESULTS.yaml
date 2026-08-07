@@ -1,0 +1,27 @@
+campaign_id: CAM-0622
+paper_section: '6.5'
+strategy: Index volatility targeting with risk-free asset
+status: promising_unpromoted_candidate
+promotion_ready: false
+maximum_loaded_date: '2026-04-30'
+holdout_rows_loaded: 0
+broker_margin_used: false
+baseline:
+  variant: etf__QQQ__target15__vol252__weekly
+  net_return_2bps: 0.7175247838249021
+adaptation:
+  variant: QQQ__target15__vol63__monthly__BIL
+  net_return_2bps: 1.0131003632366442
+  maximum_drawdown: 0.2153562584387965
+  post2024_return: 0.4334999895259825
+  walk_forward_return: 0.8569726522914358
+quote:
+  run_id: RUN-0005
+  model: 09:30 marketable daily reset
+  net_return: 0.2045953516063737
+  extra_2bps_return: 0.1049953516063737
+  maximum_drawdown: 0.0997556448659857
+  positive_months: 8.0
+  negative_months: 4.0
+  coverage_rate: 1.0
+conclusion: promising_unpromoted_candidate

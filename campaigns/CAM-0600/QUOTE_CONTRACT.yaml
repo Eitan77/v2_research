@@ -1,0 +1,26 @@
+version: 1
+frozen_at: '2026-08-06T18:55:00-07:00'
+run_id: RUN-0005
+parent_run: RUN-0003
+purpose: conservative marketable SIP quote replay of every profitable execution-qualified adaptation
+window:
+  start: '2025-05-01'
+  end: '2026-04-30'
+  reason: complete local quote-lake span; missing roles may be pulled from Alpaca before replay
+model:
+  long_entry: first valid SIP ask at or after 09:30 America/New_York
+  long_exit_open_hold: first valid SIP bid at or after next session 09:30 America/New_York
+  long_exit_intraday: last valid SIP bid at or before 16:00 America/New_York
+  position_model: conservative daily reset at target weight
+  size_model: normalized capital one; top-of-book price only; quote size reported separately
+  extra_slippage_bps_per_side: [0, 1, 2, 5]
+  broker_margin: false
+  direct_shorts: false
+  holdout_access: false
+qualification:
+  - selected RUN-0002 executable long-only variant
+  - positive at 2 bps per side
+limitations:
+  - daily reset pays the spread each active day and is conservative for multi-day holdings
+  - a quote touch is not called a passive fill
+  - missing quote roles block a complete execution claim

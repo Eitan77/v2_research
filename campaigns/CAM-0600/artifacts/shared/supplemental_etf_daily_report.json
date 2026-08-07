@@ -1,0 +1,29 @@
+{
+  "status": "passed",
+  "provider": "Alpaca Market Data API",
+  "feed": "sip",
+  "adjustment": "all",
+  "symbols": [
+    "BIL",
+    "SHY",
+    "XLB",
+    "XLC",
+    "XLRE"
+  ],
+  "requested_start": "2019-01-01T00:00:00Z",
+  "requested_end_exclusive": "2026-05-01T00:00:00Z",
+  "rows": 9210,
+  "pages": 1,
+  "minimum_date": "2019-01-02",
+  "maximum_date": "2026-04-30",
+  "holdout_rows_loaded": 0,
+  "rows_by_symbol": {
+    "BIL": 1842,
+    "SHY": 1842,
+    "XLB": 1842,
+    "XLC": 1842,
+    "XLRE": 1842
+  },
+  "output_sha256": "d637442f44f6e80442ae63a28e8e58f7c12bfe98cc6ae66dd97d0370eb38cfeb",
+  "credentials_recorded": false
+}

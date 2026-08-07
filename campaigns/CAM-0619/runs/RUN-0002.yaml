@@ -1,0 +1,16 @@
+run_id: RUN-0002
+parent_run: RUN-0001
+stage: source_repair_and_adaptation
+question: Does sector momentum plus own-price trend confirmation survive breadth and
+  horizon changes?
+reason: Baseline omitted three sectors and had inactive/flat months.
+expected_effect: Complete sectors and top-three breadth should improve activity without
+  retrospective selection.
+configuration: ../CAM-0600/ADAPTATION_CONTRACT.yaml#CAM-0619
+status: completed
+actual_adaptation_variants: 8
+actual_variant_cost_rows: 48
+selected_execution_qualified_variant: sector11__mom126__sma200__top1
+selected_net_return_at_2bps: 1.1279854400478275
+decision: profitable_but_fragile_quote_gate
+holdout_rows_loaded: 0

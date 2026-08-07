@@ -1,0 +1,15 @@
+run_id: RUN-0002
+parent_run: RUN-0001
+stage: adaptation
+question: Is the long/cash single-average trend effect robust across 50 to 250 sessions?
+reason: Baseline SMA200 passed a basic consistency screen but ETF contribution remained
+  concentrated.
+expected_effect: A plateau across nearby slow windows would support robustness.
+configuration: ../CAM-0600/ADAPTATION_CONTRACT.yaml#CAM-0610
+status: completed
+actual_adaptation_variants: 15
+actual_variant_cost_rows: 90
+selected_execution_qualified_variant: etf__sma200__long
+selected_net_return_at_2bps: 0.7986736071512267
+decision: robust_development_candidate_quote_gate
+holdout_rows_loaded: 0

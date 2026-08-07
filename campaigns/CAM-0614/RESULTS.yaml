@@ -1,0 +1,27 @@
+campaign_id: CAM-0614
+paper_section: '3.15'
+strategy: Donchian channel
+status: retired_quote_execution_failure
+promotion_ready: false
+maximum_loaded_date: '2026-04-30'
+holdout_rows_loaded: 0
+broker_margin_used: false
+baseline:
+  variant: qqq__donchian_close20__long
+  net_return_2bps: 0.7237823120049407
+adaptation:
+  variant: qqq__donchian10__long
+  net_return_2bps: 0.822599821622957
+  maximum_drawdown: 0.2994268293747366
+  post2024_return: 0.1574377487065039
+  walk_forward_return: 0.6720149913559411
+quote:
+  run_id: RUN-0007
+  model: 09:40 marketable daily reset
+  net_return: -0.2779163605096158
+  extra_2bps_return: -0.3779003541070548
+  maximum_drawdown: 0.3626130297620486
+  positive_months: 4.0
+  negative_months: 8.0
+  coverage_rate: 0.999828001375989
+conclusion: retired_quote_execution_failure

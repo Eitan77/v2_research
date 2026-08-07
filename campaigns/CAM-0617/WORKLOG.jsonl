@@ -1,0 +1,4 @@
+{"timestamp_utc": "2026-08-07T02:15:23.530979+00:00", "run_id": "RUN-0001", "event": "source_baseline_completed", "best_2bps": 0.6755337143356052}
+{"timestamp_utc": "2026-08-07T02:15:23.530979+00:00", "run_id": "RUN-0002", "event": "adaptation_completed", "selected_2bps": null}
+{"timestamp_utc": "2026-08-07T02:15:23.530979+00:00", "run_id": "RUN-0003", "event": "robustness_completed", "decision": "execution_blocked_signal_only"}
+{"timestamp_utc": "2026-08-07T02:15:23.530979+00:00", "run_id": "FINAL", "event": "campaign_checkpoint", "decision": "stopped_nonexecutable_short_signal"}

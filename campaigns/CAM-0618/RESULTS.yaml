@@ -1,0 +1,27 @@
+campaign_id: CAM-0618
+paper_section: '4.1'
+strategy: Sector momentum rotation
+status: retired_quote_execution_failure
+promotion_ready: false
+maximum_loaded_date: '2026-04-30'
+holdout_rows_loaded: 0
+broker_margin_used: false
+baseline:
+  variant: etf_sector__formation252__hold3__long
+  net_return_2bps: 1.76912648753941
+adaptation:
+  variant: sector11__mom252__hold6__top1
+  net_return_2bps: 1.764087870733533
+  maximum_drawdown: 0.1445510808987861
+  post2024_return: 0.4826364208534355
+  walk_forward_return: 1.129864432772275
+quote:
+  run_id: RUN-0007
+  model: 09:40 marketable daily reset
+  net_return: -0.0149285576274541
+  extra_2bps_return: -0.1145285576274541
+  maximum_drawdown: 0.253665344275886
+  positive_months: 7.0
+  negative_months: 5.0
+  coverage_rate: 1.0
+conclusion: retired_quote_execution_failure

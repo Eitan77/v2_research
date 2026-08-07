@@ -1,0 +1,107 @@
+version: 1
+paper:
+  title: "151 Trading Strategies"
+  authors: [Zura Kakushadze, Juan Andres Serur]
+  file: C:/Users/decla/Downloads/ssrn-3247865.pdf
+  ssrn_abstract: 3247865
+  pages_visually_verified: [40, 46, 50, 56, 59, 62, 64, 80, 110, 111]
+  extracted_text: tmp/pdfs/ssrn-3247865.txt
+  note: >-
+    Page numbers are the printed page numbers. Extraction was checked against
+    rendered pages because equations and inequality directions are material.
+
+sections:
+  "3.1":
+    name: Price momentum
+    exact: "Rcum=P(S)/P(S+T)-1; normally T=12 months, S=1 month; buy top decile and optionally short bottom decile; normally hold one month; equal or inverse-volatility weights."
+  "3.2":
+    name: Earnings momentum
+    exact: "SUE=(latest announced quarterly EPS - EPS four quarters earlier)/standard deviation of this unexpected-earnings series over the last eight quarters; buy top decile and short bottom decile; typically hold six months."
+  "3.3":
+    name: Value
+    exact: "Book-to-price or book-to-market rank; buy top decile and short bottom decile; typical hold one to six months; current or book-contemporaneous price variants are acknowledged."
+  "3.4":
+    name: Low volatility
+    exact: "Historical volatility over 126 to 252 trading days; buy bottom decile and short top decile; similar six- to twelve-month hold; no skip."
+  "3.6":
+    name: Multifactor
+    exact: "Combine factor sleeves, e.g. value and momentum, uniformly or inverse-volatility; alternatively average demeaned cross-sectional factor ranks."
+  "3.7":
+    name: Residual momentum
+    exact: "Regress 36 monthly excess returns on FF3 with intercept; compute 12-month residuals with one-month skip excluding the fitted intercept; rank residual mean/residual volatility; normally hold one month."
+  "3.8":
+    name: Pairs trading
+    exact: "Choose historically highly correlated pair; demean its completed simple or log returns; short positive demeaned rich leg and buy negative demeaned cheap leg; dollar neutral and gross normalized."
+  "3.9":
+    name: Single-cluster mean reversion
+    exact: "For one correlated N-stock cluster, demean log returns; positions Di=-gamma*(Ri-mean(R)); choose gamma so sum(abs(Di))=I; automatically dollar neutral."
+  "3.9.1":
+    name: Multiple-cluster mean reversion
+    exact: "Binary cluster-loadings regression without separate intercept; residuals are within-cluster demeaned returns and are cluster neutral; trade negative residuals."
+  "3.10":
+    name: Weighted-regression mean reversion
+    exact: "Regress returns on general risk loadings with regression weights such as inverse historical variance; use weighted residual Z*epsilon; include an intercept so residual holdings sum to zero."
+  "3.11":
+    name: Single moving average
+    exact: "Long/liquidate short if current price exceeds SMA or EMA; short/liquidate long if below; may be long-only, short-only, or both."
+  "3.12":
+    name: Two moving averages
+    exact: "Long if short MA exceeds long MA and short on reverse; example 10/30; optional liquidation after one-day adverse move beyond 2 percent."
+  "3.13":
+    name: Three moving averages
+    exact: "Example 3/10/21; long when MA3>MA10>MA21, exit when MA3<=MA10; symmetric short."
+  "3.14":
+    name: Support and resistance
+    exact: "Prior-day C=(H+L+Cclose)/3, R=2C-L, S=2C-H; long if current price>C and liquidate at R; short if current price<C and liquidate at S."
+  "3.15":
+    name: Channel
+    exact: "Donchian bounds are max/min of prior T prices; reversal rule establishes long at lower bound and short at upper bound; volume confirmation and breakout direction are acknowledged refinements."
+  "3.18":
+    name: Stat-arb optimization
+    exact: "Expected-return vector E and positive-definite covariance C; unconstrained weights proportional to inverse(C)E; normalize sum(abs(w))=1."
+  "3.18.1":
+    name: Dollar-neutral optimization
+    exact: "Mean-variance solution subtracts the covariance-weighted intercept component so sum(w)=0; normalize sum(abs(w))=1."
+  "3.20":
+    name: Alpha combos
+    exact: "Standardize and demean alpha returns, truncate return-history loadings, normalize expected alpha returns, regress them on loadings, and set alpha weights to residual divided by alpha volatility; gross normalize."
+  "4.1":
+    name: Sector momentum rotation
+    exact: "Rank sector ETFs by six- to twelve-month cumulative return; buy top decile and hold one to three months; optional bottom-decile short."
+  "4.1.1":
+    name: Sector momentum with MA filter
+    exact: "Buy winner only if its current price is above its daily 100- to 200-day MA; short loser only if below."
+  "4.1.2":
+    name: Dual-momentum sector rotation
+    exact: "Buy relative-momentum sector winners only if broad index price is above its 100- to 200-day MA; otherwise hold an uncorrelated gold or Treasury ETF."
+  "4.4":
+    name: ETF IBS mean reversion
+    exact: "IBS=(previous close-previous low)/(previous high-previous low); cross-sectionally buy bottom decile and short top decile."
+  "6.5":
+    name: Index volatility targeting
+    exact: "Risky weight w=target volatility/forecast volatility; risk-free weight=1-w; rebalance weekly/monthly or when relative weight change exceeds a threshold; optional leverage cap."
+  "15.3":
+    name: Distress risk puzzle
+    exact: "Rank a modeled bankruptcy probability; buy safest bottom decile and short riskiest top decile; monthly or annual rebalance."
+  "15.3.1":
+    name: Distress risk management
+    exact: "Scale HMD by target volatility divided by prior-year realized daily HMD volatility; target normally 10 to 15 percent."
+
+ambiguities_and_declared_resolutions:
+  - "The paper often gives a family rather than a single threshold. The central examples above are the frozen baselines; neighborhoods are adaptations."
+  - "The paper does not provide a bankruptcy-model coefficient table. Any distress model must be explicitly named and cannot be called the paper's exact logistic model."
+  - "The paper does not fix pair formation/dislocation horizons or exits. Those choices are frozen before each run."
+  - "Overnight direct-short source examples are signal diagnostics only under the repository hard restriction."
+  - "No broker margin means every implementable portfolio has gross exposure <=1 and volatility scaling is capped at 1."
+
+data_contract:
+  catalog: D:/AlgoResearch/data/catalog.duckdb
+  qqq_membership: interday_qqq_membership_daily_v1
+  sp500_membership: campaigns/CAM-0508/artifacts/membership/sp500_pit_membership_daily.parquet
+  daily_bars: bars_1d
+  intraday_bars: derived_bars_5m
+  earnings: earnings
+  sec_facts_seed: campaigns/CAM-0515/artifacts/RUN-0007/sec_cache/annual_facts
+  sec_identity_seed: campaigns/CAM-0515/artifacts/RUN-0007/sec_identity_map.json
+  discovery_cutoff: 2026-04-30
+  holdout_loaded: false

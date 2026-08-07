@@ -1,0 +1,19 @@
+campaign_id: CAM-0608
+paper_section: 3.9.1
+strategy: Multiple-cluster mean reversion
+status: retired_mechanism_exhausted
+promotion_ready: false
+maximum_loaded_date: '2026-04-30'
+holdout_rows_loaded: 0
+broker_margin_used: false
+baseline:
+  variant: sp500__sector_proxy_clusters__return1
+  net_return_2bps: -0.257800513451091
+adaptation:
+  variant: sp500__sector_clusters_f252_r5__long
+  net_return_2bps: -0.0623247074661032
+  maximum_drawdown: 0.283839569017605
+  post2024_return: -0.030085364299518
+  walk_forward_return: -0.6255865787869428
+quote: null
+conclusion: retired_mechanism_exhausted

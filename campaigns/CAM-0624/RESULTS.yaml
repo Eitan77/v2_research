@@ -1,0 +1,27 @@
+campaign_id: CAM-0624
+paper_section: 15.3.1
+strategy: Distress risk puzzle risk management
+status: retired_quote_execution_failure
+promotion_ready: false
+maximum_loaded_date: '2026-04-30'
+holdout_rows_loaded: 0
+broker_margin_used: false
+baseline:
+  variant: sp500__chs_proxy__reversal_long__target15
+  net_return_2bps: 0.5691903991305711
+adaptation:
+  variant: sp500__chs_safe_q20__target15__vol126
+  net_return_2bps: 0.5653557569229715
+  maximum_drawdown: 0.1414978550134962
+  post2024_return: 0.3841380061982621
+  walk_forward_return: 0.3566015305082921
+quote:
+  run_id: RUN-0007
+  model: 09:40 marketable daily reset
+  net_return: -0.2777697018755558
+  extra_2bps_return: -0.3565718016979123
+  maximum_drawdown: 0.3437150749583949
+  positive_months: 2.0
+  negative_months: 10.0
+  coverage_rate: 0.9994010182689428
+conclusion: retired_quote_execution_failure

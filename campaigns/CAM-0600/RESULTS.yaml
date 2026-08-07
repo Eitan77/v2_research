@@ -1,0 +1,27 @@
+campaign_id: CAM-0600
+paper_section: '3.1'
+strategy: Price momentum
+status: promising_unpromoted_candidate
+promotion_ready: false
+maximum_loaded_date: '2026-04-30'
+holdout_rows_loaded: 0
+broker_margin_used: false
+baseline:
+  variant: etf__12m_skip1__long
+  net_return_2bps: 2.9821817270244355
+adaptation:
+  variant: etf__mom252_skip0_hold3_q10__all__regime0
+  net_return_2bps: 2.9524759759508497
+  maximum_drawdown: 0.4540574600786652
+  post2024_return: 1.2889760796874246
+  walk_forward_return: 2.6568900142965406
+quote:
+  run_id: RUN-0005
+  model: 09:30 marketable daily reset
+  net_return: 0.4136763956032787
+  extra_2bps_return: 0.3140763956032786
+  maximum_drawdown: 0.2706210260370911
+  positive_months: 9.0
+  negative_months: 3.0
+  coverage_rate: 1.0
+conclusion: promising_unpromoted_candidate

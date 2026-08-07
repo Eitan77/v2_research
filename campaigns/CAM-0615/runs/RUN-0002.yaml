@@ -1,0 +1,17 @@
+run_id: RUN-0002
+parent_run: RUN-0001
+stage: source_repair_and_adaptation
+question: Does the paper's full covariance optimizer work with estimable shrinkage
+  and alternate return forecasts?
+reason: RUN-0001 used a diagonal covariance diagnostic and cannot support a source
+  conclusion.
+expected_effect: Full covariance should reveal whether correlation-aware allocation
+  adds value.
+configuration: ../CAM-0600/ADAPTATION_CONTRACT.yaml#CAM-0615
+status: completed
+actual_adaptation_variants: 18
+actual_variant_cost_rows: 108
+selected_execution_qualified_variant: qqq__fullcov_shrink50__mom60__long
+selected_net_return_at_2bps: 0.6558464668476881
+decision: robust_development_candidate_quote_gate
+holdout_rows_loaded: 0

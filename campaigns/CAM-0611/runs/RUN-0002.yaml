@@ -1,0 +1,15 @@
+run_id: RUN-0002
+parent_run: RUN-0001
+stage: adaptation
+question: Is two-average trend performance stable across conventional fast/slow pairs?
+reason: Baseline 10/30 was profitable but had 28.5% drawdown and uneven months.
+expected_effect: Slower pairs should reduce turnover and drawdown if the trend mechanism
+  is sound.
+configuration: ../CAM-0600/ADAPTATION_CONTRACT.yaml#CAM-0611
+status: completed
+actual_adaptation_variants: 12
+actual_variant_cost_rows: 72
+selected_execution_qualified_variant: etf__sma50_200__long
+selected_net_return_at_2bps: 1.1043326848748525
+decision: profitable_but_fragile_quote_gate
+holdout_rows_loaded: 0

@@ -1,0 +1,19 @@
+campaign_id: CAM-0609
+paper_section: '3.10'
+strategy: Weighted-regression mean reversion
+status: retired_mechanism_exhausted
+promotion_ready: false
+maximum_loaded_date: '2026-04-30'
+holdout_rows_loaded: 0
+broker_margin_used: false
+baseline:
+  variant: sp500__weighted_regression__return1
+  net_return_2bps: -0.3980999897875303
+adaptation:
+  variant: sp500__weighted_residual_r2__long
+  net_return_2bps: -0.2067576260951008
+  maximum_drawdown: 0.3049347832496674
+  post2024_return: -0.0911388943385506
+  walk_forward_return: -0.544674597405695
+quote: null
+conclusion: retired_mechanism_exhausted

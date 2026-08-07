@@ -1,0 +1,17 @@
+run_id: RUN-0002
+parent_run: RUN-0001
+stage: source_repair_and_adaptation
+question: Does complete eleven-sector momentum survive formation, hold, and breadth
+  changes?
+reason: Baseline omitted three standard sectors and selected a single sector at a
+  time.
+expected_effect: Complete data and top-three breadth should expose concentration and
+  parameter dependence.
+configuration: ../CAM-0600/ADAPTATION_CONTRACT.yaml#CAM-0618
+status: completed
+actual_adaptation_variants: 12
+actual_variant_cost_rows: 72
+selected_execution_qualified_variant: sector11__mom252__hold6__top1
+selected_net_return_at_2bps: 1.764087870733533
+decision: robust_development_candidate_quote_gate
+holdout_rows_loaded: 0

@@ -1,0 +1,16 @@
+run_id: RUN-0002
+parent_run: RUN-0001
+stage: adaptation
+question: Can materially different formation, dislocation, and correlation scales
+  overcome pair-trading costs?
+reason: Baseline flipped from positive at 1 bp to negative at 2 bps.
+expected_effect: Longer-lived dislocations or tighter pairs may lower turnover enough
+  to survive costs.
+configuration: ../CAM-0600/ADAPTATION_CONTRACT.yaml#CAM-0606
+status: completed
+actual_adaptation_variants: 18
+actual_variant_cost_rows: 108
+selected_execution_qualified_variant: null
+selected_net_return_at_2bps: null
+decision: mechanism_failed_after_adaptation
+holdout_rows_loaded: 0

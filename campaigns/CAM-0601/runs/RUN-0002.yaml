@@ -1,0 +1,17 @@
+run_id: RUN-0002
+parent_run: RUN-0001
+stage: source_repair_and_adaptation
+question: Does filing-causal SEC EPS coverage and shorter holding repair sparse/stale
+  SUE evidence?
+reason: Baseline vendor earnings ended before the discovery cutoff and recent performance
+  was negative.
+expected_effect: Broader current coverage should distinguish data attrition from mechanism
+  failure.
+configuration: ../CAM-0600/ADAPTATION_CONTRACT.yaml#CAM-0601
+status: completed
+actual_adaptation_variants: 12
+actual_variant_cost_rows: 72
+selected_execution_qualified_variant: qqq__sue_sec__hold1__q20__long
+selected_net_return_at_2bps: 0.9142014341370832
+decision: profitable_but_fragile_quote_gate
+holdout_rows_loaded: 0

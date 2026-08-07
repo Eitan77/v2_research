@@ -1,0 +1,27 @@
+campaign_id: CAM-0619
+paper_section: 4.1.1
+strategy: Sector momentum with moving-average filter
+status: retired_quote_execution_failure
+promotion_ready: false
+maximum_loaded_date: '2026-04-30'
+holdout_rows_loaded: 0
+broker_margin_used: false
+baseline:
+  variant: etf_sector__mom252__sma200__long
+  net_return_2bps: 1.0981240465169668
+adaptation:
+  variant: sector11__mom126__sma200__top1
+  net_return_2bps: 1.1279854400478275
+  maximum_drawdown: 0.3093901456568262
+  post2024_return: 0.531793825501452
+  walk_forward_return: 0.5174933988366336
+quote:
+  run_id: RUN-0007
+  model: 09:40 marketable daily reset
+  net_return: -0.1206389627844862
+  extra_2bps_return: -0.2202389627844862
+  maximum_drawdown: 0.4525087431370684
+  positive_months: 7.0
+  negative_months: 5.0
+  coverage_rate: 1.0
+conclusion: retired_quote_execution_failure

@@ -1,0 +1,27 @@
+campaign_id: CAM-0612
+paper_section: '3.13'
+strategy: Three moving averages
+status: execution_sensitive_unpromoted
+promotion_ready: false
+maximum_loaded_date: '2026-04-30'
+holdout_rows_loaded: 0
+broker_margin_used: false
+baseline:
+  variant: qqq__sma3_10_21__long
+  net_return_2bps: 0.4630335132606862
+adaptation:
+  variant: etf__sma10_50_200__long
+  net_return_2bps: 1.0238966852569238
+  maximum_drawdown: 0.1873551395904623
+  post2024_return: 0.2431231916608502
+  walk_forward_return: 0.7502265886518248
+quote:
+  run_id: RUN-0007
+  model: 09:40 marketable daily reset
+  net_return: 0.0946256965840201
+  extra_2bps_return: -0.0049743034159797
+  maximum_drawdown: 0.1525748464466474
+  positive_months: 9.0
+  negative_months: 3.0
+  coverage_rate: 1.0
+conclusion: execution_sensitive_unpromoted

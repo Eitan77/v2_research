@@ -1,0 +1,19 @@
+campaign_id: CAM-0617
+paper_section: '3.20'
+strategy: Alpha combos
+status: stopped_nonexecutable_short_signal
+promotion_ready: false
+maximum_loaded_date: '2026-04-30'
+holdout_rows_loaded: 0
+broker_margin_used: false
+baseline:
+  variant: qqq__26alpha_combo__M20__E5
+  net_return_2bps: 0.6755337143356052
+adaptation:
+  variant: null
+  net_return_2bps: null
+  maximum_drawdown: null
+  post2024_return: 0.3358064493056838
+  walk_forward_return: null
+quote: null
+conclusion: stopped_nonexecutable_short_signal

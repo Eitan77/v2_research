@@ -1,0 +1,16 @@
+run_id: RUN-0002
+parent_run: RUN-0001
+stage: adaptation
+question: Can thresholded long-only IBS with an optional trend gate survive realistic
+  cost stress?
+reason: Baseline long-short result had near-zero median month and failed at 5 bps.
+expected_effect: Long-only thresholding may retain reversal alpha without unqualified
+  shorts or excessive turnover.
+configuration: ../CAM-0600/ADAPTATION_CONTRACT.yaml#CAM-0621
+status: completed
+actual_adaptation_variants: 6
+actual_variant_cost_rows: 36
+selected_execution_qualified_variant: etf__ibs_le20__trend0__long
+selected_net_return_at_2bps: 0.2554004978459143
+decision: profitable_but_fragile_quote_gate
+holdout_rows_loaded: 0

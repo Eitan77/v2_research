@@ -1,0 +1,27 @@
+campaign_id: CAM-0605
+paper_section: '3.7'
+strategy: Residual momentum
+status: retired_quote_execution_failure
+promotion_ready: false
+maximum_loaded_date: '2026-04-30'
+holdout_rows_loaded: 0
+broker_margin_used: false
+baseline:
+  variant: qqq__ff3proxy_residual_risk_adjusted__long
+  net_return_2bps: 0.6386119645588125
+adaptation:
+  variant: qqq__residual_mom__q10__regime0
+  net_return_2bps: 0.6386119645588125
+  maximum_drawdown: 0.3071036923973347
+  post2024_return: 0.3914046661659894
+  walk_forward_return: 0.4113751994293165
+quote:
+  run_id: RUN-0007
+  model: 09:40 marketable daily reset
+  net_return: -0.2623335589570622
+  extra_2bps_return: -0.3622608316843349
+  maximum_drawdown: 0.4495298645052479
+  positive_months: 4.0
+  negative_months: 8.0
+  coverage_rate: 0.9992727272727272
+conclusion: retired_quote_execution_failure

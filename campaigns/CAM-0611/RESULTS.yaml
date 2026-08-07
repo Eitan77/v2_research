@@ -1,0 +1,27 @@
+campaign_id: CAM-0611
+paper_section: '3.12'
+strategy: Two moving averages
+status: execution_sensitive_unpromoted
+promotion_ready: false
+maximum_loaded_date: '2026-04-30'
+holdout_rows_loaded: 0
+broker_margin_used: false
+baseline:
+  variant: etf__sma10_30__long
+  net_return_2bps: 0.8081183963713153
+adaptation:
+  variant: etf__sma50_200__long
+  net_return_2bps: 1.1043326848748525
+  maximum_drawdown: 0.321181552984944
+  post2024_return: 0.3777922818035948
+  walk_forward_return: 0.1599530284340435
+quote:
+  run_id: RUN-0007
+  model: 09:40 marketable daily reset
+  net_return: 0.0715265259421856
+  extra_2bps_return: -0.0280734740578143
+  maximum_drawdown: 0.1385852440615005
+  positive_months: 8.0
+  negative_months: 4.0
+  coverage_rate: 1.0
+conclusion: execution_sensitive_unpromoted

@@ -1,0 +1,27 @@
+campaign_id: CAM-0604
+paper_section: '3.6'
+strategy: Multifactor portfolio
+status: profitable_but_fragile_unpromoted
+promotion_ready: false
+maximum_loaded_date: '2026-04-30'
+holdout_rows_loaded: 0
+broker_margin_used: false
+baseline:
+  variant: qqq__average_momentum_value_ranks__long
+  net_return_2bps: 4.942671909819348
+adaptation:
+  variant: qqq__mom50_val50__profitable__q10
+  net_return_2bps: 5.193995800947391
+  maximum_drawdown: 0.1322466586649876
+  post2024_return: 0.4891532355822049
+  walk_forward_return: 4.804095731008252
+quote:
+  run_id: RUN-0007
+  model: 09:40 marketable daily reset
+  net_return: 0.15237613312522
+  extra_2bps_return: 0.0523761331252201
+  maximum_drawdown: 0.1165993304220344
+  positive_months: 7.0
+  negative_months: 5.0
+  coverage_rate: 1.0
+conclusion: profitable_but_fragile_unpromoted

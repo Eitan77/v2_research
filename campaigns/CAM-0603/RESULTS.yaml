@@ -1,0 +1,27 @@
+campaign_id: CAM-0603
+paper_section: '3.4'
+strategy: Low-volatility anomaly
+status: retired_quote_execution_failure
+promotion_ready: false
+maximum_loaded_date: '2026-04-30'
+holdout_rows_loaded: 0
+broker_margin_used: false
+baseline:
+  variant: qqq__vol126__hold6__reversal_long
+  net_return_2bps: 3.9761492272527503
+adaptation:
+  variant: qqq__lowvol63__hold1__q10
+  net_return_2bps: 4.054049676100669
+  maximum_drawdown: 0.3037631393987761
+  post2024_return: 0.1283305733139811
+  walk_forward_return: 3.689991193309261
+quote:
+  run_id: RUN-0007
+  model: 09:40 marketable daily reset
+  net_return: -0.3943024393295149
+  extra_2bps_return: -0.4941569847840603
+  maximum_drawdown: 0.4656509349734846
+  positive_months: 3.0
+  negative_months: 9.0
+  coverage_rate: 0.9985454545454544
+conclusion: retired_quote_execution_failure

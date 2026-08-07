@@ -1,0 +1,27 @@
+campaign_id: CAM-0607
+paper_section: '3.9'
+strategy: Single-cluster mean reversion
+status: profitable_but_fragile_unpromoted
+promotion_ready: false
+maximum_loaded_date: '2026-04-30'
+holdout_rows_loaded: 0
+broker_margin_used: false
+baseline:
+  variant: etf__cluster_all__return1__negative_demeaned
+  net_return_2bps: 2.988842822872613
+adaptation:
+  variant: etf__cluster_reversal_r1__long
+  net_return_2bps: 2.342658693794359
+  maximum_drawdown: 0.2659603242834627
+  post2024_return: 1.0980429407648404
+  walk_forward_return: 1.566452713397461
+quote:
+  run_id: RUN-0005
+  model: 09:30 marketable daily reset
+  net_return: 0.2740142604106187
+  extra_2bps_return: 0.1742900793811471
+  maximum_drawdown: 0.2198655932323274
+  positive_months: 8.0
+  negative_months: 4.0
+  coverage_rate: 0.9941193766539254
+conclusion: profitable_but_fragile_unpromoted

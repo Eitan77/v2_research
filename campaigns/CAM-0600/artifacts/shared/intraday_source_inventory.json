@@ -1,0 +1,647 @@
+{
+  "catalog": "D:\\AlgoResearch\\data\\catalog.duckdb",
+  "bar_tables": [
+    "bars_1d",
+    "bars_1m",
+    "derived_bars_10m",
+    "derived_bars_15m",
+    "derived_bars_1h",
+    "derived_bars_30m",
+    "derived_bars_4h",
+    "derived_bars_5m"
+  ],
+  "derived_bars_5m": {
+    "minimum_timestamp": "2019-06-21 06:30:00-07:00",
+    "maximum_timestamp": "2026-04-30 12:55:00-07:00",
+    "rows": 20551613,
+    "symbols": 192,
+    "holdout_rows_loaded": 0
+  },
+  "bar_schemas": {
+    "derived_bars_5m": [
+      {
+        "column_name": "timestamp",
+        "column_type": "TIMESTAMP WITH TIME ZONE",
+        "null": "YES",
+        "key": null,
+        "default": null,
+        "extra": null
+      },
+      {
+        "column_name": "bar_start_ts",
+        "column_type": "TIMESTAMP WITH TIME ZONE",
+        "null": "YES",
+        "key": null,
+        "default": null,
+        "extra": null
+      },
+      {
+        "column_name": "bar_end_ts",
+        "column_type": "TIMESTAMP WITH TIME ZONE",
+        "null": "YES",
+        "key": null,
+        "default": null,
+        "extra": null
+      },
+      {
+        "column_name": "available_at_ts",
+        "column_type": "TIMESTAMP WITH TIME ZONE",
+        "null": "YES",
+        "key": null,
+        "default": null,
+        "extra": null
+      },
+      {
+        "column_name": "open",
+        "column_type": "DOUBLE",
+        "null": "YES",
+        "key": null,
+        "default": null,
+        "extra": null
+      },
+      {
+        "column_name": "high",
+        "column_type": "DOUBLE",
+        "null": "YES",
+        "key": null,
+        "default": null,
+        "extra": null
+      },
+      {
+        "column_name": "low",
+        "column_type": "DOUBLE",
+        "null": "YES",
+        "key": null,
+        "default": null,
+        "extra": null
+      },
+      {
+        "column_name": "close",
+        "column_type": "DOUBLE",
+        "null": "YES",
+        "key": null,
+        "default": null,
+        "extra": null
+      },
+      {
+        "column_name": "volume",
+        "column_type": "BIGINT",
+        "null": "YES",
+        "key": null,
+        "default": null,
+        "extra": null
+      },
+      {
+        "column_name": "trade_count",
+        "column_type": "BIGINT",
+        "null": "YES",
+        "key": null,
+        "default": null,
+        "extra": null
+      },
+      {
+        "column_name": "vwap",
+        "column_type": "DOUBLE",
+        "null": "YES",
+        "key": null,
+        "default": null,
+        "extra": null
+      },
+      {
+        "column_name": "feed",
+        "column_type": "VARCHAR",
+        "null": "YES",
+        "key": null,
+        "default": null,
+        "extra": null
+      },
+      {
+        "column_name": "adjustment",
+        "column_type": "VARCHAR",
+        "null": "YES",
+        "key": null,
+        "default": null,
+        "extra": null
+      },
+      {
+        "column_name": "session_date",
+        "column_type": "VARCHAR",
+        "null": "YES",
+        "key": null,
+        "default": null,
+        "extra": null
+      },
+      {
+        "column_name": "bar_complete",
+        "column_type": "BOOLEAN",
+        "null": "YES",
+        "key": null,
+        "default": null,
+        "extra": null
+      },
+      {
+        "column_name": "source_ingestion_id",
+        "column_type": "VARCHAR",
+        "null": "YES",
+        "key": null,
+        "default": null,
+        "extra": null
+      },
+      {
+        "column_name": "ingested_at",
+        "column_type": "VARCHAR",
+        "null": "YES",
+        "key": null,
+        "default": null,
+        "extra": null
+      },
+      {
+        "column_name": "timeframe",
+        "column_type": "VARCHAR",
+        "null": "YES",
+        "key": null,
+        "default": null,
+        "extra": null
+      },
+      {
+        "column_name": "symbol",
+        "column_type": "VARCHAR",
+        "null": "YES",
+        "key": null,
+        "default": null,
+        "extra": null
+      }
+    ],
+    "derived_bars_15m": [
+      {
+        "column_name": "timestamp",
+        "column_type": "TIMESTAMP WITH TIME ZONE",
+        "null": "YES",
+        "key": null,
+        "default": null,
+        "extra": null
+      },
+      {
+        "column_name": "bar_start_ts",
+        "column_type": "TIMESTAMP WITH TIME ZONE",
+        "null": "YES",
+        "key": null,
+        "default": null,
+        "extra": null
+      },
+      {
+        "column_name": "bar_end_ts",
+        "column_type": "TIMESTAMP WITH TIME ZONE",
+        "null": "YES",
+        "key": null,
+        "default": null,
+        "extra": null
+      },
+      {
+        "column_name": "available_at_ts",
+        "column_type": "TIMESTAMP WITH TIME ZONE",
+        "null": "YES",
+        "key": null,
+        "default": null,
+        "extra": null
+      },
+      {
+        "column_name": "open",
+        "column_type": "DOUBLE",
+        "null": "YES",
+        "key": null,
+        "default": null,
+        "extra": null
+      },
+      {
+        "column_name": "high",
+        "column_type": "DOUBLE",
+        "null": "YES",
+        "key": null,
+        "default": null,
+        "extra": null
+      },
+      {
+        "column_name": "low",
+        "column_type": "DOUBLE",
+        "null": "YES",
+        "key": null,
+        "default": null,
+        "extra": null
+      },
+      {
+        "column_name": "close",
+        "column_type": "DOUBLE",
+        "null": "YES",
+        "key": null,
+        "default": null,
+        "extra": null
+      },
+      {
+        "column_name": "volume",
+        "column_type": "BIGINT",
+        "null": "YES",
+        "key": null,
+        "default": null,
+        "extra": null
+      },
+      {
+        "column_name": "trade_count",
+        "column_type": "BIGINT",
+        "null": "YES",
+        "key": null,
+        "default": null,
+        "extra": null
+      },
+      {
+        "column_name": "vwap",
+        "column_type": "DOUBLE",
+        "null": "YES",
+        "key": null,
+        "default": null,
+        "extra": null
+      },
+      {
+        "column_name": "feed",
+        "column_type": "VARCHAR",
+        "null": "YES",
+        "key": null,
+        "default": null,
+        "extra": null
+      },
+      {
+        "column_name": "adjustment",
+        "column_type": "VARCHAR",
+        "null": "YES",
+        "key": null,
+        "default": null,
+        "extra": null
+      },
+      {
+        "column_name": "session_date",
+        "column_type": "VARCHAR",
+        "null": "YES",
+        "key": null,
+        "default": null,
+        "extra": null
+      },
+      {
+        "column_name": "bar_complete",
+        "column_type": "BOOLEAN",
+        "null": "YES",
+        "key": null,
+        "default": null,
+        "extra": null
+      },
+      {
+        "column_name": "source_ingestion_id",
+        "column_type": "VARCHAR",
+        "null": "YES",
+        "key": null,
+        "default": null,
+        "extra": null
+      },
+      {
+        "column_name": "ingested_at",
+        "column_type": "VARCHAR",
+        "null": "YES",
+        "key": null,
+        "default": null,
+        "extra": null
+      },
+      {
+        "column_name": "timeframe",
+        "column_type": "VARCHAR",
+        "null": "YES",
+        "key": null,
+        "default": null,
+        "extra": null
+      },
+      {
+        "column_name": "symbol",
+        "column_type": "VARCHAR",
+        "null": "YES",
+        "key": null,
+        "default": null,
+        "extra": null
+      }
+    ]
+  },
+  "quote_lake": {
+    "path": "D:\\AlgoResearch\\data\\raw\\alpaca\\market\\stocks\\quotes_sip\\schema_v1\\quote_lake.duckdb",
+    "exists": true,
+    "tables": [
+      "sip_quote_coverage",
+      "sip_quotes"
+    ],
+    "schemas": {
+      "sip_quote_coverage": [
+        {
+          "column_name": "symbol",
+          "column_type": "VARCHAR",
+          "null": "YES",
+          "key": null,
+          "default": null,
+          "extra": null
+        },
+        {
+          "column_name": "window_start_ts",
+          "column_type": "TIMESTAMP WITH TIME ZONE",
+          "null": "YES",
+          "key": null,
+          "default": null,
+          "extra": null
+        },
+        {
+          "column_name": "window_end_ts",
+          "column_type": "TIMESTAMP WITH TIME ZONE",
+          "null": "YES",
+          "key": null,
+          "default": null,
+          "extra": null
+        },
+        {
+          "column_name": "feed",
+          "column_type": "VARCHAR",
+          "null": "YES",
+          "key": null,
+          "default": null,
+          "extra": null
+        },
+        {
+          "column_name": "provider",
+          "column_type": "VARCHAR",
+          "null": "YES",
+          "key": null,
+          "default": null,
+          "extra": null
+        },
+        {
+          "column_name": "source_run",
+          "column_type": "VARCHAR",
+          "null": "YES",
+          "key": null,
+          "default": null,
+          "extra": null
+        },
+        {
+          "column_name": "download_complete",
+          "column_type": "BOOLEAN",
+          "null": "YES",
+          "key": null,
+          "default": null,
+          "extra": null
+        },
+        {
+          "column_name": "session_date",
+          "column_type": "DATE",
+          "null": "YES",
+          "key": null,
+          "default": null,
+          "extra": null
+        }
+      ],
+      "sip_quotes": [
+        {
+          "column_name": "ask_price",
+          "column_type": "DOUBLE",
+          "null": "YES",
+          "key": null,
+          "default": null,
+          "extra": null
+        },
+        {
+          "column_name": "bid_price",
+          "column_type": "DOUBLE",
+          "null": "YES",
+          "key": null,
+          "default": null,
+          "extra": null
+        },
+        {
+          "column_name": "bid_size",
+          "column_type": "BIGINT",
+          "null": "YES",
+          "key": null,
+          "default": null,
+          "extra": null
+        },
+        {
+          "column_name": "ask_size",
+          "column_type": "BIGINT",
+          "null": "YES",
+          "key": null,
+          "default": null,
+          "extra": null
+        },
+        {
+          "column_name": "symbol",
+          "column_type": "VARCHAR",
+          "null": "YES",
+          "key": null,
+          "default": null,
+          "extra": null
+        },
+        {
+          "column_name": "quote_ts",
+          "column_type": "TIMESTAMP WITH TIME ZONE",
+          "null": "YES",
+          "key": null,
+          "default": null,
+          "extra": null
+        },
+        {
+          "column_name": "feed",
+          "column_type": "VARCHAR",
+          "null": "YES",
+          "key": null,
+          "default": null,
+          "extra": null
+        },
+        {
+          "column_name": "provider",
+          "column_type": "VARCHAR",
+          "null": "YES",
+          "key": null,
+          "default": null,
+          "extra": null
+        },
+        {
+          "column_name": "session_date",
+          "column_type": "DATE",
+          "null": "YES",
+          "key": null,
+          "default": null,
+          "extra": null
+        }
+      ]
+    },
+    "table_counts": {
+      "sip_quote_coverage": 924429,
+      "sip_quotes": 140904005
+    },
+    "quote_span": [
+      "2025-05-01",
+      "2026-04-30",
+      106,
+      0
+    ],
+    "coverage_span": [
+      "2025-05-01",
+      "2026-04-30",
+      106,
+      0
+    ],
+    "qqq_quote_span": [
+      null,
+      null,
+      0
+    ],
+    "qqq_samples": [],
+    "quote_symbols": [
+      "AAPL",
+      "ABNB",
+      "ADBE",
+      "ADI",
+      "ADP",
+      "ADSK",
+      "AEP",
+      "ALNY",
+      "AMAT",
+      "AMD",
+      "AMGN",
+      "AMZN",
+      "APP",
+      "ARM",
+      "ASML",
+      "AVGO",
+      "AXON",
+      "AZN",
+      "BKNG",
+      "BKR",
+      "CCEP",
+      "CDNS",
+      "CEG",
+      "CHTR",
+      "CMCSA",
+      "COST",
+      "CPRT",
+      "CRWD",
+      "CSCO",
+      "CSGP",
+      "CSX",
+      "CTAS",
+      "CTSH",
+      "DASH",
+      "DDOG",
+      "DXCM",
+      "EA",
+      "EXC",
+      "FANG",
+      "FAST",
+      "FTNT",
+      "GEHC",
+      "GFS",
+      "GILD",
+      "GOOG",
+      "GOOGL",
+      "HON",
+      "INSM",
+      "INTC",
+      "INTU",
+      "ISRG",
+      "KDP",
+      "KHC",
+      "KLAC",
+      "LIN",
+      "LRCX",
+      "LULU",
+      "MAR",
+      "MCHP",
+      "MDLZ",
+      "MELI",
+      "META",
+      "MNST",
+      "MRVL",
+      "MSFT",
+      "MSTR",
+      "MU",
+      "NFLX",
+      "NVDA",
+      "NXPI",
+      "ODFL",
+      "ON",
+      "ORLY",
+      "PANW",
+      "PAYX",
+      "PCAR",
+      "PDD",
+      "PEP",
+      "PLTR",
+      "PYPL",
+      "QCOM",
+      "REGN",
+      "ROP",
+      "ROST",
+      "SBUX",
+      "SHOP",
+      "SNDK",
+      "SNPS",
+      "SOLS",
+      "STX",
+      "TEAM",
+      "TMUS",
+      "TRI",
+      "TSLA",
+      "TTD",
+      "TTWO",
+      "TXN",
+      "VRSK",
+      "VRTX",
+      "VSNT",
+      "WBD",
+      "WDAY",
+      "WDC",
+      "WMT",
+      "XEL",
+      "ZS"
+    ],
+    "aapl_samples": [
+      [
+        "AAPL",
+        "2025-05-01 06:39:30.259581-07:00",
+        "2025-05-01",
+        211.19,
+        211.23
+      ],
+      [
+        "AAPL",
+        "2025-05-01 06:39:30.266101-07:00",
+        "2025-05-01",
+        211.19,
+        211.23
+      ],
+      [
+        "AAPL",
+        "2025-05-01 06:39:30.303259-07:00",
+        "2025-05-01",
+        211.19,
+        211.24
+      ],
+      [
+        "AAPL",
+        "2025-05-01 06:39:30.303762-07:00",
+        "2025-05-01",
+        211.19,
+        211.23
+      ],
+      [
+        "AAPL",
+        "2025-05-01 06:39:30.303781-07:00",
+        "2025-05-01",
+        211.19,
+        211.24
+      ]
+    ]
+  }
+}

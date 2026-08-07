@@ -1,0 +1,17 @@
+run_id: RUN-0002
+parent_run: RUN-0001
+stage: adaptation
+question: Is multifactor performance stable across broad momentum/value weights, breadth,
+  and profitability confirmation?
+reason: Baseline return was strong but concentrated and only modestly consistent month
+  to month.
+expected_effect: A real combined premium should not require exactly equal weights
+  or the narrowest decile.
+configuration: ../CAM-0600/ADAPTATION_CONTRACT.yaml#CAM-0604
+status: completed
+actual_adaptation_variants: 24
+actual_variant_cost_rows: 144
+selected_execution_qualified_variant: qqq__mom50_val50__profitable__q10
+selected_net_return_at_2bps: 5.193995800947391
+decision: profitable_but_fragile_quote_gate
+holdout_rows_loaded: 0

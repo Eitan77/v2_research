@@ -1,0 +1,15 @@
+run_id: RUN-0002
+parent_run: RUN-0001
+stage: adaptation
+question: Does three-average trend survive materially different short, medium, and
+  long triplets?
+reason: Baseline had high trade count, 38.1% drawdown, and failed at 10 bps.
+expected_effect: Slower triplets may improve execution tolerance and path risk.
+configuration: ../CAM-0600/ADAPTATION_CONTRACT.yaml#CAM-0612
+status: completed
+actual_adaptation_variants: 12
+actual_variant_cost_rows: 72
+selected_execution_qualified_variant: etf__sma10_50_200__long
+selected_net_return_at_2bps: 1.0238966852569238
+decision: robust_development_candidate_quote_gate
+holdout_rows_loaded: 0

@@ -1,0 +1,15 @@
+run_id: RUN-0002
+parent_run: RUN-0001
+stage: adaptation
+question: Does long-only channel reversal persist across 10 to 100 session boundaries?
+reason: Baseline was profitable but had 31.3% drawdown and weak recent performance.
+expected_effect: A robust boundary scale should improve drawdown without selecting
+  symbols.
+configuration: ../CAM-0600/ADAPTATION_CONTRACT.yaml#CAM-0614
+status: completed
+actual_adaptation_variants: 12
+actual_variant_cost_rows: 72
+selected_execution_qualified_variant: qqq__donchian10__long
+selected_net_return_at_2bps: 0.822599821622957
+decision: robust_development_candidate_quote_gate
+holdout_rows_loaded: 0

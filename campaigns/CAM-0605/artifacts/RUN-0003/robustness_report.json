@@ -1,0 +1,74 @@
+{
+  "campaign_id": "CAM-0605",
+  "run_id": "RUN-0003",
+  "parent_run": "RUN-0002",
+  "status": "completed",
+  "generated_utc": "2026-08-07T01:43:08.173152+00:00",
+  "development_only": true,
+  "holdout_rows_loaded": 0,
+  "maximum_loaded_date": "2026-04-30",
+  "fixed_variant_diagnostics": {
+    "baseline_best_2bps_return": 0.6386119645588125,
+    "raw_best_variant": "qqq__residual_mom__q10__regime0",
+    "raw_best_2bps_return": 0.6386119645588125,
+    "selected_executable_variant": "qqq__residual_mom__q10__regime0",
+    "selected_2bps_return": 0.6386119645588125,
+    "selected_5bps_return": 0.6302228736497216,
+    "selected_10bps_return": 0.6162410554679034,
+    "maximum_drawdown": 0.3071036923973347,
+    "monthly_average": 0.0076941200549254,
+    "monthly_median": 0.0,
+    "positive_month_rate": 0.3253012048192771,
+    "recent12_average_month": 0.0325817236504206,
+    "entries": 154.0,
+    "top5_symbol_positive_share": 0.4687728509552898,
+    "top5_day_positive_share": 0.0874944624375129,
+    "leave_best_symbol_out_return": 0.3745461479718323,
+    "positive_variant_fraction_at_2bps": 1.0,
+    "profitable_variant_fraction_at_10bps": 1.0,
+    "quote_gate": true,
+    "basic_candidate_screen": false,
+    "positive_years": 2,
+    "negative_years": 3,
+    "years": 8,
+    "worst_year": -0.0887906883301086,
+    "best_year": 0.4497842987720928,
+    "pre2024_return": 0.2472072983928232,
+    "post2024_return": 0.3914046661659894,
+    "post2024_green_day_rate": 0.5667808219178082
+  },
+  "walk_forward_parameter_selection": {
+    "status": "completed",
+    "net_return": 0.4113751994293165,
+    "positive_years": 2,
+    "negative_years": 2,
+    "years": [
+      {
+        "year": 2023,
+        "selected_variant": "qqq__residual_mom__q10__regime0",
+        "prior_net_return": -0.0887906883301087,
+        "year_net_return": 0.33599798672293196
+      },
+      {
+        "year": 2024,
+        "selected_variant": "qqq__residual_mom__q10__regime1",
+        "prior_net_return": 0.2912098812597851,
+        "year_net_return": -0.019812932771546193
+      },
+      {
+        "year": 2025,
+        "selected_variant": "qqq__residual_mom__q10__regime1",
+        "prior_net_return": 0.2713969484882389,
+        "year_net_return": -0.1376364565048962
+      },
+      {
+        "year": 2026,
+        "selected_variant": "qqq__residual_mom__q30__regime0",
+        "prior_net_return": 0.2393938061074095,
+        "year_net_return": 0.23282660198282693
+      }
+    ]
+  },
+  "decision": "profitable_but_fragile_quote_gate",
+  "promotion_ready": false
+}

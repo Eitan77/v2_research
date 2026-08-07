@@ -1,0 +1,17 @@
+run_id: RUN-0002
+parent_run: RUN-0001
+stage: adaptation
+question: Which conventional volatility estimation and holding scales produce a stable
+  low-volatility premium?
+reason: Baseline high return had near-flat median months, weak recent performance,
+  and high concentration.
+expected_effect: Broader low-volatility baskets and shorter holds should reduce stale
+  exposure.
+configuration: ../CAM-0600/ADAPTATION_CONTRACT.yaml#CAM-0603
+status: completed
+actual_adaptation_variants: 54
+actual_variant_cost_rows: 324
+selected_execution_qualified_variant: qqq__lowvol63__hold1__q10
+selected_net_return_at_2bps: 4.054049676100669
+decision: profitable_but_fragile_quote_gate
+holdout_rows_loaded: 0

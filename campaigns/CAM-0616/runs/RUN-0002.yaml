@@ -1,0 +1,15 @@
+run_id: RUN-0002
+parent_run: RUN-0001
+stage: source_repair_and_adaptation
+question: Does the exact dollar-neutral constraint improve the full covariance optimizer?
+reason: RUN-0001 used only diagonal variances and overnight shorts remain non-executable.
+expected_effect: Full covariance may improve balance, but must be labeled signal-only
+  without an intraday expression.
+configuration: ../CAM-0600/ADAPTATION_CONTRACT.yaml#CAM-0616
+status: completed
+actual_adaptation_variants: 9
+actual_variant_cost_rows: 54
+selected_execution_qualified_variant: null
+selected_net_return_at_2bps: null
+decision: execution_blocked_signal_only
+holdout_rows_loaded: 0

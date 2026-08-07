@@ -1,0 +1,17 @@
+run_id: RUN-0002
+parent_run: RUN-0001
+stage: adaptation
+question: Is distress volatility scaling stable across target and forecast choices
+  without margin?
+reason: Baseline had low drawdown but many inactive/zero months due long estimation
+  history.
+expected_effect: A 126-session forecast may improve responsiveness while preserving
+  the risk cap.
+configuration: ../CAM-0600/ADAPTATION_CONTRACT.yaml#CAM-0624
+status: completed
+actual_adaptation_variants: 16
+actual_variant_cost_rows: 96
+selected_execution_qualified_variant: sp500__chs_safe_q20__target15__vol126
+selected_net_return_at_2bps: 0.5653557569229715
+decision: profitable_but_fragile_quote_gate
+holdout_rows_loaded: 0

@@ -1,0 +1,27 @@
+campaign_id: CAM-0601
+paper_section: '3.2'
+strategy: Earnings momentum
+status: retired_quote_execution_failure
+promotion_ready: false
+maximum_loaded_date: '2026-04-30'
+holdout_rows_loaded: 0
+broker_margin_used: false
+baseline:
+  variant: qqq__sue8__hold6__long
+  net_return_2bps: 0.3141052278324922
+adaptation:
+  variant: qqq__sue_sec__hold1__q20__long
+  net_return_2bps: 0.9142014341370832
+  maximum_drawdown: 0.3696941284272901
+  post2024_return: 0.3672740717577697
+  walk_forward_return: 0.4367415814638172
+quote:
+  run_id: RUN-0007
+  model: 09:40 marketable daily reset
+  net_return: -0.1397431160630325
+  extra_2bps_return: -0.2397431160630325
+  maximum_drawdown: 0.3075607235046792
+  positive_months: 3.0
+  negative_months: 9.0
+  coverage_rate: 1.0
+conclusion: retired_quote_execution_failure

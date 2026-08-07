@@ -1,0 +1,5 @@
+{"timestamp_utc": "2026-08-07T02:15:23.230523+00:00", "run_id": "RUN-0001", "event": "source_baseline_completed", "best_2bps": 0.8921431718220567}
+{"timestamp_utc": "2026-08-07T02:15:23.230523+00:00", "run_id": "RUN-0002", "event": "adaptation_completed", "selected_2bps": 0.7986736071512267}
+{"timestamp_utc": "2026-08-07T02:15:23.230523+00:00", "run_id": "RUN-0003", "event": "robustness_completed", "decision": "robust_development_candidate_quote_gate"}
+{"timestamp_utc": "2026-08-07T02:15:23.230523+00:00", "run_id": "RUN-0005", "event": "quote_replay_completed", "net": 0.0076538962360366}
+{"timestamp_utc": "2026-08-07T02:15:23.230523+00:00", "run_id": "FINAL", "event": "campaign_checkpoint", "decision": "execution_sensitive_unpromoted"}

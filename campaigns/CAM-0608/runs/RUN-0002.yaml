@@ -1,0 +1,16 @@
+run_id: RUN-0002
+parent_run: RUN-0001
+stage: source_repair_and_adaptation
+question: Does eleven-sector causal clustering work at alternate formation/return
+  horizons or long-only?
+reason: Baseline used only eight available sector proxies and was negative at 2 bps.
+expected_effect: Complete sectors may reduce residual contamination; longer signals
+  may reduce cost drag.
+configuration: ../CAM-0600/ADAPTATION_CONTRACT.yaml#CAM-0608
+status: completed
+actual_adaptation_variants: 16
+actual_variant_cost_rows: 96
+selected_execution_qualified_variant: sp500__sector_clusters_f252_r5__long
+selected_net_return_at_2bps: -0.0623247074661032
+decision: mechanism_failed_after_adaptation
+holdout_rows_loaded: 0

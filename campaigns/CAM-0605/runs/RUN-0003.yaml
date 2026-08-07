@@ -1,0 +1,9 @@
+run_id: RUN-0003
+parent_run: RUN-0002
+stage: development_only_robustness
+configuration: ../CAM-0600/ROBUSTNESS_CONTRACT.yaml
+status: completed
+walk_forward_net_return: 0.4113751994293165
+decision: profitable_but_fragile_quote_gate
+promotion_ready: false
+holdout_rows_loaded: 0

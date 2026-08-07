@@ -1,5 +1,24 @@
 # Current Research Direction
 
+## 2026-08-06 checkpoint — SSRN 25-strategy series complete
+
+CAM-0600 through CAM-0624 completed the requested source baselines,
+mechanism-driven adaptations, development-only robustness, and applicable SIP
+quote gates. No campaign is promoted and no May 2026-or-later holdout data was
+accessed.
+
+The two strongest complete quote-gated development candidates are CAM-0600 ETF
+momentum and CAM-0622 QQQ/BIL volatility targeting. CAM-0604 multifactor,
+CAM-0607 daily ETF cluster reversal, and CAM-0623 safest-distress remain
+profitable but fragile or incomplete leads. The other campaigns are retired,
+execution-sensitive, or stopped as non-executable signed signals. The full
+checkpoint is `campaigns/CAM-0600/COMPREHENSIVE_REPORT.md`.
+
+No automatic research or holdout evaluation is active. Any forward paper test
+or sealed-holdout use requires a separately frozen, explicitly authorized
+purpose with unchanged rules.
+
+
 > This file states the active objective and the user's current preferences.
 >
 > Unless a value is labeled **hard**, treat it as a reference target for judgment rather than an automatic pass/fail boundary.

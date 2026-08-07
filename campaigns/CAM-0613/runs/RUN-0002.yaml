@@ -1,0 +1,17 @@
+run_id: RUN-0002
+parent_run: RUN-0001
+stage: adaptation
+question: Can an ATR-scaled opening-strength confirmation rescue long pivot target
+  trades?
+reason: Baseline was negative even before realistic spreads and traded almost every
+  stock-day.
+expected_effect: Selectivity should remove marginal pivot crossings while preserving
+  strong openings.
+configuration: ../CAM-0600/ADAPTATION_CONTRACT.yaml#CAM-0613
+status: completed
+actual_adaptation_variants: 9
+actual_variant_cost_rows: 54
+selected_execution_qualified_variant: sp500__pivot_target__long__atr0.5
+selected_net_return_at_2bps: -0.2183293754425601
+decision: mechanism_failed_after_adaptation
+holdout_rows_loaded: 0

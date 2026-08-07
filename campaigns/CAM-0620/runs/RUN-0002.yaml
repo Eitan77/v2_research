@@ -1,0 +1,16 @@
+run_id: RUN-0002
+parent_run: RUN-0001
+stage: source_repair_and_adaptation
+question: Which broad-market trend horizon and prespecified defensive fallback is
+  stable with all eleven sectors?
+reason: Baseline recent performance was flat and omitted standard sectors and a true
+  cash proxy.
+expected_effect: BIL distinguishes defensive cash from gold/bond timing effects.
+configuration: ../CAM-0600/ADAPTATION_CONTRACT.yaml#CAM-0620
+status: completed
+actual_adaptation_variants: 12
+actual_variant_cost_rows: 72
+selected_execution_qualified_variant: sector11__mom126__sma200__fallback_GLD
+selected_net_return_at_2bps: 1.116646036091192
+decision: robust_development_candidate_quote_gate
+holdout_rows_loaded: 0

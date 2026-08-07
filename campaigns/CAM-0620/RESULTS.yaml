@@ -1,0 +1,27 @@
+campaign_id: CAM-0620
+paper_section: 4.1.2
+strategy: Dual-momentum sector rotation
+status: retired_quote_execution_failure
+promotion_ready: false
+maximum_loaded_date: '2026-04-30'
+holdout_rows_loaded: 0
+broker_margin_used: false
+baseline:
+  variant: etf_sector__mom252__spy_sma200__fallback_GLD
+  net_return_2bps: 1.074989133228471
+adaptation:
+  variant: sector11__mom126__sma200__fallback_GLD
+  net_return_2bps: 1.116646036091192
+  maximum_drawdown: 0.185178235383479
+  post2024_return: 0.5482082178489683
+  walk_forward_return: 0.6536987817820779
+quote:
+  run_id: RUN-0007
+  model: 09:40 marketable daily reset
+  net_return: -0.138933990949306
+  extra_2bps_return: -0.238533990949306
+  maximum_drawdown: 0.4558228497732866
+  positive_months: 7.0
+  negative_months: 5.0
+  coverage_rate: 1.0
+conclusion: retired_quote_execution_failure

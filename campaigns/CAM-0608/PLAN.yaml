@@ -1,0 +1,65 @@
+campaign_id: CAM-0608
+paper: ssrn-3247865
+paper_section: "3.9.1"
+title: "Multiple-cluster mean reversion"
+status: frozen_pre_execution
+created_at: 2026-08-06
+source_pdf: C:/Users/decla/Downloads/ssrn-3247865.pdf
+source_contract: campaigns/CAM-0600/SOURCE_CONTRACT.yaml
+
+hypothesis: >-
+  Test the source-described Multiple-cluster mean reversion mechanism faithfully, then diagnose
+  alpha, execution, and portfolio construction separately across every
+  applicable declared stock and ETF universe.
+
+source_faithful_baseline: >-
+  Demean completed log returns within multiple nonempty clusters using a binary loadings regression; allocate equal gross capital across clusters and positions proportional to negative residuals.
+
+scope:
+  qqq_start: 2019-06-21
+  sp500_start: 2021-05-03
+  etf_start: 2019-01-02
+  discovery_cutoff: 2026-04-30
+  sealed_holdout_start: 2026-05-01
+  holdout_access: false
+
+universes:
+  - point_in_time_sp500_when_applicable
+  - point_in_time_qqq_when_applicable
+  - declared_split_adjusted_etfs_when_applicable
+  - all_available_symbols_are_not_silently_treated_as_point_in_time_members
+
+execution_and_accounting:
+  signal_information: completed_data_only
+  default_entry: next_available_bar
+  capital_base: 1.0
+  sizing: fixed_base_additive_noncompounded
+  broker_margin: forbidden
+  maximum_gross_exposure: 1.0
+  costs_bps_per_side: [-1, 0, 1, 2, 5, 10]
+  quote_gate: profitable_at_any_of_minus1_0_1_2_bps_and_economically_material
+  quote_fill: exact_SIP_NBBO_marketability_or_queue_evidence_as_applicable
+
+hard_constraints:
+  - Enforce date <= 2026-04-30 inside every SQL query and loader.
+  - Load zero rows on or after 2026-05-01.
+  - Preserve point-in-time membership and filing availability.
+  - Report attrition from every field, join, filter, and completeness rule.
+  - No direct stock or ETF short may remain open overnight.
+  - Any executable short must be intraday, stopped, and forced flat before close.
+  - A source overnight short may be retained only as a clearly labeled signal diagnostic.
+  - Reconcile planned versus executed variants and save failed runs.
+  - Do not promote from adapted development evidence.
+
+adaptation_inside_campaign: >-
+  Sector ETF proxy clusters, price-correlation clusters, 1/5/20-day dislocation, volatility weights, cluster breadth, intraday protected execution and causal cluster stability.
+
+new_campaign_if:
+  - core_mechanism_changes
+  - information_set_changes_materially
+  - strategy_identity_changes
+
+conclusion_gate: >-
+  Do not retire or promote until source fidelity, relevant horizons, universes,
+  legs, causal subset selection, concentration, costs, execution, stability,
+  and remaining principled experiments have been audited.

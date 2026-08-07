@@ -1,0 +1,27 @@
+campaign_id: CAM-0621
+paper_section: '4.4'
+strategy: ETF IBS mean reversion
+status: retired_quote_execution_failure
+promotion_ready: false
+maximum_loaded_date: '2026-04-30'
+holdout_rows_loaded: 0
+broker_margin_used: false
+baseline:
+  variant: etf_all__ibs__hold1__reversal_long_short
+  net_return_2bps: 1.0542263407934034
+adaptation:
+  variant: etf__ibs_le20__trend0__long
+  net_return_2bps: 0.2554004978459143
+  maximum_drawdown: 0.3570470937444359
+  post2024_return: -0.1968439744406667
+  walk_forward_return: -0.4926877785900834
+quote:
+  run_id: RUN-0007
+  model: 09:40 marketable daily reset
+  net_return: -0.0535007104076938
+  extra_2bps_return: -0.1496073770743604
+  maximum_drawdown: 0.1465660109739523
+  positive_months: 6.0
+  negative_months: 6.0
+  coverage_rate: 0.9977908689248896
+conclusion: retired_quote_execution_failure

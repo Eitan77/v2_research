@@ -1260,3 +1260,60 @@ contributor neighbors were positive, but SMH dollar/beta hedging removed the
 edge and one month supplied 29.73% of capital return. Preserve capacity-aware
 removals and bootstrap evidence, but do not call an unhedged sector move
 idiosyncratic propagation or a Type-A money printer.
+
+## 2026-08-06 — SSRN 151-strategy equity and ETF series
+
+### Opening-spread replay can reverse apparently exceptional daily factor results
+
+CAM-0600 through CAM-0624 showed that large fixed-base daily-bar returns are not
+execution evidence. Marketable SIP replay at 09:30 reversed the selected SUE,
+value, low-volatility, residual-momentum, channel, optimizer, sector-rotation,
+IBS, and volatility-scaled distress sleeves. Cross-sectional stock sleeves had
+mean opening spreads of roughly 50 to 134 bps in the exact role replay. A
+separate 09:40 entry reduced spreads materially, but it is an adapted strategy
+and must be labeled as such. Quote-gate marketable roles before interpreting an
+opening cross-sectional chart, and never use a quote touch as a passive fill.
+
+### Conservative daily-reset replay is a useful upper bound on execution drag
+
+The shared quote gate reset each active long position at the ask and bid every
+day. This deliberately charges a spread on persistent multi-day holdings and
+can understate a true hold-shares implementation, but it avoids the opposite
+error of applying a daily return series while charging turnover only when a
+target weight changes. Report the position convention explicitly; a result
+that survives daily reset is stronger evidence, while a rejection may justify
+one frozen hold-shares replay rather than an optimistic fill assumption.
+
+### Full covariance optimization can be implemented without a large dense inverse
+
+CAM-0615 and CAM-0616 repaired an initial diagonal-covariance diagnostic with a
+shrinkage covariance model and the Woodbury identity. The method inverts a
+time-by-time matrix rather than an asset-by-asset matrix, making the paper's
+inverse-covariance formula practical for hundreds of stocks while retaining
+off-diagonal correlation. Preserve the diagonal run as invalid for source
+conclusions and treat signed overnight solutions as non-executable under the
+direct-short restriction.
+
+### SEC EPS extends SUE coverage but fourth-quarter construction is approximate
+
+Filing-causal diluted EPS facts can repair stale vendor earnings coverage, but
+direct quarter facts usually omit Q4. CAM-0601 derived Q4 diluted EPS as annual
+EPS less the first three direct quarters. Because annual and quarterly diluted
+share denominators can differ, this is an approximation and must be disclosed;
+it is not a perfect source-faithful SUE series.
+
+### High-frequency cluster reversal did not inherit the slower daily ETF effect
+
+CAM-0607 tested 648 five- and fifteen-minute variants across return horizons,
+residual thresholds, long-only and stopped long-short expressions, and six cost
+levels. The best 2-bp-per-side result was -1046.77% fixed-base. The positive
+daily ETF cluster-reversal replay therefore cannot be described as scalable
+intraday microstructure alpha; timeframe transfer must be tested, not assumed.
+
+### Volatility targeting can survive execution without being a money-printer alpha
+
+The QQQ/BIL 15% target-volatility sleeve in CAM-0622 survived marketable quote
+replay and 2 bp extra slippage with low drawdown, but its return is primarily a
+risk allocation to QQQ plus cash, not a distinct cross-sectional alpha. Keep
+portfolio engineering and alpha discovery separate even when the path is the
+cleanest in a strategy batch.

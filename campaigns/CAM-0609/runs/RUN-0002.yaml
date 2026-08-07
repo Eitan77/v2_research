@@ -1,0 +1,16 @@
+run_id: RUN-0002
+parent_run: RUN-0001
+stage: adaptation
+question: Does weighted-regression reversal survive alternate return horizons or long-only
+  implementation?
+reason: Baseline was negative after 1 bp and had no executable short claim.
+expected_effect: Slower residuals may reduce turnover; long-only isolates the cheap
+  residual leg.
+configuration: ../CAM-0600/ADAPTATION_CONTRACT.yaml#CAM-0609
+status: completed
+actual_adaptation_variants: 16
+actual_variant_cost_rows: 96
+selected_execution_qualified_variant: sp500__weighted_residual_r2__long
+selected_net_return_at_2bps: -0.2067576260951008
+decision: mechanism_failed_after_adaptation
+holdout_rows_loaded: 0
