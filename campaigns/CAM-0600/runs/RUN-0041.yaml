@@ -1,0 +1,43 @@
+run_id: RUN-0041
+campaign_id: CAM-0600
+parent_run: RUN-0040
+status: completed
+change: Audit the exact ten low-frequency quote-filled survivors previously shown
+  to the user.
+reason: The user accepts lower cadence if the strategies are real and requested separate
+  last-year and historical evidence.
+expected_effect: Distinguish persistent mechanisms from recent-window, concentration,
+  and selection artifacts without changing any strategy rule.
+configuration:
+  selection_rule: top ten exact 09:40 quote returns at plus 2 bps from the repaired
+    survivor table
+  candidates:
+  - CAM-0612/sp500__ma10_50_200__monthly__top3__momentum
+  - CAM-0611/sp500__ma50_200__weekly__top3__momentum
+  - CAM-0610/qqq__ma150__weekly__top3__momentum
+  - CAM-0623/qqq__chs_safe__top5__liquid__raw
+  - CAM-0600/qqq__mom252_skip21__top3__liquid_trend__panic1
+  - CAM-0602/qqq__value_quality__top10__trend1
+  - CAM-0617/etf__alpha_M20_E5__top5__monthly__trend0
+  - CAM-0608/qqq__slow_residual_r10__top10__monthly
+  - CAM-0619/sector11__mom63_skip0__monthly__top1
+  - CAM-0605/sp500__resmom__top10__liquid_trend
+  quote_window: 2025-05-01 through 2026-04-30
+  quote_execution: marketable 09:40 SIP NBBO relative to 09:30 midpoint
+  quote_extra_adverse_bps_per_side:
+  - 2
+  - 10
+  historical_execution: repaired split-adjusted daily bars at 2 bps per side
+  capital_base: 1.0
+  additive_noncompounded: true
+  broker_margin: false
+  direct_short: false
+  discovery_cutoff: 2026-04-30
+  holdout_access: false
+decision: Judge each survivor from persistence, concentration, time-path, exact quote,
+  and cost evidence; do not treat the selected top-ten table as out-of-sample evidence.
+result:
+  artifact: artifacts/RUN-0041/execution_report.json
+  candidate_count: 10
+  maximum_loaded_date: '2026-04-30'
+  holdout_rows_loaded: 0

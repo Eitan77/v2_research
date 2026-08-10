@@ -133,3 +133,19 @@ individual_high_frequency_extension:
     broker_margin_used: false
   conclusion: Forward-paper-test candidate only; development evidence is theme-exposed
     and no sealed holdout was accessed.
+low_frequency_survivor_audit:
+  run_id: RUN-0041
+  status: completed_unpromoted
+  frozen_candidate_count: 10
+  artifact: artifacts/RUN-0041/execution_report.json
+  strongest_historical_support: [single_ma, dual_ma, distress_quality, price_momentum, value_quality]
+  recent_tactical_only: [triple_ma, residual_momentum]
+  historically_broad_recently_fading: [cluster_residual]
+  do_not_advance_unchanged: [etf_alpha_combo, sector_momentum_ma]
+  ma_daily_quote_correlation:
+    triple_vs_dual: 0.948
+  integrity:
+    maximum_loaded_date: '2026-04-30'
+    holdout_rows_loaded: 0
+    broker_margin_used: false
+  promotion_ready: false

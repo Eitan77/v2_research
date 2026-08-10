@@ -25,3 +25,4 @@
 {"timestamp_utc":"2026-08-10T16:54:00+00:00","run_id":"RUN-0038","event":"smoothed_corr_ma_neighborhood_completed","variants":27,"profitable_at_10bps":27,"holdout_rows_loaded":0}
 {"timestamp_utc":"2026-08-10T16:57:00+00:00","run_id":"RUN-0039","event":"five_day_smoothed_corr_ma_quote_completed","net_2bps":1.049233,"trade_session_fraction":0.442231,"holdout_rows_loaded":0}
 {"timestamp_utc":"2026-08-10T16:59:00+00:00","run_id":"RUN-0040","event":"three_day_smoothed_corr_ma_quote_completed","net_2bps":1.007549,"maximum_drawdown":0.107591,"trade_session_fraction":0.517928,"holdout_rows_loaded":0}
+{"timestamp_utc":"2026-08-10T17:24:00+00:00","run_id":"RUN-0041","event":"low_frequency_top_ten_survivor_audit_completed","candidates":10,"decision":"historical_support_and_recent_regime_separated","holdout_rows_loaded":0}
