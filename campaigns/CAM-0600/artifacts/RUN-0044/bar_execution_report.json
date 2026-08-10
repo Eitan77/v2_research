@@ -1,0 +1,12 @@
+{
+  "status": "completed",
+  "run_id": "RUN-0044",
+  "variant_count": 600,
+  "selected_count": 20,
+  "quote_candidate_count": 40,
+  "maximum_loaded_date": "2026-04-30",
+  "holdout_rows_loaded": 0,
+  "fixed_capital_base": 1.0,
+  "additive_noncompounded": true,
+  "broker_margin": false
+}

@@ -1,0 +1,13 @@
+{
+  "status": "completed",
+  "quote_candidates": 95,
+  "minimum_role_coverage": 1.0,
+  "training_selected_full_improvements": 5,
+  "training_selected_recent_improvements": 4,
+  "training_selected_validation_improvements": 7,
+  "walkforward_matched_improvements": 2,
+  "posthoc_bar_dominant_cells": 37,
+  "posthoc_quote_robust_cells": 28,
+  "maximum_loaded_date": "2026-04-30",
+  "holdout_rows_loaded": 0
+}

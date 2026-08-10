@@ -200,3 +200,29 @@ sma_breadth_full_history_quote_replay:
   maximum_loaded_date: '2026-04-30'
   holdout_rows_loaded: 0
   promotion_ready: false
+sma_rank_parameter_quote_replay:
+  run_id: RUN-0044
+  status: completed_unpromoted
+  bar_variants: 600
+  quote_configurations: 95
+  role_coverage: 1.0
+  general_default: {formation: 126, skip: 21}
+  training_selected_improvements:
+  - candidate: qqq_triple_ma10_50_200_monthly_top3_f126_s5
+    net_2bps: 2.660215
+    maximum_drawdown: 0.272793
+    recent12_net_2bps: 0.989143
+    baseline_net_2bps: 2.582339
+  - candidate: qqq_triple_ma10_50_200_monthly_top10_f42_s0
+    net_2bps: 1.779103
+    maximum_drawdown: 0.303619
+    recent12_net_2bps: 0.756286
+    baseline_net_2bps: 1.645914
+  walkforward_matched_improvements: 2
+  posthoc_bar_dominant_cells: 37
+  posthoc_quote_robust_cells: 28
+  minimum_quote_10bps_net: 0.141537
+  terminal_execution_symbols: [ALXN, XLNX, TWTR, ATVI]
+  maximum_loaded_date: '2026-04-30'
+  holdout_rows_loaded: 0
+  promotion_ready: false

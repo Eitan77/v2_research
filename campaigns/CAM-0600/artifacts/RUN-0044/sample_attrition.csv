@@ -1,0 +1,6 @@
+family,panel,panel_minimum_date,panel_maximum_date,panel_sessions,panel_symbols,common_start_date,common_sessions,selection_end_date,validation_start_date,validation_sessions,rows_removed_for_common_comparison,holdout_rows_loaded
+qqq_single_ma150_weekly,qqq,2019-06-21,2026-04-30,1724,165,2020-08-20,1430,2024-01-18,2024-01-19,572,294,0
+qqq_dual_ma50_200_weekly,qqq,2019-06-21,2026-04-30,1724,165,2020-08-20,1430,2024-01-18,2024-01-19,572,294,0
+qqq_triple_ma10_50_200_monthly,qqq,2019-06-21,2026-04-30,1724,165,2020-08-20,1430,2024-01-18,2024-01-19,572,294,0
+sp500_dual_ma50_200_weekly,sp500,2021-05-03,2026-04-30,1255,607,2022-07-01,961,2024-10-15,2024-10-16,385,294,0
+sp500_triple_ma10_50_200_monthly,sp500,2021-05-03,2026-04-30,1255,607,2022-07-01,961,2024-10-15,2024-10-16,385,294,0

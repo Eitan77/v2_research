@@ -1,0 +1,138 @@
+run_id: RUN-0044
+campaign_id: CAM-0600
+parent_run: RUN-0043
+status: completed
+change: Prespecified formation-and-skip parameter-neighborhood search for the five
+  quote-complete SMA families, followed by exact SIP target-change replay of the training-selected
+  plateau centers and unchanged 126/21 controls.
+reason: RUN-0043 varied breadth while freezing the cross-sectional ranking at 126-session
+  momentum with a 21-session skip. Determine whether that rank is a stable region,
+  whether a nearby economically standard horizon improves the strategies, and whether
+  any apparent improvement survives chronological validation and marketable quote
+  execution.
+expected_effect: Shorter formation and skip values may capture recent leadership but
+  increase turnover and reversals; longer values may be steadier but slower. A useful
+  revision should improve more than one isolated cell and remain positive in the later
+  chronological validation segment.
+configuration:
+  families:
+  - qqq_single_ma150_weekly
+  - qqq_dual_ma50_200_weekly
+  - qqq_triple_ma10_50_200_monthly
+  - sp500_dual_ma50_200_weekly
+  - sp500_triple_ma10_50_200_monthly
+  breadths:
+  - 1
+  - 2
+  - 3
+  - 10
+  formation_sessions:
+  - 42
+  - 63
+  - 84
+  - 126
+  - 189
+  - 252
+  skip_sessions:
+  - 0
+  - 5
+  - 10
+  - 21
+  - 42
+  grid_cells_per_family_breadth: 30
+  total_bar_variants: 600
+  baseline_rank:
+    formation_sessions: 126
+    skip_sessions: 21
+  ranking: cumulative total return from formation-plus-skip sessions ago through skip
+    sessions ago
+  liquidity: causal top half by trailing 63-session median dollar volume
+  weighting: equal_weight_among_selected
+  holding: open_to_next_open
+  execution_lag_sessions: 1
+  comparison_common_start_index: 294
+  chronological_split: first 60 percent of common comparison sessions for selection;
+    remaining 40 percent for untouched-within-run validation
+  selection_rule: For each family and breadth, select using training data only the
+    parameter cell with the largest minimum training net return across its adjacent
+    formation/skip grid neighborhood; break ties by lower training drawdown, then
+    shorter formation and smaller skip. Require at least four cells in the neighborhood.
+  validation_use: report only; never use validation results to change the selected
+    cell
+  bar_cost_bps_per_side:
+  - 2
+  - 10
+  quote_candidates: training-selected cells plus unchanged 126/21 controls, deduplicated
+  quote_reference_clock: 09:30 America/New_York first valid SIP NBBO at or after target
+  quote_execution_clock: 09:40 America/New_York first valid marketable SIP NBBO at
+    or after target
+  additional_adverse_bps_per_side:
+  - 0
+  - 1
+  - 2
+  - 5
+  - 10
+  fixed_capital_base: 1.0
+  additive_noncompounded: true
+  maximum_gross_exposure: 1.0
+  broker_margin: false
+  direct_short: false
+  discovery_cutoff: 2026-04-30
+  holdout_access: false
+  missing_quote_policy: block quote interpretation until every role is resolved with
+    observed quote evidence or a documented final-trading-session corporate-action
+    exit
+validation_gates:
+- loaded maximum date is no later than 2026-04-30 and holdout rows loaded equals zero
+- executed grid contains exactly 600 unique bar variants
+- every weight row has gross exposure no greater than 1.0 and no negative position
+- every selected cell is reproducible from the frozen training-only selection rule
+- common comparison and chronological split dates are recorded by universe
+- selected-versus-control sample and universe attrition is reported
+- quote replay role coverage equals 100 percent before interpretation
+executed_extensions:
+- label: expanding_walkforward_diagnostic
+  status: completed
+  reason: Challenge the fixed-split result with a causal annual selector using only
+    information before each evaluation year.
+  expected_effect: A genuinely selectable parameter region should outperform the
+    matched 126/21 path more often than isolated static cells do.
+  paths: 20
+  selection_timing: annual, expanding, minimum 252 prior common sessions
+- label: posthoc_bar_dominance_diagnostic
+  status: completed_development_only
+  reason: Determine whether cells that beat 126/21 across full, validation, recent,
+    drawdown, and 10-bp bar metrics form broad regions or isolated maxima.
+  expected_effect: Broad neighboring regions may be useful mechanism leads; isolated
+    cells should be treated as performance-mined diagnostics.
+  cells_quote_replayed: 37
+  adaptation_warning: The chronological validation segment participated in defining
+    these cells, so none is untouched validation evidence.
+- label: final_quote_replay
+  status: completed
+  unique_configurations: 95
+  composition: 20 training selections, 20 unchanged controls, 20 expanding
+    walk-forward paths, and 37 post-hoc cells, with duplicate static cells removed
+decision: Retain 126/21 as the general default. The only training-selected static
+  improvements that also improved full quote return, recent quote return, chronological
+  validation, and drawdown were QQQ triple-MA top 3 at 126/5 and top 10 at 42/0.
+  Treat the broader QQQ triple-MA faster-rank region as a development lead, not a
+  promoted rule. The spectacular isolated post-hoc cells are not prospectively
+  selectable, and expanding walk-forward selection underperformed 126/21 in 18 of
+  20 matched quote paths. No promotion.
+result:
+  status: completed
+  candidate_count: 95
+  minimum_role_coverage: 1.0
+  bar_variant_count: 600
+  training_selected_count: 20
+  training_selected_all_metric_improvements: 2
+  walkforward_matched_improvements: 2
+  posthoc_bar_dominant_cells: 37
+  posthoc_quote_robust_cells: 28
+  minimum_quote_10bps_net: 0.1415367894336892
+  fill_ledger_rows: 41372
+  terminal_execution_symbols: [ALXN, XLNX, TWTR, ATVI]
+  maximum_loaded_date: '2026-04-30'
+  holdout_rows_loaded: 0
+  artifact: artifacts/RUN-0044/execution_report.json

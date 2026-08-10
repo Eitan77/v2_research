@@ -1,0 +1,21 @@
+{
+  "status": "passed",
+  "reports": [
+    {
+      "clock": "0930",
+      "ledger_rows": 41372,
+      "unique_roles": 13569,
+      "candidates": 95,
+      "symbols": 252
+    },
+    {
+      "clock": "0940",
+      "ledger_rows": 41372,
+      "unique_roles": 13569,
+      "candidates": 95,
+      "symbols": 252
+    }
+  ],
+  "maximum_loaded_date": "2026-04-30",
+  "holdout_rows_loaded": 0
+}

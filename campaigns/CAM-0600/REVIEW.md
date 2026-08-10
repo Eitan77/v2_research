@@ -66,3 +66,9 @@ All six frozen SMA candidates received complete-history target-change quote repl
 ## SMA breadth quote replay (RUN-0043)
 
 Breadths 1, 2, 3, and 10 were full-history quote replayed for all five concentrated SMA families with 100% resolved coverage. S&P dual top one produced the largest headline result at +448.2% and +240.5% recently, but five symbols generated 81.4% of positive P&L and its recent worst month was -18.7%. QQQ dual top three remains the balanced selection: +362.8%, 17.5% drawdown, and +119.1% after removing its best five contributors. S&P triple top one and top two become negative after removing their best five symbols; top three remains the defensible tactical expression. No promotion and no holdout access.
+
+## SMA rank-parameter neighborhood (RUN-0044)
+
+The 600-cell formation/skip surface was broadly profitable, but training-only plateau selection beat the unchanged 126/21 quote control on full return, recent return, chronological validation, and drawdown in only two of 20 family/breadth paths. Both were QQQ triple-MA: top 3 at 126/5 returned +266.0% with 27.3% drawdown, while top 10 at 42/0 returned +177.9% with 30.4% drawdown. Eleven neighboring top-10 cells also quote-dominated the control, supporting a faster-rank region rather than an exact optimum.
+
+Expanding walk-forward parameter selection underperformed 126/21 in 18/20 matched quote paths. The spectacular post-hoc cells, including QQQ dual top 1 at +496.5%, are therefore research leads rather than prospectively selectable rules. All 95 quote configurations had complete role coverage and remained profitable at 10 bp per side. Promotion remains false and the sealed holdout was untouched.

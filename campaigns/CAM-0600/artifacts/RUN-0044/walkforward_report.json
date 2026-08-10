@@ -1,0 +1,7 @@
+{
+  "status": "completed",
+  "paths": 20,
+  "decision_rows": 84,
+  "maximum_loaded_date": "2026-04-30",
+  "holdout_rows_loaded": 0
+}
