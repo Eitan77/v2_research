@@ -111,3 +111,14 @@ def test_all_reconstructed_split_events_pass_integrity_audit() -> None:
     assert report["duplicate_rows"]==0
     assert report["maximum_absolute_adjusted_gap"]<0.05
     assert report["holdout_rows_loaded"]==0
+
+
+def test_final_ensemble_survives_every_sleeve_leave_out() -> None:
+    report=json.loads((ROOT/"campaigns"/"CAM-0625"/"artifacts"/"RUN-0029"/"execution_report.json").read_text(encoding="utf-8"))
+    assert report["holdout_rows_loaded"]==0
+    assert report["quote_ensemble"]["net_simple_return"]>0.39
+    for outcome in report["leave_one_sleeve_out"].values():
+        assert outcome["quote"]["net_simple_return"]>0.28
+    correlations=report["quote_daily_correlations"]
+    off_diagonal=[correlations[a][b] for a in correlations for b in correlations if a<b]
+    assert max(off_diagonal)<0.80

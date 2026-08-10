@@ -36,6 +36,14 @@ drawdown to 6.26% and recent return to +40.7%, but only lowers top-five share to
 51.2% and reduces full-history return to +141.5%. It therefore fails the frozen
 material-concentration-improvement rule and is not selected as the primary.
 
+RUN-0029 confirms that the result is not wholly dependent on one sleeve, but it
+also rejects a strong independence claim. Recent daily sleeve correlations range
+from 0.50 to 0.77. Removing CAM-0600 still leaves +29.0% with 5.06% drawdown;
+removing any other sleeve leaves +42.3% to +44.5%. The median best-sleeve share
+of positive monthly contribution is 59.0%, with two of 11 applicable months above
+75%. Preserve equal weight: this is a qualified multi-mechanism result, not a
+reason to optimize sleeve weights on the same development window.
+
 ## 2026-08-10 checkpoint
 
 CAM-0625 combines four whole mechanisms selected from the completed SSRN

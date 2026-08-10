@@ -87,6 +87,15 @@ symbol_cap_test:
     quote_drawdown: 0.062620
     quote_top5_symbol_positive_share: 0.512352
   decision: reject_as_primary_because_concentration_improvement_is_not_material
+sleeve_dependence_audit:
+  run_id: RUN-0029
+  quote_daily_correlation_range: [0.499633, 0.765703]
+  quote_leave_CAM0600_out: {net: 0.289559, maximum_drawdown: 0.050576, positive_months: 9, negative_months: 3}
+  quote_other_leave_one_out_net_range: [0.423423, 0.444937]
+  quote_month_top_positive_sleeve_share_median: 0.590492
+  quote_months_over_75pct_one_sleeve: 2
+  quote_months_observed_with_positive_sleeve: 11
+  conclusion: ensemble_survives_every_sleeve_leave_out_but_recent_sleeves_are_materially_correlated
 rejected_adaptations:
   - trailing_12m_positive_return_activation
   - trailing_12m_positive_and_7_of_12_positive_activation

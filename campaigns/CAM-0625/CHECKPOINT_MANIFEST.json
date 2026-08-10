@@ -3,8 +3,8 @@
   "files": [
     {
       "path": "campaigns/CAM-0600/COMPREHENSIVE_REPORT_SPLIT_REPAIRED.md",
-      "bytes": 10452,
-      "sha256": "7f92eb45a5a926aadd02871d0eb07fb59d725dbb9b708588cdb62cfea4c20f24"
+      "bytes": 11164,
+      "sha256": "daf65ce5dd77ead9310d56af97dbf19234f6bbfaad714a1169fbe184d84ce229"
     },
     {
       "path": "campaigns/CAM-0600/SPLIT_REPAIR_CONTRACT.yaml",
@@ -58,13 +58,13 @@
     },
     {
       "path": "campaigns/CAM-0625/RESULTS.yaml",
-      "bytes": 3715,
-      "sha256": "22ae83637ef6d5cf06adc4ab7b9e114589b8751329831e49a3200dc9ad296234"
+      "bytes": 4230,
+      "sha256": "7fa777d8525c06b445d7e1bc2f023f0ec489e8e2a536f4e5af3da3b07a854452"
     },
     {
       "path": "campaigns/CAM-0625/REVIEW.md",
-      "bytes": 5777,
-      "sha256": "f0c990dbd9310dadf938be8017da81da2334df546e64809ec68c8473c188470a"
+      "bytes": 6323,
+      "sha256": "631033dde058097622c8a2f28ddb1427951c52cbc1b160c445ec819e79a2b7f1"
     },
     {
       "path": "campaigns/CAM-0625/artifacts/RUN-0017/execution_report.json",
@@ -127,6 +127,11 @@
       "sha256": "dbaa81444fbf3d40d5599312470f0a241e98b7bd451a4b4d4b601a1866dae743"
     },
     {
+      "path": "campaigns/CAM-0625/artifacts/RUN-0029/execution_report.json",
+      "bytes": 7946,
+      "sha256": "f7493c5b7a7d21053fdcc783b9356cbbf92bd20a173ddeea9257aeedbbd93745"
+    },
+    {
       "path": "campaigns/CAM-0625/artifacts/checkpoint_split_repaired/equity_comparison.png",
       "bytes": 163390,
       "sha256": "a4390aad22acf237eb6f2dacc045fd0401b28f714cd75d382e043e50363649ce"
@@ -138,7 +143,7 @@
     }
   ],
   "tests": {
-    "scoped_pytest": "13 passed",
+    "scoped_pytest": "14 passed",
     "compileall": "passed",
     "repository_wide_collection": "not rerun; prior checkpoint blocked by unrelated legacy/reference import errors"
   },

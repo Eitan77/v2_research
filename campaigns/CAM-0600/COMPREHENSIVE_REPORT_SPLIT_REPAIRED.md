@@ -138,6 +138,15 @@ top five supply 52.1%. Removing the top five leaves +18.1% quote net. A frozen
 return to +141.5%. Because the concentration improvement is immaterial, the cap
 is not selected as the primary construction.
 
+Sleeve-level dependence is moderate rather than negligible. In the quote year,
+pairwise daily correlations range from 0.50 to 0.77. The ensemble remains
+profitable after removing any sleeve: excluding CAM-0600 leaves +29.0% net with
+5.06% drawdown, while the other leave-one-out paths return +42.3% to +44.5%.
+The strongest sleeve supplies a median 59.0% of positive monthly sleeve
+contribution, exceeding 75% in two of 11 months having any positive sleeve.
+This supports diversification relative to the standalone leaders, but not an
+independence claim or an after-the-fact sleeve reweighting.
+
 ## Execution and data integrity
 
 RUN-0023 uses target-change, marketable SIP sides rather than charging a daily
@@ -165,3 +174,5 @@ Reproducibility tables are in
 `artifacts/shared/split_repaired_25_strategy_checkpoint.csv`; exact run configs,
 daily P&L, quote paths, invalid attempts, and execution reports are preserved in
 RUN-0020/RUN-0021/RUN-0023 and CAM-0625 RUN-0017 through RUN-0024.
+The post-checkpoint concentration and sleeve-dependence audits are preserved in
+CAM-0625 RUN-0025 through RUN-0029.

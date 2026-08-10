@@ -1,0 +1,255 @@
+{
+  "status": "completed",
+  "run_id": "RUN-0029",
+  "variants": {
+    "CAM-0600": "qqq__mom252_skip21__top3__liquid_trend__panic1",
+    "CAM-0621": "etf__ibs30__top5__hold3__trend1",
+    "CAM-0624": "qqq__chs_safe__top5__liquid__target15",
+    "CAM-0618": "sector11__mom252_skip21__weekly__top3"
+  },
+  "full_ensemble": {
+    "net_simple_return": 1.536487689716512,
+    "maximum_drawdown": 0.11530948177496973,
+    "positive_months": 52,
+    "negative_months": 27,
+    "worst_month": -0.070918030006949,
+    "best_month": 0.21668658220674764
+  },
+  "quote_ensemble": {
+    "net_simple_return": 0.3996272220870408,
+    "maximum_drawdown": 0.072481110365937,
+    "positive_months": 10,
+    "negative_months": 2,
+    "worst_month": -0.04136029193753281,
+    "best_month": 0.11343315211179238
+  },
+  "full_sleeves": {
+    "CAM-0600": {
+      "net_simple_return": 2.353529256842606,
+      "maximum_drawdown": 0.19633197260822904,
+      "positive_months": 38,
+      "negative_months": 25,
+      "worst_month": -0.21106232375543507,
+      "best_month": 0.6034363830938078
+    },
+    "CAM-0621": {
+      "net_simple_return": 1.5363342674432792,
+      "maximum_drawdown": 0.14018655578431077,
+      "positive_months": 52,
+      "negative_months": 27,
+      "worst_month": -0.06900048088533557,
+      "best_month": 0.18714802384256643
+    },
+    "CAM-0624": {
+      "net_simple_return": 1.140427631451077,
+      "maximum_drawdown": 0.1507634642140425,
+      "positive_months": 45,
+      "negative_months": 25,
+      "worst_month": -0.07350199162834514,
+      "best_month": 0.16281226732289567
+    },
+    "CAM-0618": {
+      "net_simple_return": 1.1156596031290853,
+      "maximum_drawdown": 0.34090770672697784,
+      "positive_months": 53,
+      "negative_months": 22,
+      "worst_month": -0.15152636638542924,
+      "best_month": 0.10471274606031976
+    }
+  },
+  "quote_sleeves": {
+    "CAM-0600": {
+      "net_simple_return": 0.7298310176178295,
+      "maximum_drawdown": 0.13533601152144356,
+      "positive_months": 9,
+      "negative_months": 3,
+      "worst_month": -0.10181775490599945,
+      "best_month": 0.2693162141822731
+    },
+    "CAM-0621": {
+      "net_simple_return": 0.27674093619202306,
+      "maximum_drawdown": 0.04882624967770036,
+      "positive_months": 7,
+      "negative_months": 5,
+      "worst_month": -0.02120966892810503,
+      "best_month": 0.07435934169126017
+    },
+    "CAM-0624": {
+      "net_simple_return": 0.3282392379538239,
+      "maximum_drawdown": 0.0661137781092066,
+      "positive_months": 9,
+      "negative_months": 3,
+      "worst_month": -0.014704457055426312,
+      "best_month": 0.11129957222741933
+    },
+    "CAM-0618": {
+      "net_simple_return": 0.26369769658448683,
+      "maximum_drawdown": 0.055712498271353654,
+      "positive_months": 11,
+      "negative_months": 1,
+      "worst_month": -0.027709286860600445,
+      "best_month": 0.0772590759872366
+    }
+  },
+  "full_daily_correlations": {
+    "CAM-0600": {
+      "CAM-0600": 1.0,
+      "CAM-0621": 0.24413833497225534,
+      "CAM-0624": 0.6594353910645985,
+      "CAM-0618": 0.3495996434611611
+    },
+    "CAM-0621": {
+      "CAM-0600": 0.24413833497225534,
+      "CAM-0621": 1.0,
+      "CAM-0624": 0.1946312642255794,
+      "CAM-0618": 0.20894073671157443
+    },
+    "CAM-0624": {
+      "CAM-0600": 0.6594353910645985,
+      "CAM-0621": 0.1946312642255794,
+      "CAM-0624": 1.0,
+      "CAM-0618": 0.542825975598171
+    },
+    "CAM-0618": {
+      "CAM-0600": 0.3495996434611611,
+      "CAM-0621": 0.20894073671157443,
+      "CAM-0624": 0.542825975598171,
+      "CAM-0618": 1.0
+    }
+  },
+  "quote_daily_correlations": {
+    "CAM-0600": {
+      "CAM-0600": 1.0,
+      "CAM-0621": 0.49963274921011513,
+      "CAM-0624": 0.7657025659386975,
+      "CAM-0618": 0.5369439355521939
+    },
+    "CAM-0621": {
+      "CAM-0600": 0.49963274921011513,
+      "CAM-0621": 1.0,
+      "CAM-0624": 0.6046092890484898,
+      "CAM-0618": 0.6155370576820322
+    },
+    "CAM-0624": {
+      "CAM-0600": 0.7657025659386975,
+      "CAM-0621": 0.6046092890484898,
+      "CAM-0624": 1.0,
+      "CAM-0618": 0.6236825536794898
+    },
+    "CAM-0618": {
+      "CAM-0600": 0.5369439355521939,
+      "CAM-0621": 0.6155370576820322,
+      "CAM-0624": 0.6236825536794898,
+      "CAM-0618": 1.0
+    }
+  },
+  "leave_one_sleeve_out": {
+    "CAM-0600": {
+      "full": {
+        "net_simple_return": 1.2641405006744806,
+        "maximum_drawdown": 0.15184373843656992,
+        "positive_months": 53,
+        "negative_months": 26,
+        "worst_month": -0.06634112041883322,
+        "best_month": 0.08944647290800771
+      },
+      "quote": {
+        "net_simple_return": 0.2895592902434446,
+        "maximum_drawdown": 0.05057580641895106,
+        "positive_months": 9,
+        "negative_months": 3,
+        "worst_month": -0.021207804281377265,
+        "best_month": 0.061472131421632124
+      }
+    },
+    "CAM-0621": {
+      "full": {
+        "net_simple_return": 1.5365388304742562,
+        "maximum_drawdown": 0.1187958485004054,
+        "positive_months": 48,
+        "negative_months": 27,
+        "worst_month": -0.08402685384854153,
+        "best_month": 0.26800488011954116
+      },
+      "quote": {
+        "net_simple_return": 0.4405893173853801,
+        "maximum_drawdown": 0.08505083804768566,
+        "positive_months": 10,
+        "negative_months": 2,
+        "worst_month": -0.048077166274008744,
+        "best_month": 0.1526249541323097
+      }
+    },
+    "CAM-0624": {
+      "full": {
+        "net_simple_return": 1.6685077091383234,
+        "maximum_drawdown": 0.15184373843656992,
+        "positive_months": 55,
+        "negative_months": 24,
+        "worst_month": -0.07451981404189803,
+        "best_month": 0.25539263323726696
+      },
+      "quote": {
+        "net_simple_return": 0.42342321679811323,
+        "maximum_drawdown": 0.07440628836185383,
+        "positive_months": 10,
+        "negative_months": 2,
+        "worst_month": -0.05024557023156831,
+        "best_month": 0.11414434540658339
+      }
+    },
+    "CAM-0618": {
+      "full": {
+        "net_simple_return": 1.6767637185789879,
+        "maximum_drawdown": 0.12304560184131277,
+        "positive_months": 51,
+        "negative_months": 28,
+        "worst_month": -0.10301860764579843,
+        "best_month": 0.25557883355912153
+      },
+      "quote": {
+        "net_simple_return": 0.44493706392122556,
+        "maximum_drawdown": 0.07917269676642487,
+        "positive_months": 10,
+        "negative_months": 2,
+        "worst_month": -0.04591062696317693,
+        "best_month": 0.1254911774866443
+      }
+    }
+  },
+  "quote_month_top_positive_sleeve_share": {
+    "median": 0.5904920238023537,
+    "maximum": 1.0,
+    "months_over_75pct": 2,
+    "months_observed": 11
+  },
+  "quote_turnover": [
+    {
+      "campaign_id": "CAM-0600",
+      "quote_role_rows": 45,
+      "absolute_weight_turnover": 2.0645852217766936,
+      "median_absolute_role_change": 0.031004283392771184
+    },
+    {
+      "campaign_id": "CAM-0618",
+      "quote_role_rows": 175,
+      "absolute_weight_turnover": 3.5975414370749563,
+      "median_absolute_role_change": 0.0023086035848700337
+    },
+    {
+      "campaign_id": "CAM-0621",
+      "quote_role_rows": 988,
+      "absolute_weight_turnover": 26.877777777777776,
+      "median_absolute_role_change": 0.016666666666666666
+    },
+    {
+      "campaign_id": "CAM-0624",
+      "quote_role_rows": 74,
+      "absolute_weight_turnover": 0.9323918179784754,
+      "median_absolute_role_change": 0.008181867583720984
+    }
+  ],
+  "maximum_loaded_date": "2026-04-30",
+  "holdout_rows_loaded": 0,
+  "interpretation": "Dependence diagnostic for the frozen ensemble; no strategy parameter was changed."
+}
