@@ -13,3 +13,4 @@
 {"run_id": "RUN-0022", "event": "planned", "selected_variant": "qqq__ma150__weekly__top3__momentum", "holdout_rows_loaded": 0}
 {"run_id": "RUN-0022", "event": "invalidated", "reason": "null-quote rows counted as matched keys", "superseded_by": "RUN-0023", "holdout_rows_loaded": 0}
 {"run_id": "RUN-0023", "event": "planned", "selected_variant": "qqq__ma150__weekly__top3__momentum", "holdout_rows_loaded": 0}
+{"timestamp_utc":"2026-08-10T18:18:00+00:00","run_id":"CAM-0600/RUN-0042","event":"full_history_quote_replay_completed","candidate":"qqq_single_ma150_weekly_top3","role_coverage":1.0,"holdout_rows_loaded":0}

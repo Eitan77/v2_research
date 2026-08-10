@@ -149,3 +149,28 @@ low_frequency_survivor_audit:
     holdout_rows_loaded: 0
     broker_margin_used: false
   promotion_ready: false
+six_sma_full_history_quote_replay:
+  run_id: RUN-0042
+  status: completed_unpromoted
+  candidate_count: 6
+  role_coverage: 1.0
+  quote_model: 09:40 marketable SIP NBBO versus 09:30 midpoint plus 2 bp per side
+  strongest_full_history:
+    candidate: qqq_dual_ma50_200_weekly_top3
+    net: 3.628296
+    maximum_drawdown: 0.175224
+    leave_top5_return: 1.190875
+  strongest_recent:
+    candidate: sp500_triple_ma10_50_200_monthly_top3
+    recent12_net: 1.695935
+    recent12_maximum_drawdown: 0.125770
+    recent12_worst_month: -0.019352
+  breadth_control:
+    candidate: sp500_daily_ma200_corr08_smooth3_top10
+    net: 1.359525
+    maximum_drawdown: 0.266982
+    top5_positive_share: 0.310441
+  execution_exception: XLNX last-tradable-session bid used for two candidate exit rows
+  maximum_loaded_date: '2026-04-30'
+  holdout_rows_loaded: 0
+  promotion_ready: false

@@ -1,0 +1,60 @@
+run_id: RUN-0042
+campaign_id: CAM-0600
+parent_run: RUN-0041
+status: completed
+change: Full-available-history exact SIP quote replay for the six frozen SMA candidates.
+reason: The user requested full-history quote filling of every SMA candidate currently
+  under consideration.
+expected_effect: Replace recent-only execution evidence with complete-history target-change
+  execution evidence while preserving every strategy rule.
+configuration:
+  candidates:
+  - qqq_single_ma150_weekly_top3
+  - sp500_dual_ma50_200_weekly_top3
+  - sp500_triple_ma10_50_200_monthly_top3
+  - sp500_daily_ma200_corr08_smooth3_top10
+  - qqq_dual_ma50_200_weekly_top3
+  - qqq_triple_ma10_50_200_monthly_top3
+  panel_starts:
+    qqq: 2019-06-21
+    sp500: 2021-05-03
+  discovery_cutoff: 2026-04-30
+  holdout_access: false
+  reference_clock: 09:30 America/New_York first valid SIP NBBO at or after target
+  execution_clock: 09:40 America/New_York first valid SIP NBBO at or after target
+  additional_adverse_bps_per_side:
+  - 0
+  - 1
+  - 2
+  - 5
+  - 10
+  holding: open_to_next_open
+  execution_lag_sessions: 1
+  fixed_capital_base: 1.0
+  additive_noncompounded: true
+  maximum_gross_exposure: 1.0
+  broker_margin: false
+  direct_short: false
+  missing_quote_policy: block interpretation until every role has a valid reference
+    and execution quote
+decision: QQQ dual is the strongest full-history candidate; retain S&P dual as the strongest recent-plus-history S&P expression and the daily corr-capped MA as the breadth control. Treat QQQ single as redundant, S&P triple as a concentrated recent-regime candidate, and QQQ triple as noncompetitive. No promotion.
+detected_execution_exception:
+  status: resolution_frozen
+  symbol: XLNX
+  scheduled_exit_session: 2022-02-14
+  fact: No valid SIP NBBO exists at or after either target because the security was
+    no longer trading.
+  ledger_correction: Apply the same unavailable-open zeroing as the bar engine before
+    computing target changes.
+  interpretation_gate: Do not impute a normal 09:30 or 09:40 fill; reconcile the terminal
+    corporate-action exit separately.
+  resolution: Use the 2022-02-11 09:30 SIP midpoint as reference and the last valid
+    SIP bid before that session's regular close as the executable exit; retain the
+    scheduled exit date and record the actual fill timestamp.
+result:
+  status: completed
+  candidate_count: 6
+  minimum_role_coverage: 1.0
+  maximum_loaded_date: '2026-04-30'
+  holdout_rows_loaded: 0
+  artifact: artifacts/RUN-0042/execution_report.json

@@ -110,3 +110,21 @@ individual_hf_extension:
   long_term_top5_positive_share: 0.882406
   long_term_leave_top5_return: -0.019846
   decision: rejected_sparse_and_concentrated
+full_history_quote_replay:
+  shared_run: CAM-0600/RUN-0042
+  qqq_triple:
+    candidate: qqq_triple_ma10_50_200_monthly_top3
+    net_2bps: 2.582339
+    maximum_drawdown_2bps: 0.333958
+    recent12_net_2bps: 0.904393
+    leave_top5_return: 0.703179
+  sp500_triple:
+    candidate: sp500_triple_ma10_50_200_monthly_top3
+    net_2bps: 2.100469
+    maximum_drawdown_2bps: 0.302431
+    recent12_net_2bps: 1.695935
+    leave_top5_return: 0.078687
+  role_coverage: 1.0
+  promotion_ready: false
+  maximum_loaded_date: '2026-04-30'
+  holdout_rows_loaded: 0
