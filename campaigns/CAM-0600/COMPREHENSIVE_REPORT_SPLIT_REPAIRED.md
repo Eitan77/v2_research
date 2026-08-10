@@ -163,6 +163,14 @@ round trip to multi-day holdings. Buys cross the ask, sells cross the bid, and
 09:40 entries are measured against the 09:30 midpoint. Missing roles are never
 imputed. The lowest selected-family 09:40 role coverage is 99.94%.
 
+RUN-0031 corrects the displayed-size unit convention using Alpaca's documented
+November 3, 2025 transition from round-lot quote sizes to share quote sizes.
+Across 1,282 final-ensemble roles, 10% participation in one displayed quote
+supports $21.9k of portfolio capital at p1, $83.9k at p10, and $500.0k at the
+median; the observed minimum is $9.3k. These are single-snapshot top-of-book
+figures, not fills or capacity estimates. Queue position, replenishment, depth,
+partial fills, and market impact remain unmodeled.
+
 The quote lake is a role-centered archive, so newly selected roles were matched
 against saved artifacts and then pulled from Alpaca only for the uncovered
 remainder. The remote pulls used 5-, 30-, and 120-second bounded windows, recorded
@@ -184,4 +192,4 @@ Reproducibility tables are in
 daily P&L, quote paths, invalid attempts, and execution reports are preserved in
 RUN-0020/RUN-0021/RUN-0023 and CAM-0625 RUN-0017 through RUN-0024.
 The post-checkpoint concentration and sleeve-dependence audits are preserved in
-CAM-0625 RUN-0025 through RUN-0030.
+CAM-0625 RUN-0025 through RUN-0031.

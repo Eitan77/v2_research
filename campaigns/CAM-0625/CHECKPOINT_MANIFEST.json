@@ -3,8 +3,8 @@
   "files": [
     {
       "path": "campaigns/CAM-0600/COMPREHENSIVE_REPORT_SPLIT_REPAIRED.md",
-      "bytes": 11757,
-      "sha256": "62f62faf933d4ba2ad59f621f7d3a63f399bdabc3e40212fe35c77ea360d9d7b"
+      "bytes": 12276,
+      "sha256": "9293743180f4f2929d4136e041fb2d92933b6dfa7d251dcfcc969a42a26bb030"
     },
     {
       "path": "campaigns/CAM-0600/SPLIT_REPAIR_CONTRACT.yaml",
@@ -58,13 +58,13 @@
     },
     {
       "path": "campaigns/CAM-0625/RESULTS.yaml",
-      "bytes": 4756,
-      "sha256": "ea48f0297b3688ad3790127fa7f27c7af60c78b1c0434ea52eb565b19cd866c5"
+      "bytes": 5127,
+      "sha256": "78b9a09a91370f428975143c448acfc9f9c2a03f98f6d26ac1236f225278bac7"
     },
     {
       "path": "campaigns/CAM-0625/REVIEW.md",
-      "bytes": 6885,
-      "sha256": "7a453ac90927ed3db9290a2c78d3735241b847c8c6e1d8d848ed839720d9d963"
+      "bytes": 7495,
+      "sha256": "a9503ce068ed1b073995aaf0a5165ba66fb515fc1ce4dabb91826d0a879ed762"
     },
     {
       "path": "campaigns/CAM-0625/artifacts/RUN-0017/execution_report.json",
@@ -142,6 +142,16 @@
       "sha256": "869bd8a1fcfc519071d8cd57071f1aacb726b523c39601d039e2bf5eed3c4c38"
     },
     {
+      "path": "campaigns/CAM-0625/artifacts/RUN-0031/execution_report.json",
+      "bytes": 6128,
+      "sha256": "d18dab9f9efa9fe1d11e89cff771108a1bc342f575b89287fb9a58400b5b835d"
+    },
+    {
+      "path": "campaigns/CAM-0625/artifacts/RUN-0031/displayed_size_roles.parquet",
+      "bytes": 39675,
+      "sha256": "354874aa0f84a75fbd1dc407ce2818fe54121a57618485d387891802c652b721"
+    },
+    {
       "path": "campaigns/CAM-0625/artifacts/checkpoint_split_repaired/equity_comparison.png",
       "bytes": 163390,
       "sha256": "a4390aad22acf237eb6f2dacc045fd0401b28f714cd75d382e043e50363649ce"
@@ -153,7 +163,7 @@
     }
   ],
   "tests": {
-    "scoped_pytest": "15 passed",
+    "scoped_pytest": "16 passed",
     "compileall": "passed",
     "repository_wide_collection": "not rerun; prior checkpoint blocked by unrelated legacy/reference import errors"
   },

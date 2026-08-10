@@ -109,6 +109,19 @@ variant_rank_persistence_audit:
   selected_positive_2024_through_April_2026: 23
   selected_median_early_rank_percentile: 0.888889
   conclusion: broad_mechanism_persistence_but_exact_variant_rankings_are_unstable_and_adapted
+repaired_displayed_size_audit:
+  run_id: RUN-0031
+  quote_roles: 1282
+  round_lot_unit_roles: 585
+  share_unit_roles: 697
+  participation_of_single_displayed_size: 0.10
+  supported_portfolio_capital_dollars:
+    minimum: 9283
+    p01: 21898
+    p05: 43466
+    p10: 83897
+    median: 499995
+  conclusion: top_of_book_warning_only_not_a_fill_capacity_depth_or_impact_claim
 rejected_adaptations:
   - trailing_12m_positive_return_activation
   - trailing_12m_positive_and_7_of_12_positive_activation

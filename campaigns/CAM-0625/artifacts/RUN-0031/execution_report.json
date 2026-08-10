@@ -1,0 +1,170 @@
+{
+  "status": "completed",
+  "run_id": "RUN-0031",
+  "roles": 1282,
+  "round_lot_unit_roles": 585,
+  "share_unit_roles": 697,
+  "ten_percent_displayed_size_all": {
+    "minimum_capital_dollars": 9283.2,
+    "p01_capital_dollars": 21898.18107259606,
+    "p05_capital_dollars": 43465.50000000001,
+    "p10_capital_dollars": 83897.41143966839,
+    "median_capital_dollars": 499995.0
+  },
+  "metrics": [
+    {
+      "participation_of_single_displayed_size": 0.01,
+      "scope": "all",
+      "roles": 1282,
+      "minimum_capital_dollars": 928.32,
+      "p01_capital_dollars": 2189.818107259606,
+      "p05_capital_dollars": 4346.550000000001,
+      "p10_capital_dollars": 8389.74114396684,
+      "median_capital_dollars": 49999.5
+    },
+    {
+      "participation_of_single_displayed_size": 0.01,
+      "scope": "CAM-0600",
+      "roles": 45,
+      "minimum_capital_dollars": 1106.5274418971487,
+      "p01_capital_dollars": 1284.1668544236625,
+      "p05_capital_dollars": 1732.5563947736848,
+      "p10_capital_dollars": 2437.575310015479,
+      "median_capital_dollars": 19480.430804373926
+    },
+    {
+      "participation_of_single_displayed_size": 0.01,
+      "scope": "CAM-0621",
+      "roles": 988,
+      "minimum_capital_dollars": 928.32,
+      "p01_capital_dollars": 2760.3204000000005,
+      "p05_capital_dollars": 5939.064000000001,
+      "p10_capital_dollars": 8924.991,
+      "median_capital_dollars": 45665.759999999995
+    },
+    {
+      "participation_of_single_displayed_size": 0.01,
+      "scope": "CAM-0624",
+      "roles": 74,
+      "minimum_capital_dollars": 2350.3984436106225,
+      "p01_capital_dollars": 2771.2418698378133,
+      "p05_capital_dollars": 4431.881325815258,
+      "p10_capital_dollars": 8243.109429211465,
+      "median_capital_dollars": 48809.60231357653
+    },
+    {
+      "participation_of_single_displayed_size": 0.01,
+      "scope": "CAM-0618",
+      "roles": 175,
+      "minimum_capital_dollars": 1696.1792202856827,
+      "p01_capital_dollars": 2910.206358714719,
+      "p05_capital_dollars": 3723.315530537749,
+      "p10_capital_dollars": 6919.960194434036,
+      "median_capital_dollars": 269368.81533463515
+    },
+    {
+      "participation_of_single_displayed_size": 0.05,
+      "scope": "all",
+      "roles": 1282,
+      "minimum_capital_dollars": 4641.6,
+      "p01_capital_dollars": 10949.09053629803,
+      "p05_capital_dollars": 21732.750000000004,
+      "p10_capital_dollars": 41948.70571983419,
+      "median_capital_dollars": 249997.5
+    },
+    {
+      "participation_of_single_displayed_size": 0.05,
+      "scope": "CAM-0600",
+      "roles": 45,
+      "minimum_capital_dollars": 5532.637209485743,
+      "p01_capital_dollars": 6420.834272118313,
+      "p05_capital_dollars": 8662.781973868423,
+      "p10_capital_dollars": 12187.876550077395,
+      "median_capital_dollars": 97402.15402186962
+    },
+    {
+      "participation_of_single_displayed_size": 0.05,
+      "scope": "CAM-0621",
+      "roles": 988,
+      "minimum_capital_dollars": 4641.6,
+      "p01_capital_dollars": 13801.602,
+      "p05_capital_dollars": 29695.320000000007,
+      "p10_capital_dollars": 44624.955,
+      "median_capital_dollars": 228328.8
+    },
+    {
+      "participation_of_single_displayed_size": 0.05,
+      "scope": "CAM-0624",
+      "roles": 74,
+      "minimum_capital_dollars": 11751.992218053114,
+      "p01_capital_dollars": 13856.209349189065,
+      "p05_capital_dollars": 22159.40662907629,
+      "p10_capital_dollars": 41215.54714605733,
+      "median_capital_dollars": 244048.01156788264
+    },
+    {
+      "participation_of_single_displayed_size": 0.05,
+      "scope": "CAM-0618",
+      "roles": 175,
+      "minimum_capital_dollars": 8480.896101428414,
+      "p01_capital_dollars": 14551.031793573595,
+      "p05_capital_dollars": 18616.577652688746,
+      "p10_capital_dollars": 34599.80097217018,
+      "median_capital_dollars": 1346844.076673176
+    },
+    {
+      "participation_of_single_displayed_size": 0.1,
+      "scope": "all",
+      "roles": 1282,
+      "minimum_capital_dollars": 9283.2,
+      "p01_capital_dollars": 21898.18107259606,
+      "p05_capital_dollars": 43465.50000000001,
+      "p10_capital_dollars": 83897.41143966839,
+      "median_capital_dollars": 499995.0
+    },
+    {
+      "participation_of_single_displayed_size": 0.1,
+      "scope": "CAM-0600",
+      "roles": 45,
+      "minimum_capital_dollars": 11065.274418971487,
+      "p01_capital_dollars": 12841.668544236625,
+      "p05_capital_dollars": 17325.563947736846,
+      "p10_capital_dollars": 24375.75310015479,
+      "median_capital_dollars": 194804.30804373923
+    },
+    {
+      "participation_of_single_displayed_size": 0.1,
+      "scope": "CAM-0621",
+      "roles": 988,
+      "minimum_capital_dollars": 9283.2,
+      "p01_capital_dollars": 27603.204,
+      "p05_capital_dollars": 59390.640000000014,
+      "p10_capital_dollars": 89249.91,
+      "median_capital_dollars": 456657.6
+    },
+    {
+      "participation_of_single_displayed_size": 0.1,
+      "scope": "CAM-0624",
+      "roles": 74,
+      "minimum_capital_dollars": 23503.984436106228,
+      "p01_capital_dollars": 27712.41869837813,
+      "p05_capital_dollars": 44318.81325815258,
+      "p10_capital_dollars": 82431.09429211466,
+      "median_capital_dollars": 488096.0231357653
+    },
+    {
+      "participation_of_single_displayed_size": 0.1,
+      "scope": "CAM-0618",
+      "roles": 175,
+      "minimum_capital_dollars": 16961.79220285683,
+      "p01_capital_dollars": 29102.06358714719,
+      "p05_capital_dollars": 37233.15530537749,
+      "p10_capital_dollars": 69199.60194434036,
+      "median_capital_dollars": 2693688.153346352
+    }
+  ],
+  "quote_size_unit_change": "Alpaca round lots before 2025-11-03; shares on and after 2025-11-03",
+  "maximum_loaded_date": "2026-04-30",
+  "holdout_rows_loaded": 0,
+  "interpretation": "Single displayed NBBO snapshot participation proxy only; not a fill, capacity, depth, replenishment, or impact claim."
+}

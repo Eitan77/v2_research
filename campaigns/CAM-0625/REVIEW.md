@@ -52,6 +52,14 @@ their median early rank percentile is 89%. This is evidence for broad mechanism
 persistence, not for the exact late-window-selected specification: the survivor
 choice remains adapted and the early rank is descriptive, not an untouched test.
 
+RUN-0031 replaces the invalid-lineage displayed-size calculation and handles
+Alpaca's documented quote-size unit change: round lots before 2025-11-03 and
+shares afterward. Across 1,282 repaired quote roles, 10% of one displayed quote
+supports about $21.9k of portfolio capital at p1, $83.9k at p10, and $500.0k at
+the median; the minimum is $9.3k. These figures are only a top-of-book warning.
+They do not model queues, replenishment, depth, partial fills, or market impact,
+so prospective small-order tracking remains mandatory before capital sizing.
+
 ## 2026-08-10 checkpoint
 
 CAM-0625 combines four whole mechanisms selected from the completed SSRN
@@ -84,7 +92,8 @@ No May-2026-or-later rows were loaded. The campaign is not promoted. The next
 valid step is an unchanged forward paper period with target-change quote
 tracking and no additional filters.
 
-The displayed-NBBO capacity diagnostic is a warning: at 10% of the single
+The following displayed-NBBO figures belong to the invalid pre-repair lineage
+and are superseded by RUN-0031. At 10% of the single
 displayed quote size, the 10th-percentile role supported about $1.7k of
 portfolio capital, while the median supported about $86.8k. This is neither a
 market-impact model nor a capacity estimate. It means live sizing cannot be

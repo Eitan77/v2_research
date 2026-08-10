@@ -132,3 +132,11 @@ def test_all_family_variant_rank_persistence_audit_is_complete() -> None:
     assert report["selected_positive_early_count"]==22
     assert report["family_rank_correlation_below_0_25_count"]==10
     assert report["holdout_rows_loaded"]==0
+
+
+def test_repaired_displayed_size_audit_handles_unit_change() -> None:
+    report=json.loads((ROOT/"campaigns"/"CAM-0625"/"artifacts"/"RUN-0031"/"execution_report.json").read_text(encoding="utf-8"))
+    assert report["roles"]==report["round_lot_unit_roles"]+report["share_unit_roles"]==1282
+    assert report["ten_percent_displayed_size_all"]["p01_capital_dollars"]>20000
+    assert report["ten_percent_displayed_size_all"]["p10_capital_dollars"]>80000
+    assert report["holdout_rows_loaded"]==0
