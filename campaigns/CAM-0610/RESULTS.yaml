@@ -138,3 +138,9 @@ full_history_quote_replay:
   promotion_ready: false
   maximum_loaded_date: '2026-04-30'
   holdout_rows_loaded: 0
+breadth_quote_replay:
+  shared_run: CAM-0600/RUN-0043
+  breadths: [1, 2, 3, 10]
+  conclusion: QQQ single top one raises return to 4.207961 but maximum drawdown rises to 0.507187; the family remains inferior to QQQ dual on risk.
+  role_coverage: 1.0
+  promotion_ready: false

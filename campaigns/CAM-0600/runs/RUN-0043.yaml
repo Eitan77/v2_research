@@ -1,0 +1,68 @@
+run_id: RUN-0043
+campaign_id: CAM-0600
+parent_run: RUN-0042
+status: completed
+change: Full-history exact SIP quote replay of breadth 1, 2, 3, and 10 for each of
+  the five concentrated SMA candidates.
+reason: Determine whether top three is a robust portfolio choice or a concentration
+  artifact.
+expected_effect: Top one may increase return and tail risk; top ten may reduce concentration
+  and drawdown while diluting rank alpha; top two may be the best compromise.
+configuration:
+  families:
+  - qqq_single_ma150_weekly
+  - qqq_dual_ma50_200_weekly
+  - qqq_triple_ma10_50_200_monthly
+  - sp500_dual_ma50_200_weekly
+  - sp500_triple_ma10_50_200_monthly
+  breadths:
+  - 1
+  - 2
+  - 3
+  - 10
+  candidate_count: 20
+  rank: 126-session momentum skipping the most recent 21 sessions
+  liquidity: causal top half
+  weighting: equal_weight_among_selected
+  holding: open_to_next_open
+  execution_lag_sessions: 1
+  reference_clock: 09:30 America/New_York first valid SIP NBBO at or after target
+  execution_clock: 09:40 America/New_York first valid marketable SIP NBBO at or after
+    target
+  additional_adverse_bps_per_side:
+  - 0
+  - 1
+  - 2
+  - 5
+  - 10
+  fixed_capital_base: 1.0
+  additive_noncompounded: true
+  maximum_gross_exposure: 1.0
+  broker_margin: false
+  direct_short: false
+  discovery_cutoff: 2026-04-30
+  holdout_access: false
+  missing_quote_policy: block interpretation until every role is resolved with observed
+    quote evidence
+detected_execution_exceptions:
+  status: resolution_frozen
+  symbols:
+  - XLNX
+  - TWTR
+  - ATVI
+  cause: Securities stopped trading before the engine's scheduled exit session.
+  resolution: Use each security's last valid SIP bid before its final regular-session
+    close, referenced to that session's 09:30 SIP midpoint; preserve scheduled and
+    actual timestamps.
+  final_tradable_sessions:
+    XLNX: 2022-02-11
+    TWTR: 2022-10-27
+    ATVI: 2023-10-12
+result:
+  status: completed
+  candidate_count: 20
+  minimum_role_coverage: 1.0
+  maximum_loaded_date: '2026-04-30'
+  holdout_rows_loaded: 0
+  artifact: artifacts/RUN-0043/execution_report.json
+decision: Top one maximizes headline return but is dominated by concentration and tail risk; retain QQQ dual top three as the balanced full-history leader, S&P dual top one as an aggressive concentration benchmark, and top ten variants as breadth controls. No promotion.

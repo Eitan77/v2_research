@@ -127,3 +127,10 @@ full_history_quote_replay:
   promotion_ready: false
   maximum_loaded_date: '2026-04-30'
   holdout_rows_loaded: 0
+breadth_quote_replay:
+  shared_run: CAM-0600/RUN-0043
+  breadths: [1, 2, 3, 10]
+  qqq_balanced: {breadth: 3, net_2bps: 3.628296, maximum_drawdown: 0.175224, leave_top5_return: 1.190875}
+  sp500_aggressive: {breadth: 1, net_2bps: 4.482077, maximum_drawdown: 0.289363, recent12_net_2bps: 2.404679, top5_positive_share: 0.814126}
+  role_coverage: 1.0
+  promotion_ready: false

@@ -1,0 +1,22 @@
+{
+  "status": "passed",
+  "generated_utc": "2026-08-10T22:42:35.429098+00:00",
+  "workers": 8,
+  "batch_size": 100,
+  "tasks": 350,
+  "failed_tasks": 3,
+  "failure_messages": [
+    "Alpaca quote role request exhausted retries"
+  ],
+  "request_symbol_units": 2801,
+  "http_attempts": 534,
+  "pages": 347,
+  "roles": 2906,
+  "matched_roles": 2747,
+  "missing_roles": 159,
+  "coverage_rate": 0.9452856159669649,
+  "symbols_matched": 212,
+  "holdout_rows_loaded": 0,
+  "request_windows_seconds": 5,
+  "credentials_recorded": false
+}

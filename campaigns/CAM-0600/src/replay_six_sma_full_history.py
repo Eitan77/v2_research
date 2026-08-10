@@ -167,20 +167,49 @@ def replay() -> None:
     reference = reference[["candidate", "session_date", "symbol", "side", "reference_mid", "quote_ts"]].rename(columns={"quote_ts": "reference_quote_ts"})
     execution = merged["0940"].merge(reference, on=["candidate", "session_date", "symbol", "side"], how="left", validate="one_to_one")
     execution["fill_source"] = "normal_0940_after"
-    exception_mask = execution.symbol.eq("XLNX") & execution.session_date.eq(pd.Timestamp("2022-02-14")) & execution.side.eq("sell")
-    if exception_mask.any():
-        ref = pd.read_parquet(OUT / "xlnx_reference_quote.parquet").iloc[0]
-        terminal = pd.read_parquet(OUT / "xlnx_terminal_quote.parquet").iloc[0]
-        if not (ref.bid_price > 0 and ref.ask_price >= ref.bid_price and terminal.bid_price > 0):
-            raise RuntimeError("invalid XLNX terminal exception quotes")
-        execution.loc[exception_mask, "reference_mid"] = (float(ref.bid_price) + float(ref.ask_price)) / 2.0
-        execution.loc[exception_mask, "bid_price"] = float(terminal.bid_price)
-        execution.loc[exception_mask, "ask_price"] = float(terminal.ask_price)
-        execution.loc[exception_mask, "quote_ts"] = pd.Timestamp(terminal.quote_ts)
-        execution.loc[exception_mask, "reference_quote_ts"] = pd.Timestamp(ref.quote_ts)
-        execution.loc[exception_mask, "session_date"] = pd.Timestamp("2022-02-11")
-        execution.loc[exception_mask, "complete"] = True
-        execution.loc[exception_mask, "fill_source"] = "xlnx_last_tradable_bid_before_close"
+    exception_rows = []
+    generic_terminal = OUT / "terminal_exception_quotes.parquet"
+    generic_reference = OUT / "terminal_reference_quotes.parquet"
+    if generic_terminal.exists() and generic_reference.exists():
+        terminals = pd.read_parquet(generic_terminal)
+        references = pd.read_parquet(generic_reference)
+        for terminal in terminals.itertuples(index=False):
+            symbol = str(terminal.symbol)
+            ref_group = references.loc[references.symbol.astype(str).eq(symbol)]
+            if ref_group.empty:
+                raise RuntimeError(f"missing terminal reference quote for {symbol}")
+            ref = ref_group.iloc[0]
+            mask = execution.symbol.eq(symbol) & ~execution.complete & execution.side.eq("sell")
+            if not mask.any():
+                continue
+            if not (ref.bid_price > 0 and ref.ask_price >= ref.bid_price and terminal.bid_price > 0):
+                raise RuntimeError(f"invalid terminal exception quotes for {symbol}")
+            actual_day = pd.Timestamp(terminal.quote_ts).tz_convert(NY).tz_localize(None).normalize()
+            execution.loc[mask, "reference_mid"] = (float(ref.bid_price) + float(ref.ask_price)) / 2.0
+            execution.loc[mask, "bid_price"] = float(terminal.bid_price)
+            execution.loc[mask, "ask_price"] = float(terminal.ask_price)
+            execution.loc[mask, "quote_ts"] = pd.Timestamp(terminal.quote_ts)
+            execution.loc[mask, "reference_quote_ts"] = pd.Timestamp(ref.quote_ts)
+            execution.loc[mask, "session_date"] = actual_day
+            execution.loc[mask, "complete"] = True
+            execution.loc[mask, "fill_source"] = f"{symbol.lower()}_last_tradable_bid_before_close"
+            exception_rows.append({"symbol": symbol, "actual_fill_session": str(actual_day.date()), "affected_candidates": int(execution.loc[mask, "candidate"].nunique()), "rows": int(mask.sum())})
+    else:
+        exception_mask = execution.symbol.eq("XLNX") & execution.session_date.eq(pd.Timestamp("2022-02-14")) & execution.side.eq("sell")
+        if exception_mask.any():
+            ref = pd.read_parquet(OUT / "xlnx_reference_quote.parquet").iloc[0]
+            terminal = pd.read_parquet(OUT / "xlnx_terminal_quote.parquet").iloc[0]
+            if not (ref.bid_price > 0 and ref.ask_price >= ref.bid_price and terminal.bid_price > 0):
+                raise RuntimeError("invalid XLNX terminal exception quotes")
+            execution.loc[exception_mask, "reference_mid"] = (float(ref.bid_price) + float(ref.ask_price)) / 2.0
+            execution.loc[exception_mask, "bid_price"] = float(terminal.bid_price)
+            execution.loc[exception_mask, "ask_price"] = float(terminal.ask_price)
+            execution.loc[exception_mask, "quote_ts"] = pd.Timestamp(terminal.quote_ts)
+            execution.loc[exception_mask, "reference_quote_ts"] = pd.Timestamp(ref.quote_ts)
+            execution.loc[exception_mask, "session_date"] = pd.Timestamp("2022-02-11")
+            execution.loc[exception_mask, "complete"] = True
+            execution.loc[exception_mask, "fill_source"] = "xlnx_last_tradable_bid_before_close"
+            exception_rows.append({"symbol": "XLNX", "actual_fill_session": "2022-02-11", "affected_candidates": int(execution.loc[exception_mask, "candidate"].nunique()), "rows": int(exception_mask.sum())})
     execution["complete_both"] = execution.complete & execution.reference_mid.notna() & (execution.reference_mid > 0)
     execution.to_parquet(OUT / "fill_ledger.parquet", index=False)
     rows, annual_rows, monthly_rows, concentration_rows = [], [], [], []
@@ -248,11 +277,11 @@ def replay() -> None:
     pd.DataFrame(annual_rows).to_csv(OUT / "annual_returns.csv", index=False)
     pd.DataFrame(concentration_rows).to_csv(OUT / "symbol_returns.csv", index=False)
     status = "completed" if len(metrics) and metrics.role_coverage.min() == 1.0 else "blocked_incomplete_quotes"
-    report = {"status": status, "run_id": "RUN-0042", "candidate_count": int(metrics.candidate.nunique()), "metrics": metrics.to_dict("records"), "execution_exception": {"symbol": "XLNX", "scheduled_exit": "2022-02-14", "actual_fill_session": "2022-02-11", "fill": "last valid SIP bid before regular close", "affected_candidates": 2, "rows": int(exception_mask.sum())}, "maximum_loaded_date": "2026-04-30", "holdout_rows_loaded": 0, "broker_margin": False}
+    report = {"status": status, "run_id": RUN.stem, "candidate_count": int(metrics.candidate.nunique()), "metrics": metrics.to_dict("records"), "execution_exceptions": exception_rows, "maximum_loaded_date": "2026-04-30", "holdout_rows_loaded": 0, "broker_margin": False}
     (OUT / "execution_report.json").write_text(json.dumps(report, indent=2) + "\n", encoding="utf-8")
     record = yaml.safe_load(RUN.read_text(encoding="utf-8"))
     record["status"] = "completed" if status == "completed" else "failed"
-    record["result"] = {"status": status, "candidate_count": report["candidate_count"], "minimum_role_coverage": float(metrics.role_coverage.min()) if len(metrics) else 0.0, "maximum_loaded_date": "2026-04-30", "holdout_rows_loaded": 0, "artifact": "artifacts/RUN-0042/execution_report.json"}
+    record["result"] = {"status": status, "candidate_count": report["candidate_count"], "minimum_role_coverage": float(metrics.role_coverage.min()) if len(metrics) else 0.0, "maximum_loaded_date": "2026-04-30", "holdout_rows_loaded": 0, "artifact": f"artifacts/{OUT.name}/execution_report.json"}
     record["decision"] = "Interpret only after all six candidates have complete full-history reference and execution quote coverage."
     RUN.write_text(yaml.safe_dump(record, sort_keys=False), encoding="utf-8")
     print(metrics.to_string(index=False))

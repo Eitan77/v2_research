@@ -27,3 +27,4 @@
 {"timestamp_utc":"2026-08-10T16:59:00+00:00","run_id":"RUN-0040","event":"three_day_smoothed_corr_ma_quote_completed","net_2bps":1.007549,"maximum_drawdown":0.107591,"trade_session_fraction":0.517928,"holdout_rows_loaded":0}
 {"timestamp_utc":"2026-08-10T17:24:00+00:00","run_id":"RUN-0041","event":"low_frequency_top_ten_survivor_audit_completed","candidates":10,"decision":"historical_support_and_recent_regime_separated","holdout_rows_loaded":0}
 {"timestamp_utc":"2026-08-10T18:18:00+00:00","run_id":"RUN-0042","event":"six_sma_full_history_quote_replay_completed","candidates":6,"role_coverage":1.0,"decision":"qqq_dual_strongest_full_history","holdout_rows_loaded":0}
+{"timestamp_utc":"2026-08-10T22:50:00+00:00","run_id":"RUN-0043","event":"sma_breadth_full_history_quote_replay_completed","configurations":20,"role_coverage":1.0,"decision":"qqq_dual_top3_balanced_sp500_dual_top1_aggressive","holdout_rows_loaded":0}

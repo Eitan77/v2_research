@@ -62,3 +62,7 @@ Triple MA's +169.6% exact quote year is executable under the replay contract, bu
 ## Six-SMA full-history quote replay (RUN-0042)
 
 All six frozen SMA candidates received complete-history target-change quote replay with 100% resolved coverage. QQQ dual MA50/200 is the strongest full-history expression at +362.8% net with 17.5% drawdown at quote plus 2 bp per side. QQQ single returned +344.7% but had 40.8% drawdown; their recent behavior is effectively redundant. S&P triple retained the strongest recent year at +169.6% but its full-history worst month was -25.5% and leave-top-five return only +7.9%. The daily corr-capped MA retained the healthiest contributor breadth. A non-trading XLNX exit was resolved with the last valid SIP bid before its final regular close and is explicitly tagged in the fill ledger. Promotion remains false and the holdout was not accessed.
+
+## SMA breadth quote replay (RUN-0043)
+
+Breadths 1, 2, 3, and 10 were full-history quote replayed for all five concentrated SMA families with 100% resolved coverage. S&P dual top one produced the largest headline result at +448.2% and +240.5% recently, but five symbols generated 81.4% of positive P&L and its recent worst month was -18.7%. QQQ dual top three remains the balanced selection: +362.8%, 17.5% drawdown, and +119.1% after removing its best five contributors. S&P triple top one and top two become negative after removing their best five symbols; top three remains the defensible tactical expression. No promotion and no holdout access.
