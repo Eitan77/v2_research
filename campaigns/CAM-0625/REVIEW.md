@@ -44,6 +44,14 @@ of positive monthly contribution is 59.0%, with two of 11 applicable months abov
 75%. Preserve equal weight: this is a qualified multi-mechanism result, not a
 reason to optimize sleeve weights on the same development window.
 
+The 25-family rank-persistence audit covers 1,459 repaired 2-bp variants. Median
+pre-2024 versus 2024-through-April-2026 rank correlation is 0.42; 10 families
+are below 0.25 and one is negative. Price momentum's correlation is effectively
+zero. At the same time, 22 of 23 reported survivors are positive before 2024 and
+their median early rank percentile is 89%. This is evidence for broad mechanism
+persistence, not for the exact late-window-selected specification: the survivor
+choice remains adapted and the early rank is descriptive, not an untouched test.
+
 ## 2026-08-10 checkpoint
 
 CAM-0625 combines four whole mechanisms selected from the completed SSRN

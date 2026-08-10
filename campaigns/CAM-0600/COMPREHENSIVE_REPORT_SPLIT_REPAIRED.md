@@ -147,6 +147,15 @@ contribution, exceeding 75% in two of 11 months having any positive sleeve.
 This supports diversification relative to the standalone leaders, but not an
 independence claim or an after-the-fact sleeve reweighting.
 
+Across all 25 families, RUN-0030 compares 1,459 repaired variant rankings before
+2024 with rankings from 2024 through April 2026. Median family rank correlation
+is 0.42, with 10 families below 0.25 and one negative; CAM-0600 price momentum
+is effectively zero. Nevertheless, 22 of the 23 reported survivors are positive
+before 2024 and their median early rank percentile is 89%. The economic families
+therefore show more persistence than the exact parameter ordering. This does not
+make the early period independent because the final survivor was selected using
+the full development history.
+
 ## Execution and data integrity
 
 RUN-0023 uses target-change, marketable SIP sides rather than charging a daily
@@ -175,4 +184,4 @@ Reproducibility tables are in
 daily P&L, quote paths, invalid attempts, and execution reports are preserved in
 RUN-0020/RUN-0021/RUN-0023 and CAM-0625 RUN-0017 through RUN-0024.
 The post-checkpoint concentration and sleeve-dependence audits are preserved in
-CAM-0625 RUN-0025 through RUN-0029.
+CAM-0625 RUN-0025 through RUN-0030.

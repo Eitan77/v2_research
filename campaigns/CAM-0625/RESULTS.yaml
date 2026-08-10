@@ -96,6 +96,19 @@ sleeve_dependence_audit:
   quote_months_over_75pct_one_sleeve: 2
   quote_months_observed_with_positive_sleeve: 11
   conclusion: ensemble_survives_every_sleeve_leave_out_but_recent_sleeves_are_materially_correlated
+variant_rank_persistence_audit:
+  run_id: RUN-0030
+  families: 25
+  variants: 1459
+  median_early_late_rank_correlation: 0.417607
+  families_below_0_25_rank_correlation: 10
+  families_with_negative_rank_correlation: 1
+  families_majority_positive_in_both_windows: 17
+  selected_survivors_found: 23
+  selected_positive_before_2024: 22
+  selected_positive_2024_through_April_2026: 23
+  selected_median_early_rank_percentile: 0.888889
+  conclusion: broad_mechanism_persistence_but_exact_variant_rankings_are_unstable_and_adapted
 rejected_adaptations:
   - trailing_12m_positive_return_activation
   - trailing_12m_positive_and_7_of_12_positive_activation

@@ -122,3 +122,13 @@ def test_final_ensemble_survives_every_sleeve_leave_out() -> None:
     correlations=report["quote_daily_correlations"]
     off_diagonal=[correlations[a][b] for a in correlations for b in correlations if a<b]
     assert max(off_diagonal)<0.80
+
+
+def test_all_family_variant_rank_persistence_audit_is_complete() -> None:
+    report=json.loads((ROOT/"campaigns"/"CAM-0625"/"artifacts"/"RUN-0030"/"execution_report.json").read_text(encoding="utf-8"))
+    assert report["families"]==25
+    assert report["variants"]==1459
+    assert report["selected_found"]==23
+    assert report["selected_positive_early_count"]==22
+    assert report["family_rank_correlation_below_0_25_count"]==10
+    assert report["holdout_rows_loaded"]==0

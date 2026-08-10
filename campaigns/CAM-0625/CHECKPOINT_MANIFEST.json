@@ -3,8 +3,8 @@
   "files": [
     {
       "path": "campaigns/CAM-0600/COMPREHENSIVE_REPORT_SPLIT_REPAIRED.md",
-      "bytes": 11164,
-      "sha256": "daf65ce5dd77ead9310d56af97dbf19234f6bbfaad714a1169fbe184d84ce229"
+      "bytes": 11757,
+      "sha256": "62f62faf933d4ba2ad59f621f7d3a63f399bdabc3e40212fe35c77ea360d9d7b"
     },
     {
       "path": "campaigns/CAM-0600/SPLIT_REPAIR_CONTRACT.yaml",
@@ -58,13 +58,13 @@
     },
     {
       "path": "campaigns/CAM-0625/RESULTS.yaml",
-      "bytes": 4230,
-      "sha256": "7fa777d8525c06b445d7e1bc2f023f0ec489e8e2a536f4e5af3da3b07a854452"
+      "bytes": 4756,
+      "sha256": "ea48f0297b3688ad3790127fa7f27c7af60c78b1c0434ea52eb565b19cd866c5"
     },
     {
       "path": "campaigns/CAM-0625/REVIEW.md",
-      "bytes": 6323,
-      "sha256": "631033dde058097622c8a2f28ddb1427951c52cbc1b160c445ec819e79a2b7f1"
+      "bytes": 6885,
+      "sha256": "7a453ac90927ed3db9290a2c78d3735241b847c8c6e1d8d848ed839720d9d963"
     },
     {
       "path": "campaigns/CAM-0625/artifacts/RUN-0017/execution_report.json",
@@ -132,6 +132,16 @@
       "sha256": "f7493c5b7a7d21053fdcc783b9356cbbf92bd20a173ddeea9257aeedbbd93745"
     },
     {
+      "path": "campaigns/CAM-0625/artifacts/RUN-0030/execution_report.json",
+      "bytes": 15663,
+      "sha256": "4b80753810529391ce2d45a1ca3574236af7c11dce2ae03b42e7b4c9989d9848"
+    },
+    {
+      "path": "campaigns/CAM-0625/artifacts/RUN-0030/variant_window_metrics.parquet",
+      "bytes": 52775,
+      "sha256": "869bd8a1fcfc519071d8cd57071f1aacb726b523c39601d039e2bf5eed3c4c38"
+    },
+    {
       "path": "campaigns/CAM-0625/artifacts/checkpoint_split_repaired/equity_comparison.png",
       "bytes": 163390,
       "sha256": "a4390aad22acf237eb6f2dacc045fd0401b28f714cd75d382e043e50363649ce"
@@ -143,7 +153,7 @@
     }
   ],
   "tests": {
-    "scoped_pytest": "14 passed",
+    "scoped_pytest": "15 passed",
     "compileall": "passed",
     "repository_wide_collection": "not rerun; prior checkpoint blocked by unrelated legacy/reference import errors"
   },
