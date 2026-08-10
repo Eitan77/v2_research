@@ -1,0 +1,96 @@
+run_id: RUN-0026
+campaign_id: CAM-0625
+parent_run: RUN-0025
+status: completed
+change: Exact quote-year symbol attribution for the five recent leaders.
+reason: Full-history symbol concentration is high and CAM-0611/CAM-0612 share SNDK
+  as the top contributor; quote-year P&L needs execution-adjusted attribution.
+expected_effect: Reject headline returns that depend on a small symbol set and verify
+  whether SNDK membership/price coverage is causal.
+configuration:
+  leaders:
+  - CAM-0612
+  - CAM-0611
+  - CAM-0610
+  - CAM-0623
+  - CAM-0600
+  window:
+  - '2025-05-01'
+  - '2026-04-30'
+  quote_clock: 09:40
+  additional_slippage_bps_per_side: 2
+  attribution: gross held-symbol open-to-next-open PnL minus symbol target-change
+    execution adjustment
+  holdout_access: false
+result:
+  status: completed
+  run_id: RUN-0026
+  leaders:
+  - campaign_id: CAM-0612
+    variant: sp500__ma10_50_200__monthly__top3__momentum
+    quote_net: 1.6959350154238377
+    positive_symbols: 13
+    negative_symbols: 5
+    top_symbol: SNDK
+    top_symbol_net: 0.6336267120435494
+    top_symbol_positive_share: 0.3551717141372347
+    top5_symbol_positive_share: 0.907992917360631
+    leave_top_symbol_out_net: 1.0623083033802883
+    leave_top5_symbols_out_net: 0.07607469466714067
+  - campaign_id: CAM-0611
+    variant: sp500__ma50_200__weekly__top3__momentum
+    quote_net: 1.6151100688704683
+    positive_symbols: 18
+    negative_symbols: 6
+    top_symbol: SNDK
+    top_symbol_net: 0.6336267120435494
+    top_symbol_positive_share: 0.37605852456486194
+    top5_symbol_positive_share: 0.793505264442337
+    leave_top_symbol_out_net: 0.9814833568269189
+    leave_top5_symbols_out_net: 0.27812101303236414
+  - campaign_id: CAM-0610
+    variant: qqq__ma150__weekly__top3__momentum
+    quote_net: 1.1675484617016236
+    positive_symbols: 16
+    negative_symbols: 3
+    top_symbol: WDC
+    top_symbol_net: 0.3244434896358104
+    top_symbol_positive_share: 0.2627646725709432
+    top5_symbol_positive_share: 0.7653881182822313
+    leave_top_symbol_out_net: 0.8431049720658133
+    leave_top5_symbols_out_net: 0.22250059970552982
+  - campaign_id: CAM-0623
+    variant: qqq__chs_safe__top5__liquid__raw
+    quote_net: 0.7624743443316937
+    positive_symbols: 12
+    negative_symbols: 4
+    top_symbol: MU
+    top_symbol_net: 0.13467726612795033
+    top_symbol_positive_share: 0.16416275280930215
+    top5_symbol_positive_share: 0.7240927623760336
+    leave_top_symbol_out_net: 0.6277970782037434
+    leave_top5_symbols_out_net: 0.16843682978586094
+  - campaign_id: CAM-0600
+    variant: qqq__mom252_skip21__top3__liquid_trend__panic1
+    quote_net: 0.7298310176178291
+    positive_symbols: 8
+    negative_symbols: 1
+    top_symbol: STX
+    top_symbol_net: 0.20671350856350995
+    top_symbol_positive_share: 0.2699236320403594
+    top5_symbol_positive_share: 0.9069371401143214
+    leave_top_symbol_out_net: 0.5231175090543192
+    leave_top5_symbols_out_net: 0.03527842560337646
+  sndk_coverage:
+    present: true
+    price_start: '2025-02-13'
+    price_end: '2026-04-30'
+    membership_start: '2025-11-28'
+    membership_end: '2026-04-30'
+    rows: 304
+  maximum_loaded_date: '2026-04-30'
+  holdout_rows_loaded: 0
+  interpretation: Exact development quote attribution; concentration blocks standalone
+    printer claims.
+decision: Reject standalone leaders whose quote PnL is concentrated in a few symbols;
+  preserve only as ensemble inputs if diversified.

@@ -64,6 +64,29 @@ factor_audit_quote:
   betas: {SPY: -0.219673, QQQ: 0.403043, SMH: 0.151420}
   correlations: {SPY: 0.386622, QQQ: 0.428380, SMH: 0.436707}
   worst_5pct_spy_days_strategy_sum: -0.171382
+recent_leader_audit:
+  leaders: [CAM-0612, CAM-0611, CAM-0610, CAM-0623, CAM-0600]
+  all_pass_frozen_pre_2024_gate: false
+  eligible_family_count: 0
+  CAM_0611_CAM_0612_daily_correlation: 0.868
+  quote_top5_symbol_positive_share_range: [0.7241, 0.9080]
+  conclusion: headline_individual_returns_are_overlapping_and_symbol_concentrated
+final_symbol_attribution:
+  positive_symbols: 30
+  negative_symbols: 9
+  top_symbol: APP
+  top_symbol_positive_share: 0.135190
+  top5_symbol_positive_share: 0.521372
+  leave_top_symbol_out_net: 0.342894
+  leave_top5_symbols_out_net: 0.180830
+symbol_cap_test:
+  cap_10pct:
+    full_net: 1.415076
+    full_drawdown: 0.109338
+    quote_net: 0.407457
+    quote_drawdown: 0.062620
+    quote_top5_symbol_positive_share: 0.512352
+  decision: reject_as_primary_because_concentration_improvement_is_not_material
 rejected_adaptations:
   - trailing_12m_positive_return_activation
   - trailing_12m_positive_and_7_of_12_positive_activation

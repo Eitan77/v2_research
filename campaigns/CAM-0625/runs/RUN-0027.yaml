@@ -1,0 +1,98 @@
+run_id: RUN-0027
+campaign_id: CAM-0625
+parent_run: RUN-0026
+status: completed
+change: Exact quote-year symbol attribution for the frozen final four-sleeve construction.
+reason: Individual recent leaders are highly symbol-concentrated; the selected ensemble
+  must satisfy the user's non-concentration requirement at symbol level, not only
+  day level.
+expected_effect: Determine whether cross-mechanism diversification materially reduces
+  dependence on the top one and top five traded symbols.
+configuration:
+  sleeves:
+  - CAM-0600
+  - CAM-0621
+  - CAM-0624
+  - CAM-0618
+  weighting: equal
+  window:
+  - '2025-05-01'
+  - '2026-04-30'
+  quote_clock: 09:40
+  additional_slippage_bps_per_side: 2
+  holdout_access: false
+result:
+  status: completed
+  run_id: RUN-0027
+  sleeves:
+  - campaign_id: CAM-0600
+    variant: qqq__mom252_skip21__top3__liquid_trend__panic1
+    weighted_net: 0.18245775440445727
+    symbols: 9
+  - campaign_id: CAM-0621
+    variant: etf__ibs30__top5__hold3__trend1
+    weighted_net: 0.06918523404800575
+    symbols: 19
+  - campaign_id: CAM-0624
+    variant: qqq__chs_safe__top5__liquid__target15
+    weighted_net: 0.08205980948845595
+    symbols: 16
+  - campaign_id: CAM-0618
+    variant: sector11__mom252_skip21__weekly__top3
+    weighted_net: 0.06592442414612171
+    symbols: 8
+  net_simple_return: 0.39962722208704066
+  positive_symbols: 30
+  negative_symbols: 9
+  top_symbol: APP
+  top_symbol_net: 0.05673309652838588
+  top_symbol_positive_share: 0.1351895750912926
+  top5_symbol_positive_share: 0.5213718249551841
+  leave_top_symbol_out_net: 0.3428941255586548
+  leave_top5_symbols_out_net: 0.1808304838593434
+  top10:
+  - symbol: APP
+    gross_pnl: 0.06276950284364959
+    execution_adjustment: 0.006036406315263707
+    net_pnl: 0.05673309652838588
+  - symbol: STX
+    gross_pnl: 0.054958494394051434
+    execution_adjustment: 0.0032801172531739474
+    net_pnl: 0.05167837714087749
+  - symbol: MU
+    gross_pnl: 0.05693990014792169
+    execution_adjustment: 0.007787207459007482
+    net_pnl: 0.04915269268891421
+  - symbol: WDC
+    gross_pnl: 0.048058456969907876
+    execution_adjustment: 0.00882298803626284
+    net_pnl: 0.03923546893364503
+  - symbol: WBD
+    gross_pnl: 0.021690801327591294
+    execution_adjustment: -0.0003063016082833713
+    net_pnl: 0.021997102935874664
+  - symbol: SOXL
+    gross_pnl: 0.015676510349860395
+    execution_adjustment: -0.0060842893054883695
+    net_pnl: 0.021760799655348766
+  - symbol: XLK
+    gross_pnl: 0.019873446582976788
+    execution_adjustment: -0.0008059145230859755
+    net_pnl: 0.020679361106062763
+  - symbol: XLC
+    gross_pnl: 0.014284048274117968
+    execution_adjustment: -0.00036080288040995514
+    net_pnl: 0.014644851154527924
+  - symbol: PLTR
+    gross_pnl: 0.017931755541987546
+    execution_adjustment: 0.003951928767309975
+    net_pnl: 0.013979826774677573
+  - symbol: XLI
+    gross_pnl: 0.013603074879556254
+    execution_adjustment: 0.000402980940102778
+    net_pnl: 0.013200093939453476
+  maximum_loaded_date: '2026-04-30'
+  holdout_rows_loaded: 0
+  interpretation: Exact execution-adjusted development symbol attribution.
+decision: Use symbol leave-outs as a hard qualification of the final recent-regime
+  lead; no promotion.

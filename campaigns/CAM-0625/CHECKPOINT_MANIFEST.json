@@ -3,8 +3,8 @@
   "files": [
     {
       "path": "campaigns/CAM-0600/COMPREHENSIVE_REPORT_SPLIT_REPAIRED.md",
-      "bytes": 8853,
-      "sha256": "50bbf47a49974b12cccfa2b780839162b56dae8613f1baed28ce6b0090ffcc50"
+      "bytes": 10047,
+      "sha256": "40b2b5c607e3dd8529fe462e0a035ea097f62e33f6e927218d7d79fbafd28373"
     },
     {
       "path": "campaigns/CAM-0600/SPLIT_REPAIR_CONTRACT.yaml",
@@ -53,13 +53,13 @@
     },
     {
       "path": "campaigns/CAM-0625/RESULTS.yaml",
-      "bytes": 2877,
-      "sha256": "14e92a66346586bc1d0c1263c7b67e4b184aab10cc7484635861ca83e867ef5a"
+      "bytes": 3715,
+      "sha256": "22ae83637ef6d5cf06adc4ab7b9e114589b8751329831e49a3200dc9ad296234"
     },
     {
       "path": "campaigns/CAM-0625/REVIEW.md",
-      "bytes": 4856,
-      "sha256": "fc351dc18bad9b3412847fd816e746753859698114d914a72e7a42c6c21d04a1"
+      "bytes": 5777,
+      "sha256": "f0c990dbd9310dadf938be8017da81da2334df546e64809ec68c8473c188470a"
     },
     {
       "path": "campaigns/CAM-0625/artifacts/RUN-0017/execution_report.json",
@@ -102,6 +102,26 @@
       "sha256": "77fca9387feccbd797eb6a12312ca09b2b3e5f3d80af9026579f6859bc537a27"
     },
     {
+      "path": "campaigns/CAM-0625/artifacts/RUN-0025/execution_report.json",
+      "bytes": 5508,
+      "sha256": "b8937f0e2aa4e6f626073e7fb2d8f66fb49bc711d9f08d03f134ea199b1f2afe"
+    },
+    {
+      "path": "campaigns/CAM-0625/artifacts/RUN-0026/execution_report.json",
+      "bytes": 3010,
+      "sha256": "f412d211cc20a6c8f379bde152b5d805917a61ed84b30b39abd71b8e54a7de3b"
+    },
+    {
+      "path": "campaigns/CAM-0625/artifacts/RUN-0027/execution_report.json",
+      "bytes": 3046,
+      "sha256": "60f8aeba48edf5d340c1a153938ce23c9a5967a6efc9b2fc67e7525d7bf9edbb"
+    },
+    {
+      "path": "campaigns/CAM-0625/artifacts/RUN-0028/execution_report.json",
+      "bytes": 3044,
+      "sha256": "dbaa81444fbf3d40d5599312470f0a241e98b7bd451a4b4d4b601a1866dae743"
+    },
+    {
       "path": "campaigns/CAM-0625/artifacts/checkpoint_split_repaired/equity_comparison.png",
       "bytes": 163390,
       "sha256": "a4390aad22acf237eb6f2dacc045fd0401b28f714cd75d382e043e50363649ce"
@@ -113,7 +133,7 @@
     }
   ],
   "tests": {
-    "scoped_pytest": "10 passed",
+    "scoped_pytest": "12 passed",
     "compileall": "passed",
     "repository_wide_collection": "not rerun; prior checkpoint blocked by unrelated legacy/reference import errors"
   },

@@ -114,6 +114,24 @@ QQQ, and 0.44 to SMH; R² is 20.2%. The worst 5% of SPY days lose 17.1% of fixed
 capital cumulatively. The positive residual intercept is encouraging, but the
 strategy retains meaningful long-equity and technology downside.
 
+The five largest individual quote-return leaders do not survive a concentration
+audit as standalone printers. CAM-0611 and CAM-0612 correlate 0.87 and both have
+SNDK as their largest contributor. The top five symbols supply 72%–91% of
+positive quote P&L across CAM-0612, CAM-0611, CAM-0610, CAM-0623, and CAM-0600.
+Removing those five cuts net return to +7.6%, +27.8%, +22.3%, +16.8%, and +3.5%,
+respectively. None of the five families has an eligible pre-2024 variant under
+the frozen quality gate. SNDK price history begins 2025-02-13 and point-in-time
+S&P membership begins 2025-11-28, so its contribution is causal but still a
+large recent winner, not broad evidence.
+
+The final four-sleeve construction is better diversified by symbol. It has 30
+profitable and nine losing symbols; APP supplies 13.5% of positive P&L and the
+top five supply 52.1%. Removing the top five leaves +18.1% quote net. A frozen
+10% symbol-cap test, leaving excess in cash, improves quote return/drawdown to
++40.7%/6.26% but reduces top-five share only to 51.2% and lowers full-history
+return to +141.5%. Because the concentration improvement is immaterial, the cap
+is not selected as the primary construction.
+
 ## Execution and data integrity
 
 RUN-0023 uses target-change, marketable SIP sides rather than charging a daily

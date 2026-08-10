@@ -1,0 +1,163 @@
+{
+  "status": "completed",
+  "run_id": "RUN-0025",
+  "leaders": [
+    {
+      "campaign_id": "CAM-0612",
+      "variant": "sp500__ma10_50_200__monthly__top3__momentum",
+      "full_net": 2.1408196732757503,
+      "full_drawdown": 0.2819904684630343,
+      "full_positive_months": 34,
+      "full_negative_months": 16,
+      "top_symbol": "SNDK",
+      "top_symbol_pnl": 0.6274634563390092,
+      "top5_symbol_positive_share": 0.6652748536101822,
+      "quote_2bps_net": 1.6959350154238375,
+      "quote_2bps_drawdown": 0.1257697659076063,
+      "quote_2bps_months": "11/1",
+      "quote_10bps_net": 1.6874016820905045,
+      "quote_10bps_drawdown": 0.1262612359663808
+    },
+    {
+      "campaign_id": "CAM-0611",
+      "variant": "sp500__ma50_200__weekly__top3__momentum",
+      "full_net": 2.5004454778702954,
+      "full_drawdown": 0.26359948247022336,
+      "full_positive_months": 35,
+      "full_negative_months": 16,
+      "top_symbol": "SNDK",
+      "top_symbol_pnl": 0.6274634563390092,
+      "top5_symbol_positive_share": 0.5679930521796448,
+      "quote_2bps_net": 1.6151100688704685,
+      "quote_2bps_drawdown": 0.1187793556227905,
+      "quote_2bps_months": "11/1",
+      "quote_10bps_net": 1.5969767355371347,
+      "quote_10bps_drawdown": 0.1198653623757879
+    },
+    {
+      "campaign_id": "CAM-0610",
+      "variant": "qqq__ma150__weekly__top3__momentum",
+      "full_net": 3.489745108524958,
+      "full_drawdown": 0.38529594898793784,
+      "full_positive_months": 49,
+      "full_negative_months": 27,
+      "top_symbol": "TSLA",
+      "top_symbol_pnl": 0.8313276225382804,
+      "top5_symbol_positive_share": 0.5623528922440673,
+      "quote_2bps_net": 1.167548461701624,
+      "quote_2bps_drawdown": 0.1289192533684452,
+      "quote_2bps_months": "9/3",
+      "quote_10bps_net": 1.1536817950349572,
+      "quote_10bps_drawdown": 0.1304268080200997
+    },
+    {
+      "campaign_id": "CAM-0623",
+      "variant": "qqq__chs_safe__top5__liquid__raw",
+      "full_net": 1.9622874671974029,
+      "full_drawdown": 0.22704301388865245,
+      "full_positive_months": 45,
+      "full_negative_months": 25,
+      "top_symbol": "NVDA",
+      "top_symbol_pnl": 0.3530468906984242,
+      "top5_symbol_positive_share": 0.4944350203806066,
+      "quote_2bps_net": 0.7624743443316937,
+      "quote_2bps_drawdown": 0.0965200903520299,
+      "quote_2bps_months": "9/3",
+      "quote_10bps_net": 0.7561140837465891,
+      "quote_10bps_drawdown": 0.0973344151746266
+    },
+    {
+      "campaign_id": "CAM-0600",
+      "variant": "qqq__mom252_skip21__top3__liquid_trend__panic1",
+      "full_net": 2.3535292568426063,
+      "full_drawdown": 0.19633197260822904,
+      "full_positive_months": 38,
+      "full_negative_months": 25,
+      "top_symbol": "MRNA",
+      "top_symbol_pnl": 0.6859564929464222,
+      "top5_symbol_positive_share": 0.6095659393148167,
+      "quote_2bps_net": 0.7298310176178295,
+      "quote_2bps_drawdown": 0.1353360115214435,
+      "quote_2bps_months": "9/3",
+      "quote_10bps_net": 0.723224344908144,
+      "quote_10bps_drawdown": 0.1355387614616884
+    }
+  ],
+  "full_daily_correlations": {
+    "CAM-0612": {
+      "CAM-0612": 1.0,
+      "CAM-0611": 0.8681773841864645,
+      "CAM-0610": 0.5312322421423832,
+      "CAM-0623": 0.5459197983610071,
+      "CAM-0600": 0.447641224341744
+    },
+    "CAM-0611": {
+      "CAM-0612": 0.8681773841864645,
+      "CAM-0611": 1.0,
+      "CAM-0610": 0.568038169785853,
+      "CAM-0623": 0.5477484366336812,
+      "CAM-0600": 0.4773430710294521
+    },
+    "CAM-0610": {
+      "CAM-0612": 0.5312322421423832,
+      "CAM-0611": 0.568038169785853,
+      "CAM-0610": 1.0,
+      "CAM-0623": 0.7078504893472941,
+      "CAM-0600": 0.6722693989963923
+    },
+    "CAM-0623": {
+      "CAM-0612": 0.5459197983610071,
+      "CAM-0611": 0.5477484366336812,
+      "CAM-0610": 0.7078504893472941,
+      "CAM-0623": 1.0,
+      "CAM-0600": 0.6987323675826462
+    },
+    "CAM-0600": {
+      "CAM-0612": 0.447641224341744,
+      "CAM-0611": 0.4773430710294521,
+      "CAM-0610": 0.6722693989963923,
+      "CAM-0623": 0.6987323675826462,
+      "CAM-0600": 1.0
+    }
+  },
+  "early_gate": [
+    {
+      "campaign_id": "CAM-0612",
+      "eligible_variants": 0,
+      "selected_pre2024": null,
+      "best_positive_month_fraction": 0.6,
+      "minimum_drawdown": 0.17853992322157985
+    },
+    {
+      "campaign_id": "CAM-0611",
+      "eligible_variants": 0,
+      "selected_pre2024": null,
+      "best_positive_month_fraction": 0.5833333333333334,
+      "minimum_drawdown": 0.09473225691575674
+    },
+    {
+      "campaign_id": "CAM-0610",
+      "eligible_variants": 0,
+      "selected_pre2024": null,
+      "best_positive_month_fraction": 0.5818181818181818,
+      "minimum_drawdown": 0.1167403321346801
+    },
+    {
+      "campaign_id": "CAM-0623",
+      "eligible_variants": 0,
+      "selected_pre2024": null,
+      "best_positive_month_fraction": 0.509090909090909,
+      "minimum_drawdown": 0.19368248504337407
+    },
+    {
+      "campaign_id": "CAM-0600",
+      "eligible_variants": 0,
+      "selected_pre2024": null,
+      "best_positive_month_fraction": 0.6,
+      "minimum_drawdown": 0.12532469816822764
+    }
+  ],
+  "maximum_loaded_date": "2026-04-30",
+  "holdout_rows_loaded": 0,
+  "interpretation": "Descriptive audit of retrospectively selected recent leaders; not promotion evidence."
+}

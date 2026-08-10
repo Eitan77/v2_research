@@ -22,6 +22,20 @@ This is the best repaired recent-regime development lead, but it is not promoted
 Use unchanged forward paper tracking only; do not access the May 2026 holdout or
 deploy capital based on this checkpoint.
 
+The post-checkpoint recent-leader audit blocks the extraordinary standalone
+trend results. None of the five largest quote-return families passes the frozen
+pre-2024 gate. CAM-0611 and CAM-0612 correlate 0.87 and share SNDK as the top
+contributor. Across the five leaders, the top five symbols supply 72% to 91% of
+positive quote P&L; removing them leaves as little as +3.5% to +27.8%, except
+CAM-0612 at +7.6% despite its +169.6% headline return.
+
+The final four-sleeve ensemble is materially broader: 30 profitable symbols,
+nine losing symbols, 13.5% top-symbol share, and 52.1% top-five share. Removing
+the top five leaves +18.1% net. A prespecified 10% symbol cap improves recent
+drawdown to 6.26% and recent return to +40.7%, but only lowers top-five share to
+51.2% and reduces full-history return to +141.5%. It therefore fails the frozen
+material-concentration-improvement rule and is not selected as the primary.
+
 ## 2026-08-10 checkpoint
 
 CAM-0625 combines four whole mechanisms selected from the completed SSRN

@@ -80,3 +80,24 @@ def test_final_repaired_ensemble_is_unpromoted_and_holdout_free() -> None:
     pseudo=yaml.safe_load((ROOT/"campaigns"/"CAM-0625"/"runs"/"RUN-0018.yaml").read_text(encoding="utf-8"))
     assert pseudo["status"]=="completed_no_candidate"
     assert pseudo["result"]["holdout_rows_loaded"]==0
+
+
+def test_recent_leaders_are_not_misclassified_as_independent_printers() -> None:
+    audit=json.loads((ROOT/"campaigns"/"CAM-0625"/"artifacts"/"RUN-0025"/"execution_report.json").read_text(encoding="utf-8"))
+    assert all(item["eligible_variants"]==0 for item in audit["early_gate"])
+    corr=audit["full_daily_correlations"]
+    assert corr["CAM-0611"]["CAM-0612"]>0.85
+    attribution=json.loads((ROOT/"campaigns"/"CAM-0625"/"artifacts"/"RUN-0027"/"execution_report.json").read_text(encoding="utf-8"))
+    assert attribution["holdout_rows_loaded"]==0
+    assert attribution["positive_symbols"]>=30
+    assert attribution["leave_top5_symbols_out_net"]>0.15
+
+
+def test_symbol_cap_is_not_claimed_to_solve_concentration() -> None:
+    run=yaml.safe_load((ROOT/"campaigns"/"CAM-0625"/"runs"/"RUN-0028.yaml").read_text(encoding="utf-8"))
+    variants={str(x["cap"]):x for x in run["result"]["variants"]}
+    assert variants["0.1"]["quote"]["maximum_drawdown"]<variants["uncapped"]["quote"]["maximum_drawdown"]
+    improvement=variants["uncapped"]["quote_top5_symbol_positive_share"]-variants["0.1"]["quote_top5_symbol_positive_share"]
+    assert improvement<0.02
+    results=yaml.safe_load((ROOT/"campaigns"/"CAM-0625"/"RESULTS.yaml").read_text(encoding="utf-8"))
+    assert results["symbol_cap_test"]["decision"]=="reject_as_primary_because_concentration_improvement_is_not_material"

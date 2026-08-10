@@ -1,0 +1,84 @@
+{
+  "status": "completed",
+  "run_id": "RUN-0028",
+  "variants": [
+    {
+      "cap": "uncapped",
+      "average_gross_exposure": 0.6447117774765494,
+      "maximum_gross_exposure": 0.9900554072227655,
+      "full": {
+        "net_simple_return": 1.5368935218279054,
+        "maximum_drawdown": 0.11530812499200065,
+        "positive_months": 52,
+        "negative_months": 27,
+        "monthly_median": 0.00928947488695905,
+        "worst_month": -0.0709132685264019
+      },
+      "quote": {
+        "net_simple_return": 0.39981653369861647,
+        "maximum_drawdown": 0.07245369633188908,
+        "positive_months": 10,
+        "negative_months": 2,
+        "monthly_median": 0.026485032423492507,
+        "worst_month": -0.04128703206646497
+      },
+      "quote_top_symbol": "APP",
+      "quote_top_symbol_positive_share": 0.1352310557432042,
+      "quote_top5_symbol_positive_share": 0.5212882682817,
+      "quote_leave_top5_symbols_out_net": 0.18095617459588748
+    },
+    {
+      "cap": 0.15,
+      "average_gross_exposure": 0.6395178466258647,
+      "maximum_gross_exposure": 0.9860142743585331,
+      "full": {
+        "net_simple_return": 1.5352988763758382,
+        "maximum_drawdown": 0.1147610282099846,
+        "positive_months": 53,
+        "negative_months": 26,
+        "monthly_median": 0.0096078443033011,
+        "worst_month": -0.07109895673922755
+      },
+      "quote": {
+        "net_simple_return": 0.400073507883391,
+        "maximum_drawdown": 0.07249558969950984,
+        "positive_months": 10,
+        "negative_months": 2,
+        "monthly_median": 0.026179120849345587,
+        "worst_month": -0.04128703206646497
+      },
+      "quote_top_symbol": "APP",
+      "quote_top_symbol_positive_share": 0.1351446874894596,
+      "quote_top5_symbol_positive_share": 0.520955336196081,
+      "quote_leave_top5_symbols_out_net": 0.18121314878066203
+    },
+    {
+      "cap": 0.1,
+      "average_gross_exposure": 0.6059530186665697,
+      "maximum_gross_exposure": 0.9423883650044081,
+      "full": {
+        "net_simple_return": 1.4150764731603114,
+        "maximum_drawdown": 0.10933849908665813,
+        "positive_months": 53,
+        "negative_months": 26,
+        "monthly_median": 0.00886187081364338,
+        "worst_month": -0.07145581511779033
+      },
+      "quote": {
+        "net_simple_return": 0.4074567480747333,
+        "maximum_drawdown": 0.0626202638926369,
+        "positive_months": 10,
+        "negative_months": 2,
+        "monthly_median": 0.026609386176536333,
+        "worst_month": -0.03185911929542024
+      },
+      "quote_top_symbol": "APP",
+      "quote_top_symbol_positive_share": 0.13284386326753284,
+      "quote_top5_symbol_positive_share": 0.5123522809256269,
+      "quote_leave_top5_symbols_out_net": 0.18848263703595636
+    }
+  ],
+  "maximum_loaded_date": "2026-04-30",
+  "holdout_rows_loaded": 0,
+  "interpretation": "Prespecified development risk-control test with cash residual and no leverage."
+}
