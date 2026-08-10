@@ -1,0 +1,9 @@
+run_id: RUN-0025
+campaign_id: CAM-0608
+parent_run: RUN-0024
+status: completed
+change: Exact 09:30 and 09:40 SIP replay of the daily residual candidate.
+reason: RUN-0024 passed low-cost and 10 bp bar gates.
+configuration: {variant: sp500__daily_residual_r5__top3__trend1, shared_execution_run: CAM-0600/RUN-0031, holdout_access: false}
+result: {quote_0940_net_2bps: 0.6651479531, maximum_drawdown: 0.0776226104, trade_session_fraction: 1.0, positive_months: 7, negative_months: 5, role_coverage: 1.0, holdout_rows_loaded: 0}
+decision: Frequent and profitable but monthly consistency is only 7/12; research watch, not promotion.

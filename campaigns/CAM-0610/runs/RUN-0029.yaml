@@ -1,0 +1,147 @@
+run_id: RUN-0029
+campaign_id: CAM-0610
+parent_run: RUN-0028
+status: completed
+change: SIP quote replay of the causal 0.8-correlation-capped daily MA200 rank.
+reason: RUN-0028 cut full-history top-five positive-symbol concentration from 64.5%
+  to 30.8% while retaining +152.7% net at 2 bp and +8.19% average recent month.
+expected_effect: Test whether the diversified candidate retains the recent execution
+  edge.
+configuration:
+  variant: sp500__ma200__daily__top10__corr0.8
+  quote_window:
+  - '2025-05-01'
+  - '2026-04-30'
+  clocks:
+  - 09:30
+  - 09:40
+  additional_adverse_bps_per_side:
+  - 0
+  - 1
+  - 2
+  - 5
+  correlation_information: prior_63_completed_sessions
+  holdout_access: false
+decision: Require cadence, concentration, and limit-order audit before any paper-trading
+  recommendation.
+result:
+  status: completed
+  run_id: RUN-0029
+  variant: sp500__ma200__daily__top10__corr0.8
+  metrics:
+  - clock: 0930
+    extra_adverse_bps_per_side: 0.0
+    net_simple_return: 0.8086452066
+    maximum_drawdown: 0.1224447904
+    role_coverage: 1.0
+    entry_roles: 229
+    trade_sessions: 165
+    trade_session_fraction: 0.6573705179
+    positive_months: 9
+    negative_months: 3
+    monthly_average: 0.0673871005
+    monthly_median: 0.0561663959
+    worst_month: -0.0669736137
+    best_month: 0.2325262682
+  - clock: 0930
+    extra_adverse_bps_per_side: 1.0
+    net_simple_return: 0.8040652066
+    maximum_drawdown: 0.1229584445
+    role_coverage: 1.0
+    entry_roles: 229
+    trade_sessions: 165
+    trade_session_fraction: 0.6573705179
+    positive_months: 9
+    negative_months: 3
+    monthly_average: 0.0670054339
+    monthly_median: 0.0557263959
+    worst_month: -0.0673136137
+    best_month: 0.2323062682
+  - clock: 0930
+    extra_adverse_bps_per_side: 2.0
+    net_simple_return: 0.7994852066
+    maximum_drawdown: 0.1234746422
+    role_coverage: 1.0
+    entry_roles: 229
+    trade_sessions: 165
+    trade_session_fraction: 0.6573705179
+    positive_months: 9
+    negative_months: 3
+    monthly_average: 0.0666237672
+    monthly_median: 0.0552863959
+    worst_month: -0.0676536137
+    best_month: 0.2320862682
+  - clock: 0930
+    extra_adverse_bps_per_side: 5.0
+    net_simple_return: 0.7857452066
+    maximum_drawdown: 0.125038687
+    role_coverage: 1.0
+    entry_roles: 229
+    trade_sessions: 165
+    trade_session_fraction: 0.6573705179
+    positive_months: 9
+    negative_months: 3
+    monthly_average: 0.0654787672
+    monthly_median: 0.0539663959
+    worst_month: -0.0686736137
+    best_month: 0.2314262682
+  - clock: 0940
+    extra_adverse_bps_per_side: 0.0
+    net_simple_return: 0.9403467877
+    maximum_drawdown: 0.1215208373
+    role_coverage: 1.0
+    entry_roles: 229
+    trade_sessions: 165
+    trade_session_fraction: 0.6573705179
+    positive_months: 9
+    negative_months: 3
+    monthly_average: 0.0783622323
+    monthly_median: 0.0708394634
+    worst_month: -0.0749536938
+    best_month: 0.2410834034
+  - clock: 0940
+    extra_adverse_bps_per_side: 1.0
+    net_simple_return: 0.9357667877
+    maximum_drawdown: 0.1219957185
+    role_coverage: 1.0
+    entry_roles: 229
+    trade_sessions: 165
+    trade_session_fraction: 0.6573705179
+    positive_months: 9
+    negative_months: 3
+    monthly_average: 0.0779805656
+    monthly_median: 0.0705894634
+    worst_month: -0.0752936938
+    best_month: 0.2407434034
+  - clock: 0940
+    extra_adverse_bps_per_side: 2.0
+    net_simple_return: 0.9311867877
+    maximum_drawdown: 0.122472783
+    role_coverage: 1.0
+    entry_roles: 229
+    trade_sessions: 165
+    trade_session_fraction: 0.6573705179
+    positive_months: 9
+    negative_months: 3
+    monthly_average: 0.077598899
+    monthly_median: 0.0703394634
+    worst_month: -0.0756336938
+    best_month: 0.2404034034
+  - clock: 0940
+    extra_adverse_bps_per_side: 5.0
+    net_simple_return: 0.9174467877
+    maximum_drawdown: 0.1239172283
+    role_coverage: 1.0
+    entry_roles: 229
+    trade_sessions: 165
+    trade_session_fraction: 0.6573705179
+    positive_months: 9
+    negative_months: 3
+    monthly_average: 0.076453899
+    monthly_median: 0.0695894634
+    worst_month: -0.0766536938
+    best_month: 0.2393834034
+  maximum_loaded_date: '2026-04-30'
+  holdout_rows_loaded: 0
+  broker_margin: false
+  direct_short: false

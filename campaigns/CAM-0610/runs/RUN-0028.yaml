@@ -1,0 +1,96 @@
+run_id: RUN-0028
+campaign_id: CAM-0610
+parent_run: RUN-0027
+status: completed
+change: Add a causal lagged-correlation diversity constraint to the daily MA200 momentum
+  rank, without excluding any named ticker or sector ex post.
+reason: The quote candidate remains profitable without its top five symbols but 57.9%
+  of positive symbol PnL came from a storage/semiconductor cluster.
+expected_effect: Reduce cluster dependence and drawdown while retaining daily cadence
+  and recent profitability.
+configuration:
+  panel: sp500
+  sma_window: 200
+  score: momentum_126_skip21
+  rebalance: every_session
+  breadth: 10
+  correlation_window: 63
+  maximum_pairwise_correlation:
+  - 0.4
+  - 0.6
+  - 0.8
+  candidate_pool: 50
+  cost_bps_per_side:
+  - -1
+  - 0
+  - 1
+  - 2
+  - 5
+  - 10
+  named_symbol_exclusions: false
+  holdout_access: false
+decision: Quote replay only if diversification materially improves concentration or
+  drawdown without destroying consistency.
+result:
+  status: completed
+  run_id: RUN-0028
+  selected:
+    campaign_id: CAM-0610
+    run_id: RUN-0028
+    variant_id: sp500__ma200__daily__top10__corr0.8
+    correlation_threshold: 0.8
+    panel: sp500
+    execution_lag_bars: 1
+    cost_bps_per_side: 2.0
+    net_simple_return: 1.5266358191664644
+    gross_simple_return: 1.5790358191664644
+    total_cost: 0.0524
+    entries: 1315
+    position_change_count: 2620
+    active_days: 1054
+    green_days: 574
+    red_days: 480
+    average_gross_exposure: 0.8398406374501992
+    maximum_gross_exposure: 1.0000000000000002
+    total_turnover: 262.0
+    profitable_symbols: 118
+    loss_symbols: 76
+    top5_symbol_positive_share: 0.3083299205178282
+    top5_day_positive_share: 0.04882874084976705
+    best_symbol: SNDK
+    best_symbol_pnl: 0.18823903690170277
+    leave_best_symbol_out_return: 1.3383967822647616
+    unavailable_entry_positions: 0
+    missing_return_positions: 0
+    monthly_average: 0.025443930319441074
+    monthly_median: 0.005421122315282424
+    positive_months: 31
+    negative_months: 20
+    inactive_months: 9
+    maximum_drawdown: 0.23938229896187455
+    drawdown_peak_date: '2025-02-18'
+    drawdown_trough_date: '2025-04-04'
+    drawdown_recovery_sessions: 70
+    ending_drawdown: 0.0013057868812079907
+    recent12_months_observed: 12
+    recent12_average_month: 0.08192812607391015
+    recent12_median_month: 0.07521514880920052
+    recent12_positive_months: 9
+    recent12_negative_months: 3
+    recent12_inactive_months: 0
+    recent15_months_observed: 15
+    recent15_average_month: 0.06026651629843755
+    recent15_median_month: 0.07361325794599725
+    recent15_positive_months: 10
+    recent15_negative_months: 5
+    recent15_inactive_months: 0
+    recent18_months_observed: 18
+    recent18_average_month: 0.05834002304196557
+    recent18_median_month: 0.06578096148512859
+    recent18_positive_months: 12
+    recent18_negative_months: 6
+    recent18_inactive_months: 0
+    holding: open_to_next_open
+  maximum_loaded_date: '2026-04-30'
+  holdout_rows_loaded: 0
+  named_symbol_exclusions: false

@@ -14,6 +14,7 @@ def main():
     parser.add_argument("--output", type=Path, default=SHARED / "quote_roles_remaining.parquet")
     args = parser.parse_args()
     roles = pd.read_parquet(args.roles)
+    roles["target_ts"] = pd.to_datetime(roles["target_ts"], utc=True)
     match_paths = args.match or [
         SHARED / "remote_quote_role_matches.parquet", SHARED / "remote_quote_role_matches_expanded.parquet",
         SHARED / "remote_quote_role_matches_final.parquet",
@@ -23,6 +24,9 @@ def main():
         if not path.exists():
             continue
         frame = pd.read_parquet(path)
+        if frame.empty:
+            continue
+        frame["target_ts"] = pd.to_datetime(frame["target_ts"], utc=True)
         if "match_valid" in frame.columns:
             frame = frame[frame["match_valid"].fillna(False).astype(bool)]
         frames.append(frame)

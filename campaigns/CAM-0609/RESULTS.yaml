@@ -71,3 +71,18 @@ split_repaired_checkpoint:
   holdout_rows_loaded: 0
   promotion_ready: false
   strategy_title: Weighted-regression mean reversion
+individual_hf_extension:
+  status: modest_daily_printer_watch
+  variant: qqq__daily_residual_r10__top3__trend1
+  quote_0940_net_2bps: 0.2583080277
+  quote_maximum_drawdown: 0.1038750525
+  trade_session_fraction: 1.0
+  positive_months: 8
+  negative_months: 4
+  promotion_ready: false
+  adaptation_variant: qqq__daily_residual_r5__top10__trend1__persistence3
+  adaptation_quote_0940_net_2bps: 0.319235
+  adaptation_quote_maximum_drawdown: 0.108534
+  adaptation_trade_session_fraction: 1.0
+  adaptation_top5_positive_share: 0.392421
+  adaptation_leave_top5_return: 0.014872

@@ -38,3 +38,7 @@ This is adapted development evidence, not untouched out-of-sample evidence. No r
 ## Split-repaired checkpoint (RUN-0020/RUN-0021/RUN-0023)
 
 Prior strategy evidence is invalid because the inherited stock panel adjusted forward splits in the wrong direction. The repaired structured result is **no_structured_survivor**. No mechanism-consistent repair cleared the structured screen. This remains adapted development evidence; the May 2026 holdout was not accessed and promotion is blocked.
+
+## True-pair and execution extension (RUN-0022–RUN-0024)
+
+The paper-identity long-cheap/short-rich ETF implementation closes the prior identity gap. Its best bar candidate, SMH/XLK, earns +21.14% at 2 bp with 3.32% drawdown but fails at 10 bp. Exact 09:40 SIP replay earns +1.58% at 2 bp with only 4/12 positive months; a causal first-10-minute convergence confirmation earns +1.69% at 2 bp and fails at 5 bp. The true pair is execution-sensitive and not a money printer.

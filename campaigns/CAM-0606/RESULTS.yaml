@@ -55,3 +55,11 @@ split_repaired_checkpoint:
   holdout_rows_loaded: 0
   promotion_ready: false
   strategy_title: Pairs trading
+individual_hf_extension:
+  status: execution_sensitive_rejected
+  bar_variant: pair_SMH_XLK__r20__zw63__z1.5__corr0.5__stop2
+  bar_net_2bps: 0.211356
+  quote_0940_net_2bps: 0.015840
+  quote_positive_months: 4
+  holdout_rows_loaded: 0
+  promotion_ready: false

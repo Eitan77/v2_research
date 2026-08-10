@@ -1,0 +1,86 @@
+run_id: RUN-0024
+campaign_id: CAM-0606
+parent_run: RUN-0023
+status: completed
+change: 'Apply one mechanism-based confirmation to the frozen 09:40 pair candidate:
+  enter only if the signal-rich leg underperformed the cheap leg from 09:30 to 09:40.'
+reason: RUN-0023 shows weak, execution-sensitive recent performance and stop-outs.
+  A pair trade should improve when relative convergence has begun before entry.
+expected_effect: Reduce false dislocations and stop-outs at the cost of fewer trades;
+  reject if gains are confined to too few events or disappear with 2-5 bp extra slippage.
+configuration:
+  parent_variant: pair_SMH_XLK__r20__zw63__z1.5__corr0.5__stop2
+  entry_clock: 09:40
+  confirmation_window:
+  - 09:30
+  - 09:40
+  confirmation: rich_leg_relative_return_less_than_cheap_leg_relative_return
+  additional_slippage_bps_per_side:
+  - 0
+  - 2
+  - 5
+  - 10
+  minimum_events_for_followup: 30
+  discovery_cutoff: '2026-04-30'
+  holdout_access: false
+decision: Advance only if event count and 2-5 bp robustness improve materially; otherwise
+  reject confirmation and retain non-promotion.
+result:
+  status: completed
+  run_id: RUN-0024
+  parent_events: 66
+  confirmed_events: 35
+  retention: 0.5303030303030303
+  metrics:
+  - extra_slippage_bps_per_side: 0.0
+    net_simple_return: 0.030904417426189768
+    maximum_drawdown: 0.006459312004483311
+    trades: 35
+    green_trades: 20
+    red_trades: 15
+    win_rate: 0.5714285714285714
+    positive_months: 6
+    negative_months: 1
+    inactive_months: 5
+    worst_month: -0.004303155586217133
+    best_month: 0.01616648958737199
+  - extra_slippage_bps_per_side: 2.0
+    net_simple_return: 0.016904417426189765
+    maximum_drawdown: 0.00864792477368808
+    trades: 35
+    green_trades: 15
+    red_trades: 20
+    win_rate: 0.42857142857142855
+    positive_months: 5
+    negative_months: 2
+    inactive_months: 5
+    worst_month: -0.007103155586217134
+    best_month: 0.01376648958737199
+  - extra_slippage_bps_per_side: 5.0
+    net_simple_return: -0.004095582573810233
+    maximum_drawdown: 0.016399825708772832
+    trades: 35
+    green_trades: 12
+    red_trades: 23
+    win_rate: 0.34285714285714286
+    positive_months: 3
+    negative_months: 4
+    inactive_months: 5
+    worst_month: -0.011303155586217133
+    best_month: 0.01016648958737199
+  - extra_slippage_bps_per_side: 10.0
+    net_simple_return: -0.03909558257381024
+    maximum_drawdown: 0.0385174534502101
+    trades: 35
+    green_trades: 9
+    red_trades: 26
+    win_rate: 0.2571428571428571
+    positive_months: 1
+    negative_months: 6
+    inactive_months: 5
+    worst_month: -0.018303155586217132
+    best_month: 0.00416648958737199
+  maximum_loaded_date: '2026-04-30'
+  holdout_rows_loaded: 0
+  interpretation: Development-only causal first-ten-minute convergence confirmation;
+    no threshold search.

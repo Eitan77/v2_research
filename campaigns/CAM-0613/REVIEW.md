@@ -38,3 +38,7 @@ This is adapted development evidence, not untouched out-of-sample evidence. No r
 ## Split-repaired checkpoint (RUN-0020/RUN-0021/RUN-0023)
 
 Prior strategy evidence is invalid because the inherited stock panel adjusted forward splits in the wrong direction. The repaired structured result is **no_structured_survivor**. No mechanism-consistent repair cleared the structured screen. This remains adapted development evidence; the May 2026 holdout was not accessed and promotion is blocked.
+
+## Ranked-pivot execution extension (RUN-0022–RUN-0024)
+
+The causal ranked bar candidate earns +121.93% at 2 bp with 5.96% drawdown and daily activity, but marketable 09:40 execution loses 17.11% before extra slippage. The earlier passive result is invalid because target touches could precede entries. In the corrected sequential replay, a bid touch earns +12.84%, but 1 bp of through-price evidence cuts return to +2.62%; adding 1 bp per side leaves +0.28% with 6/6 positive/negative months. Do not promote without prospective queue-aware fills.

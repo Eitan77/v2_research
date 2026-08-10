@@ -1,0 +1,91 @@
+run_id: RUN-0026
+campaign_id: CAM-0610
+parent_run: RUN-0025
+status: completed
+change: Audit quote-year symbol/day/month concentration, leave-one-out behavior, full-history
+  folds, and corporate-action sensitivity of the daily MA200 candidate.
+reason: RUN-0025 has exceptional recent net performance, but RUN-0024 identifies SNDK
+  as the largest full-history contributor and selection occurred inside development.
+expected_effect: Determine whether the apparent printer is broad and repeatable or
+  dominated by a new listing, corporate action, or a small number of events.
+configuration:
+  variant: sp500__ma200__daily__top10__momentum
+  quote_clock: 09:40
+  additional_adverse_bps_per_side: 2
+  concentration:
+  - symbol
+  - top5_symbols
+  - day
+  - top5_days
+  - month
+  folds:
+  - '2021'
+  - 2022-2023
+  - 2024-2026-04-30
+  flagged_symbol: SNDK
+  holdout_access: false
+decision: Reject if the quote-year result depends materially on SNDK, the top five
+  symbols, or one fold.
+result:
+  status: completed
+  run_id: RUN-0026
+  quote:
+    net_simple_return: 1.0012848486374664
+    maximum_drawdown: 0.10603343232491932
+    green_days: 149
+    red_days: 102
+    positive_months: 9
+    negative_months: 3
+    monthly_average: 0.08344040405312221
+    monthly_median: 0.06610716708981727
+    worst_month: -0.05088809486906304
+    best_month: 0.2965469903432811
+    top5_day_positive_share: 0.1490353144929409
+  quote_symbol_concentration:
+    symbols: 69
+    top_symbol: SNDK
+    top_symbol_net: 0.1900880136130648
+    top_symbol_positive_share: 0.16216113312813452
+    top5_symbol_positive_share: 0.5790671696685645
+    leave_top_symbol_out_net: 0.8111968350244015
+    leave_top5_symbols_out_net: 0.32249255169501556
+    sndk_net: 0.1900880136130648
+  folds:
+    '2021':
+      net_simple_return: 0.0
+      maximum_drawdown: 0.0
+      green_days: 0
+      red_days: 0
+      positive_months: 0
+      negative_months: 0
+      monthly_average: 0.0
+      monthly_median: 0.0
+      worst_month: 0.0
+      best_month: 0.0
+      top5_day_positive_share: .nan
+    '2022_2023':
+      net_simple_return: 0.368991197779477
+      maximum_drawdown: 0.25827154678511044
+      green_days: 248
+      red_days: 223
+      positive_months: 13
+      negative_months: 10
+      monthly_average: 0.015374633240811543
+      monthly_median: 0.011060976777907482
+      worst_month: -0.208647610670265
+      best_month: 0.13261855960309113
+      top5_day_positive_share: 0.07715927955828149
+    2024_to_cutoff:
+      net_simple_return: 1.2254071041031973
+      maximum_drawdown: 0.32192859993972905
+      green_days: 329
+      red_days: 255
+      positive_months: 19
+      negative_months: 9
+      monthly_average: 0.04376453943225705
+      monthly_median: 0.047201751587886115
+      worst_month: -0.15912618201855644
+      best_month: 0.29388066388340095
+      top5_day_positive_share: 0.079756180305232
+  maximum_loaded_date: '2026-04-30'
+  holdout_rows_loaded: 0

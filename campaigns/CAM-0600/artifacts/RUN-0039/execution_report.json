@@ -1,0 +1,69 @@
+{
+  "status": "completed",
+  "run_id": "RUN-0039",
+  "metrics": [
+    {
+      "extra_adverse_bps_per_side": 0.0,
+      "net_simple_return": 1.0541532230262018,
+      "maximum_drawdown": 0.10286007747032795,
+      "role_coverage": 1.0,
+      "trade_roles": 246,
+      "trade_sessions": 111,
+      "trade_session_fraction": 0.44223107569721115,
+      "positive_months": 9,
+      "negative_months": 3,
+      "monthly_average": 0.08784610191885016,
+      "monthly_median": 0.069835417411304,
+      "worst_month": -0.05413543805719327,
+      "best_month": 0.26778455390303635
+    },
+    {
+      "extra_adverse_bps_per_side": 1.0,
+      "net_simple_return": 1.0516932230262017,
+      "maximum_drawdown": 0.10305866435443141,
+      "role_coverage": 1.0,
+      "trade_roles": 246,
+      "trade_sessions": 111,
+      "trade_session_fraction": 0.44223107569721115,
+      "positive_months": 9,
+      "negative_months": 3,
+      "monthly_average": 0.08764110191885016,
+      "monthly_median": 0.06957541741130399,
+      "worst_month": -0.05429543805719327,
+      "best_month": 0.26766455390303634
+    },
+    {
+      "extra_adverse_bps_per_side": 2.0,
+      "net_simple_return": 1.0492332230262018,
+      "maximum_drawdown": 0.10325769283263564,
+      "role_coverage": 1.0,
+      "trade_roles": 246,
+      "trade_sessions": 111,
+      "trade_session_fraction": 0.44223107569721115,
+      "positive_months": 9,
+      "negative_months": 3,
+      "monthly_average": 0.08743610191885016,
+      "monthly_median": 0.069315417411304,
+      "worst_month": -0.054455438057193266,
+      "best_month": 0.26754455390303633
+    },
+    {
+      "extra_adverse_bps_per_side": 5.0,
+      "net_simple_return": 1.0418532230262019,
+      "maximum_drawdown": 0.10385744261062062,
+      "role_coverage": 1.0,
+      "trade_roles": 246,
+      "trade_sessions": 111,
+      "trade_session_fraction": 0.44223107569721115,
+      "positive_months": 9,
+      "negative_months": 3,
+      "monthly_average": 0.08682110191885016,
+      "monthly_median": 0.06853541741130399,
+      "worst_month": -0.05493543805719327,
+      "best_month": 0.26718455390303636
+    }
+  ],
+  "maximum_loaded_date": "2026-04-30",
+  "holdout_rows_loaded": 0,
+  "broker_margin": false
+}

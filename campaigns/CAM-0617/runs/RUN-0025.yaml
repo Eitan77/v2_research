@@ -1,0 +1,9 @@
+run_id: RUN-0025
+campaign_id: CAM-0617
+parent_run: RUN-0024
+status: completed
+change: Exact 09:30 and 09:40 SIP replay of the daily-labeled alpha candidate.
+reason: RUN-0024 passed low-cost and 10 bp bar gates.
+configuration: {variant: qqq__alpha_M20_E5__daily__top10__trend1, shared_execution_run: CAM-0600/RUN-0031, holdout_access: false}
+result: {quote_0940_net_2bps: 0.5980580082, maximum_drawdown: 0.1131751125, trade_session_fraction: 0.4900398406, positive_months: 9, negative_months: 3, role_coverage: 1.0, holdout_rows_loaded: 0}
+decision: Fails the strict every-two-sessions cadence by one session; underlying alpha optimizer remains weekly and needs a true daily solve.

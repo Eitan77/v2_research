@@ -1,0 +1,156 @@
+run_id: RUN-0022
+campaign_id: CAM-0613
+parent_run: RUN-0021
+status: completed
+change: Replace arbitrary equal-weight tie selection with causal setup-quality rankings
+  for source-faithful prior-day pivot longs.
+reason: RUN-0021's top-k transformation ranked equal raw weights, so stable column
+  order rather than an economic observable selected the reported +71.5% candidate.
+expected_effect: Determine whether pivot alpha survives when top setups are selected
+  by target room, pivot proximity, or reward relative to prior range.
+configuration:
+  universes:
+  - point_in_time_sp500
+  - point_in_time_qqq
+  setup: open_above_prior_pivot_and_resistance_above_open
+  ranking_rules:
+  - target_room_pct
+  - closest_above_pivot_by_prior_range
+  - target_room_over_prior_range
+  portfolio_breadths:
+  - 5
+  - 10
+  - 20
+  trend_confirmations:
+  - sma100
+  - sma200
+  volume_confirmations:
+  - false
+  - above_trailing20_median
+  entry: regular_session_open
+  exit: prior_pivot_resistance_if_reached_else_regular_session_close
+  costs_bps_per_side:
+  - 2
+  - 5
+  - 10
+  maximum_gross_exposure: 1.0
+  broker_margin: false
+  direct_short: false
+  selection_gate:
+    positive_at_2bps: true
+    positive_at_5bps: true
+    maximum_drawdown: 0.2
+    positive_fixed_folds: 3
+    recent12_positive_months: 7
+    minimum_entries: 500
+    top5_positive_day_share: 0.15
+  discovery_cutoff: '2026-04-30'
+  holdout_access: false
+decision: Advance only a structured survivor to intraday target-order and quote replay;
+  otherwise retain retirement after removing the arbitrary tie-selection artifact.
+result:
+  status: completed
+  run_id: RUN-0022
+  variants: 72
+  structured_survivors: 17
+  selected_variant: sp500__pivot_target_room_over_prior_range__top10__sma100__vol0
+  selected_metrics:
+    variant_id: sp500__pivot_target_room_over_prior_range__top10__sma100__vol0
+    universe: sp500
+    ranking_rule: target_room_over_prior_range
+    top_k: 10
+    trend_window: 100
+    volume_confirmation: false
+    source_long_entries: 330842
+    cost2_net_simple_return: 1.2192618146251144
+    cost2_maximum_drawdown: 0.05956912323777176
+    cost2_entries: 11194
+    cost2_positive_months: 47
+    cost2_negative_months: 9
+    cost2_recent12_positive_months: 9
+    cost2_recent12_average_month: 0.016557259928157205
+    cost2_top5_day_positive_share: 0.03190376384997471
+    cost2_top5_symbol_positive_share: 0.10294443236642983
+    cost2_2021: 0.10051740087201026
+    cost2_2022_2023: 0.725125871069989
+    cost2_2024_2026apr: 0.393618542683115
+    cost2_worst_fold: 0.10051740087201026
+    cost5_net_simple_return: 0.5304618146251148
+    cost5_maximum_drawdown: 0.08779664518665681
+    cost5_entries: 11194
+    cost5_positive_months: 37
+    cost5_negative_months: 19
+    cost5_recent12_positive_months: 7
+    cost5_recent12_average_month: 0.004007259928157211
+    cost5_top5_day_positive_share: 0.03528702121222852
+    cost5_top5_symbol_positive_share: 0.13076911856000573
+    cost5_2021: 0.057917400872010305
+    cost5_2022_2023: 0.42812587106998923
+    cost5_2024_2026apr: 0.04441854268311514
+    cost5_worst_fold: 0.04441854268311514
+    cost10_net_simple_return: -0.6175381853748854
+    cost10_maximum_drawdown: 0.6652575631204137
+    cost10_entries: 11194
+    cost10_positive_months: 15
+    cost10_negative_months: 41
+    cost10_recent12_positive_months: 3
+    cost10_recent12_average_month: -0.01690940673850946
+    cost10_top5_day_positive_share: 0.04249981051937922
+    cost10_top5_symbol_positive_share: 0.2091428283901611
+    cost10_2021: -0.013082599127989702
+    cost10_2022_2023: -0.0668741289300108
+    cost10_2024_2026apr: -0.5375814573168848
+    cost10_worst_fold: -0.5375814573168848
+  best_raw_2bps:
+    variant_id: sp500__pivot_target_room_pct__top10__sma100__vol1
+    universe: sp500
+    ranking_rule: target_room_pct
+    top_k: 10
+    trend_window: 100
+    volume_confirmation: true
+    source_long_entries: 330842
+    cost2_net_simple_return: 1.361181854524624
+    cost2_maximum_drawdown: 0.0662650797029261
+    cost2_entries: 10148
+    cost2_positive_months: 45
+    cost2_negative_months: 11
+    cost2_recent12_positive_months: 9
+    cost2_recent12_average_month: 0.013330391064239243
+    cost2_top5_day_positive_share: 0.0313513211322485
+    cost2_top5_symbol_positive_share: 0.11800564590309205
+    cost2_2021: 0.12090805042540828
+    cost2_2022_2023: 0.9201259701180935
+    cost2_2024_2026apr: 0.32014783398112223
+    cost2_worst_fold: 0.12090805042540828
+    cost5_net_simple_return: 0.6825818545246243
+    cost5_maximum_drawdown: 0.09372894738000358
+    cost5_entries: 10148
+    cost5_positive_months: 34
+    cost5_negative_months: 22
+    cost5_recent12_positive_months: 4
+    cost5_recent12_average_month: 0.0008803910642392505
+    cost5_top5_day_positive_share: 0.03421751288978453
+    cost5_top5_symbol_positive_share: 0.1393142844178155
+    cost5_2021: 0.0795080504254083
+    cost5_2022_2023: 0.6291259701180936
+    cost5_2024_2026apr: -0.02605216601887761
+    cost5_worst_fold: -0.02605216601887761
+    cost10_net_simple_return: -0.4484181454753759
+    cost10_maximum_drawdown: 0.6176123147405913
+    cost10_entries: 10148
+    cost10_positive_months: 20
+    cost10_negative_months: 36
+    cost10_recent12_positive_months: 3
+    cost10_recent12_average_month: -0.01986960893576075
+    cost10_top5_day_positive_share: 0.03997768856395116
+    cost10_top5_symbol_positive_share: 0.19562729603541057
+    cost10_2021: 0.010508050425408304
+    cost10_2022_2023: 0.1441259701180935
+    cost10_2024_2026apr: -0.6030521660188777
+    cost10_worst_fold: -0.6030521660188777
+  maximum_loaded_date: '2026-04-30'
+  holdout_rows_loaded: 0
+  broker_margin: false
+  direct_short: false
+  interpretation: Causal economic ranking replaces arbitrary equal-weight tie ordering;
+    daily target hit remains a bar-stage execution model.

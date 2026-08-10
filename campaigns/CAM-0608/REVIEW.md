@@ -38,3 +38,6 @@ This is adapted development evidence, not untouched out-of-sample evidence. No r
 ## Split-repaired checkpoint (RUN-0020/RUN-0021/RUN-0023)
 
 Prior strategy evidence is invalid because the inherited stock panel adjusted forward splits in the wrong direction. The repaired structured result is **provisional_execution_survivor** using `qqq__slow_residual_r10__top10__monthly`. Its full repaired 2 bp additive return is 210.7% with 28.3% maximum drawdown; 09:40 SIP replay at +2 bp is 44.7% with 21.0% drawdown and 8/4 positive/negative months. This remains adapted development evidence; the May 2026 holdout was not accessed and promotion is blocked.
+## Individual high-frequency follow-up
+
+Persistence-two improves exact quote return to +67.58% and monthly hit rate to 9/12, but drawdown rises to 11.99%. The unsmoothed r10/top3 control is less profitable (+58.06%) yet trades every session, has only 32.0% of positive symbol P&L in its best five, and retains +15.60% after removing them. This remains an independent daily watch candidate, not a promotion.

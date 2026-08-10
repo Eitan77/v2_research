@@ -1,0 +1,20 @@
+{
+  "status": "passed",
+  "generated_utc": "2026-08-10T16:29:28.752024+00:00",
+  "workers": 16,
+  "batch_size": 100,
+  "tasks": 9,
+  "failed_tasks": 0,
+  "failure_messages": [],
+  "request_symbol_units": 41,
+  "http_attempts": 10,
+  "pages": 10,
+  "roles": 48,
+  "matched_roles": 48,
+  "missing_roles": 0,
+  "coverage_rate": 1.0,
+  "symbols_matched": 21,
+  "holdout_rows_loaded": 0,
+  "request_windows_seconds": 30,
+  "credentials_recorded": false
+}

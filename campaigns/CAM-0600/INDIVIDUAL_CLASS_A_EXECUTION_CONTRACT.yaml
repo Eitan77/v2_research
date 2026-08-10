@@ -1,0 +1,44 @@
+contract_id: INDIVIDUAL_CLASS_A_EXECUTION_20260810
+status: frozen
+created_at: '2026-08-10T07:25:00-07:00'
+applies_to: CAM-0600_through_CAM-0624_extension_runs
+user_direction:
+  develop_individually_before_combinations: true
+  target_profile: class_a_holy_shit_money_printer
+  recent_money_printers_prioritized: true
+  modest_recent_results_may_survive_if_historically_exceptional: true
+frequency_gate:
+  intraday_minimum_active_sessions_fraction: 0.50
+  preferred: daily_or_multiple_trades_per_day
+  report:
+    - active_sessions
+    - trades
+    - trades_per_active_session
+    - trades_per_calendar_session
+    - inactive_months
+execution_gate:
+  quote_replay_required_if_profitable_at_any_bps: [-1, 0, 1]
+  also_replay_if_profitable_at_2bps_and_economically_material: true
+  marketable_fill: SIP_bid_ask
+  limit_order_tests:
+    - midpoint_touch
+    - same_side_best_quote_touch
+    - target_limit_touch
+  limit_order_integrity: >-
+    A bar or trade touch is an optimistic eligibility bound, not a realistic passive
+    fill unless queue position and displayed size support it. Always report fill rate,
+    unfilled cash, and a marketable control.
+individual_candidate_gate:
+  fixed_capital_additive: true
+  no_broker_margin: true
+  maximum_gross_exposure: 1.0
+  recent_monthly_path_required: true
+  drawdown_and_recovery_required: true
+  trade_day_symbol_concentration_required: true
+  cost_and_timing_stress_required: true
+  chronological_folds_required: true
+  sealed_holdout_start: '2026-05-01'
+  holdout_access: false
+combination_gate:
+  allowed_only_after_individual_development_checkpoint: true
+  current_priority: individual_strategies

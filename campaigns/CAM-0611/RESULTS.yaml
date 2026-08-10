@@ -95,3 +95,17 @@ split_repaired_checkpoint:
   holdout_rows_loaded: 0
   promotion_ready: false
   strategy_title: Two moving averages
+individual_hf_extension:
+  status: class_a_shaped_development_candidate
+  variant: sp500__ma50_200__daily__top10__momentum
+  quote_0940_net_2bps: 0.9659245119
+  quote_maximum_drawdown: 0.1060360447
+  trade_session_fraction: 0.6693227092
+  positive_months: 9
+  negative_months: 3
+  promotion_ready: false
+  persistence3_quote_0940_net_2bps: 1.121929
+  persistence3_quote_maximum_drawdown: 0.105898
+  persistence3_trade_session_fraction: 0.609562
+  daily_pnl_correlation_with_single_ma_persistence3: 0.997241
+  decision: redundant_with_single_ma

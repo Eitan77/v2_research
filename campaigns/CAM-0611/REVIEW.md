@@ -40,3 +40,6 @@ This is adapted development evidence, not untouched out-of-sample evidence. No r
 ## Split-repaired checkpoint (RUN-0020/RUN-0021/RUN-0023)
 
 Prior strategy evidence is invalid because the inherited stock panel adjusted forward splits in the wrong direction. The repaired structured result is **provisional_execution_survivor** using `sp500__ma50_200__weekly__top3__momentum`. Its full repaired 2 bp additive return is 250.0% with 26.4% maximum drawdown; 09:40 SIP replay at +2 bp is 161.5% with 11.9% drawdown and 11/1 positive/negative months. This remains adapted development evidence; the May 2026 holdout was not accessed and promotion is blocked.
+## Individual high-frequency follow-up
+
+Persistence-three raises the exact quote result to +112.19% with 10.59% drawdown and 61.0% trade-session cadence. Its daily P&L correlation with the analogous single-MA candidate is 0.997, so it is a redundant expression rather than a separate discovery and should not be combined for cosmetic diversification.

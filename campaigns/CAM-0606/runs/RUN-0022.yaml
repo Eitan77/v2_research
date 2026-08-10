@@ -1,0 +1,118 @@
+run_id: RUN-0022
+campaign_id: CAM-0606
+parent_run: RUN-0021
+status: completed_no_candidate
+change: Replace the long-cheap proxy with the source-identity long-cheap/short-rich
+  intraday pair trade, using economically prespecified ETF pairs, gross exposure 1.0,
+  forced close liquidation, and a protective short stop.
+reason: RUN-0021 found a profitable cheap-leg expression but correctly blocked it
+  for strategy identity. The actual dollar-neutral mechanism with required short safeguards
+  has not been tested on the split-repaired data.
+expected_effect: Determine whether relative dislocation, rather than long-leg beta,
+  pays after realistic daily turnover costs and conservative short-stop treatment.
+configuration:
+  pairs:
+  - - QQQ
+    - SPY
+  - - SMH
+    - XLK
+  - - IWM
+    - SPY
+  - - XLY
+    - XLP
+  - - XLE
+    - USO
+  - - TLT
+    - SHY
+  pair_selection: economic_prior_only
+  expressions:
+  - individual_pair
+  - equal_active_pairs
+  - largest_dislocation_pair
+  return_lookbacks:
+  - 1
+  - 5
+  - 20
+  z_windows:
+  - 63
+  - 126
+  entry_z:
+  - 1.0
+  - 1.5
+  trailing_correlation_gates:
+  - 0.5
+  - 0.7
+  short_stops:
+  - 0.02
+  - 0.04
+  stop_fill_slippage_bps: 5
+  costs_bps_per_side:
+  - 2
+  - 10
+  entry: next_regular_session_open
+  exit: same_regular_session_close_or_short_stop
+  maximum_gross_exposure: 1.0
+  broker_margin: false
+  direct_short_overnight: false
+  selection_gate:
+    positive_at_2bps: true
+    positive_at_10bps: true
+    maximum_drawdown: 0.2
+    positive_fixed_folds: 3
+    recent12_positive_months: 7
+    minimum_active_pair_days: 100
+  discovery_cutoff: '2026-04-30'
+  holdout_access: false
+decision: Advance only a structured survivor to quote-role replay; otherwise retain
+  retirement with the identity gap closed.
+result:
+  status: completed_no_candidate
+  run_id: RUN-0022
+  variants: 384
+  structured_survivors: 0
+  selected_variant: null
+  selected_metrics: null
+  best_raw_2bps:
+    variant_id: pair_SMH_XLK__r20__zw63__z1.5__corr0.5__stop2
+    expression: pair_SMH_XLK
+    lookback: 20
+    z_window: 63
+    entry_z: 1.5
+    min_corr: 0.5
+    short_stop: 0.02
+    cost2_net_simple_return: 0.21135604363027907
+    cost2_maximum_drawdown: 0.03322235683851677
+    cost2_positive_months: 43
+    cost2_negative_months: 24
+    cost2_inactive_months: 21
+    cost2_recent12_positive_months: 5
+    cost2_recent12_net: 0.02618092868065433
+    cost2_active_pair_days: 364
+    cost2_short_stop_hits: 37
+    cost2_top5_positive_day_share: 0.11842352592668248
+    cost2_2019_2021: 0.11743789737566009
+    cost2_2022_2023: 0.06443183063058863
+    cost2_2024_2026apr: 0.02948631562403036
+    cost2_worst_fold: 0.02948631562403036
+    cost10_net_simple_return: -0.37104395636972093
+    cost10_maximum_drawdown: 0.3786391778946346
+    cost10_positive_months: 21
+    cost10_negative_months: 46
+    cost10_inactive_months: 21
+    cost10_recent12_positive_months: 1
+    cost10_recent12_net: -0.07941907131934567
+    cost10_active_pair_days: 364
+    cost10_short_stop_hits: 37
+    cost10_top5_positive_day_share: 0.1698936696096838
+    cost10_2019_2021: -0.08256210262433991
+    cost10_2022_2023: -0.08756816936941139
+    cost10_2024_2026apr: -0.20091368437596963
+    cost10_worst_fold: -0.20091368437596963
+  maximum_loaded_date: '2026-04-30'
+  holdout_rows_loaded: 0
+  maximum_gross_exposure: 1.0
+  broker_margin: false
+  direct_short_overnight: false
+  interpretation: Actual long-cheap/short-rich source identity with forced same-day
+    close and predefined short stop; daily bars cannot model queue or intrabar stop
+    slippage beyond the frozen 5 bp penalty.

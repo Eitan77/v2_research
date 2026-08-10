@@ -71,3 +71,22 @@ split_repaired_checkpoint:
   holdout_rows_loaded: 0
   promotion_ready: false
   strategy_title: Multiple-cluster mean reversion
+individual_hf_extension:
+  status: profitable_low_drawdown_watch
+  variant: sp500__daily_residual_r5__top3__trend1
+  quote_0940_net_2bps: 0.6651479531
+  quote_maximum_drawdown: 0.0776226104
+  trade_session_fraction: 1.0
+  positive_months: 7
+  negative_months: 5
+  promotion_ready: false
+  improved_variant: sp500__daily_residual_r5__top3__trend1__persistence2
+  improved_quote_0940_net_2bps: 0.675833
+  improved_quote_maximum_drawdown: 0.119905
+  improved_trade_session_fraction: 0.904382
+  improved_positive_months: 9
+  improved_negative_months: 3
+  concentration_control_variant: sp500__daily_residual_r10__top3__trend1
+  concentration_control_quote_net_2bps: 0.580609
+  concentration_control_top5_positive_share: 0.320043
+  concentration_control_leave_top5_return: 0.156006

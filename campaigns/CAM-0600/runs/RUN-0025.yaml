@@ -1,0 +1,49 @@
+run_id: RUN-0025
+campaign_id: CAM-0600
+parent_run: RUN-0024
+status: completed
+change: Audit every split-repaired individual variant at -1, 0, 1, and 2 bp for profitability,
+  true entry cadence, and prior quote-replay coverage.
+reason: The tightened research mandate requires at least one trade every two sessions
+  and quote/limit validation for every historically profitable high-frequency candidate,
+  not only the previously selected representative from each paper family.
+expected_effect: Produce a reconciled, economically deduplicated queue of individual
+  candidates requiring quote replay and explicitly separate frequent exposure from
+  frequent trading.
+configuration:
+  source_runs:
+  - RUN-0020
+  - RUN-0021
+  cost_bps_per_side:
+  - -1
+  - 0
+  - 1
+  - 2
+  minimum_entries_per_session: 0.5
+  preferred_entries_per_session: 1.0
+  profitability_gate_costs:
+  - -1
+  - 0
+  - 1
+  prior_quote_run: RUN-0023
+  combination_allowed: false
+  maximum_gross_exposure: 1.0
+  broker_margin: false
+  discovery_cutoff: '2026-04-30'
+  holdout_access: false
+decision: Reconcile and replay every queued individual candidate; do not infer execution
+  from bar profitability.
+result:
+  status: completed
+  run_id: RUN-0025
+  variants_audited: 1459
+  profitable_at_minus1_0_or_1: 1326
+  high_frequency_profitable: 362
+  high_frequency_daily_profitable: 255
+  already_quote_replayed: 3
+  quote_replay_required: 359
+  maximum_loaded_date: '2026-04-30'
+  holdout_rows_loaded: 0
+  broker_margin: false
+  warning: Entry cadence uses entries divided by observed-months times 21; exact event
+    ledgers must reconcile candidates before replay.

@@ -40,3 +40,6 @@ This is adapted development evidence, not untouched out-of-sample evidence. No r
 ## Split-repaired checkpoint (RUN-0020/RUN-0021/RUN-0023)
 
 Prior strategy evidence is invalid because the inherited stock panel adjusted forward splits in the wrong direction. The repaired structured result is **provisional_execution_survivor** using `etf__alpha_M20_E5__top5__monthly__trend0`. Its full repaired 2 bp additive return is 196.0% with 32.4% maximum drawdown; 09:40 SIP replay at +2 bp is 64.3% with 15.7% drawdown and 9/3 positive/negative months. This remains adapted development evidence; the May 2026 holdout was not accessed and promotion is blocked.
+## Individual high-frequency follow-up
+
+A 0.20 turnover band quote-replays at +44.19% with 12.82% drawdown and 98.8% cadence, which is not a material improvement over the base. No tested neighborhood variant is profitable at 10 bps in the bar model, and leave-top-five return is negative. The family remains execution-sensitive and unpromoted.

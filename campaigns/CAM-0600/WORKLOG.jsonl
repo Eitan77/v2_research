@@ -16,3 +16,12 @@
 {"run_id":"RUN-0024","event":"planned","reason":"Audit every reconstructed stock split after reciprocal adjustment repair.","holdout_rows_loaded":0}
 {"run_id": "RUN-0024", "event": "completed_passed", "hard_flags": 0, "duplicate_rows": 0, "holdout_rows_loaded": 0}
 {"run_id":"RUN-0024","event":"checkpoint_verification_repaired","reason":"Moved split audit YAML block to top level after scoped test caught nested placement error.","holdout_rows_loaded":0}
+{"timestamp_utc":"2026-08-10T16:20:00+00:00","run_id":"RUN-0032","event":"notable_candidates_independently_confirmed","candidates":7,"holdout_rows_loaded":0}
+{"timestamp_utc":"2026-08-10T16:25:00+00:00","run_id":"RUN-0033","event":"individual_overlays_completed","decision":"quote_replay_material_adaptations","holdout_rows_loaded":0}
+{"timestamp_utc":"2026-08-10T16:30:00+00:00","run_id":"RUN-0034","event":"overlay_quote_replay_completed","role_coverage":1.0,"holdout_rows_loaded":0}
+{"timestamp_utc":"2026-08-10T16:40:00+00:00","run_id":"RUN-0035","event":"parameter_neighborhoods_completed","variants":231,"sndk_pre_membership_observations":199,"holdout_rows_loaded":0}
+{"timestamp_utc":"2026-08-10T16:48:00+00:00","run_id":"RUN-0036","event":"neighborhood_quote_replay_completed","role_coverage":1.0,"holdout_rows_loaded":0}
+{"timestamp_utc":"2026-08-10T16:52:00+00:00","run_id":"RUN-0037","event":"concentration_and_redundancy_audit_completed","decision":"reject_sparse_top_five_dependent_variants","holdout_rows_loaded":0}
+{"timestamp_utc":"2026-08-10T16:54:00+00:00","run_id":"RUN-0038","event":"smoothed_corr_ma_neighborhood_completed","variants":27,"profitable_at_10bps":27,"holdout_rows_loaded":0}
+{"timestamp_utc":"2026-08-10T16:57:00+00:00","run_id":"RUN-0039","event":"five_day_smoothed_corr_ma_quote_completed","net_2bps":1.049233,"trade_session_fraction":0.442231,"holdout_rows_loaded":0}
+{"timestamp_utc":"2026-08-10T16:59:00+00:00","run_id":"RUN-0040","event":"three_day_smoothed_corr_ma_quote_completed","net_2bps":1.007549,"maximum_drawdown":0.107591,"trade_session_fraction":0.517928,"holdout_rows_loaded":0}

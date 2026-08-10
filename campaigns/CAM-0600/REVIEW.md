@@ -44,3 +44,11 @@ Prior strategy evidence is invalid because the inherited stock panel adjusted fo
 RUN-0024 audited all 94 corrected QQQ/S&P split events. There were no duplicate
 panel/symbol/date multipliers, no hard residual gap flags, and the largest
 adjusted event gap was 4.45%.
+
+## Individual high-frequency extension (RUN-0032 through RUN-0040)
+
+Seven notable candidates were independently reconciled, adapted, tested across 231 parameter-neighborhood variants, quote replayed, and audited for listing history, contributor concentration, cadence, time stability, and redundancy. The best balanced development candidate is S&P MA200 momentum, top 10, with a 0.8 pairwise-correlation cap and a causal three-session smoothed momentum score. Exact 09:40 SIP replay plus 2 adverse bps per side returned +100.75% with 10.76% drawdown, 9/3 positive/negative months, 51.8% trade-session cadence, and 100% quote coverage. It remained +99.87% at quote plus 5 bps.
+
+The adjacent five-day smoother returned +104.92% with 10.33% drawdown but missed the preferred cadence at 44.2%. Uncapped and dual-MA persistence variants returned about +112% but were 0.997 correlated and remain theme-heavy. Narrow top-five and long-term triple-MA variants were rejected despite higher headline return because their best five symbols accounted for 70-88% of positive symbol P&L; the triple-MA result became negative after removing them. The cluster residual remains a more independent daily watch candidate, while characteristic residual and true-daily alpha did not survive leave-top-five or high-cost scrutiny.
+
+SNDK eligibility was causal: its membership-date close was its 200th available observation and positions were lagged to the next session. A stricter 252-observation control remained profitable, but concentration risk persists. No candidate is promoted, no broker margin was used, and the sealed holdout remains untouched.

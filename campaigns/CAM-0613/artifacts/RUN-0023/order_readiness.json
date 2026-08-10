@@ -1,0 +1,10 @@
+{
+  "orders": 5006,
+  "sessions": 251,
+  "symbols": 210,
+  "orders_per_session": 19.94422310756972,
+  "target_touch_rate": 0.4362764682381143,
+  "minute_rows": 1106777,
+  "maximum_loaded_date": "2026-04-30",
+  "holdout_rows_loaded": 0
+}

@@ -87,3 +87,22 @@ split_repaired_checkpoint:
   holdout_rows_loaded: 0
   promotion_ready: false
   strategy_title: Alpha combos
+individual_hf_extension:
+  status: true_daily_turnover_sensitive_watch
+  variant: qqq__alpha_M20_E5__true_daily__top10__trend0
+  quote_0940_net_2bps: 0.436921
+  quote_0940_net_5bps: 0.328991
+  quote_maximum_drawdown: 0.128729
+  trade_session_fraction: 1.0
+  entries_per_session: 8.390438
+  positive_months: 8
+  negative_months: 4
+  role_coverage: 1.0
+  promotion_ready: false
+  turnover_band20_quote_0940_net_2bps: 0.441852
+  turnover_band20_quote_maximum_drawdown: 0.128236
+  turnover_band20_trade_session_fraction: 0.988048
+  turnover_band20_top5_positive_share: 0.547109
+  turnover_band20_leave_top5_return: -0.007088
+  neighborhood_profitable_at_10bps: 0
+  decision: no_material_improvement_execution_sensitive

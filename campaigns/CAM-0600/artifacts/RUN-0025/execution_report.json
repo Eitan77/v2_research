@@ -1,0 +1,14 @@
+{
+  "status": "completed",
+  "run_id": "RUN-0025",
+  "variants_audited": 1459,
+  "profitable_at_minus1_0_or_1": 1326,
+  "high_frequency_profitable": 362,
+  "high_frequency_daily_profitable": 255,
+  "already_quote_replayed": 3,
+  "quote_replay_required": 359,
+  "maximum_loaded_date": "2026-04-30",
+  "holdout_rows_loaded": 0,
+  "broker_margin": false,
+  "warning": "Entry cadence uses entries divided by observed-months times 21; exact event ledgers must reconcile candidates before replay."
+}

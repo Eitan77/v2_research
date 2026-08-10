@@ -95,3 +95,18 @@ split_repaired_checkpoint:
   holdout_rows_loaded: 0
   promotion_ready: false
   strategy_title: Three moving averages
+individual_hf_extension:
+  status: rejected_inconsistent
+  variant: sp500__ma3_10_21__daily__top3__momentum
+  quote_0940_net_2bps: 0.7773916165
+  quote_maximum_drawdown: 0.2367002014
+  quote_worst_month: -0.351145
+  trade_session_fraction: 0.5936254980
+  promotion_ready: false
+  long_term_variant: sp500__ma10_50_200__daily__top3__momentum
+  long_term_quote_0940_net_2bps: 1.458162
+  long_term_quote_maximum_drawdown: 0.135920
+  long_term_trade_session_fraction: 0.306773
+  long_term_top5_positive_share: 0.882406
+  long_term_leave_top5_return: -0.019846
+  decision: rejected_sparse_and_concentrated

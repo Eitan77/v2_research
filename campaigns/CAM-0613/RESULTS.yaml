@@ -55,3 +55,11 @@ split_repaired_checkpoint:
   holdout_rows_loaded: 0
   promotion_ready: false
   strategy_title: Support and resistance
+individual_hf_extension:
+  status: passive_touch_not_queue_proof
+  bar_ranked_net_2bps: 1.21926
+  marketable_0940_net_0bps: -0.1711
+  sequential_0930_net_1bp_penetration_plus_1bp_cost: 0.002820
+  sequential_positive_months: 6
+  sequential_negative_months: 6
+  promotion_ready: false

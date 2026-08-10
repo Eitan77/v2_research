@@ -1,0 +1,60 @@
+{
+  "bars": [
+    {
+      "symbol": "SMH",
+      "minimum_date": "2019-06-21 00:00:00",
+      "maximum_date": "2026-04-30 00:00:00",
+      "row_count": 778804,
+      "date_count": 1776,
+      "feeds": 1,
+      "adjustments": 1
+    },
+    {
+      "symbol": "XLK",
+      "minimum_date": "2019-06-21 00:00:00",
+      "maximum_date": "2026-04-30 00:00:00",
+      "row_count": 771718,
+      "date_count": 1771,
+      "feeds": 1,
+      "adjustments": 1
+    }
+  ],
+  "bar_sample": [
+    {
+      "symbol": "SMH",
+      "timestamp": "2025-05-13T08:08:00Z",
+      "open": "235.66",
+      "high": "235.66",
+      "low": "235.57",
+      "close": "235.57",
+      "date": "2025-05-13",
+      "feed": "sip",
+      "adjustment": "raw"
+    },
+    {
+      "symbol": "SMH",
+      "timestamp": "2025-05-13T08:10:00Z",
+      "open": "235.38",
+      "high": "235.38",
+      "low": "235.38",
+      "close": "235.38",
+      "date": "2025-05-13",
+      "feed": "sip",
+      "adjustment": "raw"
+    },
+    {
+      "symbol": "SMH",
+      "timestamp": "2025-05-13T08:11:00Z",
+      "open": "235.38",
+      "high": "235.49",
+      "low": "235.38",
+      "close": "235.49",
+      "date": "2025-05-13",
+      "feed": "sip",
+      "adjustment": "raw"
+    }
+  ],
+  "quotes": [],
+  "maximum_allowed_date": "2026-04-30",
+  "holdout_rows_loaded": 0
+}
