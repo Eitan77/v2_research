@@ -140,3 +140,13 @@ def test_repaired_displayed_size_audit_handles_unit_change() -> None:
     assert report["ten_percent_displayed_size_all"]["p01_capital_dollars"]>20000
     assert report["ten_percent_displayed_size_all"]["p10_capital_dollars"]>80000
     assert report["holdout_rows_loaded"]==0
+
+
+def test_trade_episode_attribution_reconciles_and_is_not_few_trade_profit() -> None:
+    report=json.loads((ROOT/"campaigns"/"CAM-0625"/"artifacts"/"RUN-0032"/"execution_report.json").read_text(encoding="utf-8"))
+    assert abs(report["net_simple_return"]-0.39962722208704066)<1e-8
+    assert report["episodes"]>=300
+    assert report["positive_episodes"]>report["negative_episodes"]
+    assert report["top5_episode_positive_share"]<0.30
+    assert report["leave_top10_episodes_out_net"]>0.19
+    assert report["holdout_rows_loaded"]==0

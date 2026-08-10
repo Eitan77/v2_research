@@ -171,6 +171,14 @@ median; the observed minimum is $9.3k. These are single-snapshot top-of-book
 figures, not fills or capacity estimates. Queue position, replenishment, depth,
 partial fills, and market impact remain unmodeled.
 
+RUN-0032 reconstructs 365 contiguous campaign-symbol position episodes and
+reconciles them exactly to +39.9627% net. There are 255 profitable and 110 losing
+episodes (69.9% win rate), with a four-session median hold. The top five winners
+supply 28.4% of positive episode P&L; removing them leaves +26.08%, and removing
+the top ten leaves +19.08%. The largest episode, CAM-0600 APP, supplies 9.4%.
+Thus the recent ensemble result is not concentrated in only a few trades, though
+it remains exposed to correlated long-equity and technology regimes.
+
 The quote lake is a role-centered archive, so newly selected roles were matched
 against saved artifacts and then pulled from Alpaca only for the uncovered
 remainder. The remote pulls used 5-, 30-, and 120-second bounded windows, recorded
@@ -192,4 +200,4 @@ Reproducibility tables are in
 daily P&L, quote paths, invalid attempts, and execution reports are preserved in
 RUN-0020/RUN-0021/RUN-0023 and CAM-0625 RUN-0017 through RUN-0024.
 The post-checkpoint concentration and sleeve-dependence audits are preserved in
-CAM-0625 RUN-0025 through RUN-0031.
+CAM-0625 RUN-0025 through RUN-0032.

@@ -3,8 +3,8 @@
   "files": [
     {
       "path": "campaigns/CAM-0600/COMPREHENSIVE_REPORT_SPLIT_REPAIRED.md",
-      "bytes": 12276,
-      "sha256": "9293743180f4f2929d4136e041fb2d92933b6dfa7d251dcfcc969a42a26bb030"
+      "bytes": 12824,
+      "sha256": "f233c28c9dbadb3b74a0b001d6140bb35b2e1613096193ec7478d9c98f7c62c2"
     },
     {
       "path": "campaigns/CAM-0600/SPLIT_REPAIR_CONTRACT.yaml",
@@ -58,13 +58,13 @@
     },
     {
       "path": "campaigns/CAM-0625/RESULTS.yaml",
-      "bytes": 5127,
-      "sha256": "78b9a09a91370f428975143c448acfc9f9c2a03f98f6d26ac1236f225278bac7"
+      "bytes": 5599,
+      "sha256": "e2bc6f56ed2154f91d01ff45d316c9ec79d7dc50d68fc8b3bfac13c58c79edc3"
     },
     {
       "path": "campaigns/CAM-0625/REVIEW.md",
-      "bytes": 7495,
-      "sha256": "a9503ce068ed1b073995aaf0a5165ba66fb515fc1ce4dabb91826d0a879ed762"
+      "bytes": 8053,
+      "sha256": "7f1d5cbd3dcdbcdcc08f47c6bb013caf9409d81c5ceee72aa9691ce3f2978170"
     },
     {
       "path": "campaigns/CAM-0625/artifacts/RUN-0017/execution_report.json",
@@ -152,6 +152,16 @@
       "sha256": "354874aa0f84a75fbd1dc407ce2818fe54121a57618485d387891802c652b721"
     },
     {
+      "path": "campaigns/CAM-0625/artifacts/RUN-0032/execution_report.json",
+      "bytes": 4139,
+      "sha256": "fabbbde1fad76fd0666bb738e6b989bc5298435bec5f8b3ee8e77fa4eae34872"
+    },
+    {
+      "path": "campaigns/CAM-0625/artifacts/RUN-0032/trade_episode_daily_detail.parquet",
+      "bytes": 168306,
+      "sha256": "14596f4a251db58ae1aa9778bf52857ab4d59414eb62f3c6446cb750e369e62e"
+    },
+    {
       "path": "campaigns/CAM-0625/artifacts/checkpoint_split_repaired/equity_comparison.png",
       "bytes": 163390,
       "sha256": "a4390aad22acf237eb6f2dacc045fd0401b28f714cd75d382e043e50363649ce"
@@ -163,7 +173,7 @@
     }
   ],
   "tests": {
-    "scoped_pytest": "16 passed",
+    "scoped_pytest": "17 passed",
     "compileall": "passed",
     "repository_wide_collection": "not rerun; prior checkpoint blocked by unrelated legacy/reference import errors"
   },

@@ -60,6 +60,14 @@ the median; the minimum is $9.3k. These figures are only a top-of-book warning.
 They do not model queues, replenishment, depth, partial fills, or market impact,
 so prospective small-order tracking remains mandatory before capital sizing.
 
+The exact position-episode reconstruction closes the trade-concentration question.
+The +39.96% quote path contains 365 contiguous campaign-symbol episodes: 255
+winners and 110 losers, a 69.9% win rate, with a four-session median hold. The
+top five winners supply 28.4% of positive episode P&L; removing them leaves
++26.08% net, and removing the top ten leaves +19.08%. APP's long CAM-0600
+episode is the largest at 9.4% of positive episode P&L. This satisfies the narrow
+"not only a few trades" diagnostic, while symbol, regime, and selection risks remain.
+
 ## 2026-08-10 checkpoint
 
 CAM-0625 combines four whole mechanisms selected from the completed SSRN

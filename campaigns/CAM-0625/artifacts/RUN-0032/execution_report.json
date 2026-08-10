@@ -1,0 +1,131 @@
+{
+  "status": "completed",
+  "run_id": "RUN-0032",
+  "net_simple_return": 0.3996272220870408,
+  "episodes": 365,
+  "positive_episodes": 255,
+  "negative_episodes": 110,
+  "win_rate": 0.6986301369863014,
+  "median_holding_days": 4.0,
+  "top_episode_positive_share": 0.09427494781759647,
+  "top5_episode_positive_share": 0.28363731354594574,
+  "top10_episode_positive_share": 0.4267140636007418,
+  "leave_top_episode_out_net": 0.3534941881176628,
+  "leave_top5_episodes_out_net": 0.2608305414872781,
+  "leave_top10_episodes_out_net": 0.19081655873464998,
+  "top10": [
+    {
+      "campaign_id": "CAM-0600",
+      "symbol": "APP",
+      "episode_id": 1,
+      "start": "2025-05-13 00:00:00",
+      "end": "2026-01-02 00:00:00",
+      "holding_days": 161,
+      "gross_pnl": 0.05217360045015155,
+      "execution_adjustment": 0.006040566480773536,
+      "net_pnl": 0.04613303396937801
+    },
+    {
+      "campaign_id": "CAM-0600",
+      "symbol": "STX",
+      "episode_id": 2,
+      "start": "2026-04-09 00:00:00",
+      "end": "2026-04-30 00:00:00",
+      "holding_days": 16,
+      "gross_pnl": 0.025376433668077326,
+      "execution_adjustment": -0.0009673503879837384,
+      "net_pnl": 0.026343784056061064
+    },
+    {
+      "campaign_id": "CAM-0600",
+      "symbol": "STX",
+      "episode_id": 1,
+      "start": "2026-01-02 00:00:00",
+      "end": "2026-03-30 00:00:00",
+      "holding_days": 59,
+      "gross_pnl": 0.02958206072597413,
+      "execution_adjustment": 0.0042474676411576855,
+      "net_pnl": 0.02533459308481644
+    },
+    {
+      "campaign_id": "CAM-0600",
+      "symbol": "MU",
+      "episode_id": 2,
+      "start": "2026-04-09 00:00:00",
+      "end": "2026-04-30 00:00:00",
+      "holding_days": 16,
+      "gross_pnl": 0.02266409946181164,
+      "execution_adjustment": 0.0009711149480344451,
+      "net_pnl": 0.021692984513777196
+    },
+    {
+      "campaign_id": "CAM-0600",
+      "symbol": "WDC",
+      "episode_id": 2,
+      "start": "2026-04-09 00:00:00",
+      "end": "2026-04-30 00:00:00",
+      "holding_days": 16,
+      "gross_pnl": 0.018854616191646183,
+      "execution_adjustment": -0.00043766878408383887,
+      "net_pnl": 0.01929228497573002
+    },
+    {
+      "campaign_id": "CAM-0600",
+      "symbol": "WBD",
+      "episode_id": 1,
+      "start": "2025-11-03 00:00:00",
+      "end": "2026-01-02 00:00:00",
+      "holding_days": 41,
+      "gross_pnl": 0.016811709570957883,
+      "execution_adjustment": -5.022972451879112e-05,
+      "net_pnl": 0.016861939295476674
+    },
+    {
+      "campaign_id": "CAM-0624",
+      "symbol": "MU",
+      "episode_id": 1,
+      "start": "2025-11-03 00:00:00",
+      "end": "2026-04-30 00:00:00",
+      "holding_days": 123,
+      "gross_pnl": 0.015124308289036706,
+      "execution_adjustment": -0.00020609171740981609,
+      "net_pnl": 0.015330400006446521
+    },
+    {
+      "campaign_id": "CAM-0624",
+      "symbol": "WDC",
+      "episode_id": 1,
+      "start": "2026-01-02 00:00:00",
+      "end": "2026-04-30 00:00:00",
+      "holding_days": 82,
+      "gross_pnl": 0.014050251424920552,
+      "execution_adjustment": -4.2712593311185765e-05,
+      "net_pnl": 0.014092964018231737
+    },
+    {
+      "campaign_id": "CAM-0600",
+      "symbol": "MU",
+      "episode_id": 1,
+      "start": "2026-01-02 00:00:00",
+      "end": "2026-03-30 00:00:00",
+      "holding_days": 59,
+      "gross_pnl": 0.01915149239707333,
+      "execution_adjustment": 0.007022184228382853,
+      "net_pnl": 0.01212930816869048
+    },
+    {
+      "campaign_id": "CAM-0618",
+      "symbol": "XLK",
+      "episode_id": 3,
+      "start": "2026-04-06 00:00:00",
+      "end": "2026-04-30 00:00:00",
+      "holding_days": 19,
+      "gross_pnl": 0.011557189352738317,
+      "execution_adjustment": -4.2181911044388884e-05,
+      "net_pnl": 0.011599371263782705
+    }
+  ],
+  "maximum_loaded_date": "2026-04-30",
+  "holdout_rows_loaded": 0,
+  "interpretation": "Execution-adjusted contiguous campaign-symbol exposure episodes; overlapping sleeves are separate episodes."
+}

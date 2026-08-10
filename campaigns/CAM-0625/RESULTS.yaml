@@ -122,6 +122,20 @@ repaired_displayed_size_audit:
     p10: 83897
     median: 499995
   conclusion: top_of_book_warning_only_not_a_fill_capacity_depth_or_impact_claim
+trade_episode_attribution:
+  run_id: RUN-0032
+  quote_net_reconciled: 0.399627
+  episodes: 365
+  positive_episodes: 255
+  negative_episodes: 110
+  win_rate: 0.698630
+  median_holding_days: 4
+  top_episode_positive_share: 0.094275
+  top5_episode_positive_share: 0.283637
+  top10_episode_positive_share: 0.426714
+  leave_top5_episodes_out_net: 0.260831
+  leave_top10_episodes_out_net: 0.190817
+  conclusion: recent_profit_is_not_concentrated_in_only_a_few_position_episodes
 rejected_adaptations:
   - trailing_12m_positive_return_activation
   - trailing_12m_positive_and_7_of_12_positive_activation
