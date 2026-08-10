@@ -1,0 +1,77 @@
+version: 1
+frozen_at: '2026-08-09T23:25:00-07:00'
+run_id: RUN-0008
+parent_run: RUN-0003
+purpose: >-
+  User-directed deeper development loop across all 25 source strategies. Diagnose
+  alpha, execution, and portfolio construction separately; test broad causal
+  improvements without using the sealed holdout or selecting full-sample ticker winners.
+
+shared_rules:
+  discovery_cutoff: '2026-04-30'
+  sealed_holdout_start: '2026-05-01'
+  holdout_access: false
+  capital_base: 1.0
+  accounting: fixed_base_additive
+  broker_margin: false
+  maximum_gross_exposure: 1.0
+  costs_bps_per_side: [-1, 0, 1, 2, 5, 10]
+  primary_universe: point_in_time_sp500
+  comparison_universes: [point_in_time_qqq, declared_etfs]
+  execution_lag: next_open_after_completed_signal
+  selection_order:
+    - causal walk-forward and chronological stability
+    - recent 12, 15, and 18 month performance
+    - net fixed-base return and drawdown
+    - monthly and daily consistency
+    - trade and contributor distribution
+    - turnover and executable spread evidence
+  prohibited:
+    - May 2026 or later data access
+    - full-sample winning-ticker baskets
+    - overnight direct stock or ETF shorts
+    - broker margin
+    - post-result filter invention without a new frozen run record
+
+execution_correction:
+  issue: >-
+    RUN-0005/RUN-0007 marketable quote stress reset every active position daily.
+    That is a conservative execution stress, not the actual hold-shares turnover
+    path of monthly and multi-day strategies.
+  action: >-
+    Preserve the stress result and add a target-change quote replay that trades
+    only causal changes in target holdings. No passive touch credit is allowed.
+
+campaign_questions:
+  CAM-0600: [formation and skip horizon, top-N breadth, liquidity, absolute trend, panic-state defense, inverse-volatility sizing]
+  CAM-0601: [SUE holding clock, positive price confirmation, liquidity, breadth, post-announcement persistence]
+  CAM-0602: [value plus profitability, trend confirmation, breadth, holding period, value-trap avoidance]
+  CAM-0603: [low-volatility plus trend, positive momentum, liquidity, concentrated versus broad expression]
+  CAM-0604: [momentum-value-quality-low-volatility rank blends, breadth, trend confirmation]
+  CAM-0605: [residual-momentum breadth, absolute trend, liquidity, concentration]
+  CAM-0606: [economically related ETF pairs, dislocation severity, long-cheap expression, intraday feasibility]
+  CAM-0607: [residual severity, top-N losers, trend, liquidity, ETF versus stock clusters]
+  CAM-0608: [cluster-specific top-N residuals, severity, trend, liquidity]
+  CAM-0609: [weighted-residual top-N, severity, trend, liquidity]
+  CAM-0610: [single-MA active-universe ranking, slope, momentum, low-volatility, rebalance cadence]
+  CAM-0611: [two-MA active-universe ranking, crossover strength, breadth, cadence]
+  CAM-0612: [three-MA alignment strength, breadth, cadence, volatility]
+  CAM-0613: [pivot strength, prior trend, liquidity, volume confirmation, realistic intraday target path]
+  CAM-0614: [paper reversal versus acknowledged breakout, volume confirmation, trend, channel length, breadth]
+  CAM-0615: [expected-return horizon, covariance shrinkage, long-only positive sleeve, position cap]
+  CAM-0616: [intraday-only dollar-neutral signal, covariance shrinkage, stop and forced-close feasibility]
+  CAM-0617: [positive alpha-combo sleeve, breadth, alpha-history and forecast horizon]
+  CAM-0618: [sector formation and skip, breadth, cadence, positive absolute momentum]
+  CAM-0619: [sector momentum with own-asset trend, breadth, cadence, MA length]
+  CAM-0620: [dual momentum, defensive fallback, breadth, cadence, formation horizon]
+  CAM-0621: [cross-sectional and absolute IBS, trend, gap confirmation, liquid ETF subset]
+  CAM-0622: [volatility estimator, target, rebalance threshold, risky index, drawdown-state defense]
+  CAM-0623: [safest breadth, profitability, trend, size and liquidity, recent regime]
+  CAM-0624: [safest sleeve volatility target, estimator, breadth, profitability and trend]
+
+anti_overfit:
+  - Use conventional horizons and small structured grids tied to the questions above.
+  - Report every executed variant and the positive fraction, not only maxima.
+  - Freeze recent 12, 15, and 18 month windows before looking at new results.
+  - Require chronological folds and expanding walk-forward selection before quote spend.
+  - Treat any recent-only winner as adapted development evidence requiring unchanged forward confirmation.

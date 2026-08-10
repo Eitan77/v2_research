@@ -23,3 +23,15 @@ The result is interpreted as development evidence only. The audit separated long
 - Every profitable execution-qualified best adaptation received SIP quote replay; direct-short signal-only variants were not called executable.
 - Maximum loaded date is 2026-04-30 and holdout rows loaded are zero.
 - Promotion remains false.
+
+## 2026-08-10 deep-development checkpoint
+
+Paper section 3.1, **Price momentum**. Source contract: Rcum=P(S)/P(S+T)-1; normally T=12 months, S=1 month; buy top decile and optionally short bottom decile; normally hold one month; equal or inverse-volatility weights.
+
+The structured survivor `sp500__mom63_skip0__top3__liquid__panic1` earned +218.8% net at 2 bps over its available development history and +123.3% in the latest 12 months. Corrected 09:40 target-change SIP replay, with 2 bps additional adverse slippage per side, earned +123.1% with 13.5% drawdown, 11/1 positive/negative months, and 13.5% of positive P&L from the best five days.
+
+Selection activity covered 63.7% of dates and averaged 3.00 names when active. Status: `recent_momentum_component_promising_unpromoted`.
+
+Matched-control conclusion: Panic defense sacrifices return but cuts historical drawdown materially; retain as a risk overlay.
+
+This is adapted development evidence, not untouched out-of-sample evidence. No rows on or after 2026-05-01 were loaded, and promotion remains false.

@@ -1,0 +1,26 @@
+run_id: RUN-0002
+campaign_id: CAM-0625
+parent_run: RUN-0001
+status: completed
+change: Execute clerically corrected frozen ensemble.
+reason: RUN-0001 stopped before execution because the IBS identifier omitted hold3.
+expected_effect: Evaluate the unchanged four intended sleeves.
+configuration:
+  plan: campaigns/CAM-0625/PLAN.yaml
+  amendment: campaigns/CAM-0625/PLAN_AMENDMENT_0001.yaml
+  allocations:
+  - equal
+  - defensive_fixed
+  - causal_inverse_vol
+  cutoff: '2026-04-30'
+  holdout_access: false
+result:
+  variant_count: 3
+  full_history_start: '2021-05-03'
+  maximum_loaded_date: '2026-04-30'
+  quote_window:
+  - '2025-05-01'
+  - '2026-04-30'
+  holdout_rows_loaded: 0
+decision: Development-only ensemble evidence; audit all allocations and preserve without
+  promotion.

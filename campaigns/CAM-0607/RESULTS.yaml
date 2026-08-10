@@ -25,3 +25,34 @@ quote:
   negative_months: 4.0
   coverage_rate: 0.9941193766539254
 conclusion: profitable_but_fragile_unpromoted
+deep_development_checkpoint:
+  checkpoint: 2026-08-10_deep_development
+  paper_section: '3.9'
+  strategy: Single-cluster mean reversion
+  status: execution_sensitive_high_drawdown_unpromoted
+  promotion_ready: false
+  development_only: true
+  maximum_loaded_date: '2026-04-30'
+  holdout_rows_loaded: 0
+  broker_margin_used: false
+  selected:
+    variant: etf__long_cheap_r2__top1__z1__trend0
+    full_history_net_2bps: 3.0485405953615663
+    full_history_maximum_drawdown: 0.2198220875541768
+    recent12_net_2bps: 0.7872816467862238
+    recent12_historical_percentile: 0.7922077922077922
+    positive_rolling12_fraction: 0.8571428571428571
+    target_active_date_fraction: 0.962882096069869
+    average_names_per_active_date: 1.0
+  quote_0940_target_change:
+    additional_slippage_bps_per_side: 2
+    net_simple_return: 0.2512686923042891
+    maximum_drawdown: 0.3002210618639839
+    positive_months: 8
+    negative_months: 4
+    active_days: 239
+    top5_day_positive_share: 0.2036492907804742
+    role_coverage: 1.0
+  matched_control: null
+  conclusion: No strategy is promoted; evidence is adapted development data and the
+    sealed holdout remains untouched.

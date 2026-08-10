@@ -23,3 +23,13 @@ The result is interpreted as development evidence only. The audit separated long
 - Every profitable execution-qualified best adaptation received SIP quote replay; direct-short signal-only variants were not called executable.
 - Maximum loaded date is 2026-04-30 and holdout rows loaded are zero.
 - Promotion remains false.
+
+## 2026-08-10 deep-development checkpoint
+
+Paper section 3.8, **Pairs trading**. Source contract: Choose historically highly correlated pair; demean its completed simple or log returns; short positive demeaned rich leg and buy negative demeaned cheap leg; dollar neutral and gross normalized.
+
+No structured survivor cleared the mechanism, cost, and recent-consistency screen after the repair loop.
+
+Status: `retired_mechanism_exhausted`.
+
+This is adapted development evidence, not untouched out-of-sample evidence. No rows on or after 2026-05-01 were loaded, and promotion remains false.

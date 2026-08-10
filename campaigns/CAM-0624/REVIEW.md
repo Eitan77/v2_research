@@ -23,3 +23,13 @@ The result is interpreted as development evidence only. The audit separated long
 - Every profitable execution-qualified best adaptation received SIP quote replay; direct-short signal-only variants were not called executable.
 - Maximum loaded date is 2026-04-30 and holdout rows loaded are zero.
 - Promotion remains false.
+
+## 2026-08-10 deep-development checkpoint
+
+Paper section 15.3.1, **Distress risk management**. Source contract: Scale HMD by target volatility divided by prior-year realized daily HMD volatility; target normally 10 to 15 percent.
+
+The structured survivor `qqq__chs_safe__top5__liquid__target8` earned +50.5% net at 2 bps over its available development history and +17.8% in the latest 12 months. Corrected 09:40 target-change SIP replay, with 2 bps additional adverse slippage per side, earned +17.5% with 3.7% drawdown, 9/3 positive/negative months, and 12.2% of positive P&L from the best five days.
+
+Selection activity covered 85.0% of dates and averaged 5.00 names when active. Status: `low_drawdown_distress_component_unpromoted`.
+
+This is adapted development evidence, not untouched out-of-sample evidence. No rows on or after 2026-05-01 were loaded, and promotion remains false.

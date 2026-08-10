@@ -1,0 +1,46 @@
+{
+  "status": "completed",
+  "run_id": "RUN-0009",
+  "metrics": [
+    {
+      "rule": "equal",
+      "days": 1252,
+      "intercept_daily": 0.0005252791387753028,
+      "intercept_annualized_additive": 0.13237034297137631,
+      "beta_SPY_multivariate": 0.3077053039212697,
+      "beta_QQQ_multivariate": -0.262439274663376,
+      "beta_SMH_multivariate": 0.24301927672009405,
+      "beta_TLT_multivariate": 0.024208007277361977,
+      "r_squared": 0.31313655154940223,
+      "residual_net_simple_return": -1.2082002065483266e-13,
+      "portfolio_return_SPY_up_days": 3.2774414015444764,
+      "portfolio_return_SPY_down_days": -2.2243970325765288,
+      "portfolio_return_SPY_bottom5pct_days": -0.4208567954540666,
+      "correlation_SPY": 0.491750536101081,
+      "correlation_QQQ": 0.4926753502896574,
+      "correlation_SMH": 0.5477951160097582,
+      "correlation_TLT": 0.03840835220812841
+    },
+    {
+      "rule": "causal_inverse_vol",
+      "days": 1252,
+      "intercept_daily": 0.0003550237998200964,
+      "intercept_annualized_additive": 0.08946599755466429,
+      "beta_SPY_multivariate": 0.25136431096169354,
+      "beta_QQQ_multivariate": -0.12562174334276693,
+      "beta_SMH_multivariate": 0.17261058624480258,
+      "beta_TLT_multivariate": 0.013843473417911015,
+      "r_squared": 0.3981756299565836,
+      "residual_net_simple_return": -1.1488032747308807e-13,
+      "portfolio_return_SPY_up_days": 2.9455579517816863,
+      "portfolio_return_SPY_down_days": -2.1506397976513183,
+      "portfolio_return_SPY_bottom5pct_days": -0.5039066106671657,
+      "correlation_SPY": 0.5829710904021472,
+      "correlation_QQQ": 0.5869140991460338,
+      "correlation_SMH": 0.6177842780343109,
+      "correlation_TLT": 0.040449817964851406
+    }
+  ],
+  "maximum_loaded_date": "2026-04-30",
+  "holdout_rows_loaded": 0
+}

@@ -1,0 +1,66 @@
+campaign_id: CAM-0625
+checkpoint: '2026-08-10'
+status: promising_recent_regime_ensemble_unpromoted
+promotion_ready: false
+development_only: true
+maximum_loaded_date: '2026-04-30'
+holdout_rows_loaded: 0
+broker_margin_used: false
+core_rule: equal_four_sleeve
+core_sleeves: [CAM-0600, CAM-0604, CAM-0621, CAM-0624]
+full_history:
+  start: '2021-05-03'
+  net_simple_return: 1.074337
+  maximum_drawdown: 0.090150
+  positive_months: 38
+  negative_months: 22
+quote_0940_2bps_extra:
+  start: '2025-05-01'
+  end: '2026-04-30'
+  net_simple_return: 0.526018
+  maximum_drawdown: 0.055659
+  positive_months: 10
+  negative_months: 2
+  top5_day_positive_share: 0.125179
+causal_inverse_vol_quote_0940_2bps_extra:
+  net_simple_return: 0.399548
+  maximum_drawdown: 0.042604
+  positive_months: 11
+  negative_months: 1
+  top5_day_positive_share: 0.116455
+execution_stress_10bps_extra:
+  equal_net_simple_return: 0.498962
+  equal_maximum_drawdown: 0.056824
+  causal_inverse_vol_net_simple_return: 0.374911
+  causal_inverse_vol_maximum_drawdown: 0.043554
+capacity_snapshot:
+  model: 10_percent_of_single_displayed_0940_nbbo
+  role_p10_capital_dollars: 1735.66
+  role_median_capital_dollars: 86806.07
+  interpretation: snapshot_liquidity_floor_not_capacity_claim
+market_exposure:
+  equal_simple_SPY_beta: 0.3982
+  equal_simple_SMH_beta: 0.2175
+  equal_multivariate_r_squared: 0.3131
+  causal_inverse_vol_simple_SPY_beta: 0.3917
+  causal_inverse_vol_simple_SMH_beta: 0.2035
+  causal_inverse_vol_multivariate_r_squared: 0.3982
+  interpretation: partially_defensive_long_equity_not_market_neutral
+rejected_overlay:
+  rule: prior_close_SPY_above_SMA100_150_200
+  reason: lowered full-history return and did not reduce drawdown reliably
+universe_substitution:
+  sp500_momentum_sp500_multifactor: {net: 1.0743, drawdown: 0.0902}
+  sp500_momentum_qqq_multifactor: {net: 1.0189, drawdown: 0.1048}
+  qqq_momentum_sp500_multifactor: {net: 0.7264, drawdown: 0.1779}
+  qqq_momentum_qqq_multifactor: {net: 0.6709, drawdown: 0.2008}
+  interpretation: material_dependence_on_provisional_SP500_momentum_universe
+block_bootstrap_21x252:
+  draws: 20000
+  equal: {return_p05: 0.0251, drawdown_p95: 0.1328, probability_dd_above_20pct: 0.00285}
+  causal_inverse_vol: {return_p05: 0.0063, drawdown_p95: 0.1230, probability_dd_above_20pct: 0.00155}
+  interpretation: descriptive_stationary_mixture_not_forecast
+conclusion: >-
+  Best development lead in the SSRN series. Preserve unchanged for forward
+  paper validation; do not promote or access the sealed holdout without a new
+  explicit authorization and frozen purpose.

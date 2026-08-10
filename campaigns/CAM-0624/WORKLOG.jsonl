@@ -3,3 +3,5 @@
 {"timestamp_utc": "2026-08-07T02:15:23.865668+00:00", "run_id": "RUN-0003", "event": "robustness_completed", "decision": "profitable_but_fragile_quote_gate"}
 {"timestamp_utc": "2026-08-07T02:15:23.866422+00:00", "run_id": "RUN-0007", "event": "quote_replay_completed", "net": -0.2777697018755558}
 {"timestamp_utc": "2026-08-07T02:15:23.866422+00:00", "run_id": "FINAL", "event": "campaign_checkpoint", "decision": "retired_quote_execution_failure"}
+{"decision": "provisional_target_change_quote_gate", "holdout_rows_loaded": 0, "run_id": "RUN-0008", "selected_variant": "qqq__chs_safe__top5__liquid__target8", "status": "completed"}
+{"ts": "2026-08-10T00:28:16.484255-07:00", "run_id": "RUN-0009", "event": "completed", "net_simple_return": 0.1750609269087059, "clock": "09:40", "extra_bps": 2, "holdout_rows_loaded": 0}

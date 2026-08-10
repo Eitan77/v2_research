@@ -1,0 +1,10 @@
+{
+  "status": "completed",
+  "run_id": "RUN-0003",
+  "executed_variants": 80,
+  "maximum_loaded_date": "2026-04-30",
+  "holdout_rows_loaded": 0,
+  "broker_margin": false,
+  "metrics_file": "stress_metrics.csv",
+  "bootstrap_file": "monthly_bootstrap.json"
+}

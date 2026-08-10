@@ -1,0 +1,36 @@
+contract_id: CAM-0600-CONTROL-20260810
+status: frozen
+frozen_local: '2026-08-10T00:15:00-07:00'
+purpose: >-
+  Challenge the apparent deep-development survivors with simpler mechanism
+  controls, component ablations, breadth neighborhoods, and leverage removal.
+discovery_cutoff: '2026-04-30'
+sealed_holdout_start: '2026-05-01'
+campaigns:
+  CAM-0600: momentum formation, skip, breadth, and panic-defense neighborhoods
+  CAM-0602: value-quality component ablations and breadth
+  CAM-0604: four-factor component ablations and breadth
+  CAM-0610: single-MA trend gate versus identical ungated momentum rank
+  CAM-0611: dual-MA trend gate versus identical ungated momentum rank
+  CAM-0612: triple-MA trend gate versus identical ungated momentum rank
+  CAM-0615: covariance optimizer versus identical simple momentum rank
+  CAM-0616: adapted positive sleeve versus identical simple momentum rank
+  CAM-0617: alpha combination with leveraged and inverse ETFs removed
+  CAM-0619: absolute sector momentum versus no absolute gate and broad SPY
+  CAM-0620: dual market gate versus identical ungated sector momentum
+  CAM-0623: distress score versus profitability, low-volatility, and momentum controls
+costs_bps_per_side: [-1, 0, 1, 2, 5, 10]
+capital_base: 1.0
+accounting: additive_simple_pnl
+broker_margin: false
+overnight_direct_short: false
+selection_rule: >-
+  Prefer a broad parameter neighborhood with positive recent and full-history
+  evidence at 10 bps; do not select a variant solely because it maximizes return.
+conclusion_gate:
+  - report incremental value versus simpler control
+  - report breadth and concentration
+  - report recent 12-month path
+  - deduplicate daily correlations above 0.80
+  - preserve negative and invalid controls
+holdout_access: false

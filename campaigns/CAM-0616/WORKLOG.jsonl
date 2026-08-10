@@ -2,3 +2,7 @@
 {"timestamp_utc": "2026-08-07T02:15:23.492686+00:00", "run_id": "RUN-0002", "event": "adaptation_completed", "selected_2bps": null}
 {"timestamp_utc": "2026-08-07T02:15:23.492686+00:00", "run_id": "RUN-0003", "event": "robustness_completed", "decision": "execution_blocked_signal_only"}
 {"timestamp_utc": "2026-08-07T02:15:23.492686+00:00", "run_id": "FINAL", "event": "campaign_checkpoint", "decision": "stopped_nonexecutable_short_signal"}
+{"decision": "provisional_target_change_quote_gate", "holdout_rows_loaded": 0, "run_id": "RUN-0008", "selected_variant": "qqq__fullcov_s50__mom60__positive_top10", "status": "completed"}
+{"ts": "2026-08-10T00:28:16.412466-07:00", "run_id": "RUN-0009", "event": "completed", "net_simple_return": 0.338826861351149, "clock": "09:40", "extra_bps": 2, "holdout_rows_loaded": 0}
+{"ts": "2026-08-10T00:28:35.520540-07:00", "run_id": "RUN-0012", "event": "completed", "decision": "The executable long-only sleeve is a momentum proxy; signed source identity remains non-executable overnight.", "holdout_rows_loaded": 0}
+{"ts": "2026-08-10T00:48:06.966629-07:00", "run_id": "RUN-0012", "event": "completed", "decision": "The executable long-only sleeve is a momentum proxy; signed source identity remains non-executable overnight.", "holdout_rows_loaded": 0}

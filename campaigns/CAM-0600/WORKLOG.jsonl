@@ -3,3 +3,7 @@
 {"timestamp_utc": "2026-08-07T02:15:22.783438+00:00", "run_id": "RUN-0003", "event": "robustness_completed", "decision": "profitable_but_fragile_quote_gate"}
 {"timestamp_utc": "2026-08-07T02:15:22.783438+00:00", "run_id": "RUN-0005", "event": "quote_replay_completed", "net": 0.4136763956032787}
 {"timestamp_utc": "2026-08-07T02:15:22.783438+00:00", "run_id": "FINAL", "event": "campaign_checkpoint", "decision": "promising_unpromoted_candidate"}
+{"decision": "provisional_target_change_quote_gate", "holdout_rows_loaded": 0, "run_id": "RUN-0008", "selected_variant": "sp500__mom63_skip0__top3__liquid__panic1", "status": "completed"}
+{"ts": "2026-08-10T00:28:16.283902-07:00", "run_id": "RUN-0009", "event": "completed", "net_simple_return": 1.2305489938735057, "clock": "09:40", "extra_bps": 2, "holdout_rows_loaded": 0}
+{"ts": "2026-08-10T00:28:35.360140-07:00", "run_id": "RUN-0012", "event": "completed", "decision": "Panic defense sacrifices return but cuts historical drawdown materially; retain as a risk overlay.", "holdout_rows_loaded": 0}
+{"ts": "2026-08-10T00:48:06.794329-07:00", "run_id": "RUN-0012", "event": "completed", "decision": "Panic defense sacrifices return but cuts historical drawdown materially; retain as a risk overlay.", "holdout_rows_loaded": 0}

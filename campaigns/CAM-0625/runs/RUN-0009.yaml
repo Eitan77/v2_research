@@ -1,0 +1,29 @@
+run_id: RUN-0009
+campaign_id: CAM-0625
+parent_run: RUN-0008
+status: invalid
+change: Market and cross-asset exposure attribution for the four-sleeve ensemble.
+reason: High recent returns may be repackaged equity, technology, or semiconductor
+  beta rather than independent alpha.
+expected_effect: Quantify simple and multivariate betas, residual return, up/down-market
+  behavior, and tail dependence.
+configuration:
+  portfolio_rules:
+  - equal
+  - causal_inverse_vol
+  benchmark_returns:
+  - SPY
+  - QQQ
+  - SMH
+  - TLT
+  regression: daily OLS with intercept on common development dates
+  regime_views:
+  - SPY_up_days
+  - SPY_down_days
+  - SPY_bottom_5pct_days
+  cutoff: '2026-04-30'
+  holdout_access: false
+result:
+  interpretation_blocker: Reported residual sum is mechanically zero in OLS with an
+    intercept; replace with intercept, simple betas, and downside capture.
+decision: Do not interpret RUN-0009; preserved under invalid artifact label.

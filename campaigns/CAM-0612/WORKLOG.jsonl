@@ -3,3 +3,7 @@
 {"timestamp_utc": "2026-08-07T02:15:23.324743+00:00", "run_id": "RUN-0003", "event": "robustness_completed", "decision": "robust_development_candidate_quote_gate"}
 {"timestamp_utc": "2026-08-07T02:15:23.324743+00:00", "run_id": "RUN-0007", "event": "quote_replay_completed", "net": 0.0946256965840201}
 {"timestamp_utc": "2026-08-07T02:15:23.324743+00:00", "run_id": "FINAL", "event": "campaign_checkpoint", "decision": "execution_sensitive_unpromoted"}
+{"decision": "provisional_target_change_quote_gate", "holdout_rows_loaded": 0, "run_id": "RUN-0008", "selected_variant": "qqq__ma10_50_200__monthly__top3__momentum", "status": "completed"}
+{"ts": "2026-08-10T00:28:16.386989-07:00", "run_id": "RUN-0009", "event": "completed", "net_simple_return": 0.9482490651522631, "clock": "09:40", "extra_bps": 2, "holdout_rows_loaded": 0}
+{"ts": "2026-08-10T00:28:35.476182-07:00", "run_id": "RUN-0012", "event": "completed", "decision": "The triple-MA increment is small and remains highly correlated with ordinary momentum.", "holdout_rows_loaded": 0}
+{"ts": "2026-08-10T00:48:06.919266-07:00", "run_id": "RUN-0012", "event": "completed", "decision": "The selected triple-MA rule materially trails ungated momentum and barely changes drawdown; it is a filtered momentum expression, not a distinct edge.", "holdout_rows_loaded": 0}

@@ -23,3 +23,13 @@ The result is interpreted as development evidence only. The audit separated long
 - Every profitable execution-qualified best adaptation received SIP quote replay; direct-short signal-only variants were not called executable.
 - Maximum loaded date is 2026-04-30 and holdout rows loaded are zero.
 - Promotion remains false.
+
+## 2026-08-10 deep-development checkpoint
+
+Paper section 3.7, **Residual momentum**. Source contract: Regress 36 monthly excess returns on FF3 with intercept; compute 12-month residuals with one-month skip excluding the fitted intercept; rank residual mean/residual volatility; normally hold one month.
+
+The structured survivor `qqq__resmom__top3__liquid` earned +115.9% net at 2 bps over its available development history and +30.3% in the latest 12 months. Corrected 09:40 target-change SIP replay, with 2 bps additional adverse slippage per side, earned +28.4% with 22.5% drawdown, 9/3 positive/negative months, and 15.5% of positive P&L from the best five days.
+
+Selection activity covered 54.6% of dates and averaged 3.00 names when active. Status: `fragile_high_drawdown_unpromoted`.
+
+This is adapted development evidence, not untouched out-of-sample evidence. No rows on or after 2026-05-01 were loaded, and promotion remains false.

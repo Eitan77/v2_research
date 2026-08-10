@@ -1,0 +1,40 @@
+{
+  "status": "passed",
+  "campaigns": 4,
+  "trade_rows": 1522,
+  "roles": 1379,
+  "symbols": 76,
+  "minimum_session": "2025-05-01",
+  "maximum_session": "2026-04-29",
+  "holdout_rows_loaded": 0,
+  "reports": [
+    {
+      "campaign_id": "CAM-0608",
+      "variant_id": "qqq__slow_residual_r10__top10__monthly",
+      "holding": "open_to_next_open",
+      "trade_roles": 221,
+      "maximum_gross": 1.0000000000000002
+    },
+    {
+      "campaign_id": "CAM-0609",
+      "variant_id": "qqq__slow_residual_r10__top10__monthly",
+      "holding": "open_to_next_open",
+      "trade_roles": 211,
+      "maximum_gross": 1.0000000000000002
+    },
+    {
+      "campaign_id": "CAM-0617",
+      "variant_id": "etf__alpha_M20_E5__top5__monthly__trend0",
+      "holding": "open_to_next_open",
+      "trade_roles": 102,
+      "maximum_gross": 1.0000000000000002
+    },
+    {
+      "campaign_id": "CAM-0621",
+      "variant_id": "etf__ibs30__top5__hold3__trend1",
+      "holding": "open_to_next_open",
+      "trade_roles": 988,
+      "maximum_gross": 1.0
+    }
+  ]
+}

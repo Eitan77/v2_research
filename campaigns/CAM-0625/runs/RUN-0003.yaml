@@ -1,0 +1,286 @@
+run_id: RUN-0003
+campaign_id: CAM-0625
+parent_run: RUN-0002
+status: completed
+change: Prespecified execution-cost, clock, and leave-one-sleeve-out stress.
+reason: Challenge whether the ensemble survives higher costs, entry delay, and removal
+  of any single source campaign.
+expected_effect: A credible ensemble should remain positive at 5 and 10 bps extra
+  and should not require one sleeve for all profits.
+configuration:
+  clocks:
+  - 09:30
+  - 09:40
+  additional_slippage_bps_per_side:
+  - 0
+  - 2
+  - 5
+  - 10
+  allocations:
+  - equal
+  - causal_inverse_vol
+  leave_one_out: true
+  block_unit: calendar_month
+  bootstrap_draws: 10000
+  bootstrap_seed: 6252026
+  cutoff: '2026-04-30'
+  holdout_access: false
+result:
+  executed_variants: 80
+  holdout_rows_loaded: 0
+  all_sleeve_rows:
+  - clock: 0930
+    extra_slippage_bps_per_side: 0.0
+    rule: equal
+    sleeves: all
+    net_simple_return: 0.48309519092536674
+    maximum_drawdown: 0.059036568430032126
+    green_days: 149
+    red_days: 102
+    positive_months: 10
+    negative_months: 2
+    worst_month: -0.02334887930019066
+    best_month: 0.13911787998290012
+    monthly_std: 0.04509774540602882
+    top5_day_positive_share: 0.13351672406560336
+  - clock: 0930
+    extra_slippage_bps_per_side: 0.0
+    rule: causal_inverse_vol
+    sleeves: all
+    net_simple_return: 0.3668214771096959
+    maximum_drawdown: 0.04552694568945948
+    green_days: 152
+    red_days: 99
+    positive_months: 11
+    negative_months: 1
+    worst_month: -0.01757844640534281
+    best_month: 0.08381964132945963
+    monthly_std: 0.028869048558406905
+    top5_day_positive_share: 0.12348810605077279
+  - clock: 0930
+    extra_slippage_bps_per_side: 2.0
+    rule: equal
+    sleeves: all
+    net_simple_return: 0.4763312203799311
+    maximum_drawdown: 0.05933870666338629
+    green_days: 149
+    red_days: 102
+    positive_months: 10
+    negative_months: 2
+    worst_month: -0.024084142985081526
+    best_month: 0.13847561196486277
+    monthly_std: 0.045074816748337805
+    top5_day_positive_share: 0.13377873294873993
+  - clock: 0930
+    extra_slippage_bps_per_side: 2.0
+    rule: causal_inverse_vol
+    sleeves: all
+    net_simple_return: 0.3606285961783684
+    maximum_drawdown: 0.04577810410085119
+    green_days: 152
+    red_days: 99
+    positive_months: 10
+    negative_months: 2
+    worst_month: -0.018152819537074948
+    best_month: 0.08323663848740889
+    monthly_std: 0.028847192565920717
+    top5_day_positive_share: 0.12379224265827157
+  - clock: 0930
+    extra_slippage_bps_per_side: 5.0
+    rule: equal
+    sleeves: all
+    net_simple_return: 0.46618526456177767
+    maximum_drawdown: 0.05979501231101976
+    green_days: 149
+    red_days: 102
+    positive_months: 10
+    negative_months: 2
+    worst_month: -0.025187038512417832
+    best_month: 0.13751220993780672
+    monthly_std: 0.045040928537290435
+    top5_day_positive_share: 0.1341749724837547
+  - clock: 0930
+    extra_slippage_bps_per_side: 5.0
+    rule: causal_inverse_vol
+    sleeves: all
+    net_simple_return: 0.3513386423381138
+    maximum_drawdown: 0.046157461749315884
+    green_days: 152
+    red_days: 99
+    positive_months: 10
+    negative_months: 2
+    worst_month: -0.01901444286163891
+    best_month: 0.08236204733861417
+    monthly_std: 0.02881493154574627
+    top5_day_positive_share: 0.12425286433102846
+  - clock: 0930
+    extra_slippage_bps_per_side: 10.0
+    rule: equal
+    sleeves: all
+    net_simple_return: 0.44927533819818866
+    maximum_drawdown: 0.06056389759435293
+    green_days: 149
+    red_days: 102
+    positive_months: 10
+    negative_months: 2
+    worst_month: -0.02702519772464502
+    best_month: 0.13590653989271334
+    monthly_std: 0.044985797618429614
+    top5_day_positive_share: 0.1348441173515558
+  - clock: 0930
+    extra_slippage_bps_per_side: 10.0
+    rule: causal_inverse_vol
+    sleeves: all
+    net_simple_return: 0.335854969766757
+    maximum_drawdown: 0.046796714942020465
+    green_days: 152
+    red_days: 99
+    positive_months: 10
+    negative_months: 2
+    worst_month: -0.020450613308861765
+    best_month: 0.08090426721791505
+    monthly_std: 0.02876257289739376
+    top5_day_positive_share: 0.12503250075193822
+  - clock: 0940
+    extra_slippage_bps_per_side: 0.0
+    rule: equal
+    sleeves: all
+    net_simple_return: 0.5327822910919514
+    maximum_drawdown: 0.055371891903402144
+    green_days: 150
+    red_days: 101
+    positive_months: 10
+    negative_months: 2
+    worst_month: -0.014244323394825207
+    best_month: 0.14133737971673532
+    monthly_std: 0.04367964425254437
+    top5_day_positive_share: 0.12494753466397018
+  - clock: 0940
+    extra_slippage_bps_per_side: 0.0
+    rule: causal_inverse_vol
+    sleeves: all
+    net_simple_return: 0.405707178335519
+    maximum_drawdown: 0.0423701245609683
+    green_days: 156
+    red_days: 95
+    positive_months: 11
+    negative_months: 1
+    worst_month: -0.008969527549183082
+    best_month: 0.08658335887942716
+    monthly_std: 0.028146382157808267
+    top5_day_positive_share: 0.11617679542122764
+  - clock: 0940
+    extra_slippage_bps_per_side: 2.0
+    rule: equal
+    sleeves: all
+    net_simple_return: 0.5260183205465159
+    maximum_drawdown: 0.055659143800174456
+    green_days: 150
+    red_days: 101
+    positive_months: 10
+    negative_months: 2
+    worst_month: -0.014767326599062752
+    best_month: 0.14069511169869794
+    monthly_std: 0.04364742022316837
+    top5_day_positive_share: 0.1251785022338164
+  - clock: 0940
+    extra_slippage_bps_per_side: 2.0
+    rule: causal_inverse_vol
+    sleeves: all
+    net_simple_return: 0.3995483594318383
+    maximum_drawdown: 0.04260435890170005
+    green_days: 156
+    red_days: 95
+    positive_months: 11
+    negative_months: 1
+    worst_month: -0.009544392966334352
+    best_month: 0.08600669833669718
+    monthly_std: 0.02811935872886493
+    top5_day_positive_share: 0.11645510017727972
+  - clock: 0940
+    extra_slippage_bps_per_side: 5.0
+    rule: equal
+    sleeves: all
+    net_simple_return: 0.5158723647283623
+    maximum_drawdown: 0.05609291762611115
+    green_days: 149
+    red_days: 102
+    positive_months: 10
+    negative_months: 2
+    worst_month: -0.01555183140541907
+    best_month: 0.13973170967164195
+    monthly_std: 0.043599583594600734
+    top5_day_positive_share: 0.12552617666988677
+  - clock: 0940
+    extra_slippage_bps_per_side: 5.0
+    rule: causal_inverse_vol
+    sleeves: all
+    net_simple_return: 0.3903094361611106
+    maximum_drawdown: 0.0429581703107588
+    green_days: 154
+    red_days: 97
+    positive_months: 11
+    negative_months: 1
+    worst_month: -0.010406733007658986
+    best_month: 0.08514154480445912
+    monthly_std: 0.02807934951003195
+    top5_day_positive_share: 0.11686943929203694
+  - clock: 0940
+    extra_slippage_bps_per_side: 10.0
+    rule: equal
+    sleeves: all
+    net_simple_return: 0.49896243836477333
+    maximum_drawdown: 0.05682370112973252
+    green_days: 148
+    red_days: 103
+    positive_months: 10
+    negative_months: 2
+    worst_month: -0.016859339416012937
+    best_month: 0.13812603962654854
+    monthly_std: 0.04352119251912813
+    top5_day_positive_share: 0.1261088351170151
+  - clock: 0940
+    extra_slippage_bps_per_side: 10.0
+    rule: causal_inverse_vol
+    sleeves: all
+    net_simple_return: 0.374910598055592
+    maximum_drawdown: 0.043554425443371333
+    green_days: 153
+    red_days: 98
+    positive_months: 11
+    negative_months: 1
+    worst_month: -0.011844039890126192
+    best_month: 0.0836992843334191
+    monthly_std: 0.028014091978738997
+    top5_day_positive_share: 0.1175639212577716
+  bootstrap:
+    0930_equal:
+      draws: 10000
+      months: 12
+      probability_positive_12_month_sum: 0.9997
+      p05_12_month_sum: 0.2373423426556405
+      median_12_month_sum: 0.4740056619150669
+      p95_12_month_sum: 0.733041296629573
+    0930_causal_inverse_vol:
+      draws: 10000
+      months: 12
+      probability_positive_12_month_sum: 1.0
+      p05_12_month_sum: 0.20496840775201366
+      median_12_month_sum: 0.3595544961610494
+      p95_12_month_sum: 0.5209072469175046
+    0940_equal:
+      draws: 10000
+      months: 12
+      probability_positive_12_month_sum: 1.0
+      p05_12_month_sum: 0.30005523863859285
+      median_12_month_sum: 0.5216108182219563
+      p95_12_month_sum: 0.7739034063407386
+    0940_causal_inverse_vol:
+      draws: 10000
+      months: 12
+      probability_positive_12_month_sum: 1.0
+      p05_12_month_sum: 0.24749819021270134
+      median_12_month_sum: 0.3982610870971924
+      p95_12_month_sum: 0.5590663796628393
+decision: Interpret only after reviewing cost monotonicity and every leave-one-out
+  path.

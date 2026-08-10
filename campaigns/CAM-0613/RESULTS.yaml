@@ -17,3 +17,18 @@ adaptation:
   walk_forward_return: -0.2864222187074569
 quote: null
 conclusion: retired_mechanism_exhausted
+deep_development_checkpoint:
+  checkpoint: 2026-08-10_deep_development
+  paper_section: '3.14'
+  strategy: Support and resistance
+  status: retired_mechanism_exhausted
+  promotion_ready: false
+  development_only: true
+  maximum_loaded_date: '2026-04-30'
+  holdout_rows_loaded: 0
+  broker_margin_used: false
+  selected: null
+  quote_0940_target_change: null
+  matched_control: null
+  conclusion: No strategy is promoted; evidence is adapted development data and the
+    sealed holdout remains untouched.

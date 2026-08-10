@@ -2,3 +2,5 @@
 {"timestamp_utc": "2026-08-07T02:15:23.048894+00:00", "run_id": "RUN-0002", "event": "adaptation_completed", "selected_2bps": null}
 {"timestamp_utc": "2026-08-07T02:15:23.048894+00:00", "run_id": "RUN-0003", "event": "robustness_completed", "decision": "mechanism_failed_after_adaptation"}
 {"timestamp_utc": "2026-08-07T02:15:23.048894+00:00", "run_id": "FINAL", "event": "campaign_checkpoint", "decision": "retired_mechanism_exhausted"}
+{"decision": "identity_blocked_requires_pair_run", "holdout_rows_loaded": 0, "run_id": "RUN-0008", "selected_variant": null, "status": "completed"}
+{"decision": "repair_failed_no_structured_survivor", "holdout_rows_loaded": 0, "run_id": "RUN-0010", "selected_variant": null, "status": "completed"}

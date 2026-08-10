@@ -23,3 +23,13 @@ The result is interpreted as development evidence only. The audit separated long
 - Every profitable execution-qualified best adaptation received SIP quote replay; direct-short signal-only variants were not called executable.
 - Maximum loaded date is 2026-04-30 and holdout rows loaded are zero.
 - Promotion remains false.
+
+## 2026-08-10 deep-development checkpoint
+
+Paper section 3.9, **Single-cluster mean reversion**. Source contract: For one correlated N-stock cluster, demean log returns; positions Di=-gamma*(Ri-mean(R)); choose gamma so sum(abs(Di))=I; automatically dollar neutral.
+
+The structured survivor `etf__long_cheap_r2__top1__z1__trend0` earned +304.9% net at 2 bps over its available development history and +78.7% in the latest 12 months. Corrected 09:40 target-change SIP replay, with 2 bps additional adverse slippage per side, earned +25.1% with 30.0% drawdown, 8/4 positive/negative months, and 20.4% of positive P&L from the best five days.
+
+Selection activity covered 96.3% of dates and averaged 1.00 names when active. Status: `execution_sensitive_high_drawdown_unpromoted`.
+
+This is adapted development evidence, not untouched out-of-sample evidence. No rows on or after 2026-05-01 were loaded, and promotion remains false.

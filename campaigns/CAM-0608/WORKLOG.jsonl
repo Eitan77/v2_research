@@ -2,3 +2,6 @@
 {"timestamp_utc": "2026-08-07T02:15:23.149656+00:00", "run_id": "RUN-0002", "event": "adaptation_completed", "selected_2bps": -0.0623247074661032}
 {"timestamp_utc": "2026-08-07T02:15:23.149656+00:00", "run_id": "RUN-0003", "event": "robustness_completed", "decision": "mechanism_failed_after_adaptation"}
 {"timestamp_utc": "2026-08-07T02:15:23.149656+00:00", "run_id": "FINAL", "event": "campaign_checkpoint", "decision": "retired_mechanism_exhausted"}
+{"decision": "no_structured_survivor", "holdout_rows_loaded": 0, "run_id": "RUN-0008", "selected_variant": null, "status": "completed"}
+{"decision": "provisional_target_change_quote_gate", "holdout_rows_loaded": 0, "run_id": "RUN-0010", "selected_variant": "qqq__slow_residual_r10__top10__monthly", "status": "completed"}
+{"ts": "2026-08-10T00:28:16.350762-07:00", "run_id": "RUN-0011", "event": "completed", "net_simple_return": 0.270828995043932, "clock": "09:40", "extra_bps": 2, "holdout_rows_loaded": 0}

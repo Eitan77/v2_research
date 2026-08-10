@@ -1,0 +1,61 @@
+run_id: RUN-0012
+campaign_id: CAM-0612
+parent_run: RUN-0009
+status: completed
+change: Frozen simpler-control and component-ablation challenge.
+reason: Determine whether the adapted survivor adds value beyond simpler exposures
+  and survives breadth/leverage neighborhoods.
+expected_effect: Retain only economically distinct, stable mechanisms; relabel or
+  retire duplicative complexity.
+frozen_contract: campaigns/CAM-0600/CONTROL_CONTRACT.yaml
+configuration:
+  costs_bps_per_side:
+  - -1
+  - 0
+  - 1
+  - 2
+  - 5
+  - 10
+  cutoff: '2026-04-30'
+  holdout_access: false
+  capital_base: 1.0
+result:
+  executed_configuration_reconciled: true
+  matched_comparisons:
+  - campaign_id: CAM-0612
+    run_id: RUN-0012
+    cost_bps_per_side: 2.0
+    adapted_variant: qqq__ma10_50_200__monthly__top3
+    control_variant: qqq__ungated__monthly__top3
+    adapted_net: 1.7814822583729637
+    control_net: 2.5206706774457857
+    incremental_net: -0.739188419072822
+    adapted_drawdown: 0.394706181591689
+    control_drawdown: 0.402380311388752
+    drawdown_change: -0.007674129797063001
+    adapted_recent12_average_month: 0.0818303713595192
+    control_recent12_average_month: 0.0886162794591706
+    adapted_recent12_positive_months: 8
+    control_recent12_positive_months: 9
+    decision: The selected triple-MA rule materially trails ungated momentum and barely
+      changes drawdown; it is a filtered momentum expression, not a distinct edge.
+  - campaign_id: CAM-0612
+    run_id: RUN-0012
+    cost_bps_per_side: 10.0
+    adapted_variant: qqq__ma10_50_200__monthly__top3
+    control_variant: qqq__ungated__monthly__top3
+    adapted_net: 1.7180155917062971
+    control_net: 2.4581828387719686
+    incremental_net: -0.7401672470656715
+    adapted_drawdown: 0.401903774245353
+    control_drawdown: 0.4032945263112605
+    drawdown_change: -0.0013907520659074968
+    adapted_recent12_average_month: 0.0809859269150748
+    control_recent12_average_month: 0.0878615717956398
+    adapted_recent12_positive_months: 8
+    control_recent12_positive_months: 9
+    decision: The selected triple-MA rule materially trails ungated momentum and barely
+      changes drawdown; it is a filtered momentum expression, not a distinct edge.
+  holdout_rows_loaded: 0
+decision: The selected triple-MA rule materially trails ungated momentum and barely
+  changes drawdown; it is a filtered momentum expression, not a distinct edge.

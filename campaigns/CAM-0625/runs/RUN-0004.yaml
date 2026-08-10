@@ -1,0 +1,120 @@
+run_id: RUN-0004
+campaign_id: CAM-0625
+parent_run: RUN-0003
+status: completed
+change: Add the distinct CAM-0617 alpha-combination sleeve as a fifth whole mechanism.
+reason: CAM-0617 has low correlation to momentum and IBS and could raise recent monthly
+  income, but its leveraged-ETF concentration must be explicit.
+expected_effect: Higher average monthly return with some increase in tail risk; reject
+  if consistency or drawdown deteriorates disproportionately.
+configuration:
+  added_sleeve: CAM-0617 etf__alpha_M20_E5__top5__monthly__trend0
+  leveraged_etfs_allowed: true
+  broker_margin: false
+  allocations:
+    equal5:
+    - 0.2
+    - 0.2
+    - 0.2
+    - 0.2
+    - 0.2
+    alpha_capped_inverse_vol:
+      trailing_days: 126
+      rebalance: monthly
+      alpha_maximum_weight: 0.2
+      other_maximum_weight: 0.35
+      minimum_weight: 0.1
+  quote_clock: 09:40
+  additional_slippage_bps_per_side:
+  - 2
+  - 10
+  cutoff: '2026-04-30'
+  holdout_access: false
+result:
+  status: completed
+  run_id: RUN-0004
+  metrics:
+  - sample: full_history
+    extra_slippage_bps_per_side: 2
+    rule: equal5
+    net_simple_return: 1.1459725888
+    maximum_drawdown: 0.1135103391
+    positive_months: 40
+    negative_months: 20
+    monthly_average: 0.0190995431
+    monthly_median: 0.0096175067
+    monthly_std: 0.0445981249
+    worst_month: -0.0724121227
+    best_month: 0.1388485846
+    top5_day_positive_share: 0.0518859384
+  - sample: full_history
+    extra_slippage_bps_per_side: 2
+    rule: alpha_capped_inverse_vol
+    net_simple_return: 0.8854636274
+    maximum_drawdown: 0.1351628184
+    positive_months: 36
+    negative_months: 24
+    monthly_average: 0.0147577271
+    monthly_median: 0.0137493034
+    monthly_std: 0.035712284
+    worst_month: -0.0855931654
+    best_month: 0.0931382517
+    top5_day_positive_share: 0.0420873753
+  - sample: quote_0940
+    extra_slippage_bps_per_side: 2
+    rule: equal5
+    net_simple_return: 0.5493879679
+    maximum_drawdown: 0.04821459
+    positive_months: 10
+    negative_months: 2
+    monthly_average: 0.0457823307
+    monthly_median: 0.032448877
+    monthly_std: 0.0488734793
+    worst_month: -0.0176307819
+    best_month: 0.1360649712
+    top5_day_positive_share: 0.129010744
+  - sample: quote_0940
+    extra_slippage_bps_per_side: 2
+    rule: alpha_capped_inverse_vol
+    net_simple_return: 0.4391887681
+    maximum_drawdown: 0.040675108
+    positive_months: 11
+    negative_months: 1
+    monthly_average: 0.036599064
+    monthly_median: 0.0250600938
+    monthly_std: 0.0352447191
+    worst_month: -0.015053672
+    best_month: 0.0925524287
+    top5_day_positive_share: 0.1203146885
+  - sample: quote_0940
+    extra_slippage_bps_per_side: 10
+    rule: equal5
+    net_simple_return: 0.5247043531
+    maximum_drawdown: 0.0489785265
+    positive_months: 10
+    negative_months: 2
+    monthly_average: 0.0437253628
+    monthly_median: 0.0303096538
+    monthly_std: 0.0488312272
+    worst_month: -0.0203036257
+    best_month: 0.1337190958
+    top5_day_positive_share: 0.1292909621
+  - sample: quote_0940
+    extra_slippage_bps_per_side: 10
+    rule: alpha_capped_inverse_vol
+    net_simple_return: 0.4154262267
+    maximum_drawdown: 0.0415221622
+    positive_months: 11
+    negative_months: 1
+    monthly_average: 0.0346188522
+    monthly_median: 0.023120646
+    monthly_std: 0.0352119425
+    worst_month: -0.0173194569
+    best_month: 0.0903132472
+    top5_day_positive_share: 0.1208380882
+  maximum_loaded_date: '2026-04-30'
+  holdout_rows_loaded: 0
+  broker_margin: false
+  leveraged_etfs_present_in_alpha_sleeve: true
+decision: Compare incremental income against alpha sleeve concentration and four-sleeve
+  tail risk; no promotion.

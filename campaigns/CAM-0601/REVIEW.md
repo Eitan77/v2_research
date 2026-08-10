@@ -23,3 +23,13 @@ The result is interpreted as development evidence only. The audit separated long
 - Every profitable execution-qualified best adaptation received SIP quote replay; direct-short signal-only variants were not called executable.
 - Maximum loaded date is 2026-04-30 and holdout rows loaded are zero.
 - Promotion remains false.
+
+## 2026-08-10 deep-development checkpoint
+
+Paper section 3.2, **Earnings momentum**. Source contract: SUE=(latest announced quarterly EPS - EPS four quarters earlier)/standard deviation of this unexpected-earnings series over the last eight quarters; buy top decile and short bottom decile; typically hold six months.
+
+The structured survivor `qqq__sue__hold3__top5__price20` earned +122.0% net at 2 bps over its available development history and +43.0% in the latest 12 months. Corrected 09:40 target-change SIP replay, with 2 bps additional adverse slippage per side, earned +42.4% with 14.3% drawdown, 8/4 positive/negative months, and 11.9% of positive P&L from the best five days.
+
+Selection activity covered 97.2% of dates and averaged 10.16 names when active. Status: `positive_but_inconsistent_unpromoted`.
+
+This is adapted development evidence, not untouched out-of-sample evidence. No rows on or after 2026-05-01 were loaded, and promotion remains false.

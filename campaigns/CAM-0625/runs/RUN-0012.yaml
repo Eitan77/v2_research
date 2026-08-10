@@ -1,0 +1,77 @@
+run_id: RUN-0012
+campaign_id: CAM-0625
+parent_run: RUN-0011
+status: completed
+change: S&P versus QQQ universe substitution for the momentum and multifactor sleeves.
+reason: The S&P point-in-time reconstruction is provisional and two core sleeves depend
+  on it.
+expected_effect: Determine whether the portfolio mechanism survives a declared causal
+  universe substitution without ticker selection.
+configuration:
+  momentum_variants:
+    sp500: sp500__mom63_skip0__top3__liquid__panic1
+    qqq: qqq__mom63_skip0__top3__liquid__panic1
+  multifactor_variants:
+    sp500: sp500__value_quality__top20__trend0
+    qqq: qqq__value_quality__top20__trend0
+  fixed_other_sleeves:
+  - CAM-0621_IBS
+  - CAM-0624_distress
+  combinations:
+  - sp500_sp500
+  - qqq_sp500
+  - sp500_qqq
+  - qqq_qqq
+  cost_bps_per_side: 2
+  allocation: equal_four_sleeve
+  cutoff: '2026-04-30'
+  holdout_access: false
+result:
+  status: completed
+  run_id: RUN-0012
+  metrics:
+  - variant_id: momentum_sp500__multifactor_sp500
+    net_simple_return: 1.0743371783
+    maximum_drawdown: 0.0901499373
+    positive_months: 38
+    negative_months: 22
+    recent12_net: 0.516052233
+    recent12_average_month: 0.0430043528
+    recent12_positive_months: 10
+    worst_month: -0.044126171
+    best_month: 0.1411967404
+  - variant_id: momentum_sp500__multifactor_qqq
+    net_simple_return: 1.0188780627
+    maximum_drawdown: 0.1048464893
+    positive_months: 36
+    negative_months: 24
+    recent12_net: 0.5158955333
+    recent12_average_month: 0.0429912944
+    recent12_positive_months: 9
+    worst_month: -0.0477033103
+    best_month: 0.1419580238
+  - variant_id: momentum_qqq__multifactor_sp500
+    net_simple_return: 0.7263641442
+    maximum_drawdown: 0.1779278514
+    positive_months: 37
+    negative_months: 23
+    recent12_net: 0.3752738816
+    recent12_average_month: 0.0312728235
+    recent12_positive_months: 11
+    worst_month: -0.0858623032
+    best_month: 0.0915646056
+  - variant_id: momentum_qqq__multifactor_qqq
+    net_simple_return: 0.6709050286
+    maximum_drawdown: 0.200798708
+    positive_months: 34
+    negative_months: 26
+    recent12_net: 0.3751171819
+    recent12_average_month: 0.0312597652
+    recent12_positive_months: 9
+    worst_month: -0.0968661075
+    best_month: 0.093125336
+  maximum_loaded_date: '2026-04-30'
+  holdout_rows_loaded: 0
+  quote_replay: not_run_for_substitutions
+decision: Use substitution evidence to assess reconstruction dependence; do not replace
+  the quote-validated core without separate target-change replay.

@@ -1,0 +1,15 @@
+run_id: RUN-0001
+campaign_id: CAM-0625
+parent_run: null
+status: invalid
+change: First frozen ensemble evaluation.
+reason: Test whether distinct low-correlation sleeves smooth the return path.
+expected_effect: Lower drawdown and monthly dispersion than the momentum sleeve alone.
+configuration:
+  plan: campaigns/CAM-0625/PLAN.yaml
+  allocations: [equal, defensive_fixed, causal_inverse_vol]
+  cutoff: '2026-04-30'
+  holdout_access: false
+result:
+  interpretation_blocker: Clerical variant identifier omitted the frozen hold3 suffix; execution stopped before loading a path or producing results.
+decision: Do not interpret; corrected before execution in RUN-0002.

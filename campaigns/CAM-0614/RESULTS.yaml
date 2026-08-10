@@ -25,3 +25,34 @@ quote:
   negative_months: 8.0
   coverage_rate: 0.999828001375989
 conclusion: retired_quote_execution_failure
+deep_development_checkpoint:
+  checkpoint: 2026-08-10_deep_development
+  paper_section: '3.15'
+  strategy: Channel
+  status: small_delay_sensitive_edge_unpromoted
+  promotion_ready: false
+  development_only: true
+  maximum_loaded_date: '2026-04-30'
+  holdout_rows_loaded: 0
+  broker_margin_used: false
+  selected:
+    variant: sp500__donchian20__reversal
+    full_history_net_2bps: 0.4882365767005289
+    full_history_maximum_drawdown: 0.220505244449053
+    recent12_net_2bps: 0.1163975263374293
+    recent12_historical_percentile: 0.7142857142857143
+    positive_rolling12_fraction: 0.7551020408163265
+    target_active_date_fraction: 0.9840637450199204
+    average_names_per_active_date: 241.0898785425101
+  quote_0940_target_change:
+    additional_slippage_bps_per_side: 2
+    net_simple_return: 0.0888823741056381
+    maximum_drawdown: 0.0745390026631851
+    positive_months: 8
+    negative_months: 4
+    active_days: 251
+    top5_day_positive_share: 0.1285200182043346
+    role_coverage: 0.999301252229557
+  matched_control: null
+  conclusion: No strategy is promoted; evidence is adapted development data and the
+    sealed holdout remains untouched.

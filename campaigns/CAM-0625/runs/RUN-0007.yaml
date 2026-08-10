@@ -1,0 +1,83 @@
+run_id: RUN-0007
+campaign_id: CAM-0625
+parent_run: RUN-0006
+status: completed
+change: One- and two-session additional signal-to-entry delay stress for every sleeve.
+reason: Test whether bar-stage profitability depends on immediate next-open execution
+  even though 09:40 quote replay is strong recently.
+expected_effect: Monthly sleeves should decay gradually; IBS may decay faster. The
+  ensemble should remain positive if the edge is not timestamp-fragile.
+configuration:
+  additional_signal_delay_sessions:
+  - 1
+  - 2
+  total_execution_lag_sessions:
+  - 2
+  - 3
+  costs_bps_per_side:
+  - 2
+  - 5
+  - 10
+  allocation: equal_four_sleeve
+  cutoff: '2026-04-30'
+  holdout_access: false
+result:
+  rows: 30
+  ensemble:
+  - level: ensemble
+    name: equal_four
+    additional_delay_sessions: 1
+    total_execution_lag_sessions: 2
+    cost_bps_per_side: 2.0
+    net_simple_return: 0.9272350904514925
+    maximum_drawdown: 0.09782070570331908
+    recent12_average_month: 0.03891423975925266
+    recent12_positive_months: 10
+  - level: ensemble
+    name: equal_four
+    additional_delay_sessions: 1
+    total_execution_lag_sessions: 2
+    cost_bps_per_side: 5.0
+    net_simple_return: 0.8816578189822255
+    maximum_drawdown: 0.10141560609947044
+    recent12_average_month: 0.0380687434410732
+    recent12_positive_months: 10
+  - level: ensemble
+    name: equal_four
+    additional_delay_sessions: 1
+    total_execution_lag_sessions: 2
+    cost_bps_per_side: 10.0
+    net_simple_return: 0.8056956998667809
+    maximum_drawdown: 0.10771975127042908
+    recent12_average_month: 0.03665958291077411
+    recent12_positive_months: 10
+  - level: ensemble
+    name: equal_four
+    additional_delay_sessions: 2
+    total_execution_lag_sessions: 3
+    cost_bps_per_side: 2.0
+    net_simple_return: 0.8791239367918307
+    maximum_drawdown: 0.108427195936208
+    recent12_average_month: 0.040035258977336396
+    recent12_positive_months: 10
+  - level: ensemble
+    name: equal_four
+    additional_delay_sessions: 2
+    total_execution_lag_sessions: 3
+    cost_bps_per_side: 5.0
+    net_simple_return: 0.8335466653225637
+    maximum_drawdown: 0.11176202118305303
+    recent12_average_month: 0.03918976265915695
+    recent12_positive_months: 10
+  - level: ensemble
+    name: equal_four
+    additional_delay_sessions: 2
+    total_execution_lag_sessions: 3
+    cost_bps_per_side: 10.0
+    net_simple_return: 0.757584546207119
+    maximum_drawdown: 0.11765661944419581
+    recent12_average_month: 0.03778060212885786
+    recent12_positive_months: 10
+  holdout_rows_loaded: 0
+decision: Use delay decay to distinguish durable monthly ranking from short-lived
+  IBS contribution; no promotion.

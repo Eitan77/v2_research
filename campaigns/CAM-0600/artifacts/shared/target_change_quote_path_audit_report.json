@@ -1,0 +1,43 @@
+{
+  "status": "completed",
+  "clock": "09:40",
+  "additional_slippage_bps_per_side": 2,
+  "campaigns": 23,
+  "holdout_rows_loaded": 0,
+  "best_return": {
+    "campaign_id": "CAM-0600",
+    "run_id": "RUN-0009",
+    "net_simple_return": 1.2305489938735055,
+    "maximum_drawdown": 0.1346774237715125,
+    "active_days": 235,
+    "green_days": 135,
+    "red_days": 100,
+    "top5_day_positive_share": 0.13478204025766347,
+    "best_day": 0.09799426202824614,
+    "worst_day": -0.10986502021478434,
+    "positive_months": 11,
+    "negative_months": 1,
+    "monthly_std": 0.13421707244610107,
+    "worst_month": -0.13714429585586413,
+    "best_month": 0.40028408022900897,
+    "role_coverage": 1.0
+  },
+  "lowest_drawdown_positive": {
+    "campaign_id": "CAM-0624",
+    "run_id": "RUN-0009",
+    "net_simple_return": 0.17506092690870598,
+    "maximum_drawdown": 0.0371801285829414,
+    "active_days": 251,
+    "green_days": 146,
+    "red_days": 105,
+    "top5_day_positive_share": 0.12184760650521739,
+    "best_day": 0.018435210302306635,
+    "worst_day": -0.02537510181958179,
+    "positive_months": 9,
+    "negative_months": 3,
+    "monthly_std": 0.02050326888054385,
+    "worst_month": -0.007842377096227445,
+    "best_month": 0.05935977185462377,
+    "role_coverage": 1.0
+  }
+}

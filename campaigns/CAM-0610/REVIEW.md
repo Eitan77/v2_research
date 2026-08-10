@@ -23,3 +23,15 @@ The result is interpreted as development evidence only. The audit separated long
 - Every profitable execution-qualified best adaptation received SIP quote replay; direct-short signal-only variants were not called executable.
 - Maximum loaded date is 2026-04-30 and holdout rows loaded are zero.
 - Promotion remains false.
+
+## 2026-08-10 deep-development checkpoint
+
+Paper section 3.11, **Single moving average**. Source contract: Long/liquidate short if current price exceeds SMA or EMA; short/liquidate long if below; may be long-only, short-only, or both.
+
+The structured survivor `qqq__ma150__weekly__top3__momentum` earned +300.2% net at 2 bps over its available development history and +116.3% in the latest 12 months. Corrected 09:40 target-change SIP replay, with 2 bps additional adverse slippage per side, earned +116.8% with 12.9% drawdown, 9/3 positive/negative months, and 14.9% of positive P&L from the best five days.
+
+Selection activity covered 91.4% of dates and averaged 3.00 names when active. Status: `filtered_momentum_duplicate_unpromoted`.
+
+Matched-control conclusion: The selected MA150 gate raises recent consistency but does not improve full-history return or drawdown; only the neighboring MA200 gate shows clear risk-control value.
+
+This is adapted development evidence, not untouched out-of-sample evidence. No rows on or after 2026-05-01 were loaded, and promotion remains false.

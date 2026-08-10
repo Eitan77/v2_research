@@ -1,0 +1,26 @@
+{"ts":"2026-08-10T00:35:00-07:00","run_id":"RUN-0001","event":"planned","reason":"Frozen three simple ensemble allocations before execution; no holdout access."}
+{"ts":"2026-08-10T00:46:00-07:00","run_id":"RUN-0001","event":"invalid","reason":"IBS variant identifier omitted hold3; stopped before path load or result."}
+{"ts":"2026-08-10T00:46:01-07:00","run_id":"RUN-0002","event":"planned","reason":"Clerically corrected intended IBS survivor; selection unchanged."}
+{"ts":"2026-08-10T00:48:00-07:00","run_id":"RUN-0003","event":"planned","reason":"Frozen clock, cost, leave-one-out, and monthly bootstrap challenge."}
+{"ts":"2026-08-10T01:00:00-07:00","run_id":"RUN-0004","event":"planned","reason":"Frozen whole-mechanism addition of low-correlation alpha combo; no ticker selection."}
+{"ts":"2026-08-10T01:08:00-07:00","run_id":"RUN-0005","event":"planned","reason":"Frozen full-history rolling, recovery, fold, leave-one-out, and bootstrap audit."}
+{"ts":"2026-08-10T01:15:00-07:00","run_id":"RUN-0006","event":"planned","reason":"Frozen two causal prior-month activation and retirement rules for recent-regime use."}
+{"ts":"2026-08-10T01:20:00-07:00","run_id":"RUN-0007","event":"planned","reason":"Frozen one- and two-session additional entry-delay stress for all four sleeves."}
+{"ts":"2026-08-10T01:25:00-07:00","run_id":"RUN-0008","event":"planned","reason":"Frozen conservative displayed-NBBO capacity diagnostic for equal four sleeves."}
+{"ts":"2026-08-10T01:30:00-07:00","run_id":"RUN-0009","event":"planned","reason":"Frozen market-beta, residual-return, and down-market attribution."}
+{"ts":"2026-08-10T01:35:00-07:00","run_id":"RUN-0011","event":"planned","reason":"Frozen prior-close SPY MA100/150/200 portfolio defense neighborhood."}
+{"ts":"2026-08-10T01:40:00-07:00","run_id":"RUN-0012","event":"planned","reason":"Frozen S&P/QQQ whole-universe substitution grid for the two S&P-dependent sleeves."}
+{"ts":"2026-08-10T01:45:00-07:00","run_id":"RUN-0013","event":"planned","reason":"Frozen 21-session circular block bootstrap for annual return and drawdown tails."}
+{"ts": "2026-08-10T00:22:11.385014-07:00", "run_id": "RUN-0002", "event": "completed", "variants": 3, "holdout_rows_loaded": 0}
+{"ts": "2026-08-10T00:23:17.996315-07:00", "run_id": "RUN-0003", "event": "completed", "executed_variants": 80, "holdout_rows_loaded": 0}
+{"ts": "2026-08-10T00:25:29.069479-07:00", "run_id": "RUN-0004", "event": "completed", "holdout_rows_loaded": 0}
+{"ts": "2026-08-10T00:30:36.206583-07:00", "run_id": "RUN-0005", "event": "completed", "holdout_rows_loaded": 0}
+{"ts": "2026-08-10T00:31:48.085075-07:00", "run_id": "RUN-0006", "event": "completed", "holdout_rows_loaded": 0}
+{"ts": "2026-08-10T00:33:38.877877-07:00", "run_id": "RUN-0007", "event": "completed", "holdout_rows_loaded": 0}
+{"ts": "2026-08-10T00:50:42.593693-07:00", "run_id": "RUN-0008", "event": "completed", "roles": 1414, "holdout_rows_loaded": 0}
+{"ts": "2026-08-10T00:52:43.533995-07:00", "run_id": "RUN-0009", "event": "completed", "holdout_rows_loaded": 0}
+{"ts": "2026-08-10T00:54:01.505471-07:00", "run_id": "RUN-0009", "event": "invalid", "reason": "mechanically zero OLS residual sum"}
+{"ts": "2026-08-10T00:54:01.505471-07:00", "run_id": "RUN-0010", "event": "completed", "holdout_rows_loaded": 0}
+{"ts": "2026-08-10T00:56:15.643821-07:00", "run_id": "RUN-0011", "event": "completed", "holdout_rows_loaded": 0}
+{"ts": "2026-08-10T00:59:11.143242-07:00", "run_id": "RUN-0012", "event": "completed", "holdout_rows_loaded": 0}
+{"ts": "2026-08-10T01:00:24.657797-07:00", "run_id": "RUN-0013", "event": "completed", "holdout_rows_loaded": 0}

@@ -1,0 +1,61 @@
+run_id: RUN-0012
+campaign_id: CAM-0615
+parent_run: RUN-0009
+status: completed
+change: Frozen simpler-control and component-ablation challenge.
+reason: Determine whether the adapted survivor adds value beyond simpler exposures
+  and survives breadth/leverage neighborhoods.
+expected_effect: Retain only economically distinct, stable mechanisms; relabel or
+  retire duplicative complexity.
+frozen_contract: campaigns/CAM-0600/CONTROL_CONTRACT.yaml
+configuration:
+  costs_bps_per_side:
+  - -1
+  - 0
+  - 1
+  - 2
+  - 5
+  - 10
+  cutoff: '2026-04-30'
+  holdout_access: false
+  capital_base: 1.0
+result:
+  executed_configuration_reconciled: true
+  matched_comparisons:
+  - campaign_id: CAM-0615
+    run_id: RUN-0012
+    cost_bps_per_side: 2.0
+    adapted_variant: qqq__fullcov_s50__mom60__positive_top10
+    control_variant: qqq__simple_mom60__top10
+    adapted_net: 1.3165253882517265
+    control_net: 1.4375229707428876
+    incremental_net: -0.1209975824911611
+    adapted_drawdown: 0.2519729147311602
+    control_drawdown: 0.2967740901378389
+    drawdown_change: -0.04480117540667872
+    adapted_recent12_average_month: 0.0271478865555719
+    control_recent12_average_month: 0.0460035265569476
+    adapted_recent12_positive_months: 9
+    control_recent12_positive_months: 9
+    decision: Simple momentum dominates the adapted positive optimizer sleeve; source
+      optimization is not isolated.
+  - campaign_id: CAM-0615
+    run_id: RUN-0012
+    cost_bps_per_side: 10.0
+    adapted_variant: qqq__fullcov_s50__mom60__positive_top10
+    control_variant: qqq__simple_mom60__top10
+    adapted_net: 1.2361953196913478
+    control_net: 1.3688235476499235
+    incremental_net: -0.13262822795857576
+    adapted_drawdown: 0.2542394946709094
+    control_drawdown: 0.304778671643349
+    drawdown_change: -0.05053917697243959
+    adapted_recent12_average_month: 0.0263006975311547
+    control_recent12_average_month: 0.0453004176912814
+    adapted_recent12_positive_months: 9
+    control_recent12_positive_months: 9
+    decision: Simple momentum dominates the adapted positive optimizer sleeve; source
+      optimization is not isolated.
+  holdout_rows_loaded: 0
+decision: Simple momentum dominates the adapted positive optimizer sleeve; source
+  optimization is not isolated.

@@ -1,0 +1,50 @@
+{
+  "status": "completed",
+  "run_id": "RUN-0010",
+  "metrics": [
+    {
+      "rule": "equal",
+      "days": 1252,
+      "multivariate_intercept_daily": 0.0005252791387753028,
+      "multivariate_intercept_annualized_additive": 0.13237034297137631,
+      "multivariate_r_squared": 0.31313655154940223,
+      "portfolio_return_SPY_up_days": 3.2774414015444764,
+      "portfolio_return_SPY_down_days": -2.2243970325765288,
+      "portfolio_return_SPY_bottom5pct_days": -0.4208567954540666,
+      "mean_portfolio_return_SPY_down_days": -0.003895616519398474,
+      "mean_SPY_return_down_days": -0.007798897958171694,
+      "downside_capture_ratio": 0.4995085895843326,
+      "simple_beta_SPY": 0.39816894585182033,
+      "correlation_SPY": 0.491750536101081,
+      "simple_beta_QQQ": 0.30325327374664834,
+      "correlation_QQQ": 0.4926753502896574,
+      "simple_beta_SMH": 0.21748081549324802,
+      "correlation_SMH": 0.5477951160097582,
+      "simple_beta_TLT": 0.03562849716303389,
+      "correlation_TLT": 0.03840835220812841
+    },
+    {
+      "rule": "causal_inverse_vol",
+      "days": 1252,
+      "multivariate_intercept_daily": 0.0003550237998200964,
+      "multivariate_intercept_annualized_additive": 0.08946599755466429,
+      "multivariate_r_squared": 0.3981756299565836,
+      "portfolio_return_SPY_up_days": 2.9455579517816863,
+      "portfolio_return_SPY_down_days": -2.1506397976513183,
+      "portfolio_return_SPY_bottom5pct_days": -0.5039066106671657,
+      "mean_portfolio_return_SPY_down_days": -0.003766444479249244,
+      "mean_SPY_return_down_days": -0.007798897958171694,
+      "downside_capture_ratio": 0.48294573149309633,
+      "simple_beta_SPY": 0.3916795713995127,
+      "correlation_SPY": 0.5829710904021472,
+      "simple_beta_QQQ": 0.2997647524500391,
+      "correlation_QQQ": 0.5869140991460338,
+      "simple_beta_SMH": 0.20351714786835706,
+      "correlation_SMH": 0.6177842780343109,
+      "simple_beta_TLT": 0.03113506372197024,
+      "correlation_TLT": 0.040449817964851406
+    }
+  ],
+  "maximum_loaded_date": "2026-04-30",
+  "holdout_rows_loaded": 0
+}

@@ -23,3 +23,15 @@ The result is interpreted as development evidence only. The audit separated long
 - Every profitable execution-qualified best adaptation received SIP quote replay; direct-short signal-only variants were not called executable.
 - Maximum loaded date is 2026-04-30 and holdout rows loaded are zero.
 - Promotion remains false.
+
+## 2026-08-10 deep-development checkpoint
+
+Paper section 3.18, **Stat-arb optimization**. Source contract: Expected-return vector E and positive-definite covariance C; unconstrained weights proportional to inverse(C)E; normalize sum(abs(w))=1.
+
+The structured survivor `qqq__fullcov_s50__mom60__positive_top10` earned +131.7% net at 2 bps over its available development history and +32.6% in the latest 12 months. Corrected 09:40 target-change SIP replay, with 2 bps additional adverse slippage per side, earned +33.0% with 7.0% drawdown, 9/3 positive/negative months, and 12.5% of positive P&L from the best five days.
+
+Selection activity covered 92.3% of dates and averaged 10.00 names when active. Status: `optimizer_not_isolated_unpromoted`.
+
+Matched-control conclusion: Simple momentum dominates the adapted positive optimizer sleeve; source optimization is not isolated.
+
+This is adapted development evidence, not untouched out-of-sample evidence. No rows on or after 2026-05-01 were loaded, and promotion remains false.

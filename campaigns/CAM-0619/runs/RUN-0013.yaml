@@ -1,0 +1,27 @@
+run_id: RUN-0013
+campaign_id: CAM-0619
+parent_run: RUN-0012
+status: invalid
+change: Correct matched sector MA-gate controls.
+reason: RUN-0012 did not execute the frozen winner or market MA gate.
+expected_effect: Measure incremental return and risk of the source gate against identical
+  relative momentum.
+frozen_contract: campaigns/CAM-0600/CONTROL_CONTRACT.yaml
+configuration:
+  winner_ma_windows:
+  - 100
+  - 150
+  - 200
+  market_ma_windows: null
+  costs_bps_per_side:
+  - -1
+  - 0
+  - 1
+  - 2
+  - 5
+  - 10
+  holdout_access: false
+result:
+  interpretation_blocker: Matched plain control was not saved in the same reconciled
+    run.
+decision: Do not interpret; rerun complete in RUN-0014.

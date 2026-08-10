@@ -23,3 +23,13 @@ The result is interpreted as development evidence only. The audit separated long
 - Every profitable execution-qualified best adaptation received SIP quote replay; direct-short signal-only variants were not called executable.
 - Maximum loaded date is 2026-04-30 and holdout rows loaded are zero.
 - Promotion remains false.
+
+## 2026-08-10 deep-development checkpoint
+
+Paper section 4.4, **ETF IBS mean reversion**. Source contract: IBS=(previous close-previous low)/(previous high-previous low); cross-sectionally buy bottom decile and short top decile.
+
+The structured survivor `etf__ibs30__top5__hold3__trend1` earned +153.6% net at 2 bps over its available development history and +23.4% in the latest 12 months. Corrected 09:40 target-change SIP replay, with 2 bps additional adverse slippage per side, earned +27.7% with 4.9% drawdown, 7/5 positive/negative months, and 17.8% of positive P&L from the best five days.
+
+Selection activity covered 86.2% of dates and averaged 5.34 names when active. Status: `low_drawdown_execution_sensitive_diversifier`.
+
+This is adapted development evidence, not untouched out-of-sample evidence. No rows on or after 2026-05-01 were loaded, and promotion remains false.

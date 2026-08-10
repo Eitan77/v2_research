@@ -1,0 +1,40 @@
+campaign_id: CAM-0625
+title: Distinct-mechanism ensemble of SSRN strategy survivors
+status: frozen_pre_execution
+created_at: 2026-08-10
+source_campaigns: [CAM-0600, CAM-0604, CAM-0621, CAM-0624]
+hypothesis: >-
+  Four causally distinct, low-correlation, cash-only sleeves can improve the
+  monthly path and drawdown without relying on a few trades or one market regime.
+identity: adapted_combination_not_source_faithful
+why_new_campaign: Combining mechanisms materially changes strategy identity.
+discovery_cutoff: '2026-04-30'
+sealed_holdout_start: '2026-05-01'
+holdout_access: false
+frozen_sleeves:
+  momentum: CAM-0600 sp500__mom63_skip0__top3__liquid__panic1
+  multifactor: CAM-0604 sp500__value_quality__top20__trend0
+  ibs: CAM-0621 etf__ibs30__top5__hold3__trend1
+  distress_risk_managed: CAM-0624 qqq__chs_safe__top5__liquid__target8
+frozen_allocations:
+  equal: [0.25, 0.25, 0.25, 0.25]
+  defensive_fixed: [0.30, 0.35, 0.20, 0.15]
+  causal_inverse_vol:
+    trailing_days: 126
+    rebalance: monthly
+    prior_data_only: true
+    maximum_sleeve_weight: 0.40
+    minimum_sleeve_weight: 0.10
+    allocation_turnover_cost_bps_per_side: 2
+accounting:
+  capital_base: 1.0
+  additive_noncompounded: true
+  broker_margin: false
+  maximum_gross_exposure: 1.0
+  sleeve_paths_include_2bps_per_side: true
+validation:
+  development_window: common available history through 2026-04-30
+  exact_quote_window: 2025-05-01 through 2026-04-30 at 09:40
+  quote_sleeves_include_additional_slippage_bps_per_side: 2
+  selection: no allocation selection; report all three prespecified rules
+promotion_ready_from_this_run: false

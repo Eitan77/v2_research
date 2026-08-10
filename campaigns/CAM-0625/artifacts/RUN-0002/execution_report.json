@@ -1,0 +1,177 @@
+{
+  "status": "completed",
+  "run_id": "RUN-0002",
+  "full_history_start": "2021-05-03",
+  "maximum_loaded_date": "2026-04-30",
+  "quote_start": "2025-05-01",
+  "quote_end": "2026-04-30",
+  "holdout_rows_loaded": 0,
+  "broker_margin": false,
+  "compounding": false,
+  "metrics": [
+    {
+      "sample": "full_history",
+      "variant_id": "equal",
+      "net_simple_return": 1.0743371783,
+      "maximum_drawdown": 0.0901499373,
+      "active_days": 1255,
+      "green_days": 673,
+      "red_days": 582,
+      "positive_months": 38,
+      "negative_months": 22,
+      "monthly_average": 0.0179056196,
+      "monthly_median": 0.0095664378,
+      "monthly_std": 0.0357556116,
+      "worst_month": -0.044126171,
+      "best_month": 0.1411967404,
+      "top5_day_positive_share": 0.040854907,
+      "average_weights": {
+        "momentum": 0.25,
+        "multifactor": 0.25,
+        "ibs": 0.25,
+        "distress": 0.25
+      }
+    },
+    {
+      "sample": "full_history",
+      "variant_id": "defensive_fixed",
+      "net_simple_return": 1.1718762858,
+      "maximum_drawdown": 0.0900950008,
+      "active_days": 1255,
+      "green_days": 669,
+      "red_days": 586,
+      "positive_months": 37,
+      "negative_months": 23,
+      "monthly_average": 0.0195312714,
+      "monthly_median": 0.0164445993,
+      "monthly_std": 0.039409668,
+      "worst_month": -0.0473952004,
+      "best_month": 0.1588012504,
+      "top5_day_positive_share": 0.043089349,
+      "average_weights": {
+        "momentum": 0.3,
+        "multifactor": 0.35,
+        "ibs": 0.2,
+        "distress": 0.15
+      }
+    },
+    {
+      "sample": "full_history",
+      "variant_id": "causal_inverse_vol",
+      "net_simple_return": 0.8131634462,
+      "maximum_drawdown": 0.0812187504,
+      "active_days": 1255,
+      "green_days": 688,
+      "red_days": 567,
+      "positive_months": 38,
+      "negative_months": 22,
+      "monthly_average": 0.0135527241,
+      "monthly_median": 0.0100866108,
+      "monthly_std": 0.0302954067,
+      "worst_month": -0.0441877252,
+      "best_month": 0.0853122655,
+      "top5_day_positive_share": 0.0390366578,
+      "average_weights": {
+        "momentum": 0.1990155067,
+        "multifactor": 0.2374360967,
+        "ibs": 0.2395458136,
+        "distress": 0.4030862484
+      }
+    },
+    {
+      "sample": "quote_0940_2bps_extra",
+      "variant_id": "equal",
+      "net_simple_return": 0.5260183205,
+      "maximum_drawdown": 0.0556591438,
+      "active_days": 251,
+      "green_days": 150,
+      "red_days": 101,
+      "positive_months": 10,
+      "negative_months": 2,
+      "monthly_average": 0.04383486,
+      "monthly_median": 0.0388903628,
+      "monthly_std": 0.0436474202,
+      "worst_month": -0.0147673266,
+      "best_month": 0.1406951117,
+      "top5_day_positive_share": 0.1251785022,
+      "average_weights": {
+        "momentum": 0.25,
+        "multifactor": 0.25,
+        "ibs": 0.25,
+        "distress": 0.25
+      }
+    },
+    {
+      "sample": "quote_0940_2bps_extra",
+      "variant_id": "defensive_fixed",
+      "net_simple_return": 0.5983748733,
+      "maximum_drawdown": 0.059271607,
+      "active_days": 251,
+      "green_days": 151,
+      "red_days": 100,
+      "positive_months": 10,
+      "negative_months": 2,
+      "monthly_average": 0.0498645728,
+      "monthly_median": 0.0431506439,
+      "monthly_std": 0.0490208629,
+      "worst_month": -0.0215124696,
+      "best_month": 0.1574831585,
+      "top5_day_positive_share": 0.1240237194,
+      "average_weights": {
+        "momentum": 0.3,
+        "multifactor": 0.35,
+        "ibs": 0.2,
+        "distress": 0.15
+      }
+    },
+    {
+      "sample": "quote_0940_2bps_extra",
+      "variant_id": "causal_inverse_vol",
+      "net_simple_return": 0.3995483594,
+      "maximum_drawdown": 0.0426043589,
+      "active_days": 251,
+      "green_days": 156,
+      "red_days": 95,
+      "positive_months": 11,
+      "negative_months": 1,
+      "monthly_average": 0.0332956966,
+      "monthly_median": 0.0339529627,
+      "monthly_std": 0.0281193587,
+      "worst_month": -0.009544393,
+      "best_month": 0.0860066983,
+      "top5_day_positive_share": 0.1164551002,
+      "average_weights": {
+        "momentum": 0.1384296523,
+        "multifactor": 0.2548528105,
+        "ibs": 0.2412459399,
+        "distress": 0.3654715973
+      }
+    }
+  ],
+  "sleeve_correlations": {
+    "momentum": {
+      "momentum": 1.0,
+      "multifactor": 0.4027794898,
+      "ibs": 0.2642777423,
+      "distress": 0.4999932373
+    },
+    "multifactor": {
+      "momentum": 0.4027794898,
+      "multifactor": 1.0,
+      "ibs": 0.0879796827,
+      "distress": 0.5332355244
+    },
+    "ibs": {
+      "momentum": 0.2642777423,
+      "multifactor": 0.0879796827,
+      "ibs": 1.0,
+      "distress": 0.155968599
+    },
+    "distress": {
+      "momentum": 0.4999932373,
+      "multifactor": 0.5332355244,
+      "ibs": 0.155968599,
+      "distress": 1.0
+    }
+  }
+}

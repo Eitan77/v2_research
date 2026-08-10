@@ -23,3 +23,15 @@ The result is interpreted as development evidence only. The audit separated long
 - Every profitable execution-qualified best adaptation received SIP quote replay; direct-short signal-only variants were not called executable.
 - Maximum loaded date is 2026-04-30 and holdout rows loaded are zero.
 - Promotion remains false.
+
+## 2026-08-10 deep-development checkpoint
+
+Paper section 3.18.1, **Dollar-neutral optimization**. Source contract: Mean-variance solution subtracts the covariance-weighted intercept component so sum(w)=0; normalize sum(abs(w))=1.
+
+The structured survivor `qqq__fullcov_s50__mom60__positive_top10` earned +131.0% net at 2 bps over its available development history and +33.3% in the latest 12 months. Corrected 09:40 target-change SIP replay, with 2 bps additional adverse slippage per side, earned +33.9% with 7.4% drawdown, 9/3 positive/negative months, and 12.4% of positive P&L from the best five days.
+
+Selection activity covered 92.3% of dates and averaged 10.00 names when active. Status: `source_signed_nonexecutible_adaptation_only`.
+
+Matched-control conclusion: The executable long-only sleeve is a momentum proxy; signed source identity remains non-executable overnight.
+
+This is adapted development evidence, not untouched out-of-sample evidence. No rows on or after 2026-05-01 were loaded, and promotion remains false.

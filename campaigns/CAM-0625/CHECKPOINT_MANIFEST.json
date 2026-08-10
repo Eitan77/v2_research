@@ -1,0 +1,92 @@
+{
+  "checkpoint": "2026-08-10_ssrn_deep_development",
+  "files": [
+    {
+      "path": "campaigns/CAM-0600/COMPREHENSIVE_REPORT.md",
+      "bytes": 16081,
+      "sha256": "6758c5a8478f43b896002c4c8c18be58861ecef915f032006e4dc3e452bccb8c"
+    },
+    {
+      "path": "campaigns/CAM-0600/SOURCE_CONTRACT.yaml",
+      "bytes": 6828,
+      "sha256": "37cdc8645c3b31e9e377f9547aaf498078c51f940c89541fb1674eb7ce69d71b"
+    },
+    {
+      "path": "campaigns/CAM-0600/artifacts/shared/deep_candidate_audit.csv",
+      "bytes": 5693,
+      "sha256": "3b7e6c50ab89ebde0355e21cd38e6b5d2dc1d8a15b79e9ae73be592cbf17d602"
+    },
+    {
+      "path": "campaigns/CAM-0600/artifacts/shared/control_increment_summary.csv",
+      "bytes": 8942,
+      "sha256": "4f6e7deef4428c46e52ed8318d7d37e387e3e3fd685d164a3dfa613d05802988"
+    },
+    {
+      "path": "campaigns/CAM-0600/artifacts/shared/selected_candidate_attrition.csv",
+      "bytes": 4777,
+      "sha256": "992963d2420c0bbc02135dae5036eec5cf9c299d1a4fc989337375e5e2b428e1"
+    },
+    {
+      "path": "campaigns/CAM-0600/artifacts/shared/target_change_quote_metrics.csv",
+      "bytes": 49076,
+      "sha256": "c4d9cf14159d89316c7afff93fc8a031672df8f467e075f524705894abf6ce9e"
+    },
+    {
+      "path": "campaigns/CAM-0600/artifacts/shared/target_change_quote_path_audit.csv",
+      "bytes": 4800,
+      "sha256": "a174f8626a689aebeffd0f1f83253b670d1e24fefad8758510a289be2644479f"
+    },
+    {
+      "path": "campaigns/CAM-0625/PLAN.yaml",
+      "bytes": 1611,
+      "sha256": "8f896d1a0282dda39d7fff7ab41f4f31c5f54b8cc60c5ac72d13eb3645553550"
+    },
+    {
+      "path": "campaigns/CAM-0625/RESULTS.yaml",
+      "bytes": 2577,
+      "sha256": "f37758e6da11e4740fd7f31f63b5c12712ba23b865b49f87ce1f17a9aee329ed"
+    },
+    {
+      "path": "campaigns/CAM-0625/artifacts/RUN-0003/stress_metrics.csv",
+      "bytes": 13822,
+      "sha256": "9d47f1963f418af49fc75395c750ed2a8bf066feee2c6d1bb0f045d275595b88"
+    },
+    {
+      "path": "campaigns/CAM-0625/artifacts/RUN-0005/full_history_robustness.csv",
+      "bytes": 4115,
+      "sha256": "22f25b3404a1ab72d0f6d676981e8965f10a2bfb67aa6b395d88b64753e374ae"
+    },
+    {
+      "path": "campaigns/CAM-0625/artifacts/RUN-0007/delay_stress_metrics.csv",
+      "bytes": 2788,
+      "sha256": "0c171d2ef16ed3ad1eecfcbb580e9f1abda3add96786fb216d23145215ff514b"
+    },
+    {
+      "path": "campaigns/CAM-0625/artifacts/RUN-0008/displayed_nbbo_capacity.csv",
+      "bytes": 1737,
+      "sha256": "b33f6d17b9268a643ab187c78d4abd36525667fdac2f0ab72484c7bab6522b5f"
+    },
+    {
+      "path": "campaigns/CAM-0625/artifacts/RUN-0010/factor_exposure.csv",
+      "bytes": 1133,
+      "sha256": "bf7f18a72384d16967156f6ee41e1758fb4eb4b76a46eddbfd5c2f6e855d27df"
+    },
+    {
+      "path": "campaigns/CAM-0625/artifacts/RUN-0012/universe_substitution.csv",
+      "bytes": 806,
+      "sha256": "f9ee59d8ede08a9795a72b31f0534068f114c905c9de6019115226aa725ce1d1"
+    },
+    {
+      "path": "campaigns/CAM-0625/artifacts/RUN-0013/block_bootstrap.csv",
+      "bytes": 649,
+      "sha256": "2196d83a0be2cd588cb7f819e4ab266186c4669883cff55b481d45847ddb39bf"
+    }
+  ],
+  "tests": {
+    "scoped_pytest": "7 passed",
+    "repository_wide_collection": "blocked by 27 unrelated legacy/reference import errors"
+  },
+  "maximum_loaded_date": "2026-04-30",
+  "holdout_rows_loaded": 0,
+  "promotion_ready": false
+}

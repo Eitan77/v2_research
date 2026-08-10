@@ -1,0 +1,18 @@
+{
+  "equal": {
+    "draws": 20000,
+    "source_months": 60,
+    "probability_positive_12_month_sum": 0.96705,
+    "p05": 0.02242652574773138,
+    "median": 0.21133248586526593,
+    "p95": 0.42422998169887083
+  },
+  "causal_inverse_vol": {
+    "draws": 20000,
+    "source_months": 60,
+    "probability_positive_12_month_sum": 0.9449,
+    "p05": -0.005064505718365945,
+    "median": 0.1616251000884803,
+    "p95": 0.33663137690710915
+  }
+}

@@ -1,0 +1,37 @@
+run_id: RUN-0009
+campaign_id: CAM-0612
+parent_run: RUN-0008
+status: completed
+change: Exact marketable SIP replay at causal target-weight changes at 09:30 and 09:40.
+reason: Correct the earlier conservative daily-reset quote stress for multi-day holdings
+  while retaining realistic spreads and delay.
+expected_effect: Determine whether the structured development survivor remains profitable
+  when only actual target changes pay marketable execution.
+frozen_contract: campaigns/CAM-0600/TARGET_CHANGE_QUOTE_CONTRACT.yaml
+configuration:
+  window_start: '2025-05-01'
+  window_end: '2026-04-30'
+  clocks:
+  - 09:30
+  - 09:40
+  additional_slippage_bps_per_side:
+  - 0
+  - 2
+  - 5
+  - 10
+  passive_fill_credit: false
+  holdout_access: false
+  selected_variant: qqq__ma10_50_200__monthly__top3__momentum
+result:
+  net_simple_return: 0.9482490651522631
+  maximum_drawdown: 0.1581444836327301
+  positive_months: 8
+  negative_months: 4
+  active_sessions: 251
+  role_coverage: 1.0
+  clock: 09:40
+  additional_slippage_bps_per_side: 2
+  reference_price: 09:30 SIP midpoint
+  holdout_rows_loaded: 0
+decision: Corrected target-change execution evidence; development-only and not promotion
+  evidence.

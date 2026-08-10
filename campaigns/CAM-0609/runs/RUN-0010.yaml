@@ -1,0 +1,38 @@
+run_id: RUN-0010
+campaign_id: CAM-0609
+parent_run: RUN-0008
+status: completed
+change: Mechanism-specific repair of the diagnosed RUN-0008 failure.
+reason: The first deep structured screen failed or was identity-blocked.
+expected_effect: Test whether a slower horizon, stronger causal setup, or correct
+  economic-pair identity improves edge per turnover without ticker mining.
+frozen_contract: campaigns/CAM-0600/REPAIR_CONTRACT.yaml
+configuration:
+  discovery_cutoff: '2026-04-30'
+  holdout_access: false
+  fixed_base: 1.0
+  broker_margin: false
+  costs_bps_per_side:
+  - -1
+  - 0
+  - 1
+  - 2
+  - 5
+  - 10
+result:
+  campaign_id: CAM-0609
+  executed_variants: 24
+  structured_survivors: 7
+  selected_variant: qqq__slow_residual_r10__top10__monthly
+  decision: provisional_target_change_quote_gate
+  selected_2bps: 1.2660302455680363
+  selected_10bps: 1.169729992422596
+  selected_recent12_average: 0.0212961345799689
+  selected_recent12_positive: 8
+  selected_recent18_average: 0.0123428386862084
+  selected_recent18_positive: 11
+  selected_maximum_drawdown: 0.2534769281484921
+  selected_positive_blocks: 3
+  selected_worst_block_average_month: 0.009384578358778171
+  holdout_rows_loaded: 0
+decision: provisional_target_change_quote_gate

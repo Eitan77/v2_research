@@ -23,3 +23,15 @@ The result is interpreted as development evidence only. The audit separated long
 - Every profitable execution-qualified best adaptation received SIP quote replay; direct-short signal-only variants were not called executable.
 - Maximum loaded date is 2026-04-30 and holdout rows loaded are zero.
 - Promotion remains false.
+
+## 2026-08-10 deep-development checkpoint
+
+Paper section 15.3, **Distress risk puzzle**. Source contract: Rank a modeled bankruptcy probability; buy safest bottom decile and short riskiest top decile; monthly or annual rebalance.
+
+The structured survivor `qqq__chs_safe__top5__liquid__raw` earned +144.8% net at 2 bps over its available development history and +77.8% in the latest 12 months. Corrected 09:40 target-change SIP replay, with 2 bps additional adverse slippage per side, earned +76.2% with 9.7% drawdown, 9/3 positive/negative months, and 12.4% of positive P&L from the best five days.
+
+Selection activity covered 85.0% of dates and averaged 5.00 names when active. Status: `strong_distress_component_unpromoted`.
+
+Matched-control conclusion: Safest-distress materially beats the matched QQQ momentum control and halves drawdown, while remaining adapted development evidence.
+
+This is adapted development evidence, not untouched out-of-sample evidence. No rows on or after 2026-05-01 were loaded, and promotion remains false.

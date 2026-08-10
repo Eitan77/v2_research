@@ -23,3 +23,15 @@ The result is interpreted as development evidence only. The audit separated long
 - Every profitable execution-qualified best adaptation received SIP quote replay; direct-short signal-only variants were not called executable.
 - Maximum loaded date is 2026-04-30 and holdout rows loaded are zero.
 - Promotion remains false.
+
+## 2026-08-10 deep-development checkpoint
+
+Paper section 3.13, **Three moving averages**. Source contract: Example 3/10/21; long when MA3>MA10>MA21, exit when MA3<=MA10; symmetric short.
+
+The structured survivor `qqq__ma10_50_200__monthly__top3__momentum` earned +178.1% net at 2 bps over its available development history and +98.2% in the latest 12 months. Corrected 09:40 target-change SIP replay, with 2 bps additional adverse slippage per side, earned +94.8% with 15.8% drawdown, 8/4 positive/negative months, and 14.5% of positive P&L from the best five days.
+
+Selection activity covered 87.5% of dates and averaged 2.93 names when active. Status: `filtered_momentum_duplicate_unpromoted`.
+
+Matched-control conclusion: The selected triple-MA rule materially trails ungated momentum and barely changes drawdown; it is a filtered momentum expression, not a distinct edge.
+
+This is adapted development evidence, not untouched out-of-sample evidence. No rows on or after 2026-05-01 were loaded, and promotion remains false.

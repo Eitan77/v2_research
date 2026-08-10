@@ -1,0 +1,25 @@
+run_id: RUN-0012
+campaign_id: CAM-0620
+parent_run: RUN-0009
+status: invalid
+change: Frozen simpler-control and component-ablation challenge.
+reason: Determine whether the adapted survivor adds value beyond simpler exposures
+  and survives breadth/leverage neighborhoods.
+expected_effect: Retain only economically distinct, stable mechanisms; relabel or
+  retire duplicative complexity.
+frozen_contract: campaigns/CAM-0600/CONTROL_CONTRACT.yaml
+configuration:
+  costs_bps_per_side:
+  - -1
+  - 0
+  - 1
+  - 2
+  - 5
+  - 10
+  cutoff: '2026-04-30'
+  holdout_access: false
+  capital_base: 1.0
+result:
+  interpretation_blocker: Executed controls omitted the contract-required MA gate;
+    artifacts preserved under RUN-0012_INVALID_CONTRACT_MISMATCH.
+decision: Do not interpret.

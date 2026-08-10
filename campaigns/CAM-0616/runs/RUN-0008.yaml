@@ -1,0 +1,56 @@
+run_id: RUN-0008
+campaign_id: CAM-0616
+parent_run: RUN-0003
+status: completed
+change: Deeper mechanism-driven S&P-first development grid with QQQ/ETF comparisons
+  and target-change execution correction.
+reason: User requested continued diagnosis and economically motivated adaptations
+  for every source strategy.
+expected_effect: Identify whether causal universe, breadth, confirmation, risk-state,
+  or portfolio construction repairs alpha and consistency without retrospective ticker
+  selection.
+frozen_contract: campaigns/CAM-0600/DEEP_DEVELOPMENT_CONTRACT.yaml
+configuration:
+  discovery_cutoff: '2026-04-30'
+  holdout_access: false
+  fixed_base: 1.0
+  broker_margin: false
+  costs_bps_per_side:
+  - -1
+  - 0
+  - 1
+  - 2
+  - 5
+  - 10
+  recent_windows_months:
+  - 12
+  - 15
+  - 18
+  primary_universe: point_in_time_sp500
+  comparison_universes:
+  - point_in_time_qqq
+  - declared_etfs
+result:
+  campaign_id: CAM-0616
+  executed_variants: 54
+  positive_fraction_2bps: 0.8888888888888888
+  positive_fraction_10bps: 0.8333333333333334
+  structured_survivors: 36
+  selected_variant: qqq__fullcov_s50__mom60__positive_top10
+  decision: provisional_target_change_quote_gate
+  raw_best_variant: qqq__fullcov_s90__mom20__positive_top5
+  raw_best_2bps: 1.5143053773035788
+  selected_2bps: 1.310421409718649
+  selected_recent12_average: 0.0277207464888296
+  selected_recent12_positive: 9
+  selected_recent18_average: 0.020446357592268
+  selected_recent18_positive: 12
+  selected_maximum_drawdown: 0.2409011825082846
+  selected_positive_blocks: 3
+  selected_worst_block_average_month: 0.009267591964378118
+  selected_entries: 453
+  selected_top5_day_share: 0.0379638065802679
+  sp500_best_variant: sp500__fullcov_s50__mom126__positive_top5
+  sp500_best_2bps: 0.5049434341865868
+  holdout_rows_loaded: 0
+decision: provisional_target_change_quote_gate

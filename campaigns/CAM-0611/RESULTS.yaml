@@ -25,3 +25,50 @@ quote:
   negative_months: 4.0
   coverage_rate: 1.0
 conclusion: execution_sensitive_unpromoted
+deep_development_checkpoint:
+  checkpoint: 2026-08-10_deep_development
+  paper_section: '3.12'
+  strategy: Two moving averages
+  status: two_ma_risk_filter_supported_unpromoted
+  promotion_ready: false
+  development_only: true
+  maximum_loaded_date: '2026-04-30'
+  holdout_rows_loaded: 0
+  broker_margin_used: false
+  selected:
+    variant: qqq__ma50_200__weekly__top3__momentum
+    full_history_net_2bps: 3.0797545172018594
+    full_history_maximum_drawdown: 0.2210979270380882
+    recent12_net_2bps: 1.2015300266866626
+    recent12_historical_percentile: 0.9722222222222222
+    positive_rolling12_fraction: 0.8055555555555556
+    target_active_date_fraction: 0.882830626450116
+    average_names_per_active_date: 3.0
+  quote_0940_target_change:
+    additional_slippage_bps_per_side: 2
+    net_simple_return: 1.2192463411988794
+    maximum_drawdown: 0.1244686332285264
+    positive_months: 9
+    negative_months: 3
+    active_days: 251
+    top5_day_positive_share: 0.1478783949607104
+    role_coverage: 1.0
+  matched_control:
+    run_id: RUN-0012
+    cost_bps_per_side: 2.0
+    adapted_variant: qqq__ma50_200__weekly__top3
+    control_variant: qqq__ungated__weekly__top3
+    adapted_net: 3.0797545172018594
+    control_net: 3.0253854164311464
+    incremental_net: 0.054369100770713
+    adapted_drawdown: 0.2210979270380882
+    control_drawdown: 0.359956278200333
+    drawdown_change: -0.1388583511622448
+    adapted_recent12_average_month: 0.1001275022238885
+    control_recent12_average_month: 0.0870288583815264
+    adapted_recent12_positive_months: 9.0
+    control_recent12_positive_months: 8.0
+    decision: The 50/200 gate improves return modestly and sharply reduces drawdown
+      versus identical momentum ranking.
+  conclusion: No strategy is promoted; evidence is adapted development data and the
+    sealed holdout remains untouched.

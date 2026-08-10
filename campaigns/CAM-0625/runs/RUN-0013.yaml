@@ -1,0 +1,58 @@
+run_id: RUN-0013
+campaign_id: CAM-0625
+parent_run: RUN-0012
+status: completed
+change: Circular 21-session block bootstrap of 252-session return and drawdown.
+reason: IID monthly resampling ignores serial dependence and does not quantify path
+  drawdown.
+expected_effect: Produce descriptive downside and drawdown distributions without claiming
+  formal out-of-sample probabilities.
+configuration:
+  portfolio_rules:
+  - equal
+  - causal_inverse_vol
+  source_window: full_common_development_history
+  block_length_sessions: 21
+  simulated_path_sessions: 252
+  draws: 20000
+  seed: 6252028
+  cutoff: '2026-04-30'
+  holdout_access: false
+result:
+  status: completed
+  run_id: RUN-0013
+  metrics:
+    equal:
+      draws: 20000
+      block_length_sessions: 21
+      path_sessions: 252
+      probability_positive_return: 0.96855
+      return_p01: -0.05076132349930986
+      return_p05: 0.02511577667257472
+      return_median: 0.21135577099087713
+      return_p95: 0.4139323366831883
+      maximum_drawdown_median: 0.07088205617733334
+      maximum_drawdown_p90: 0.11694812752366669
+      maximum_drawdown_p95: 0.13276701164511356
+      maximum_drawdown_p99: 0.16972016379151955
+      probability_drawdown_above_20pct: 0.00285
+    causal_inverse_vol:
+      draws: 20000
+      block_length_sessions: 21
+      path_sessions: 252
+      probability_positive_return: 0.95565
+      return_p01: -0.06237306197074876
+      return_p05: 0.006278759772476112
+      return_median: 0.16429895427938995
+      return_p95: 0.32652729467030384
+      maximum_drawdown_median: 0.06465596887203917
+      maximum_drawdown_p90: 0.10705751185712703
+      maximum_drawdown_p95: 0.1229737510116145
+      maximum_drawdown_p99: 0.16133146200427065
+      probability_drawdown_above_20pct: 0.00155
+  maximum_loaded_date: '2026-04-30'
+  holdout_rows_loaded: 0
+  interpretation: Descriptive stationary-mixture stress; not a p-value or out-of-sample
+    probability.
+decision: Use p95/p99 drawdown for sizing caution only; no distributional or independence
+  claim.

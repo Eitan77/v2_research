@@ -1,0 +1,61 @@
+run_id: RUN-0012
+campaign_id: CAM-0616
+parent_run: RUN-0009
+status: completed
+change: Frozen simpler-control and component-ablation challenge.
+reason: Determine whether the adapted survivor adds value beyond simpler exposures
+  and survives breadth/leverage neighborhoods.
+expected_effect: Retain only economically distinct, stable mechanisms; relabel or
+  retire duplicative complexity.
+frozen_contract: campaigns/CAM-0600/CONTROL_CONTRACT.yaml
+configuration:
+  costs_bps_per_side:
+  - -1
+  - 0
+  - 1
+  - 2
+  - 5
+  - 10
+  cutoff: '2026-04-30'
+  holdout_access: false
+  capital_base: 1.0
+result:
+  executed_configuration_reconciled: true
+  matched_comparisons:
+  - campaign_id: CAM-0616
+    run_id: RUN-0012
+    cost_bps_per_side: 2.0
+    adapted_variant: qqq__fullcov_s50__mom60__positive_top10
+    control_variant: qqq__simple_mom60__top10
+    adapted_net: 1.310421409718649
+    control_net: 1.4375229707428876
+    incremental_net: -0.12710156102423853
+    adapted_drawdown: 0.2409011825082846
+    control_drawdown: 0.2967740901378389
+    drawdown_change: -0.0558729076295543
+    adapted_recent12_average_month: 0.0277207464888296
+    control_recent12_average_month: 0.0460035265569476
+    adapted_recent12_positive_months: 9
+    control_recent12_positive_months: 9
+    decision: The executable long-only sleeve is a momentum proxy; signed source identity
+      remains non-executable overnight.
+  - campaign_id: CAM-0616
+    run_id: RUN-0012
+    cost_bps_per_side: 10.0
+    adapted_variant: qqq__fullcov_s50__mom60__positive_top10
+    control_variant: qqq__simple_mom60__top10
+    adapted_net: 1.229728473089172
+    control_net: 1.3688235476499235
+    incremental_net: -0.13909507456075154
+    adapted_drawdown: 0.2432152951971576
+    control_drawdown: 0.304778671643349
+    drawdown_change: -0.06156337644619139
+    adapted_recent12_average_month: 0.0268612046383933
+    control_recent12_average_month: 0.0453004176912814
+    adapted_recent12_positive_months: 9
+    control_recent12_positive_months: 9
+    decision: The executable long-only sleeve is a momentum proxy; signed source identity
+      remains non-executable overnight.
+  holdout_rows_loaded: 0
+decision: The executable long-only sleeve is a momentum proxy; signed source identity
+  remains non-executable overnight.

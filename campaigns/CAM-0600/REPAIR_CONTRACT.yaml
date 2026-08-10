@@ -1,0 +1,24 @@
+version: 1
+frozen_at: '2026-08-10T00:28:00-07:00'
+run_id: RUN-0010
+parent_run: RUN-0008
+campaigns: [CAM-0606, CAM-0608, CAM-0609, CAM-0613, CAM-0617, CAM-0621]
+purpose: Repair the specific failure diagnosed by the structured RUN-0008 screen.
+rules:
+  discovery_cutoff: '2026-04-30'
+  holdout_access: false
+  fixed_base: 1.0
+  broker_margin: false
+  costs_bps_per_side: [-1, 0, 1, 2, 5, 10]
+questions:
+  CAM-0606: Replace the invalid generic-cluster proxy with predefined economically related ETF pairs and causal pair dislocations.
+  CAM-0608: Reduce multi-cluster turnover using slower residual horizons and weekly target updates.
+  CAM-0609: Reduce weighted-regression turnover using slower residual horizons and weekly target updates.
+  CAM-0613: Concentrate pivot trades by causal setup strength rather than owning every signal.
+  CAM-0617: Reduce alpha-combo drawdown and turnover through weekly/monthly refresh and market-state gating.
+  CAM-0621: Test whether multi-day holding converts the low-IBS relation into enough edge per turnover.
+anti_overfit:
+  - Predefined ETF pairs only; no pair selected from realized PnL.
+  - Conventional weekly/monthly cadence and 2/3/5-day holding neighborhoods.
+  - No post-result ticker exclusions.
+  - Same recent windows and structured robustness screen as RUN-0008.

@@ -17,3 +17,50 @@ adaptation:
   walk_forward_return: null
 quote: null
 conclusion: stopped_nonexecutable_short_signal
+deep_development_checkpoint:
+  checkpoint: 2026-08-10_deep_development
+  paper_section: 3.18.1
+  strategy: Dollar-neutral optimization
+  status: source_signed_nonexecutible_adaptation_only
+  promotion_ready: false
+  development_only: true
+  maximum_loaded_date: '2026-04-30'
+  holdout_rows_loaded: 0
+  broker_margin_used: false
+  selected:
+    variant: qqq__fullcov_s50__mom60__positive_top10
+    full_history_net_2bps: 1.310421409718649
+    full_history_maximum_drawdown: 0.2409011825082846
+    recent12_net_2bps: 0.3326489578659554
+    recent12_historical_percentile: 0.8194444444444444
+    positive_rolling12_fraction: 0.8333333333333334
+    target_active_date_fraction: 0.9228538283062644
+    average_names_per_active_date: 10.0
+  quote_0940_target_change:
+    additional_slippage_bps_per_side: 2
+    net_simple_return: 0.338826861351149
+    maximum_drawdown: 0.0742299694753227
+    positive_months: 9
+    negative_months: 3
+    active_days: 251
+    top5_day_positive_share: 0.1237691181148553
+    role_coverage: 1.0
+  matched_control:
+    run_id: RUN-0012
+    cost_bps_per_side: 2.0
+    adapted_variant: qqq__fullcov_s50__mom60__positive_top10
+    control_variant: qqq__simple_mom60__top10
+    adapted_net: 1.310421409718649
+    control_net: 1.4375229707428876
+    incremental_net: -0.1271015610242385
+    adapted_drawdown: 0.2409011825082846
+    control_drawdown: 0.2967740901378389
+    drawdown_change: -0.0558729076295543
+    adapted_recent12_average_month: 0.0277207464888296
+    control_recent12_average_month: 0.0460035265569476
+    adapted_recent12_positive_months: 9.0
+    control_recent12_positive_months: 9.0
+    decision: The executable long-only sleeve is a momentum proxy; signed source identity
+      remains non-executable overnight.
+  conclusion: No strategy is promoted; evidence is adapted development data and the
+    sealed holdout remains untouched.

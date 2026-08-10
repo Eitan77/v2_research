@@ -1,0 +1,110 @@
+{
+  "status": "completed",
+  "selected_candidates": 23,
+  "new_variant_definitions_tested": 1459,
+  "multiple_testing_warning": "All candidates are adapted development evidence; maxima are not p-values and do not establish independent discoveries.",
+  "correlation_pairs_above_0_70": 20,
+  "highest_correlations": [
+    {
+      "campaign_a": "CAM-0615",
+      "campaign_b": "CAM-0616",
+      "daily_correlation": 0.9865901353450759
+    },
+    {
+      "campaign_a": "CAM-0610",
+      "campaign_b": "CAM-0611",
+      "daily_correlation": 0.919566818768595
+    },
+    {
+      "campaign_a": "CAM-0623",
+      "campaign_b": "CAM-0624",
+      "daily_correlation": 0.9127222549622738
+    },
+    {
+      "campaign_a": "CAM-0611",
+      "campaign_b": "CAM-0612",
+      "daily_correlation": 0.842842088778676
+    },
+    {
+      "campaign_a": "CAM-0610",
+      "campaign_b": "CAM-0612",
+      "daily_correlation": 0.8120301943543909
+    },
+    {
+      "campaign_a": "CAM-0619",
+      "campaign_b": "CAM-0620",
+      "daily_correlation": 0.8099040282479114
+    },
+    {
+      "campaign_a": "CAM-0601",
+      "campaign_b": "CAM-0616",
+      "daily_correlation": 0.7958598127463914
+    },
+    {
+      "campaign_a": "CAM-0601",
+      "campaign_b": "CAM-0615",
+      "daily_correlation": 0.7906612613108871
+    },
+    {
+      "campaign_a": "CAM-0608",
+      "campaign_b": "CAM-0609",
+      "daily_correlation": 0.7664537364600184
+    },
+    {
+      "campaign_a": "CAM-0601",
+      "campaign_b": "CAM-0603",
+      "daily_correlation": 0.7565956902259711
+    },
+    {
+      "campaign_a": "CAM-0601",
+      "campaign_b": "CAM-0622",
+      "daily_correlation": 0.75285144311291
+    },
+    {
+      "campaign_a": "CAM-0616",
+      "campaign_b": "CAM-0622",
+      "daily_correlation": 0.7355366959434035
+    },
+    {
+      "campaign_a": "CAM-0603",
+      "campaign_b": "CAM-0616",
+      "daily_correlation": 0.7331909233922989
+    },
+    {
+      "campaign_a": "CAM-0601",
+      "campaign_b": "CAM-0609",
+      "daily_correlation": 0.7318743486365441
+    },
+    {
+      "campaign_a": "CAM-0612",
+      "campaign_b": "CAM-0623",
+      "daily_correlation": 0.7315507833834053
+    },
+    {
+      "campaign_a": "CAM-0603",
+      "campaign_b": "CAM-0615",
+      "daily_correlation": 0.7314302188782796
+    },
+    {
+      "campaign_a": "CAM-0601",
+      "campaign_b": "CAM-0602",
+      "daily_correlation": 0.7306321786159575
+    },
+    {
+      "campaign_a": "CAM-0615",
+      "campaign_b": "CAM-0622",
+      "daily_correlation": 0.7233629359373795
+    },
+    {
+      "campaign_a": "CAM-0611",
+      "campaign_b": "CAM-0623",
+      "daily_correlation": 0.7216677077196383
+    },
+    {
+      "campaign_a": "CAM-0602",
+      "campaign_b": "CAM-0609",
+      "daily_correlation": 0.7204025516181981
+    }
+  ],
+  "holdout_rows_loaded": 0
+}

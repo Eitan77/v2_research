@@ -106,6 +106,7 @@ def main() -> None:
     parser.add_argument("--roles", type=Path, default=ROLES_PATH)
     parser.add_argument("--output", type=Path, default=OUTPUT)
     parser.add_argument("--window-seconds", type=int, default=1)
+    parser.add_argument("--workers", type=int, default=WORKERS)
     args = parser.parse_args()
     env = load_env(WORKSPACE / ".env.local")
     roles = pd.read_parquet(args.roles)
@@ -123,10 +124,17 @@ def main() -> None:
                           "window_seconds": args.window_seconds})
     all_rows = []
     pages = attempts = requested = completed = 0
-    with ThreadPoolExecutor(max_workers=WORKERS) as pool:
+    failed_tasks = 0
+    failure_messages = []
+    with ThreadPoolExecutor(max_workers=args.workers) as pool:
         futures = [pool.submit(request_task, task, env) for task in tasks]
         for future in as_completed(futures):
-            result = future.result()
+            try:
+                result = future.result()
+            except Exception as exc:
+                failed_tasks += 1
+                failure_messages.append(str(exc))
+                continue
             all_rows.extend(result["rows"])
             pages += result["pages"]
             attempts += result["attempts"]
@@ -143,7 +151,8 @@ def main() -> None:
     merged = roles.merge(matched[["symbol", "target_ts", "role"]], on=["symbol", "target_ts", "role"], how="left", indicator=True)
     report = {
         "status": "passed", "generated_utc": datetime.now(timezone.utc).isoformat(),
-        "workers": WORKERS, "batch_size": BATCH_SIZE, "tasks": len(tasks), "request_symbol_units": requested,
+        "workers": args.workers, "batch_size": BATCH_SIZE, "tasks": len(tasks), "failed_tasks": failed_tasks,
+        "failure_messages": sorted(set(failure_messages))[:10], "request_symbol_units": requested,
         "http_attempts": attempts, "pages": pages, "roles": int(len(roles)), "matched_roles": int(len(matched)),
         "missing_roles": int((merged["_merge"] != "both").sum()),
         "coverage_rate": float((merged["_merge"] == "both").mean()),

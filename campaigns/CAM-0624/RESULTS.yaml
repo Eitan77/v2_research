@@ -25,3 +25,34 @@ quote:
   negative_months: 10.0
   coverage_rate: 0.9994010182689428
 conclusion: retired_quote_execution_failure
+deep_development_checkpoint:
+  checkpoint: 2026-08-10_deep_development
+  paper_section: 15.3.1
+  strategy: Distress risk management
+  status: low_drawdown_distress_component_unpromoted
+  promotion_ready: false
+  development_only: true
+  maximum_loaded_date: '2026-04-30'
+  holdout_rows_loaded: 0
+  broker_margin_used: false
+  selected:
+    variant: qqq__chs_safe__top5__liquid__target8
+    full_history_net_2bps: 0.5048929865508118
+    full_history_maximum_drawdown: 0.1054286736972994
+    recent12_net_2bps: 0.1779597659423282
+    recent12_historical_percentile: 0.8888888888888888
+    positive_rolling12_fraction: 0.7638888888888888
+    target_active_date_fraction: 0.8503480278422274
+    average_names_per_active_date: 5.0
+  quote_0940_target_change:
+    additional_slippage_bps_per_side: 2
+    net_simple_return: 0.1750609269087059
+    maximum_drawdown: 0.0371801285829414
+    positive_months: 9
+    negative_months: 3
+    active_days: 251
+    top5_day_positive_share: 0.1218476065052173
+    role_coverage: 1.0
+  matched_control: null
+  conclusion: No strategy is promoted; evidence is adapted development data and the
+    sealed holdout remains untouched.

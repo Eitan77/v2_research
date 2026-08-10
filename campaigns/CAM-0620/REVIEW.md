@@ -23,3 +23,15 @@ The result is interpreted as development evidence only. The audit separated long
 - Every profitable execution-qualified best adaptation received SIP quote replay; direct-short signal-only variants were not called executable.
 - Maximum loaded date is 2026-04-30 and holdout rows loaded are zero.
 - Promotion remains false.
+
+## 2026-08-10 deep-development checkpoint
+
+Paper section 4.1.2, **Dual-momentum sector rotation**. Source contract: Buy relative-momentum sector winners only if broad index price is above its 100- to 200-day MA; otherwise hold an uncorrelated gold or Treasury ETF.
+
+The structured survivor `sector11__mom63_skip0__monthly__top1` earned +117.9% net at 2 bps over its available development history and +34.5% in the latest 12 months. Corrected 09:40 target-change SIP replay, with 2 bps additional adverse slippage per side, earned +35.9% with 9.3% drawdown, 8/4 positive/negative months, and 13.8% of positive P&L from the best five days.
+
+Selection activity covered 98.9% of dates and averaged 1.00 names when active. Status: `dual_market_gate_supported_unpromoted`.
+
+Matched-control conclusion: The broad-market gate roughly halves drawdown and modestly improves return, with BIL defense and no margin.
+
+This is adapted development evidence, not untouched out-of-sample evidence. No rows on or after 2026-05-01 were loaded, and promotion remains false.

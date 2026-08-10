@@ -1,0 +1,145 @@
+{
+  "status": "passed",
+  "campaigns": 19,
+  "trade_rows": 56737,
+  "roles": 55887,
+  "symbols": 547,
+  "minimum_session": "2025-05-01",
+  "maximum_session": "2026-04-30",
+  "holdout_rows_loaded": 0,
+  "reports": [
+    {
+      "campaign_id": "CAM-0600",
+      "variant_id": "sp500__mom63_skip0__top3__liquid__panic1",
+      "holding": "open_to_next_open",
+      "trade_roles": 66,
+      "maximum_gross": 1.0000000000000002
+    },
+    {
+      "campaign_id": "CAM-0601",
+      "variant_id": "qqq__sue__hold3__top5__price20",
+      "holding": "open_to_next_open",
+      "trade_roles": 94,
+      "maximum_gross": 1.0
+    },
+    {
+      "campaign_id": "CAM-0602",
+      "variant_id": "qqq__value_quality__top5__trend0",
+      "holding": "open_to_next_open",
+      "trade_roles": 70,
+      "maximum_gross": 1.0000000000000002
+    },
+    {
+      "campaign_id": "CAM-0603",
+      "variant_id": "qqq__lowvol_quality__top20__trend1",
+      "holding": "open_to_next_open",
+      "trade_roles": 280,
+      "maximum_gross": 1.0000000000000002
+    },
+    {
+      "campaign_id": "CAM-0604",
+      "variant_id": "sp500__value_quality__top20__trend0",
+      "holding": "open_to_next_open",
+      "trade_roles": 286,
+      "maximum_gross": 1.0000000000000002
+    },
+    {
+      "campaign_id": "CAM-0605",
+      "variant_id": "qqq__resmom__top3__liquid",
+      "holding": "open_to_next_open",
+      "trade_roles": 47,
+      "maximum_gross": 1.0
+    },
+    {
+      "campaign_id": "CAM-0607",
+      "variant_id": "etf__long_cheap_r2__top1__z1__trend0",
+      "holding": "open_to_close",
+      "trade_roles": 478,
+      "maximum_gross": 1.0
+    },
+    {
+      "campaign_id": "CAM-0610",
+      "variant_id": "qqq__ma150__weekly__top3__momentum",
+      "holding": "open_to_next_open",
+      "trade_roles": 52,
+      "maximum_gross": 1.0
+    },
+    {
+      "campaign_id": "CAM-0611",
+      "variant_id": "qqq__ma50_200__weekly__top3__momentum",
+      "holding": "open_to_next_open",
+      "trade_roles": 56,
+      "maximum_gross": 1.0
+    },
+    {
+      "campaign_id": "CAM-0612",
+      "variant_id": "qqq__ma10_50_200__monthly__top3__momentum",
+      "holding": "open_to_next_open",
+      "trade_roles": 38,
+      "maximum_gross": 1.0
+    },
+    {
+      "campaign_id": "CAM-0614",
+      "variant_id": "sp500__donchian20__reversal",
+      "holding": "open_to_next_open",
+      "trade_roles": 54383,
+      "maximum_gross": 1.0000000000000002
+    },
+    {
+      "campaign_id": "CAM-0615",
+      "variant_id": "qqq__fullcov_s50__mom60__positive_top10",
+      "holding": "open_to_next_open",
+      "trade_roles": 276,
+      "maximum_gross": 1.0000000000000002
+    },
+    {
+      "campaign_id": "CAM-0616",
+      "variant_id": "qqq__fullcov_s50__mom60__positive_top10",
+      "holding": "open_to_next_open",
+      "trade_roles": 256,
+      "maximum_gross": 1.0000000000000002
+    },
+    {
+      "campaign_id": "CAM-0618",
+      "variant_id": "sector11__mom252_skip21__weekly__top3",
+      "holding": "open_to_next_open",
+      "trade_roles": 175,
+      "maximum_gross": 1.0000000000000002
+    },
+    {
+      "campaign_id": "CAM-0619",
+      "variant_id": "sector11__mom63_skip0__monthly__top1",
+      "holding": "open_to_next_open",
+      "trade_roles": 10,
+      "maximum_gross": 1.0
+    },
+    {
+      "campaign_id": "CAM-0620",
+      "variant_id": "sector11__mom63_skip0__monthly__top1",
+      "holding": "open_to_next_open",
+      "trade_roles": 10,
+      "maximum_gross": 1.0
+    },
+    {
+      "campaign_id": "CAM-0622",
+      "variant_id": "QQQ__target15__vol20__monthly__thr20__def1",
+      "holding": "open_to_next_open",
+      "trade_roles": 12,
+      "maximum_gross": 1.0
+    },
+    {
+      "campaign_id": "CAM-0623",
+      "variant_id": "qqq__chs_safe__top5__liquid__raw",
+      "holding": "open_to_next_open",
+      "trade_roles": 74,
+      "maximum_gross": 1.0000000000000002
+    },
+    {
+      "campaign_id": "CAM-0624",
+      "variant_id": "qqq__chs_safe__top5__liquid__target8",
+      "holding": "open_to_next_open",
+      "trade_roles": 74,
+      "maximum_gross": 1.0
+    }
+  ]
+}

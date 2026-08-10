@@ -25,3 +25,50 @@ quote:
   negative_months: 5.0
   coverage_rate: 1.0
 conclusion: retired_quote_execution_failure
+deep_development_checkpoint:
+  checkpoint: 2026-08-10_deep_development
+  paper_section: 4.1.1
+  strategy: Sector momentum with MA filter
+  status: winner_ma_gate_supported_unpromoted
+  promotion_ready: false
+  development_only: true
+  maximum_loaded_date: '2026-04-30'
+  holdout_rows_loaded: 0
+  broker_margin_used: false
+  selected:
+    variant: sector11__mom63_skip0__monthly__top1
+    full_history_net_2bps: 1.299563398714651
+    full_history_maximum_drawdown: 0.1755432227380992
+    recent12_net_2bps: 0.3687326956723341
+    recent12_historical_percentile: 0.8571428571428571
+    positive_rolling12_fraction: 0.8181818181818182
+    target_active_date_fraction: 0.8766375545851528
+    average_names_per_active_date: 1.0
+  quote_0940_target_change:
+    additional_slippage_bps_per_side: 2
+    net_simple_return: 0.3948595818432061
+    maximum_drawdown: 0.1000197855629909
+    positive_months: 8
+    negative_months: 4
+    active_days: 250
+    top5_day_positive_share: 0.1135257047379079
+    role_coverage: 1.0
+  matched_control:
+    run_id: RUN-0014
+    cost_bps_per_side: 2.0
+    adapted_variant: sector__mom63_skip0__top1__winnerma100
+    control_variant: sector__mom63_skip0__top1__plain
+    adapted_net: 1.299563398714651
+    control_net: 1.0084089656701811
+    incremental_net: 0.29115443304447
+    adapted_drawdown: 0.1755432227380992
+    control_drawdown: 0.3056036406499058
+    drawdown_change: -0.1300604179118066
+    adapted_recent12_average_month: 0.0307277246393611
+    control_recent12_average_month: 0.0307277246393611
+    adapted_recent12_positive_months: 8.0
+    control_recent12_positive_months: 8.0
+    decision: The winner-MA gate improves both return and drawdown in the matched
+      63-day sector rule.
+  conclusion: No strategy is promoted; evidence is adapted development data and the
+    sealed holdout remains untouched.

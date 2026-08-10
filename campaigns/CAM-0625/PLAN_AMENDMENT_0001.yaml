@@ -1,0 +1,8 @@
+amendment_id: PLAN-AMENDMENT-0001
+frozen_local: '2026-08-10T00:46:00-07:00'
+scope: clerical_only
+change: Correct CAM-0621 variant identifier from etf__ibs30__top5__trend1 to etf__ibs30__top5__hold3__trend1.
+evidence: campaigns/CAM-0600/artifacts/shared/repair_diagnostic_summary.csv
+selection_changed: false
+data_access_before_correction: false
+result_interpreted_before_correction: false

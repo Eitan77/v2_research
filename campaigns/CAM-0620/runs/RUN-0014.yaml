@@ -1,0 +1,75 @@
+run_id: RUN-0014
+campaign_id: CAM-0620
+parent_run: RUN-0013
+status: completed
+change: Complete reconciled source gate and matched plain controls.
+reason: Prior repair omitted the plain control from the same executed record.
+expected_effect: Measure gate increment without cross-run ambiguity.
+frozen_contract: campaigns/CAM-0600/CONTROL_CONTRACT.yaml
+configuration:
+  formation_skip:
+  - - 63
+    - 0
+  - - 126
+    - 0
+  - - 126
+    - 21
+  - - 252
+    - 21
+  top_k:
+  - 1
+  - 3
+  - 5
+  ma_windows:
+  - 100
+  - 150
+  - 200
+  include_plain: true
+  costs_bps_per_side:
+  - -1
+  - 0
+  - 1
+  - 2
+  - 5
+  - 10
+  holdout_access: false
+result:
+  executed_configuration_reconciled: true
+  matched_comparisons:
+  - campaign_id: CAM-0620
+    run_id: RUN-0014
+    cost_bps_per_side: 2.0
+    adapted_variant: sector__mom63_skip0__top1__marketma200
+    control_variant: sector__mom63_skip0__top1__plain
+    adapted_net: 1.1793742131261449
+    control_net: 1.0084089656701811
+    incremental_net: 0.17096524745596375
+    adapted_drawdown: 0.1686423265358274
+    control_drawdown: 0.3056036406499058
+    drawdown_change: -0.13696131411407841
+    adapted_recent12_average_month: 0.0287228007684776
+    control_recent12_average_month: 0.0307277246393611
+    adapted_recent12_positive_months: 8
+    control_recent12_positive_months: 8
+    decision: The broad-market gate roughly halves drawdown and modestly improves
+      return, with BIL defense and no margin.
+  - campaign_id: CAM-0620
+    run_id: RUN-0014
+    cost_bps_per_side: 10.0
+    adapted_variant: sector__mom63_skip0__top1__marketma200
+    control_variant: sector__mom63_skip0__top1__plain
+    adapted_net: 1.1049742131261444
+    control_net: 0.9340089656701812
+    incremental_net: 0.1709652474559632
+    adapted_drawdown: 0.1694859954957419
+    control_drawdown: 0.3090235855558426
+    drawdown_change: -0.1395375900601007
+    adapted_recent12_average_month: 0.028056134101811
+    control_recent12_average_month: 0.0300610579726945
+    adapted_recent12_positive_months: 8
+    control_recent12_positive_months: 8
+    decision: The broad-market gate roughly halves drawdown and modestly improves
+      return, with BIL defense and no margin.
+  holdout_rows_loaded: 0
+decision: The broad-market gate roughly halves drawdown and modestly improves return,
+  with BIL defense and no margin.

@@ -25,3 +25,34 @@ quote:
   negative_months: 5.0
   coverage_rate: 1.0
 conclusion: retired_quote_execution_failure
+deep_development_checkpoint:
+  checkpoint: 2026-08-10_deep_development
+  paper_section: '4.1'
+  strategy: Sector momentum rotation
+  status: smooth_sector_diversifier_unpromoted
+  promotion_ready: false
+  development_only: true
+  maximum_loaded_date: '2026-04-30'
+  holdout_rows_loaded: 0
+  broker_margin_used: false
+  selected:
+    variant: sector11__mom252_skip21__weekly__top3
+    full_history_net_2bps: 1.1156596031290853
+    full_history_maximum_drawdown: 0.3409077067269778
+    recent12_net_2bps: 0.2520377922569115
+    recent12_historical_percentile: 0.8181818181818182
+    positive_rolling12_fraction: 0.8961038961038961
+    target_active_date_fraction: 0.8471615720524017
+    average_names_per_active_date: 2.975515463917526
+  quote_0940_target_change:
+    additional_slippage_bps_per_side: 2
+    net_simple_return: 0.2636976965844868
+    maximum_drawdown: 0.0557124982713536
+    positive_months: 11
+    negative_months: 1
+    active_days: 250
+    top5_day_positive_share: 0.1056057639750832
+    role_coverage: 1.0
+  matched_control: null
+  conclusion: No strategy is promoted; evidence is adapted development data and the
+    sealed holdout remains untouched.

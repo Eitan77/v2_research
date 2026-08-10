@@ -1,0 +1,371 @@
+{
+  "status": "completed",
+  "run_id": "RUN-0007",
+  "metrics": [
+    {
+      "level": "sleeve",
+      "name": "momentum",
+      "additional_delay_sessions": 1,
+      "total_execution_lag_sessions": 2,
+      "cost_bps_per_side": 2.0,
+      "net_simple_return": 2.0794324022,
+      "maximum_drawdown": 0.1728967018,
+      "recent12_average_month": 0.1016924748,
+      "recent12_positive_months": 10
+    },
+    {
+      "level": "sleeve",
+      "name": "multifactor",
+      "additional_delay_sessions": 1,
+      "total_execution_lag_sessions": 2,
+      "cost_bps_per_side": 2.0,
+      "net_simple_return": 0.7425650934,
+      "maximum_drawdown": 0.1641961575,
+      "recent12_average_month": 0.0346579491,
+      "recent12_positive_months": 11
+    },
+    {
+      "level": "sleeve",
+      "name": "ibs",
+      "additional_delay_sessions": 1,
+      "total_execution_lag_sessions": 2,
+      "cost_bps_per_side": 2.0,
+      "net_simple_return": 1.0687072889,
+      "maximum_drawdown": 0.1555856504,
+      "recent12_average_month": 0.0045939479,
+      "recent12_positive_months": 6
+    },
+    {
+      "level": "sleeve",
+      "name": "distress",
+      "additional_delay_sessions": 1,
+      "total_execution_lag_sessions": 2,
+      "cost_bps_per_side": 2.0,
+      "net_simple_return": 0.463627773,
+      "maximum_drawdown": 0.0976728552,
+      "recent12_average_month": 0.0147125873,
+      "recent12_positive_months": 8
+    },
+    {
+      "level": "ensemble",
+      "name": "equal_four",
+      "additional_delay_sessions": 1,
+      "total_execution_lag_sessions": 2,
+      "cost_bps_per_side": 2.0,
+      "net_simple_return": 0.9272350905,
+      "maximum_drawdown": 0.0978207057,
+      "recent12_average_month": 0.0389142398,
+      "recent12_positive_months": 10
+    },
+    {
+      "level": "sleeve",
+      "name": "momentum",
+      "additional_delay_sessions": 1,
+      "total_execution_lag_sessions": 2,
+      "cost_bps_per_side": 5.0,
+      "net_simple_return": 2.0573338025,
+      "maximum_drawdown": 0.1750607173,
+      "recent12_average_month": 0.1011968166,
+      "recent12_positive_months": 10
+    },
+    {
+      "level": "sleeve",
+      "name": "multifactor",
+      "additional_delay_sessions": 1,
+      "total_execution_lag_sessions": 2,
+      "cost_bps_per_side": 5.0,
+      "net_simple_return": 0.7359161111,
+      "maximum_drawdown": 0.1652749244,
+      "recent12_average_month": 0.0345091273,
+      "recent12_positive_months": 11
+    },
+    {
+      "level": "sleeve",
+      "name": "ibs",
+      "additional_delay_sessions": 1,
+      "total_execution_lag_sessions": 2,
+      "cost_bps_per_side": 5.0,
+      "net_simple_return": 0.8703972889,
+      "maximum_drawdown": 0.1688320874,
+      "recent12_average_month": 0.0019061701,
+      "recent12_positive_months": 6
+    },
+    {
+      "level": "sleeve",
+      "name": "distress",
+      "additional_delay_sessions": 1,
+      "total_execution_lag_sessions": 2,
+      "cost_bps_per_side": 5.0,
+      "net_simple_return": 0.458807103,
+      "maximum_drawdown": 0.0991155092,
+      "recent12_average_month": 0.0146628597,
+      "recent12_positive_months": 8
+    },
+    {
+      "level": "ensemble",
+      "name": "equal_four",
+      "additional_delay_sessions": 1,
+      "total_execution_lag_sessions": 2,
+      "cost_bps_per_side": 5.0,
+      "net_simple_return": 0.881657819,
+      "maximum_drawdown": 0.1014156061,
+      "recent12_average_month": 0.0380687434,
+      "recent12_positive_months": 10
+    },
+    {
+      "level": "sleeve",
+      "name": "momentum",
+      "additional_delay_sessions": 1,
+      "total_execution_lag_sessions": 2,
+      "cost_bps_per_side": 10.0,
+      "net_simple_return": 2.020502803,
+      "maximum_drawdown": 0.1787326693,
+      "recent12_average_month": 0.1003707196,
+      "recent12_positive_months": 10
+    },
+    {
+      "level": "sleeve",
+      "name": "multifactor",
+      "additional_delay_sessions": 1,
+      "total_execution_lag_sessions": 2,
+      "cost_bps_per_side": 10.0,
+      "net_simple_return": 0.724834474,
+      "maximum_drawdown": 0.1670859984,
+      "recent12_average_month": 0.0342610911,
+      "recent12_positive_months": 11
+    },
+    {
+      "level": "sleeve",
+      "name": "ibs",
+      "additional_delay_sessions": 1,
+      "total_execution_lag_sessions": 2,
+      "cost_bps_per_side": 10.0,
+      "net_simple_return": 0.5398806222,
+      "maximum_drawdown": 0.1945077637,
+      "recent12_average_month": -0.0025734595,
+      "recent12_positive_months": 6
+    },
+    {
+      "level": "sleeve",
+      "name": "distress",
+      "additional_delay_sessions": 1,
+      "total_execution_lag_sessions": 2,
+      "cost_bps_per_side": 10.0,
+      "net_simple_return": 0.4507726529,
+      "maximum_drawdown": 0.1015253187,
+      "recent12_average_month": 0.0145799804,
+      "recent12_positive_months": 8
+    },
+    {
+      "level": "ensemble",
+      "name": "equal_four",
+      "additional_delay_sessions": 1,
+      "total_execution_lag_sessions": 2,
+      "cost_bps_per_side": 10.0,
+      "net_simple_return": 0.8056956999,
+      "maximum_drawdown": 0.1077197513,
+      "recent12_average_month": 0.0366595829,
+      "recent12_positive_months": 10
+    },
+    {
+      "level": "sleeve",
+      "name": "momentum",
+      "additional_delay_sessions": 2,
+      "total_execution_lag_sessions": 3,
+      "cost_bps_per_side": 2.0,
+      "net_simple_return": 2.2516502724,
+      "maximum_drawdown": 0.173548071,
+      "recent12_average_month": 0.1000857823,
+      "recent12_positive_months": 10
+    },
+    {
+      "level": "sleeve",
+      "name": "multifactor",
+      "additional_delay_sessions": 2,
+      "total_execution_lag_sessions": 3,
+      "cost_bps_per_side": 2.0,
+      "net_simple_return": 0.7481971584,
+      "maximum_drawdown": 0.1730454909,
+      "recent12_average_month": 0.0361997564,
+      "recent12_positive_months": 11
+    },
+    {
+      "level": "sleeve",
+      "name": "ibs",
+      "additional_delay_sessions": 2,
+      "total_execution_lag_sessions": 3,
+      "cost_bps_per_side": 2.0,
+      "net_simple_return": 0.6542403434,
+      "maximum_drawdown": 0.2154009839,
+      "recent12_average_month": 0.0094931221,
+      "recent12_positive_months": 6
+    },
+    {
+      "level": "sleeve",
+      "name": "distress",
+      "additional_delay_sessions": 2,
+      "total_execution_lag_sessions": 3,
+      "cost_bps_per_side": 2.0,
+      "net_simple_return": 0.430928159,
+      "maximum_drawdown": 0.1010833636,
+      "recent12_average_month": 0.0143623751,
+      "recent12_positive_months": 8
+    },
+    {
+      "level": "ensemble",
+      "name": "equal_four",
+      "additional_delay_sessions": 2,
+      "total_execution_lag_sessions": 3,
+      "cost_bps_per_side": 2.0,
+      "net_simple_return": 0.8791239368,
+      "maximum_drawdown": 0.1084271959,
+      "recent12_average_month": 0.040035259,
+      "recent12_positive_months": 10
+    },
+    {
+      "level": "sleeve",
+      "name": "momentum",
+      "additional_delay_sessions": 2,
+      "total_execution_lag_sessions": 3,
+      "cost_bps_per_side": 5.0,
+      "net_simple_return": 2.2295516727,
+      "maximum_drawdown": 0.175142864,
+      "recent12_average_month": 0.0995901241,
+      "recent12_positive_months": 10
+    },
+    {
+      "level": "sleeve",
+      "name": "multifactor",
+      "additional_delay_sessions": 2,
+      "total_execution_lag_sessions": 3,
+      "cost_bps_per_side": 5.0,
+      "net_simple_return": 0.7415481762,
+      "maximum_drawdown": 0.1743640182,
+      "recent12_average_month": 0.0360509346,
+      "recent12_positive_months": 11
+    },
+    {
+      "level": "sleeve",
+      "name": "ibs",
+      "additional_delay_sessions": 2,
+      "total_execution_lag_sessions": 3,
+      "cost_bps_per_side": 5.0,
+      "net_simple_return": 0.4560303434,
+      "maximum_drawdown": 0.2333660419,
+      "recent12_average_month": 0.0068053444,
+      "recent12_positive_months": 6
+    },
+    {
+      "level": "sleeve",
+      "name": "distress",
+      "additional_delay_sessions": 2,
+      "total_execution_lag_sessions": 3,
+      "cost_bps_per_side": 5.0,
+      "net_simple_return": 0.4261074889,
+      "maximum_drawdown": 0.1025765349,
+      "recent12_average_month": 0.0143126476,
+      "recent12_positive_months": 8
+    },
+    {
+      "level": "ensemble",
+      "name": "equal_four",
+      "additional_delay_sessions": 2,
+      "total_execution_lag_sessions": 3,
+      "cost_bps_per_side": 5.0,
+      "net_simple_return": 0.8335466653,
+      "maximum_drawdown": 0.1117620212,
+      "recent12_average_month": 0.0391897627,
+      "recent12_positive_months": 10
+    },
+    {
+      "level": "sleeve",
+      "name": "momentum",
+      "additional_delay_sessions": 2,
+      "total_execution_lag_sessions": 3,
+      "cost_bps_per_side": 10.0,
+      "net_simple_return": 2.1927206731,
+      "maximum_drawdown": 0.1778431983,
+      "recent12_average_month": 0.0987640271,
+      "recent12_positive_months": 10
+    },
+    {
+      "level": "sleeve",
+      "name": "multifactor",
+      "additional_delay_sessions": 2,
+      "total_execution_lag_sessions": 3,
+      "cost_bps_per_side": 10.0,
+      "net_simple_return": 0.730466539,
+      "maximum_drawdown": 0.1765760635,
+      "recent12_average_month": 0.0358028984,
+      "recent12_positive_months": 11
+    },
+    {
+      "level": "sleeve",
+      "name": "ibs",
+      "additional_delay_sessions": 2,
+      "total_execution_lag_sessions": 3,
+      "cost_bps_per_side": 10.0,
+      "net_simple_return": 0.1256803434,
+      "maximum_drawdown": 0.3296333147,
+      "recent12_average_month": 0.0023257147,
+      "recent12_positive_months": 6
+    },
+    {
+      "level": "sleeve",
+      "name": "distress",
+      "additional_delay_sessions": 2,
+      "total_execution_lag_sessions": 3,
+      "cost_bps_per_side": 10.0,
+      "net_simple_return": 0.4180730388,
+      "maximum_drawdown": 0.1050709125,
+      "recent12_average_month": 0.0142297683,
+      "recent12_positive_months": 8
+    },
+    {
+      "level": "ensemble",
+      "name": "equal_four",
+      "additional_delay_sessions": 2,
+      "total_execution_lag_sessions": 3,
+      "cost_bps_per_side": 10.0,
+      "net_simple_return": 0.7575845462,
+      "maximum_drawdown": 0.1176566194,
+      "recent12_average_month": 0.0377806021,
+      "recent12_positive_months": 10
+    }
+  ],
+  "preflight": {
+    "semantic_fixtures": {
+      "status": "passed",
+      "drawdown": 0.04545454545454549,
+      "rank_weight_gross": 1.0
+    },
+    "panels": {
+      "qqq": {
+        "minimum_date": "2019-06-21",
+        "maximum_date": "2026-04-30",
+        "dates": 1724,
+        "symbols": 165,
+        "member_cells": 175356,
+        "holdout_rows_loaded": 0
+      },
+      "sp500": {
+        "minimum_date": "2021-05-03",
+        "maximum_date": "2026-04-30",
+        "dates": 1255,
+        "symbols": 607,
+        "member_cells": 631792,
+        "holdout_rows_loaded": 0
+      },
+      "etf": {
+        "minimum_date": "2019-01-02",
+        "maximum_date": "2026-04-30",
+        "dates": 1832,
+        "symbols": 27,
+        "member_cells": 49464,
+        "holdout_rows_loaded": 0
+      }
+    }
+  },
+  "maximum_loaded_date": "2026-04-30",
+  "holdout_rows_loaded": 0
+}

@@ -3,3 +3,6 @@
 {"timestamp_utc": "2026-08-07T02:15:23.714373+00:00", "run_id": "RUN-0003", "event": "robustness_completed", "decision": "profitable_but_fragile_quote_gate"}
 {"timestamp_utc": "2026-08-07T02:15:23.714373+00:00", "run_id": "RUN-0007", "event": "quote_replay_completed", "net": -0.0535007104076938}
 {"timestamp_utc": "2026-08-07T02:15:23.714373+00:00", "run_id": "FINAL", "event": "campaign_checkpoint", "decision": "retired_quote_execution_failure"}
+{"decision": "no_structured_survivor", "holdout_rows_loaded": 0, "run_id": "RUN-0008", "selected_variant": null, "status": "completed"}
+{"decision": "provisional_target_change_quote_gate", "holdout_rows_loaded": 0, "run_id": "RUN-0010", "selected_variant": "etf__ibs30__top5__hold3__trend1", "status": "completed"}
+{"ts": "2026-08-10T00:28:16.457228-07:00", "run_id": "RUN-0011", "event": "completed", "net_simple_return": 0.276740936192023, "clock": "09:40", "extra_bps": 2, "holdout_rows_loaded": 0}

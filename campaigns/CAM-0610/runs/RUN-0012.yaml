@@ -1,0 +1,63 @@
+run_id: RUN-0012
+campaign_id: CAM-0610
+parent_run: RUN-0009
+status: completed
+change: Frozen simpler-control and component-ablation challenge.
+reason: Determine whether the adapted survivor adds value beyond simpler exposures
+  and survives breadth/leverage neighborhoods.
+expected_effect: Retain only economically distinct, stable mechanisms; relabel or
+  retire duplicative complexity.
+frozen_contract: campaigns/CAM-0600/CONTROL_CONTRACT.yaml
+configuration:
+  costs_bps_per_side:
+  - -1
+  - 0
+  - 1
+  - 2
+  - 5
+  - 10
+  cutoff: '2026-04-30'
+  holdout_access: false
+  capital_base: 1.0
+result:
+  executed_configuration_reconciled: true
+  matched_comparisons:
+  - campaign_id: CAM-0610
+    run_id: RUN-0012
+    cost_bps_per_side: 2.0
+    adapted_variant: qqq__ma150__weekly__top3
+    control_variant: qqq__ungated__weekly__top3
+    adapted_net: 3.0023638737957645
+    control_net: 3.0253854164311464
+    incremental_net: -0.02302154263538192
+    adapted_drawdown: 0.3852959489879379
+    control_drawdown: 0.359956278200333
+    drawdown_change: 0.025339670787604907
+    adapted_recent12_average_month: 0.0969075145721712
+    control_recent12_average_month: 0.0870288583815264
+    adapted_recent12_positive_months: 9
+    control_recent12_positive_months: 8
+    decision: The selected MA150 gate raises recent consistency but does not improve
+      full-history return or drawdown; only the neighboring MA200 gate shows clear
+      risk-control value.
+  - campaign_id: CAM-0610
+    run_id: RUN-0012
+    cost_bps_per_side: 10.0
+    adapted_variant: qqq__ma150__weekly__top3
+    control_variant: qqq__ungated__weekly__top3
+    adapted_net: 2.882097207129098
+    control_net: 2.8795099513925786
+    incremental_net: 0.0025872557365191895
+    adapted_drawdown: 0.3876956843869038
+    control_drawdown: 0.3629512730163231
+    drawdown_change: 0.024744411370580754
+    adapted_recent12_average_month: 0.0957519590166156
+    control_recent12_average_month: 0.085663298488487
+    adapted_recent12_positive_months: 9
+    control_recent12_positive_months: 8
+    decision: The selected MA150 gate raises recent consistency but does not improve
+      full-history return or drawdown; only the neighboring MA200 gate shows clear
+      risk-control value.
+  holdout_rows_loaded: 0
+decision: The selected MA150 gate raises recent consistency but does not improve full-history
+  return or drawdown; only the neighboring MA200 gate shows clear risk-control value.

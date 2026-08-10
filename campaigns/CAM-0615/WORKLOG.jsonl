@@ -3,3 +3,7 @@
 {"timestamp_utc": "2026-08-07T02:15:23.454525+00:00", "run_id": "RUN-0003", "event": "robustness_completed", "decision": "robust_development_candidate_quote_gate"}
 {"timestamp_utc": "2026-08-07T02:15:23.454525+00:00", "run_id": "RUN-0007", "event": "quote_replay_completed", "net": -0.2635445686111814}
 {"timestamp_utc": "2026-08-07T02:15:23.454525+00:00", "run_id": "FINAL", "event": "campaign_checkpoint", "decision": "retired_quote_execution_failure"}
+{"decision": "provisional_target_change_quote_gate", "holdout_rows_loaded": 0, "run_id": "RUN-0008", "selected_variant": "qqq__fullcov_s50__mom60__positive_top10", "status": "completed"}
+{"ts": "2026-08-10T00:28:16.404723-07:00", "run_id": "RUN-0009", "event": "completed", "net_simple_return": 0.3296707300537226, "clock": "09:40", "extra_bps": 2, "holdout_rows_loaded": 0}
+{"ts": "2026-08-10T00:28:35.498694-07:00", "run_id": "RUN-0012", "event": "completed", "decision": "Simple momentum dominates the adapted positive optimizer sleeve; source optimization is not isolated.", "holdout_rows_loaded": 0}
+{"ts": "2026-08-10T00:48:06.943475-07:00", "run_id": "RUN-0012", "event": "completed", "decision": "Simple momentum dominates the adapted positive optimizer sleeve; source optimization is not isolated.", "holdout_rows_loaded": 0}

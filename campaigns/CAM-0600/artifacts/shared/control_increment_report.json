@@ -1,0 +1,7 @@
+{
+  "status": "completed",
+  "campaigns": 12,
+  "comparisons": 24,
+  "holdout_rows_loaded": 0,
+  "contract": "campaigns/CAM-0600/CONTROL_CONTRACT.yaml"
+}

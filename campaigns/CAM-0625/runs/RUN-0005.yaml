@@ -1,0 +1,47 @@
+run_id: RUN-0005
+campaign_id: CAM-0625
+parent_run: RUN-0004
+status: completed
+change: Full-history rolling-window, recovery, chronological-fold, and sleeve leave-one-out
+  audit.
+reason: Recent quote performance is unusually strong and must be placed against older
+  regimes and dependence on each sleeve.
+expected_effect: Identify whether the ensemble is historically durable, a recent regime
+  phenomenon, or dependent on one source.
+configuration:
+  four_sleeve_rules:
+  - equal
+  - causal_inverse_vol
+  leave_one_out: true
+  rolling_month_windows:
+  - 12
+  - 18
+  - 24
+  chronological_folds: 3
+  monthly_bootstrap_draws: 20000
+  bootstrap_seed: 6252027
+  cutoff: '2026-04-30'
+  holdout_access: false
+result:
+  status: completed
+  run_id: RUN-0005
+  rows: 10
+  maximum_loaded_date: '2026-04-30'
+  holdout_rows_loaded: 0
+  bootstrap:
+    equal:
+      draws: 20000
+      source_months: 60
+      probability_positive_12_month_sum: 0.96705
+      p05: 0.02242652574773138
+      median: 0.21133248586526593
+      p95: 0.42422998169887083
+    causal_inverse_vol:
+      draws: 20000
+      source_months: 60
+      probability_positive_12_month_sum: 0.9449
+      p05: -0.005064505718365945
+      median: 0.1616251000884803
+      p95: 0.33663137690710915
+decision: Use rolling and fold evidence to distinguish durable ensemble quality from
+  exceptional recent regime strength; no promotion.

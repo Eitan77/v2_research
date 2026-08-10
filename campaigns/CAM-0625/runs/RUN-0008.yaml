@@ -1,0 +1,151 @@
+run_id: RUN-0008
+campaign_id: CAM-0625
+parent_run: RUN-0007
+status: completed
+change: Conservative displayed-NBBO capacity diagnostic for the equal four-sleeve
+  portfolio.
+reason: Fixed-base return evidence does not establish deployable dollar capacity.
+expected_effect: Identify whether a few low-depth target changes constrain practical
+  sizing.
+configuration:
+  quote_clock: 09:40
+  sleeve_weight: 0.25
+  participation_of_displayed_size:
+  - 0.01
+  - 0.05
+  - 0.1
+  aggregation: role-level percentiles and minimum; no hidden liquidity credit
+  interpretation: snapshot_liquidity_floor_not_capacity_claim
+  cutoff: '2026-04-30'
+  holdout_access: false
+result:
+  status: completed
+  run_id: RUN-0008
+  roles: 1414
+  interpretation: Snapshot top-of-book liquidity floor only; not a capacity claim.
+    Size can replenish or disappear and market impact is not modeled.
+  metrics:
+  - participation_of_displayed_size: 0.01
+    scope: all
+    roles: 1414
+    minimum_capital_dollars: 6.9338743374
+    p01_capital_dollars: 23.482096266
+    p05_capital_dollars: 90.98928
+    p10_capital_dollars: 173.56584
+    median_capital_dollars: 8680.607234628
+  - participation_of_displayed_size: 0.01
+    scope: CAM-0600
+    roles: 66
+    minimum_capital_dollars: 6.9338743374
+    p01_capital_dollars: 8.4535879764
+    p05_capital_dollars: 16.4850386781
+    p10_capital_dollars: 18.408803166
+    median_capital_dollars: 1101.021922554
+  - participation_of_displayed_size: 0.01
+    scope: CAM-0604
+    roles: 286
+    minimum_capital_dollars: 27.2720966854
+    p01_capital_dollars: 50.9961730748
+    p05_capital_dollars: 107.8282798483
+    p10_capital_dollars: 183.9029266221
+    median_capital_dollars: 11061.8840022226
+  - participation_of_displayed_size: 0.01
+    scope: CAM-0621
+    roles: 988
+    minimum_capital_dollars: 16.962
+    p01_capital_dollars: 43.098528
+    p05_capital_dollars: 112.35582
+    p10_capital_dollars: 201.201
+    median_capital_dollars: 9047.559
+  - participation_of_displayed_size: 0.01
+    scope: CAM-0624
+    roles: 74
+    minimum_capital_dollars: 64.3019013117
+    p01_capital_dollars: 73.1975848898
+    p05_capital_dollars: 227.6047187255
+    p10_capital_dollars: 399.4464462228
+    median_capital_dollars: 13260.4942308955
+  - participation_of_displayed_size: 0.05
+    scope: all
+    roles: 1414
+    minimum_capital_dollars: 34.6693716869
+    p01_capital_dollars: 117.41048133
+    p05_capital_dollars: 454.9464
+    p10_capital_dollars: 867.8292
+    median_capital_dollars: 43403.0361731401
+  - participation_of_displayed_size: 0.05
+    scope: CAM-0600
+    roles: 66
+    minimum_capital_dollars: 34.6693716869
+    p01_capital_dollars: 42.2679398818
+    p05_capital_dollars: 82.4251933906
+    p10_capital_dollars: 92.0440158298
+    median_capital_dollars: 5505.1096127699
+  - participation_of_displayed_size: 0.05
+    scope: CAM-0604
+    roles: 286
+    minimum_capital_dollars: 136.3604834271
+    p01_capital_dollars: 254.9808653739
+    p05_capital_dollars: 539.1413992416
+    p10_capital_dollars: 919.5146331103
+    median_capital_dollars: 55309.4200111132
+  - participation_of_displayed_size: 0.05
+    scope: CAM-0621
+    roles: 988
+    minimum_capital_dollars: 84.81
+    p01_capital_dollars: 215.49264
+    p05_capital_dollars: 561.7791
+    p10_capital_dollars: 1006.005
+    median_capital_dollars: 45237.795
+  - participation_of_displayed_size: 0.05
+    scope: CAM-0624
+    roles: 74
+    minimum_capital_dollars: 321.5095065583
+    p01_capital_dollars: 365.987924449
+    p05_capital_dollars: 1138.0235936277
+    p10_capital_dollars: 1997.232231114
+    median_capital_dollars: 66302.4711544776
+  - participation_of_displayed_size: 0.1
+    scope: all
+    roles: 1414
+    minimum_capital_dollars: 69.3387433738
+    p01_capital_dollars: 234.8209626599
+    p05_capital_dollars: 909.8928
+    p10_capital_dollars: 1735.6584
+    median_capital_dollars: 86806.0723462803
+  - participation_of_displayed_size: 0.1
+    scope: CAM-0600
+    roles: 66
+    minimum_capital_dollars: 69.3387433738
+    p01_capital_dollars: 84.5358797636
+    p05_capital_dollars: 164.8503867811
+    p10_capital_dollars: 184.0880316595
+    median_capital_dollars: 11010.2192255398
+  - participation_of_displayed_size: 0.1
+    scope: CAM-0604
+    roles: 286
+    minimum_capital_dollars: 272.7209668543
+    p01_capital_dollars: 509.9617307478
+    p05_capital_dollars: 1078.2827984832
+    p10_capital_dollars: 1839.0292662206
+    median_capital_dollars: 110618.8400222264
+  - participation_of_displayed_size: 0.1
+    scope: CAM-0621
+    roles: 988
+    minimum_capital_dollars: 169.62
+    p01_capital_dollars: 430.98528
+    p05_capital_dollars: 1123.5582
+    p10_capital_dollars: 2012.01
+    median_capital_dollars: 90475.59
+  - participation_of_displayed_size: 0.1
+    scope: CAM-0624
+    roles: 74
+    minimum_capital_dollars: 643.0190131167
+    p01_capital_dollars: 731.975848898
+    p05_capital_dollars: 2276.0471872555
+    p10_capital_dollars: 3994.464462228
+    median_capital_dollars: 132604.9423089552
+  maximum_loaded_date: '2026-04-30'
+  holdout_rows_loaded: 0
+decision: Use the lower displayed-size percentiles as a conservative sizing warning
+  only; require order-book and impact replay before deployable-capacity claims.

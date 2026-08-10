@@ -3,3 +3,5 @@
 {"timestamp_utc": "2026-08-07T02:15:23.408364+00:00", "run_id": "RUN-0003", "event": "robustness_completed", "decision": "robust_development_candidate_quote_gate"}
 {"timestamp_utc": "2026-08-07T02:15:23.408364+00:00", "run_id": "RUN-0007", "event": "quote_replay_completed", "net": -0.2779163605096158}
 {"timestamp_utc": "2026-08-07T02:15:23.408364+00:00", "run_id": "FINAL", "event": "campaign_checkpoint", "decision": "retired_quote_execution_failure"}
+{"decision": "provisional_target_change_quote_gate", "holdout_rows_loaded": 0, "run_id": "RUN-0008", "selected_variant": "sp500__donchian20__reversal", "status": "completed"}
+{"ts": "2026-08-10T00:28:16.396716-07:00", "run_id": "RUN-0009", "event": "completed", "net_simple_return": 0.0888823741056381, "clock": "09:40", "extra_bps": 2, "holdout_rows_loaded": 0}

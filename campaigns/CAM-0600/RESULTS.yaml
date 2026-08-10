@@ -25,3 +25,50 @@ quote:
   negative_months: 3.0
   coverage_rate: 1.0
 conclusion: promising_unpromoted_candidate
+deep_development_checkpoint:
+  checkpoint: 2026-08-10_deep_development
+  paper_section: '3.1'
+  strategy: Price momentum
+  status: recent_momentum_component_promising_unpromoted
+  promotion_ready: false
+  development_only: true
+  maximum_loaded_date: '2026-04-30'
+  holdout_rows_loaded: 0
+  broker_margin_used: false
+  selected:
+    variant: sp500__mom63_skip0__top3__liquid__panic1
+    full_history_net_2bps: 2.1876168834767507
+    full_history_maximum_drawdown: 0.1409362646283781
+    recent12_net_2bps: 1.2334652168342766
+    recent12_historical_percentile: 0.979591836734694
+    positive_rolling12_fraction: 0.979591836734694
+    target_active_date_fraction: 0.6374501992031872
+    average_names_per_active_date: 3.0
+  quote_0940_target_change:
+    additional_slippage_bps_per_side: 2
+    net_simple_return: 1.2305489938735057
+    maximum_drawdown: 0.1346774237715125
+    positive_months: 11
+    negative_months: 1
+    active_days: 235
+    top5_day_positive_share: 0.1347820402576634
+    role_coverage: 1.0
+  matched_control:
+    run_id: RUN-0012
+    cost_bps_per_side: 2.0
+    adapted_variant: sp500__mom63_skip0__top3__panic1
+    control_variant: sp500__mom63_skip0__top3__panic0
+    adapted_net: 2.1876168834767507
+    control_net: 2.3564061386064843
+    incremental_net: -0.1687892551297336
+    adapted_drawdown: 0.1409362646283781
+    control_drawdown: 0.4072489712977821
+    drawdown_change: -0.266312706669404
+    adapted_recent12_average_month: 0.102788768069523
+    control_recent12_average_month: 0.1124534886010616
+    adapted_recent12_positive_months: 10.0
+    control_recent12_positive_months: 11.0
+    decision: Panic defense sacrifices return but cuts historical drawdown materially;
+      retain as a risk overlay.
+  conclusion: No strategy is promoted; evidence is adapted development data and the
+    sealed holdout remains untouched.

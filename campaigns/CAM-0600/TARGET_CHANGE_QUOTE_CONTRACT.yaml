@@ -1,0 +1,18 @@
+version: 1
+frozen_at: '2026-08-10T00:12:00-07:00'
+run_id: RUN-0009
+parent_run: RUN-0008
+purpose: Exact SIP marketable execution at causal target changes for structured RUN-0008 survivors.
+window: ['2025-05-01', '2026-04-30']
+clocks: ['09:30 America/New_York', '09:40 America/New_York']
+rules:
+  - Multi-day portfolios trade only changes in target weight and retain positions otherwise.
+  - Buy deltas use the first valid SIP ask after the target clock; sell deltas use the first valid SIP bid after the target clock.
+  - Delayed execution is charged against the raw opening reference price, so favorable or adverse post-open movement is retained honestly.
+  - Intraday portfolios buy at the first valid ask after entry and liquidate at the last valid bid before 16:00.
+  - No passive touch or queue-fill credit.
+  - Report 0, 2, 5, and 10 bp additional adverse slippage per side.
+  - A quote miss remains missing; bounded 1, 5, 30, and 120 second expansions are reported.
+  - May 2026 and later roles are prohibited.
+selection: Structured RUN-0008 screen and worst-block ordering frozen before quote access.
+promotion: prohibited_from_this_run_alone

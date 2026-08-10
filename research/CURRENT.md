@@ -1,5 +1,30 @@
 # Current Research Direction
 
+## 2026-08-10 checkpoint — SSRN deep development and CAM-0625 ensemble
+
+CAM-0600 through CAM-0624 completed a second mechanism-driven development
+loop, corrected target-change SIP replay, matched simpler controls, attrition,
+concentration, delay, cost, and correlation audits. The prior daily-reset quote
+replay was a harsh stress, not a correct hold-shares execution model; a later
+raw-quote/split-adjusted-reference mismatch was also found and preserved as
+invalid before interpretation.
+
+CAM-0625 is the best current development lead. It combines four whole,
+low-correlation sleeves from CAM-0600, CAM-0604, CAM-0621, and CAM-0624. Equal
+weight returned +52.6% in corrected 09:40 target-change SIP replay from
+2025-05-01 through 2026-04-30 after 2 bp additional slippage per side, with
+5.6% drawdown and 10/2 positive/negative months. Causal inverse volatility
+returned +40.0% with 4.3% drawdown and 11/1 months. Both survived 10-bp-extra
+stress; every leave-one-sleeve-out path remained profitable.
+
+The latest 12/18/24-month ensemble performance is at the top historical
+percentile and substantially stronger than the earliest chronological fold.
+Treat it as a recent-regime development lead, not a permanent return rate.
+Nothing is promoted. The sealed holdout remains untouched. The next valid
+step is unchanged forward paper tracking with the frozen responsive six-month
+decay monitor; any sealed-holdout access requires explicit authorization and a
+separately frozen purpose.
+
 ## 2026-08-06 checkpoint — SSRN 25-strategy series complete
 
 CAM-0600 through CAM-0624 completed the requested source baselines,

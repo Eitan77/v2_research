@@ -25,3 +25,34 @@ quote:
   negative_months: 4.0
   coverage_rate: 1.0
 conclusion: promising_unpromoted_candidate
+deep_development_checkpoint:
+  checkpoint: 2026-08-10_deep_development
+  paper_section: '6.5'
+  strategy: Index volatility targeting
+  status: modest_vol_target_unpromoted
+  promotion_ready: false
+  development_only: true
+  maximum_loaded_date: '2026-04-30'
+  holdout_rows_loaded: 0
+  broker_margin_used: false
+  selected:
+    variant: QQQ__target15__vol20__monthly__thr20__def1
+    full_history_net_2bps: 1.1621951104344348
+    full_history_maximum_drawdown: 0.1618077561726768
+    recent12_net_2bps: 0.1833381710665765
+    recent12_historical_percentile: 0.5324675324675324
+    positive_rolling12_fraction: 0.9090909090909092
+    target_active_date_fraction: 0.9890829694323144
+    average_names_per_active_date: 1.7240618101545253
+  quote_0940_target_change:
+    additional_slippage_bps_per_side: 2
+    net_simple_return: 0.1802407899773932
+    maximum_drawdown: 0.0944374048595443
+    positive_months: 8
+    negative_months: 4
+    active_days: 250
+    top5_day_positive_share: 0.126960655632816
+    role_coverage: 1.0
+  matched_control: null
+  conclusion: No strategy is promoted; evidence is adapted development data and the
+    sealed holdout remains untouched.

@@ -1,0 +1,176 @@
+run_id: RUN-0011
+campaign_id: CAM-0625
+parent_run: RUN-0010
+status: completed
+change: Causal broad-market moving-average defense on the whole ensemble.
+reason: Exposure audit found roughly 0.4 SPY beta and material worst-SPY-day losses.
+expected_effect: Reduce tail and drawdown; reject if recent income or parameter-neighborhood
+  stability collapses.
+configuration:
+  base_rules:
+  - equal
+  - causal_inverse_vol
+  SPY_SMA_windows:
+  - 100
+  - 150
+  - 200
+  timing: prior completed close and prior completed moving average determine next
+    open-to-open exposure
+  inactive_asset: cash_zero_return
+  gate_change_cost_bps_per_side: 2
+  quote_clock: 09:40
+  quote_additional_slippage_bps_per_side: 2
+  cutoff: '2026-04-30'
+  holdout_access: false
+result:
+  status: completed
+  run_id: RUN-0011
+  metrics:
+  - sample: full_history
+    rule: equal
+    SPY_SMA_window: 100
+    net_simple_return: 0.7558644046
+    maximum_drawdown: 0.1018434345
+    active_fraction: 0.7402390438
+    positive_months: 33
+    negative_months: 21
+    inactive_months: 6
+    monthly_average: 0.0125977401
+    worst_month: -0.0518130274
+    best_month: 0.1411967404
+  - sample: full_history
+    rule: causal_inverse_vol
+    SPY_SMA_window: 100
+    net_simple_return: 0.5500406594
+    maximum_drawdown: 0.0865420136
+    active_fraction: 0.7402390438
+    positive_months: 33
+    negative_months: 21
+    inactive_months: 6
+    monthly_average: 0.0091673443
+    worst_month: -0.0430518469
+    best_month: 0.0853122655
+  - sample: quote_0940_2bps_extra
+    rule: equal
+    SPY_SMA_window: 100
+    net_simple_return: 0.4674536374
+    maximum_drawdown: 0.0561874884
+    active_fraction: 0.8605577689
+    positive_months: 10
+    negative_months: 2
+    inactive_months: 0
+    monthly_average: 0.0389544698
+    worst_month: -0.0269613124
+    best_month: 0.1406951117
+  - sample: quote_0940_2bps_extra
+    rule: causal_inverse_vol
+    SPY_SMA_window: 100
+    net_simple_return: 0.3416082792
+    maximum_drawdown: 0.0430776946
+    active_fraction: 0.8605577689
+    positive_months: 11
+    negative_months: 1
+    inactive_months: 0
+    monthly_average: 0.0284673566
+    worst_month: -0.0228939669
+    best_month: 0.0860066983
+  - sample: full_history
+    rule: equal
+    SPY_SMA_window: 150
+    net_simple_return: 0.7899942527
+    maximum_drawdown: 0.1039821662
+    active_fraction: 0.7641434263
+    positive_months: 32
+    negative_months: 22
+    inactive_months: 6
+    monthly_average: 0.0131665709
+    worst_month: -0.044126171
+    best_month: 0.1411967404
+  - sample: full_history
+    rule: causal_inverse_vol
+    SPY_SMA_window: 150
+    net_simple_return: 0.5606551127
+    maximum_drawdown: 0.1128185547
+    active_fraction: 0.7641434263
+    positive_months: 32
+    negative_months: 22
+    inactive_months: 6
+    monthly_average: 0.0093442519
+    worst_month: -0.0421365466
+    best_month: 0.0853122655
+  - sample: quote_0940_2bps_extra
+    rule: equal
+    SPY_SMA_window: 150
+    net_simple_return: 0.4945341378
+    maximum_drawdown: 0.0563158856
+    active_fraction: 0.8884462151
+    positive_months: 10
+    negative_months: 2
+    inactive_months: 0
+    monthly_average: 0.0412111782
+    worst_month: -0.014307224
+    best_month: 0.1406951117
+  - sample: quote_0940_2bps_extra
+    rule: causal_inverse_vol
+    SPY_SMA_window: 150
+    net_simple_return: 0.3626532538
+    maximum_drawdown: 0.0431797195
+    active_fraction: 0.8884462151
+    positive_months: 11
+    negative_months: 1
+    inactive_months: 0
+    monthly_average: 0.0302211045
+    worst_month: -0.0101944644
+    best_month: 0.0860066983
+  - sample: full_history
+    rule: equal
+    SPY_SMA_window: 200
+    net_simple_return: 0.795264762
+    maximum_drawdown: 0.1042934334
+    active_fraction: 0.7633466135
+    positive_months: 31
+    negative_months: 21
+    inactive_months: 8
+    monthly_average: 0.0132544127
+    worst_month: -0.044126171
+    best_month: 0.1411967404
+  - sample: full_history
+    rule: causal_inverse_vol
+    SPY_SMA_window: 200
+    net_simple_return: 0.5623084454
+    maximum_drawdown: 0.1074313818
+    active_fraction: 0.7633466135
+    positive_months: 30
+    negative_months: 22
+    inactive_months: 8
+    monthly_average: 0.0093718074
+    worst_month: -0.0672559586
+    best_month: 0.0853122655
+  - sample: quote_0940_2bps_extra
+    rule: equal
+    SPY_SMA_window: 200
+    net_simple_return: 0.5094169617
+    maximum_drawdown: 0.0561874884
+    active_fraction: 0.9123505976
+    positive_months: 11
+    negative_months: 1
+    inactive_months: 0
+    monthly_average: 0.0424514135
+    worst_month: -0.014307224
+    best_month: 0.1406951117
+  - sample: quote_0940_2bps_extra
+    rule: causal_inverse_vol
+    SPY_SMA_window: 200
+    net_simple_return: 0.3718505019
+    maximum_drawdown: 0.0430776946
+    active_fraction: 0.9123505976
+    positive_months: 11
+    negative_months: 1
+    inactive_months: 0
+    monthly_average: 0.0309875418
+    worst_month: -0.0038409595
+    best_month: 0.0860066983
+  maximum_loaded_date: '2026-04-30'
+  holdout_rows_loaded: 0
+decision: Retain only if drawdown reduction is broad across MA windows and recent
+  income remains economically useful; no promotion.

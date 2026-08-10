@@ -1,0 +1,68 @@
+{
+  "status": "completed",
+  "run_id": "RUN-0006",
+  "metrics": [
+    {
+      "sample": "full_history",
+      "rule": "responsive_6m",
+      "net_simple_return": 0.6460010385,
+      "maximum_drawdown": 0.0839359067,
+      "active_days": 671,
+      "active_fraction": 0.5346613546,
+      "gate_changes": 11,
+      "positive_months": 19,
+      "negative_months": 18,
+      "inactive_months": 23,
+      "monthly_average": 0.010766684,
+      "worst_month": -0.044126171,
+      "best_month": 0.1411967404
+    },
+    {
+      "sample": "quote_0940_2bps_extra",
+      "rule": "responsive_6m",
+      "net_simple_return": 0.5258183205,
+      "maximum_drawdown": 0.0556679861,
+      "active_days": 251,
+      "active_fraction": 1.0,
+      "gate_changes": 0,
+      "positive_months": 10,
+      "negative_months": 2,
+      "inactive_months": 0,
+      "monthly_average": 0.0438181934,
+      "worst_month": -0.0147673266,
+      "best_month": 0.1406951117
+    },
+    {
+      "sample": "full_history",
+      "rule": "cautious_12m",
+      "net_simple_return": 0.5303310206,
+      "maximum_drawdown": 0.0864392571,
+      "active_days": 416,
+      "active_fraction": 0.3314741036,
+      "gate_changes": 7,
+      "positive_months": 12,
+      "negative_months": 11,
+      "inactive_months": 37,
+      "monthly_average": 0.0088388503,
+      "worst_month": -0.044126171,
+      "best_month": 0.1411967404
+    },
+    {
+      "sample": "quote_0940_2bps_extra",
+      "rule": "cautious_12m",
+      "net_simple_return": 0.4269131999,
+      "maximum_drawdown": 0.0604143261,
+      "active_days": 188,
+      "active_fraction": 0.7490039841,
+      "gate_changes": 1,
+      "positive_months": 7,
+      "negative_months": 2,
+      "inactive_months": 3,
+      "monthly_average": 0.0355761,
+      "worst_month": -0.0149673266,
+      "best_month": 0.1406951117
+    }
+  ],
+  "maximum_loaded_date": "2026-04-30",
+  "holdout_rows_loaded": 0
+}
