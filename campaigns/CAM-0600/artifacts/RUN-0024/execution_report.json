@@ -1,0 +1,13 @@
+{
+  "status": "completed_passed",
+  "run_id": "RUN-0024",
+  "event_rows": 94,
+  "unique_panel_symbol_dates": 94,
+  "hard_flags": 0,
+  "duplicate_rows": 0,
+  "maximum_absolute_adjusted_gap": 0.04447206961543082,
+  "flagged_events": [],
+  "maximum_loaded_date": "2026-04-30",
+  "holdout_rows_loaded": 0,
+  "interpretation": "Corporate-action integrity audit; any hard flag blocks affected strategy interpretation pending diagnosis."
+}

@@ -12,6 +12,7 @@ FILES=[
 "campaigns/CAM-0600/artifacts/shared/split_repaired_repair_diagnostic_summary.csv",
 "campaigns/CAM-0600/artifacts/shared/split_repaired_quote_metrics_RUN-0023.csv",
 "campaigns/CAM-0600/artifacts/RUN-0020/execution_report.json",
+"campaigns/CAM-0600/artifacts/RUN-0024/execution_report.json",
 "campaigns/CAM-0621/artifacts/RUN-0021/execution_report.json",
 "campaigns/CAM-0625/INVALIDATION_SPLIT_ADJUSTMENT.md",
 "campaigns/CAM-0625/RESULTS.yaml",
@@ -34,5 +35,5 @@ FILES=[
 rows=[]
 for rel in FILES:
  p=ROOT/rel; rows.append({"path":rel,"bytes":p.stat().st_size,"sha256":hashlib.sha256(p.read_bytes()).hexdigest()})
-payload={"checkpoint":"2026-08-10_ssrn_split_repaired","files":rows,"tests":{"scoped_pytest":"12 passed","compileall":"passed","repository_wide_collection":"not rerun; prior checkpoint blocked by unrelated legacy/reference import errors"},"maximum_loaded_date":"2026-04-30","holdout_rows_loaded":0,"promotion_ready":False,"invalid_lineage":"CAM-0600 through CAM-0625 evidence before reciprocal split repair"}
+payload={"checkpoint":"2026-08-10_ssrn_split_repaired","files":rows,"tests":{"scoped_pytest":"13 passed","compileall":"passed","repository_wide_collection":"not rerun; prior checkpoint blocked by unrelated legacy/reference import errors"},"maximum_loaded_date":"2026-04-30","holdout_rows_loaded":0,"promotion_ready":False,"invalid_lineage":"CAM-0600 through CAM-0625 evidence before reciprocal split repair"}
 out=ROOT/"campaigns"/"CAM-0625"/"CHECKPOINT_MANIFEST.json"; out.write_text(json.dumps(payload,indent=2)+"\n",encoding="utf-8"); print(out)

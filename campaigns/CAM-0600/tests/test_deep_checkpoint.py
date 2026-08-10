@@ -101,3 +101,13 @@ def test_symbol_cap_is_not_claimed_to_solve_concentration() -> None:
     assert improvement<0.02
     results=yaml.safe_load((ROOT/"campaigns"/"CAM-0625"/"RESULTS.yaml").read_text(encoding="utf-8"))
     assert results["symbol_cap_test"]["decision"]=="reject_as_primary_because_concentration_improvement_is_not_material"
+
+
+def test_all_reconstructed_split_events_pass_integrity_audit() -> None:
+    report=json.loads((ROOT/"campaigns"/"CAM-0600"/"artifacts"/"RUN-0024"/"execution_report.json").read_text(encoding="utf-8"))
+    assert report["status"]=="completed_passed"
+    assert report["event_rows"]==report["unique_panel_symbol_dates"]==94
+    assert report["hard_flags"]==0
+    assert report["duplicate_rows"]==0
+    assert report["maximum_absolute_adjusted_gap"]<0.05
+    assert report["holdout_rows_loaded"]==0

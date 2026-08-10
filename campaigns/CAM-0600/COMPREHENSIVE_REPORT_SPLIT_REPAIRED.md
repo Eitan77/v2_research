@@ -15,6 +15,12 @@ mechanism repairs), and RUN-0023 (target-change SIP replay). The semantic split
 fixture now maps 1000 pre-split and 100 post-split to the same adjusted price.
 NVDA's repaired pre/post adjusted opens are 119.77 and 120.37, a +0.50% return.
 
+RUN-0024 subsequently audited every non-unit split multiplier in the corrected
+QQQ and S&P panels. All 94 panel/symbol/date events were unique, no event retained
+an absolute adjusted prior-close-to-event-open gap above 50%, and the maximum
+residual gap was 4.45%. This closes the specific split-direction and duplicate-
+multiplier failure mode, though it is not a blanket validation of every data field.
+
 Under corrected data, 23 of 25 families have a structured development survivor;
 pairs trading (3.8) and support/resistance (3.14) do not. All 23 survivors are
 positive in the 2025-05-01 through 2026-04-30 09:40 SIP replay after an additional

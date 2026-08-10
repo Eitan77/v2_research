@@ -58,7 +58,7 @@ deep_development_checkpoint:
     sealed holdout remains untouched.
 prior_checkpoint_status: invalid_split_adjustment
 split_repaired_checkpoint:
-  strategy_section: null
+  strategy_section: '4.4'
   source_run: RUN-0021
   structured_survivors: 24
   selected_variant: etf__ibs30__top5__hold3__trend1
@@ -78,3 +78,4 @@ split_repaired_checkpoint:
   maximum_loaded_date: '2026-04-30'
   holdout_rows_loaded: 0
   promotion_ready: false
+  strategy_title: ETF IBS mean reversion

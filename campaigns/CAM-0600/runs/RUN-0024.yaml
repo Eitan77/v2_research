@@ -1,0 +1,37 @@
+run_id: RUN-0024
+campaign_id: CAM-0600
+parent_run: RUN-0020
+status: completed_passed
+change: Audit every corrected QQQ and S&P stock split event for residual adjusted-price
+  discontinuity.
+reason: NVDA exposed the inherited adjustment-direction defect; a single semantic
+  fixture does not prove all explicit and reconstructed corporate actions are clean.
+expected_effect: Confirm reciprocal adjustment across all split events or identify
+  specific symbols/dates requiring a new data repair before strategy interpretation.
+configuration:
+  panels:
+  - qqq
+  - sp500
+  split_event_definition: split_grid != 1
+  diagnostics:
+  - raw_open_ratio
+  - adjusted_previous_close_to_event_open_gap
+  - adjusted_previous_open_to_event_open_return
+  - duplicate_symbol_date_multiplier
+  hard_flag_absolute_adjusted_gap: 0.5
+  discovery_cutoff: '2026-04-30'
+  holdout_access: false
+result:
+  status: completed_passed
+  run_id: RUN-0024
+  event_rows: 94
+  unique_panel_symbol_dates: 94
+  hard_flags: 0
+  duplicate_rows: 0
+  maximum_absolute_adjusted_gap: 0.04447206961543082
+  flagged_events: []
+  maximum_loaded_date: '2026-04-30'
+  holdout_rows_loaded: 0
+  interpretation: Corporate-action integrity audit; any hard flag blocks affected
+    strategy interpretation pending diagnosis.
+decision: Proceed only if no unresolved hard flags or duplicate multipliers remain.

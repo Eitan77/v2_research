@@ -13,3 +13,6 @@
 {"run_id": "RUN-0022", "event": "planned", "selected_variant": "qqq__mom252_skip21__top3__liquid_trend__panic1", "holdout_rows_loaded": 0}
 {"run_id": "RUN-0022", "event": "invalidated", "reason": "null-quote rows counted as matched keys", "superseded_by": "RUN-0023", "holdout_rows_loaded": 0}
 {"run_id": "RUN-0023", "event": "planned", "selected_variant": "qqq__mom252_skip21__top3__liquid_trend__panic1", "holdout_rows_loaded": 0}
+{"run_id":"RUN-0024","event":"planned","reason":"Audit every reconstructed stock split after reciprocal adjustment repair.","holdout_rows_loaded":0}
+{"run_id": "RUN-0024", "event": "completed_passed", "hard_flags": 0, "duplicate_rows": 0, "holdout_rows_loaded": 0}
+{"run_id":"RUN-0024","event":"checkpoint_verification_repaired","reason":"Moved split audit YAML block to top level after scoped test caught nested placement error.","holdout_rows_loaded":0}

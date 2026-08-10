@@ -3,8 +3,8 @@
   "files": [
     {
       "path": "campaigns/CAM-0600/COMPREHENSIVE_REPORT_SPLIT_REPAIRED.md",
-      "bytes": 10047,
-      "sha256": "40b2b5c607e3dd8529fe462e0a035ea097f62e33f6e927218d7d79fbafd28373"
+      "bytes": 10452,
+      "sha256": "7f92eb45a5a926aadd02871d0eb07fb59d725dbb9b708588cdb62cfea4c20f24"
     },
     {
       "path": "campaigns/CAM-0600/SPLIT_REPAIR_CONTRACT.yaml",
@@ -40,6 +40,11 @@
       "path": "campaigns/CAM-0600/artifacts/RUN-0020/execution_report.json",
       "bytes": 6635,
       "sha256": "c28e51db3944b77d6eeb0ce382fc944a42ef4306840ac77dba231db172e32a0a"
+    },
+    {
+      "path": "campaigns/CAM-0600/artifacts/RUN-0024/execution_report.json",
+      "bytes": 446,
+      "sha256": "f98b43e163e4172e87dedde83f5140f99abe8964c083d4610f64e30dc1af723e"
     },
     {
       "path": "campaigns/CAM-0621/artifacts/RUN-0021/execution_report.json",
@@ -133,7 +138,7 @@
     }
   ],
   "tests": {
-    "scoped_pytest": "12 passed",
+    "scoped_pytest": "13 passed",
     "compileall": "passed",
     "repository_wide_collection": "not rerun; prior checkpoint blocked by unrelated legacy/reference import errors"
   },

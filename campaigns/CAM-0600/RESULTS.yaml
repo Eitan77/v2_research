@@ -74,7 +74,8 @@ deep_development_checkpoint:
     sealed holdout remains untouched.
 prior_checkpoint_status: invalid_split_adjustment
 split_repaired_checkpoint:
-  strategy_section: null
+  strategy_section: '3.1'
+  strategy_title: Price momentum
   source_run: RUN-0020
   structured_survivors: 71
   selected_variant: qqq__mom252_skip21__top3__liquid_trend__panic1
@@ -94,3 +95,12 @@ split_repaired_checkpoint:
   maximum_loaded_date: '2026-04-30'
   holdout_rows_loaded: 0
   promotion_ready: false
+split_event_integrity_audit:
+  run_id: RUN-0024
+  status: completed_passed
+  event_rows: 94
+  unique_panel_symbol_dates: 94
+  hard_flags: 0
+  duplicate_rows: 0
+  maximum_absolute_adjusted_gap: 0.044472
+  holdout_rows_loaded: 0

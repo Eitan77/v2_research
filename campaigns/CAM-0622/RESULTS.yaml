@@ -58,7 +58,7 @@ deep_development_checkpoint:
     sealed holdout remains untouched.
 prior_checkpoint_status: invalid_split_adjustment
 split_repaired_checkpoint:
-  strategy_section: null
+  strategy_section: '6.5'
   source_run: RUN-0020
   structured_survivors: 19
   selected_variant: QQQ__target15__vol20__monthly__thr20__def1
@@ -78,3 +78,4 @@ split_repaired_checkpoint:
   maximum_loaded_date: '2026-04-30'
   holdout_rows_loaded: 0
   promotion_ready: false
+  strategy_title: Index volatility targeting with risk-free asset
