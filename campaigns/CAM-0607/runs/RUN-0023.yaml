@@ -1,0 +1,116 @@
+run_id: RUN-0023
+campaign_id: CAM-0607
+parent_run: RUN-0022
+status: completed
+change: Repaired target-change SIP replay with valid-quote remainder accounting.
+reason: RUN-0022 counted null-quote rows as matched keys.
+expected_effect: Restore honest 09:40 role coverage without changing signal or fill
+  rules.
+frozen_contract: campaigns/CAM-0600/SPLIT_REPAIRED_QUOTE_REPAIR_CONTRACT.yaml
+configuration:
+  window_start: '2025-05-01'
+  window_end: '2026-04-30'
+  clocks:
+  - 09:30
+  - 09:40
+  additional_slippage_bps_per_side:
+  - 0.0
+  - 2.0
+  - 5.0
+  - 10.0
+  selected_variant: etf__long_cheap_r2__top1__z1__trend0
+  holdout_access: false
+result:
+  metrics:
+  - campaign_id: CAM-0607
+    run_id: RUN-0023
+    variant_id: etf__long_cheap_r2__top1__z1__trend0
+    clock: 0940
+    extra_slippage_bps_per_side: 0.0
+    net_simple_return: 0.3468686923042892
+    maximum_drawdown: 0.2818289846201918
+    trade_roles: 478
+    role_coverage: 1.0
+    active_sessions: 234
+    green_sessions: 121
+    red_sessions: 113
+    positive_months: 8
+    negative_months: 4
+    monthly_average: 0.028905724358690765
+    monthly_median: 0.08123604332744383
+    worst_month: -0.20443338170546255
+    best_month: 0.17859709317603611
+    reference_price: 09:30 SIP midpoint
+    holdout_rows_loaded: 0
+    broker_margin: false
+    direct_short: false
+  - campaign_id: CAM-0607
+    run_id: RUN-0023
+    variant_id: etf__long_cheap_r2__top1__z1__trend0
+    clock: 0940
+    extra_slippage_bps_per_side: 2.0
+    net_simple_return: 0.2512686923042891
+    maximum_drawdown: 0.30022106186398395
+    trade_roles: 478
+    role_coverage: 1.0
+    active_sessions: 239
+    green_sessions: 119
+    red_sessions: 120
+    positive_months: 8
+    negative_months: 4
+    monthly_average: 0.020939057692024105
+    monthly_median: 0.07423604332744384
+    worst_month: -0.21203338170546254
+    best_month: 0.1697970931760361
+    reference_price: 09:30 SIP midpoint
+    holdout_rows_loaded: 0
+    broker_margin: false
+    direct_short: false
+  - campaign_id: CAM-0607
+    run_id: RUN-0023
+    variant_id: etf__long_cheap_r2__top1__z1__trend0
+    clock: 0940
+    extra_slippage_bps_per_side: 5.0
+    net_simple_return: 0.10786869230428897
+    maximum_drawdown: 0.33249645913158266
+    trade_roles: 478
+    role_coverage: 1.0
+    active_sessions: 239
+    green_sessions: 115
+    red_sessions: 124
+    positive_months: 8
+    negative_months: 4
+    monthly_average: 0.00898905769202408
+    monthly_median: 0.06373604332744381
+    worst_month: -0.22343338170546256
+    best_month: 0.1565970931760361
+    reference_price: 09:30 SIP midpoint
+    holdout_rows_loaded: 0
+    broker_margin: false
+    direct_short: false
+  - campaign_id: CAM-0607
+    run_id: RUN-0023
+    variant_id: etf__long_cheap_r2__top1__z1__trend0
+    clock: 0940
+    extra_slippage_bps_per_side: 10.0
+    net_simple_return: -0.13113130769571124
+    maximum_drawdown: 0.4365852840772827
+    trade_roles: 478
+    role_coverage: 1.0
+    active_sessions: 239
+    green_sessions: 110
+    red_sessions: 129
+    positive_months: 8
+    negative_months: 4
+    monthly_average: -0.010927608974642594
+    monthly_median: 0.04623604332744381
+    worst_month: -0.24243338170546258
+    best_month: 0.1345970931760361
+    reference_price: 09:30 SIP midpoint
+    holdout_rows_loaded: 0
+    broker_margin: false
+    direct_short: false
+  maximum_loaded_date: '2026-04-30'
+  holdout_rows_loaded: 0
+decision: Development quote evidence only; requires repaired cross-family and pseudo-OOS
+  audit.

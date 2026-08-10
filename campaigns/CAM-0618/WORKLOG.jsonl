@@ -5,3 +5,9 @@
 {"timestamp_utc": "2026-08-07T02:15:23.575527+00:00", "run_id": "FINAL", "event": "campaign_checkpoint", "decision": "retired_quote_execution_failure"}
 {"decision": "provisional_target_change_quote_gate", "holdout_rows_loaded": 0, "run_id": "RUN-0008", "selected_variant": "sector11__mom252_skip21__weekly__top3", "status": "completed"}
 {"ts": "2026-08-10T00:28:16.431238-07:00", "run_id": "RUN-0009", "event": "completed", "net_simple_return": 0.2636976965844868, "clock": "09:40", "extra_bps": 2, "holdout_rows_loaded": 0}
+{"run_id": "RUN-0020", "event": "planned", "reason": "The inherited adjustment direction created false near-total losses at forward splits and potentially contaminated both signals and returns.", "holdout_rows_loaded": 0}
+{"run_id": "RUN-0020", "event": "completed", "best_at_2bps": "sector11__mom252_skip21__monthly__top1", "net_simple_return": 1.7385749140505085, "holdout_rows_loaded": 0}
+{"run_id": "RUN-0020", "event": "structured_analysis_completed", "decision": "provisional_repaired_target_change_quote_gate", "selected_variant": "sector11__mom252_skip21__weekly__top3", "holdout_rows_loaded": 0}
+{"run_id": "RUN-0022", "event": "planned", "selected_variant": "sector11__mom252_skip21__weekly__top3", "holdout_rows_loaded": 0}
+{"run_id": "RUN-0022", "event": "invalidated", "reason": "null-quote rows counted as matched keys", "superseded_by": "RUN-0023", "holdout_rows_loaded": 0}
+{"run_id": "RUN-0023", "event": "planned", "selected_variant": "sector11__mom252_skip21__weekly__top3", "holdout_rows_loaded": 0}

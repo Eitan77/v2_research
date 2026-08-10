@@ -1,92 +1,124 @@
 {
-  "checkpoint": "2026-08-10_ssrn_deep_development",
+  "checkpoint": "2026-08-10_ssrn_split_repaired",
   "files": [
     {
-      "path": "campaigns/CAM-0600/COMPREHENSIVE_REPORT.md",
-      "bytes": 16081,
-      "sha256": "6758c5a8478f43b896002c4c8c18be58861ecef915f032006e4dc3e452bccb8c"
+      "path": "campaigns/CAM-0600/COMPREHENSIVE_REPORT_SPLIT_REPAIRED.md",
+      "bytes": 8853,
+      "sha256": "50bbf47a49974b12cccfa2b780839162b56dae8613f1baed28ce6b0090ffcc50"
     },
     {
-      "path": "campaigns/CAM-0600/SOURCE_CONTRACT.yaml",
-      "bytes": 6828,
-      "sha256": "37cdc8645c3b31e9e377f9547aaf498078c51f940c89541fb1674eb7ce69d71b"
+      "path": "campaigns/CAM-0600/SPLIT_REPAIR_CONTRACT.yaml",
+      "bytes": 1167,
+      "sha256": "35c62842c694e461afb6e8d8c5eec050c4ed981cd6df27c11e3325855f5649be"
     },
     {
-      "path": "campaigns/CAM-0600/artifacts/shared/deep_candidate_audit.csv",
-      "bytes": 5693,
-      "sha256": "3b7e6c50ab89ebde0355e21cd38e6b5d2dc1d8a15b79e9ae73be592cbf17d602"
+      "path": "campaigns/CAM-0600/SPLIT_REPAIRED_QUOTE_REPAIR_CONTRACT.yaml",
+      "bytes": 706,
+      "sha256": "3932dad40832e78b7e5d09d0dfcf51ff6f671149ee132e124f393daebedfc6ab"
     },
     {
-      "path": "campaigns/CAM-0600/artifacts/shared/control_increment_summary.csv",
-      "bytes": 8942,
-      "sha256": "4f6e7deef4428c46e52ed8318d7d37e387e3e3fd685d164a3dfa613d05802988"
+      "path": "campaigns/CAM-0600/artifacts/shared/split_repaired_25_strategy_checkpoint.csv",
+      "bytes": 6499,
+      "sha256": "23fabf0c3f5362259d1c3e89dcc62d1888bf27319085e09ff3f9459e9fc68209"
     },
     {
-      "path": "campaigns/CAM-0600/artifacts/shared/selected_candidate_attrition.csv",
-      "bytes": 4777,
-      "sha256": "992963d2420c0bbc02135dae5036eec5cf9c299d1a4fc989337375e5e2b428e1"
+      "path": "campaigns/CAM-0600/artifacts/shared/split_repaired_diagnostic_summary.csv",
+      "bytes": 7816,
+      "sha256": "32bce347dc5401188426d887e383ff6566f8e6ed26d6bd8125fe650065fe974b"
     },
     {
-      "path": "campaigns/CAM-0600/artifacts/shared/target_change_quote_metrics.csv",
-      "bytes": 49076,
-      "sha256": "c4d9cf14159d89316c7afff93fc8a031672df8f467e075f524705894abf6ce9e"
+      "path": "campaigns/CAM-0600/artifacts/shared/split_repaired_repair_diagnostic_summary.csv",
+      "bytes": 1379,
+      "sha256": "347d521d647f7e4d44005d21d7356c184cec06f4f97ae3fed0c3b5d64df803ef"
     },
     {
-      "path": "campaigns/CAM-0600/artifacts/shared/target_change_quote_path_audit.csv",
-      "bytes": 4800,
-      "sha256": "a174f8626a689aebeffd0f1f83253b670d1e24fefad8758510a289be2644479f"
+      "path": "campaigns/CAM-0600/artifacts/shared/split_repaired_quote_metrics_RUN-0023.csv",
+      "bytes": 45119,
+      "sha256": "4bac577929d20632d93509cf47afa0aab9b53bb88d26da1e6cfe6460a7d3b0b7"
     },
     {
-      "path": "campaigns/CAM-0625/PLAN.yaml",
-      "bytes": 1611,
-      "sha256": "8f896d1a0282dda39d7fff7ab41f4f31c5f54b8cc60c5ac72d13eb3645553550"
+      "path": "campaigns/CAM-0600/artifacts/RUN-0020/execution_report.json",
+      "bytes": 6635,
+      "sha256": "c28e51db3944b77d6eeb0ce382fc944a42ef4306840ac77dba231db172e32a0a"
+    },
+    {
+      "path": "campaigns/CAM-0621/artifacts/RUN-0021/execution_report.json",
+      "bytes": 6375,
+      "sha256": "5f06e2df2cb8e76a6bb478744006677cb37f1107c38d3641320354e6d1363e9f"
+    },
+    {
+      "path": "campaigns/CAM-0625/INVALIDATION_SPLIT_ADJUSTMENT.md",
+      "bytes": 770,
+      "sha256": "58c3aec8ec4a2760bb3fead5e2fc1f08efa584444eb263c6d7e3ecfb358da2a3"
     },
     {
       "path": "campaigns/CAM-0625/RESULTS.yaml",
-      "bytes": 2577,
-      "sha256": "f37758e6da11e4740fd7f31f63b5c12712ba23b865b49f87ce1f17a9aee329ed"
+      "bytes": 2877,
+      "sha256": "14e92a66346586bc1d0c1263c7b67e4b184aab10cc7484635861ca83e867ef5a"
     },
     {
-      "path": "campaigns/CAM-0625/artifacts/RUN-0003/stress_metrics.csv",
-      "bytes": 13822,
-      "sha256": "9d47f1963f418af49fc75395c750ed2a8bf066feee2c6d1bb0f045d275595b88"
+      "path": "campaigns/CAM-0625/REVIEW.md",
+      "bytes": 4856,
+      "sha256": "fc351dc18bad9b3412847fd816e746753859698114d914a72e7a42c6c21d04a1"
     },
     {
-      "path": "campaigns/CAM-0625/artifacts/RUN-0005/full_history_robustness.csv",
-      "bytes": 4115,
-      "sha256": "22f25b3404a1ab72d0f6d676981e8965f10a2bfb67aa6b395d88b64753e374ae"
+      "path": "campaigns/CAM-0625/artifacts/RUN-0017/execution_report.json",
+      "bytes": 5482,
+      "sha256": "8c15bc452d81a3c947ff5afa90c10b97b3347a12b1a4f5b7566b3a24fcc447cb"
     },
     {
-      "path": "campaigns/CAM-0625/artifacts/RUN-0007/delay_stress_metrics.csv",
-      "bytes": 2788,
-      "sha256": "0c171d2ef16ed3ad1eecfcbb580e9f1abda3add96786fb216d23145215ff514b"
+      "path": "campaigns/CAM-0625/artifacts/RUN-0018/execution_report.json",
+      "bytes": 1539,
+      "sha256": "740d7a8a48b123434f120d14ff559053dfb4e3dce057aa9781bb92e8c089e2cb"
     },
     {
-      "path": "campaigns/CAM-0625/artifacts/RUN-0008/displayed_nbbo_capacity.csv",
-      "bytes": 1737,
-      "sha256": "b33f6d17b9268a643ab187c78d4abd36525667fdac2f0ab72484c7bab6522b5f"
+      "path": "campaigns/CAM-0625/artifacts/RUN-0019/execution_report.json",
+      "bytes": 2780,
+      "sha256": "02af5c01f3993d24290e3f58c3773a204843dc3f7ba9fca79749a56ae75bc0c2"
     },
     {
-      "path": "campaigns/CAM-0625/artifacts/RUN-0010/factor_exposure.csv",
-      "bytes": 1133,
-      "sha256": "bf7f18a72384d16967156f6ee41e1758fb4eb4b76a46eddbfd5c2f6e855d27df"
+      "path": "campaigns/CAM-0625/artifacts/RUN-0020/execution_report.json",
+      "bytes": 12592,
+      "sha256": "490c496dfc09f21dbcb33f0113cf05d3141c8c3ceb349d309509659234c73743"
     },
     {
-      "path": "campaigns/CAM-0625/artifacts/RUN-0012/universe_substitution.csv",
-      "bytes": 806,
-      "sha256": "f9ee59d8ede08a9795a72b31f0534068f114c905c9de6019115226aa725ce1d1"
+      "path": "campaigns/CAM-0625/artifacts/RUN-0021/execution_report.json",
+      "bytes": 3809,
+      "sha256": "671bea1030d47d3fb13a10285d7e92196c8423e32298b8d7f23a64044c9a51b7"
     },
     {
-      "path": "campaigns/CAM-0625/artifacts/RUN-0013/block_bootstrap.csv",
-      "bytes": 649,
-      "sha256": "2196d83a0be2cd588cb7f819e4ab266186c4669883cff55b481d45847ddb39bf"
+      "path": "campaigns/CAM-0625/artifacts/RUN-0022/execution_report.json",
+      "bytes": 2476,
+      "sha256": "20b6222ad0cde6d382d72edffd839f6bc0623b8d24351175695a62fd90467420"
+    },
+    {
+      "path": "campaigns/CAM-0625/artifacts/RUN-0023/execution_report.json",
+      "bytes": 3275,
+      "sha256": "679f81d8fe6002ec71490106d92c93879f2dc1032ab5eedac790a82f5f355e8f"
+    },
+    {
+      "path": "campaigns/CAM-0625/artifacts/RUN-0024/execution_report.json",
+      "bytes": 1513,
+      "sha256": "77fca9387feccbd797eb6a12312ca09b2b3e5f3d80af9026579f6859bc537a27"
+    },
+    {
+      "path": "campaigns/CAM-0625/artifacts/checkpoint_split_repaired/equity_comparison.png",
+      "bytes": 163390,
+      "sha256": "a4390aad22acf237eb6f2dacc045fd0401b28f714cd75d382e043e50363649ce"
+    },
+    {
+      "path": "campaigns/CAM-0625/artifacts/checkpoint_split_repaired/quote_monthly.png",
+      "bytes": 45207,
+      "sha256": "32d0d435b7c006dac7331ac56745a61c636d05eb8455d6ceb289d79af20c7fbd"
     }
   ],
   "tests": {
-    "scoped_pytest": "7 passed",
-    "repository_wide_collection": "blocked by 27 unrelated legacy/reference import errors"
+    "scoped_pytest": "10 passed",
+    "compileall": "passed",
+    "repository_wide_collection": "not rerun; prior checkpoint blocked by unrelated legacy/reference import errors"
   },
   "maximum_loaded_date": "2026-04-30",
   "holdout_rows_loaded": 0,
-  "promotion_ready": false
+  "promotion_ready": false,
+  "invalid_lineage": "CAM-0600 through CAM-0625 evidence before reciprocal split repair"
 }

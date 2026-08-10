@@ -33,3 +33,8 @@ The structured survivor `qqq__slow_residual_r10__top10__monthly` earned +126.6% 
 Selection activity covered 92.3% of dates and averaged 10.00 names when active. Status: `residual_duplicate_unpromoted`.
 
 This is adapted development evidence, not untouched out-of-sample evidence. No rows on or after 2026-05-01 were loaded, and promotion remains false.
+
+
+## Split-repaired checkpoint (RUN-0020/RUN-0021/RUN-0023)
+
+Prior strategy evidence is invalid because the inherited stock panel adjusted forward splits in the wrong direction. The repaired structured result is **provisional_execution_survivor** using `qqq__slow_residual_r10__top10__monthly`. Its full repaired 2 bp additive return is 145.3% with 25.3% maximum drawdown; 09:40 SIP replay at +2 bp is 32.5% with 9.4% drawdown and 8/4 positive/negative months. This remains adapted development evidence; the May 2026 holdout was not accessed and promotion is blocked.

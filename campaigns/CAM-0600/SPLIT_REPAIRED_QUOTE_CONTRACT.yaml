@@ -1,0 +1,23 @@
+contract_id: SPLIT-REPAIRED-QUOTE-2026-08-10
+run_id: RUN-0022
+parent_runs: RUN-0020 and RUN-0021
+status: frozen
+selection:
+  base: campaigns/CAM-0600/artifacts/shared/split_repaired_diagnostic_summary.csv
+  repairs: campaigns/CAM-0600/artifacts/shared/split_repaired_repair_diagnostic_summary.csv
+window: ['2025-05-01', '2026-04-30']
+clocks: ['09:30', '09:40']
+fill_rule:
+  buys: first valid SIP ask at or after target
+  sells: first valid SIP bid at or after target
+  intraday_exits: last valid SIP bid at or before 16:00
+  delayed_reference: 09:30 SIP midpoint
+  additional_slippage_bps_per_side: [0, 2, 5, 10]
+  missing_roles: exclude and report; never impute
+constraints:
+  fixed_capital_base: 1.0
+  compounding: false
+  broker_margin: false
+  passive_fill_credit: false
+  holdout_access: false
+  maximum_loaded_date: '2026-04-30'

@@ -32,22 +32,28 @@ def main() -> None:
                    q.quote_ts, q.bid_price, q.ask_price, q.bid_size, q.ask_size,
                    q.feed, q.provider
             FROM (SELECT * FROM roles WHERE role IN ('entry_ask_after','exit_bid_after')) r
-            ASOF LEFT JOIN qlake.sip_quotes q
-              ON r.symbol=q.symbol AND r.target_ts <= q.quote_ts
-            WHERE q.quote_ts IS NULL
-               OR (q.quote_ts <= r.target_ts + INTERVAL {args.window_minutes} MINUTE
-                   AND q.quote_ts < TIMESTAMPTZ '2026-05-01 00:00:00+00')
+            LEFT JOIN qlake.sip_quotes q
+              ON r.symbol=q.symbol
+             AND q.quote_ts >= r.target_ts
+             AND q.quote_ts <= r.target_ts + INTERVAL {args.window_minutes} MINUTE
+             AND q.quote_ts < TIMESTAMPTZ '2026-05-01 00:00:00+00'
+            QUALIFY row_number() OVER (
+              PARTITION BY r.symbol, r.target_ts, r.role ORDER BY q.quote_ts ASC NULLS LAST
+            ) = 1
         """).df()
         before = con.execute(f"""
             SELECT r.symbol, r.target_ts, r.role,
                    q.quote_ts, q.bid_price, q.ask_price, q.bid_size, q.ask_size,
                    q.feed, q.provider
             FROM (SELECT * FROM roles WHERE role='exit_bid_before') r
-            ASOF LEFT JOIN qlake.sip_quotes q
-              ON r.symbol=q.symbol AND r.target_ts >= q.quote_ts
-            WHERE q.quote_ts IS NULL
-               OR (q.quote_ts >= r.target_ts - INTERVAL {args.window_minutes} MINUTE
-                   AND q.quote_ts < TIMESTAMPTZ '2026-05-01 00:00:00+00')
+            LEFT JOIN qlake.sip_quotes q
+              ON r.symbol=q.symbol
+             AND q.quote_ts <= r.target_ts
+             AND q.quote_ts >= r.target_ts - INTERVAL {args.window_minutes} MINUTE
+             AND q.quote_ts < TIMESTAMPTZ '2026-05-01 00:00:00+00'
+            QUALIFY row_number() OVER (
+              PARTITION BY r.symbol, r.target_ts, r.role ORDER BY q.quote_ts DESC NULLS LAST
+            ) = 1
         """).df()
     matched = pd.concat([after, before], ignore_index=True)
     valid = (

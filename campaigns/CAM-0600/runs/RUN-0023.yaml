@@ -1,0 +1,116 @@
+run_id: RUN-0023
+campaign_id: CAM-0600
+parent_run: RUN-0022
+status: completed
+change: Repaired target-change SIP replay with valid-quote remainder accounting.
+reason: RUN-0022 counted null-quote rows as matched keys.
+expected_effect: Restore honest 09:40 role coverage without changing signal or fill
+  rules.
+frozen_contract: campaigns/CAM-0600/SPLIT_REPAIRED_QUOTE_REPAIR_CONTRACT.yaml
+configuration:
+  window_start: '2025-05-01'
+  window_end: '2026-04-30'
+  clocks:
+  - 09:30
+  - 09:40
+  additional_slippage_bps_per_side:
+  - 0.0
+  - 2.0
+  - 5.0
+  - 10.0
+  selected_variant: qqq__mom252_skip21__top3__liquid_trend__panic1
+  holdout_access: false
+result:
+  metrics:
+  - campaign_id: CAM-0600
+    run_id: RUN-0023
+    variant_id: qqq__mom252_skip21__top3__liquid_trend__panic1
+    clock: 0940
+    extra_slippage_bps_per_side: 0.0
+    net_simple_return: 0.7314826857952508
+    maximum_drawdown: 0.13528541877904712
+    trade_roles: 45
+    role_coverage: 1.0
+    active_sessions: 237
+    green_sessions: 134
+    red_sessions: 103
+    positive_months: 9
+    negative_months: 3
+    monthly_average: 0.06095689048293757
+    monthly_median: 0.02254856529608081
+    worst_month: -0.10164477054113816
+    best_month: 0.2695162141822731
+    reference_price: 09:30 SIP midpoint
+    holdout_rows_loaded: 0
+    broker_margin: false
+    direct_short: false
+  - campaign_id: CAM-0600
+    run_id: RUN-0023
+    variant_id: qqq__mom252_skip21__top3__liquid_trend__panic1
+    clock: 0940
+    extra_slippage_bps_per_side: 2.0
+    net_simple_return: 0.7298310176178295
+    maximum_drawdown: 0.13533601152144356
+    trade_roles: 45
+    role_coverage: 1.0
+    active_sessions: 237
+    green_sessions: 134
+    red_sessions: 103
+    positive_months: 9
+    negative_months: 3
+    monthly_average: 0.06081925146815246
+    monthly_median: 0.02244027152042085
+    worst_month: -0.10181775490599945
+    best_month: 0.2693162141822731
+    reference_price: 09:30 SIP midpoint
+    holdout_rows_loaded: 0
+    broker_margin: false
+    direct_short: false
+  - campaign_id: CAM-0600
+    run_id: RUN-0023
+    variant_id: qqq__mom252_skip21__top3__liquid_trend__panic1
+    clock: 0940
+    extra_slippage_bps_per_side: 5.0
+    net_simple_return: 0.7273535153516975
+    maximum_drawdown: 0.13541197162556648
+    trade_roles: 45
+    role_coverage: 1.0
+    active_sessions: 237
+    green_sessions: 134
+    red_sessions: 103
+    positive_months: 9
+    negative_months: 3
+    monthly_average: 0.0606127929459748
+    monthly_median: 0.02227783085693091
+    worst_month: -0.10207723145329141
+    best_month: 0.2690162141822731
+    reference_price: 09:30 SIP midpoint
+    holdout_rows_loaded: 0
+    broker_margin: false
+    direct_short: false
+  - campaign_id: CAM-0600
+    run_id: RUN-0023
+    variant_id: qqq__mom252_skip21__top3__liquid_trend__panic1
+    clock: 0940
+    extra_slippage_bps_per_side: 10.0
+    net_simple_return: 0.723224344908144
+    maximum_drawdown: 0.13553876146168842
+    trade_roles: 45
+    role_coverage: 1.0
+    active_sessions: 237
+    green_sessions: 134
+    red_sessions: 103
+    positive_months: 9
+    negative_months: 3
+    monthly_average: 0.06026869540901201
+    monthly_median: 0.02200709641778101
+    worst_month: -0.10250969236544466
+    best_month: 0.2685162141822731
+    reference_price: 09:30 SIP midpoint
+    holdout_rows_loaded: 0
+    broker_margin: false
+    direct_short: false
+  maximum_loaded_date: '2026-04-30'
+  holdout_rows_loaded: 0
+decision: Development quote evidence only; requires repaired cross-family and pseudo-OOS
+  audit.

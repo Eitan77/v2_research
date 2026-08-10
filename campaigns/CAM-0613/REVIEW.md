@@ -33,3 +33,8 @@ No structured survivor cleared the mechanism, cost, and recent-consistency scree
 Status: `retired_mechanism_exhausted`.
 
 This is adapted development evidence, not untouched out-of-sample evidence. No rows on or after 2026-05-01 were loaded, and promotion remains false.
+
+
+## Split-repaired checkpoint (RUN-0020/RUN-0021/RUN-0023)
+
+Prior strategy evidence is invalid because the inherited stock panel adjusted forward splits in the wrong direction. The repaired structured result is **no_structured_survivor**. No mechanism-consistent repair cleared the structured screen. This remains adapted development evidence; the May 2026 holdout was not accessed and promotion is blocked.

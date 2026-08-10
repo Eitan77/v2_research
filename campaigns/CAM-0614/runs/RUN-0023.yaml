@@ -1,0 +1,116 @@
+run_id: RUN-0023
+campaign_id: CAM-0614
+parent_run: RUN-0022
+status: completed
+change: Repaired target-change SIP replay with valid-quote remainder accounting.
+reason: RUN-0022 counted null-quote rows as matched keys.
+expected_effect: Restore honest 09:40 role coverage without changing signal or fill
+  rules.
+frozen_contract: campaigns/CAM-0600/SPLIT_REPAIRED_QUOTE_REPAIR_CONTRACT.yaml
+configuration:
+  window_start: '2025-05-01'
+  window_end: '2026-04-30'
+  clocks:
+  - 09:30
+  - 09:40
+  additional_slippage_bps_per_side:
+  - 0.0
+  - 2.0
+  - 5.0
+  - 10.0
+  selected_variant: sp500__donchian100__reversal
+  holdout_access: false
+result:
+  metrics:
+  - campaign_id: CAM-0614
+    run_id: RUN-0023
+    variant_id: sp500__donchian100__reversal
+    clock: 0940
+    extra_slippage_bps_per_side: 0.0
+    net_simple_return: 0.13595906061680424
+    maximum_drawdown: 0.06550209539278351
+    trade_roles: 45237
+    role_coverage: 0.9993810376461746
+    active_sessions: 251
+    green_sessions: 122
+    red_sessions: 129
+    positive_months: 8
+    negative_months: 4
+    monthly_average: 0.01132992171806702
+    monthly_median: 0.016138766172971043
+    worst_month: -0.040483243691220784
+    best_month: 0.04281450413345607
+    reference_price: 09:30 SIP midpoint
+    holdout_rows_loaded: 0
+    broker_margin: false
+    direct_short: false
+  - campaign_id: CAM-0614
+    run_id: RUN-0023
+    variant_id: sp500__donchian100__reversal
+    clock: 0940
+    extra_slippage_bps_per_side: 2.0
+    net_simple_return: 0.13462624128934034
+    maximum_drawdown: 0.06567449921345452
+    trade_roles: 45237
+    role_coverage: 0.9993810376461746
+    active_sessions: 251
+    green_sessions: 122
+    red_sessions: 129
+    positive_months: 8
+    negative_months: 4
+    monthly_average: 0.011218853440778359
+    monthly_median: 0.016048015965101723
+    worst_month: -0.040640502757687796
+    best_month: 0.04275383985211418
+    reference_price: 09:30 SIP midpoint
+    holdout_rows_loaded: 0
+    broker_margin: false
+    direct_short: false
+  - campaign_id: CAM-0614
+    run_id: RUN-0023
+    variant_id: sp500__donchian100__reversal
+    clock: 0940
+    extra_slippage_bps_per_side: 5.0
+    net_simple_return: 0.13262701229814444
+    maximum_drawdown: 0.06593374194173955
+    trade_roles: 45237
+    role_coverage: 0.9993810376461746
+    active_sessions: 251
+    green_sessions: 122
+    red_sessions: 129
+    positive_months: 8
+    negative_months: 4
+    monthly_average: 0.011052251024845375
+    monthly_median: 0.015911890653297747
+    worst_month: -0.04087639135738831
+    best_month: 0.04266284343010135
+    reference_price: 09:30 SIP midpoint
+    holdout_rows_loaded: 0
+    broker_margin: false
+    direct_short: false
+  - campaign_id: CAM-0614
+    run_id: RUN-0023
+    variant_id: sp500__donchian100__reversal
+    clock: 0940
+    extra_slippage_bps_per_side: 10.0
+    net_simple_return: 0.12929496397948465
+    maximum_drawdown: 0.06636752020389139
+    trade_roles: 45237
+    role_coverage: 0.9993810376461746
+    active_sessions: 251
+    green_sessions: 122
+    red_sessions: 129
+    positive_months: 8
+    negative_months: 4
+    monthly_average: 0.01077458033162372
+    monthly_median: 0.015685015133624452
+    worst_month: -0.041269539023555846
+    best_month: 0.042511182726746616
+    reference_price: 09:30 SIP midpoint
+    holdout_rows_loaded: 0
+    broker_margin: false
+    direct_short: false
+  maximum_loaded_date: '2026-04-30'
+  holdout_rows_loaded: 0
+decision: Development quote evidence only; requires repaired cross-family and pseudo-OOS
+  audit.

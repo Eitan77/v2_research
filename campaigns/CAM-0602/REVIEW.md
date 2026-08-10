@@ -35,3 +35,8 @@ Selection activity covered 97.2% of dates and averaged 5.00 names when active. S
 Matched-control conclusion: The winner is an adapted value-quality composite, not isolated source value; keep the label explicit and concentration caveat.
 
 This is adapted development evidence, not untouched out-of-sample evidence. No rows on or after 2026-05-01 were loaded, and promotion remains false.
+
+
+## Split-repaired checkpoint (RUN-0020/RUN-0021/RUN-0023)
+
+Prior strategy evidence is invalid because the inherited stock panel adjusted forward splits in the wrong direction. The repaired structured result is **provisional_execution_survivor** using `qqq__value_quality__top10__trend1`. Its full repaired 2 bp additive return is 138.7% with 23.9% maximum drawdown; 09:40 SIP replay at +2 bp is 64.3% with 6.3% drawdown and 9/3 positive/negative months. This remains adapted development evidence; the May 2026 holdout was not accessed and promotion is blocked.

@@ -56,3 +56,25 @@ deep_development_checkpoint:
   matched_control: null
   conclusion: No strategy is promoted; evidence is adapted development data and the
     sealed holdout remains untouched.
+prior_checkpoint_status: invalid_split_adjustment
+split_repaired_checkpoint:
+  strategy_section: null
+  source_run: RUN-0021
+  structured_survivors: 24
+  selected_variant: etf__ibs30__top5__hold3__trend1
+  bar_net_2bps: 1.5363342674432792
+  bar_maximum_drawdown: 0.1401865557843107
+  decision: provisional_execution_survivor
+  quote_2bps_net: 0.276740936192023
+  quote_2bps_drawdown: 0.0488262496777003
+  quote_2bps_positive_months: 7
+  quote_2bps_negative_months: 5
+  quote_2bps_coverage: 1.0
+  quote_10bps_net: 0.1907320473031341
+  quote_10bps_drawdown: 0.0629252888230856
+  quote_10bps_positive_months: 7
+  quote_10bps_negative_months: 5
+  quote_10bps_coverage: 1.0
+  maximum_loaded_date: '2026-04-30'
+  holdout_rows_loaded: 0
+  promotion_ready: false

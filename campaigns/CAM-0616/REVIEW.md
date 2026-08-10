@@ -35,3 +35,8 @@ Selection activity covered 92.3% of dates and averaged 10.00 names when active. 
 Matched-control conclusion: The executable long-only sleeve is a momentum proxy; signed source identity remains non-executable overnight.
 
 This is adapted development evidence, not untouched out-of-sample evidence. No rows on or after 2026-05-01 were loaded, and promotion remains false.
+
+
+## Split-repaired checkpoint (RUN-0020/RUN-0021/RUN-0023)
+
+Prior strategy evidence is invalid because the inherited stock panel adjusted forward splits in the wrong direction. The repaired structured result is **provisional_execution_survivor** using `qqq__fullcov_s50__mom60__positive_top5`. Its full repaired 2 bp additive return is 111.6% with 26.9% maximum drawdown; 09:40 SIP replay at +2 bp is 17.7% with 13.2% drawdown and 8/4 positive/negative months. This remains adapted development evidence; the May 2026 holdout was not accessed and promotion is blocked.

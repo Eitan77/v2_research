@@ -7,3 +7,9 @@
 {"ts": "2026-08-10T00:28:16.378284-07:00", "run_id": "RUN-0009", "event": "completed", "net_simple_return": 1.2192463411988794, "clock": "09:40", "extra_bps": 2, "holdout_rows_loaded": 0}
 {"ts": "2026-08-10T00:28:35.451824-07:00", "run_id": "RUN-0012", "event": "completed", "decision": "The 50/200 gate improves return modestly and sharply reduces drawdown versus identical momentum ranking.", "holdout_rows_loaded": 0}
 {"ts": "2026-08-10T00:48:06.891983-07:00", "run_id": "RUN-0012", "event": "completed", "decision": "The 50/200 gate improves return modestly and sharply reduces drawdown versus identical momentum ranking.", "holdout_rows_loaded": 0}
+{"run_id": "RUN-0020", "event": "planned", "reason": "The inherited adjustment direction created false near-total losses at forward splits and potentially contaminated both signals and returns.", "holdout_rows_loaded": 0}
+{"run_id": "RUN-0020", "event": "completed", "best_at_2bps": "qqq__ma50_200__monthly__top3__momentum", "net_simple_return": 3.761050508177044, "holdout_rows_loaded": 0}
+{"run_id": "RUN-0020", "event": "structured_analysis_completed", "decision": "provisional_repaired_target_change_quote_gate", "selected_variant": "sp500__ma50_200__weekly__top3__momentum", "holdout_rows_loaded": 0}
+{"run_id": "RUN-0022", "event": "planned", "selected_variant": "sp500__ma50_200__weekly__top3__momentum", "holdout_rows_loaded": 0}
+{"run_id": "RUN-0022", "event": "invalidated", "reason": "null-quote rows counted as matched keys", "superseded_by": "RUN-0023", "holdout_rows_loaded": 0}
+{"run_id": "RUN-0023", "event": "planned", "selected_variant": "sp500__ma50_200__weekly__top3__momentum", "holdout_rows_loaded": 0}

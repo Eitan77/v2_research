@@ -1,0 +1,27 @@
+contract_id: SPLIT-REPAIR-2026-08-10
+run_id: RUN-0020
+scope: CAM-0600 through CAM-0624
+parent_runs: RUN-0008 and applicable RUN-0010 repair variants
+status: frozen
+diagnosis:
+  observed_failure: NVDA 2024-06-10 10-for-1 split produced approximately -99% open-to-open return.
+  root_cause: Inherited stock loaders multiplied historical raw prices by the future share multiplier instead of its reciprocal.
+  affected_evidence: All stock-panel signals and returns from the prior suite are potentially contaminated.
+repair:
+  boundary: campaigns/CAM-0600/src/suite_core.py::_panel_from_existing
+  rule: Historical raw prices are multiplied by reciprocal cumulative future share multipliers.
+  semantic_fixture: 1000 pre-split and 100 post-split both adjust to 100.
+  strategy_logic_change: none
+configuration:
+  discovery_cutoff: '2026-04-30'
+  holdout_access: false
+  fixed_capital_base: 1.0
+  compounding: false
+  broker_margin: false
+  costs_bps_per_side: [-1, 0, 1, 2, 5, 10]
+  threads: 16
+integrity:
+  preserve_prior_artifacts: true
+  prior_interpretation_status: invalid_split_adjustment
+  require_maximum_loaded_date: '2026-04-30'
+  require_holdout_rows_loaded: 0

@@ -1,0 +1,116 @@
+run_id: RUN-0022
+campaign_id: CAM-0624
+parent_run: RUN-0020
+status: invalid
+change: Target-change SIP marketable replay after reciprocal split repair.
+reason: All prior quote PnL depended on invalid stock-adjusted bar series or a superseded
+  selected variant.
+expected_effect: Measure execution realism for the repaired structured survivor.
+frozen_contract: campaigns/CAM-0600/SPLIT_REPAIRED_QUOTE_CONTRACT.yaml
+configuration:
+  window_start: '2025-05-01'
+  window_end: '2026-04-30'
+  clocks:
+  - 09:30
+  - 09:40
+  additional_slippage_bps_per_side:
+  - 0.0
+  - 2.0
+  - 5.0
+  - 10.0
+  selected_variant: qqq__chs_safe__top5__liquid__target15
+  holdout_access: false
+result:
+  metrics:
+  - campaign_id: CAM-0624
+    run_id: RUN-0022
+    variant_id: qqq__chs_safe__top5__liquid__target15
+    clock: 0940
+    extra_slippage_bps_per_side: 0.0
+    net_simple_return: 0.3289851514082066
+    maximum_drawdown: 0.06599375247372029
+    trade_roles: 74
+    role_coverage: 1.0
+    active_sessions: 251
+    green_sessions: 146
+    red_sessions: 105
+    positive_months: 9
+    negative_months: 3
+    monthly_average: 0.02741542928401722
+    monthly_median: 0.019648975913344753
+    worst_month: -0.014592307098201541
+    best_month: 0.1113693811359127
+    reference_price: 09:30 SIP midpoint
+    holdout_rows_loaded: 0
+    broker_margin: false
+    direct_short: false
+  - campaign_id: CAM-0624
+    run_id: RUN-0022
+    variant_id: qqq__chs_safe__top5__liquid__target15
+    clock: 0940
+    extra_slippage_bps_per_side: 2.0
+    net_simple_return: 0.3282392379538239
+    maximum_drawdown: 0.0661137781092066
+    trade_roles: 74
+    role_coverage: 1.0
+    active_sessions: 251
+    green_sessions: 146
+    red_sessions: 105
+    positive_months: 9
+    negative_months: 3
+    monthly_average: 0.027353269829485327
+    monthly_median: 0.019576370353116896
+    worst_month: -0.014704457055426312
+    best_month: 0.11129957222741933
+    reference_price: 09:30 SIP midpoint
+    holdout_rows_loaded: 0
+    broker_margin: false
+    direct_short: false
+  - campaign_id: CAM-0624
+    run_id: RUN-0022
+    variant_id: qqq__chs_safe__top5__liquid__target15
+    clock: 0940
+    extra_slippage_bps_per_side: 5.0
+    net_simple_return: 0.32712036777224973
+    maximum_drawdown: 0.06629395495806463
+    trade_roles: 74
+    role_coverage: 1.0
+    active_sessions: 251
+    green_sessions: 146
+    red_sessions: 105
+    positive_months: 9
+    negative_months: 3
+    monthly_average: 0.027260030647687478
+    monthly_median: 0.019467462012775112
+    worst_month: -0.014872681991263464
+    best_month: 0.11119485886467928
+    reference_price: 09:30 SIP midpoint
+    holdout_rows_loaded: 0
+    broker_margin: false
+    direct_short: false
+  - campaign_id: CAM-0624
+    run_id: RUN-0022
+    variant_id: qqq__chs_safe__top5__liquid__target15
+    clock: 0940
+    extra_slippage_bps_per_side: 10.0
+    net_simple_return: 0.32525558413629274
+    maximum_drawdown: 0.06659461932899331
+    trade_roles: 74
+    role_coverage: 1.0
+    active_sessions: 251
+    green_sessions: 146
+    red_sessions: 105
+    positive_months: 9
+    negative_months: 3
+    monthly_average: 0.027104632011357734
+    monthly_median: 0.01928594811220547
+    worst_month: -0.015153056884325387
+    best_month: 0.11102033659344587
+    reference_price: 09:30 SIP midpoint
+    holdout_rows_loaded: 0
+    broker_margin: false
+    direct_short: false
+  maximum_loaded_date: '2026-04-30'
+  holdout_rows_loaded: 0
+decision: 'Do not interpret: null-quote rows were counted as matched keys in 09:40
+  remainder accounting. Superseded by RUN-0023.'

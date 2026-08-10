@@ -1,0 +1,116 @@
+run_id: RUN-0023
+campaign_id: CAM-0604
+parent_run: RUN-0022
+status: completed
+change: Repaired target-change SIP replay with valid-quote remainder accounting.
+reason: RUN-0022 counted null-quote rows as matched keys.
+expected_effect: Restore honest 09:40 role coverage without changing signal or fill
+  rules.
+frozen_contract: campaigns/CAM-0600/SPLIT_REPAIRED_QUOTE_REPAIR_CONTRACT.yaml
+configuration:
+  window_start: '2025-05-01'
+  window_end: '2026-04-30'
+  clocks:
+  - 09:30
+  - 09:40
+  additional_slippage_bps_per_side:
+  - 0.0
+  - 2.0
+  - 5.0
+  - 10.0
+  selected_variant: qqq__mom_quality__top5__trend1
+  holdout_access: false
+result:
+  metrics:
+  - campaign_id: CAM-0604
+    run_id: RUN-0023
+    variant_id: qqq__mom_quality__top5__trend1
+    clock: 0940
+    extra_slippage_bps_per_side: 0.0
+    net_simple_return: 0.372139733713255
+    maximum_drawdown: 0.14707054333323497
+    trade_roles: 75
+    role_coverage: 1.0
+    active_sessions: 251
+    green_sessions: 139
+    red_sessions: 112
+    positive_months: 8
+    negative_months: 4
+    monthly_average: 0.031011644476104577
+    monthly_median: 0.028266211679488527
+    worst_month: -0.0683761608547486
+    best_month: 0.23588536175830693
+    reference_price: 09:30 SIP midpoint
+    holdout_rows_loaded: 0
+    broker_margin: false
+    direct_short: false
+  - campaign_id: CAM-0604
+    run_id: RUN-0023
+    variant_id: qqq__mom_quality__top5__trend1
+    clock: 0940
+    extra_slippage_bps_per_side: 2.0
+    net_simple_return: 0.37084537632281706
+    maximum_drawdown: 0.1473108510009819
+    trade_roles: 75
+    role_coverage: 1.0
+    active_sessions: 251
+    green_sessions: 139
+    red_sessions: 112
+    positive_months: 8
+    negative_months: 4
+    monthly_average: 0.03090378136023475
+    monthly_median: 0.028146700386328636
+    worst_month: -0.06850924863439191
+    best_month: 0.23577090644631554
+    reference_price: 09:30 SIP midpoint
+    holdout_rows_loaded: 0
+    broker_margin: false
+    direct_short: false
+  - campaign_id: CAM-0604
+    run_id: RUN-0023
+    variant_id: qqq__mom_quality__top5__trend1
+    clock: 0940
+    extra_slippage_bps_per_side: 5.0
+    net_simple_return: 0.3689038402371603
+    maximum_drawdown: 0.1476720399696729
+    trade_roles: 75
+    role_coverage: 1.0
+    active_sessions: 251
+    green_sessions: 139
+    red_sessions: 112
+    positive_months: 8
+    negative_months: 4
+    monthly_average: 0.03074198668643002
+    monthly_median: 0.0279674334465888
+    worst_month: -0.0687088803038569
+    best_month: 0.23559922347832846
+    reference_price: 09:30 SIP midpoint
+    holdout_rows_loaded: 0
+    broker_margin: false
+    direct_short: false
+  - campaign_id: CAM-0604
+    run_id: RUN-0023
+    variant_id: qqq__mom_quality__top5__trend1
+    clock: 0940
+    extra_slippage_bps_per_side: 10.0
+    net_simple_return: 0.3656679467610654
+    maximum_drawdown: 0.14827596934226714
+    trade_roles: 75
+    role_coverage: 1.0
+    active_sessions: 251
+    green_sessions: 139
+    red_sessions: 112
+    positive_months: 8
+    negative_months: 4
+    monthly_average: 0.030472328896755455
+    monthly_median: 0.027668655213689067
+    worst_month: -0.0690415997529652
+    best_month: 0.23531308519835
+    reference_price: 09:30 SIP midpoint
+    holdout_rows_loaded: 0
+    broker_margin: false
+    direct_short: false
+  maximum_loaded_date: '2026-04-30'
+  holdout_rows_loaded: 0
+decision: Development quote evidence only; requires repaired cross-family and pseudo-OOS
+  audit.

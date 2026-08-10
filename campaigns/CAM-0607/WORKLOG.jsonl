@@ -5,3 +5,9 @@
 {"timestamp_utc": "2026-08-07T02:15:23.111427+00:00", "run_id": "FINAL", "event": "campaign_checkpoint", "decision": "profitable_but_fragile_unpromoted"}
 {"decision": "provisional_target_change_quote_gate", "holdout_rows_loaded": 0, "run_id": "RUN-0008", "selected_variant": "etf__long_cheap_r2__top1__z1__trend0", "status": "completed"}
 {"ts": "2026-08-10T00:28:16.342308-07:00", "run_id": "RUN-0009", "event": "completed", "net_simple_return": 0.2512686923042891, "clock": "09:40", "extra_bps": 2, "holdout_rows_loaded": 0}
+{"run_id": "RUN-0020", "event": "planned", "reason": "The inherited adjustment direction created false near-total losses at forward splits and potentially contaminated both signals and returns.", "holdout_rows_loaded": 0}
+{"run_id": "RUN-0020", "event": "completed", "best_at_2bps": "etf__long_cheap_r1__top1__z1__trend0", "net_simple_return": 3.1892957359524754, "holdout_rows_loaded": 0}
+{"run_id": "RUN-0020", "event": "structured_analysis_completed", "decision": "provisional_repaired_target_change_quote_gate", "selected_variant": "etf__long_cheap_r2__top1__z1__trend0", "holdout_rows_loaded": 0}
+{"run_id": "RUN-0022", "event": "planned", "selected_variant": "etf__long_cheap_r2__top1__z1__trend0", "holdout_rows_loaded": 0}
+{"run_id": "RUN-0022", "event": "invalidated", "reason": "null-quote rows counted as matched keys", "superseded_by": "RUN-0023", "holdout_rows_loaded": 0}
+{"run_id": "RUN-0023", "event": "planned", "selected_variant": "etf__long_cheap_r2__top1__z1__trend0", "holdout_rows_loaded": 0}

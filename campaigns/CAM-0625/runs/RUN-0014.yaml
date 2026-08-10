@@ -1,0 +1,29 @@
+run_id: RUN-0014
+campaign_id: CAM-0625
+parent_run: RUN-0013
+status: invalid
+change: Early-period component selection followed by frozen 2024-2026 validation.
+reason: The current four components were selected after viewing the full development sample.
+expected_effect: Determine whether broad source-guided grids selected through 2023 retain profitability and path quality later.
+configuration:
+  selection_end: '2023-12-29'
+  validation_start: '2024-01-02'
+  validation_end: '2026-04-30'
+  candidate_runs:
+    CAM-0600: RUN-0008
+    CAM-0604: RUN-0008
+    CAM-0621: RUN-0010
+    CAM-0624: RUN-0008
+  candidate_cost_bps_per_side: 2
+  selector:
+    primary: maximum training net simple return
+    maximum_training_drawdown: 0.20
+    minimum_training_positive_month_fraction: 0.60
+    minimum_training_active_days: 252
+  ensemble_allocation: equal
+  interpretation: retrospective_pseudo_oos_not_genuine_oos
+  cutoff: '2026-04-30'
+  holdout_access: false
+result:
+  interpretation_blocker: Fail-fast correctly found no eligible CAM-0600 candidate but stopped before saving the complete diagnostic table.
+decision: Do not interpret RUN-0014 artifacts; rerun identical selector fail-closed in RUN-0015 without relaxing criteria.

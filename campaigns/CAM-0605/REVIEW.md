@@ -33,3 +33,8 @@ The structured survivor `qqq__resmom__top3__liquid` earned +115.9% net at 2 bps 
 Selection activity covered 54.6% of dates and averaged 3.00 names when active. Status: `fragile_high_drawdown_unpromoted`.
 
 This is adapted development evidence, not untouched out-of-sample evidence. No rows on or after 2026-05-01 were loaded, and promotion remains false.
+
+
+## Split-repaired checkpoint (RUN-0020/RUN-0021/RUN-0023)
+
+Prior strategy evidence is invalid because the inherited stock panel adjusted forward splits in the wrong direction. The repaired structured result is **provisional_execution_survivor** using `sp500__resmom__top10__liquid_trend`. Its full repaired 2 bp additive return is 52.7% with 17.6% maximum drawdown; 09:40 SIP replay at +2 bp is 37.3% with 8.7% drawdown and 9/3 positive/negative months. This remains adapted development evidence; the May 2026 holdout was not accessed and promotion is blocked.

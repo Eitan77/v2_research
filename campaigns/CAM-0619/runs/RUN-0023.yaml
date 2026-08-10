@@ -1,0 +1,116 @@
+run_id: RUN-0023
+campaign_id: CAM-0619
+parent_run: RUN-0022
+status: completed
+change: Repaired target-change SIP replay with valid-quote remainder accounting.
+reason: RUN-0022 counted null-quote rows as matched keys.
+expected_effect: Restore honest 09:40 role coverage without changing signal or fill
+  rules.
+frozen_contract: campaigns/CAM-0600/SPLIT_REPAIRED_QUOTE_REPAIR_CONTRACT.yaml
+configuration:
+  window_start: '2025-05-01'
+  window_end: '2026-04-30'
+  clocks:
+  - 09:30
+  - 09:40
+  additional_slippage_bps_per_side:
+  - 0.0
+  - 2.0
+  - 5.0
+  - 10.0
+  selected_variant: sector11__mom63_skip0__monthly__top1
+  holdout_access: false
+result:
+  metrics:
+  - campaign_id: CAM-0619
+    run_id: RUN-0023
+    variant_id: sector11__mom63_skip0__monthly__top1
+    clock: 0940
+    extra_slippage_bps_per_side: 0.0
+    net_simple_return: 0.39685958184320613
+    maximum_drawdown: 0.09988172200071019
+    trade_roles: 10
+    role_coverage: 1.0
+    active_sessions: 250
+    green_sessions: 151
+    red_sessions: 99
+    positive_months: 8
+    negative_months: 4
+    monthly_average: 0.03307163182026718
+    monthly_median: 0.03485215670899561
+    worst_month: -0.06438080618015551
+    best_month: 0.15122536758633565
+    reference_price: 09:30 SIP midpoint
+    holdout_rows_loaded: 0
+    broker_margin: false
+    direct_short: false
+  - campaign_id: CAM-0619
+    run_id: RUN-0023
+    variant_id: sector11__mom63_skip0__monthly__top1
+    clock: 0940
+    extra_slippage_bps_per_side: 2.0
+    net_simple_return: 0.39485958184320613
+    maximum_drawdown: 0.1000197855629909
+    trade_roles: 10
+    role_coverage: 1.0
+    active_sessions: 250
+    green_sessions: 151
+    red_sessions: 99
+    positive_months: 8
+    negative_months: 4
+    monthly_average: 0.03290496515360051
+    monthly_median: 0.03445215670899561
+    worst_month: -0.06438080618015551
+    best_month: 0.15082536758633563
+    reference_price: 09:30 SIP midpoint
+    holdout_rows_loaded: 0
+    broker_margin: false
+    direct_short: false
+  - campaign_id: CAM-0619
+    run_id: RUN-0023
+    variant_id: sector11__mom63_skip0__monthly__top1
+    clock: 0940
+    extra_slippage_bps_per_side: 5.0
+    net_simple_return: 0.39185958184320613
+    maximum_drawdown: 0.10022759804781986
+    trade_roles: 10
+    role_coverage: 1.0
+    active_sessions: 250
+    green_sessions: 151
+    red_sessions: 99
+    positive_months: 8
+    negative_months: 4
+    monthly_average: 0.03265496515360051
+    monthly_median: 0.03385215670899561
+    worst_month: -0.06438080618015551
+    best_month: 0.15022536758633565
+    reference_price: 09:30 SIP midpoint
+    holdout_rows_loaded: 0
+    broker_margin: false
+    direct_short: false
+  - campaign_id: CAM-0619
+    run_id: RUN-0023
+    variant_id: sector11__mom63_skip0__monthly__top1
+    clock: 0940
+    extra_slippage_bps_per_side: 10.0
+    net_simple_return: 0.3868595818432061
+    maximum_drawdown: 0.10057587785688704
+    trade_roles: 10
+    role_coverage: 1.0
+    active_sessions: 250
+    green_sessions: 151
+    red_sessions: 99
+    positive_months: 8
+    negative_months: 4
+    monthly_average: 0.032238298486933846
+    monthly_median: 0.032852156708995606
+    worst_month: -0.06438080618015551
+    best_month: 0.14922536758633564
+    reference_price: 09:30 SIP midpoint
+    holdout_rows_loaded: 0
+    broker_margin: false
+    direct_short: false
+  maximum_loaded_date: '2026-04-30'
+  holdout_rows_loaded: 0
+decision: Development quote evidence only; requires repaired cross-family and pseudo-OOS
+  audit.

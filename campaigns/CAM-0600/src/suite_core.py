@@ -131,8 +131,24 @@ def _total_return_arrays(
 
 
 def _panel_from_existing(name: str, data: dict[str, Any], readiness: dict[str, Any]) -> Panel:
+    # The inherited loaders label split_grid as the share multiplier effective
+    # on the ex-date (10.0 for a 10-for-1 split). Historical prices therefore
+    # need the reciprocal cumulative multiplier.  Do not trust the inherited
+    # adj_* arrays: their cumulative factor used the share multiplier directly,
+    # which turned NVDA's June 2024 split into an approximately -99% return.
+    split_grid = np.asarray(data["split_grid"], dtype=float)
+    split_factor = np.ones_like(split_grid)
+    running = np.ones(split_grid.shape[1], dtype=float)
+    for idx in range(split_grid.shape[0] - 1, -1, -1):
+        split_factor[idx] = running
+        event = np.where(np.isfinite(split_grid[idx]) & (split_grid[idx] > 0), split_grid[idx], 1.0)
+        running /= event
+    adjusted = {
+        field: np.asarray(data[f"raw_{field}"], dtype=float) * split_factor
+        for field in ("open", "high", "low", "close")
+    }
     tri, oo, oc = _total_return_arrays(
-        data["adj_open"], data["adj_close"], data["dividend_grid"], data["split_factor"]
+        adjusted["open"], adjusted["close"], data["dividend_grid"], split_factor
     )
     return Panel(
         name=name,
@@ -143,13 +159,13 @@ def _panel_from_existing(name: str, data: dict[str, Any], readiness: dict[str, A
         raw_high=np.asarray(data["raw_high"], dtype=float),
         raw_low=np.asarray(data["raw_low"], dtype=float),
         raw_close=np.asarray(data["raw_close"], dtype=float),
-        adj_open=np.asarray(data["adj_open"], dtype=float),
-        adj_high=np.asarray(data["adj_high"], dtype=float),
-        adj_low=np.asarray(data["adj_low"], dtype=float),
-        adj_close=np.asarray(data["adj_close"], dtype=float),
+        adj_open=adjusted["open"],
+        adj_high=adjusted["high"],
+        adj_low=adjusted["low"],
+        adj_close=adjusted["close"],
         volume=np.asarray(data["raw_volume"], dtype=float),
-        split_grid=np.asarray(data["split_grid"], dtype=float),
-        split_factor=np.asarray(data["split_factor"], dtype=float),
+        split_grid=split_grid,
+        split_factor=split_factor,
         dividend_grid=np.asarray(data["dividend_grid"], dtype=float),
         total_return_index=tri,
         open_to_next_open_return=oo,
@@ -567,4 +583,14 @@ def semantic_fixtures() -> dict[str, Any]:
     w = rank_weights(scores, eligible, [0], mode="long_short", quantile=0.25)
     if abs(np.abs(w).sum() - 1.0) > 1e-12 or abs(w.sum()) > 1e-12:
         raise RuntimeError("rank-weight fixture failed")
-    return {"status": "passed", "drawdown": dd, "rank_weight_gross": float(np.abs(w).sum())}
+    raw = np.asarray([[1000.0], [100.0]])
+    split_grid = np.asarray([[1.0], [10.0]])
+    split_factor = np.ones_like(split_grid)
+    running = np.ones(1)
+    for i in range(len(split_grid) - 1, -1, -1):
+        split_factor[i] = running
+        running /= split_grid[i]
+    adjusted = raw * split_factor
+    if abs(adjusted[0, 0] / adjusted[1, 0] - 1.0) > 1e-12:
+        raise RuntimeError("forward-split adjustment fixture failed")
+    return {"status": "passed", "drawdown": dd, "rank_weight_gross": float(np.abs(w).sum()), "forward_split_adjustment": "passed"}

@@ -1,5 +1,6 @@
 from __future__ import annotations
 from pathlib import Path
+import json
 import pandas as pd
 import yaml
 
@@ -44,3 +45,38 @@ def test_all_deep_checkpoint_results_keep_holdout_sealed() -> None:
         assert checkpoint["holdout_rows_loaded"]==0
         assert checkpoint["maximum_loaded_date"]=="2026-04-30"
         assert checkpoint["promotion_ready"] is False
+
+
+def test_split_repair_semantics_and_all_25_runs_reconcile() -> None:
+    for n in range(600,625):
+        report=json.loads((ROOT/"campaigns"/f"CAM-{n:04d}"/"artifacts"/"RUN-0020"/"execution_report.json").read_text(encoding="utf-8"))
+        assert report["status"]=="completed"
+        assert report["maximum_loaded_date"]=="2026-04-30"
+        assert report["holdout_rows_loaded"]==0
+        assert report["semantic_fixtures"]["forward_split_adjustment"]=="passed"
+        run=yaml.safe_load((ROOT/"campaigns"/f"CAM-{n:04d}"/"runs"/"RUN-0020.yaml").read_text(encoding="utf-8"))
+        assert run["status"]=="completed"
+        assert run["result"]["executed_variant_cost_count"]==report["executed_variant_cost_count"]
+
+
+def test_repaired_quote_replay_has_coverage_and_monotone_cost_decay() -> None:
+    metrics=pd.read_csv(SH/"split_repaired_quote_metrics_RUN-0023.csv")
+    central=metrics[(metrics.clock.astype(str).str.zfill(4)=="0940") & (metrics.extra_slippage_bps_per_side==2)]
+    assert central.campaign_id.nunique()==23
+    assert central.role_coverage.min()>=0.999
+    assert (central.net_simple_return>0).all()
+    for _,group in metrics.groupby(["campaign_id","clock"]):
+        ordered=group.sort_values("extra_slippage_bps_per_side")
+        assert ordered.net_simple_return.is_monotonic_decreasing
+
+
+def test_final_repaired_ensemble_is_unpromoted_and_holdout_free() -> None:
+    results=yaml.safe_load((ROOT/"campaigns"/"CAM-0625"/"RESULTS.yaml").read_text(encoding="utf-8"))
+    assert results["promotion_ready"] is False
+    assert results["holdout_rows_loaded"]==0
+    assert results["prior_runs_status"]=="RUN-0001_through_RUN-0016_invalid_split_adjustment"
+    assert results["quote_0940_2bps_extra"]["positive_months"]==10
+    assert results["quote_0940_2bps_extra"]["negative_months"]==2
+    pseudo=yaml.safe_load((ROOT/"campaigns"/"CAM-0625"/"runs"/"RUN-0018.yaml").read_text(encoding="utf-8"))
+    assert pseudo["status"]=="completed_no_candidate"
+    assert pseudo["result"]["holdout_rows_loaded"]==0

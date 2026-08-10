@@ -4,3 +4,8 @@
 {"timestamp_utc": "2026-08-07T02:15:23.360762+00:00", "run_id": "FINAL", "event": "campaign_checkpoint", "decision": "retired_mechanism_exhausted"}
 {"decision": "no_structured_survivor", "holdout_rows_loaded": 0, "run_id": "RUN-0008", "selected_variant": null, "status": "completed"}
 {"decision": "repair_failed_no_structured_survivor", "holdout_rows_loaded": 0, "run_id": "RUN-0010", "selected_variant": null, "status": "completed"}
+{"run_id": "RUN-0020", "event": "planned", "reason": "The inherited adjustment direction created false near-total losses at forward splits and potentially contaminated both signals and returns.", "holdout_rows_loaded": 0}
+{"run_id": "RUN-0020", "event": "completed", "best_at_2bps": "sp500__pivot__trend1__volume0", "net_simple_return": 0.16683265561263425, "holdout_rows_loaded": 0}
+{"run_id": "RUN-0020", "event": "structured_analysis_completed", "decision": "no_repaired_structured_survivor", "selected_variant": null, "holdout_rows_loaded": 0}
+{"run_id": "RUN-0021", "event": "planned", "reason": "RUN-0020 still failed or was identity-blocked, and the prior RUN-0010 repair evidence used contaminated stock adjustment.", "holdout_rows_loaded": 0}
+{"run_id": "RUN-0021", "event": "structured_analysis_completed", "decision": "repaired_repair_failed_no_structured_survivor", "selected_variant": null, "holdout_rows_loaded": 0}

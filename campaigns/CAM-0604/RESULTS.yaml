@@ -72,3 +72,25 @@ deep_development_checkpoint:
       improves drawdown and recent positive-month breadth.
   conclusion: No strategy is promoted; evidence is adapted development data and the
     sealed holdout remains untouched.
+prior_checkpoint_status: invalid_split_adjustment
+split_repaired_checkpoint:
+  strategy_section: null
+  source_run: RUN-0020
+  structured_survivors: 36
+  selected_variant: qqq__mom_quality__top5__trend1
+  bar_net_2bps: 1.1337945295872718
+  bar_maximum_drawdown: 0.2562897231954215
+  decision: provisional_execution_survivor
+  quote_2bps_net: 0.370845376322817
+  quote_2bps_drawdown: 0.1473108510009819
+  quote_2bps_positive_months: 8
+  quote_2bps_negative_months: 4
+  quote_2bps_coverage: 1.0
+  quote_10bps_net: 0.3656679467610654
+  quote_10bps_drawdown: 0.1482759693422671
+  quote_10bps_positive_months: 8
+  quote_10bps_negative_months: 4
+  quote_10bps_coverage: 1.0
+  maximum_loaded_date: '2026-04-30'
+  holdout_rows_loaded: 0
+  promotion_ready: false

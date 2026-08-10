@@ -35,3 +35,8 @@ Selection activity covered 76.7% of dates and averaged 20.00 names when active. 
 Matched-control conclusion: The multifactor blend slightly trails momentum return but materially improves drawdown and recent positive-month breadth.
 
 This is adapted development evidence, not untouched out-of-sample evidence. No rows on or after 2026-05-01 were loaded, and promotion remains false.
+
+
+## Split-repaired checkpoint (RUN-0020/RUN-0021/RUN-0023)
+
+Prior strategy evidence is invalid because the inherited stock panel adjusted forward splits in the wrong direction. The repaired structured result is **provisional_execution_survivor** using `qqq__mom_quality__top5__trend1`. Its full repaired 2 bp additive return is 113.4% with 25.6% maximum drawdown; 09:40 SIP replay at +2 bp is 37.1% with 14.7% drawdown and 8/4 positive/negative months. This remains adapted development evidence; the May 2026 holdout was not accessed and promotion is blocked.

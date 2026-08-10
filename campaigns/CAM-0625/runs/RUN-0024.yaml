@@ -1,0 +1,61 @@
+run_id: RUN-0024
+campaign_id: CAM-0625
+parent_run: RUN-0023
+status: completed
+change: Market and technology-factor exposure audit of the frozen final construction.
+reason: Strong recent returns may be repackaged long-beta or semiconductor exposure
+  rather than independent alpha.
+expected_effect: Quantify SPY, QQQ, and SMH betas, explained variance, downside capture,
+  and residual intercept.
+configuration:
+  strategy_series:
+    full: RUN-0022 lean3_plus_sector_full_daily
+    quote: RUN-0023 daily_0940_2bps_extra
+  factors:
+  - SPY
+  - QQQ
+  - SMH
+  factor_return: close_to_close_simple
+  factor_source: D:/AlgoResearch/data/catalog.duckdb bars_1d feed=sip adjustment=split
+  cutoff: '2026-04-30'
+  holdout_access: false
+result:
+  status: completed
+  run_id: RUN-0024
+  audits:
+    full:
+      rows: 1831
+      annualized_intercept: 0.15072436293366107
+      betas:
+        SPY: -0.14588845312701013
+        QQQ: 0.20121836195459047
+        SMH: 0.10344812980168133
+      r_squared: 0.11772437805293301
+      downside_capture: -0.31006485906393616
+      worst_5pct_spy_days_strategy_sum: -0.4979029941621144
+      worst_5pct_spy_days_spy_sum: -2.699971502165041
+      strategy_factor_correlations:
+        SPY: 0.2780820455875496
+        QQQ: 0.3220308461823085
+        SMH: 0.3326141044997677
+    quote:
+      rows: 250
+      annualized_intercept: 0.17888735229100278
+      betas:
+        SPY: -0.21967269122031574
+        QQQ: 0.4030428691519538
+        SMH: 0.15142037872759417
+      r_squared: 0.20166730944156064
+      downside_capture: -0.48022972926552204
+      worst_5pct_spy_days_strategy_sum: -0.17138193037843782
+      worst_5pct_spy_days_spy_sum: -0.2220876028943306
+      strategy_factor_correlations:
+        SPY: 0.3866222386706265
+        QQQ: 0.4283804105473748
+        SMH: 0.436707140980968
+  factor_maximum_date: '2026-04-30'
+  maximum_loaded_date: '2026-04-30'
+  holdout_rows_loaded: 0
+  interpretation: Descriptive development factor audit; close-to-close factors are
+    approximate exposure controls.
+decision: Use factor audit to qualify, not promote, the candidate.

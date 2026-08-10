@@ -1,0 +1,116 @@
+run_id: RUN-0023
+campaign_id: CAM-0621
+parent_run: RUN-0022
+status: completed
+change: Repaired target-change SIP replay with valid-quote remainder accounting.
+reason: RUN-0022 counted null-quote rows as matched keys.
+expected_effect: Restore honest 09:40 role coverage without changing signal or fill
+  rules.
+frozen_contract: campaigns/CAM-0600/SPLIT_REPAIRED_QUOTE_REPAIR_CONTRACT.yaml
+configuration:
+  window_start: '2025-05-01'
+  window_end: '2026-04-30'
+  clocks:
+  - 09:30
+  - 09:40
+  additional_slippage_bps_per_side:
+  - 0.0
+  - 2.0
+  - 5.0
+  - 10.0
+  selected_variant: etf__ibs30__top5__hold3__trend1
+  holdout_access: false
+result:
+  metrics:
+  - campaign_id: CAM-0621
+    run_id: RUN-0023
+    variant_id: etf__ibs30__top5__hold3__trend1
+    clock: 0940
+    extra_slippage_bps_per_side: 0.0
+    net_simple_return: 0.2982431584142453
+    maximum_drawdown: 0.0455145684697116
+    trade_roles: 988
+    role_coverage: 1.0
+    active_sessions: 249
+    green_sessions: 140
+    red_sessions: 109
+    positive_months: 9
+    negative_months: 3
+    monthly_average: 0.024853596534520437
+    monthly_median: 0.015309011376629673
+    worst_month: -0.0196363355947717
+    best_month: 0.07649489724681571
+    reference_price: 09:30 SIP midpoint
+    holdout_rows_loaded: 0
+    broker_margin: false
+    direct_short: false
+  - campaign_id: CAM-0621
+    run_id: RUN-0023
+    variant_id: etf__ibs30__top5__hold3__trend1
+    clock: 0940
+    extra_slippage_bps_per_side: 2.0
+    net_simple_return: 0.276740936192023
+    maximum_drawdown: 0.04882624967770036
+    trade_roles: 988
+    role_coverage: 1.0
+    active_sessions: 249
+    green_sessions: 139
+    red_sessions: 110
+    positive_months: 7
+    negative_months: 5
+    monthly_average: 0.023061744682668587
+    monthly_median: 0.013733455821074112
+    worst_month: -0.02120966892810503
+    best_month: 0.07435934169126017
+    reference_price: 09:30 SIP midpoint
+    holdout_rows_loaded: 0
+    broker_margin: false
+    direct_short: false
+  - campaign_id: CAM-0621
+    run_id: RUN-0023
+    variant_id: etf__ibs30__top5__hold3__trend1
+    clock: 0940
+    extra_slippage_bps_per_side: 5.0
+    net_simple_return: 0.2444876028586897
+    maximum_drawdown: 0.05394859948959359
+    trade_roles: 988
+    role_coverage: 1.0
+    active_sessions: 249
+    green_sessions: 134
+    red_sessions: 115
+    positive_months: 7
+    negative_months: 5
+    monthly_average: 0.02037396690489081
+    monthly_median: 0.01137012248774078
+    worst_month: -0.023569668928105032
+    best_month: 0.07115600835792683
+    reference_price: 09:30 SIP midpoint
+    holdout_rows_loaded: 0
+    broker_margin: false
+    direct_short: false
+  - campaign_id: CAM-0621
+    run_id: RUN-0023
+    variant_id: etf__ibs30__top5__hold3__trend1
+    clock: 0940
+    extra_slippage_bps_per_side: 10.0
+    net_simple_return: 0.19073204730313414
+    maximum_drawdown: 0.0629252888230856
+    trade_roles: 988
+    role_coverage: 1.0
+    active_sessions: 249
+    green_sessions: 129
+    red_sessions: 120
+    positive_months: 7
+    negative_months: 5
+    monthly_average: 0.015894337275261176
+    monthly_median: 0.007431233598851892
+    worst_month: -0.02750300226143837
+    best_month: 0.06581711946903794
+    reference_price: 09:30 SIP midpoint
+    holdout_rows_loaded: 0
+    broker_margin: false
+    direct_short: false
+  maximum_loaded_date: '2026-04-30'
+  holdout_rows_loaded: 0
+decision: Development quote evidence only; requires repaired cross-family and pseudo-OOS
+  audit.

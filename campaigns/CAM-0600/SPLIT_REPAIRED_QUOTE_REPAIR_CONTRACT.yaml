@@ -1,0 +1,17 @@
+contract_id: SPLIT-REPAIRED-QUOTE-COVERAGE-REPAIR-2026-08-10
+run_id: RUN-0023
+parent_run: RUN-0022
+status: frozen
+diagnosis: RUN-0022 remainder accounting treated null-quote rows as matched keys, causing understated 09:40 coverage.
+repair: Require valid positive bid and ask with ask at least bid before a role counts as matched.
+identical_to_parent_except:
+  - corrected valid-quote remainder accounting
+  - targeted 5, 30, and 120 second remote fills for the true remainder
+missing_roles: exclude and report; never impute
+constraints:
+  window: ['2025-05-01', '2026-04-30']
+  holdout_access: false
+  maximum_loaded_date: '2026-04-30'
+  fixed_capital_base: 1.0
+  compounding: false
+  broker_margin: false

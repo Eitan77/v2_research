@@ -24,10 +24,11 @@ def utc_ts(date: pd.Timestamp, clock: time) -> pd.Timestamp:
 
 
 def main() -> None:
-    parser=argparse.ArgumentParser(); parser.add_argument("--repair",action="store_true"); args=parser.parse_args()
-    selected = pd.read_csv(SHARED / ("repair_diagnostic_summary.csv" if args.repair else "deep_diagnostic_summary.csv"))
+    parser=argparse.ArgumentParser(); parser.add_argument("--repair",action="store_true"); parser.add_argument("--summary",type=str); parser.add_argument("--prefix",type=str); args=parser.parse_args()
+    summary_name = args.summary or ("repair_diagnostic_summary.csv" if args.repair else "deep_diagnostic_summary.csv")
+    selected = pd.read_csv(SHARED / summary_name)
     selected = selected[selected["selected_variant"].notna()].copy()
-    prefix="repair_" if args.repair else ""
+    prefix=args.prefix if args.prefix is not None else ("repair_" if args.repair else "")
     panels = load_panels()
     fundamental, _ = _load_or_build_fundamentals(panels)
     for label, entry_clock in (("0930", time(9,30)), ("0940", time(9,40))):

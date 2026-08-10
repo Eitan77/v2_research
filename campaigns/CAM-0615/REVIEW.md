@@ -35,3 +35,8 @@ Selection activity covered 92.3% of dates and averaged 10.00 names when active. 
 Matched-control conclusion: Simple momentum dominates the adapted positive optimizer sleeve; source optimization is not isolated.
 
 This is adapted development evidence, not untouched out-of-sample evidence. No rows on or after 2026-05-01 were loaded, and promotion remains false.
+
+
+## Split-repaired checkpoint (RUN-0020/RUN-0021/RUN-0023)
+
+Prior strategy evidence is invalid because the inherited stock panel adjusted forward splits in the wrong direction. The repaired structured result is **provisional_execution_survivor** using `qqq__fullcov_s50__mom60__positive_top5`. Its full repaired 2 bp additive return is 111.5% with 27.8% maximum drawdown; 09:40 SIP replay at +2 bp is 18.1% with 12.6% drawdown and 9/3 positive/negative months. This remains adapted development evidence; the May 2026 holdout was not accessed and promotion is blocked.

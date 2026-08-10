@@ -7,3 +7,9 @@
 {"ts": "2026-08-10T00:28:16.476154-07:00", "run_id": "RUN-0009", "event": "completed", "net_simple_return": 0.7624743443316921, "clock": "09:40", "extra_bps": 2, "holdout_rows_loaded": 0}
 {"ts": "2026-08-10T00:28:35.598609-07:00", "run_id": "RUN-0012", "event": "completed", "decision": "Safest-distress remains profitable and recently strong, but momentum is a competitive simpler control.", "holdout_rows_loaded": 0}
 {"ts": "2026-08-10T00:48:07.053990-07:00", "run_id": "RUN-0012", "event": "completed", "decision": "Safest-distress materially beats the matched QQQ momentum control and halves drawdown, while remaining adapted development evidence.", "holdout_rows_loaded": 0}
+{"run_id": "RUN-0020", "event": "planned", "reason": "The inherited adjustment direction created false near-total losses at forward splits and potentially contaminated both signals and returns.", "holdout_rows_loaded": 0}
+{"run_id": "RUN-0020", "event": "completed", "best_at_2bps": "qqq__chs_safe__top5__liquid__raw", "net_simple_return": 1.9622874671974029, "holdout_rows_loaded": 0}
+{"run_id": "RUN-0020", "event": "structured_analysis_completed", "decision": "provisional_repaired_target_change_quote_gate", "selected_variant": "qqq__chs_safe__top5__liquid__raw", "holdout_rows_loaded": 0}
+{"run_id": "RUN-0022", "event": "planned", "selected_variant": "qqq__chs_safe__top5__liquid__raw", "holdout_rows_loaded": 0}
+{"run_id": "RUN-0022", "event": "invalidated", "reason": "null-quote rows counted as matched keys", "superseded_by": "RUN-0023", "holdout_rows_loaded": 0}
+{"run_id": "RUN-0023", "event": "planned", "selected_variant": "qqq__chs_safe__top5__liquid__raw", "holdout_rows_loaded": 0}

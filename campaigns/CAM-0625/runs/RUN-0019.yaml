@@ -1,0 +1,110 @@
+run_id: RUN-0019
+campaign_id: CAM-0625
+parent_run: RUN-0018
+status: completed
+change: Test two prespecified causal monthly activation monitors on the repaired equal-weight
+  ensemble.
+reason: The ensemble is not early-selectable and has a negative 2022, but its recent
+  quote path is strong; test whether trailing evidence identifies active regimes without
+  peeking forward.
+expected_effect: Reduce weak-regime drawdown while retaining a meaningful share of
+  recent returns.
+configuration:
+  parent_series: RUN-0017 full_equal and quote_equal
+  decision_time: prior month end
+  lookback_months: 12
+  variants:
+    positive_trailing_return: trailing_12m_net_return > 0
+    positive_and_consistent: trailing_12m_net_return > 0 and at_least_7_of_12_positive_months
+  inactive_allocation: cash
+  minimum_history_months: 12
+  parameter_mining: prohibited; no additional thresholds in this run
+  discovery_cutoff: '2026-04-30'
+  holdout_access: false
+result:
+  status: completed
+  run_id: RUN-0019
+  parent_unfiltered:
+    full:
+      net_simple_return: 1.5410214213310585
+      maximum_drawdown: 0.12137926535705448
+      positive_months: 48
+      negative_months: 31
+      active_months: 79
+      worst_month: -0.09610100703014438
+      monthly_median: 0.004525094763363551
+    quote:
+      net_simple_return: 0.42641414202162337
+      maximum_drawdown: 0.07886835740893842
+      positive_months: 9
+      negative_months: 3
+      active_months: 12
+      worst_month: -0.0390271002530501
+      monthly_median: 0.026537601279460768
+  variants:
+  - variant: positive_trailing_return
+    full:
+      net_simple_return: 1.415966516351121
+      maximum_drawdown: 0.15239531649737054
+      positive_months: 40
+      negative_months: 26
+      active_months: 66
+      worst_month: -0.09610100703014438
+      monthly_median: 0.0
+    quote:
+      net_simple_return: 0.42641414202162337
+      maximum_drawdown: 0.07886835740893842
+      positive_months: 9
+      negative_months: 3
+      active_months: 12
+      worst_month: -0.0390271002530501
+      monthly_median: 0.026537601279460768
+    quote_active_months:
+    - 2025-05
+    - 2025-06
+    - 2025-07
+    - 2025-08
+    - 2025-09
+    - 2025-10
+    - 2025-11
+    - 2025-12
+    - 2026-01
+    - 2026-02
+    - 2026-03
+    - 2026-04
+  - variant: positive_and_consistent
+    full:
+      net_simple_return: 0.9668380974644961
+      maximum_drawdown: 0.17894915788300664
+      positive_months: 27
+      negative_months: 21
+      active_months: 48
+      worst_month: -0.09610100703014438
+      monthly_median: 0.0
+    quote:
+      net_simple_return: 0.42641414202162337
+      maximum_drawdown: 0.07886835740893842
+      positive_months: 9
+      negative_months: 3
+      active_months: 12
+      worst_month: -0.0390271002530501
+      monthly_median: 0.026537601279460768
+    quote_active_months:
+    - 2025-05
+    - 2025-06
+    - 2025-07
+    - 2025-08
+    - 2025-09
+    - 2025-10
+    - 2025-11
+    - 2025-12
+    - 2026-01
+    - 2026-02
+    - 2026-03
+    - 2026-04
+  maximum_loaded_date: '2026-04-30'
+  holdout_rows_loaded: 0
+  interpretation: Adapted development monitor; variants were prespecified and not
+    threshold-mined.
+decision: Retain only if drawdown improves without destroying recent participation;
+  no promotion.

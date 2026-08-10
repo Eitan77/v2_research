@@ -35,3 +35,8 @@ Selection activity covered 87.5% of dates and averaged 2.93 names when active. S
 Matched-control conclusion: The selected triple-MA rule materially trails ungated momentum and barely changes drawdown; it is a filtered momentum expression, not a distinct edge.
 
 This is adapted development evidence, not untouched out-of-sample evidence. No rows on or after 2026-05-01 were loaded, and promotion remains false.
+
+
+## Split-repaired checkpoint (RUN-0020/RUN-0021/RUN-0023)
+
+Prior strategy evidence is invalid because the inherited stock panel adjusted forward splits in the wrong direction. The repaired structured result is **provisional_execution_survivor** using `sp500__ma10_50_200__monthly__top3__momentum`. Its full repaired 2 bp additive return is 214.1% with 28.2% maximum drawdown; 09:40 SIP replay at +2 bp is 169.6% with 12.6% drawdown and 11/1 positive/negative months. This remains adapted development evidence; the May 2026 holdout was not accessed and promotion is blocked.

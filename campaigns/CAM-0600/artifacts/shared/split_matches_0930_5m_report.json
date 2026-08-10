@@ -1,0 +1,14 @@
+{
+  "status": "passed",
+  "source": "D:\\AlgoResearch\\data\\raw\\alpaca\\market\\stocks\\quotes_sip\\schema_v1\\quote_lake.duckdb",
+  "source_read_only": true,
+  "roles": 46678,
+  "matched_roles": 0,
+  "missing_roles": 46678,
+  "coverage_rate": 0.0,
+  "symbols_requested": 517,
+  "symbols_matched": 0,
+  "symbols_missing": 517,
+  "holdout_rows_loaded": 0,
+  "matching_window_minutes": 5
+}

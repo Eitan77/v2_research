@@ -1,0 +1,116 @@
+run_id: RUN-0022
+campaign_id: CAM-0617
+parent_run: RUN-0021
+status: invalid
+change: Target-change SIP marketable replay after reciprocal split repair.
+reason: All prior quote PnL depended on invalid stock-adjusted bar series or a superseded
+  selected variant.
+expected_effect: Measure execution realism for the repaired structured survivor.
+frozen_contract: campaigns/CAM-0600/SPLIT_REPAIRED_QUOTE_CONTRACT.yaml
+configuration:
+  window_start: '2025-05-01'
+  window_end: '2026-04-30'
+  clocks:
+  - 09:30
+  - 09:40
+  additional_slippage_bps_per_side:
+  - 0.0
+  - 2.0
+  - 5.0
+  - 10.0
+  selected_variant: etf__alpha_M20_E5__top5__monthly__trend0
+  holdout_access: false
+result:
+  metrics:
+  - campaign_id: CAM-0617
+    run_id: RUN-0022
+    variant_id: etf__alpha_M20_E5__top5__monthly__trend0
+    clock: 0940
+    extra_slippage_bps_per_side: 0.0
+    net_simple_return: 0.6466651938479802
+    maximum_drawdown: 0.1565141682773175
+    trade_roles: 102
+    role_coverage: 1.0
+    active_sessions: 250
+    green_sessions: 130
+    red_sessions: 120
+    positive_months: 9
+    negative_months: 3
+    monthly_average: 0.05388876615399835
+    monthly_median: 0.024300351302030357
+    worst_month: -0.10257516018802043
+    best_month: 0.28616135085081323
+    reference_price: 09:30 SIP midpoint
+    holdout_rows_loaded: 0
+    broker_margin: false
+    direct_short: false
+  - campaign_id: CAM-0617
+    run_id: RUN-0022
+    variant_id: etf__alpha_M20_E5__top5__monthly__trend0
+    clock: 0940
+    extra_slippage_bps_per_side: 2.0
+    net_simple_return: 0.6428665575104067
+    maximum_drawdown: 0.15672666089891096
+    trade_roles: 102
+    role_coverage: 1.0
+    active_sessions: 250
+    green_sessions: 130
+    red_sessions: 120
+    positive_months: 9
+    negative_months: 3
+    monthly_average: 0.05357221312586722
+    monthly_median: 0.02396098818416218
+    worst_month: -0.1028538864237568
+    best_month: 0.2857922355941006
+    reference_price: 09:30 SIP midpoint
+    holdout_rows_loaded: 0
+    broker_margin: false
+    direct_short: false
+  - campaign_id: CAM-0617
+    run_id: RUN-0022
+    variant_id: etf__alpha_M20_E5__top5__monthly__trend0
+    clock: 0940
+    extra_slippage_bps_per_side: 5.0
+    net_simple_return: 0.6371686030040462
+    maximum_drawdown: 0.1570454304511884
+    trade_roles: 102
+    role_coverage: 1.0
+    active_sessions: 250
+    green_sessions: 130
+    red_sessions: 120
+    positive_months: 9
+    negative_months: 3
+    monthly_average: 0.05309738358367052
+    monthly_median: 0.023451943507359917
+    worst_month: -0.10327197577736133
+    best_month: 0.2852385627090316
+    reference_price: 09:30 SIP midpoint
+    holdout_rows_loaded: 0
+    broker_margin: false
+    direct_short: false
+  - campaign_id: CAM-0617
+    run_id: RUN-0022
+    variant_id: etf__alpha_M20_E5__top5__monthly__trend0
+    clock: 0940
+    extra_slippage_bps_per_side: 10.0
+    net_simple_return: 0.6276720121601121
+    maximum_drawdown: 0.15757679470704022
+    trade_roles: 102
+    role_coverage: 1.0
+    active_sessions: 250
+    green_sessions: 130
+    red_sessions: 120
+    positive_months: 9
+    negative_months: 3
+    monthly_average: 0.0523060010133427
+    monthly_median: 0.022603535712689464
+    worst_month: -0.10396879136670223
+    best_month: 0.28431577456724993
+    reference_price: 09:30 SIP midpoint
+    holdout_rows_loaded: 0
+    broker_margin: false
+    direct_short: false
+  maximum_loaded_date: '2026-04-30'
+  holdout_rows_loaded: 0
+decision: 'Do not interpret: null-quote rows were counted as matched keys in 09:40
+  remainder accounting. Superseded by RUN-0023.'

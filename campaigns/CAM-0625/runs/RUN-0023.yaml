@@ -1,0 +1,113 @@
+run_id: RUN-0023
+campaign_id: CAM-0625
+parent_run: RUN-0022
+status: completed
+change: Execution stress of the frozen final substitution across both clocks and all
+  saved additional-slippage levels.
+reason: The final construction must remain positive under realistic marketable fills
+  and execution sensitivity before any paper-trading recommendation.
+expected_effect: Quantify price-delay and cost decay without altering signals or weights.
+configuration:
+  sleeves:
+  - CAM-0600
+  - CAM-0621
+  - CAM-0624
+  - CAM-0618
+  source_quote_run: RUN-0023
+  clocks:
+  - 09:30
+  - 09:40
+  additional_slippage_bps_per_side:
+  - 0
+  - 2
+  - 5
+  - 10
+  weighting: equal
+  missing_roles: not imputed
+  holdout_access: false
+result:
+  status: completed
+  run_id: RUN-0023
+  sleeves:
+  - CAM-0600
+  - CAM-0621
+  - CAM-0624
+  - CAM-0618
+  metrics:
+  - clock: 0930
+    extra_slippage_bps_per_side: 0
+    net_simple_return: 0.40856101344631157
+    maximum_drawdown: 0.07416866793622538
+    positive_months: 10
+    negative_months: 2
+    monthly_median: 0.025044811947838988
+    worst_month: -0.043038412953205485
+    best_month: 0.11063633013026722
+  - clock: 0930
+    extra_slippage_bps_per_side: 2
+    net_simple_return: 0.40186655419538997
+    maximum_drawdown: 0.07471796524005471
+    positive_months: 10
+    negative_months: 2
+    monthly_median: 0.024517819852856976
+    worst_month: -0.0435816543074783
+    best_month: 0.11003364576583938
+  - clock: 0930
+    extra_slippage_bps_per_side: 5
+    net_simple_return: 0.3918248653190076
+    maximum_drawdown: 0.07554735896956628
+    positive_months: 10
+    negative_months: 2
+    monthly_median: 0.023727331710383964
+    worst_month: -0.04439651633888753
+    best_month: 0.10912961921919764
+  - clock: 0930
+    extra_slippage_bps_per_side: 10
+    net_simple_return: 0.3750887171917037
+    maximum_drawdown: 0.0769444026321756
+    positive_months: 10
+    negative_months: 2
+    monthly_median: 0.02240985147292894
+    worst_month: -0.0457546197245696
+    best_month: 0.10762290830812807
+  - clock: 0940
+    extra_slippage_bps_per_side: 0
+    net_simple_return: 0.4063216813379624
+    maximum_drawdown: 0.07194205434338427
+    positive_months: 10
+    negative_months: 2
+    monthly_median: 0.026999549271497735
+    worst_month: -0.04081705058325999
+    best_month: 0.1140358364762202
+  - clock: 0940
+    extra_slippage_bps_per_side: 2
+    net_simple_return: 0.3996272220870408
+    maximum_drawdown: 0.072481110365937
+    positive_months: 10
+    negative_months: 2
+    monthly_median: 0.026472557176515726
+    worst_month: -0.04136029193753281
+    best_month: 0.11343315211179238
+  - clock: 0940
+    extra_slippage_bps_per_side: 5
+    net_simple_return: 0.3895855332106585
+    maximum_drawdown: 0.07329499738581961
+    positive_months: 10
+    negative_months: 2
+    monthly_median: 0.025682069034042715
+    worst_month: -0.04217515396894203
+    best_month: 0.11252912556515063
+  - clock: 0940
+    extra_slippage_bps_per_side: 10
+    net_simple_return: 0.3728493850833545
+    maximum_drawdown: 0.07466580376041028
+    positive_months: 10
+    negative_months: 2
+    monthly_median: 0.02436458879658769
+    worst_month: -0.0435332573546241
+    best_month: 0.11102241465408105
+  maximum_loaded_date: '2026-04-30'
+  holdout_rows_loaded: 0
+  interpretation: Development execution stress using marketable SIP sides and no passive-fill
+    credit.
+decision: Execution sensitivity documented; no promotion without prospective evidence.

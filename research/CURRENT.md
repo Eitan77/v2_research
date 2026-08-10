@@ -1,5 +1,29 @@
 # Current Research Direction
 
+## 2026-08-10 corrected checkpoint — reciprocal split repair
+
+The prior SSRN and CAM-0625 checkpoint is invalid. The inherited stock panel
+applied forward split share multipliers directly to historical prices rather
+than reciprocally; NVDA's June 2024 split appeared as an approximately −99%
+overnight return. Repaired lineage is CAM-0600 through CAM-0624 RUN-0020/RUN-0021
+and quote RUN-0023. All prior artifacts are preserved but must not be interpreted.
+
+Under corrected data, 23 of 25 families have a structured quote-positive survivor;
+CAM-0606 pairs and CAM-0613 support/resistance do not. These are overlapping,
+adapted research leads, not independent deployable strategies.
+
+The best current construction is CAM-0625's equal-weight final substitution:
+CAM-0600 momentum, CAM-0621 ETF IBS, CAM-0624 volatility-managed safest-distress,
+and CAM-0618 sector rotation. It has +153.6% full-history additive return with
+11.5% drawdown, and +40.0% in the 2025-05-01 through 2026-04-30 09:40 SIP replay
+at +2 bp/side with 7.25% drawdown and 10/2 months. It survives +10 bp stress at
++37.3%.
+
+Nothing is promoted. The frozen pre-2024 selector identifies only ETF IBS, the
+final ensemble is adaptively selected, and bootstrap tails remain negative.
+The sealed holdout remains untouched. The only valid next step is unchanged
+small-scale forward paper tracking.
+
 ## 2026-08-10 checkpoint — SSRN deep development and CAM-0625 ensemble
 
 CAM-0600 through CAM-0624 completed a second mechanism-driven development

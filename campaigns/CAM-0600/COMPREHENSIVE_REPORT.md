@@ -1,5 +1,9 @@
 # SSRN 3247865 deep development checkpoint
 
+> **Invalidated:** this checkpoint used a stock panel with forward splits adjusted
+> in the wrong direction. It is retained only for audit. The current report is
+> [COMPREHENSIVE_REPORT_SPLIT_REPAIRED.md](COMPREHENSIVE_REPORT_SPLIT_REPAIRED.md).
+
 ## Executive conclusion
 
 All 25 requested sections of *151 Trading Strategies* were re-read, rebuilt or

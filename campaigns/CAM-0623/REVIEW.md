@@ -35,3 +35,8 @@ Selection activity covered 85.0% of dates and averaged 5.00 names when active. S
 Matched-control conclusion: Safest-distress materially beats the matched QQQ momentum control and halves drawdown, while remaining adapted development evidence.
 
 This is adapted development evidence, not untouched out-of-sample evidence. No rows on or after 2026-05-01 were loaded, and promotion remains false.
+
+
+## Split-repaired checkpoint (RUN-0020/RUN-0021/RUN-0023)
+
+Prior strategy evidence is invalid because the inherited stock panel adjusted forward splits in the wrong direction. The repaired structured result is **provisional_execution_survivor** using `qqq__chs_safe__top5__liquid__raw`. Its full repaired 2 bp additive return is 196.2% with 22.7% maximum drawdown; 09:40 SIP replay at +2 bp is 76.2% with 9.7% drawdown and 9/3 positive/negative months. This remains adapted development evidence; the May 2026 holdout was not accessed and promotion is blocked.

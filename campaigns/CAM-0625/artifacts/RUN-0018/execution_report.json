@@ -1,0 +1,44 @@
+{
+  "status": "completed_no_candidate",
+  "run_id": "RUN-0018",
+  "selected_components": [
+    {
+      "campaign_id": "CAM-0621",
+      "variant_dir": "etf__ibs30__top5__hold2__trend1__cost_2bps",
+      "training_net": 0.9954349215443186,
+      "training_drawdown": 0.15048048362272806,
+      "training_positive_month_fraction": 0.65,
+      "training_active_days": 1015,
+      "validation_net": 0.8046745720318434,
+      "validation_drawdown": 0.12454038521092929,
+      "eligible": true
+    }
+  ],
+  "blockers": [
+    {
+      "campaign_id": "CAM-0600",
+      "reason": "zero candidates met frozen training quality gate",
+      "candidate_count": 96,
+      "best_training_positive_month_fraction": 0.6,
+      "minimum_training_drawdown": 0.12532469816822764
+    },
+    {
+      "campaign_id": "CAM-0604",
+      "reason": "zero candidates met frozen training quality gate",
+      "candidate_count": 36,
+      "best_training_positive_month_fraction": 0.4909090909090909,
+      "minimum_training_drawdown": 0.07695871978419841
+    },
+    {
+      "campaign_id": "CAM-0624",
+      "reason": "zero candidates met frozen training quality gate",
+      "candidate_count": 72,
+      "best_training_positive_month_fraction": 0.509090909090909,
+      "minimum_training_drawdown": 0.09094563201187562
+    }
+  ],
+  "ensemble_validation": null,
+  "maximum_loaded_date": "2026-04-30",
+  "holdout_rows_loaded": 0,
+  "interpretation": "Retrospective pseudo-OOS only; fail closed when any family is unavailable."
+}

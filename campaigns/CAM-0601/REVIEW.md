@@ -33,3 +33,8 @@ The structured survivor `qqq__sue__hold3__top5__price20` earned +122.0% net at 2
 Selection activity covered 97.2% of dates and averaged 10.16 names when active. Status: `positive_but_inconsistent_unpromoted`.
 
 This is adapted development evidence, not untouched out-of-sample evidence. No rows on or after 2026-05-01 were loaded, and promotion remains false.
+
+
+## Split-repaired checkpoint (RUN-0020/RUN-0021/RUN-0023)
+
+Prior strategy evidence is invalid because the inherited stock panel adjusted forward splits in the wrong direction. The repaired structured result is **provisional_execution_survivor** using `qqq__sue__hold6__top5__price20`. Its full repaired 2 bp additive return is 112.4% with 30.1% maximum drawdown; 09:40 SIP replay at +2 bp is 35.3% with 15.8% drawdown and 8/4 positive/negative months. This remains adapted development evidence; the May 2026 holdout was not accessed and promotion is blocked.

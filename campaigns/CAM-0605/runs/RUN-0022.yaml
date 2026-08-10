@@ -1,0 +1,116 @@
+run_id: RUN-0022
+campaign_id: CAM-0605
+parent_run: RUN-0020
+status: invalid
+change: Target-change SIP marketable replay after reciprocal split repair.
+reason: All prior quote PnL depended on invalid stock-adjusted bar series or a superseded
+  selected variant.
+expected_effect: Measure execution realism for the repaired structured survivor.
+frozen_contract: campaigns/CAM-0600/SPLIT_REPAIRED_QUOTE_CONTRACT.yaml
+configuration:
+  window_start: '2025-05-01'
+  window_end: '2026-04-30'
+  clocks:
+  - 09:30
+  - 09:40
+  additional_slippage_bps_per_side:
+  - 0.0
+  - 2.0
+  - 5.0
+  - 10.0
+  selected_variant: sp500__resmom__top10__liquid_trend
+  holdout_access: false
+result:
+  metrics:
+  - campaign_id: CAM-0605
+    run_id: RUN-0022
+    variant_id: sp500__resmom__top10__liquid_trend
+    clock: 0940
+    extra_slippage_bps_per_side: 0.0
+    net_simple_return: 0.3940539130757078
+    maximum_drawdown: 0.08157246168426267
+    trade_roles: 169
+    role_coverage: 0.5443786982248521
+    active_sessions: 251
+    green_sessions: 146
+    red_sessions: 105
+    positive_months: 9
+    negative_months: 3
+    monthly_average: 0.03283782608964231
+    monthly_median: 0.03793796130278565
+    worst_month: -0.06128733854484757
+    best_month: 0.15608708605297889
+    reference_price: 09:30 SIP midpoint
+    holdout_rows_loaded: 0
+    broker_margin: false
+    direct_short: false
+  - campaign_id: CAM-0605
+    run_id: RUN-0022
+    variant_id: sp500__resmom__top10__liquid_trend
+    clock: 0940
+    extra_slippage_bps_per_side: 2.0
+    net_simple_return: 0.3927839328690025
+    maximum_drawdown: 0.0817269259270911
+    trade_roles: 169
+    role_coverage: 0.5443786982248521
+    active_sessions: 251
+    green_sessions: 146
+    red_sessions: 105
+    positive_months: 9
+    negative_months: 3
+    monthly_average: 0.032731994405750205
+    monthly_median: 0.037829092109123455
+    worst_month: -0.06140064395545869
+    best_month: 0.15602076107616383
+    reference_price: 09:30 SIP midpoint
+    holdout_rows_loaded: 0
+    broker_margin: false
+    direct_short: false
+  - campaign_id: CAM-0605
+    run_id: RUN-0022
+    variant_id: sp500__resmom__top10__liquid_trend
+    clock: 0940
+    extra_slippage_bps_per_side: 5.0
+    net_simple_return: 0.3908789625589446
+    maximum_drawdown: 0.08195910525202088
+    trade_roles: 169
+    role_coverage: 0.5443786982248521
+    active_sessions: 251
+    green_sessions: 146
+    red_sessions: 105
+    positive_months: 9
+    negative_months: 3
+    monthly_average: 0.03257324687991204
+    monthly_median: 0.03766578831863015
+    worst_month: -0.061570602071375366
+    best_month: 0.15592127361094124
+    reference_price: 09:30 SIP midpoint
+    holdout_rows_loaded: 0
+    broker_margin: false
+    direct_short: false
+  - campaign_id: CAM-0605
+    run_id: RUN-0022
+    variant_id: sp500__resmom__top10__liquid_trend
+    clock: 0940
+    extra_slippage_bps_per_side: 10.0
+    net_simple_return: 0.3877040120421814
+    maximum_drawdown: 0.08234736406906912
+    trade_roles: 169
+    role_coverage: 0.5443786982248521
+    active_sessions: 251
+    green_sessions: 146
+    red_sessions: 105
+    positive_months: 9
+    negative_months: 3
+    monthly_average: 0.03230866767018178
+    monthly_median: 0.03739361533447464
+    worst_month: -0.061853865597903165
+    best_month: 0.1557554611689036
+    reference_price: 09:30 SIP midpoint
+    holdout_rows_loaded: 0
+    broker_margin: false
+    direct_short: false
+  maximum_loaded_date: '2026-04-30'
+  holdout_rows_loaded: 0
+decision: 'Do not interpret: null-quote rows were counted as matched keys in 09:40
+  remainder accounting. Superseded by RUN-0023.'

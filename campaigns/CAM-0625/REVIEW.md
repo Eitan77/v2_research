@@ -1,5 +1,27 @@
 # CAM-0625 review
 
+## 2026-08-10 split-repaired checkpoint
+
+RUN-0001 through RUN-0016 are invalid because the inherited stock panel applied
+forward split multipliers in the wrong direction. The current lineage starts with
+the 25-family repaired RUN-0020, repair RUN-0021, and quote RUN-0023.
+
+The final equal-weight substitution combines CAM-0600, CAM-0621, CAM-0624, and
+CAM-0618. It returns +153.6% additively over the repaired full history with 11.5%
+drawdown and 52/27 positive/negative months. The 09:40 SIP replay from 2025-05-01
+through 2026-04-30 returns +40.0% after 2 bp additional slippage per side, with
+7.25% drawdown and 10/2 months. At 10 bp additional slippage it retains +37.3%.
+
+The three fixed folds are all positive. The final 21-session block bootstrap is
+materially less comforting: 5th-percentile one-year return is −4.1%, 1st percentile
+is −14.6%, and 95th-percentile drawdown is 21.4%. The frozen pre-2024 family gate
+selects only ETF IBS, so the final construction was not historically identifiable.
+Two causal regime monitors were rejected because they worsened full-history risk.
+
+This is the best repaired recent-regime development lead, but it is not promoted.
+Use unchanged forward paper tracking only; do not access the May 2026 holdout or
+deploy capital based on this checkpoint.
+
 ## 2026-08-10 checkpoint
 
 CAM-0625 combines four whole mechanisms selected from the completed SSRN

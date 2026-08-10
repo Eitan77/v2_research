@@ -35,3 +35,8 @@ Selection activity covered 63.7% of dates and averaged 3.00 names when active. S
 Matched-control conclusion: Panic defense sacrifices return but cuts historical drawdown materially; retain as a risk overlay.
 
 This is adapted development evidence, not untouched out-of-sample evidence. No rows on or after 2026-05-01 were loaded, and promotion remains false.
+
+
+## Split-repaired checkpoint (RUN-0020/RUN-0021/RUN-0023)
+
+Prior strategy evidence is invalid because the inherited stock panel adjusted forward splits in the wrong direction. The repaired structured result is **provisional_execution_survivor** using `qqq__mom252_skip21__top3__liquid_trend__panic1`. Its full repaired 2 bp additive return is 235.4% with 19.6% maximum drawdown; 09:40 SIP replay at +2 bp is 73.0% with 13.5% drawdown and 9/3 positive/negative months. This remains adapted development evidence; the May 2026 holdout was not accessed and promotion is blocked.

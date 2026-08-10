@@ -1,0 +1,210 @@
+run_id: RUN-0021
+campaign_id: CAM-0617
+parent_run: RUN-0020
+status: completed
+change: Re-execute the previously frozen mechanism repair family after reciprocal
+  split correction.
+reason: RUN-0020 still failed or was identity-blocked, and the prior RUN-0010 repair
+  evidence used contaminated stock adjustment.
+expected_effect: Resolve whether the prior mechanism-specific repair survives corrected
+  stock returns without changing its search grid.
+frozen_contract: campaigns/CAM-0600/SPLIT_REPAIR_CONTRACT.yaml
+configuration:
+  identical_variant_grid_to: RUN-0010
+  discovery_cutoff: '2026-04-30'
+  holdout_access: false
+  fixed_base: 1.0
+  compounding: false
+  broker_margin: false
+  costs_bps_per_side:
+  - -1.0
+  - 0.0
+  - 1.0
+  - 2.0
+  - 5.0
+  - 10.0
+result:
+  status: completed
+  campaign_id: CAM-0617
+  run_id: RUN-0021
+  parent_run: RUN-0020
+  generated_utc: '2026-08-10T08:30:25.634568+00:00'
+  source_variant_count: 80
+  executed_variant_cost_count: 480
+  best_at_2bps:
+    campaign_id: CAM-0617
+    run_id: RUN-0021
+    variant_id: qqq__alpha_M20_E5__top3__monthly__trend0
+    panel: qqq
+    execution_lag_bars: 1
+    cost_bps_per_side: 2.0
+    net_simple_return: 2.832325583175943
+    gross_simple_return: 2.8596641695653595
+    total_cost: 0.027338586389416115
+    entries: 203
+    position_change_count: 437
+    active_days: 1654
+    green_days: 879
+    red_days: 775
+    average_gross_exposure: 0.9593967517401392
+    maximum_gross_exposure: 1.0000000000000002
+    total_turnover: 136.69293194708058
+    profitable_symbols: 49
+    loss_symbols: 23
+    top5_symbol_positive_share: 0.510342802635997
+    top5_day_positive_share: 0.030704157472412938
+    best_symbol: TSLA
+    best_symbol_pnl: 1.0416107183240748
+    leave_best_symbol_out_return: 1.7907148648518683
+    unavailable_entry_positions: 0
+    missing_return_positions: 0
+    monthly_average: 0.03412440461657762
+    monthly_median: 0.02531126648531934
+    positive_months: 46
+    negative_months: 33
+    inactive_months: 4
+    maximum_drawdown: 0.25319880414705526
+    drawdown_peak_date: '2020-01-23'
+    drawdown_trough_date: '2020-03-18'
+    drawdown_recovery_sessions: 19.0
+    ending_drawdown: 0.019076016175444774
+    recent12_months_observed: 12
+    recent12_average_month: 0.050109597311283345
+    recent12_median_month: 0.055028501540598476
+    recent12_positive_months: 7
+    recent12_negative_months: 5
+    recent12_inactive_months: 0
+    recent15_months_observed: 15
+    recent15_average_month: 0.04785461173912865
+    recent15_median_month: 0.029925159136723875
+    recent15_positive_months: 9
+    recent15_negative_months: 6
+    recent15_inactive_months: 0
+    recent18_months_observed: 18
+    recent18_average_month: 0.04050453004129578
+    recent18_median_month: 0.027618212811021607
+    recent18_positive_months: 11
+    recent18_negative_months: 7
+    recent18_inactive_months: 0
+    holding: open_to_next_open
+    metadata_json: '{"alpha_names": ["return1_momentum", "return1_reversal", "return2_momentum",
+      "return2_reversal", "return5_momentum", "return5_reversal", "return10_momentum",
+      "return10_reversal", "return20_momentum", "return20_reversal", "return60_momentum",
+      "return60_reversal", "sma5_trend", "sma5_fade", "sma10_trend", "sma10_fade",
+      "sma20_trend", "sma20_fade", "sma50_trend", "sma50_fade", "sma100_trend", "sma100_fade",
+      "sma200_trend", "sma200_fade", "vol20_high", "vol20_low"], "alphas": 26, "cadence":
+      "monthly", "expected_return_days": 5, "forecast": 5, "history": 20, "history_days_M":
+      20, "rebalance": "weekly", "short_rule": "overnight short weights are non-executable
+      signal diagnostics", "solved_rebalances": 346, "top_k": 3, "trend": false}'
+  maximum_loaded_date: '2026-04-30'
+  holdout_rows_loaded: 0
+  fixed_base: 1.0
+  compounding: false
+  broker_margin: false
+  preflight:
+    semantic_fixtures:
+      status: passed
+      drawdown: 0.04545454545454549
+      rank_weight_gross: 1.0
+      forward_split_adjustment: passed
+    panels:
+      qqq:
+        minimum_date: '2019-06-21'
+        maximum_date: '2026-04-30'
+        dates: 1724
+        symbols: 165
+        member_cells: 175356
+        holdout_rows_loaded: 0
+      sp500:
+        minimum_date: '2021-05-03'
+        maximum_date: '2026-04-30'
+        dates: 1255
+        symbols: 607
+        member_cells: 631792
+        holdout_rows_loaded: 0
+      etf:
+        minimum_date: '2019-01-02'
+        maximum_date: '2026-04-30'
+        dates: 1832
+        symbols: 27
+        member_cells: 49464
+        holdout_rows_loaded: 0
+    fundamental_coverage:
+      sp500:
+        panel: sp500
+        month_end_signal_dates: 60
+        member_cells_at_signal: 30205
+        book_to_price_cells: 28591
+        market_cap_cells: 30000
+        chs_complete_cells: 21376
+        missing_by_field:
+          equity: 1534
+          assets: 1534
+          liabilities: 9857
+          cash: 1580
+          net_income: 1613
+          shares: 1731
+        field_tag_counts:
+          equity:StockholdersEquity: 26631
+          assets:Assets: 28669
+          liabilities:Liabilities: 20346
+          cash:CashAndCashEquivalentsAtCarryingValue: 24196
+          net_income:ProfitLoss: 2846
+          shares:EntityCommonStockSharesOutstanding: 26387
+          cash:CashCashEquivalentsRestrictedCashAndRestrictedCashEquivalents: 4427
+          net_income:NetIncomeLoss: 25744
+          shares:WeightedAverageNumberOfDilutedSharesOutstanding: 1721
+          equity:StockholdersEquityIncludingPortionAttributableToNoncontrollingInterest: 2038
+          shares:CommonStockSharesOutstanding: 364
+        signal_row_count: 21376
+        chs_definition: Published CHS coefficients with annual point-in-time accounting
+          proxy; market variables use daily data. This is not an exact quarterly NIMTAAVG
+          replication.
+      qqq:
+        panel: qqq
+        month_end_signal_dates: 83
+        member_cells_at_signal: 8442
+        book_to_price_cells: 8737
+        market_cap_cells: 8957
+        chs_complete_cells: 5822
+        missing_by_field:
+          equity: 1265
+          assets: 1265
+          liabilities: 3433
+          cash: 1273
+          net_income: 1265
+          shares: 1271
+        field_tag_counts:
+          equity:StockholdersEquity: 6771
+          assets:Assets: 7172
+          cash:CashCashEquivalentsRestrictedCashAndRestrictedCashEquivalents: 747
+          net_income:NetIncomeLoss: 6688
+          shares:EntityCommonStockSharesOutstanding: 6310
+          liabilities:Liabilities: 5004
+          cash:CashAndCashEquivalentsAtCarryingValue: 6417
+          net_income:ProfitLoss: 484
+          equity:StockholdersEquityIncludingPortionAttributableToNoncontrollingInterest: 401
+          shares:WeightedAverageNumberOfDilutedSharesOutstanding: 646
+          shares:CommonStockSharesOutstanding: 210
+        signal_row_count: 5822
+        chs_definition: Published CHS coefficients with annual point-in-time accounting
+          proxy; market variables use daily data. This is not an exact quarterly NIMTAAVG
+          replication.
+  frozen_contract: campaigns/CAM-0600/SPLIT_REPAIR_CONTRACT.yaml
+  structured_analysis:
+    campaign_id: CAM-0617
+    executed_variants: 80
+    structured_survivors: 6
+    selected_variant: etf__alpha_M20_E5__top5__monthly__trend0
+    decision: provisional_repaired_target_change_quote_gate
+    selected_2bps: 1.959860560613951
+    selected_10bps: 1.862838209479169
+    selected_recent12_average: 0.0490729818206458
+    selected_recent12_positive: 9
+    selected_recent18_average: 0.024079847334933
+    selected_recent18_positive: 12
+    selected_maximum_drawdown: 0.3241075343847185
+    selected_positive_blocks: 3
+    selected_worst_block_average_month: 0.019630553043978847
+    holdout_rows_loaded: 0
+decision: provisional_repaired_target_change_quote_gate

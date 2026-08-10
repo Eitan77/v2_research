@@ -6,3 +6,9 @@
 {"ts": "2026-08-10T00:28:16.412466-07:00", "run_id": "RUN-0009", "event": "completed", "net_simple_return": 0.338826861351149, "clock": "09:40", "extra_bps": 2, "holdout_rows_loaded": 0}
 {"ts": "2026-08-10T00:28:35.520540-07:00", "run_id": "RUN-0012", "event": "completed", "decision": "The executable long-only sleeve is a momentum proxy; signed source identity remains non-executable overnight.", "holdout_rows_loaded": 0}
 {"ts": "2026-08-10T00:48:06.966629-07:00", "run_id": "RUN-0012", "event": "completed", "decision": "The executable long-only sleeve is a momentum proxy; signed source identity remains non-executable overnight.", "holdout_rows_loaded": 0}
+{"run_id": "RUN-0020", "event": "planned", "reason": "The inherited adjustment direction created false near-total losses at forward splits and potentially contaminated both signals and returns.", "holdout_rows_loaded": 0}
+{"run_id": "RUN-0020", "event": "completed", "best_at_2bps": "qqq__fullcov_s90__mom20__positive_top5", "net_simple_return": 1.7601697415171325, "holdout_rows_loaded": 0}
+{"run_id": "RUN-0020", "event": "structured_analysis_completed", "decision": "provisional_repaired_target_change_quote_gate", "selected_variant": "qqq__fullcov_s50__mom60__positive_top5", "holdout_rows_loaded": 0}
+{"run_id": "RUN-0022", "event": "planned", "selected_variant": "qqq__fullcov_s50__mom60__positive_top5", "holdout_rows_loaded": 0}
+{"run_id": "RUN-0022", "event": "invalidated", "reason": "null-quote rows counted as matched keys", "superseded_by": "RUN-0023", "holdout_rows_loaded": 0}
+{"run_id": "RUN-0023", "event": "planned", "selected_variant": "qqq__fullcov_s50__mom60__positive_top5", "holdout_rows_loaded": 0}

@@ -1,0 +1,7 @@
+campaign_id,executed_variants,structured_survivors,selected_variant,decision,selected_2bps,selected_10bps,selected_recent12_average,selected_recent12_positive,selected_recent18_average,selected_recent18_positive,selected_maximum_drawdown,selected_positive_blocks,selected_worst_block_average_month,holdout_rows_loaded
+CAM-0606,54,0,,repaired_repair_failed_no_structured_survivor,,,,,,,,,,0
+CAM-0608,24,3,qqq__slow_residual_r10__top10__monthly,provisional_repaired_target_change_quote_gate,2.106745166754404,2.0027225223876783,0.0382386224200873,8.0,0.0389290991568753,13.0,0.2828048049329515,3.0,0.024008771257786717,0
+CAM-0609,24,6,qqq__slow_residual_r10__top10__monthly,provisional_repaired_target_change_quote_gate,1.4532518343531151,1.3566774563790591,0.0277469849299207,8.0,0.0171577197607339,12.0,0.253476928148492,3.0,0.01214523559507676,0
+CAM-0613,18,0,,repaired_repair_failed_no_structured_survivor,,,,,,,,,,0
+CAM-0617,80,6,etf__alpha_M20_E5__top5__monthly__trend0,provisional_repaired_target_change_quote_gate,1.959860560613951,1.862838209479169,0.0490729818206458,9.0,0.024079847334933,12.0,0.3241075343847185,3.0,0.019630553043978847,0
+CAM-0621,54,24,etf__ibs30__top5__hold3__trend1,provisional_repaired_target_change_quote_gate,1.5363342674432792,1.0075076007766128,0.0195138650716816,8.0,0.0316849509291871,13.0,0.1401865557843107,3.0,0.016730793282535305,0

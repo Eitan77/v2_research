@@ -1,0 +1,73 @@
+run_id: RUN-0016
+campaign_id: CAM-0625
+parent_run: RUN-0015
+status: completed
+change: Causal annual walk-forward selection and inclusion of the four component families.
+reason: The fixed early-period gate rejected three required families, so test whether
+  the recent regime could be entered using only trailing observable performance while
+  allowing weak families to remain in cash.
+expected_effect: Determine whether a simple, sparse, causal allocator captures the
+  recent acceleration without hindsight-selecting today's four sleeves.
+configuration:
+  component_campaigns:
+  - CAM-0600
+  - CAM-0604
+  - CAM-0621
+  - CAM-0624
+  rebalance_frequency: calendar_year
+  trailing_window_months: 24
+  minimum_history_days: 252
+  minimum_active_days: 126
+  maximum_trailing_drawdown: 0.2
+  minimum_positive_month_fraction: 0.5
+  minimum_trailing_net_return: 0.0
+  selection_score: trailing_net_return / max(trailing_drawdown, 0.05)
+  selected_variants_per_family: 1
+  family_weighting: equal_weight_among_eligible_families
+  cash_when_no_family_eligible: true
+  cost_bps_per_side: 2
+  evaluation_start: '2023-01-03'
+  evaluation_end: '2026-04-30'
+  holdout_access: false
+integrity:
+  retrospective_status: adapted_development_walk_forward
+  maximum_loaded_date: '2026-04-30'
+  holdout_rows_loaded: 0
+result:
+  status: completed
+  run_id: RUN-0016
+  evaluation_start: '2023-01-03'
+  evaluation_end: '2026-04-30'
+  net_return: 0.6404039234216121
+  maximum_drawdown: 0.3061251970814426
+  positive_months: 26
+  negative_months: 14
+  annual_returns:
+    '2023': 0.07470921240577906
+    '2024': -0.16667506506795837
+    '2025': 0.42277562118014006
+    '2026': 0.30959415490365133
+  chosen_families_by_year:
+    '2023':
+    - CAM-0600
+    - CAM-0621
+    - CAM-0624
+    '2024':
+    - CAM-0600
+    - CAM-0621
+    - CAM-0624
+    '2025':
+    - CAM-0600
+    - CAM-0604
+    - CAM-0621
+    - CAM-0624
+    '2026':
+    - CAM-0600
+    - CAM-0604
+    - CAM-0621
+    - CAM-0624
+  maximum_loaded_date: '2026-04-30'
+  holdout_rows_loaded: 0
+  interpretation: Retrospective adapted walk-forward evidence, not genuine OOS.
+decision: Compare with fixed ensemble and plain component controls; no promotion from
+  this adapted development test.

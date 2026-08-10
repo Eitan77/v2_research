@@ -33,3 +33,8 @@ The structured survivor `qqq__lowvol_quality__top20__trend1` earned +85.2% net a
 Selection activity covered 87.5% of dates and averaged 18.37 names when active. Status: `low_risk_diversifier_unpromoted`.
 
 This is adapted development evidence, not untouched out-of-sample evidence. No rows on or after 2026-05-01 were loaded, and promotion remains false.
+
+
+## Split-repaired checkpoint (RUN-0020/RUN-0021/RUN-0023)
+
+Prior strategy evidence is invalid because the inherited stock panel adjusted forward splits in the wrong direction. The repaired structured result is **provisional_execution_survivor** using `qqq__lowvol_quality__top20__trend1`. Its full repaired 2 bp additive return is 93.1% with 22.1% maximum drawdown; 09:40 SIP replay at +2 bp is 25.2% with 7.0% drawdown and 8/4 positive/negative months. This remains adapted development evidence; the May 2026 holdout was not accessed and promotion is blocked.

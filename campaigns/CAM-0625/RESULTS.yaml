@@ -1,66 +1,76 @@
 campaign_id: CAM-0625
-checkpoint: '2026-08-10'
-status: promising_recent_regime_ensemble_unpromoted
+checkpoint: '2026-08-10-split-repaired'
+status: promising_recent_regime_unpromoted
 promotion_ready: false
 development_only: true
 maximum_loaded_date: '2026-04-30'
 holdout_rows_loaded: 0
 broker_margin_used: false
-core_rule: equal_four_sleeve
-core_sleeves: [CAM-0600, CAM-0604, CAM-0621, CAM-0624]
-full_history:
-  start: '2021-05-03'
-  net_simple_return: 1.074337
-  maximum_drawdown: 0.090150
-  positive_months: 38
-  negative_months: 22
+prior_runs_status: RUN-0001_through_RUN-0016_invalid_split_adjustment
+final_construction:
+  rule: equal_weight_final_substitution
+  sleeves: [CAM-0600, CAM-0621, CAM-0624, CAM-0618]
+  variants:
+    CAM-0600: qqq__mom252_skip21__top3__liquid_trend__panic1
+    CAM-0621: etf__ibs30__top5__hold3__trend1
+    CAM-0624: qqq__chs_safe__top5__liquid__target15
+    CAM-0618: sector11__mom252_skip21__weekly__top3
+full_history_2bps:
+  net_simple_return: 1.536488
+  maximum_drawdown: 0.115309
+  positive_months: 52
+  negative_months: 27
+  top5_positive_day_share: 0.033719
+  annual_returns:
+    2019: 0.018208
+    2020: 0.339292
+    2021: 0.249833
+    2022: -0.014340
+    2023: 0.188279
+    2024: 0.218408
+    2025: 0.341678
+    2026_through_April: 0.195131
+fixed_folds:
+  2020_2021: {net: 0.589125, maximum_drawdown: 0.117366}
+  2022_2023: {net: 0.173938, maximum_drawdown: 0.110847}
+  2024_through_April_2026: {net: 0.755216, maximum_drawdown: 0.168011}
 quote_0940_2bps_extra:
   start: '2025-05-01'
   end: '2026-04-30'
-  net_simple_return: 0.526018
-  maximum_drawdown: 0.055659
+  net_simple_return: 0.399627
+  maximum_drawdown: 0.072481
   positive_months: 10
   negative_months: 2
-  top5_day_positive_share: 0.125179
-causal_inverse_vol_quote_0940_2bps_extra:
-  net_simple_return: 0.399548
-  maximum_drawdown: 0.042604
-  positive_months: 11
-  negative_months: 1
-  top5_day_positive_share: 0.116455
-execution_stress_10bps_extra:
-  equal_net_simple_return: 0.498962
-  equal_maximum_drawdown: 0.056824
-  causal_inverse_vol_net_simple_return: 0.374911
-  causal_inverse_vol_maximum_drawdown: 0.043554
-capacity_snapshot:
-  model: 10_percent_of_single_displayed_0940_nbbo
-  role_p10_capital_dollars: 1735.66
-  role_median_capital_dollars: 86806.07
-  interpretation: snapshot_liquidity_floor_not_capacity_claim
-market_exposure:
-  equal_simple_SPY_beta: 0.3982
-  equal_simple_SMH_beta: 0.2175
-  equal_multivariate_r_squared: 0.3131
-  causal_inverse_vol_simple_SPY_beta: 0.3917
-  causal_inverse_vol_simple_SMH_beta: 0.2035
-  causal_inverse_vol_multivariate_r_squared: 0.3982
-  interpretation: partially_defensive_long_equity_not_market_neutral
-rejected_overlay:
-  rule: prior_close_SPY_above_SMA100_150_200
-  reason: lowered full-history return and did not reduce drawdown reliably
-universe_substitution:
-  sp500_momentum_sp500_multifactor: {net: 1.0743, drawdown: 0.0902}
-  sp500_momentum_qqq_multifactor: {net: 1.0189, drawdown: 0.1048}
-  qqq_momentum_sp500_multifactor: {net: 0.7264, drawdown: 0.1779}
-  qqq_momentum_qqq_multifactor: {net: 0.6709, drawdown: 0.2008}
-  interpretation: material_dependence_on_provisional_SP500_momentum_universe
+  top5_positive_day_share: 0.121953
+  minimum_component_role_coverage: 0.999381
+execution_stress:
+  quote_0930_10bps_extra: {net: 0.375089, maximum_drawdown: 0.076944, positive_months: 10, negative_months: 2}
+  quote_0940_10bps_extra: {net: 0.372849, maximum_drawdown: 0.074666, positive_months: 10, negative_months: 2}
 block_bootstrap_21x252:
-  draws: 20000
-  equal: {return_p05: 0.0251, drawdown_p95: 0.1328, probability_dd_above_20pct: 0.00285}
-  causal_inverse_vol: {return_p05: 0.0063, drawdown_p95: 0.1230, probability_dd_above_20pct: 0.00155}
-  interpretation: descriptive_stationary_mixture_not_forecast
+  simulations: 20000
+  return_p01: -0.146422
+  return_p05: -0.041101
+  return_median: 0.202078
+  drawdown_p95: 0.213725
+  drawdown_p99: 0.279282
+  probability_negative_return: 0.0831
+  probability_drawdown_over_20pct: 0.0723
+pseudo_oos_selection:
+  status: failed_closed
+  only_family_passing_pre_2024_gate: CAM-0621
+  implication: final_construction_not_historically_identifiable_under_frozen_gate
+factor_audit_quote:
+  r_squared: 0.201667
+  betas: {SPY: -0.219673, QQQ: 0.403043, SMH: 0.151420}
+  correlations: {SPY: 0.386622, QQQ: 0.428380, SMH: 0.436707}
+  worst_5pct_spy_days_strategy_sum: -0.171382
+rejected_adaptations:
+  - trailing_12m_positive_return_activation
+  - trailing_12m_positive_and_7_of_12_positive_activation
+  - causal_inverse_volatility_parent4
 conclusion: >-
-  Best development lead in the SSRN series. Preserve unchanged for forward
-  paper validation; do not promote or access the sealed holdout without a new
-  explicit authorization and frozen purpose.
+  Strong repaired recent-regime development lead with realistic quote execution,
+  cost robustness, diversified positive days, and positive fixed folds. It is not
+  promoted because the construction is adapted, failed the frozen pre-2024 family
+  selection gate, retains material equity and technology downside, and has negative
+  bootstrap tails. Preserve for unchanged prospective paper tracking only.

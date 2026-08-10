@@ -1,0 +1,95 @@
+run_id: RUN-0022
+campaign_id: CAM-0625
+parent_run: RUN-0021
+status: completed
+change: Final construction test replacing redundant CAM-0604 with sector-rotation
+  CAM-0618.
+reason: Lean3 improved return stability while sector addition improved bootstrap downside
+  tails; test the economically justified substitution once.
+expected_effect: Preserve lean3 return stability with some sector sleeve downside
+  diversification.
+configuration:
+  candidate:
+  - CAM-0600
+  - CAM-0621
+  - CAM-0624
+  - CAM-0618
+  controls:
+  - parent4
+  - leave_out_CAM-0604
+  weighting: equal
+  bootstrap:
+    block_sessions: 21
+    path_sessions: 252
+    simulations: 20000
+    random_seed: 62522
+  no_further_construction_iteration_from_this_result: true
+  holdout_access: false
+result:
+  status: completed
+  run_id: RUN-0022
+  candidate_sleeves:
+  - CAM-0600
+  - CAM-0621
+  - CAM-0624
+  - CAM-0618
+  variants:
+    CAM-0600: qqq__mom252_skip21__top3__liquid_trend__panic1
+    CAM-0621: etf__ibs30__top5__hold3__trend1
+    CAM-0624: qqq__chs_safe__top5__liquid__target15
+    CAM-0618: sector11__mom252_skip21__weekly__top3
+  full:
+    net_simple_return: 1.536487689716512
+    maximum_drawdown: 0.11530948177496973
+    positive_months: 52
+    negative_months: 27
+    monthly_median: 0.009284728253281527
+    worst_month: -0.070918030006949
+    top5_positive_day_share: 0.03371881452214085
+    annual_returns:
+      '2019': 0.018207740023963175
+      '2020': 0.3392923341182536
+      '2021': 0.2498330994171125
+      '2022': -0.01434044824666841
+      '2023': 0.18827859419635723
+      '2024': 0.2184075980969044
+      '2025': 0.34167786125276894
+      '2026': 0.19513091085782047
+  quote:
+    net_simple_return: 0.3996272220870408
+    maximum_drawdown: 0.072481110365937
+    positive_months: 10
+    negative_months: 2
+    monthly_median: 0.026472557176515726
+    worst_month: -0.04136029193753281
+    top5_positive_day_share: 0.12195337992543594
+    annual_returns:
+      '2025': 0.22746785614295403
+      '2026': 0.1721593659440868
+  folds:
+  - start: '2020-01-02'
+    end: '2021-12-31'
+    net_simple_return: 0.5891254335353662
+    maximum_drawdown: 0.11736614056712741
+  - start: '2022-01-03'
+    end: '2023-12-29'
+    net_simple_return: 0.17393814594968882
+    maximum_drawdown: 0.11084721004599732
+  - start: '2024-01-02'
+    end: '2026-04-30'
+    net_simple_return: 0.7552163702074939
+    maximum_drawdown: 0.1680108319371177
+  bootstrap:
+    return_p01: -0.14642205845151063
+    return_p05: -0.04110146580121589
+    return_median: 0.20207827431097583
+    drawdown_p95: 0.21372481790397815
+    drawdown_p99: 0.2792823416621639
+    probability_negative_return: 0.0831
+    probability_drawdown_over_20pct: 0.0723
+  maximum_loaded_date: '2026-04-30'
+  holdout_rows_loaded: 0
+  interpretation: Final adapted construction test; no further construction iteration
+    authorized from this result.
+decision: End construction iteration and select only by predefined return-path-tail
+  tradeoff; no promotion.

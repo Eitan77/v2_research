@@ -64,3 +64,25 @@ deep_development_checkpoint:
       remains non-executable overnight.
   conclusion: No strategy is promoted; evidence is adapted development data and the
     sealed holdout remains untouched.
+prior_checkpoint_status: invalid_split_adjustment
+split_repaired_checkpoint:
+  strategy_section: null
+  source_run: RUN-0020
+  structured_survivors: 40
+  selected_variant: qqq__fullcov_s50__mom60__positive_top5
+  bar_net_2bps: 1.1161707575817876
+  bar_maximum_drawdown: 0.2689708670748301
+  decision: provisional_execution_survivor
+  quote_2bps_net: 0.1772382014548482
+  quote_2bps_drawdown: 0.1319339039554642
+  quote_2bps_positive_months: 8
+  quote_2bps_negative_months: 4
+  quote_2bps_coverage: 1.0
+  quote_10bps_net: 0.1650373991051729
+  quote_10bps_drawdown: 0.1357119592417607
+  quote_10bps_positive_months: 8
+  quote_10bps_negative_months: 4
+  quote_10bps_coverage: 1.0
+  maximum_loaded_date: '2026-04-30'
+  holdout_rows_loaded: 0
+  promotion_ready: false

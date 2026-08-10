@@ -33,3 +33,8 @@ The structured survivor `sector11__mom252_skip21__weekly__top3` earned +111.6% n
 Selection activity covered 84.7% of dates and averaged 2.98 names when active. Status: `smooth_sector_diversifier_unpromoted`.
 
 This is adapted development evidence, not untouched out-of-sample evidence. No rows on or after 2026-05-01 were loaded, and promotion remains false.
+
+
+## Split-repaired checkpoint (RUN-0020/RUN-0021/RUN-0023)
+
+Prior strategy evidence is invalid because the inherited stock panel adjusted forward splits in the wrong direction. The repaired structured result is **provisional_execution_survivor** using `sector11__mom252_skip21__weekly__top3`. Its full repaired 2 bp additive return is 111.6% with 34.1% maximum drawdown; 09:40 SIP replay at +2 bp is 26.4% with 5.6% drawdown and 11/1 positive/negative months. This remains adapted development evidence; the May 2026 holdout was not accessed and promotion is blocked.

@@ -1,0 +1,2 @@
+campaign_id,variant_dir,training_net,training_drawdown,training_positive_month_fraction,training_active_days,validation_net,validation_drawdown,eligible
+CAM-0621,etf__ibs30__top5__hold2__trend1__cost_2bps,0.9954349215443186,0.15048048362272806,0.65,1015,0.8046745720318434,0.12454038521092929,True

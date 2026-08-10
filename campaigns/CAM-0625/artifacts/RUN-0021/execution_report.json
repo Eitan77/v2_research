@@ -1,0 +1,120 @@
+{
+  "status": "completed",
+  "run_id": "RUN-0021",
+  "results": {
+    "parent4": {
+      "folds": [
+        {
+          "start": "2020-01-02",
+          "end": "2021-12-31",
+          "net_simple_return": 0.6722285882107903,
+          "maximum_drawdown": 0.10584542981540447,
+          "positive_months": 15,
+          "negative_months": 9
+        },
+        {
+          "start": "2022-01-03",
+          "end": "2023-12-29",
+          "net_simple_return": 0.04019377284819722,
+          "maximum_drawdown": 0.18453097742479277,
+          "positive_months": 11,
+          "negative_months": 13
+        },
+        {
+          "start": "2024-01-02",
+          "end": "2026-04-30",
+          "net_simple_return": 0.8103913202481079,
+          "maximum_drawdown": 0.1871807956727484,
+          "positive_months": 19,
+          "negative_months": 9
+        }
+      ],
+      "bootstrap": {
+        "return_p01": -0.20720647845800302,
+        "return_p05": -0.07577795935990408,
+        "return_median": 0.19978583806185174,
+        "drawdown_p95": 0.2530106480089865,
+        "drawdown_p99": 0.3417137270716702,
+        "probability_negative_return": 0.11805,
+        "probability_drawdown_over_20pct": 0.1273
+      }
+    },
+    "leave_out_CAM-0604": {
+      "folds": [
+        {
+          "start": "2020-01-02",
+          "end": "2021-12-31",
+          "net_simple_return": 0.6766067282550845,
+          "maximum_drawdown": 0.09108516218144842,
+          "positive_months": 15,
+          "negative_months": 9
+        },
+        {
+          "start": "2022-01-03",
+          "end": "2023-12-29",
+          "net_simple_return": 0.130391224525192,
+          "maximum_drawdown": 0.14672595534899077,
+          "positive_months": 12,
+          "negative_months": 12
+        },
+        {
+          "start": "2024-01-02",
+          "end": "2026-04-30",
+          "net_simple_return": 0.8454887791000937,
+          "maximum_drawdown": 0.199796194345726,
+          "positive_months": 21,
+          "negative_months": 7
+        }
+      ],
+      "bootstrap": {
+        "return_p01": -0.18406634694164362,
+        "return_p05": -0.05887401387585185,
+        "return_median": 0.2197047272671026,
+        "drawdown_p95": 0.2535277698283624,
+        "drawdown_p99": 0.33507633957662575,
+        "probability_negative_return": 0.09615,
+        "probability_drawdown_over_20pct": 0.11795
+      }
+    },
+    "parent_plus_sector": {
+      "folds": [
+        {
+          "start": "2020-01-02",
+          "end": "2021-12-31",
+          "net_simple_return": 0.6031191804438745,
+          "maximum_drawdown": 0.09427788922051517,
+          "positive_months": 16,
+          "negative_months": 8
+        },
+        {
+          "start": "2022-01-03",
+          "end": "2023-12-29",
+          "net_simple_return": 0.09307080032319368,
+          "maximum_drawdown": 0.15373605003365426,
+          "positive_months": 11,
+          "negative_months": 13
+        },
+        {
+          "start": "2024-01-02",
+          "end": "2026-04-30",
+          "net_simple_return": 0.7451928849044253,
+          "maximum_drawdown": 0.16690496309088648,
+          "positive_months": 19,
+          "negative_months": 9
+        }
+      ],
+      "bootstrap": {
+        "return_p01": -0.1725913712594683,
+        "return_p05": -0.05720440434842257,
+        "return_median": 0.19115508760367456,
+        "drawdown_p95": 0.22330079296985963,
+        "drawdown_p99": 0.29838042416896743,
+        "probability_negative_return": 0.10245,
+        "probability_drawdown_over_20pct": 0.08605
+      }
+    }
+  },
+  "maximum_loaded_date": "2026-04-30",
+  "holdout_rows_loaded": 0,
+  "interpretation": "Adapted development robustness, not genuine OOS."
+}
