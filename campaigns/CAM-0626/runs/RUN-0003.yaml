@@ -1,0 +1,35 @@
+run_id: RUN-0003
+parent_run: RUN-0002
+status: completed
+candidate: f5_h1550_outer_half
+reason: Best broad timing/selectivity neighbor is positive at 0 and 1 bp per side, triggering exact SIP replay.
+execution:
+  entry: first marketable quote at or after 09:35 ET
+  exit: first marketable quote at or after simulated stop time or 15:50 ET
+  long: buy ask, sell bid
+  short: sell bid, cover ask
+  additional_slippage_bps_per_side: [0, 1, 2, 5, 10]
+expected_effect: Observed spreads likely consume the thin 1.3-bp-per-side gross edge.
+reconciliation:
+  initial_replay_status: invalid_not_interpretable
+  issue: The bar simulator labeled a stopped trade with the start of the 5-minute bar that later revealed the threshold crossing. Pulling a quote at that timestamp used information from before the stop was knowable.
+  correction: For stopped trades, use the first marketable quote at or after the next 5-minute boundary; this is causal and conservative relative to an actual resting stop. Time exits remain at 15:50 ET.
+  final_stop_replay: Recompute each 2 percent threshold from the actual entry quote, identify the first crossing using raw SIP 1-minute bars, and request the first marketable quote only after that minute is complete. This supersedes the interim 5-minute-boundary correction.
+  missing_entry_policy: Cancel if no valid SIP quote appears within 60 seconds and leave that intended weight in cash; do not renormalize survivors.
+  package_policy: If any intended entry leg lacks a valid quote within 60 seconds, cancel the whole day's dollar-neutral package rather than leave accidental directional exposure.
+result:
+  authoritative_artifact: artifacts/RUN-0003/minute_quote_report.json
+  status: completed
+  intended_package_days: 495
+  executed_package_days: 481
+  cancelled_package_days: 14
+  exit_role_coverage: 1.0
+  observed_quote_net_return_no_extra_slippage: -0.407767
+  observed_quote_net_return_plus_1bp_per_side: -0.503967
+  observed_quote_net_return_plus_2bps_per_side: -0.600167
+  observed_quote_max_drawdown_no_extra_slippage: 0.410698
+  observed_quote_positive_months: 7
+  observed_quote_negative_months: 17
+  maximum_loaded_date: 2026-04-30
+  holdout_rows_loaded: 0
+decision: Rejected. The broad individual-stock residual-reversion candidate is strongly negative at observed marketable SIP fills. The earlier apparent positive quote result was invalid due non-causal stop timestamps and is retained only as failed-run history.

@@ -1,0 +1,13 @@
+run_id: RUN-0008
+parent_run: RUN-0005
+status: frozen
+candidate: f5_h1550_invvar
+reason: Best weighted-regression variant is positive at 2 bps and therefore requires exact quote replay.
+execution:
+  entry: first marketable SIP quote at or after 09:35 ET; maximum delay 60 seconds
+  package_policy: cancel entire dollar-neutral package if any intended entry is unavailable
+  stop: 2 percent from actual entry fill, first crossing from raw SIP 1-minute bars, exit quote only after crossing minute completes
+  time_exit: first marketable SIP quote at or after 15:50 ET
+  additional_slippage_bps_per_side: [0, 1, 2, 5, 10]
+expected_effect: Determine whether inverse-variance improvement survives observed spreads and causal stop fills.
+holdout_access: false

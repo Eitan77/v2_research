@@ -1,0 +1,14 @@
+run_id: RUN-0009
+parent_run: RUN-0007
+status: frozen
+candidate: f60_h60_top1_each_side_sNone
+reason: Best sector-ETF variant is positive at zero cost, triggering exact SIP quote replay.
+execution:
+  entry: first marketable quote at or after 10:30 ET
+  exit: first marketable quote at or after 11:30 ET
+  long: buy ask then sell bid
+  short: sell bid then cover ask
+  maximum_quote_delay_seconds: 60
+  package_policy: cancel both legs if either entry is unavailable
+  additional_slippage_bps_per_side: [0, 1, 2, 5, 10]
+holdout_access: false

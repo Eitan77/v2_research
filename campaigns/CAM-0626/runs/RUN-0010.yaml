@@ -1,0 +1,17 @@
+run_id: RUN-0010
+parent_run: RUN-0006
+status: frozen
+question: Can a strict queue-aware passive entry overcome the observed opening spread while retaining enough daily fills?
+reason: Marketable short-leader replay failed, but selling at the displayed ask could recover the entry spread. A quote touch is not a fill, so SIP quote and trade paths with displayed queue ahead are required.
+configuration:
+  signal: unchanged RUN-0006 single opening leader short
+  order: sell limit at first displayed SIP ask after 09:35 ET
+  lifetime_seconds: 300
+  queue_model: initial displayed ask size must be consumed by same-price SIP trade prints before strategy shares fill; quote-size cancellations receive no credit
+  unfilled_policy: cash; no marketable chase
+  target_notional: 1.0 fixed capital
+  exit: same causal 2 percent stop or marketable 10:35 cover
+  additional_slippage_bps_per_side: [0, 1, 2, 5, 10]
+  generic_code_reuse: CAM-0207 strict passive queue simulator and SIP retrieval infrastructure only; no prior candidates or results
+expected_effect: Determine whether spread capture is attainable rather than hypothetical, and whether fill selection preserves the reversal edge.
+holdout_access: false

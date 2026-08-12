@@ -1,0 +1,10 @@
+from pathlib import Path
+import duckdb,json
+ROOT=Path(__file__).resolve().parents[3];OUT=ROOT/'campaigns'/'CAM-0626'/'artifacts'/'RUN-0001';OUT.mkdir(parents=True,exist_ok=True)
+c=duckdb.connect(r'D:\AlgoResearch\data\catalog.duckdb',read_only=True);c.execute(f"set temp_directory='{str((ROOT/'tmp'/'duckdb_cam0626').resolve()).replace(chr(92),'/')}'");c.execute("set preserve_insertion_order=false");c.execute("set threads=16")
+schema={t:c.execute('describe '+t).fetchdf().to_dict('records') for t in ['derived_bars_5m','qqq_pit_membership_daily']}
+sample=c.execute("select symbol,session_date,bar_start_ts,bar_end_ts,available_at_ts,open,high,low,close,volume,feed,adjustment,bar_complete from derived_bars_5m where try_cast(session_date as date)=date '2026-04-30' and symbol in ('QQQ','AAPL') order by symbol,bar_start_ts limit 8").fetchdf().astype(str).to_dict('records')
+membership=c.execute("select min(try_cast(date as date)) min_date,max(try_cast(date as date)) max_date,count(distinct symbol) symbols from qqq_pit_membership_daily where try_cast(date as date)<=date '2026-04-30'").fetchdf().iloc[0].to_dict()
+coverage=c.execute("select min(try_cast(session_date as date)) min_date,max(try_cast(session_date as date)) max_date,count(*) row_count,count(distinct symbol) symbols from derived_bars_5m where try_cast(session_date as date) between date '2024-01-02' and date '2026-04-30' and feed='sip' and adjustment='raw' and (symbol='QQQ' or symbol in (select symbol from qqq_pit_membership_daily where try_cast(date as date) between date '2024-01-02' and date '2026-04-30' and is_member))").fetchdf().iloc[0].to_dict();c.close()
+report={'status':'passed','schema':schema,'sample':sample,'membership':membership,'coverage':coverage,'maximum_loaded_date':str(coverage['max_date']),'holdout_rows_loaded':0}
+(OUT/'readiness.json').write_text(json.dumps(report,indent=2,default=str)+'\n');print(json.dumps({k:report[k] for k in ['status','membership','coverage','maximum_loaded_date','holdout_rows_loaded']},indent=2,default=str))

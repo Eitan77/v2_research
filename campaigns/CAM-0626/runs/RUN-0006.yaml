@@ -1,0 +1,37 @@
+run_id: RUN-0006
+parent_run: RUN-0004
+status: completed
+question: Is the edge specifically intraday reversal of the single most overextended opening winner?
+reason: In f5_h60_k1 the short leader contributed +35.52% gross when scaled to full capital, while the long laggard contributed -2.62%. Symmetric construction diluted the only profitable side.
+configuration:
+  formation: completed 09:30-09:35 log return relative to causal QQQ-correlated peer set
+  selection: single highest demeaned return
+  side: short_only
+  gross_exposure: 1.0 fully cash collateralized
+  entry: first marketable SIP bid at or after 09:35 ET, cancel after 60 seconds
+  stop: 2 percent above actual entry; first crossing identified from raw SIP 1-minute bars; exit at first SIP ask after the crossing minute completes
+  time_exit: first SIP ask at or after 10:35 ET
+  forced_flat: true
+  overnight_short: false
+  additional_slippage_bps_per_side: [0, 1, 2, 5, 10]
+expected_effect: Remove the empirically harmful long leg and test whether leader reversal survives actual spread and causal stop execution.
+holdout_access: false
+reconciliation:
+  invalid_attempt: Initial minute-role generator did not cap the stop scan at 10:35, so later stops incorrectly replaced time exits; no resulting metric is interpretable.
+  correction: Stop search is restricted to timestamps before the frozen time exit and all roles are regenerated.
+result:
+  authoritative_artifact: artifacts/RUN-0006/report.json
+  intended_days: 501
+  executed_days: 490
+  entry_coverage: 0.978044
+  exit_coverage: 1.0
+  observed_quote_return_no_extra_slippage: -0.184408
+  observed_quote_return_plus_1bp_per_side: -0.282408
+  observed_quote_return_plus_2bps_per_side: -0.380408
+  observed_quote_max_drawdown_no_extra_slippage: 0.464186
+  positive_months: 11
+  negative_months: 13
+  worst_month: -0.165724
+  maximum_loaded_date: 2026-04-30
+  holdout_rows_loaded: 0
+decision: Rejected. The apparent short-leader bar edge does not survive observed marketable entry and causal stop/exit quotes, even with no extra slippage.

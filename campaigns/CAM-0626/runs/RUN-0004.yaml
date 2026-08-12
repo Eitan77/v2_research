@@ -1,0 +1,31 @@
+run_id: RUN-0004
+parent_run: RUN-0002
+status: completed_bar_stage
+question: Can concentrating only in the most displaced names and entering after opening spreads normalize create enough edge per unit turnover?
+reason: RUN-0002's broad portfolio had positive gross PnL but only about 1.3 bps per side of break-even edge, while observed 09:35 weighted quoted spreads were much larger.
+configuration:
+  formation_minutes: [5, 15, 30, 60]
+  holding_minutes: [30, 60, 120, "1550"]
+  extreme_names_per_side: [1, 2, 3, 4]
+  weighting: equal 0.5 divided across each long and short side
+  gross_exposure: 1.0
+  stop_per_leg: 2_percent_adverse
+  costs_bps_per_side: [-1, 0, 1, 2, 5, 10]
+expected_effect: Fewer legs reduce spread turnover; later entry lowers opening spreads, while extreme residuals retain the strongest convergence candidates.
+holdout_access: false
+result:
+  executed_signal_variants: 64
+  executed_cost_cells: 384
+  best_at_2bps: f5_h60_k1
+  best_at_2bps_net_return: -0.035935
+  best_gross_return: 0.164465
+  best_at_1bp_net_return: 0.064265
+  best_at_2bps_max_drawdown: 0.211165
+  best_at_2bps_positive_days: 249
+  best_at_2bps_negative_days: 252
+  best_at_2bps_positive_months: 10
+  best_at_2bps_negative_months: 14
+  best_at_2bps_worst_month: -0.105173
+  maximum_loaded_date: 2026-04-30
+  holdout_rows_loaded: 0
+decision: Narrowing to one extreme per side improved edge per unit turnover, but no variant survived 2 bps and consistency remained poor. Exact quote replay is required for the variants positive at zero or one bp before this branch can be closed.

@@ -1,0 +1,34 @@
+run_id: RUN-0005
+parent_run: RUN-0002
+status: completed_bar_stage
+question: Does the paper's weighted-regression construction improve residual quality and stability?
+reason: The unit-weight residual portfolio decayed sharply in the second year and PnL was unstable across symbols. Section 3.10 explicitly proposes inverse-variance regression weights and continuous risk loadings.
+configuration:
+  formation_minutes: [5, 15, 30, 60]
+  holding_minutes: [30, 60, 120, "1550"]
+  regression_models:
+    - unit_weight_intercept
+    - inverse_variance_intercept
+    - inverse_variance_intercept_and_beta60
+  risk_inputs: lagged 20-session volatility and lagged 60-session QQQ beta
+  breadth: all_nonzero_residuals
+  gross_exposure: 1.0
+  stop_per_leg: 2_percent_adverse
+  costs_bps_per_side: [-1, 0, 1, 2, 5, 10]
+expected_effect: Downweight noisy residuals and remove market-beta contamination while retaining exact dollar neutrality and daily activity.
+holdout_access: false
+result:
+  executed_signal_variants: 48
+  executed_cost_cells: 288
+  best_at_2bps: f5_h1550_invvar
+  best_at_2bps_net_return: 0.029506
+  best_at_2bps_max_drawdown: 0.135709
+  positive_days: 240
+  negative_days: 255
+  positive_months: 9
+  negative_months: 15
+  worst_month: -0.049106
+  trade_legs: 9397
+  maximum_loaded_date: 2026-04-30
+  holdout_rows_loaded: 0
+decision: Inverse-variance weighting materially improved net return versus unit weights and crossed the quote gate, but temporal consistency remained poor. Beta neutralization did not help. Exact quote replay is required; no promotion.

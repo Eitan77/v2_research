@@ -1,0 +1,11 @@
+from pathlib import Path
+import json,numpy as np,pandas as pd
+ROOT=Path(__file__).resolve().parents[3];OUT=ROOT/'campaigns'/'CAM-0626'/'artifacts'/'RUN-0006';KEY=['symbol','target_ts','role']
+def metric(d):
+ eq=1+d.net_pnl.cumsum();pk=np.maximum.accumulate(np.r_[1.,eq])[1:];mo=d.set_index('date').net_pnl.resample('ME').sum();wk=d.set_index('date').net_pnl.resample('W-FRI').sum();return {'net_return':float(d.net_pnl.sum()),'max_drawdown':float(-(eq/pk-1).min()),'positive_days':int((d.net_pnl>0).sum()),'negative_days':int((d.net_pnl<0).sum()),'positive_weeks':int((wk>0).sum()),'negative_weeks':int((wk<0).sum()),'positive_months':int((mo>0).sum()),'negative_months':int((mo<0).sum()),'worst_month':float(mo.min())}
+def main():
+ l=pd.read_parquet(OUT/'ledger.parquet');l.date=pd.to_datetime(l.date);l.target_ts=pd.to_datetime(l.target_ts,utc=True);q=pd.concat([pd.read_parquet(p) for p in OUT.glob('quotes_exit*60s.parquet')],ignore_index=True);q.target_ts=pd.to_datetime(q.target_ts,utc=True);q.quote_ts=pd.to_datetime(q.quote_ts,utc=True);q['delay']=(q.quote_ts-q.target_ts).dt.total_seconds();q=q[(q.delay>=0)&(q.delay<=60)].sort_values(['delay','quote_ts']).drop_duplicates(KEY);z=l.merge(q,on=KEY,how='left',validate='one_to_one');z['exit_fill']=z.ask_price;z['gross_pnl']=1-z.exit_fill/z.entry_fill;all_dates=pd.DataFrame({'date':pd.to_datetime(pd.read_parquet(OUT/'entry_audit.parquet').date.unique())});rows=[]
+ for b in (0,1,2,5,10):
+  x=z[z.exit_fill.notna()].copy();x['net_pnl']=x.gross_pnl-2*b/10000;d=x.groupby('date').net_pnl.sum().reset_index();d=all_dates.merge(d,on='date',how='left').fillna(0);m=metric(d);m.update({'additional_bps_per_side':b,'gross_return':float(x.gross_pnl.sum()),'executed_days':len(x),'exit_coverage':float(z.exit_fill.notna().mean())});rows.append(m);d.to_parquet(OUT/f'daily_{b}bps.parquet',index=False)
+ z.to_parquet(OUT/'trades.parquet',index=False);report={'status':'completed' if z.exit_fill.notna().all() else 'incomplete_blocked','metrics':rows,'intended_days':len(all_dates),'entry_days':len(l),'exit_days':int(z.exit_fill.notna().sum()),'maximum_loaded_date':str(l.date.max().date()),'holdout_rows_loaded':0};(OUT/'report.json').write_text(json.dumps(report,indent=2)+'\n');print(pd.DataFrame(rows).to_string(index=False));print(report['status'])
+if __name__=='__main__':main()

@@ -1,0 +1,352 @@
+{
+  "status": "passed",
+  "schema": {
+    "derived_bars_5m": [
+      {
+        "column_name": "timestamp",
+        "column_type": "TIMESTAMP WITH TIME ZONE",
+        "null": "YES",
+        "key": null,
+        "default": null,
+        "extra": null
+      },
+      {
+        "column_name": "bar_start_ts",
+        "column_type": "TIMESTAMP WITH TIME ZONE",
+        "null": "YES",
+        "key": null,
+        "default": null,
+        "extra": null
+      },
+      {
+        "column_name": "bar_end_ts",
+        "column_type": "TIMESTAMP WITH TIME ZONE",
+        "null": "YES",
+        "key": null,
+        "default": null,
+        "extra": null
+      },
+      {
+        "column_name": "available_at_ts",
+        "column_type": "TIMESTAMP WITH TIME ZONE",
+        "null": "YES",
+        "key": null,
+        "default": null,
+        "extra": null
+      },
+      {
+        "column_name": "open",
+        "column_type": "DOUBLE",
+        "null": "YES",
+        "key": null,
+        "default": null,
+        "extra": null
+      },
+      {
+        "column_name": "high",
+        "column_type": "DOUBLE",
+        "null": "YES",
+        "key": null,
+        "default": null,
+        "extra": null
+      },
+      {
+        "column_name": "low",
+        "column_type": "DOUBLE",
+        "null": "YES",
+        "key": null,
+        "default": null,
+        "extra": null
+      },
+      {
+        "column_name": "close",
+        "column_type": "DOUBLE",
+        "null": "YES",
+        "key": null,
+        "default": null,
+        "extra": null
+      },
+      {
+        "column_name": "volume",
+        "column_type": "BIGINT",
+        "null": "YES",
+        "key": null,
+        "default": null,
+        "extra": null
+      },
+      {
+        "column_name": "trade_count",
+        "column_type": "BIGINT",
+        "null": "YES",
+        "key": null,
+        "default": null,
+        "extra": null
+      },
+      {
+        "column_name": "vwap",
+        "column_type": "DOUBLE",
+        "null": "YES",
+        "key": null,
+        "default": null,
+        "extra": null
+      },
+      {
+        "column_name": "feed",
+        "column_type": "VARCHAR",
+        "null": "YES",
+        "key": null,
+        "default": null,
+        "extra": null
+      },
+      {
+        "column_name": "adjustment",
+        "column_type": "VARCHAR",
+        "null": "YES",
+        "key": null,
+        "default": null,
+        "extra": null
+      },
+      {
+        "column_name": "session_date",
+        "column_type": "VARCHAR",
+        "null": "YES",
+        "key": null,
+        "default": null,
+        "extra": null
+      },
+      {
+        "column_name": "bar_complete",
+        "column_type": "BOOLEAN",
+        "null": "YES",
+        "key": null,
+        "default": null,
+        "extra": null
+      },
+      {
+        "column_name": "source_ingestion_id",
+        "column_type": "VARCHAR",
+        "null": "YES",
+        "key": null,
+        "default": null,
+        "extra": null
+      },
+      {
+        "column_name": "ingested_at",
+        "column_type": "VARCHAR",
+        "null": "YES",
+        "key": null,
+        "default": null,
+        "extra": null
+      },
+      {
+        "column_name": "timeframe",
+        "column_type": "VARCHAR",
+        "null": "YES",
+        "key": null,
+        "default": null,
+        "extra": null
+      },
+      {
+        "column_name": "symbol",
+        "column_type": "VARCHAR",
+        "null": "YES",
+        "key": null,
+        "default": null,
+        "extra": null
+      }
+    ],
+    "qqq_pit_membership_daily": [
+      {
+        "column_name": "date",
+        "column_type": "VARCHAR",
+        "null": "YES",
+        "key": null,
+        "default": null,
+        "extra": null
+      },
+      {
+        "column_name": "symbol",
+        "column_type": "VARCHAR",
+        "null": "YES",
+        "key": null,
+        "default": null,
+        "extra": null
+      },
+      {
+        "column_name": "is_member",
+        "column_type": "BOOLEAN",
+        "null": "YES",
+        "key": null,
+        "default": null,
+        "extra": null
+      },
+      {
+        "column_name": "source_ingestion_id",
+        "column_type": "VARCHAR",
+        "null": "YES",
+        "key": null,
+        "default": null,
+        "extra": null
+      },
+      {
+        "column_name": "ingested_at",
+        "column_type": "VARCHAR",
+        "null": "YES",
+        "key": null,
+        "default": null,
+        "extra": null
+      },
+      {
+        "column_name": "end",
+        "column_type": "DATE",
+        "null": "YES",
+        "key": null,
+        "default": null,
+        "extra": null
+      },
+      {
+        "column_name": "start",
+        "column_type": "DATE",
+        "null": "YES",
+        "key": null,
+        "default": null,
+        "extra": null
+      }
+    ]
+  },
+  "sample": [
+    {
+      "symbol": "AAPL",
+      "session_date": "2026-04-30",
+      "bar_start_ts": "2026-04-30 06:30:00-07:00",
+      "bar_end_ts": "2026-04-30 06:35:00-07:00",
+      "available_at_ts": "2026-04-30 06:35:00-07:00",
+      "open": "270.52",
+      "high": "270.96",
+      "low": "268.75",
+      "close": "269.035",
+      "volume": "1626938",
+      "feed": "sip",
+      "adjustment": "raw",
+      "bar_complete": "True"
+    },
+    {
+      "symbol": "AAPL",
+      "session_date": "2026-04-30",
+      "bar_start_ts": "2026-04-30 06:35:00-07:00",
+      "bar_end_ts": "2026-04-30 06:40:00-07:00",
+      "available_at_ts": "2026-04-30 06:40:00-07:00",
+      "open": "269.06",
+      "high": "269.265",
+      "low": "268.14",
+      "close": "268.83",
+      "volume": "989589",
+      "feed": "sip",
+      "adjustment": "raw",
+      "bar_complete": "True"
+    },
+    {
+      "symbol": "AAPL",
+      "session_date": "2026-04-30",
+      "bar_start_ts": "2026-04-30 06:40:00-07:00",
+      "bar_end_ts": "2026-04-30 06:45:00-07:00",
+      "available_at_ts": "2026-04-30 06:45:00-07:00",
+      "open": "268.825",
+      "high": "269.41",
+      "low": "268.62",
+      "close": "269.07",
+      "volume": "560125",
+      "feed": "sip",
+      "adjustment": "raw",
+      "bar_complete": "True"
+    },
+    {
+      "symbol": "AAPL",
+      "session_date": "2026-04-30",
+      "bar_start_ts": "2026-04-30 06:45:00-07:00",
+      "bar_end_ts": "2026-04-30 06:50:00-07:00",
+      "available_at_ts": "2026-04-30 06:50:00-07:00",
+      "open": "269.07",
+      "high": "270.06",
+      "low": "269.03",
+      "close": "269.4684",
+      "volume": "569998",
+      "feed": "sip",
+      "adjustment": "raw",
+      "bar_complete": "True"
+    },
+    {
+      "symbol": "AAPL",
+      "session_date": "2026-04-30",
+      "bar_start_ts": "2026-04-30 06:50:00-07:00",
+      "bar_end_ts": "2026-04-30 06:55:00-07:00",
+      "available_at_ts": "2026-04-30 06:55:00-07:00",
+      "open": "269.44",
+      "high": "270.71",
+      "low": "269.42",
+      "close": "270.588",
+      "volume": "602600",
+      "feed": "sip",
+      "adjustment": "raw",
+      "bar_complete": "True"
+    },
+    {
+      "symbol": "AAPL",
+      "session_date": "2026-04-30",
+      "bar_start_ts": "2026-04-30 06:55:00-07:00",
+      "bar_end_ts": "2026-04-30 07:00:00-07:00",
+      "available_at_ts": "2026-04-30 07:00:00-07:00",
+      "open": "270.55",
+      "high": "270.62",
+      "low": "269.8425",
+      "close": "270.6",
+      "volume": "677596",
+      "feed": "sip",
+      "adjustment": "raw",
+      "bar_complete": "True"
+    },
+    {
+      "symbol": "AAPL",
+      "session_date": "2026-04-30",
+      "bar_start_ts": "2026-04-30 07:00:00-07:00",
+      "bar_end_ts": "2026-04-30 07:05:00-07:00",
+      "available_at_ts": "2026-04-30 07:05:00-07:00",
+      "open": "270.6",
+      "high": "272.2",
+      "low": "270.5495",
+      "close": "271.63",
+      "volume": "1140868",
+      "feed": "sip",
+      "adjustment": "raw",
+      "bar_complete": "True"
+    },
+    {
+      "symbol": "AAPL",
+      "session_date": "2026-04-30",
+      "bar_start_ts": "2026-04-30 07:05:00-07:00",
+      "bar_end_ts": "2026-04-30 07:10:00-07:00",
+      "available_at_ts": "2026-04-30 07:10:00-07:00",
+      "open": "271.6",
+      "high": "271.8",
+      "low": "270.86",
+      "close": "271.43",
+      "volume": "738601",
+      "feed": "sip",
+      "adjustment": "raw",
+      "bar_complete": "True"
+    }
+  ],
+  "membership": {
+    "min_date": "2019-06-21 00:00:00",
+    "max_date": "2026-04-30 00:00:00",
+    "symbols": 164
+  },
+  "coverage": {
+    "min_date": "2024-01-02 00:00:00",
+    "max_date": "2026-04-30 00:00:00",
+    "row_count": 4553607,
+    "symbols": 121
+  },
+  "maximum_loaded_date": "2026-04-30 00:00:00",
+  "holdout_rows_loaded": 0
+}

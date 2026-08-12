@@ -1,0 +1,33 @@
+run_id: RUN-0007
+parent_run: RUN-0002
+status: completed_bar_stage
+question: Does the same residual-reversion mechanism work in a much tighter-spread, economically coherent cluster of S&P sector ETFs?
+reason: QQQ constituent residuals have a small bar edge but opening spreads are large. Sector ETFs share a market factor, trade tightly, and require no retrospective constituent selection.
+configuration:
+  universe: [XLB, XLC, XLE, XLF, XLI, XLK, XLP, XLRE, XLU, XLV, XLY]
+  evaluation_start: 2019-01-02
+  discovery_cutoff: 2026-04-30
+  formation_minutes: [5, 15, 30, 60]
+  holding_minutes: [30, 60, 120, "1550"]
+  breadth: [all_proportional, top1_each_side, top2_each_side]
+  protective_stop_percent: [0.5, 1.0, 2.0, null]
+  costs_bps_per_side: [-1, 0, 1, 2, 5, 10]
+  gross_exposure: 1.0
+  overnight_short: false
+expected_effect: Tighter spreads may convert a modest convergence edge into an executable daily portfolio; the longer history tests temporal stability.
+holdout_access: false
+result:
+  executed_signal_variants: 192
+  executed_cost_cells: 1152
+  best_at_2bps: f60_h60_top1_each_side_sNone
+  gross_return: 0.094592
+  net_return_at_1bp: -0.249808
+  net_return_at_2bps: -0.594208
+  max_drawdown_at_2bps: 0.604741
+  positive_months_at_zero_cost: 48
+  negative_months_at_zero_cost: 35
+  loaded_bar_rows: 1188316
+  expected_bar_rows: 1460228
+  maximum_loaded_date: 2026-04-30
+  holdout_rows_loaded: 0
+decision: Sector ETFs reduced spread expectations but the gross edge was only about 0.55 bp per active day and no variant survived 1 bp per side. Quote replay the best zero-cost frontier representative, then reject absent anomalously favorable execution.

@@ -1,0 +1,30 @@
+{
+  "status": "completed_bar_stage",
+  "planned_signal_variants": 48,
+  "executed_signal_variants": 48,
+  "executed_cost_cells": 288,
+  "best_2bps": {
+    "net_return": -0.06917091527694755,
+    "max_drawdown": 0.17682793451587586,
+    "positive_days": 228,
+    "negative_days": 267,
+    "positive_weeks": 42,
+    "negative_weeks": 63,
+    "positive_months": 10,
+    "negative_months": 14,
+    "worst_month": -0.05117318922558531,
+    "active_days": 495,
+    "variant": "f5_h1550_outer_half",
+    "formation_minutes": 5,
+    "holding": "1550",
+    "breadth": "outer_half",
+    "bps_per_side": 2,
+    "trade_legs": 9212,
+    "stops": 2306,
+    "gross_return": 0.1288290847230524
+  },
+  "positive_at_quote_gate": [],
+  "loaded_bar_rows": 712230,
+  "maximum_loaded_date": "2026-04-30",
+  "holdout_rows_loaded": 0
+}

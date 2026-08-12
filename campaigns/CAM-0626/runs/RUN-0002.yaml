@@ -1,0 +1,27 @@
+run_id: RUN-0002
+parent_run: RUN-0001
+status: completed_bar_stage
+question: Is the source residual-reversion edge concentrated in shorter dislocation and convergence windows or the largest residuals?
+configuration:
+  formation_minutes: [5, 15, 30, 60]
+  holding_minutes: [30, 60, 120, forced_1550]
+  residual_breadth: [all, outer_half, outer_quartile]
+  entry: next 5-minute bar after completed formation
+  stop: 2 percent adverse per leg
+  gross: 1.0 dollar neutral
+  costs_bps_per_side: [-1, 0, 1, 2, 5, 10]
+reason: Baseline is negative gross; intraday relative mispricings may converge quickly and weak residuals may add noise and costs.
+expected_effect: Earlier exits and stronger residuals improve gross alpha, win rate, and cost efficiency without reducing daily event count.
+result:
+  best_variant: f5_h1550_outer_half
+  gross_return_pct: 12.88
+  net_1bps_pct: 2.98
+  net_2bps_pct: -6.92
+  positive_days_2bps: 228
+  negative_days_2bps: 267
+  positive_months_2bps: 10
+  negative_months_2bps: 14
+  trade_legs: 9212
+  maximum_loaded_date: 2026-04-30
+  holdout_rows_loaded: 0
+decision: Thin execution-sensitive lead only; exact SIP replay required before further adaptation.

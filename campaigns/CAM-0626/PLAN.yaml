@@ -1,0 +1,53 @@
+campaign_id: CAM-0626
+title: Intraday cluster-neutral momentum-leader mean reversion
+status: frozen_pre_execution
+paper: ssrn-3247865
+paper_sections: ["3.9", "3.10"]
+source_pdf: C:/Users/decla/Downloads/ssrn-3247865.pdf
+created_at: 2026-08-11
+hypothesis: >-
+  Temporary intraday cross-sectional dislocations among highly correlated liquid
+  QQQ constituents mean-revert after the opening transition. Demeaned-return
+  residuals provide a source-faithful dollar-neutral signal whose breadth can
+  create daily, non-concentrated P&L after realistic execution.
+source_faithful_baseline:
+  universe: causal top-20 liquid QQQ members with highest trailing-60-session correlation to QQQ
+  formation: completed 09:30-10:00 ET log return
+  signal: demean formation returns; dollar weights proportional to negative demeaned returns
+  normalization: sum absolute weights equals 1.0; net dollars equal zero
+  entry: 10:05 ET next 5-minute bar open
+  exit: 15:50 ET bar open, forced flat before close
+  stop: 2 percent adverse per leg, conservatively triggered from completed 5-minute high-low path and filled at worse of stop or next bar open
+  short_safeguards: fully cash collateralized, no overnight position, emergency forced exit by 15:50
+  costs_bps_per_side: [-1, 0, 1, 2, 5, 10]
+scope:
+  readiness_start: 2024-01-02
+  evaluation_start: 2024-05-01
+  discovery_cutoff: 2026-04-30
+  sealed_holdout_start: 2026-05-01
+  holdout_access: false
+profile_targets:
+  minimum_activity: one portfolio event per trading day
+  desired: high positive-day/week/month fractions, low drawdown, broad trade contribution
+  maximum_gross_exposure: 1.0
+  broker_margin_buying_power: forbidden
+adaptation_inside_campaign:
+  - formation and entry timing neighborhoods
+  - proportional versus bounded or selective residual weights
+  - causal correlation and liquidity eligibility
+  - volatility normalization and market-state confirmation
+  - convergence exits, stops, targets, time exits, and delayed execution
+  - single versus multiple causal clusters under the same residual-reversion mechanism
+execution_gate: >-
+  Any candidate positive at -1, 0, 1, or 2 bps and economically material receives
+  exact SIP quote replay; passive orders require queue or trade-through evidence.
+hard_constraints:
+  - Every SQL query enforces date no later than 2026-04-30.
+  - No holdout rows may be loaded.
+  - Every short is stopped and liquidated before the regular-session close.
+  - Gross exposure never exceeds 1.0 and fixed capital is not compounded.
+  - Failed variants and attrition remain recorded.
+  - No promotion from development evidence alone.
+new_campaign_if:
+  - mechanism ceases to be cross-sectional residual mean reversion
+  - primary information changes from prices, liquidity, and causal clusters

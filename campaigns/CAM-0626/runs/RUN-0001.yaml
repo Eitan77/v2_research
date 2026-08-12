@@ -1,0 +1,18 @@
+run_id: RUN-0001
+parent_run: null
+status: completed_bar_stage
+question: Does the source-faithful intraday residual basket produce daily net alpha before exact quote replay?
+configuration_ref: ../PLAN.yaml
+reason: Establish the exact paper mechanism on an intraday causal cluster before any selection or overlays.
+expected_effect: Broad dollar-neutral daily convergence with limited index-direction dependence.
+command: python campaigns/CAM-0626/src/run0001_baseline.py
+result:
+  gross_zero_cost_return_pct: -9.33
+  net_2bps_return_pct: -29.13
+  positive_days_at_2bps: 202
+  negative_days_at_2bps: 299
+  trade_legs: 9249
+  protective_stops: 1717
+  maximum_loaded_date: 2026-04-30
+  holdout_rows_loaded: 0
+decision: Baseline fails gross and net. Diagnose stale signal and overlong holding via shorter paper-consistent convergence windows and residual selectivity.
