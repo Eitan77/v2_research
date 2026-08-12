@@ -1,0 +1,43 @@
+campaign_id: CAM-0627
+status: retired
+promotion_ready: false
+holdout_access: false
+maximum_loaded_date: 2026-04-30
+bar_screen:
+  signal_variants: 600
+  active_variants: 360
+  positive_at_2bps_per_side: 0
+  highest_gross_return: 0.010038
+  highest_gross_trades: 13340
+  highest_gross_average_trade_bps: 0.007524
+quote_sample:
+  months: 24
+  windows: 72
+  decision_grid_ms: 50
+  raw_quote_rows_total: 17441025
+  pairs:
+    SPY_IVV:
+      maximum_executable_edge_bps: 0.5197294
+      trades_at_1bp_threshold: 0
+      best_observed_return: 0.0000649411
+      best_observed_trades: 4
+    SPY_VOO:
+      maximum_executable_edge_bps: 0.4787744
+      positive_active_cells_at_observed_quotes: 0
+    IVV_VOO:
+      maximum_executable_edge_bps: 0.2731171
+      positive_active_cells_at_observed_quotes: 0
+    QQQ_QQQM:
+      maximum_executable_edge_bps: 0.7255362
+      positive_active_cells_at_observed_quotes: 0
+passive_audit:
+  raw_trade_rows: 931366
+  strict_round_lot_positive_cells: 0
+  favorable_share_unit_positive_cells: 0
+  maximum_strict_fills_per_cell: 36
+  most_active_strict_average_trade_bps: -0.39945
+conclusion: >-
+  The historical ETF-arbitrage mechanism is not an executable modern intraday
+  printer in these pairs. Observable deviations are smaller than the cost of
+  crossing two legs. Strict one-leg passive execution is sparse and adversely
+  selected, and a favorable quote-size sensitivity remains negative.

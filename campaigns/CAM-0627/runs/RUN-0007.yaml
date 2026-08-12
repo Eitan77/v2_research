@@ -1,0 +1,35 @@
+run_id: RUN-0007
+parent_run: RUN-0006
+status: completed
+question: Do lower-liquidity same-index pairs exhibit larger synchronized executable dislocations than SPY/IVV and survive marketable execution?
+reason: The one-minute screen covered all pairs, but sub-minute quote replay has so far covered only SPY/IVV; retiring the family without auditing the other pairs would leave an obvious mechanism-level omission.
+configuration:
+  pairs: [[SPY, VOO], [IVV, VOO], [QQQ, QQQM]]
+  sample: same first-session monthly dates and three five-minute windows used by RUN-0003
+  decision_grid_ms: 50
+  maximum_quote_age_ms: [100, 250]
+  rolling_anchor_seconds: [30, 60]
+  executable_entry_threshold_bps: [0, 0.25, 0.5, 1, 2, 5, 10]
+  maximum_hold_seconds: [1, 5, 30, 120]
+  adverse_pair_pnl_stop_bps: [5, 10, 20]
+  execution: simultaneous marketable ask/bid; non-overlapping; half capital per leg
+  additional_slippage_bps_per_side: [0, 1, 2]
+expected_effect: Lower liquidity may widen dislocations but must provide enough convergence to overcome its wider spreads.
+holdout_access: false
+result:
+  raw_sip_quotes: 10153481
+  executed_variants: 1008
+  positive_active_cells_at_observed_quotes: 0
+  maximum_executable_edge_bps:
+    SPY_VOO: 0.4787744
+    IVV_VOO: 0.2731171
+    QQQ_QQQM: 0.7255362
+  best_active_observed_return: -0.0000155516
+  best_active_observed_pair: IVV_VOO
+  maximum_trades_by_pair:
+    SPY_VOO: 565
+    IVV_VOO: 96
+    QQQ_QQQM: 927
+  maximum_loaded_date: 2026-04-01
+  holdout_rows_loaded: 0
+decision: Reject the remaining marketable same-index pairs. Wider dislocations do not exceed the two-leg spread and no active cell is profitable before extra slippage.

@@ -1,6 +1,6 @@
 campaign_id: CAM-0627
 title: Intraday same-index ETF relative-value arbitrage
-status: frozen_pre_execution
+status: retired_after_quote_audit
 created_at: 2026-08-12
 sources:
   - ssrn_3247865_section_6_4

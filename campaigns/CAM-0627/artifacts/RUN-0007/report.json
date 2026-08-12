@@ -1,0 +1,81 @@
+{
+  "status": "completed",
+  "planned_variants": 1008,
+  "executed_variants": 1008,
+  "workers": 16,
+  "edge_summary": [
+    {
+      "pair": "IVV_VOO",
+      "max_executable_edge_bps": 0.2731171495122531,
+      "valid_snapshots": 313311
+    },
+    {
+      "pair": "QQQ_QQQM",
+      "max_executable_edge_bps": 0.7255361640168267,
+      "valid_snapshots": 355683
+    },
+    {
+      "pair": "SPY_VOO",
+      "max_executable_edge_bps": 0.4787743933695743,
+      "valid_snapshots": 332540
+    }
+  ],
+  "best_by_cost": {
+    "0": {
+      "trades": 0,
+      "net_return": 0.0,
+      "average_net_trade_bps": 0.0,
+      "win_rate": 0.0,
+      "positive_windows": 0,
+      "negative_windows": 0,
+      "positive_months": 0,
+      "negative_months": 0,
+      "worst_window": 0.0,
+      "pair": "QQQ_QQQM",
+      "age_ms": 250,
+      "anchor_seconds": 60,
+      "threshold_bps": 10.0,
+      "hold_seconds": 30,
+      "stop_bps": 20,
+      "additional_bps_per_side": 0
+    },
+    "1": {
+      "trades": 0,
+      "net_return": 0.0,
+      "average_net_trade_bps": 0.0,
+      "win_rate": 0.0,
+      "positive_windows": 0,
+      "negative_windows": 0,
+      "positive_months": 0,
+      "negative_months": 0,
+      "worst_window": 0.0,
+      "pair": "QQQ_QQQM",
+      "age_ms": 250,
+      "anchor_seconds": 60,
+      "threshold_bps": 10.0,
+      "hold_seconds": 30,
+      "stop_bps": 20,
+      "additional_bps_per_side": 1
+    },
+    "2": {
+      "trades": 0,
+      "net_return": 0.0,
+      "average_net_trade_bps": 0.0,
+      "win_rate": 0.0,
+      "positive_windows": 0,
+      "negative_windows": 0,
+      "positive_months": 0,
+      "negative_months": 0,
+      "worst_window": 0.0,
+      "pair": "QQQ_QQQM",
+      "age_ms": 250,
+      "anchor_seconds": 60,
+      "threshold_bps": 10.0,
+      "hold_seconds": 30,
+      "stop_bps": 20,
+      "additional_bps_per_side": 2
+    }
+  },
+  "maximum_loaded_date": "2026-04-01",
+  "holdout_rows_loaded": 0
+}
