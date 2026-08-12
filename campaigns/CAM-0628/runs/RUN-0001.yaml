@@ -1,0 +1,34 @@
+run_id: RUN-0001
+parent_run: null
+status: completed
+question: Does causal inverse-volatility sizing improve daily open-to-close ETF drift across a broad prespecified neighborhood after daily round-trip costs?
+configuration:
+  symbols: [SPY, QQQ, DIA, IWM, MDY, RSP, SMH, XLK, XLF, XLE, XLV, XLY, XLP, XLI, XLU, XLB, XLC, XLRE, TQQQ, QLD, SSO, UPRO, SOXL]
+  trailing_vol_sessions: [10, 20, 63]
+  annual_target_vol_percent: [8, 12, 15, 20, 30]
+  trend_filter: [none, sma50, sma200]
+  costs_bps_per_side: [-1, 0, 1, 2, 5, 10]
+  entry_exit: next_open_to_same_close
+  maximum_gross: 1.0
+expected_effect: Lower exposure on volatile days should reduce drawdown and stabilize the positive regular-session drift, while leveraged ETFs may provide a no-margin high-beta expression.
+holdout_access: false
+result:
+  planned_signal_variants: 1035
+  executed_signal_variants: 810
+  missing_symbols: [MDY, RSP, QLD, SSO, UPRO]
+  best_full_2bps:
+    variant: TQQQ_vol20_target30_none
+    net_return: 0.38518598
+    recent12_return: -0.06120183
+    max_drawdown: 0.31122921
+    block_returns: [0.33377526, 0.24426331, -0.19285259]
+  best_recent12_2bps:
+    variant: SOXL_vol20_target30_none
+    net_return: 0.35905592
+    recent12_return: 0.28954640
+    max_drawdown: 0.39593852
+    block_returns: [-0.04818774, 0.43134744, -0.02410379]
+  variants_positive_in_all_three_blocks_at_2bps: 0
+  maximum_loaded_date: 2026-04-30
+  holdout_rows_loaded: 0
+decision: No single-ETF candidate is stable. Test ex-ante diversified risk-budget sleeves before judging the mechanism.

@@ -1,0 +1,18 @@
+run_id: RUN-0003
+parent_run: RUN-0002
+status: frozen
+question: Do the three distinct single-ETF leads survive actual full-history SIP spreads and intraday clocks?
+reason: XLK is positive in all chronology blocks at observed-bar and 1bp assumptions; TQQQ leads full-history at 2bps; SOXL leads recent12 at 2bps.
+configuration:
+  candidates:
+    XLK_stable: {symbol: XLK, vol_window: 10, target_vol: 0.30, trend: none}
+    TQQQ_full: {symbol: TQQQ, vol_window: 20, target_vol: 0.30, trend: none}
+    SOXL_recent: {symbol: SOXL, vol_window: 20, target_vol: 0.30, trend: none}
+  entry_clocks_et: ['09:30', '09:40']
+  forced_exit_et: '15:50'
+  quote_feed: SIP
+  fill: first valid marketable quote at or after target, maximum 60 seconds; buy ask and sell bid
+  package_policy: day stays cash if either entry or exit quote is unavailable
+  additional_slippage_bps_per_side: [-1, 0, 1, 2, 5, 10]
+expected_effect: Separate true regular-session drift from opening/closing-bar and spread assumptions.
+holdout_access: false

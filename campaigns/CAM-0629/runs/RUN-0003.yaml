@@ -1,0 +1,15 @@
+run_id: RUN-0003
+parent_run: RUN-0002
+status: frozen
+question: Do the recent safest-company intraday printer and its crash/bounce overlay survive exact marketable SIP quotes over their full available history?
+configuration:
+  variants:
+    parent: sp500__chs_safe__top5__profitable__raw
+    overlay: parent with 0.25 exposure after prior SPY five-session loss below -3 percent when current SPY opening gap is positive
+  entry_clocks_et: ['09:30', '09:40']
+  forced_exit_et: '15:50'
+  fill: first valid SIP marketable quote at or after target within 60 seconds; buy ask, sell bid
+  package_policy: day stays cash unless every intended stock entry and exit is available
+  additional_slippage_bps_per_side: [-1, 0, 1, 2, 5, 10]
+expected_effect: Determine whether recent +48% to +51% bar evidence is executable or an open/close and spread artifact.
+holdout_access: false

@@ -1,0 +1,39 @@
+campaign_id: CAM-0629
+title: Intraday safest-company drift with distress volatility control
+status: frozen_pre_execution
+created_at: 2026-08-12
+sources: [ssrn-3247865_section_15_3, ssrn-3247865_section_15_3_1]
+hypothesis: >-
+  Point-in-time safest-company ranks identify stocks with positive regular-session
+  drift, and the paper's inverse-volatility risk control reduces the strategy's
+  crash-regime losses enough to support a daily, long-only, flat-at-close portfolio.
+source_principles:
+  selection: buy companies with the lowest modeled bankruptcy probability
+  cadence: source ranks rebalance monthly or annually
+  risk_control: scale by target volatility divided by trailing realized strategy volatility, capped at 1.0
+intraday_adaptation:
+  rank_time: latest point-in-time fundamentals and market data at monthly decision close
+  entry: next regular-session open
+  exit: same regular-session close
+  short_leg: omitted; no overnight or direct short exposure
+  cash_reset: daily
+starting_grid:
+  universes: [point_in_time_qqq, point_in_time_sp500]
+  breadth: [5, 10, 20]
+  eligibility: [liquid, profitable, profitable_and_sma200]
+  weighting: inverse_trailing_63_session_volatility
+  risk_control: [none, target_8_10_12_15_percent_with_20_63_126_session_forecast]
+  costs_bps_per_side: [-1, 0, 1, 2, 5, 10]
+constraints:
+  - Fixed base 1.0, additive PnL, no compounding or broker margin.
+  - Gross exposure at most 1.0; long-only; daily forced flat.
+  - Point-in-time membership and filing availability preserved.
+  - Every loader/query ends no later than 2026-04-30 with zero holdout rows.
+  - Full daily round-trip cost charged on gross exposure.
+  - Economically material low-cost survivors require exact SIP quote replay.
+adaptation_inside_campaign:
+  - source breadth, eligibility, and volatility-control neighborhoods
+  - broad causal market-state protection tied to the documented beta/crash mechanism
+  - entry and preclose exit clocks
+new_campaign_if: The primary signal ceases to be point-in-time bankruptcy safety rank.
+holdout_access: false

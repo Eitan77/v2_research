@@ -1,0 +1,59 @@
+{
+  "status": "completed",
+  "planned_signal_variants": 8,
+  "executed_signal_variants": 8,
+  "executed_cost_cells": 48,
+  "best_2bps": {
+    "net_return": 0.16463339563626955,
+    "recent12_return": 0.5062341884820306,
+    "max_drawdown": 0.5458143297639607,
+    "active_days": 982,
+    "positive_days": 506,
+    "negative_days": 476,
+    "positive_weeks": 113,
+    "negative_weeks": 92,
+    "positive_months": 24,
+    "negative_months": 23,
+    "worst_month": -0.1986631106354387,
+    "top5_positive_day_share": 0.06053097934217346,
+    "block_returns": [
+      -0.12782308044809013,
+      -0.24080463470135133,
+      0.5332611107857111
+    ],
+    "average_weight": 0.7591633466135458,
+    "state": "rebound_after_5d_loss",
+    "bad_multiplier": 0.25,
+    "cost_bps_per_side": 2,
+    "bad_days": 57,
+    "minimum_block": -0.24080463470135133
+  },
+  "best_minimum_block_2bps": {
+    "net_return": 0.16463339563626955,
+    "recent12_return": 0.5062341884820306,
+    "max_drawdown": 0.5458143297639607,
+    "active_days": 982,
+    "positive_days": 506,
+    "negative_days": 476,
+    "positive_weeks": 113,
+    "negative_weeks": 92,
+    "positive_months": 24,
+    "negative_months": 23,
+    "worst_month": -0.1986631106354387,
+    "top5_positive_day_share": 0.06053097934217346,
+    "block_returns": [
+      -0.12782308044809013,
+      -0.24080463470135133,
+      0.5332611107857111
+    ],
+    "average_weight": 0.7591633466135458,
+    "state": "rebound_after_5d_loss",
+    "bad_multiplier": 0.25,
+    "cost_bps_per_side": 2,
+    "bad_days": 57,
+    "minimum_block": -0.24080463470135133
+  },
+  "positive_all_blocks_at_2bps": 0,
+  "maximum_loaded_date": "2026-04-30",
+  "holdout_rows_loaded": 0
+}

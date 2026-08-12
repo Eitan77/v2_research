@@ -1,0 +1,29 @@
+run_id: RUN-0002
+parent_run: RUN-0001
+status: completed
+question: Can the paper's documented downturn/bounce beta failure be mitigated with a simple causal market-state exposure reduction while retaining a position every eligible day?
+reason: RUN-0001's recent profits are strong but the first two chronology blocks and full-history drawdown are unacceptable; generic sleeve volatility targeting over-delevered the edge.
+configuration:
+  parent_variant: sp500__chs_safe__top5__profitable__raw
+  bad_state_definitions:
+    below_spy_sma200: prior SPY close below prior 200-session mean
+    spy_vol20_above_vol126: prior 20-session realized volatility above prior 126-session realized volatility
+    positive_gap_over_1pct: current SPY opening gap above 1 percent
+    rebound_after_5d_loss: prior five-session SPY return below -3 percent and current opening gap positive
+  bad_state_exposure_multipliers: [0.25, 0.50]
+  good_state_multiplier: 1.0
+  entry_exit: same open-to-close cash reset as parent
+  costs_bps_per_side: [-1, 0, 1, 2, 5, 10]
+expected_effect: Reduce crash/bounce losses without a complex rule stack or abandoning daily activity.
+holdout_access: false
+result:
+  executed_signal_variants: 8
+  best_2bps:
+    state: rebound_after_5d_loss
+    bad_multiplier: 0.25
+    net_return: 0.16463340
+    recent12_return: 0.50623419
+    maximum_drawdown: 0.54581433
+    block_returns: [-0.12782308, -0.24080463, 0.53326111]
+    positive_all_blocks: false
+decision: The overlay is directionally useful but not a structural repair. Quote replay it beside the unmodified parent because both are economically material at 2bps.

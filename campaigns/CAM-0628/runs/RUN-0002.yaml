@@ -1,0 +1,25 @@
+run_id: RUN-0002
+parent_run: RUN-0001
+status: completed
+question: Does ex-ante diversification across economically coherent ETF sleeves stabilize intraday volatility-budgeted drift?
+reason: RUN-0001 showed regime-dependent single-ETF profits and no variant positive in all three chronological blocks.
+configuration:
+  sleeves:
+    broad_indexes: [SPY, QQQ, DIA, IWM]
+    sectors: [XLB, XLC, XLE, XLF, XLI, XLK, XLP, XLRE, XLU, XLV, XLY]
+    technology: [QQQ, SMH, XLK]
+    diversified_growth_defense: [SPY, QQQ, IWM, XLF, XLE, XLV, XLP]
+  allocation: equal target-risk budget per constituent; total gross capped at 1.0; unused capital cash
+  trailing_vol_sessions: [10, 20, 63]
+  annual_target_vol_percent: [8, 12, 15, 20, 30]
+  trend_filter: [none, per_symbol_sma200]
+  costs_bps_per_side: [-1, 0, 1, 2, 5, 10]
+  entry_exit: next_open_to_same_close
+expected_effect: Diversification should lower drawdown and remove reliance on TQQQ or SOXL while preserving broad regular-session drift.
+holdout_access: false
+result:
+  executed_signal_variants: 120
+  best_2bps_return: -0.04427555
+  best_2bps_sleeve: technology_vol10_target30_none
+  positive_all_blocks_at_2bps: 0
+decision: Diversification dilutes the few profitable single-ETF paths and remains negative. Proceed only with exact quote gates for the three distinct single-ETF leads.

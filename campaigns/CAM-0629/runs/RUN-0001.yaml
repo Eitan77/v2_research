@@ -1,0 +1,41 @@
+run_id: RUN-0001
+parent_run: null
+status: completed
+question: Does the source-prescribed volatility control make daily cash-reset safest-company portfolios profitable and chronologically stable after daily costs?
+configuration:
+  universes: [qqq, sp500]
+  top_k: [5, 10, 20]
+  gates: [liquid, profitable, profitable_trend]
+  base_weighting: inverse_vol63
+  volatility_controls:
+    unscaled: true
+    forecast_windows: [20, 63, 126]
+    target_volatility: [0.08, 0.10, 0.12, 0.15]
+    leverage_cap: 1.0
+  holding: open_to_close_daily_cash_reset
+  execution_lag_sessions: 1
+  costs_bps_per_side: [-1, 0, 1, 2, 5, 10]
+expected_effect: The risk control should reduce large downturn/bounce losses while preserving recent intraday safe-company drift.
+holdout_access: false
+result:
+  base_variants: 18
+  signal_variants: 234
+  executed_cost_cells: 1404
+  best_2bps:
+    variant: sp500__chs_safe__top5__profitable__raw
+    control: unscaled
+    net_return: 0.09057731
+    recent12_return: 0.48044926
+    recent12_positive_months: 8
+    recent12_positive_week_fraction: 0.71698
+    maximum_drawdown: 0.58183752
+    block_returns: [-0.11422087, -0.25456585, 0.45936403]
+    best_symbol: PLTR
+    best_symbol_pnl: 0.12665689
+    leave_best_symbol_out_return: -0.03607958
+    top5_day_positive_share: 0.05844
+  source_volatility_control_result: all tested controls reduced drawdown but made full-history 2bp return negative
+  positive_all_blocks_at_2bps: 0
+  maximum_loaded_date: 2026-04-30
+  holdout_rows_loaded: 0
+decision: Recent printer lead is trade-distributed but symbol- and regime-concentrated. Diagnose the paper's downturn/bounce mechanism with broad causal market-state scaling before quote replay.

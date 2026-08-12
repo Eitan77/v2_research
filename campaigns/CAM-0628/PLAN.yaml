@@ -1,0 +1,39 @@
+campaign_id: CAM-0628
+title: Intraday volatility-budgeted index drift
+status: frozen_pre_execution
+created_at: 2026-08-12
+source: ssrn-3247865_section_6_5
+hypothesis: >-
+  The positive regular-session drift of liquid index and sector ETFs is more
+  consistent when daily exposure is scaled inversely to a causal volatility
+  forecast, leaving residual capital in cash and closing before the bell.
+source_principle:
+  risky_weight: target_volatility / forecast_volatility
+  cap: 1.0 because broker margin is forbidden
+  source_cadence: periodic or threshold rebalancing against a risk-free asset
+intraday_adaptation:
+  signal_time: prior regular-session close
+  entry: next regular-session open
+  exit: same regular-session close; quote gate will use a preclose marketable exit
+  cash_weight: 1 minus risky weight; no intraday cash yield assumed
+  direct_short: false
+starting_grid:
+  symbols: [SPY, QQQ, DIA, IWM, MDY, RSP, SMH, XLK, XLF, XLE, XLV, XLY, XLP, XLI, XLU, XLB, XLC, XLRE, TQQQ, QLD, SSO, UPRO, SOXL]
+  trailing_vol_sessions: [10, 20, 63]
+  annual_target_vol_percent: [8, 12, 15, 20, 30]
+  trend_filter: [none, prior_close_above_sma50, prior_close_above_sma200]
+  costs_bps_per_side: [-1, 0, 1, 2, 5, 10]
+constraints:
+  - Fixed base 1.0 and additive PnL; no compounding.
+  - Gross exposure no greater than 1.0; no broker margin.
+  - Every position is long-only and flat by the regular-session close.
+  - Every loader enforces date no later than 2026-04-30 and loads zero holdout rows.
+  - Split-adjusted canonical SIP daily bars; completed information only.
+  - Any economically material low-cost survivor receives marketable SIP quote replay.
+adaptation_inside_campaign:
+  - causal realized-volatility estimators and broad target levels
+  - simple trend defense and exposure-change thresholds
+  - liquid index, sector, and leveraged ETF expressions
+  - entry and preclose exit clocks
+new_campaign_if: The signal ceases to be volatility-budgeted intraday risky-asset exposure.
+holdout_access: false
