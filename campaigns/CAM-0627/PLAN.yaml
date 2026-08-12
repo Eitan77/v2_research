@@ -1,0 +1,39 @@
+campaign_id: CAM-0627
+title: Intraday same-index ETF relative-value arbitrage
+status: frozen_pre_execution
+created_at: 2026-08-12
+sources:
+  - ssrn_3247865_section_6_4
+  - Marshall_Nguyen_Visaltanachoti_2013_ETF_Arbitrage_Intraday_Evidence
+hypothesis: Temporary, executable price-ratio deviations between highly liquid ETFs tracking the same index converge quickly enough to support frequent dollar-neutral intraday trades after observed spreads.
+source_faithful_core:
+  pairs: [[SPY, IVV], [SPY, VOO], [IVV, VOO], [QQQ, QQQM]]
+  signal: simultaneous relative rich-cheap deviation; buy cheap ETF and short rich ETF
+  exit: liquidate on convergence
+necessary_modern_normalization: Compare log price ratios relative to a causal anchor because ETF share prices and split histories differ; raw cross-price comparison is not economically meaningful.
+starting_screen:
+  data: raw SIP 1-minute bars
+  evaluation_start: 2021-01-04
+  discovery_cutoff: 2026-04-30
+  anchors: [prior_close_ratio, opening_ratio]
+  entry_threshold_bps: [2, 5, 10, 20, 40]
+  maximum_holding_minutes: [1, 2, 5, 15, 30]
+  adverse_spread_stop_bps: [20, 50, 100]
+  entry: next minute open after completed signal minute
+  exit: next minute open after convergence, stop, maximum hold, or 15:50 forced close
+  costs_bps_per_side: [-1, 0, 1, 2, 5, 10]
+constraints:
+  - Fixed base 1.0, additive PnL, no compounding.
+  - Gross exposure no greater than 1.0; half capital long and half short.
+  - No overlapping positions within a pair.
+  - Every short has a frozen protective spread stop and is flat before close.
+  - Every query ends no later than 2026-04-30 with zero holdout rows.
+  - Any positive -1, 0, 1, or 2 bp candidate receives synchronized SIP quote replay.
+  - Quote opportunities require both legs executable at the same causal timestamp; passive claims require queue and trade evidence.
+adaptation_inside_campaign:
+  - pair choice and causal hedge-ratio anchor
+  - divergence threshold, convergence definition, hold, stop, cooldown
+  - marketable versus strict passive entry
+  - liquidity and spread state observable at decision time
+new_campaign_if: The mechanism ceases to be convergence of two ETFs tracking the same index.
+holdout_access: false

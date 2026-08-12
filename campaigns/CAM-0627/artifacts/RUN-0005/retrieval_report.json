@@ -1,0 +1,10 @@
+{
+  "status": "completed",
+  "planned_windows": 72,
+  "executed_windows": 72,
+  "failed_windows": 0,
+  "trade_rows": 931366,
+  "pages": 128,
+  "maximum_date": "2026-04-01",
+  "holdout_rows_loaded": 0
+}

@@ -1,0 +1,35 @@
+run_id: RUN-0005
+parent_run: RUN-0004
+status: completed
+question: Can strict queue-backed liquidity provision on one leg convert frequent sub-basis-point convergence into executable profit without assuming simultaneous passive fills?
+reason: RUN-0004 is slightly positive only at observed marketable quotes on four rare trades, while favorable one-bp fills manufacture a large smooth result. A one-passive-leg then immediate marketable hedge is the realistic way to test whether part of that spread can actually be captured.
+configuration:
+  pair: [SPY, IVV]
+  sample: identical 72 frozen quote windows from RUN-0003
+  decision_grid_ms: 50
+  maximum_quote_age_ms: [100, 250]
+  rolling_anchor_seconds: [30, 60]
+  executable_entry_threshold_bps: [0, 0.05, 0.1]
+  passive_leg: [rich_sell_at_ask, cheap_buy_at_bid]
+  passive_lifetime_ms: [100, 500]
+  maximum_hold_seconds: [5, 30]
+  adverse_pair_pnl_stop_bps: 10
+  portfolio_notional_usd: 10000
+  passive_leg_notional_usd: 5000
+  queue_rule: initial displayed size must be consumed by same-price SIP prints; quote-size cancellations earn no credit; level loss preserves queue conservatively
+  hedge: immediate marketable opposite leg after confirmed passive fill
+  exit: simultaneous marketable convergence, stop, timeout, or window end
+  additional_slippage_bps_per_side: [0, 1, 2]
+expected_effect: Determine whether real displayed liquidity and prints support the favorable-fill economics seen in RUN-0004.
+holdout_access: false
+result:
+  raw_sip_trades: 931366
+  executed_variants: 96
+  maximum_full_fills_in_any_cell: 36
+  positive_observed_quote_cells: 0
+  best_observed_quote_return: -0.0001216054
+  most_active_observed_average_trade_bps: -0.39945
+  most_active_observed_win_rate: 0.02778
+  maximum_loaded_date: 2026-04-01
+  holdout_rows_loaded: 0
+decision: Strict one-passive-leg execution is sparse and adversely selected; run a favorable quote-size-unit sensitivity before rejection.

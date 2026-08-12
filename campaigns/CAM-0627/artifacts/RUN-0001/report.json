@@ -1,0 +1,54 @@
+{
+  "status": "completed_bar_stage",
+  "planned_signal_variants": 600,
+  "executed_signal_variants": 600,
+  "executed_cost_cells": 3600,
+  "best_2bps": {
+    "net_return": 0.0,
+    "recent_12m_return": 0.0,
+    "max_drawdown": -0.0,
+    "positive_days": 0,
+    "negative_days": 0,
+    "active_days": 0,
+    "positive_weeks": 0,
+    "negative_weeks": 0,
+    "positive_months": 0,
+    "negative_months": 0,
+    "worst_month": 0.0,
+    "trades": 0,
+    "trade_win_rate": 0.0,
+    "average_net_trade": 0.0,
+    "variant": "SPY_IVV_opening_t20_h1_s20",
+    "pair": "SPY_IVV",
+    "anchor": "opening",
+    "threshold_bps": 20,
+    "hold_minutes": 1,
+    "stop_bps": 20,
+    "cost_bps_per_side": 2,
+    "gross_return": 0.0,
+    "stop_count": 0
+  },
+  "positive_quote_gate_count": 498,
+  "loaded_rows": 2081225,
+  "minimum_loaded_date": "2021-01-04",
+  "maximum_loaded_date": "2026-04-30",
+  "holdout_rows_loaded": 0,
+  "pairs": [
+    [
+      "SPY",
+      "IVV"
+    ],
+    [
+      "SPY",
+      "VOO"
+    ],
+    [
+      "IVV",
+      "VOO"
+    ],
+    [
+      "QQQ",
+      "QQQM"
+    ]
+  ]
+}

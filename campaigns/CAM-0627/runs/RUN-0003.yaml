@@ -1,0 +1,28 @@
+run_id: RUN-0003
+parent_run: RUN-0002
+status: completed
+question: In bounded synchronized quote windows spread across the discovery period, do executable SPY/IVV dislocations occur and converge net of spreads?
+configuration:
+  pair: [SPY, IVV]
+  sampling_rule: First regular trading session of each calendar month from 2024-05 through 2026-04 with complete one-minute bars; this rule is fixed before quote access.
+  windows_et: [09:35-09:40, 11:55-12:00, 15:40-15:45]
+  expected_windows: 72
+  quote_feed: SIP
+  maximum_quote_age_milliseconds: [50, 100, 250]
+  rolling_anchor_seconds: [30, 60, 300]
+  entry_threshold_bps: [1, 2, 3, 5, 10]
+  maximum_hold_seconds: [1, 5, 30, 120]
+  adverse_spread_stop_bps: [5, 10, 20]
+  execution: simultaneous marketable ask/bid; non-overlapping; half capital per leg
+  additional_slippage_bps_per_side: [0, 1, 2]
+expected_effect: Establish whether current executable microstructure contains the source mechanism at all, while sampling opening, midday, and close across 24 months.
+holdout_access: false
+result:
+  raw_sip_quotes: 7287544
+  synchronized_50ms_rows: 432000
+  executed_variants: 540
+  maximum_executable_edge_bps: 0.52
+  trades_at_minimum_1bp_threshold: 0
+  maximum_loaded_date: 2026-04-01
+  holdout_rows_loaded: 0
+decision: No prespecified executable opportunity occurred. Test sub-basis-point thresholds to measure the actual break-even boundary.

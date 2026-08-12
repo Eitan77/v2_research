@@ -1,0 +1,27 @@
+run_id: RUN-0004
+parent_run: RUN-0003
+status: completed
+question: Do observed sub-basis-point executable deviations converge profitably enough to overcome their marketable round trip?
+reason: RUN-0003 found zero opportunities at the prespecified minimum 1 bp threshold; the maximum observed executable deviation was only 0.52 bp.
+configuration:
+  pair: [SPY, IVV]
+  sample: identical 72 frozen quote windows and 50 millisecond synchronized snapshots from RUN-0003
+  maximum_quote_age_milliseconds: [50, 100, 250]
+  rolling_anchor_seconds: [30, 60]
+  entry_threshold_bps: [0, 0.05, 0.1, 0.25, 0.5]
+  maximum_hold_seconds: [1, 5, 30, 120]
+  adverse_pair_pnl_stop_bps: [5, 10, 20]
+  execution: simultaneous marketable ask/bid; non-overlapping; half capital per leg
+  additional_slippage_bps_per_side: [-1, 0, 1, 2]
+expected_effect: Establish the empirical break-even threshold and whether any source-style convergence remains after observed spreads.
+holdout_access: false
+result:
+  executed_variants: 360
+  best_observed_quote_return: 0.0000649411
+  best_observed_quote_trades: 4
+  best_observed_quote_average_trade_bps: 0.16235
+  positive_cells_at_1bp_extra_per_side: 0
+  favorable_minus_1bp_return: 0.09140665
+  favorable_minus_1bp_trades: 505
+  favorable_minus_1bp_win_rate: 1.0
+decision: The apparent smooth edge is manufactured by favorable fills. Test strict queue evidence rather than assume price improvement.

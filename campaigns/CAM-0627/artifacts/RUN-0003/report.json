@@ -1,0 +1,63 @@
+{
+  "status": "completed",
+  "planned_variants": 540,
+  "executed_variants": 540,
+  "decision_grid_ms": 50,
+  "quote_windows": 72,
+  "synchronized_rows": 432000,
+  "best_by_cost": {
+    "0": {
+      "trades": 0.0,
+      "net_return": 0.0,
+      "average_net_trade_bps": 0.0,
+      "win_rate": 0.0,
+      "positive_windows": 0.0,
+      "negative_windows": 0.0,
+      "positive_months": 0.0,
+      "negative_months": 0.0,
+      "worst_window": 0.0,
+      "age_ms": 50.0,
+      "anchor_seconds": 30.0,
+      "threshold_bps": 1.0,
+      "hold_seconds": 1.0,
+      "stop_bps": 5.0,
+      "additional_bps_per_side": 0.0
+    },
+    "1": {
+      "trades": 0.0,
+      "net_return": 0.0,
+      "average_net_trade_bps": 0.0,
+      "win_rate": 0.0,
+      "positive_windows": 0.0,
+      "negative_windows": 0.0,
+      "positive_months": 0.0,
+      "negative_months": 0.0,
+      "worst_window": 0.0,
+      "age_ms": 50.0,
+      "anchor_seconds": 30.0,
+      "threshold_bps": 1.0,
+      "hold_seconds": 1.0,
+      "stop_bps": 5.0,
+      "additional_bps_per_side": 1.0
+    },
+    "2": {
+      "trades": 0.0,
+      "net_return": 0.0,
+      "average_net_trade_bps": 0.0,
+      "win_rate": 0.0,
+      "positive_windows": 0.0,
+      "negative_windows": 0.0,
+      "positive_months": 0.0,
+      "negative_months": 0.0,
+      "worst_window": 0.0,
+      "age_ms": 50.0,
+      "anchor_seconds": 30.0,
+      "threshold_bps": 1.0,
+      "hold_seconds": 1.0,
+      "stop_bps": 5.0,
+      "additional_bps_per_side": 2.0
+    }
+  },
+  "maximum_loaded_date": "2026-04-01",
+  "holdout_rows_loaded": 0
+}

@@ -1,0 +1,16 @@
+run_id: RUN-0006
+parent_run: RUN-0005
+status: completed
+question: Does the passive result change under the deliberately favorable interpretation that quote-size fields are shares rather than SIP round lots?
+change: Replay the identical 96 cells with quote size multiplier 1 instead of 100; all signal, timing, queue, hedge, exit, and cost rules remain unchanged.
+reason: Bound schema interpretation risk before retiring passive execution.
+expected_effect: Higher fill rate; profitability would require primary schema resolution, while continued losses reject the mechanism under either interpretation.
+holdout_access: false
+result:
+  quote_size_multiplier: 1
+  executed_variants: 96
+  best_observed_quote_return: -0.0001087606
+  best_observed_quote_trades: 9
+  best_observed_quote_average_trade_bps: -0.120845
+  positive_observed_quote_cells: 0
+decision: Rejected under the favorable size interpretation too. Quote-size units do not drive the passive conclusion.

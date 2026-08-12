@@ -1,0 +1,26 @@
+run_id: RUN-0002
+parent_run: RUN-0001
+status: blocked_before_execution
+question: Do synchronized sub-minute SIP quotes contain executable same-index ETF dislocations that one-minute bars cannot represent?
+configuration:
+  pair: [SPY, IVV]
+  sample_months: [2022-06, 2024-06, 2026-03]
+  rationale: Prespecified stressed, middle, and recent discovery-era months spanning regimes; no holdout access.
+  session_window: 09:35-15:50 ET
+  quote_feed: SIP
+  synchronization: latest valid quote for both legs with maximum age 250 milliseconds
+  normalized_ratio_anchor: rolling 30-minute median executable-mid log ratio
+  entry_threshold_bps: [1, 2, 3, 5, 10]
+  execution: simultaneous marketable long ask and short bid
+  exit: simultaneous marketable convergence, maximum holds [1, 5, 30, 120] seconds, adverse spread stops [5, 10, 20] bps, or forced sample-window close
+  cooldown: wait until normalized divergence is below half the entry threshold
+  gross_exposure: 1.0
+  additional_slippage_bps_per_side: [0, 1, 2]
+expected_effect: Directly test the paper's ephemeral executable inequality while bounding API and compute cost.
+holdout_access: false
+feasibility_result:
+  probe: SPY_IVV_2026-03-02_09:35_ET_one_minute
+  sip_quote_rows: 66022
+  pages: 7
+  implication: Three complete sample months would require billions of quote rows and is not an efficient first-stage diagnostic.
+decision: Do not execute this oversized sample. Preserve it and freeze a bounded sample in a new run; do not reinterpret the scope post hoc.

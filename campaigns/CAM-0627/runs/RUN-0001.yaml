@@ -1,0 +1,29 @@
+run_id: RUN-0001
+parent_run: null
+status: completed_bar_stage
+question: Does normalized same-index ETF divergence exhibit frequent net convergence in one-minute bars across a broad prespecified neighborhood?
+configuration:
+  pairs: [[SPY, IVV], [SPY, VOO], [IVV, VOO], [QQQ, QQQM]]
+  anchors: [prior_close_ratio, opening_ratio]
+  threshold_bps: [2, 5, 10, 20, 40]
+  maximum_holding_minutes: [1, 2, 5, 15, 30]
+  adverse_spread_stop_bps: [20, 50, 100]
+  costs_bps_per_side: [-1, 0, 1, 2, 5, 10]
+  gross_exposure: 1.0
+  entry_exit: next_minute_open
+expected_effect: Identify whether any stable gross edge exists before expensive synchronized quote replay.
+holdout_access: false
+result:
+  executed_signal_variants: 600
+  executed_cost_cells: 3600
+  active_signal_variants: 360
+  positive_at_2bps: 0
+  best_active_at_2bps: SPY_IVV_opening_t10_h1_s20
+  best_active_at_2bps_net_return: -0.002666
+  highest_gross_variant: IVV_VOO_opening_t2_h30_s50
+  highest_gross_return: 0.010038
+  highest_gross_trades: 13340
+  highest_gross_average_trade: 0.0000007524
+  maximum_loaded_date: 2026-04-30
+  holdout_rows_loaded: 0
+decision: No one-minute-bar candidate survives positive costs. Because the source mechanism is explicitly sub-minute and quote-native, run a synchronized SIP quote audit on a frozen development sample before retiring the mechanism.
