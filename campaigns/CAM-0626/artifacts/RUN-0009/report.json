@@ -1,0 +1,74 @@
+{
+  "status": "completed",
+  "role_coverage": 1.0,
+  "complete_trade_coverage": 1.0,
+  "metrics": [
+    {
+      "additional_bps_per_side": 0,
+      "net_return": -0.15937904088217697,
+      "max_drawdown": 0.23695241717278048,
+      "positive_days": 824,
+      "negative_days": 898,
+      "positive_weeks": 157,
+      "negative_weeks": 202,
+      "positive_months": 39,
+      "negative_months": 44,
+      "worst_month": -0.0590686321557744,
+      "executed_days": 1722
+    },
+    {
+      "additional_bps_per_side": 1,
+      "net_return": -0.503779040882177,
+      "max_drawdown": 0.5151382582741255,
+      "positive_days": 765,
+      "negative_days": 957,
+      "positive_weeks": 132,
+      "negative_weeks": 227,
+      "positive_months": 27,
+      "negative_months": 56,
+      "worst_month": -0.0632686321557744,
+      "executed_days": 1722
+    },
+    {
+      "additional_bps_per_side": 2,
+      "net_return": -0.8481790408821771,
+      "max_drawdown": 0.8563686637330387,
+      "positive_days": 704,
+      "negative_days": 1018,
+      "positive_weeks": 109,
+      "negative_weeks": 250,
+      "positive_months": 12,
+      "negative_months": 71,
+      "worst_month": -0.06746863215577441,
+      "executed_days": 1722
+    },
+    {
+      "additional_bps_per_side": 5,
+      "net_return": -1.8813790408821776,
+      "max_drawdown": 1.8851624783947627,
+      "positive_days": 537,
+      "negative_days": 1185,
+      "positive_weeks": 55,
+      "negative_weeks": 304,
+      "positive_months": 4,
+      "negative_months": 79,
+      "worst_month": -0.08006863215577441,
+      "executed_days": 1722
+    },
+    {
+      "additional_bps_per_side": 10,
+      "net_return": -3.6033790408821784,
+      "max_drawdown": 3.606556581248468,
+      "positive_days": 318,
+      "negative_days": 1404,
+      "positive_weeks": 20,
+      "negative_weeks": 339,
+      "positive_months": 0,
+      "negative_months": 83,
+      "worst_month": -0.10106863215577441,
+      "executed_days": 1722
+    }
+  ],
+  "maximum_loaded_date": "2026-04-30",
+  "holdout_rows_loaded": 0
+}

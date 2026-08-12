@@ -1,6 +1,6 @@
 run_id: RUN-0008
 parent_run: RUN-0005
-status: frozen
+status: completed
 candidate: f5_h1550_invvar
 reason: Best weighted-regression variant is positive at 2 bps and therefore requires exact quote replay.
 execution:
@@ -11,3 +11,24 @@ execution:
   additional_slippage_bps_per_side: [0, 1, 2, 5, 10]
 expected_effect: Determine whether inverse-variance improvement survives observed spreads and causal stop fills.
 holdout_access: false
+actual:
+  entry_role_coverage: 1.0
+  exit_role_coverage: 1.0
+  executed_package_days: 495
+  observed_quote_return: -0.2376700913
+  return_plus_1bp_per_side: -0.3366700913
+  return_plus_2bps_per_side: -0.4356700913
+  observed_quote_max_drawdown: 0.2555940404
+  observed_quote_positive_months: 7
+  observed_quote_negative_months: 17
+  observed_quote_worst_month: -0.056145
+validation:
+  raw_minute_stop_path: passed
+  exit_after_stop_minute_completion: passed
+  forced_flat_before_close: passed
+  maximum_loaded_date: 2026-04-30
+  holdout_rows_loaded: 0
+decision: >-
+  Reject. The bar-level inverse-variance improvement is entirely eliminated by
+  executable SIP spreads; it loses before any extra slippage and is neither
+  consistent nor robust enough for promotion.

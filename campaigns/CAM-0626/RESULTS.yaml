@@ -1,0 +1,53 @@
+campaign_id: CAM-0626
+status: retired
+promotion_ready: false
+holdout_access: false
+maximum_loaded_date: 2026-04-30
+source_faithful_result: negative_before_costs
+best_bar_candidate:
+  run_id: RUN-0005
+  name: f5_h1550_invvar
+  net_return_at_2bps_per_side: 0.0295059907
+  positive_months: 9
+  negative_months: 15
+  max_drawdown: 0.1357
+  worst_month: -0.0491
+  interpretation: bar-level lead only; failed exact quote replay
+authoritative_quote_results:
+  broad_residual_portfolio:
+    run_id: RUN-0003
+    observed_quote_return: -0.407767
+    return_plus_1bp_per_side: -0.503967
+  inverse_variance_portfolio:
+    run_id: RUN-0008
+    observed_quote_return: -0.2376700913
+    return_plus_2bps_per_side: -0.4356700913
+    positive_months: 7
+    negative_months: 17
+    max_drawdown: 0.2555940404
+  sector_etf_expression:
+    run_id: RUN-0009
+    observed_quote_return: -0.1593790409
+    return_plus_1bp_per_side: -0.5037790409
+  passive_short_leader:
+    run_id: RUN-0010
+    return_plus_2bps_per_side: 0.0102919433
+    max_drawdown: 0.2587
+    positive_months: 14
+    negative_months: 10
+    early_12m_return: 0.217005
+    late_12m_return: -0.206713
+    interpretation: tiny full-period survivor with severe decay and concentration
+capacity_audit:
+  run_id: RUN-0012
+  fill_rate_at_1000_usd: 0.6287
+  fill_rate_at_10000_usd: 0.5629
+  fill_rate_at_50000_usd: 0.4391
+  fill_rate_at_100000_usd: 0.3353
+  recent_12m_range_at_2bps: [-0.227735, -0.201286]
+conclusion: >-
+  Opening cross-sectional residual mean reversion in these liquid QQQ stocks and
+  sector ETFs does not survive observed marketable spreads. Strict passive
+  queue evidence produces one weak full-period survivor, but its recent decay,
+  drawdown, contributor dependence, stop sensitivity, and declining capacity
+  make it unfit for promotion or paper deployment.

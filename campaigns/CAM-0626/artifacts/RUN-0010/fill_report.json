@@ -1,0 +1,16 @@
+{
+  "status": "completed_fill_gate",
+  "jobs": 1002,
+  "failed_jobs": 0,
+  "orders": 501,
+  "full_fills": 319,
+  "partial_fills": 0,
+  "no_fills": 182,
+  "full_fill_rate": 0.6367265469061876,
+  "any_fill_rate": 0.6367265469061876,
+  "mean_fill_fraction": 0.6367265469061876,
+  "maximum_loaded_date": "2026-04-30",
+  "holdout_rows_loaded": 0,
+  "quote_touch_is_fill": false,
+  "strict_queue_preserving": true
+}

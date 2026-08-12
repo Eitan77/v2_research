@@ -1,6 +1,6 @@
 campaign_id: CAM-0626
 title: Intraday cluster-neutral momentum-leader mean reversion
-status: frozen_pre_execution
+status: retired_after_execution_audit
 paper: ssrn-3247865
 paper_sections: ["3.9", "3.10"]
 source_pdf: C:/Users/decla/Downloads/ssrn-3247865.pdf

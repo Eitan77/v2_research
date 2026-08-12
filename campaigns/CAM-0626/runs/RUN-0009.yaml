@@ -1,6 +1,6 @@
 run_id: RUN-0009
 parent_run: RUN-0007
-status: frozen
+status: completed
 candidate: f60_h60_top1_each_side_sNone
 reason: Best sector-ETF variant is positive at zero cost, triggering exact SIP quote replay.
 execution:
@@ -12,3 +12,16 @@ execution:
   package_policy: cancel both legs if either entry is unavailable
   additional_slippage_bps_per_side: [0, 1, 2, 5, 10]
 holdout_access: false
+result:
+  role_coverage: 1.0
+  executed_days: 1722
+  observed_quote_return_no_extra_slippage: -0.159379
+  observed_quote_return_plus_1bp_per_side: -0.503779
+  observed_quote_return_plus_2bps_per_side: -0.848179
+  observed_quote_max_drawdown_no_extra_slippage: 0.236952
+  observed_quote_positive_months: 39
+  observed_quote_negative_months: 44
+  worst_month: -0.059069
+  maximum_loaded_date: 2026-04-30
+  holdout_rows_loaded: 0
+decision: Rejected. The best zero-cost sector-ETF bar variant is negative at observed marketable SIP fills before additional slippage.

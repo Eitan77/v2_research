@@ -1,0 +1,31 @@
+run_id: RUN-0012
+parent_run: RUN-0010
+status: completed_fill_capacity
+question: Does strict queue-backed passive fill evidence survive practical full-port order notionals?
+reason: RUN-0010 normalized capital to 1.0, so its target quantity was sub-share and does not establish capacity.
+configuration:
+  entry: unchanged 09:35 displayed ask, 300-second lifetime
+  queue_model: unchanged strict displayed queue ahead with same-price SIP prints and no cancellation credit
+  order_notional_usd: [1000, 10000, 50000, 100000]
+  metrics: full-fill rate, any displayed post-queue capacity rate, median and tail capacity
+expected_effect: Determine whether the 63.7 percent tiny-order fill rate is relevant to plausible full-capital deployment.
+holdout_access: false
+reconciliation:
+  invalid_attempt: Initial capacity summary omitted the frozen five-second quote-age condition and produced the impossible result that $1000 orders filled more often than sub-share orders.
+  correction: Enforce the same maximum quote age as RUN-0010 and rerun before interpretation.
+result:
+  monotonicity_passed: true
+  tiny_order_full_fill_rate: 0.636727
+  full_fill_rate_1000usd: 0.628743
+  full_fill_rate_10000usd: 0.562874
+  full_fill_rate_50000usd: 0.439122
+  full_fill_rate_100000usd: 0.335329
+  maximum_loaded_date: 2026-04-30
+  holdout_rows_loaded: 0
+decision: Capacity is nontrivial but daily activity falls materially with notional. Compute realized PnL on the causally filled capacity subsets before final retirement.
+capacity_subset_pnl_at_2bps:
+  1000usd: {net_return: -0.014387, early_12m: 0.213348, late_12m: -0.227735, executed_days: 315}
+  10000usd: {net_return: 0.054084, early_12m: 0.255371, late_12m: -0.201286, executed_days: 282}
+  50000usd: {net_return: -0.049207, early_12m: 0.174195, late_12m: -0.223401, executed_days: 220}
+  100000usd: {net_return: -0.031743, early_12m: 0.180591, late_12m: -0.212334, executed_days: 168}
+final_decision: Capacity selection does not restore stability. Only the $10k subset is positive overall and every notional loses heavily in the recent year; no promotion.

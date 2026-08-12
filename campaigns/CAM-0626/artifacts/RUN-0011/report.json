@@ -1,0 +1,24 @@
+{
+  "status": "completed",
+  "planned_cells": 25,
+  "executed_cells": 25,
+  "best_2bps": {
+    "stop_pct": 2.0,
+    "additional_bps_per_side": 2.0,
+    "net_return": 0.010291943264738035,
+    "early_12m": 0.2170050504430947,
+    "late_12m": -0.20671310717835673,
+    "max_drawdown": 0.2587399141225808,
+    "positive_days": 150.0,
+    "negative_days": 169.0,
+    "positive_weeks": 54.0,
+    "negative_weeks": 50.0,
+    "positive_months": 14.0,
+    "negative_months": 10.0,
+    "worst_month": -0.10511056437754056,
+    "executed_days": 319.0,
+    "exit_coverage": 1.0
+  },
+  "maximum_loaded_date": "2026-04-29",
+  "holdout_rows_loaded": 0
+}

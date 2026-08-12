@@ -1,0 +1,94 @@
+{
+  "status": "completed",
+  "orders": 501,
+  "tiny_order_fills": 319,
+  "capacity_levels": [
+    {
+      "notional_usd": 1000,
+      "full_fill_orders": 315,
+      "full_fill_rate": 0.6287425149700598
+    },
+    {
+      "notional_usd": 10000,
+      "full_fill_orders": 282,
+      "full_fill_rate": 0.562874251497006
+    },
+    {
+      "notional_usd": 50000,
+      "full_fill_orders": 220,
+      "full_fill_rate": 0.43912175648702595
+    },
+    {
+      "notional_usd": 100000,
+      "full_fill_orders": 168,
+      "full_fill_rate": 0.33532934131736525
+    }
+  ],
+  "monotonicity_passed": true,
+  "maximum_loaded_date": "2026-04-30",
+  "holdout_rows_loaded": 0,
+  "strict_queue_preserving": true,
+  "engine": "CAM-0207 simulate_passive_fast unchanged",
+  "capacity_pnl_2bps": [
+    {
+      "notional_usd": 1000,
+      "executed_days": 315,
+      "net_return_2bps": -0.014387007034439347,
+      "early_12m": 0.21334775500696412,
+      "late_12m": -0.2277347620414035,
+      "max_drawdown": 0.27512101348081697,
+      "positive_days": 147,
+      "negative_days": 168,
+      "positive_weeks": 52,
+      "negative_weeks": 52,
+      "positive_months": 13,
+      "negative_months": 11,
+      "worst_month": -0.10511056437754056
+    },
+    {
+      "notional_usd": 10000,
+      "executed_days": 282,
+      "net_return_2bps": 0.054084314504544095,
+      "early_12m": 0.2553706087673028,
+      "late_12m": -0.20128629426275862,
+      "max_drawdown": 0.24175521612489248,
+      "positive_days": 135,
+      "negative_days": 147,
+      "positive_weeks": 52,
+      "negative_weeks": 51,
+      "positive_months": 13,
+      "negative_months": 11,
+      "worst_month": -0.09512418872503008
+    },
+    {
+      "notional_usd": 50000,
+      "executed_days": 220,
+      "net_return_2bps": -0.049206625121197584,
+      "early_12m": 0.17419459833877388,
+      "late_12m": -0.2234012234599715,
+      "max_drawdown": 0.25041298745771234,
+      "positive_days": 104,
+      "negative_days": 116,
+      "positive_weeks": 52,
+      "negative_weeks": 48,
+      "positive_months": 12,
+      "negative_months": 12,
+      "worst_month": -0.09402045886281096
+    },
+    {
+      "notional_usd": 100000,
+      "executed_days": 168,
+      "net_return_2bps": -0.03174315927333404,
+      "early_12m": 0.1805908469041344,
+      "late_12m": -0.21233400617746845,
+      "max_drawdown": 0.23109203650474341,
+      "positive_days": 77,
+      "negative_days": 91,
+      "positive_weeks": 45,
+      "negative_weeks": 48,
+      "positive_months": 11,
+      "negative_months": 13,
+      "worst_month": -0.08809957552147625
+    }
+  ]
+}
