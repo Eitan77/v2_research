@@ -1,0 +1,52 @@
+[
+  {
+    "signal_date": "2026-05-01",
+    "eligible": 49,
+    "liquid": 25,
+    "selected": [
+      "MU",
+      "WDC",
+      "SNDK"
+    ]
+  },
+  {
+    "signal_date": "2026-05-08",
+    "eligible": 51,
+    "liquid": 26,
+    "selected": [
+      "MU",
+      "WDC",
+      "SNDK"
+    ]
+  },
+  {
+    "signal_date": "2026-05-15",
+    "eligible": 52,
+    "liquid": 26,
+    "selected": [
+      "STX",
+      "WDC",
+      "SNDK"
+    ]
+  },
+  {
+    "signal_date": "2026-05-22",
+    "eligible": 53,
+    "liquid": 27,
+    "selected": [
+      "STX",
+      "WDC",
+      "SNDK"
+    ]
+  },
+  {
+    "signal_date": "2026-05-29",
+    "eligible": 57,
+    "liquid": 29,
+    "selected": [
+      "STX",
+      "WDC",
+      "SNDK"
+    ]
+  }
+]

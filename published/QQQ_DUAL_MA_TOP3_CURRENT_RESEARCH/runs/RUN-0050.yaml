@@ -1,0 +1,32 @@
+run_id: RUN-0050
+parent_run: RUN-0038
+status: completed_bar_stage
+question: Would trading only after a profitable immediately preceding shadow rebalance cycle improve the final pre-holdout year?
+configuration:
+  universe: QQQ PIT
+  base_strategy: unchanged dual-MA top-3 126/21 Friday signal next-session execution
+  gate: deploy full capital for cycle t only when unchanged shadow strategy cycle t-1 had positive net P&L
+  shadow_cycle: one scheduled weekly execution through the session before the next scheduled execution
+  sizing: binary 100 percent original capital or cash
+  development_window_reported: 2025-05-01 through 2026-04-30
+  accounting: fixed-base additive, no compounding, no margin
+  first_stage_execution: bars plus frozen 9.740340418 bp per unit turnover
+reason: Test whether short-lived momentum persistence in strategy-level outcomes is a simple causal state variable.
+expected_effect: Avoid clusters of losing weeks, at the cost of missing rebounds after a negative week.
+integrity:
+  maximum_loaded_date: 2026-04-30
+  holdout_rows_loaded: 0
+  no_holdout_results_used: true
+result:
+  baseline_return_pct: 115.5198
+  gated_return_pct: 79.4837
+  baseline_max_drawdown_pct: 12.9624
+  gated_max_drawdown_pct: 9.5613
+  baseline_worst_month_pct: -11.9911
+  gated_worst_month_pct: -6.6375
+  baseline_positive_months: 9
+  gated_positive_months: 8
+  baseline_positive_weeks: 36
+  gated_positive_weeks: 26
+  holdout_rows_loaded: 0
+decision: Reject as a primary improvement. It reduces drawdown severity but sacrifices 36.04 percentage points, lowers positive-month and positive-week counts, and skips profitable rebound cycles.

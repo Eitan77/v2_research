@@ -1,0 +1,15 @@
+run_id: RUN-0051
+parent_run: RUN-0038
+status: completed_bar_stage
+question: Can simple causal state controls reduce momentum-reversal losses without destroying the QQQ top-3 edge?
+variants: [baseline, breadth_drop_10pp, leaders_2of3_above_sma20, qqq_above_sma20, qqq_and_leaders, volatility_ratio_scaling, acceleration_replace_2sigma]
+window: 2025-05-01 through 2026-04-30
+execution: bars plus frozen 9.740340418 bp per turnover
+accounting: fixed-base additive, no compounding, no margin
+integrity: {maximum_loaded_date: 2026-04-30, holdout_rows_loaded: 0}
+result:
+  baseline: {return_pct: 115.52, max_dd_pct: 12.96, worst_month_pct: -11.99, positive_months: 9}
+  volatility_ratio_scaling: {return_pct: 100.85, max_dd_pct: 11.29, worst_month_pct: -9.15, positive_months: 10}
+  qqq_and_leaders: {return_pct: 85.34, max_dd_pct: 8.13, worst_month_pct: -5.62, positive_months: 8}
+  acceleration_replace_2sigma: {return_pct: 118.77, max_dd_pct: 12.96, worst_month_pct: -11.99, positive_months: 9}
+decision: Volatility scaling is the only balanced defensive lead; combined confirmation is effective but too costly, and the acceleration replacement adds little without downside improvement.

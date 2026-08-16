@@ -1,0 +1,55 @@
+run_id: RUN-0057
+campaign_id: CAM-0611
+parent_run: RUN-0056
+status: completed
+question: Can an aggressive one-percent-spaced profit ladder materially improve consistency?
+reason: >-
+  RUN-0056 found five-point ladders too blunt. Finer milestones might harvest
+  gains progressively before a reversal, although they may excessively reduce
+  exposure to continuation winners.
+expected_effect: >-
+  The full 5-percent-of-original ladder should reduce utilization rapidly;
+  capped and remaining-weight variants test whether retaining a larger runner
+  preserves the momentum edge.
+configuration:
+  reference_reset: each_weekly_execution_open
+  trigger_information: completed_adjusted_close
+  execution: next_session_open_bar_stage_then_exact_0940_SIP_for_survivors
+  variants:
+    - orig5_every1_to10_leave50
+    - orig5_every1_to20_exit100
+    - orig2p5_every1_to20_leave50
+    - rem5_every1_to20_leave35p8
+    - orig5_every2_to20_leave50
+  bar_execution_cost_bps_per_turnover: 9.740340418
+  quote_extra_bps_per_side: [0, 1, 2, 5, 10]
+  capital_base: 1.0_fixed_additive
+  maximum_gross_exposure: 1.0
+  broker_margin: false
+  discovery_cutoff: 2026-04-30
+  holdout_access: false
+gates:
+  - exact_locked_control_reproduction
+  - completed_close_trigger_next_open_execution
+  - crossed_milestones_batched_into_one_next_open_order
+  - maximum_loaded_date_2026_04_30
+  - zero_holdout_rows_loaded
+  - exact_quote_replay_requested_rule_and_material_neighbors
+result:
+  bar_variants_executed: 6
+  exact_quote_variants: [control, orig5_every1_to20_exit100, rem5_every1_to20_leave35p8, orig5_every2_to20_leave50]
+  control_2bps: {net_return: 3.628296, maximum_drawdown: 0.175224, recent12_return: 1.170944, positive_months: 48, negative_months: 25, worst_month: -0.166237, worst_year: -0.074899, turnover: 127.666667, trade_roles: 383}
+  requested_orig5_every1_to20_2bps: {net_return: 3.469869, maximum_drawdown: 0.161740, recent12_return: 1.044856, positive_months: 50, negative_months: 23, worst_month: -0.154968, worst_year: -0.033344, turnover: 219.033333, trade_roles: 1958}
+  remaining5_every1_to20_2bps: {net_return: 3.488764, maximum_drawdown: 0.164345, recent12_return: 1.062021, positive_months: 50, negative_months: 23, worst_month: -0.155603, worst_year: -0.033982, turnover: 202.892729, trade_roles: 1958}
+  original5_every2_to20_2bps: {net_return: 3.564458, maximum_drawdown: 0.169067, recent12_return: 1.118067, positive_months: 48, negative_months: 25, worst_month: -0.161916, worst_year: -0.053414, turnover: 169.05, trade_roles: 1576}
+  requested_orig5_every1_to20_10bps: {net_return: 3.294643, maximum_drawdown: 0.169220, recent12_return: 1.018523, positive_months: 49, negative_months: 24}
+  maximum_loaded_date: 2026-04-30
+  holdout_rows_loaded: 0
+  quote_role_coverage: 1.0_with_preserved_XLNX_terminal_exception
+decision: >-
+  The aggressive one-percent ladder is a genuine smoother but not a dominant
+  replacement. It reduces drawdown, worst month, worst year, and two losing
+  months, but sacrifices 15.84 full-history and 12.61 recent-12 return points,
+  while increasing trade roles from 383 to 1,958. Preserve the control; retain
+  this only as a lower-risk development sleeve if the user explicitly values
+  smoother history over return.

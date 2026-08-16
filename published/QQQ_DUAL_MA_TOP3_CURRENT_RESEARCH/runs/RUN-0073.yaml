@@ -1,0 +1,75 @@
+run_id: RUN-0073
+campaign_id: CAM-0611
+parent_run: RUN-0072
+status: completed_diagnostic
+question: Do weekly gains, losses, streaks, or other observable portfolio states predict the next week's return strongly enough to support a causal blocker?
+diagnosis: >-
+  The strategy has severe reversal weeks. A simple portfolio-state predictor
+  would be preferable to stock-specific post-hoc exclusions if gains or losses
+  genuinely cluster or mean-revert.
+expected_effect: >-
+  Stable conditional differences should appear in both fixed-base and exact
+  compounded weekly series, with adequate samples and a causal rule that can be
+  tested separately with realistic entry and exit costs.
+configuration:
+  inference_sample: discovery_only_through_2026-04-30
+  weekly_clock: Friday_close_to_Friday_close
+  series:
+    - exact_quote_fixed_base_2bps
+    - exact_quote_compounded_change_only_0p5cash_2bps
+  diagnostics:
+    - weekly_return_autocorrelation_lags_1_to_4
+    - win_loss_transition_matrix
+    - positive_and_negative_streaks
+    - prior_week_thresholds_2_5_10_15_20pct
+    - prior_four_week_return_buckets
+    - prior_four_week_volatility_buckets
+    - prior_week_rebalance_state
+  current_observed_week: descriptive_application_only_not_in_inference
+  holdout_access: false_for_inference
+gates:
+  - zero_holdout_rows_in_inference
+  - use_nonoverlapping_completed_weeks
+  - report_sample_sizes_and_tail_outcomes
+  - require_consistency_across_accounting_series
+  - do_not_promote_from_unadjusted_multiple_diagnostics
+  - execution_replay_required_before_any_blocker_claim
+result:
+  inference_weeks: 316
+  exact_compounded:
+    lag1_autocorrelation: 0.0024
+    loss_probability_after_loss: 0.4307
+    loss_probability_after_nonloss: 0.4382
+    fisher_exact_p: 0.9092
+    after_two_losses: {n: 59, next_week_mean: 0.02145, win_rate: 0.6102}
+    after_two_gains: {n: 99, next_week_mean: 0.00976, win_rate: 0.5455}
+    after_gain_ge_10pct: {n: 24, next_week_mean: 0.01918, win_rate: 0.6667, worst: -0.15292}
+    after_gain_10_to_15pct: {n: 16, next_week_mean: 0.0284, win_rate: 0.75, worst: -0.1182}
+    after_rebalance_week: {n: 172, next_week_mean: 0.00236, win_rate: 0.4942}
+    after_no_rebalance_week: {n: 143, next_week_mean: 0.02031, win_rate: 0.6503}
+  fixed_base:
+    lag1_autocorrelation: -0.0478
+    loss_probability_after_loss: 0.4154
+    loss_probability_after_nonloss: 0.4108
+    fisher_exact_p: 1.0
+  rebalance_state_stability: >-
+    The no-rebalance conditional mean exceeded the post-rebalance conditional
+    mean in every calendar year except 2020, and in both 2020-2022 and
+    2023-2026 partitions. This is predictive of relative strength but not a
+    profitable binary blocker: post-rebalance weeks retained positive mean
+    return, and setting them to cash reduced weekly additive return from
+    330.94% to 290.38% before extra exit/re-entry costs.
+  current_observed_application_only:
+    week_ending: 2026-08-14
+    week_return: 0.14643
+    prior_week_return: 0.06578
+    prior_four_week_return: 0.18725
+    rebalanced_during_week: true
+decision: >-
+  Do not block the next trade from win/loss streaks or recent gains. Weekly
+  losses do not cluster, strong weeks do not reliably reverse, and two-loss
+  streaks historically bounced. Rebalance/churn state is the only material
+  conditional predictor found, but it predicts lower—not negative—expected
+  return and a cash gate sacrifices fixed-base profit. Retain as a monitoring
+  feature, not a live sizing rule, unless a separately frozen exact-execution
+  risk-scaling experiment is requested.

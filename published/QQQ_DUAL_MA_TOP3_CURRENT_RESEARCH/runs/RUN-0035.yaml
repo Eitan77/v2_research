@@ -1,0 +1,64 @@
+run_id: RUN-0035
+campaign_id: CAM-0611
+parent_run: RUN-0034
+status: completed
+change: Diagnose baseline trade winners, losers, givebacks, and entry-time causal characteristics before modifying selection or exits further.
+reason: Identify whether ratchet value and trade outcomes relate to observable size, growth, liquidity, volume, volatility, momentum strength, or trend-extension characteristics.
+expected_effect: Produce falsifiable feature relationships and distinguish exit failure from poor entry selection without yet optimizing thresholds.
+configuration:
+  trade_definition: completed_baseline_position_episode
+  execution: exact_SIP_0930_reference_0940_marketable_plus_2bps
+  outcome_fields: [net_pnl, position_return, holding_sessions, close_MFE, close_MAE, terminal_giveback, winner, large_winner, large_loser]
+  entry_features:
+    - momentum_126_skip21
+    - trailing_volatility_63
+    - prior_63_session_median_dollar_volume
+    - prior_session_relative_volume_to_20_session_median
+    - close_distance_above_SMA50
+    - close_distance_above_SMA200
+    - point_in_time_market_cap
+    - point_in_time_revenue_cagr
+    - point_in_time_eps_cagr
+  fundamental_source: CAM-0514_point_in_time_SEC_annual_filing_snapshots
+  diagnostic_only: true
+  no_threshold_selection_from_outcomes: true
+  discovery_cutoff: 2026-04-30
+  holdout_start: 2026-05-01
+  holdout_access: false
+gates:
+  - exact_episode_PnL_reconciles_to_control_quote_return
+  - every_feature_available_before_entry
+  - report_feature_coverage_and_attrition
+  - report_quantile_sample_sizes_and_concentration
+  - zero_holdout_rows_loaded
+result:
+  status: completed
+  trades: 193
+  reconciled_net_return: 3.628296
+  average_position_return: 0.056398
+  median_position_return: 0.008575
+  win_rate: 0.575130
+  large_winners_at_least_20pct: 25
+  large_losers_at_most_minus10pct: 21
+  top5_positive_share: 0.303993
+  top10_positive_share: 0.455504
+  average_close_MFE: 0.133707
+  average_close_MAE: -0.063170
+  average_terminal_giveback: 0.071762
+  feature_coverage: {price_volume: 1.0, market_cap: 0.761658, revenue_cagr: 0.901554, eps_cagr: 0.538860}
+  fundamental_timing: rebuilt_from_filing_date_bounded_SEC_factbooks_at_each_trade_decision
+  market_cap_diagnostic_valid: false
+  market_cap_invalid_reason: share_count_and_split_scale_discontinuities_create_impossible_values_up_to_22_trillion
+  maximum_loaded_date: 2026-04-30
+  holdout_rows_loaded: 0
+  artifacts:
+    episodes: artifacts/RUN-0035/trade_episodes.parquet
+    quartiles: artifacts/RUN-0035/feature_quartiles.csv
+    report: artifacts/RUN-0035/diagnostic_report.json
+decision: >-
+  Strong absolute momentum, volatility, liquidity, and distance above SMA200
+  contain both the major winners and major losers; this supports preserving the
+  right tail and using delayed ratchets rather than tight stops. Revenue growth
+  and EPS growth are nonmonotonic and incomplete, relative volume is nonmonotonic,
+  and market cap is invalid pending share-scale repair. Only the weak absolute
+  momentum tail justifies a bounded prospective filter test.

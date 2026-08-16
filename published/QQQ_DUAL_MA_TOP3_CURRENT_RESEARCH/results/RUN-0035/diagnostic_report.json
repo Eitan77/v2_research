@@ -1,0 +1,29 @@
+{
+  "status": "completed",
+  "trades": 193,
+  "net_pnl": 3.628296357350633,
+  "average_position_return": 0.056398388974362175,
+  "median_position_return": 0.008574610424182014,
+  "win_rate": 0.5751295336787565,
+  "large_winners": 25,
+  "large_losers": 21,
+  "top5_positive_share": 0.3039925609078475,
+  "top10_positive_share": 0.45550368807295183,
+  "average_mfe": 0.13370660968479817,
+  "average_mae": -0.06317022836319312,
+  "average_giveback": 0.07176239382180535,
+  "coverage": {
+    "momentum_126_21": 1.0,
+    "volatility_63": 1.0,
+    "dollar_volume_median63": 1.0,
+    "relative_volume_1_20": 1.0,
+    "distance_sma50": 1.0,
+    "distance_sma200": 1.0,
+    "market_cap": 0.7616580310880829,
+    "revenue_cagr": 0.9015544041450777,
+    "eps_cagr": 0.538860103626943
+  },
+  "fundamental_timing": "rebuilt_from_filing_date_bounded_SEC_factbooks_at_each_trade_decision",
+  "maximum_loaded_date": "2026-04-30",
+  "holdout_rows_loaded": 0
+}

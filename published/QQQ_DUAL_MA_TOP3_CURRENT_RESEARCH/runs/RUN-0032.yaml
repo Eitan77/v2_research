@@ -1,0 +1,55 @@
+run_id: RUN-0032
+campaign_id: CAM-0611
+parent_run: RUN-0031
+status: completed
+change: Remove the 50 percent single-name cap from raw momentum-score proportional sizing and test it at weekly and daily rebalance cadences.
+reason: Determine whether allowing signal strength to express itself without an arbitrary cap creates a material profit improvement, and whether daily score refresh captures that information faster.
+expected_effect: Higher return if score magnitude contains incremental information; likely higher concentration, turnover, and drawdown, especially for daily rebalancing.
+configuration:
+  universe: point_in_time_qqq
+  trend_filter: SMA50_greater_than_SMA200
+  liquidity_filter: trailing_63_session_median_dollar_volume_top_half
+  ranking: momentum_126_skip21
+  breadth: top_3
+  allocation: positive_raw_momentum_score_divided_by_sum_with_equal_fallback_if_all_nonpositive
+  single_name_cap: none
+  cadences: [weekly, daily]
+  controls: [weekly_equal, daily_equal]
+  execution_lag_sessions: 1
+  holding: open_to_next_open_until_target_changes
+  quote_reference: 09:30_ET_SIP_NBBO_midpoint
+  quote_execution: first_marketable_09:40_ET_SIP_quote
+  quote_extra_adverse_bps_per_turnover: [0, 1, 2, 5, 10]
+  capital_base: 1.0_fixed_additive
+  maximum_gross_exposure: 1.0
+  broker_margin: false
+  discovery_cutoff: 2026-04-30
+  holdout_start: 2026-05-01
+  holdout_access: false
+gates:
+  - only_allocation_and_declared_cadence_differ_from_locked_control
+  - all_weights_nonnegative_and_gross_at_most_one
+  - zero_holdout_rows_loaded
+  - exact_quote_replay_for_both_uncapped_variants
+  - report_concentration_turnover_chronology_and_consistency
+result:
+  status: completed
+  quote_role_coverage: 1.0_including_preserved_XLNX_last_tradable_session_exception
+  weekly_equal_control_2bps: {net_return: 3.628296, maximum_drawdown: 0.175224, recent12_return: 1.170944, positive_months: 48, negative_months: 25, worst_month: -0.166237, turnover: 127.666667, trade_roles: 383}
+  weekly_uncapped_2bps: {net_return: 3.554621, maximum_drawdown: 0.224863, recent12_return: 1.236285, positive_months: 48, negative_months: 25, worst_month: -0.168220, turnover: 134.285924, trade_roles: 1138, maximum_single_weight: 0.816228}
+  daily_equal_control_2bps: {net_return: 3.836355, maximum_drawdown: 0.217706, recent12_return: 1.109847, positive_months: 46, negative_months: 27, worst_month: -0.152649, trade_roles: 873, trade_sessions: 418}
+  daily_uncapped_2bps: {net_return: 3.591074, maximum_drawdown: 0.290713, recent12_return: 1.132373, positive_months: 47, negative_months: 26, worst_month: -0.155968, turnover: 301.643054, trade_roles: 5007, trade_sessions: 1524, maximum_single_weight: 0.848961}
+  weekly_uncapped_10bps: {net_return: 3.447193, maximum_drawdown: 0.238752, recent12_return: 1.222025}
+  daily_uncapped_10bps: {net_return: 3.349759, maximum_drawdown: 0.322159, recent12_return: 1.104288}
+  maximum_loaded_date: 2026-04-30
+  holdout_rows_loaded: 0
+  artifacts:
+    bar_report: artifacts/RUN-0032/bar_report.json
+    quote_report: artifacts/RUN-0032/quote_report.json
+decision: >-
+  Reject uncapped proportional sizing as a replacement. Weekly uncapped improves
+  recent return by 6.53 points but loses 7.37 full-history return points and adds
+  4.96 drawdown points plus almost three times the order roles. Daily uncapped is
+  dominated by daily equal weight on full return and drawdown and produces 5007
+  order roles. Score magnitude does not contain enough stable incremental alpha
+  to justify unrestricted concentration or continuous resizing.

@@ -1,0 +1,49 @@
+{
+  "status": "completed",
+  "authorized_window": {
+    "start": "2026-05-01",
+    "end": "2026-05-31",
+    "maximum_loaded_date": "2026-05-29",
+    "rows_after_authorized_end": 0
+  },
+  "quote_coverage": 1.0,
+  "return_net_fixed_base_pct": 45.369424043762486,
+  "return_gross_pct": 44.49661148631453,
+  "max_drawdown_peak_relative_pct": 10.334124411630508,
+  "positive_days": 12,
+  "negative_days": 8,
+  "best_day_pct": 11.308886731378056,
+  "worst_day_pct": -8.81990865455963,
+  "weekly_pnl_pct": {
+    "2026-05-01": 10.32693321619827,
+    "2026-05-08": 25.850280915069646,
+    "2026-05-15": -4.956089513378926,
+    "2026-05-22": 6.9657143508321235,
+    "2026-05-29": 7.182585075041368
+  },
+  "turnover_weight": 0.6666666666666666,
+  "quote_execution_drag_pct": -0.8861458907812906,
+  "explicit_2bps_drag_pct": 0.013333333333333334,
+  "changed_names": [
+    {
+      "session_date": "2026-05-18 00:00:00",
+      "symbol": "MU",
+      "side": "sell",
+      "delta_weight": 0.3333333333333333,
+      "reference_mid": 750.4649999999999,
+      "fill_price": 742.83,
+      "execution_drag": 0.010173692310767146,
+      "cost": 0.003457897436922382
+    },
+    {
+      "session_date": "2026-05-18 00:00:00",
+      "symbol": "STX",
+      "side": "buy",
+      "delta_weight": 0.3333333333333333,
+      "reference_mid": 803.225,
+      "fill_price": 773.7,
+      "execution_drag": -0.036758069034205865,
+      "cost": -0.012186023011401955
+    }
+  ]
+}

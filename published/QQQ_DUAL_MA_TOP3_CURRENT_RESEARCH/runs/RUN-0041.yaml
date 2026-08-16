@@ -1,0 +1,56 @@
+run_id: RUN-0041
+campaign_id: CAM-0611
+parent_run: RUN-0040
+status: completed
+change: Evaluate the unchanged locked baseline on the next two sealed holdout months.
+authorization: User explicitly authorized the next two months on 2026-08-10.
+frozen_candidate:
+  universe: point_in_time_QQQ
+  signal: SMA50_gt_SMA200_and_trailing63_median_dollar_volume_top_half_then_top3_by_126_skip21_momentum
+  weighting: equal_one_third
+  signal_time: final_weekly_session_close
+  execution: following_session_first_marketable_SIP_quote_at_or_after_09_40_ET
+  holding: until_next_weekly_target_change
+  exit_overlay: none
+  broker_margin: false
+evaluation_scope:
+  start: 2026-06-01
+  end: 2026-07-31
+  load_no_rows_after: 2026-07-31
+  carry_in_positions_from_RUN_0040: true
+  evaluate_months_without_intermediate_tuning: true
+  august_and_later_access: forbidden
+accounting:
+  capital_base: 1.0_fixed_additive_noncompounded
+  quote_extra_adverse_bps_per_turnover: 2
+gates:
+  - unchanged_candidate_configuration
+  - no_strategy_or_parameter_changes_after_result
+  - point_in_time_membership_or_explicitly_documented_last_known_carry
+  - exact_SIP_execution_roles
+  - report_each_month_and_combined_return_drawdown_daily_path_holdings_costs_and_concentration
+  - maximum_loaded_date_must_not_exceed_2026-07-31
+validation:
+  discovery_maximum_date: 2026-04-30
+  out_of_sample_maximum_loaded_date: 2026-07-31
+  rows_after_authorized_end: 0
+  quote_role_coverage: 1.0
+  frozen_configuration_unchanged: true
+  membership_maximum_date: 2026-06-24
+  sessions_using_last_known_membership: 26
+result:
+  june_net_fixed_base_return: 0.152994
+  july_net_fixed_base_return: -0.268469
+  june_july_net_fixed_base_return: -0.115474
+  june_july_maximum_peak_relative_drawdown_standalone: 0.364884
+  may_july_cumulative_net_fixed_base_return: 0.338220
+  may_july_continuous_maximum_peak_relative_drawdown: 0.269760
+  may_july_drawdown_peak_date: 2026-06-18
+  may_july_drawdown_trough_date: 2026-07-29
+  positive_negative_days: [19, 24]
+  positive_negative_weeks: [3, 6]
+  best_day: 0.165543
+  worst_day: -0.127161
+  june_gross_symbol_contribution: {SNDK: 0.075891, STX: 0.058945, MU: 0.029864, WDC: -0.018818, INTC: -0.002177}
+  july_gross_symbol_contribution: {SNDK: -0.147865, MU: -0.073186, WDC: -0.035825, INTC: -0.004608}
+decision: May did not generalize into a consistent printer. June remained strongly positive, but July's concentrated storage/semiconductor reversal produced a severe loss and unresolved drawdown. Do not tune on these months or promote the strategy.

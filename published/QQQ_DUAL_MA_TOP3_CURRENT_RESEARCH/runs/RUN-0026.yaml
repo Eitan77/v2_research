@@ -1,0 +1,63 @@
+run_id: RUN-0026
+campaign_id: CAM-0611
+parent_run: RUN-0023
+status: completed
+change: Extend the unchanged S&P dual-MA top-3 baseline to the QQQ panel start and replay the full aligned history with SIP quotes.
+reason: The prior S&P result began in 2021 because of an artificial loader start, preventing an apples-to-apples comparison with QQQ.
+expected_effect: Determine whether the S&P result and relative comparison survive the same calendar span and execution contract.
+configuration:
+  discovery_start: 2019-06-21
+  discovery_cutoff: 2026-04-30
+  holdout_start: 2026-05-01
+  holdout_access: false
+  universe: point_in_time_sp500_primary_fja_reconstruction
+  membership_timing: latest_source_snapshot_on_or_before_session
+  liquidity_rule: trailing_63_session_median_dollar_volume_top_half
+  trend_filter: SMA50_greater_than_SMA200
+  rank: 126_session_total_return_skipping_latest_21_sessions
+  cadence: weekly
+  breadth: top_3_equal_weight
+  execution_lag_sessions: 1
+  target_holding: open_to_next_open_between_weekly_rebalances
+  quote_reference: 09:30_ET_SIP_NBBO_midpoint
+  quote_execution: first_marketable_09:40_ET_SIP_quote
+  adverse_cost_bps_per_side: [0, 1, 2, 5, 10]
+  capital_base: 1.0_fixed_additive
+  compounding: false
+  broker_margin: false
+launch_readiness:
+  membership_sessions: 1724
+  membership_rows: 868639
+  membership_symbols: 654
+  maximum_membership_date: 2026-04-30
+  holdout_rows_loaded: 0
+  overlap_with_original_2021_membership_exact: true
+  overlap_rows: 631792
+  note: Membership generation was a readiness diagnostic; no strategy backtest or return was computed before this run was frozen.
+result:
+  status: completed
+  aligned_first_active_date: 2020-04-13
+  quote_contract: 09:30 SIP midpoint reference to first marketable 09:40 SIP quote
+  role_coverage: 1.0
+  quote_trade_roles: 447
+  quote_trade_sessions: 187
+  net_simple_return_2bps: 2.735339
+  maximum_drawdown_2bps: 0.347356
+  drawdown_peak: 2021-02-09
+  drawdown_trough: 2022-01-27
+  drawdown_recovery: 2023-11-07
+  recent12_net_simple_return_2bps: 1.615110
+  positive_months: 51
+  negative_months: 22
+  worst_month: -0.236218
+  worst_year: -0.187260
+  bar_rows_downloaded: 190627
+  bar_download_failures: 0
+  member_pairs_missing_raw_bar: 180
+  ticker_transition_execution: LB_exit_routed_to_BBWI_successor_NBBO_2021-08-03
+  maximum_loaded_date: 2026-04-30
+  holdout_rows_loaded: 0
+  artifacts:
+    quote_report: artifacts/RUN-0026/quote_execution_report.json
+    aligned_comparison: artifacts/RUN-0026/aligned_comparison_2bps.json
+decision: The aligned result remains strongly profitable but is materially riskier than the shorter-history result; use the aligned history for all S&P-versus-QQQ comparisons.

@@ -1,0 +1,44 @@
+run_id: RUN-0063
+campaign_id: CAM-0611
+parent_run: RUN-0062
+status: completed
+question: Can full early compounding followed by a simple profit-lock tier preserve takeoff while reducing late-stage tail exposure?
+diagnosis: >-
+  The drawdown governor reacts after losses and is dominated by static partial
+  compounding. A capital-tier rule instead compounds every dollar until a
+  prespecified account multiple, then reinvests only a fixed fraction of
+  further gains. This directly limits the late-stage dollars exposed without
+  modifying the stock signal or attempting to predict reversals.
+expected_effect: >-
+  Match full compounding early, retain continued but slower growth after the
+  lock tier, and reduce peak-relative drawdown once protected cash accumulates.
+configuration:
+  signal_execution_and_account: identical_to_RUN-0061
+  target_gross: min(equity, tier + post_tier_beta * max(equity - tier, 0))
+  tiers: [2.0, 3.0, 5.0]
+  post_tier_betas: [0.0, 0.25, 0.5]
+  interpretation: beta_zero_is_a_hard_risk_cap
+  discovery_cutoff: 2026-04-30
+  observed_diagnostic_end: 2026-08-14
+  holdout_label: May_onward_already_observed_and_forbidden_for_selection
+gates:
+  - selection_uses_discovery_only
+  - exact_cash_and_quote_replay
+  - cash_never_negative
+  - compare_to_static_beta_frontier_and_full_compounding
+  - require_broad_tier_and_beta_support
+  - report_return_drawdown_recent_tail_and_observed_diagnostic
+result:
+  status: completed_and_reconciled
+  planned_variants: 9
+  executed_variants: 9
+  tier2_beta0p25: {discovery_return: 8.371969, maximum_drawdown: 0.303200, recent12_return: 0.705892}
+  tier2_beta0p50: {discovery_return: 10.625526, maximum_drawdown: 0.341629, recent12_return: 1.033988}
+  full_compounding_comparator: {discovery_return: 15.788063, maximum_drawdown: 0.425109}
+  quote_role_coverage: 1.0
+  maximum_loaded_date: 2026-08-14
+  holdout_used_for_selection: false
+decision: >-
+  The two-times tier improved parts of the historical frontier, but a fixed
+  capital-multiple threshold is not a durable long-term architecture. Do not
+  adopt; the user explicitly rejected a cap-based design.

@@ -1,0 +1,51 @@
+{
+  "status": "completed",
+  "maximum_inference_date": "2026-04-30",
+  "holdout_rows_loaded_in_inference": 0,
+  "stats": {
+    "fixed": {
+      "autocorrelation": {
+        "lag1": -0.047766417105875446,
+        "lag2": -0.15942604212487735,
+        "lag3": -0.04385049648508662,
+        "lag4": 0.08741132229697571
+      },
+      "transitions": {
+        "loss_after_loss": 54,
+        "gain_after_loss": 76,
+        "loss_after_nonloss": 76,
+        "gain_after_nonloss": 109,
+        "p_loss_after_loss": 0.4153846153846154,
+        "p_loss_after_nonloss": 0.41081081081081083,
+        "fisher_odds": 1.0190443213296398,
+        "fisher_p": 1.0
+      },
+      "weeks": 316
+    },
+    "compound": {
+      "autocorrelation": {
+        "lag1": 0.0024230179232121378,
+        "lag2": -0.15250399148723906,
+        "lag3": -0.021210287062372848,
+        "lag4": 0.08809999201668318
+      },
+      "transitions": {
+        "loss_after_loss": 59,
+        "gain_after_loss": 78,
+        "loss_after_nonloss": 78,
+        "gain_after_nonloss": 100,
+        "p_loss_after_loss": 0.4306569343065693,
+        "p_loss_after_nonloss": 0.43820224719101125,
+        "fisher_odds": 0.9697567389875082,
+        "fisher_p": 0.9091942810555249
+      },
+      "weeks": 316
+    }
+  },
+  "current_observed_descriptive": {
+    "week_ending": "2026-08-14",
+    "return": 0.14643199323586864,
+    "prior_week_return": 0.0657841104345811,
+    "prior4_compounded_return": 0.18724593063921424
+  }
+}

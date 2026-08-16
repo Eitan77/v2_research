@@ -1,0 +1,28 @@
+{
+  "status": "completed",
+  "configuration": "weekly_fixed_initial_risk_budget_profit_sweep",
+  "discovery_ending_equity": 4.5310025902641735,
+  "full_ending_equity": 5.025837098890709,
+  "full_compounded_return": 4.025837098890709,
+  "full_maximum_drawdown": 0.18410628780519034,
+  "post_observation_may_aug_return": 0.10921082007099114,
+  "post_observation_monthly_returns": {
+    "2026-05": 0.09325827323997227,
+    "2026-06": 0.04856498051867009,
+    "2026-07": -0.0746211318233907,
+    "2026-08": 0.04562605804228892
+  },
+  "post_observation_maximum_drawdown": 0.10403828264973869,
+  "ending_cash": 3.8589805119808096,
+  "ending_gross": 1.1668565869098995,
+  "minimum_cash": 0.0,
+  "maximum_marked_gross_between_rebalances": 1.26361164061051,
+  "maximum_rebalance_target_gross": 0.999997360155295,
+  "discovery_orders": 1137,
+  "post_observation_orders": 52,
+  "quote_role_coverage": 1.0,
+  "maximum_loaded_date": "2026-08-14",
+  "rows_after_authorized_end": 0,
+  "broker_margin_used": false,
+  "evidence_label": "May onward is post-holdout-observation diagnostic, not fresh OOS"
+}

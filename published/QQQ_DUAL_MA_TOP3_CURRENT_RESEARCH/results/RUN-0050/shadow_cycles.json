@@ -1,0 +1,1792 @@
+[
+  {
+    "execution_date": "2019-06-24",
+    "end_date": "2019-06-28",
+    "shadow_net_pnl": 0.0
+  },
+  {
+    "execution_date": "2019-07-01",
+    "end_date": "2019-07-05",
+    "shadow_net_pnl": 0.0
+  },
+  {
+    "execution_date": "2019-07-08",
+    "end_date": "2019-07-12",
+    "shadow_net_pnl": 0.0
+  },
+  {
+    "execution_date": "2019-07-15",
+    "end_date": "2019-07-19",
+    "shadow_net_pnl": 0.0
+  },
+  {
+    "execution_date": "2019-07-22",
+    "end_date": "2019-07-26",
+    "shadow_net_pnl": 0.0
+  },
+  {
+    "execution_date": "2019-07-29",
+    "end_date": "2019-08-02",
+    "shadow_net_pnl": 0.0
+  },
+  {
+    "execution_date": "2019-08-05",
+    "end_date": "2019-08-09",
+    "shadow_net_pnl": 0.0
+  },
+  {
+    "execution_date": "2019-08-12",
+    "end_date": "2019-08-16",
+    "shadow_net_pnl": 0.0
+  },
+  {
+    "execution_date": "2019-08-19",
+    "end_date": "2019-08-23",
+    "shadow_net_pnl": 0.0
+  },
+  {
+    "execution_date": "2019-08-26",
+    "end_date": "2019-08-30",
+    "shadow_net_pnl": 0.0
+  },
+  {
+    "execution_date": "2019-09-03",
+    "end_date": "2019-09-06",
+    "shadow_net_pnl": 0.0
+  },
+  {
+    "execution_date": "2019-09-09",
+    "end_date": "2019-09-13",
+    "shadow_net_pnl": 0.0
+  },
+  {
+    "execution_date": "2019-09-16",
+    "end_date": "2019-09-20",
+    "shadow_net_pnl": 0.0
+  },
+  {
+    "execution_date": "2019-09-23",
+    "end_date": "2019-09-27",
+    "shadow_net_pnl": 0.0
+  },
+  {
+    "execution_date": "2019-09-30",
+    "end_date": "2019-10-04",
+    "shadow_net_pnl": 0.0
+  },
+  {
+    "execution_date": "2019-10-07",
+    "end_date": "2019-10-11",
+    "shadow_net_pnl": 0.0
+  },
+  {
+    "execution_date": "2019-10-14",
+    "end_date": "2019-10-18",
+    "shadow_net_pnl": 0.0
+  },
+  {
+    "execution_date": "2019-10-21",
+    "end_date": "2019-10-25",
+    "shadow_net_pnl": 0.0
+  },
+  {
+    "execution_date": "2019-10-28",
+    "end_date": "2019-11-01",
+    "shadow_net_pnl": 0.0
+  },
+  {
+    "execution_date": "2019-11-04",
+    "end_date": "2019-11-08",
+    "shadow_net_pnl": 0.0
+  },
+  {
+    "execution_date": "2019-11-11",
+    "end_date": "2019-11-15",
+    "shadow_net_pnl": 0.0
+  },
+  {
+    "execution_date": "2019-11-18",
+    "end_date": "2019-11-22",
+    "shadow_net_pnl": 0.0
+  },
+  {
+    "execution_date": "2019-11-25",
+    "end_date": "2019-11-29",
+    "shadow_net_pnl": 0.0
+  },
+  {
+    "execution_date": "2019-12-02",
+    "end_date": "2019-12-06",
+    "shadow_net_pnl": 0.0
+  },
+  {
+    "execution_date": "2019-12-09",
+    "end_date": "2019-12-13",
+    "shadow_net_pnl": 0.0
+  },
+  {
+    "execution_date": "2019-12-16",
+    "end_date": "2019-12-20",
+    "shadow_net_pnl": 0.0
+  },
+  {
+    "execution_date": "2019-12-23",
+    "end_date": "2019-12-27",
+    "shadow_net_pnl": 0.0
+  },
+  {
+    "execution_date": "2019-12-30",
+    "end_date": "2020-01-03",
+    "shadow_net_pnl": 0.0
+  },
+  {
+    "execution_date": "2020-01-06",
+    "end_date": "2020-01-10",
+    "shadow_net_pnl": 0.0
+  },
+  {
+    "execution_date": "2020-01-13",
+    "end_date": "2020-01-17",
+    "shadow_net_pnl": 0.0
+  },
+  {
+    "execution_date": "2020-01-21",
+    "end_date": "2020-01-24",
+    "shadow_net_pnl": 0.0
+  },
+  {
+    "execution_date": "2020-01-27",
+    "end_date": "2020-01-31",
+    "shadow_net_pnl": 0.0
+  },
+  {
+    "execution_date": "2020-02-03",
+    "end_date": "2020-02-07",
+    "shadow_net_pnl": 0.0
+  },
+  {
+    "execution_date": "2020-02-10",
+    "end_date": "2020-02-14",
+    "shadow_net_pnl": 0.0
+  },
+  {
+    "execution_date": "2020-02-18",
+    "end_date": "2020-02-21",
+    "shadow_net_pnl": 0.0
+  },
+  {
+    "execution_date": "2020-02-24",
+    "end_date": "2020-02-28",
+    "shadow_net_pnl": 0.0
+  },
+  {
+    "execution_date": "2020-03-02",
+    "end_date": "2020-03-06",
+    "shadow_net_pnl": 0.0
+  },
+  {
+    "execution_date": "2020-03-09",
+    "end_date": "2020-03-13",
+    "shadow_net_pnl": 0.0
+  },
+  {
+    "execution_date": "2020-03-16",
+    "end_date": "2020-03-20",
+    "shadow_net_pnl": 0.0
+  },
+  {
+    "execution_date": "2020-03-23",
+    "end_date": "2020-03-27",
+    "shadow_net_pnl": 0.0
+  },
+  {
+    "execution_date": "2020-03-30",
+    "end_date": "2020-04-03",
+    "shadow_net_pnl": 0.0
+  },
+  {
+    "execution_date": "2020-04-06",
+    "end_date": "2020-04-09",
+    "shadow_net_pnl": 0.0
+  },
+  {
+    "execution_date": "2020-04-13",
+    "end_date": "2020-04-17",
+    "shadow_net_pnl": 0.16266158310244913
+  },
+  {
+    "execution_date": "2020-04-20",
+    "end_date": "2020-04-24",
+    "shadow_net_pnl": 0.010505507680370542
+  },
+  {
+    "execution_date": "2020-04-27",
+    "end_date": "2020-05-01",
+    "shadow_net_pnl": -0.07884709791012501
+  },
+  {
+    "execution_date": "2020-05-04",
+    "end_date": "2020-05-08",
+    "shadow_net_pnl": 0.10783259407376226
+  },
+  {
+    "execution_date": "2020-05-11",
+    "end_date": "2020-05-15",
+    "shadow_net_pnl": 0.04035055678054478
+  },
+  {
+    "execution_date": "2020-05-18",
+    "end_date": "2020-05-22",
+    "shadow_net_pnl": -0.012659942320651915
+  },
+  {
+    "execution_date": "2020-05-26",
+    "end_date": "2020-05-29",
+    "shadow_net_pnl": 0.01882028308779677
+  },
+  {
+    "execution_date": "2020-06-01",
+    "end_date": "2020-06-05",
+    "shadow_net_pnl": 0.04880952866882135
+  },
+  {
+    "execution_date": "2020-06-08",
+    "end_date": "2020-06-12",
+    "shadow_net_pnl": 0.03898762350050778
+  },
+  {
+    "execution_date": "2020-06-15",
+    "end_date": "2020-06-19",
+    "shadow_net_pnl": 0.10478002590008595
+  },
+  {
+    "execution_date": "2020-06-22",
+    "end_date": "2020-06-26",
+    "shadow_net_pnl": -0.021758684459047346
+  },
+  {
+    "execution_date": "2020-06-29",
+    "end_date": "2020-07-02",
+    "shadow_net_pnl": 0.14643012573343633
+  },
+  {
+    "execution_date": "2020-07-06",
+    "end_date": "2020-07-10",
+    "shadow_net_pnl": 0.13669598674924494
+  },
+  {
+    "execution_date": "2020-07-13",
+    "end_date": "2020-07-17",
+    "shadow_net_pnl": -0.08843307832648084
+  },
+  {
+    "execution_date": "2020-07-20",
+    "end_date": "2020-07-24",
+    "shadow_net_pnl": -0.01712109253383831
+  },
+  {
+    "execution_date": "2020-07-27",
+    "end_date": "2020-07-31",
+    "shadow_net_pnl": -0.009969208331566996
+  },
+  {
+    "execution_date": "2020-08-03",
+    "end_date": "2020-08-07",
+    "shadow_net_pnl": 0.0010572640540769118
+  },
+  {
+    "execution_date": "2020-08-10",
+    "end_date": "2020-08-14",
+    "shadow_net_pnl": 0.01856692183408023
+  },
+  {
+    "execution_date": "2020-08-17",
+    "end_date": "2020-08-21",
+    "shadow_net_pnl": 0.1305943899102331
+  },
+  {
+    "execution_date": "2020-08-24",
+    "end_date": "2020-08-28",
+    "shadow_net_pnl": 0.02357537905806659
+  },
+  {
+    "execution_date": "2020-08-31",
+    "end_date": "2020-09-04",
+    "shadow_net_pnl": 0.019371151573238918
+  },
+  {
+    "execution_date": "2020-09-08",
+    "end_date": "2020-09-11",
+    "shadow_net_pnl": 0.04661555283575425
+  },
+  {
+    "execution_date": "2020-09-14",
+    "end_date": "2020-09-18",
+    "shadow_net_pnl": 0.04926128929841605
+  },
+  {
+    "execution_date": "2020-09-21",
+    "end_date": "2020-09-25",
+    "shadow_net_pnl": 0.04723325927759502
+  },
+  {
+    "execution_date": "2020-09-28",
+    "end_date": "2020-10-02",
+    "shadow_net_pnl": -0.004850429155914965
+  },
+  {
+    "execution_date": "2020-10-05",
+    "end_date": "2020-10-09",
+    "shadow_net_pnl": 0.021828115499665353
+  },
+  {
+    "execution_date": "2020-10-12",
+    "end_date": "2020-10-16",
+    "shadow_net_pnl": 0.06124713428799988
+  },
+  {
+    "execution_date": "2020-10-19",
+    "end_date": "2020-10-23",
+    "shadow_net_pnl": -0.08394578906456303
+  },
+  {
+    "execution_date": "2020-10-26",
+    "end_date": "2020-10-30",
+    "shadow_net_pnl": -0.07288836968224557
+  },
+  {
+    "execution_date": "2020-11-02",
+    "end_date": "2020-11-06",
+    "shadow_net_pnl": 0.041011376427045
+  },
+  {
+    "execution_date": "2020-11-09",
+    "end_date": "2020-11-13",
+    "shadow_net_pnl": -0.08382542232993054
+  },
+  {
+    "execution_date": "2020-11-16",
+    "end_date": "2020-11-20",
+    "shadow_net_pnl": 0.1464822486801373
+  },
+  {
+    "execution_date": "2020-11-23",
+    "end_date": "2020-11-27",
+    "shadow_net_pnl": 0.12346389393003299
+  },
+  {
+    "execution_date": "2020-11-30",
+    "end_date": "2020-12-04",
+    "shadow_net_pnl": -0.04304315124144972
+  },
+  {
+    "execution_date": "2020-12-07",
+    "end_date": "2020-12-11",
+    "shadow_net_pnl": -0.008313276089286295
+  },
+  {
+    "execution_date": "2020-12-14",
+    "end_date": "2020-12-18",
+    "shadow_net_pnl": 0.05001979695976381
+  },
+  {
+    "execution_date": "2020-12-21",
+    "end_date": "2020-12-24",
+    "shadow_net_pnl": -0.015221728065197428
+  },
+  {
+    "execution_date": "2020-12-28",
+    "end_date": "2020-12-31",
+    "shadow_net_pnl": -0.028715797377810964
+  },
+  {
+    "execution_date": "2021-01-04",
+    "end_date": "2021-01-08",
+    "shadow_net_pnl": 0.08590672489729753
+  },
+  {
+    "execution_date": "2021-01-11",
+    "end_date": "2021-01-15",
+    "shadow_net_pnl": 0.016921677552696503
+  },
+  {
+    "execution_date": "2021-01-19",
+    "end_date": "2021-01-22",
+    "shadow_net_pnl": 0.06756312932568383
+  },
+  {
+    "execution_date": "2021-01-25",
+    "end_date": "2021-01-29",
+    "shadow_net_pnl": 0.03527152253462096
+  },
+  {
+    "execution_date": "2021-02-01",
+    "end_date": "2021-02-05",
+    "shadow_net_pnl": 0.06848145002097743
+  },
+  {
+    "execution_date": "2021-02-08",
+    "end_date": "2021-02-12",
+    "shadow_net_pnl": 0.020511918799632135
+  },
+  {
+    "execution_date": "2021-02-16",
+    "end_date": "2021-02-19",
+    "shadow_net_pnl": -0.0975079212260091
+  },
+  {
+    "execution_date": "2021-02-22",
+    "end_date": "2021-02-26",
+    "shadow_net_pnl": -0.0844737892710589
+  },
+  {
+    "execution_date": "2021-03-01",
+    "end_date": "2021-03-05",
+    "shadow_net_pnl": -0.13889816731909632
+  },
+  {
+    "execution_date": "2021-03-08",
+    "end_date": "2021-03-12",
+    "shadow_net_pnl": 0.08176950173436183
+  },
+  {
+    "execution_date": "2021-03-15",
+    "end_date": "2021-03-19",
+    "shadow_net_pnl": 0.015594661552627044
+  },
+  {
+    "execution_date": "2021-03-22",
+    "end_date": "2021-03-26",
+    "shadow_net_pnl": -0.11864742221067713
+  },
+  {
+    "execution_date": "2021-03-29",
+    "end_date": "2021-04-01",
+    "shadow_net_pnl": 0.05564313161341257
+  },
+  {
+    "execution_date": "2021-04-05",
+    "end_date": "2021-04-09",
+    "shadow_net_pnl": 0.021623755722242517
+  },
+  {
+    "execution_date": "2021-04-12",
+    "end_date": "2021-04-16",
+    "shadow_net_pnl": 0.040835142706694895
+  },
+  {
+    "execution_date": "2021-04-19",
+    "end_date": "2021-04-23",
+    "shadow_net_pnl": 0.01851809118525486
+  },
+  {
+    "execution_date": "2021-04-26",
+    "end_date": "2021-04-30",
+    "shadow_net_pnl": 0.01121513245608581
+  },
+  {
+    "execution_date": "2021-05-03",
+    "end_date": "2021-05-07",
+    "shadow_net_pnl": -0.05005452527464507
+  },
+  {
+    "execution_date": "2021-05-10",
+    "end_date": "2021-05-14",
+    "shadow_net_pnl": -0.06343866799359253
+  },
+  {
+    "execution_date": "2021-05-17",
+    "end_date": "2021-05-21",
+    "shadow_net_pnl": 0.04191263806513409
+  },
+  {
+    "execution_date": "2021-05-24",
+    "end_date": "2021-05-28",
+    "shadow_net_pnl": 0.08892317890150256
+  },
+  {
+    "execution_date": "2021-06-01",
+    "end_date": "2021-06-04",
+    "shadow_net_pnl": 0.038460158563676614
+  },
+  {
+    "execution_date": "2021-06-07",
+    "end_date": "2021-06-11",
+    "shadow_net_pnl": 0.013285147280692855
+  },
+  {
+    "execution_date": "2021-06-14",
+    "end_date": "2021-06-18",
+    "shadow_net_pnl": -0.04327338828905447
+  },
+  {
+    "execution_date": "2021-06-21",
+    "end_date": "2021-06-25",
+    "shadow_net_pnl": 0.06465615810146738
+  },
+  {
+    "execution_date": "2021-06-28",
+    "end_date": "2021-07-02",
+    "shadow_net_pnl": 0.007527466561606782
+  },
+  {
+    "execution_date": "2021-07-06",
+    "end_date": "2021-07-09",
+    "shadow_net_pnl": 0.0016747925660752089
+  },
+  {
+    "execution_date": "2021-07-12",
+    "end_date": "2021-07-16",
+    "shadow_net_pnl": -0.036199248966214834
+  },
+  {
+    "execution_date": "2021-07-19",
+    "end_date": "2021-07-23",
+    "shadow_net_pnl": 0.07420851018887213
+  },
+  {
+    "execution_date": "2021-07-26",
+    "end_date": "2021-07-30",
+    "shadow_net_pnl": 0.0177525589490466
+  },
+  {
+    "execution_date": "2021-08-02",
+    "end_date": "2021-08-06",
+    "shadow_net_pnl": 0.06463584054982091
+  },
+  {
+    "execution_date": "2021-08-09",
+    "end_date": "2021-08-13",
+    "shadow_net_pnl": -0.02206935291816662
+  },
+  {
+    "execution_date": "2021-08-16",
+    "end_date": "2021-08-20",
+    "shadow_net_pnl": 0.01571115999351059
+  },
+  {
+    "execution_date": "2021-08-23",
+    "end_date": "2021-08-27",
+    "shadow_net_pnl": 0.024361146019064445
+  },
+  {
+    "execution_date": "2021-08-30",
+    "end_date": "2021-09-03",
+    "shadow_net_pnl": 0.03554834568821926
+  },
+  {
+    "execution_date": "2021-09-07",
+    "end_date": "2021-09-10",
+    "shadow_net_pnl": 0.030486936843979635
+  },
+  {
+    "execution_date": "2021-09-13",
+    "end_date": "2021-09-17",
+    "shadow_net_pnl": -0.04436377818646237
+  },
+  {
+    "execution_date": "2021-09-20",
+    "end_date": "2021-09-24",
+    "shadow_net_pnl": 0.010821792954357898
+  },
+  {
+    "execution_date": "2021-09-27",
+    "end_date": "2021-10-01",
+    "shadow_net_pnl": -0.16372191903464933
+  },
+  {
+    "execution_date": "2021-10-04",
+    "end_date": "2021-10-08",
+    "shadow_net_pnl": -0.009168751078342724
+  },
+  {
+    "execution_date": "2021-10-11",
+    "end_date": "2021-10-15",
+    "shadow_net_pnl": 0.06789990421400252
+  },
+  {
+    "execution_date": "2021-10-18",
+    "end_date": "2021-10-22",
+    "shadow_net_pnl": 0.03565824574316205
+  },
+  {
+    "execution_date": "2021-10-25",
+    "end_date": "2021-10-29",
+    "shadow_net_pnl": 0.06626797932905222
+  },
+  {
+    "execution_date": "2021-11-01",
+    "end_date": "2021-11-05",
+    "shadow_net_pnl": -0.058574477416668255
+  },
+  {
+    "execution_date": "2021-11-08",
+    "end_date": "2021-11-12",
+    "shadow_net_pnl": 0.011058806305743896
+  },
+  {
+    "execution_date": "2021-11-15",
+    "end_date": "2021-11-19",
+    "shadow_net_pnl": 0.10306089886978609
+  },
+  {
+    "execution_date": "2021-11-22",
+    "end_date": "2021-11-26",
+    "shadow_net_pnl": 0.0969883324931173
+  },
+  {
+    "execution_date": "2021-11-29",
+    "end_date": "2021-12-03",
+    "shadow_net_pnl": -0.14217983198306985
+  },
+  {
+    "execution_date": "2021-12-06",
+    "end_date": "2021-12-10",
+    "shadow_net_pnl": -0.015814879654853134
+  },
+  {
+    "execution_date": "2021-12-13",
+    "end_date": "2021-12-17",
+    "shadow_net_pnl": -0.06242004547259869
+  },
+  {
+    "execution_date": "2021-12-20",
+    "end_date": "2021-12-23",
+    "shadow_net_pnl": 0.11184952170238832
+  },
+  {
+    "execution_date": "2021-12-27",
+    "end_date": "2021-12-31",
+    "shadow_net_pnl": 0.009855768294685825
+  },
+  {
+    "execution_date": "2022-01-03",
+    "end_date": "2022-01-07",
+    "shadow_net_pnl": -0.06168710130746734
+  },
+  {
+    "execution_date": "2022-01-10",
+    "end_date": "2022-01-14",
+    "shadow_net_pnl": -0.0034195589498473107
+  },
+  {
+    "execution_date": "2022-01-18",
+    "end_date": "2022-01-21",
+    "shadow_net_pnl": -0.11651575350378712
+  },
+  {
+    "execution_date": "2022-01-24",
+    "end_date": "2022-01-28",
+    "shadow_net_pnl": 0.0014914597363588286
+  },
+  {
+    "execution_date": "2022-01-31",
+    "end_date": "2022-02-04",
+    "shadow_net_pnl": 0.10322135511221403
+  },
+  {
+    "execution_date": "2022-02-07",
+    "end_date": "2022-02-11",
+    "shadow_net_pnl": -0.030209213666647777
+  },
+  {
+    "execution_date": "2022-02-14",
+    "end_date": "2022-02-18",
+    "shadow_net_pnl": -0.009066995445111758
+  },
+  {
+    "execution_date": "2022-02-22",
+    "end_date": "2022-02-25",
+    "shadow_net_pnl": 0.03972783389315277
+  },
+  {
+    "execution_date": "2022-02-28",
+    "end_date": "2022-03-04",
+    "shadow_net_pnl": -0.04999265592344588
+  },
+  {
+    "execution_date": "2022-03-07",
+    "end_date": "2022-03-11",
+    "shadow_net_pnl": -0.06478244477550502
+  },
+  {
+    "execution_date": "2022-03-14",
+    "end_date": "2022-03-18",
+    "shadow_net_pnl": 0.1422932490176547
+  },
+  {
+    "execution_date": "2022-03-21",
+    "end_date": "2022-03-25",
+    "shadow_net_pnl": 0.038103253268614086
+  },
+  {
+    "execution_date": "2022-03-28",
+    "end_date": "2022-04-01",
+    "shadow_net_pnl": -0.00635859576399122
+  },
+  {
+    "execution_date": "2022-04-04",
+    "end_date": "2022-04-08",
+    "shadow_net_pnl": -0.05940484650923228
+  },
+  {
+    "execution_date": "2022-04-11",
+    "end_date": "2022-04-14",
+    "shadow_net_pnl": -0.0026815297281490152
+  },
+  {
+    "execution_date": "2022-04-18",
+    "end_date": "2022-04-22",
+    "shadow_net_pnl": -0.00408058759761068
+  },
+  {
+    "execution_date": "2022-04-25",
+    "end_date": "2022-04-29",
+    "shadow_net_pnl": -0.07224924799632654
+  },
+  {
+    "execution_date": "2022-05-02",
+    "end_date": "2022-05-06",
+    "shadow_net_pnl": -0.039469796855561214
+  },
+  {
+    "execution_date": "2022-05-09",
+    "end_date": "2022-05-13",
+    "shadow_net_pnl": -0.023939542187662432
+  },
+  {
+    "execution_date": "2022-05-16",
+    "end_date": "2022-05-20",
+    "shadow_net_pnl": -0.1059977180311327
+  },
+  {
+    "execution_date": "2022-05-23",
+    "end_date": "2022-05-27",
+    "shadow_net_pnl": 0.1034768180143816
+  },
+  {
+    "execution_date": "2022-05-31",
+    "end_date": "2022-06-03",
+    "shadow_net_pnl": 0.005900705655607639
+  },
+  {
+    "execution_date": "2022-06-06",
+    "end_date": "2022-06-10",
+    "shadow_net_pnl": -0.06460426460605309
+  },
+  {
+    "execution_date": "2022-06-13",
+    "end_date": "2022-06-17",
+    "shadow_net_pnl": -0.012585507277725772
+  },
+  {
+    "execution_date": "2022-06-21",
+    "end_date": "2022-06-24",
+    "shadow_net_pnl": 0.03999126159108472
+  },
+  {
+    "execution_date": "2022-06-27",
+    "end_date": "2022-07-01",
+    "shadow_net_pnl": -0.0014451500886700323
+  },
+  {
+    "execution_date": "2022-07-05",
+    "end_date": "2022-07-08",
+    "shadow_net_pnl": 0.012640897432408298
+  },
+  {
+    "execution_date": "2022-07-11",
+    "end_date": "2022-07-15",
+    "shadow_net_pnl": 0.0037045262755901823
+  },
+  {
+    "execution_date": "2022-07-18",
+    "end_date": "2022-07-22",
+    "shadow_net_pnl": -0.02886817149832854
+  },
+  {
+    "execution_date": "2022-07-25",
+    "end_date": "2022-07-29",
+    "shadow_net_pnl": 0.024971835852657356
+  },
+  {
+    "execution_date": "2022-08-01",
+    "end_date": "2022-08-05",
+    "shadow_net_pnl": 0.01801023706357082
+  },
+  {
+    "execution_date": "2022-08-08",
+    "end_date": "2022-08-12",
+    "shadow_net_pnl": 0.015681418872494156
+  },
+  {
+    "execution_date": "2022-08-15",
+    "end_date": "2022-08-19",
+    "shadow_net_pnl": 0.00667226611210921
+  },
+  {
+    "execution_date": "2022-08-22",
+    "end_date": "2022-08-26",
+    "shadow_net_pnl": -0.04420968448394709
+  },
+  {
+    "execution_date": "2022-08-29",
+    "end_date": "2022-09-02",
+    "shadow_net_pnl": 0.009219567108934155
+  },
+  {
+    "execution_date": "2022-09-06",
+    "end_date": "2022-09-09",
+    "shadow_net_pnl": 0.028880561036776758
+  },
+  {
+    "execution_date": "2022-09-12",
+    "end_date": "2022-09-16",
+    "shadow_net_pnl": -0.03921724990776172
+  },
+  {
+    "execution_date": "2022-09-19",
+    "end_date": "2022-09-23",
+    "shadow_net_pnl": -0.021478365304820196
+  },
+  {
+    "execution_date": "2022-09-26",
+    "end_date": "2022-09-30",
+    "shadow_net_pnl": 0.022402418920770436
+  },
+  {
+    "execution_date": "2022-10-03",
+    "end_date": "2022-10-07",
+    "shadow_net_pnl": -0.0029834464569509986
+  },
+  {
+    "execution_date": "2022-10-10",
+    "end_date": "2022-10-14",
+    "shadow_net_pnl": -0.04606519134596191
+  },
+  {
+    "execution_date": "2022-10-17",
+    "end_date": "2022-10-21",
+    "shadow_net_pnl": -0.025602603643734338
+  },
+  {
+    "execution_date": "2022-10-24",
+    "end_date": "2022-10-28",
+    "shadow_net_pnl": 0.04552405166067701
+  },
+  {
+    "execution_date": "2022-10-31",
+    "end_date": "2022-11-04",
+    "shadow_net_pnl": 0.07265988222717289
+  },
+  {
+    "execution_date": "2022-11-07",
+    "end_date": "2022-11-11",
+    "shadow_net_pnl": 0.04371561843301398
+  },
+  {
+    "execution_date": "2022-11-14",
+    "end_date": "2022-11-18",
+    "shadow_net_pnl": 0.013390644911818633
+  },
+  {
+    "execution_date": "2022-11-21",
+    "end_date": "2022-11-25",
+    "shadow_net_pnl": 0.052822931906030456
+  },
+  {
+    "execution_date": "2022-11-28",
+    "end_date": "2022-12-02",
+    "shadow_net_pnl": 0.11499745691011484
+  },
+  {
+    "execution_date": "2022-12-05",
+    "end_date": "2022-12-09",
+    "shadow_net_pnl": -0.014375639030170872
+  },
+  {
+    "execution_date": "2022-12-12",
+    "end_date": "2022-12-16",
+    "shadow_net_pnl": -0.039215715926534084
+  },
+  {
+    "execution_date": "2022-12-19",
+    "end_date": "2022-12-23",
+    "shadow_net_pnl": -0.020113745544112233
+  },
+  {
+    "execution_date": "2022-12-27",
+    "end_date": "2022-12-30",
+    "shadow_net_pnl": -0.017692878585581842
+  },
+  {
+    "execution_date": "2023-01-03",
+    "end_date": "2023-01-06",
+    "shadow_net_pnl": 0.028114299061397917
+  },
+  {
+    "execution_date": "2023-01-09",
+    "end_date": "2023-01-13",
+    "shadow_net_pnl": 0.018465601752571167
+  },
+  {
+    "execution_date": "2023-01-17",
+    "end_date": "2023-01-20",
+    "shadow_net_pnl": -0.014894202975881359
+  },
+  {
+    "execution_date": "2023-01-23",
+    "end_date": "2023-01-27",
+    "shadow_net_pnl": -0.014994560364211911
+  },
+  {
+    "execution_date": "2023-01-30",
+    "end_date": "2023-02-03",
+    "shadow_net_pnl": 0.03415595489504298
+  },
+  {
+    "execution_date": "2023-02-06",
+    "end_date": "2023-02-10",
+    "shadow_net_pnl": 0.0069377494181671676
+  },
+  {
+    "execution_date": "2023-02-13",
+    "end_date": "2023-02-17",
+    "shadow_net_pnl": -0.04833078998019986
+  },
+  {
+    "execution_date": "2023-02-21",
+    "end_date": "2023-02-24",
+    "shadow_net_pnl": 0.0024732480057947093
+  },
+  {
+    "execution_date": "2023-02-27",
+    "end_date": "2023-03-03",
+    "shadow_net_pnl": 0.04428940450170822
+  },
+  {
+    "execution_date": "2023-03-06",
+    "end_date": "2023-03-10",
+    "shadow_net_pnl": -0.09006329255663392
+  },
+  {
+    "execution_date": "2023-03-13",
+    "end_date": "2023-03-17",
+    "shadow_net_pnl": -0.002561673698408873
+  },
+  {
+    "execution_date": "2023-03-20",
+    "end_date": "2023-03-24",
+    "shadow_net_pnl": 0.008649326195845944
+  },
+  {
+    "execution_date": "2023-03-27",
+    "end_date": "2023-03-31",
+    "shadow_net_pnl": 0.030793603382871928
+  },
+  {
+    "execution_date": "2023-04-03",
+    "end_date": "2023-04-06",
+    "shadow_net_pnl": -0.028280772162136678
+  },
+  {
+    "execution_date": "2023-04-10",
+    "end_date": "2023-04-14",
+    "shadow_net_pnl": 0.019958178369113695
+  },
+  {
+    "execution_date": "2023-04-17",
+    "end_date": "2023-04-21",
+    "shadow_net_pnl": -0.004886857522482923
+  },
+  {
+    "execution_date": "2023-04-24",
+    "end_date": "2023-04-28",
+    "shadow_net_pnl": 0.045446105105380476
+  },
+  {
+    "execution_date": "2023-05-01",
+    "end_date": "2023-05-05",
+    "shadow_net_pnl": -0.015407956060459225
+  },
+  {
+    "execution_date": "2023-05-08",
+    "end_date": "2023-05-12",
+    "shadow_net_pnl": 0.014964104205898816
+  },
+  {
+    "execution_date": "2023-05-15",
+    "end_date": "2023-05-19",
+    "shadow_net_pnl": 0.06094129364319875
+  },
+  {
+    "execution_date": "2023-05-22",
+    "end_date": "2023-05-26",
+    "shadow_net_pnl": 0.1596386768488149
+  },
+  {
+    "execution_date": "2023-05-30",
+    "end_date": "2023-06-02",
+    "shadow_net_pnl": -0.014513782399128518
+  },
+  {
+    "execution_date": "2023-06-05",
+    "end_date": "2023-06-09",
+    "shadow_net_pnl": -0.016367663056041717
+  },
+  {
+    "execution_date": "2023-06-12",
+    "end_date": "2023-06-16",
+    "shadow_net_pnl": 0.020969038152239647
+  },
+  {
+    "execution_date": "2023-06-20",
+    "end_date": "2023-06-23",
+    "shadow_net_pnl": -0.015046929918044353
+  },
+  {
+    "execution_date": "2023-06-26",
+    "end_date": "2023-06-30",
+    "shadow_net_pnl": 0.011421078886535391
+  },
+  {
+    "execution_date": "2023-07-03",
+    "end_date": "2023-07-07",
+    "shadow_net_pnl": 0.005447064766128402
+  },
+  {
+    "execution_date": "2023-07-10",
+    "end_date": "2023-07-14",
+    "shadow_net_pnl": 0.05022573533017875
+  },
+  {
+    "execution_date": "2023-07-17",
+    "end_date": "2023-07-21",
+    "shadow_net_pnl": -0.038663949326738445
+  },
+  {
+    "execution_date": "2023-07-24",
+    "end_date": "2023-07-28",
+    "shadow_net_pnl": 0.06157165968416659
+  },
+  {
+    "execution_date": "2023-07-31",
+    "end_date": "2023-08-04",
+    "shadow_net_pnl": -0.0420159752639665
+  },
+  {
+    "execution_date": "2023-08-07",
+    "end_date": "2023-08-11",
+    "shadow_net_pnl": -0.06991571030386408
+  },
+  {
+    "execution_date": "2023-08-14",
+    "end_date": "2023-08-18",
+    "shadow_net_pnl": -0.005391863482573769
+  },
+  {
+    "execution_date": "2023-08-21",
+    "end_date": "2023-08-25",
+    "shadow_net_pnl": 0.05667545783450993
+  },
+  {
+    "execution_date": "2023-08-28",
+    "end_date": "2023-09-01",
+    "shadow_net_pnl": 0.027764305763828816
+  },
+  {
+    "execution_date": "2023-09-05",
+    "end_date": "2023-09-08",
+    "shadow_net_pnl": 0.00012562599566538768
+  },
+  {
+    "execution_date": "2023-09-11",
+    "end_date": "2023-09-15",
+    "shadow_net_pnl": -0.03829247812089512
+  },
+  {
+    "execution_date": "2023-09-18",
+    "end_date": "2023-09-22",
+    "shadow_net_pnl": -0.016222917657644352
+  },
+  {
+    "execution_date": "2023-09-25",
+    "end_date": "2023-09-29",
+    "shadow_net_pnl": 0.024621471903280533
+  },
+  {
+    "execution_date": "2023-10-02",
+    "end_date": "2023-10-06",
+    "shadow_net_pnl": 0.026316420936381348
+  },
+  {
+    "execution_date": "2023-10-09",
+    "end_date": "2023-10-13",
+    "shadow_net_pnl": 0.028317441668581342
+  },
+  {
+    "execution_date": "2023-10-16",
+    "end_date": "2023-10-20",
+    "shadow_net_pnl": -0.049145899997140766
+  },
+  {
+    "execution_date": "2023-10-23",
+    "end_date": "2023-10-27",
+    "shadow_net_pnl": -0.023609848030834397
+  },
+  {
+    "execution_date": "2023-10-30",
+    "end_date": "2023-11-03",
+    "shadow_net_pnl": 0.08316571838975331
+  },
+  {
+    "execution_date": "2023-11-06",
+    "end_date": "2023-11-10",
+    "shadow_net_pnl": 0.019745528719630652
+  },
+  {
+    "execution_date": "2023-11-13",
+    "end_date": "2023-11-17",
+    "shadow_net_pnl": 0.0300904648090128
+  },
+  {
+    "execution_date": "2023-11-20",
+    "end_date": "2023-11-24",
+    "shadow_net_pnl": -0.0017261272982424273
+  },
+  {
+    "execution_date": "2023-11-27",
+    "end_date": "2023-12-01",
+    "shadow_net_pnl": 0.04134277064582921
+  },
+  {
+    "execution_date": "2023-12-04",
+    "end_date": "2023-12-08",
+    "shadow_net_pnl": 0.011569811357622806
+  },
+  {
+    "execution_date": "2023-12-11",
+    "end_date": "2023-12-15",
+    "shadow_net_pnl": 0.020525877921904263
+  },
+  {
+    "execution_date": "2023-12-18",
+    "end_date": "2023-12-22",
+    "shadow_net_pnl": 0.0008632764890733977
+  },
+  {
+    "execution_date": "2023-12-26",
+    "end_date": "2023-12-29",
+    "shadow_net_pnl": -0.009967015748569877
+  },
+  {
+    "execution_date": "2024-01-02",
+    "end_date": "2024-01-05",
+    "shadow_net_pnl": -0.011266766398321726
+  },
+  {
+    "execution_date": "2024-01-08",
+    "end_date": "2024-01-12",
+    "shadow_net_pnl": 0.054493632241167524
+  },
+  {
+    "execution_date": "2024-01-16",
+    "end_date": "2024-01-19",
+    "shadow_net_pnl": 0.012310806084755137
+  },
+  {
+    "execution_date": "2024-01-22",
+    "end_date": "2024-01-26",
+    "shadow_net_pnl": -0.0020551171019000955
+  },
+  {
+    "execution_date": "2024-01-29",
+    "end_date": "2024-02-02",
+    "shadow_net_pnl": -0.03417607014281186
+  },
+  {
+    "execution_date": "2024-02-05",
+    "end_date": "2024-02-09",
+    "shadow_net_pnl": 0.05236046395384612
+  },
+  {
+    "execution_date": "2024-02-12",
+    "end_date": "2024-02-16",
+    "shadow_net_pnl": 0.015347705096367452
+  },
+  {
+    "execution_date": "2024-02-20",
+    "end_date": "2024-02-23",
+    "shadow_net_pnl": -0.02408298620408277
+  },
+  {
+    "execution_date": "2024-02-26",
+    "end_date": "2024-03-01",
+    "shadow_net_pnl": 0.06252586123666556
+  },
+  {
+    "execution_date": "2024-03-04",
+    "end_date": "2024-03-08",
+    "shadow_net_pnl": -0.031750979182862814
+  },
+  {
+    "execution_date": "2024-03-11",
+    "end_date": "2024-03-15",
+    "shadow_net_pnl": 0.004027043642269402
+  },
+  {
+    "execution_date": "2024-03-18",
+    "end_date": "2024-03-22",
+    "shadow_net_pnl": 0.02071639511049321
+  },
+  {
+    "execution_date": "2024-03-25",
+    "end_date": "2024-03-28",
+    "shadow_net_pnl": -0.004469777090713385
+  },
+  {
+    "execution_date": "2024-04-01",
+    "end_date": "2024-04-05",
+    "shadow_net_pnl": 0.0015417465254608746
+  },
+  {
+    "execution_date": "2024-04-08",
+    "end_date": "2024-04-12",
+    "shadow_net_pnl": -0.012129665352089508
+  },
+  {
+    "execution_date": "2024-04-15",
+    "end_date": "2024-04-19",
+    "shadow_net_pnl": -0.1032907439478143
+  },
+  {
+    "execution_date": "2024-04-22",
+    "end_date": "2024-04-26",
+    "shadow_net_pnl": 0.09609945859558391
+  },
+  {
+    "execution_date": "2024-04-29",
+    "end_date": "2024-05-03",
+    "shadow_net_pnl": -0.009009753631079174
+  },
+  {
+    "execution_date": "2024-05-06",
+    "end_date": "2024-05-10",
+    "shadow_net_pnl": 0.031177294852350032
+  },
+  {
+    "execution_date": "2024-05-13",
+    "end_date": "2024-05-17",
+    "shadow_net_pnl": 0.02989363297351452
+  },
+  {
+    "execution_date": "2024-05-20",
+    "end_date": "2024-05-24",
+    "shadow_net_pnl": 0.05637096137974862
+  },
+  {
+    "execution_date": "2024-05-28",
+    "end_date": "2024-05-31",
+    "shadow_net_pnl": -0.024773202213004934
+  },
+  {
+    "execution_date": "2024-06-03",
+    "end_date": "2024-06-07",
+    "shadow_net_pnl": 0.07574744294410699
+  },
+  {
+    "execution_date": "2024-06-10",
+    "end_date": "2024-06-14",
+    "shadow_net_pnl": 0.07164536197900183
+  },
+  {
+    "execution_date": "2024-06-17",
+    "end_date": "2024-06-21",
+    "shadow_net_pnl": -0.020602550871821224
+  },
+  {
+    "execution_date": "2024-06-24",
+    "end_date": "2024-06-28",
+    "shadow_net_pnl": -0.05867288632389648
+  },
+  {
+    "execution_date": "2024-07-01",
+    "end_date": "2024-07-05",
+    "shadow_net_pnl": 0.020992824463500218
+  },
+  {
+    "execution_date": "2024-07-08",
+    "end_date": "2024-07-12",
+    "shadow_net_pnl": 0.019387814731726096
+  },
+  {
+    "execution_date": "2024-07-15",
+    "end_date": "2024-07-19",
+    "shadow_net_pnl": -0.09749057116265565
+  },
+  {
+    "execution_date": "2024-07-22",
+    "end_date": "2024-07-26",
+    "shadow_net_pnl": -0.07089032118921981
+  },
+  {
+    "execution_date": "2024-07-29",
+    "end_date": "2024-08-02",
+    "shadow_net_pnl": -0.282594484794389
+  },
+  {
+    "execution_date": "2024-08-05",
+    "end_date": "2024-08-09",
+    "shadow_net_pnl": 0.10847884949939747
+  },
+  {
+    "execution_date": "2024-08-12",
+    "end_date": "2024-08-16",
+    "shadow_net_pnl": 0.15709889536461874
+  },
+  {
+    "execution_date": "2024-08-19",
+    "end_date": "2024-08-23",
+    "shadow_net_pnl": 0.018325658344652346
+  },
+  {
+    "execution_date": "2024-08-26",
+    "end_date": "2024-08-30",
+    "shadow_net_pnl": -0.15482044965390707
+  },
+  {
+    "execution_date": "2024-09-03",
+    "end_date": "2024-09-06",
+    "shadow_net_pnl": -0.08354832796078272
+  },
+  {
+    "execution_date": "2024-09-09",
+    "end_date": "2024-09-13",
+    "shadow_net_pnl": 0.12312020567760869
+  },
+  {
+    "execution_date": "2024-09-16",
+    "end_date": "2024-09-20",
+    "shadow_net_pnl": 0.11293166889804909
+  },
+  {
+    "execution_date": "2024-09-23",
+    "end_date": "2024-09-27",
+    "shadow_net_pnl": -0.0008470866434339488
+  },
+  {
+    "execution_date": "2024-09-30",
+    "end_date": "2024-10-04",
+    "shadow_net_pnl": -0.006272181525453158
+  },
+  {
+    "execution_date": "2024-10-07",
+    "end_date": "2024-10-11",
+    "shadow_net_pnl": -0.012930213424211325
+  },
+  {
+    "execution_date": "2024-10-14",
+    "end_date": "2024-10-18",
+    "shadow_net_pnl": -0.002198496540975805
+  },
+  {
+    "execution_date": "2024-10-21",
+    "end_date": "2024-10-25",
+    "shadow_net_pnl": 0.059194670758456754
+  },
+  {
+    "execution_date": "2024-10-28",
+    "end_date": "2024-11-01",
+    "shadow_net_pnl": -0.07614698989768157
+  },
+  {
+    "execution_date": "2024-11-04",
+    "end_date": "2024-11-08",
+    "shadow_net_pnl": 0.16354330212442303
+  },
+  {
+    "execution_date": "2024-11-11",
+    "end_date": "2024-11-15",
+    "shadow_net_pnl": -0.046689612191211
+  },
+  {
+    "execution_date": "2024-11-18",
+    "end_date": "2024-11-22",
+    "shadow_net_pnl": 0.07171451591552107
+  },
+  {
+    "execution_date": "2024-11-25",
+    "end_date": "2024-11-29",
+    "shadow_net_pnl": -0.022257651381081482
+  },
+  {
+    "execution_date": "2024-12-02",
+    "end_date": "2024-12-06",
+    "shadow_net_pnl": 0.04937544778980005
+  },
+  {
+    "execution_date": "2024-12-09",
+    "end_date": "2024-12-13",
+    "shadow_net_pnl": -0.01697589001974989
+  },
+  {
+    "execution_date": "2024-12-16",
+    "end_date": "2024-12-20",
+    "shadow_net_pnl": 0.024526652129877445
+  },
+  {
+    "execution_date": "2024-12-23",
+    "end_date": "2024-12-27",
+    "shadow_net_pnl": -0.028867077569505902
+  },
+  {
+    "execution_date": "2024-12-30",
+    "end_date": "2025-01-03",
+    "shadow_net_pnl": 0.07048785698798274
+  },
+  {
+    "execution_date": "2025-01-06",
+    "end_date": "2025-01-10",
+    "shadow_net_pnl": -0.15099949858320413
+  },
+  {
+    "execution_date": "2025-01-13",
+    "end_date": "2025-01-17",
+    "shadow_net_pnl": 0.16858529616205586
+  },
+  {
+    "execution_date": "2025-01-21",
+    "end_date": "2025-01-24",
+    "shadow_net_pnl": -0.04910545552608824
+  },
+  {
+    "execution_date": "2025-01-27",
+    "end_date": "2025-01-31",
+    "shadow_net_pnl": 0.009636717935559272
+  },
+  {
+    "execution_date": "2025-02-03",
+    "end_date": "2025-02-07",
+    "shadow_net_pnl": 0.1821946448675267
+  },
+  {
+    "execution_date": "2025-02-10",
+    "end_date": "2025-02-14",
+    "shadow_net_pnl": 0.14265415582587074
+  },
+  {
+    "execution_date": "2025-02-18",
+    "end_date": "2025-02-21",
+    "shadow_net_pnl": -0.17416343531614015
+  },
+  {
+    "execution_date": "2025-02-24",
+    "end_date": "2025-02-28",
+    "shadow_net_pnl": -0.06075736850794061
+  },
+  {
+    "execution_date": "2025-03-03",
+    "end_date": "2025-03-07",
+    "shadow_net_pnl": -0.14928606249801282
+  },
+  {
+    "execution_date": "2025-03-10",
+    "end_date": "2025-03-14",
+    "shadow_net_pnl": 0.12994460520867163
+  },
+  {
+    "execution_date": "2025-03-17",
+    "end_date": "2025-03-21",
+    "shadow_net_pnl": 0.0812710315029976
+  },
+  {
+    "execution_date": "2025-03-24",
+    "end_date": "2025-03-28",
+    "shadow_net_pnl": -0.1616474052122177
+  },
+  {
+    "execution_date": "2025-03-31",
+    "end_date": "2025-04-04",
+    "shadow_net_pnl": -0.1492385190143133
+  },
+  {
+    "execution_date": "2025-04-07",
+    "end_date": "2025-04-11",
+    "shadow_net_pnl": 0.296185188251711
+  },
+  {
+    "execution_date": "2025-04-14",
+    "end_date": "2025-04-17",
+    "shadow_net_pnl": -0.02671157888594329
+  },
+  {
+    "execution_date": "2025-04-21",
+    "end_date": "2025-04-25",
+    "shadow_net_pnl": 0.1790065647977867
+  },
+  {
+    "execution_date": "2025-04-28",
+    "end_date": "2025-05-02",
+    "shadow_net_pnl": 0.0689435730578207
+  },
+  {
+    "execution_date": "2025-05-05",
+    "end_date": "2025-05-09",
+    "shadow_net_pnl": 0.08261465376506034
+  },
+  {
+    "execution_date": "2025-05-12",
+    "end_date": "2025-05-16",
+    "shadow_net_pnl": -0.0052684501326490975
+  },
+  {
+    "execution_date": "2025-05-19",
+    "end_date": "2025-05-23",
+    "shadow_net_pnl": 0.004981222822398618
+  },
+  {
+    "execution_date": "2025-05-27",
+    "end_date": "2025-05-30",
+    "shadow_net_pnl": 0.028980768721036346
+  },
+  {
+    "execution_date": "2025-06-02",
+    "end_date": "2025-06-06",
+    "shadow_net_pnl": 0.00930358584795498
+  },
+  {
+    "execution_date": "2025-06-09",
+    "end_date": "2025-06-13",
+    "shadow_net_pnl": 0.010893657736973818
+  },
+  {
+    "execution_date": "2025-06-16",
+    "end_date": "2025-06-20",
+    "shadow_net_pnl": -0.01820504198197999
+  },
+  {
+    "execution_date": "2025-06-23",
+    "end_date": "2025-06-27",
+    "shadow_net_pnl": 0.044998490669685164
+  },
+  {
+    "execution_date": "2025-06-30",
+    "end_date": "2025-07-03",
+    "shadow_net_pnl": -0.016820710923641267
+  },
+  {
+    "execution_date": "2025-07-07",
+    "end_date": "2025-07-11",
+    "shadow_net_pnl": -0.007857932227060946
+  },
+  {
+    "execution_date": "2025-07-14",
+    "end_date": "2025-07-18",
+    "shadow_net_pnl": 0.03982057085038445
+  },
+  {
+    "execution_date": "2025-07-21",
+    "end_date": "2025-07-25",
+    "shadow_net_pnl": 0.0065458553975064095
+  },
+  {
+    "execution_date": "2025-07-28",
+    "end_date": "2025-08-01",
+    "shadow_net_pnl": -0.0052531808698331305
+  },
+  {
+    "execution_date": "2025-08-04",
+    "end_date": "2025-08-08",
+    "shadow_net_pnl": 0.03505437433654049
+  },
+  {
+    "execution_date": "2025-08-11",
+    "end_date": "2025-08-15",
+    "shadow_net_pnl": -0.006449016129168587
+  },
+  {
+    "execution_date": "2025-08-18",
+    "end_date": "2025-08-22",
+    "shadow_net_pnl": -0.048405260536445706
+  },
+  {
+    "execution_date": "2025-08-25",
+    "end_date": "2025-08-29",
+    "shadow_net_pnl": -0.038104799212956834
+  },
+  {
+    "execution_date": "2025-09-02",
+    "end_date": "2025-09-05",
+    "shadow_net_pnl": -0.011382751846168503
+  },
+  {
+    "execution_date": "2025-09-08",
+    "end_date": "2025-09-12",
+    "shadow_net_pnl": 0.06578280300208028
+  },
+  {
+    "execution_date": "2025-09-15",
+    "end_date": "2025-09-19",
+    "shadow_net_pnl": 0.01664632269798194
+  },
+  {
+    "execution_date": "2025-09-22",
+    "end_date": "2025-09-26",
+    "shadow_net_pnl": -0.002666271784981497
+  },
+  {
+    "execution_date": "2025-09-29",
+    "end_date": "2025-10-03",
+    "shadow_net_pnl": 0.13081344853497434
+  },
+  {
+    "execution_date": "2025-10-06",
+    "end_date": "2025-10-10",
+    "shadow_net_pnl": 0.009500204314433588
+  },
+  {
+    "execution_date": "2025-10-13",
+    "end_date": "2025-10-17",
+    "shadow_net_pnl": 0.004690670737336649
+  },
+  {
+    "execution_date": "2025-10-20",
+    "end_date": "2025-10-24",
+    "shadow_net_pnl": 0.03948578295376541
+  },
+  {
+    "execution_date": "2025-10-27",
+    "end_date": "2025-10-31",
+    "shadow_net_pnl": 0.04399218339965327
+  },
+  {
+    "execution_date": "2025-11-03",
+    "end_date": "2025-11-07",
+    "shadow_net_pnl": -0.016565659243091606
+  },
+  {
+    "execution_date": "2025-11-10",
+    "end_date": "2025-11-14",
+    "shadow_net_pnl": -0.042528238719035355
+  },
+  {
+    "execution_date": "2025-11-17",
+    "end_date": "2025-11-21",
+    "shadow_net_pnl": -0.1128192072722931
+  },
+  {
+    "execution_date": "2025-11-24",
+    "end_date": "2025-11-28",
+    "shadow_net_pnl": 0.052001854249257705
+  },
+  {
+    "execution_date": "2025-12-01",
+    "end_date": "2025-12-05",
+    "shadow_net_pnl": 0.07630517617072362
+  },
+  {
+    "execution_date": "2025-12-08",
+    "end_date": "2025-12-12",
+    "shadow_net_pnl": 0.02134900385289732
+  },
+  {
+    "execution_date": "2025-12-15",
+    "end_date": "2025-12-19",
+    "shadow_net_pnl": 0.04372311565360025
+  },
+  {
+    "execution_date": "2025-12-22",
+    "end_date": "2025-12-26",
+    "shadow_net_pnl": -0.00891945203860404
+  },
+  {
+    "execution_date": "2025-12-29",
+    "end_date": "2026-01-02",
+    "shadow_net_pnl": 0.07479424427978561
+  },
+  {
+    "execution_date": "2026-01-05",
+    "end_date": "2026-01-09",
+    "shadow_net_pnl": 0.019833222444852715
+  },
+  {
+    "execution_date": "2026-01-12",
+    "end_date": "2026-01-16",
+    "shadow_net_pnl": 0.06936146047121497
+  },
+  {
+    "execution_date": "2026-01-20",
+    "end_date": "2026-01-23",
+    "shadow_net_pnl": 0.04917811179555576
+  },
+  {
+    "execution_date": "2026-01-26",
+    "end_date": "2026-01-30",
+    "shadow_net_pnl": 0.019536126870894205
+  },
+  {
+    "execution_date": "2026-02-02",
+    "end_date": "2026-02-06",
+    "shadow_net_pnl": 0.026890261053975628
+  },
+  {
+    "execution_date": "2026-02-09",
+    "end_date": "2026-02-13",
+    "shadow_net_pnl": 0.03260861886048549
+  },
+  {
+    "execution_date": "2026-02-17",
+    "end_date": "2026-02-20",
+    "shadow_net_pnl": 0.027646699885901516
+  },
+  {
+    "execution_date": "2026-02-23",
+    "end_date": "2026-02-27",
+    "shadow_net_pnl": -0.046066638448792135
+  },
+  {
+    "execution_date": "2026-03-02",
+    "end_date": "2026-03-06",
+    "shadow_net_pnl": -0.11628000123818427
+  },
+  {
+    "execution_date": "2026-03-09",
+    "end_date": "2026-03-13",
+    "shadow_net_pnl": 0.180932775745309
+  },
+  {
+    "execution_date": "2026-03-16",
+    "end_date": "2026-03-20",
+    "shadow_net_pnl": 0.02796228279593619
+  },
+  {
+    "execution_date": "2026-03-23",
+    "end_date": "2026-03-27",
+    "shadow_net_pnl": -0.09141546954841369
+  },
+  {
+    "execution_date": "2026-03-30",
+    "end_date": "2026-04-02",
+    "shadow_net_pnl": 0.09167613258525145
+  },
+  {
+    "execution_date": "2026-04-06",
+    "end_date": "2026-04-10",
+    "shadow_net_pnl": 0.1418662840881767
+  },
+  {
+    "execution_date": "2026-04-13",
+    "end_date": "2026-04-17",
+    "shadow_net_pnl": 0.06476981809394426
+  },
+  {
+    "execution_date": "2026-04-20",
+    "end_date": "2026-04-24",
+    "shadow_net_pnl": 0.08349685487302759
+  },
+  {
+    "execution_date": "2026-04-27",
+    "end_date": "2026-04-30",
+    "shadow_net_pnl": 0.049392467213243856
+  }
+]

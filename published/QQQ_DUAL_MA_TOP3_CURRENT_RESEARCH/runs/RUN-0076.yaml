@@ -1,0 +1,46 @@
+run_id: RUN-0076
+campaign_id: CAM-0611
+parent_run: RUN-0075
+status: completed
+question: What are trailing-12-month completed-position trade statistics for the exact compounded baseline including authorized OOS evidence?
+configuration:
+  window: 2025-08-15_through_2026-08-14
+  strategy: change_only_equalized_compounded_QQQ_dual_MA_top3
+  execution: exact_SIP_0940_plus_2bps
+  trade_definition: one_symbol_position_episode_from_entry_until_final_exit
+  primary_cohort: episodes_closed_during_window
+  open_positions_excluded: true
+  include_authorized_oos_through: 2026-08-14
+  broker_margin: false
+gates:
+  - preserve_exact_entry_and_exit_costs
+  - extend_cutoff_open_episodes_instead_of_double_counting
+  - report_completed_trade_count
+  - identify_open_episode_exclusion
+result:
+  completed_trades: 25
+  wins: 18
+  losses: 7
+  win_rate: 0.72
+  average_win: 0.339613
+  average_loss: -0.106609
+  average_trade: 0.214671
+  median_trade: 0.034380
+  average_holding_sessions: 33.04
+  median_holding_sessions: 19
+  open_excluded: [SNDK, MU, ARM]
+  maximum_loaded_date: '2026-08-14'
+  rows_after_authorized_end: 0
+decision: Report as trailing-year descriptive evidence; the averages are right-tail-sensitive and should be read with the median.
+followup_full_history_through_2026_08_14:
+  completed_trades: 197
+  wins: 113
+  losses: 84
+  win_rate: 0.573604
+  average_win: 0.167009
+  average_loss: -0.076441
+  average_trade: 0.063202
+  median_trade: 0.008575
+  average_holding_sessions: 23.6853
+  median_holding_sessions: 10
+  open_excluded: [SNDK, MU, ARM]

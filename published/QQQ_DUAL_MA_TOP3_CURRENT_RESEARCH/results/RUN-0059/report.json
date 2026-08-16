@@ -1,0 +1,29 @@
+{
+  "status": "completed",
+  "configuration": "change_only_reserve0.005_2bps",
+  "authorized_window": {
+    "start": "2026-05-01",
+    "end": "2026-08-14"
+  },
+  "maximum_loaded_date": "2026-08-14",
+  "rows_after_authorized_end": 0,
+  "starting_equity": 17.863855274572497,
+  "ending_equity": 25.973397405643396,
+  "oos_compounded_return": 0.45396371647804723,
+  "monthly_compounded_returns": {
+    "2026-05": 0.45991456050125623,
+    "2026-06": 0.21230686751126493,
+    "2026-07": -0.3276490466640112,
+    "2026-08": 0.22184900208463398
+  },
+  "oos_maximum_drawdown": 0.44611294349182606,
+  "oos_maximum_drawdown_trough": "2026-07-29",
+  "rebalance_sessions": 6,
+  "trade_orders": 25,
+  "minimum_cash": 0.08578507666762344,
+  "maximum_gross_to_equity": 0.9965021705114122,
+  "quote_roles": 50,
+  "quote_coverage": 1.0,
+  "broker_margin_used": false,
+  "august_is_partial_through": "2026-08-14"
+}

@@ -1,0 +1,32 @@
+run_id: RUN-0005
+campaign_id: CAM-0630
+parent_run: RUN-0004
+status: completed_exact_stress
+question: Is prior-day leader selloff followed by delayed overnight rebound a smooth, cost-tolerant exact-fill strategy?
+configuration:
+  signal: selected_slow_QQQ_leader_prior_completed_day_return_at_or_below_threshold
+  entry: following_session_15_50_or_12_50_early_close_exact_ask
+  exit: next_session_09_40_exact_bid
+  thresholds: [-0.005, -0.01, -0.015, -0.02, -0.025, -0.03, -0.04, -0.05]
+  allocation: full_port_equal_among_qualifying_top3_leaders_else_cash
+  extra_bps_per_side: [-1, 0, 1, 2, 5, 10]
+  accounting: fixed_base_additive_primary
+  holdout_access: false
+reason: RUN-0004 found the -1% and -2% standalone cells jointly improved return, drawdown, recent consistency, and chronology.
+expected_effect: A genuine delayed overnight rebound should remain strong across adjacent loss thresholds and at 5-10 bp cost stress without a single-period dependency.
+gates:
+  - exact_quote_roles_100pct
+  - threshold_neighborhood
+  - cost_curve
+  - yearly_and_recent_chronology
+  - daily_and_monthly_consistency
+  - concentration_and_leave_best_trades
+  - no_holdout_rows_loaded
+  - no_promotion_from_posthoc_development_selection
+result:
+  selected_neighborhood_center_minus_1p5pct_at_2bps: {net_return: 2.763729, maximum_drawdown: 0.078553, recent12: 0.926531, active_fraction: 0.461842, positive_months: 48, negative_months: 25, worst_month: -0.111055, top5_positive_trade_share: 0.067293}
+  same_cell_at_5bps: {net_return: 2.340998, maximum_drawdown: 0.095462, recent12: 0.859995}
+  same_cell_at_10bps: {net_return: 1.637008, maximum_drawdown: 0.141016, recent12: 0.749190}
+  yearly_2bps: {2020: 0.498557, 2021: 0.506074, 2022: 0.163944, 2023: 0.158740, 2024: 0.413500, 2025: 0.541327, 2026_through_April: 0.481588}
+  neighborhood_note: Thresholds from minus 1 to minus 3 percent remained profitable at 10bps; minus 1.5 percent is the development maximum and not independently selected.
+decision: Record as a strong development candidate. Test a threshold-free cross-sectional weakest-leader expression for daily cadence before any checkpoint claim.

@@ -1,0 +1,42 @@
+run_id: RUN-0047
+campaign_id: CAM-0611
+parent_run: RUN-0030
+status: completed
+change: Development-only test of three prespecified adverse-flip portfolio expressions, excluding all post-April 30 evidence.
+reason: Determine whether a simple causal QQQ trend reversal can reduce long-momentum crash exposure without relying on holdout observations.
+oos_quarantine:
+  design_cutoff: 2026-04-30
+  load_post_cutoff_rows: false
+  prior_oos_results_used_for_threshold_or_variant_selection: false
+flip_rule:
+  decision_time: completed_session_close
+  adverse_flip: QQQ_SMA10_below_QQQ_SMA20
+  recovery: QQQ_SMA10_at_or_above_QQQ_SMA20
+  execution: next_session_09_40_ET
+control:
+  strategy: locked_QQQ_dual_MA_top3_weekly_126_skip21_equal_weight
+expressions:
+  - {id: cash_switch, risk_off_weights: {cash: 1.0}}
+  - {id: half_inverse, risk_off_weights: {cash: 0.5, SQQQ: 0.5}}
+  - {id: full_inverse, risk_off_weights: {SQQQ: 1.0}}
+constraints:
+  - no_broker_margin
+  - no_direct_short
+  - gross_exposure_at_most_1
+  - fixed_base_additive_noncompounded
+  - exact_SIP_quote_gate_for_profitable_0_1_2bps_variants
+gates:
+  - zero_rows_after_2026_04_30_loaded
+  - compare_alpha_execution_and_portfolio_effects_separately
+  - report_costs_turnover_months_drawdown_and_regime_whipsaw
+validation:
+  maximum_loaded_date: 2026-04-30
+  holdout_rows_loaded: 0
+  quote_role_coverage: 1.0
+  successor_handling: XLNX_exit_routed_to_AMD_relative_quote_on_2022-02-14
+result_at_exact_quotes_plus_2bps:
+  weekly_control: {net_return: 3.628296, maximum_drawdown: 0.175224, recent12: 1.170944, positive_negative_months: [48, 25], worst_month: -0.166237}
+  cash_switch: {net_return: 2.447015, maximum_drawdown: 0.182071, recent12: 0.882853, positive_negative_months: [44, 27], worst_month: -0.166541}
+  half_inverse: {net_return: 1.474164, maximum_drawdown: 0.332421, recent12: 0.720507, positive_negative_months: [44, 33], worst_month: -0.259377}
+  full_inverse: {net_return: 0.501313, maximum_drawdown: 0.670811, recent12: 0.558161, positive_negative_months: [37, 40], worst_month: -0.352213}
+decision: All three adverse-flip expressions are dominated by the unchanged weekly control. The 10/20 QQQ flip is too slow and whipsaw-prone; inverse exposure magnifies path decay and false flips. Do not promote or tune these rules.

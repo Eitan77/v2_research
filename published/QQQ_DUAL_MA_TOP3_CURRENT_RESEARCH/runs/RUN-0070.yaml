@@ -1,0 +1,46 @@
+run_id: RUN-0070
+campaign_id: CAM-0611
+parent_run: RUN-0069
+status: completed_and_reconciled
+question: How did the compounded Top-3 strategy historically behave when an incumbent holding was as short-term hot as SNDK is on 2026-08-14?
+reason: >-
+  SNDK remains selected but gained 35.38 percent over five sessions. The user
+  needs a historical conditional-risk diagnostic before initiating a new live
+  account into an already-established signal.
+configuration:
+  comparison_sample: discovery_only_through_2026-04-30
+  strategy_path: exact_quote_filled_change_only_reserve0p5_2bps_compounded
+  condition:
+    selected_top3_name_is_incumbent: true
+    trailing_5_session_return_thresholds: [0.10, 0.15, 0.20, 0.25, 0.30, 0.35]
+  current_reference:
+    symbol: SNDK
+    trailing_5_session_return: 0.353817
+    trailing_21_session_return: 0.163017
+    distance_above_sma20: 0.212451
+  outcome: compounded_portfolio_return_from_pre_execution_close_through_next_week_close
+  purpose: posthoc_risk_diagnostic_not_strategy_retuning
+gates:
+  - no_holdout_rows_in_historical_comparison
+  - distinguish_incumbents_from_new_entries
+  - report_sample_size_win_rate_median_mean_and_worst
+  - list_nearest_historical_analogues
+result:
+  status: completed_and_reconciled
+  maximum_loaded_date: 2026-04-30
+  holdout_rows_loaded: 0
+  exact_quote_compounded_portfolio_outcomes:
+    incumbent_ret5_ge_20pct: {independent_weeks: 18, positive_weeks: 9, mean_next_week: 0.002411, median_next_week: 0.000883, worst_next_week: -0.202455}
+    incumbent_ret5_ge_25pct: {independent_weeks: 7, positive_weeks: 2, mean_next_week: -0.029018, median_next_week: -0.031242, worst_next_week: -0.202455}
+    incumbent_ret5_ge_30pct: {independent_weeks: 5, positive_weeks: 2, mean_next_week: -0.022066, median_next_week: -0.017560, worst_next_week: -0.202455}
+    incumbent_ret5_ge_35pct: {independent_weeks: 1, positive_weeks: 0, mean_next_week: -0.202455, median_next_week: -0.202455, worst_next_week: -0.202455}
+  sole_ge_35pct_analogue: {signal_date: 2025-02-14, symbol: APP, ret5: 0.357740, ret21: 0.522640, above_sma20: 0.348592, portfolio_next_week: -0.202455}
+  nearest_multifeature_analogue: {signal_date: 2021-04-16, symbol: MRNA, ret5: 0.212106, ret21: 0.157641, above_sma20: 0.229282, portfolio_next_week: 0.019532}
+decision: >-
+  The comparison is not reassuring at extreme five-day heat: above 25 percent,
+  only two of seven independent strategy weeks were positive and the median was
+  -3.12 percent; the sole prior 35-percent case lost 20.25 percent at portfolio
+  level the next week. Samples are too small and the condition is posthoc, so
+  this cannot justify a new veto or retuning rule. It does identify Monday as a
+  materially higher-risk initiation than an ordinary frozen-signal week.
+

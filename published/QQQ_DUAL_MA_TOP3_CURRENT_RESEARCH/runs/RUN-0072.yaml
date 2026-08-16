@@ -1,0 +1,51 @@
+run_id: RUN-0072
+campaign_id: CAM-0611
+parent_run: RUN-0071
+status: completed_and_reconciled
+question: Do the only modestly improved five-session substitution thresholds survive exact full-history 09:40 SIP quote replay in the actual compounded cash-account architecture?
+reason: >-
+  RUN-0071 found only small fixed-base improvements at 25, 30, and 35 percent.
+  Exact quote replay is required before treating those differences as real for
+  the intended live architecture.
+expected_effect: >-
+  If the filter is useful rather than noise, at least neighboring 25 and 30
+  percent substitutions should improve true compounded drawdown or tail loss
+  without materially sacrificing return across 0, 1, and 2 bp extra slippage.
+configuration:
+  variants: [control, substitute_25, substitute_30, substitute_35]
+  sample: discovery_only_through_2026-04-30
+  portfolio: self_financing_change_only_equalization_0p5pct_cash_reserve
+  reference_clock: first_valid_SIP_midpoint_after_0930
+  execution_clock: first_valid_SIP_bid_or_ask_after_0940
+  extra_adverse_bps_per_side: [0, 1, 2]
+  broker_margin: false
+  holdout_access: false
+gates:
+  - reproduce_RUN-0058_control
+  - exact_quote_role_coverage_100pct_except_documented_terminal_events
+  - no_rows_on_or_after_2026-05-01
+  - cash_nonnegative_and_gross_not_above_equity
+  - reconcile_planned_and_executed_variants
+result:
+  status: completed_and_reconciled
+  planned_variants: 12
+  executed_variants: 12
+  quote_roles_per_clock: 750
+  newly_pulled_roles_per_clock: 14
+  documented_unfilled_terminal_roles_per_clock: 1
+  effective_quote_role_coverage: 1.0
+  maximum_loaded_date: 2026-04-30
+  holdout_rows_loaded: 0
+  exact_compounded_at_2bps:
+    control: {return: 16.863855, maximum_drawdown: 0.419909, recent12: 1.925107, worst_month: -0.150740, trade_orders: 709}
+    substitute_25: {return: 17.623094, maximum_drawdown: 0.419909, recent12: 1.882351, worst_month: -0.150740, trade_orders: 743}
+    substitute_30: {return: 17.808567, maximum_drawdown: 0.419909, recent12: 1.882351, worst_month: -0.150740, trade_orders: 735}
+    substitute_35: {return: 18.095723, maximum_drawdown: 0.419909, recent12: 1.882351, worst_month: -0.150740, trade_orders: 717}
+  cost_stability: all_four_variants_positive_at_0_1_2bps
+decision: >-
+  Reject the five-session substitution rule as a validated risk improvement.
+  The sparse 25-35 percent cells raise historical ending equity through path
+  dependence, but none reduces the 41.99 percent drawdown or 15.07 percent worst
+  month, and all three reduce recent12 compounded return by 4.28 points. The
+  high-threshold return lift is too sparse and posthoc to outweigh the unchanged
+  tail risk. Preserve control; forward-track the rule only if desired.

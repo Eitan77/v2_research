@@ -1,0 +1,70 @@
+run_id: RUN-0065
+campaign_id: CAM-0611
+parent_run: RUN-0058
+status: completed
+question: Does replacement-only cash handling preserve persistent winners better than equalizing the portfolio when membership changes?
+diagnosis: >-
+  Even change-only equalization trims continuing winners whenever one name leaves.
+  A literal replacement-only account should sell outgoing names, divide available
+  proceeds among entrants, and leave continuing positions untouched.
+expected_effect: >-
+  Lower turnover and stronger continuation capture, with greater position drift
+  and potentially worse single-name concentration and drawdown.
+configuration:
+  signal: unchanged_QQQ_PIT_SMA50_gt_SMA200_liquidity_top_half_rank_126_skip21_top3
+  signal_time: completed_Friday_close
+  execution_time: next_session_0940_America_New_York
+  account:
+    initial_cash: 1.0
+    fractional_shares: true
+    broker_margin: false
+    continuing_names: never_resized
+    outgoing_names: fully_sold
+    entrant_funding: available_cash_split_equally_among_new_entrants
+    initial_entry: available_cash_split_equally_among_initial_three
+    reserves: [0.0, 0.005]
+  quote_model:
+    reference: first_valid_SIP_midpoint_after_0930
+    execution: first_valid_SIP_bid_or_ask_after_0940
+    extra_adverse_bps_per_side: [0, 2, 10]
+  discovery_cutoff: 2026-04-30
+  holdout_access: false
+gates:
+  - zero_holdout_rows_loaded
+  - exact_cash_and_fractional_inventory
+  - continuing_position_notional_unchanged_at_replacement_clock
+  - cash_never_negative
+  - gross_never_above_equity
+  - exact_quote_coverage
+  - report_position_concentration_and_turnover
+result:
+  status: completed_and_reconciled
+  planned_variants: 6
+  executed_variants: 6
+  replacement_only_no_reserve_2bps:
+    ending_equity: 21.451778
+    compounded_return: 20.451778
+    maximum_drawdown: 0.411053
+    recent12_compounded_return: 1.861383
+    positive_months: 48
+    negative_months: 25
+    worst_month: -0.155247
+    worst_year: -0.193642
+    trade_orders: 383
+    maximum_single_position_weight: 0.632867
+    maximum_single_position_symbol: TSLA
+    maximum_single_position_date: 2021-01-08
+    sessions_above_50pct_single_name: 501
+  replacement_only_0p5reserve_2bps: {ending_equity: 21.225693, maximum_drawdown: 0.409270, recent12_compounded_return: 1.847910}
+  replacement_only_no_reserve_10bps: {ending_equity: 19.566277, maximum_drawdown: 0.422785, recent12_compounded_return: 1.830218}
+  maximum_continuing_notional_error: 0.0
+  quote_role_coverage: 1.0
+  maximum_loaded_date: 2026-04-30
+  holdout_rows_loaded: 0
+decision: >-
+  Preserve replacement-only as the leading self-financing deployment
+  architecture challenger. It improves ending equity, drawdown, and turnover
+  versus both weekly and membership-change equalization, and survives 10 bp.
+  It is not promoted because the account allowed one name to reach 63.29 percent
+  and spent 501 sessions above 50 percent single-name weight. A broad prospective
+  concentration-boundary test is the next unresolved capital question.

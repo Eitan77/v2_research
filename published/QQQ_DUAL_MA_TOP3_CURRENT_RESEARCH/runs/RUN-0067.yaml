@@ -1,0 +1,37 @@
+run_id: RUN-0067
+campaign_id: CAM-0611
+parent_run: RUN-0029
+status: completed
+question: What is the top-N breadth curve over the trailing year through August 14, 2026, including the already-authorized observed OOS period?
+configuration:
+  signal: unchanged_QQQ_PIT_SMA50_gt_SMA200_liquidity_top_half_rank_126_skip21
+  breadths: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]
+  weighting: equal_weight
+  window: 2025-08-15_through_2026-08-14
+  oos_segment: 2026-05-01_through_2026-08-14_already_observed
+  execution_model: next_session_open_bar_with_frozen_average_slippage
+  all_in_cost_bps_per_turnover: 9.740340418
+  capital_base: 1.0_fixed_additive
+  broker_margin: false
+  purpose: descriptive_chart_only_not_selection_or_validation
+gates:
+  - reproduce_pre_oos_recent12_curve_from_RUN-0029
+  - do_not_describe_as_fresh_oos
+  - report_membership_carry_forward_after_last_available_PIT_date
+  - maximum_loaded_date_2026-08-14
+result:
+  status: completed_and_reconciled
+  run0029_max_reproduction_error: 5.935252e-13
+  top1: {return: 1.807321, maximum_drawdown: 0.213973}
+  top2: {return: 1.602579, maximum_drawdown: 0.185054}
+  top3: {return: 1.439695, maximum_drawdown: 0.179083}
+  top4: {return: 1.385892, maximum_drawdown: 0.162438}
+  top10: {return: 1.077365, maximum_drawdown: 0.173722}
+  maximum_loaded_date: 2026-08-14
+  membership_maximum_date: 2026-06-24
+  membership_carry_forward_sessions: 36
+  evidence_label: already_observed_descriptive_not_fresh_OOS
+decision: >-
+  Descriptive chart only. Recent return is monotonic near the concentrated end,
+  while drawdown improves materially from top one to top four. Do not use the
+  observed OOS segment to retune the locked top-three breadth.

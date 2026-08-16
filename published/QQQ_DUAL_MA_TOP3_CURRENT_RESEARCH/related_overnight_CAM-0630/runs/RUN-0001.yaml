@@ -1,0 +1,31 @@
+run_id: RUN-0001
+campaign_id: CAM-0630
+status: completed_bar_stage
+question: Which session leg, if any, contains the slow QQQ leadership edge after a daily round trip?
+parent_run: null
+configuration:
+  selectors: [weekly_carried, daily_refreshed]
+  legs: [intraday_open_to_close, overnight_close_to_next_open]
+  execution_signal_lag: one_completed_session
+  breadth: 3_equal_weight
+  costs_bps_per_side: [-1, 0, 1, 2, 5, 10]
+  capital_base: 1.0_fixed_additive
+  broker_margin: false
+  discovery_cutoff: 2026-04-30
+  holdout_access: false
+reason: Decompose the mechanism before attempting opening-strength adaptations or quote pulls.
+expected_effect: One leg should retain positive cost-tolerant expectancy across chronology if a genuine high-frequency expression exists.
+gates:
+  - zero_holdout_rows_loaded
+  - full_round_trip_cost_each_active_day
+  - report_active_and_green_days
+  - report_early_late_and_recent12
+  - no_quote_claim_from_bar_proxy
+result:
+  weekly_selector_overnight_2bps: {net_return: 2.082062, maximum_drawdown: 0.194687, recent12_return: 0.798793, positive_months: 44, negative_months: 29, active_sessions: 1521}
+  weekly_selector_intraday_2bps: {net_return: 0.362015, maximum_drawdown: 0.486946, recent12_return: 0.189000, positive_months: 40, negative_months: 33, active_sessions: 1521}
+  daily_selector_overnight_2bps: {net_return: 2.068324, maximum_drawdown: 0.219879, recent12_return: 0.794478}
+  daily_selector_intraday_2bps: {net_return: 0.799399, maximum_drawdown: 0.342405, recent12_return: 0.183530}
+  maximum_loaded_date: '2026-04-30'
+  holdout_rows_loaded: 0
+decision: Advance weekly-selector overnight cash-reset leg to exact quote replay. Daily refreshing adds no overnight value; intraday expectancy is too weak relative to costs and drawdown.

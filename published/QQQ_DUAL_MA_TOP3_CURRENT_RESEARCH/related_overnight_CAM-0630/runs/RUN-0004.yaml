@@ -1,0 +1,31 @@
+run_id: RUN-0004
+campaign_id: CAM-0630
+parent_run: RUN-0003
+status: completed
+question: Can a single causal overnight state turn the exact-filled lead into a high-consistency, high-frequency printer without multivariate fitting?
+configuration:
+  execution_source: RUN-0002 exact SIP positions at 2bps per side
+  standalone_families:
+    prior_day_stock_loss_thresholds: [-0.01, -0.02, -0.03, -0.04, -0.05]
+    distance_above_SMA200_thresholds: [0.25, 0.40, 0.50, 0.60, 0.75]
+    same_day_stock_strength_thresholds: [0.00, 0.01, 0.02, 0.03, 0.05]
+    QQQ_same_day_states: [up, zero_to_one_pct, zero_to_two_pct, minus_one_to_plus_one_pct]
+    selection_age_thresholds_sessions: [10, 20, 40]
+    prior_five_day_states: [loss_5pct, loss_10pct, gain_5pct]
+  allocations: [one_third_cash_slots, full_port_equal_among_qualifiers]
+  no_combined_filters: true
+  holdout_access: false
+reason: RUN-0003 found several broad, causal, chronologically positive states; standalone tests reveal whether any one mechanism is sufficient.
+expected_effect: A credible printer should improve return, drawdown, monthly consistency, and recent performance across neighboring thresholds while remaining active frequently.
+gates:
+  - exact_2bps_position_returns_only
+  - report_active_days_and_utilization
+  - report_threshold_smoothness
+  - report_early_late_recent12
+  - no_combination_selection
+  - zero_holdout_rows_loaded
+result:
+  leading_standalone_family: prior_day_loss_delayed_overnight_rebound
+  full_port_minus_1pct: {net_return_2bps: 2.491814, maximum_drawdown: 0.094406, recent12: 0.855567, active_fraction: 0.553289}
+  full_port_minus_2pct: {net_return_2bps: 2.279056, maximum_drawdown: 0.096683, recent12: 0.934412, active_fraction: 0.379605}
+decision: Advance the smooth prior-day-loss family to cost and chronology stress; do not combine filters.

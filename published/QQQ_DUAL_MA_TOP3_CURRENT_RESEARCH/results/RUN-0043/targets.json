@@ -1,0 +1,74 @@
+[
+  {
+    "signal_date": "2026-05-01",
+    "selected": [
+      "WDC",
+      "LITE",
+      "SNDK"
+    ]
+  },
+  {
+    "signal_date": "2026-05-08",
+    "selected": [
+      "WDC",
+      "LITE",
+      "SNDK"
+    ]
+  },
+  {
+    "signal_date": "2026-05-15",
+    "selected": [
+      "WDC",
+      "LITE",
+      "SNDK"
+    ]
+  },
+  {
+    "signal_date": "2026-05-22",
+    "selected": [
+      "WDC",
+      "LITE",
+      "SNDK"
+    ]
+  },
+  {
+    "signal_date": "2026-05-29",
+    "selected": [
+      "WDC",
+      "LITE",
+      "SNDK"
+    ]
+  },
+  {
+    "signal_date": "2026-06-05",
+    "selected": [
+      "WDC",
+      "LITE",
+      "SNDK"
+    ]
+  },
+  {
+    "signal_date": "2026-06-12",
+    "selected": [
+      "MU",
+      "LITE",
+      "SNDK"
+    ]
+  },
+  {
+    "signal_date": "2026-06-18",
+    "selected": [
+      "INTC",
+      "LITE",
+      "SNDK"
+    ]
+  },
+  {
+    "signal_date": "2026-06-26",
+    "selected": [
+      "WDC",
+      "MU",
+      "SNDK"
+    ]
+  }
+]

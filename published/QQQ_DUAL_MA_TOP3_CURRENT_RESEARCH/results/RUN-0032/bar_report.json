@@ -1,0 +1,67 @@
+{
+  "status": "completed_bar_stage",
+  "fixture": {
+    "status": "passed",
+    "variants": 4,
+    "maximum_loaded_date": "2026-04-30",
+    "holdout_rows_loaded": 0,
+    "nonnegative": true,
+    "max_gross": 1.0000000000000002,
+    "max_single_weight": {
+      "weekly_equal": 0.3333333333333333,
+      "weekly_uncapped": 0.8162275639246706,
+      "daily_equal": 0.3333333333333333,
+      "daily_uncapped": 0.8489606376018869
+    }
+  },
+  "metrics": [
+    {
+      "variant": "weekly_equal",
+      "net_simple_return": 3.6282963573587454,
+      "maximum_drawdown": 0.17233352173209557,
+      "positive_months": 48,
+      "negative_months": 25,
+      "worst_month": -0.16536813445765458,
+      "recent12_return": 1.1551976793162875,
+      "recent12_positive_months": 9,
+      "turnover": 127.66666666666666,
+      "trade_sessions": 173
+    },
+    {
+      "variant": "weekly_uncapped",
+      "net_simple_return": 3.541616500209737,
+      "maximum_drawdown": 0.2362172240902867,
+      "positive_months": 51,
+      "negative_months": 22,
+      "worst_month": -0.1559636264332197,
+      "recent12_return": 1.2229268748963542,
+      "recent12_positive_months": 9,
+      "turnover": 134.28592411619974,
+      "trade_sessions": 316
+    },
+    {
+      "variant": "daily_equal",
+      "net_simple_return": 3.856701315029981,
+      "maximum_drawdown": 0.20950011062008467,
+      "positive_months": 47,
+      "negative_months": 26,
+      "worst_month": -0.16749926311229793,
+      "recent12_return": 1.1314811671110987,
+      "recent12_positive_months": 9,
+      "turnover": 291.0,
+      "trade_sessions": 418
+    },
+    {
+      "variant": "daily_uncapped",
+      "net_simple_return": 3.62606004345725,
+      "maximum_drawdown": 0.28627582652481437,
+      "positive_months": 49,
+      "negative_months": 24,
+      "worst_month": -0.17170430424761224,
+      "recent12_return": 1.148327896356519,
+      "recent12_positive_months": 9,
+      "turnover": 301.64305413758905,
+      "trade_sessions": 1524
+    }
+  ]
+}

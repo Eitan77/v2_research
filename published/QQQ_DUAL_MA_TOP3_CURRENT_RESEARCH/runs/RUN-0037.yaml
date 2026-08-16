@@ -1,0 +1,21 @@
+run_id: RUN-0037
+campaign_id: CAM-0611
+parent_run: RUN-0036
+status: completed
+change: Remove the trailing 63-session median-dollar-volume top-half filter while leaving all other locked rules unchanged.
+reason: Measure whether the liquidity filter adds alpha or merely execution convenience.
+expected_effect: Broader candidate eligibility but potentially weaker names, higher turnover, drawdown, and execution risk.
+configuration:
+  strategy: locked_QQQ_dual_MA_top3_126_skip21_equal_weekly
+  liquidity_filter: none
+  execution_cost_bps_per_turnover: 9.740340418
+  quote_gate: not_reached_due_to_material_bar_stage_dominance_by_control
+  discovery_cutoff: 2026-04-30
+  holdout_access: false
+result:
+  status: completed_bar_stage_rejected
+  no_liquidity_filter: {net_return: 3.065963, maximum_drawdown: 0.190737, recent12_return: 1.097708, positive_months: 46, negative_months: 27, worst_month: -0.165368, turnover: 147.666667}
+  locked_control: {net_return: 3.628296, maximum_drawdown: 0.172334, recent12_return: 1.155198, positive_months: 48, negative_months: 25, turnover: 127.666667}
+  maximum_loaded_date: 2026-04-30
+  holdout_rows_loaded: 0
+decision: Retain liquidity filter; removal loses 56.23 return points, increases drawdown and turnover, and worsens recent return and monthly consistency.

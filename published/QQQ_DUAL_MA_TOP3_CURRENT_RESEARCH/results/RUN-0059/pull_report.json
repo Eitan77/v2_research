@@ -1,0 +1,11 @@
+{
+  "status": "passed",
+  "daily_minimum_date": "2026-04-30",
+  "daily_maximum_date": "2026-08-14",
+  "rows_after_authorized_end": 0,
+  "symbols_requested": 8,
+  "symbols_returned": 8,
+  "quote_roles": 50,
+  "quote_coverage": 1.0,
+  "credentials_recorded": false
+}

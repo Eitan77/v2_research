@@ -1,0 +1,813 @@
+{
+  "status": "passed",
+  "strategy": "unchanged_sp500_dual_ma50_200_weekly_top3_126_skip21",
+  "bar_metrics": [
+    {
+      "bps_per_side": 0.0,
+      "net_simple_return": 2.779228188558851,
+      "maximum_drawdown": 0.35840204088642147,
+      "positive_months": 51,
+      "negative_months": 22,
+      "worst_month": -0.23796965526005565,
+      "first_active_date": "2020-04-13"
+    },
+    {
+      "bps_per_side": 1.0,
+      "net_simple_return": 2.764328188558851,
+      "maximum_drawdown": 0.3600324947916749,
+      "positive_months": 51,
+      "negative_months": 22,
+      "worst_month": -0.23830298859338897,
+      "first_active_date": "2020-04-13"
+    },
+    {
+      "bps_per_side": 2.0,
+      "net_simple_return": 2.749428188558851,
+      "maximum_drawdown": 0.3616673725395234,
+      "positive_months": 51,
+      "negative_months": 22,
+      "worst_month": -0.2386363219267223,
+      "first_active_date": "2020-04-13"
+    },
+    {
+      "bps_per_side": 5.0,
+      "net_simple_return": 2.704728188558851,
+      "maximum_drawdown": 0.3665987296198134,
+      "positive_months": 51,
+      "negative_months": 22,
+      "worst_month": -0.2396363219267223,
+      "first_active_date": "2020-04-13"
+    },
+    {
+      "bps_per_side": 10.0,
+      "net_simple_return": 2.630228188558851,
+      "maximum_drawdown": 0.3749078371064589,
+      "positive_months": 51,
+      "negative_months": 22,
+      "worst_month": -0.24130298859338897,
+      "first_active_date": "2020-04-13"
+    }
+  ],
+  "readiness": {
+    "status": "passed",
+    "catalog": "D:\\AlgoResearch\\data\\catalog.duckdb",
+    "catalog_size_bytes": 2109440,
+    "membership_artifact": "C:\\Users\\decla\\Desktop\\AlgoResearch\\v2_research\\campaigns\\CAM-0611\\artifacts\\RUN-0026\\aligned_membership\\sp500_pit_membership_daily.parquet",
+    "membership_artifact_sha256": "30e8f9810909aa333fde834e66cababd023366004a3ea8ce4ed757466a3d9e17",
+    "membership_report": {
+      "status": "passed",
+      "primary_source": "campaigns\\CAM-0508\\artifacts\\membership_source\\fja_updated.csv",
+      "secondary_source": "campaigns\\CAM-0508\\artifacts\\membership_source\\hanshof_historical.csv",
+      "source_sha256": {
+        "fja_updated.csv": "39a9202c9ef69a74c0ff07e2113ad41fb6da7c8c5b6cd9541f0185fb4391e717",
+        "hanshof_historical.csv": "02f37a12c11f82218fce422ecf7d95fae1074bd96e664c262a5ea42c120d5fe9"
+      },
+      "requested_start": "2019-06-21",
+      "requested_cutoff": "2026-04-30",
+      "holdout_start": "2026-05-01",
+      "calendar_sessions": 1724,
+      "membership_rows": 868639,
+      "membership_dates": 1724,
+      "unique_source_symbols": 654,
+      "members_per_session_min": 503,
+      "members_per_session_max": 507,
+      "members_per_session_mean": 503.8509280742459,
+      "primary_snapshot_rows_loaded": 2710,
+      "primary_snapshot_min": "1996-01-02",
+      "primary_snapshot_max": "2026-04-09",
+      "primary_first_excluded_after_cutoff": "2026-05-07",
+      "secondary_snapshot_rows_loaded": 3480,
+      "secondary_snapshot_min": "1996-01-02",
+      "secondary_snapshot_max": "2025-08-23",
+      "secondary_first_excluded_after_cutoff": null,
+      "secondary_comparison": {
+        "overlap_start": "2019-06-21",
+        "overlap_end": "2025-08-22",
+        "overlap_sessions": 1552,
+        "mismatch_sessions": 1024,
+        "mismatch_fraction": 0.6597938144329897,
+        "primary_is_retained": true,
+        "decision": "retain_primary_fja_reconstruction_and_preserve_secondary_disagreement",
+        "first_mismatch_date": "2019-06-21",
+        "last_mismatch_date": "2025-08-11",
+        "examples": [
+          {
+            "date": "2019-06-21",
+            "primary_count": "505",
+            "secondary_count": "496",
+            "primary_only": "AGN,ARNC,BHGE,DOW,FOX,FOXA,HCP,IR,LLL",
+            "secondary_only": ""
+          },
+          {
+            "date": "2019-06-24",
+            "primary_count": "505",
+            "secondary_count": "496",
+            "primary_only": "AGN,ARNC,BHGE,DOW,FOX,FOXA,HCP,IR,LLL",
+            "secondary_only": ""
+          },
+          {
+            "date": "2019-06-25",
+            "primary_count": "505",
+            "secondary_count": "496",
+            "primary_only": "AGN,ARNC,BHGE,DOW,FOX,FOXA,HCP,IR,LLL",
+            "secondary_only": ""
+          },
+          {
+            "date": "2019-06-26",
+            "primary_count": "505",
+            "secondary_count": "496",
+            "primary_only": "AGN,ARNC,BHGE,DOW,FOX,FOXA,HCP,IR,LLL",
+            "secondary_only": ""
+          },
+          {
+            "date": "2019-06-27",
+            "primary_count": "505",
+            "secondary_count": "496",
+            "primary_only": "AGN,ARNC,BHGE,DOW,FOX,FOXA,HCP,IR,LLL",
+            "secondary_only": ""
+          },
+          {
+            "date": "2019-06-28",
+            "primary_count": "505",
+            "secondary_count": "496",
+            "primary_only": "AGN,ARNC,BHGE,DOW,FOX,FOXA,HCP,IR,LLL",
+            "secondary_only": ""
+          },
+          {
+            "date": "2019-07-01",
+            "primary_count": "505",
+            "secondary_count": "497",
+            "primary_only": "AGN,ARNC,BHGE,DOW,FOX,FOXA,HCP,IR",
+            "secondary_only": ""
+          },
+          {
+            "date": "2019-07-02",
+            "primary_count": "505",
+            "secondary_count": "497",
+            "primary_only": "AGN,ARNC,BHGE,DOW,FOX,FOXA,HCP,IR",
+            "secondary_only": ""
+          },
+          {
+            "date": "2019-07-03",
+            "primary_count": "505",
+            "secondary_count": "497",
+            "primary_only": "AGN,ARNC,BHGE,DOW,FOX,FOXA,HCP,IR",
+            "secondary_only": ""
+          },
+          {
+            "date": "2019-07-05",
+            "primary_count": "505",
+            "secondary_count": "497",
+            "primary_only": "AGN,ARNC,BHGE,DOW,FOX,FOXA,HCP,IR",
+            "secondary_only": ""
+          }
+        ]
+      },
+      "holdout_rows_loaded": 0,
+      "artifacts": {
+        "membership": "campaigns\\CAM-0611\\artifacts\\RUN-0026\\aligned_membership\\sp500_pit_membership_daily.parquet",
+        "intervals": "campaigns\\CAM-0611\\artifacts\\RUN-0026\\aligned_membership\\sp500_pit_membership_intervals.csv",
+        "secondary_mismatches": "campaigns\\CAM-0611\\artifacts\\RUN-0026\\aligned_membership\\secondary_mismatch_sessions.csv"
+      }
+    },
+    "bars_rows_loaded": 894946,
+    "bars_symbols_loaded": 654,
+    "bars_min_date": "2019-06-21",
+    "bars_max_date": "2026-04-30",
+    "membership_rows_loaded": 868639,
+    "membership_symbols_loaded": 654,
+    "membership_symbols_missing_raw_bars": [
+      "STI"
+    ],
+    "membership_min_date": "2019-06-21",
+    "membership_max_date": "2026-04-30",
+    "membership_duplicate_keys": 0,
+    "membership_known_after_signal_rows": 0,
+    "raw_bar_duplicate_keys": 0,
+    "raw_bar_null_ohlc_rows": 0,
+    "member_pairs_missing_raw_bar": 180,
+    "member_symbols_with_raw_bar": 653,
+    "analysis_symbols_including_spy": 654,
+    "calendar_sessions": 1724,
+    "calendar_min_date": "2019-06-21",
+    "calendar_max_date": "2026-04-30",
+    "split_action_rows_loaded": 0,
+    "detected_split_events": [
+      {
+        "symbol": "AAPL",
+        "date": "2020-08-31",
+        "direction": "forward",
+        "raw_gap_ratio": 3.918910432530026,
+        "matched_ratio": 4.0,
+        "share_factor_on_ex_date": 4.0,
+        "source": "price_discontinuity_integrity_reconstruction"
+      },
+      {
+        "symbol": "ABMD",
+        "date": "2022-11-01",
+        "direction": "reverse",
+        "raw_gap_ratio": 1.5049984132021579,
+        "matched_ratio": 1.5,
+        "share_factor_on_ex_date": 0.6666666666666666,
+        "source": "price_discontinuity_integrity_reconstruction"
+      },
+      {
+        "symbol": "AIV",
+        "date": "2020-12-15",
+        "direction": "forward",
+        "raw_gap_ratio": 7.139823008849557,
+        "matched_ratio": 7.0,
+        "share_factor_on_ex_date": 7.0,
+        "source": "price_discontinuity_integrity_reconstruction"
+      },
+      {
+        "symbol": "AMCR",
+        "date": "2026-01-15",
+        "direction": "reverse",
+        "raw_gap_ratio": 5.052154195011338,
+        "matched_ratio": 5.0,
+        "share_factor_on_ex_date": 0.2,
+        "source": "price_discontinuity_integrity_reconstruction"
+      },
+      {
+        "symbol": "AMZN",
+        "date": "2022-06-06",
+        "direction": "forward",
+        "raw_gap_ratio": 19.53770609605174,
+        "matched_ratio": 20.0,
+        "share_factor_on_ex_date": 20.0,
+        "source": "price_discontinuity_integrity_reconstruction"
+      },
+      {
+        "symbol": "ANET",
+        "date": "2021-11-18",
+        "direction": "forward",
+        "raw_gap_ratio": 4.064,
+        "matched_ratio": 4.0,
+        "share_factor_on_ex_date": 4.0,
+        "source": "price_discontinuity_integrity_reconstruction"
+      },
+      {
+        "symbol": "ANET",
+        "date": "2024-12-04",
+        "direction": "forward",
+        "raw_gap_ratio": 3.9096311668710495,
+        "matched_ratio": 4.0,
+        "share_factor_on_ex_date": 4.0,
+        "source": "price_discontinuity_integrity_reconstruction"
+      },
+      {
+        "symbol": "APA",
+        "date": "2020-03-09",
+        "direction": "forward",
+        "raw_gap_ratio": 1.5424739195230999,
+        "matched_ratio": 1.5,
+        "share_factor_on_ex_date": 1.5,
+        "source": "price_discontinuity_integrity_reconstruction"
+      },
+      {
+        "symbol": "APH",
+        "date": "2021-03-05",
+        "direction": "forward",
+        "raw_gap_ratio": 1.9595300261096604,
+        "matched_ratio": 2.0,
+        "share_factor_on_ex_date": 2.0,
+        "source": "price_discontinuity_integrity_reconstruction"
+      },
+      {
+        "symbol": "APH",
+        "date": "2024-06-12",
+        "direction": "forward",
+        "raw_gap_ratio": 1.976621085134539,
+        "matched_ratio": 2.0,
+        "share_factor_on_ex_date": 2.0,
+        "source": "price_discontinuity_integrity_reconstruction"
+      },
+      {
+        "symbol": "AVGO",
+        "date": "2024-07-15",
+        "direction": "forward",
+        "raw_gap_ratio": 10.003941176470589,
+        "matched_ratio": 10.0,
+        "share_factor_on_ex_date": 10.0,
+        "source": "price_discontinuity_integrity_reconstruction"
+      },
+      {
+        "symbol": "BKNG",
+        "date": "2026-04-06",
+        "direction": "forward",
+        "raw_gap_ratio": 25.22893233082707,
+        "matched_ratio": 25.0,
+        "share_factor_on_ex_date": 25.0,
+        "source": "price_discontinuity_integrity_reconstruction"
+      },
+      {
+        "symbol": "CMG",
+        "date": "2024-06-26",
+        "direction": "forward",
+        "raw_gap_ratio": 49.88664336726941,
+        "matched_ratio": 50.0,
+        "share_factor_on_ex_date": 50.0,
+        "source": "price_discontinuity_integrity_reconstruction"
+      },
+      {
+        "symbol": "CNC",
+        "date": "2025-07-02",
+        "direction": "forward",
+        "raw_gap_ratio": 1.5171397964649167,
+        "matched_ratio": 1.5,
+        "share_factor_on_ex_date": 1.5,
+        "source": "price_discontinuity_integrity_reconstruction"
+      },
+      {
+        "symbol": "COO",
+        "date": "2024-02-20",
+        "direction": "forward",
+        "raw_gap_ratio": 3.9403664866009955,
+        "matched_ratio": 4.0,
+        "share_factor_on_ex_date": 4.0,
+        "source": "price_discontinuity_integrity_reconstruction"
+      },
+      {
+        "symbol": "CPRT",
+        "date": "2022-11-04",
+        "direction": "forward",
+        "raw_gap_ratio": 1.9778475492761207,
+        "matched_ratio": 2.0,
+        "share_factor_on_ex_date": 2.0,
+        "source": "price_discontinuity_integrity_reconstruction"
+      },
+      {
+        "symbol": "CPRT",
+        "date": "2023-08-22",
+        "direction": "forward",
+        "raw_gap_ratio": 2.007385183475652,
+        "matched_ratio": 2.0,
+        "share_factor_on_ex_date": 2.0,
+        "source": "price_discontinuity_integrity_reconstruction"
+      },
+      {
+        "symbol": "CSGP",
+        "date": "2021-06-28",
+        "direction": "forward",
+        "raw_gap_ratio": 10.007369614512472,
+        "matched_ratio": 10.0,
+        "share_factor_on_ex_date": 10.0,
+        "source": "price_discontinuity_integrity_reconstruction"
+      },
+      {
+        "symbol": "CSX",
+        "date": "2021-06-29",
+        "direction": "forward",
+        "raw_gap_ratio": 2.949257425742574,
+        "matched_ratio": 3.0,
+        "share_factor_on_ex_date": 3.0,
+        "source": "price_discontinuity_integrity_reconstruction"
+      },
+      {
+        "symbol": "CTAS",
+        "date": "2024-09-12",
+        "direction": "forward",
+        "raw_gap_ratio": 3.989440389294404,
+        "matched_ratio": 4.0,
+        "share_factor_on_ex_date": 4.0,
+        "source": "price_discontinuity_integrity_reconstruction"
+      },
+      {
+        "symbol": "CXO",
+        "date": "2020-03-09",
+        "direction": "forward",
+        "raw_gap_ratio": 1.5570469798657718,
+        "matched_ratio": 1.5,
+        "share_factor_on_ex_date": 1.5,
+        "source": "price_discontinuity_integrity_reconstruction"
+      },
+      {
+        "symbol": "DECK",
+        "date": "2024-09-17",
+        "direction": "forward",
+        "raw_gap_ratio": 5.9980809825369406,
+        "matched_ratio": 6.0,
+        "share_factor_on_ex_date": 6.0,
+        "source": "price_discontinuity_integrity_reconstruction"
+      },
+      {
+        "symbol": "DXCM",
+        "date": "2022-06-13",
+        "direction": "forward",
+        "raw_gap_ratio": 4.14866581956798,
+        "matched_ratio": 4.0,
+        "share_factor_on_ex_date": 4.0,
+        "source": "price_discontinuity_integrity_reconstruction"
+      },
+      {
+        "symbol": "ETR",
+        "date": "2024-12-13",
+        "direction": "forward",
+        "raw_gap_ratio": 2.0001348981518956,
+        "matched_ratio": 2.0,
+        "share_factor_on_ex_date": 2.0,
+        "source": "price_discontinuity_integrity_reconstruction"
+      },
+      {
+        "symbol": "EW",
+        "date": "2020-06-01",
+        "direction": "forward",
+        "raw_gap_ratio": 2.9843293492695886,
+        "matched_ratio": 3.0,
+        "share_factor_on_ex_date": 3.0,
+        "source": "price_discontinuity_integrity_reconstruction"
+      },
+      {
+        "symbol": "FAST",
+        "date": "2025-05-22",
+        "direction": "forward",
+        "raw_gap_ratio": 1.993636808614782,
+        "matched_ratio": 2.0,
+        "share_factor_on_ex_date": 2.0,
+        "source": "price_discontinuity_integrity_reconstruction"
+      },
+      {
+        "symbol": "FMC",
+        "date": "2025-02-05",
+        "direction": "forward",
+        "raw_gap_ratio": 1.5044543429844097,
+        "matched_ratio": 1.5,
+        "share_factor_on_ex_date": 1.5,
+        "source": "price_discontinuity_integrity_reconstruction"
+      },
+      {
+        "symbol": "FRC",
+        "date": "2023-03-13",
+        "direction": "forward",
+        "raw_gap_ratio": 3.055306427503737,
+        "matched_ratio": 3.0,
+        "share_factor_on_ex_date": 3.0,
+        "source": "price_discontinuity_integrity_reconstruction"
+      },
+      {
+        "symbol": "FRC",
+        "date": "2023-03-16",
+        "direction": "forward",
+        "raw_gap_ratio": 1.5410484668644906,
+        "matched_ratio": 1.5,
+        "share_factor_on_ex_date": 1.5,
+        "source": "price_discontinuity_integrity_reconstruction"
+      },
+      {
+        "symbol": "FTNT",
+        "date": "2022-06-23",
+        "direction": "forward",
+        "raw_gap_ratio": 4.954272089961211,
+        "matched_ratio": 5.0,
+        "share_factor_on_ex_date": 5.0,
+        "source": "price_discontinuity_integrity_reconstruction"
+      },
+      {
+        "symbol": "GE",
+        "date": "2021-08-02",
+        "direction": "reverse",
+        "raw_gap_ratio": 8.067953667953669,
+        "matched_ratio": 8.0,
+        "share_factor_on_ex_date": 0.125,
+        "source": "price_discontinuity_integrity_reconstruction"
+      },
+      {
+        "symbol": "GOOG",
+        "date": "2022-07-18",
+        "direction": "forward",
+        "raw_gap_ratio": 19.881346967559946,
+        "matched_ratio": 20.0,
+        "share_factor_on_ex_date": 20.0,
+        "source": "price_discontinuity_integrity_reconstruction"
+      },
+      {
+        "symbol": "GOOGL",
+        "date": "2022-07-18",
+        "direction": "forward",
+        "raw_gap_ratio": 19.846857244318183,
+        "matched_ratio": 20.0,
+        "share_factor_on_ex_date": 20.0,
+        "source": "price_discontinuity_integrity_reconstruction"
+      },
+      {
+        "symbol": "ISRG",
+        "date": "2021-10-05",
+        "direction": "forward",
+        "raw_gap_ratio": 2.977633234130028,
+        "matched_ratio": 3.0,
+        "share_factor_on_ex_date": 3.0,
+        "source": "price_discontinuity_integrity_reconstruction"
+      },
+      {
+        "symbol": "LRCX",
+        "date": "2024-10-03",
+        "direction": "forward",
+        "raw_gap_ratio": 10.185036907293881,
+        "matched_ratio": 10.0,
+        "share_factor_on_ex_date": 10.0,
+        "source": "price_discontinuity_integrity_reconstruction"
+      },
+      {
+        "symbol": "MCHP",
+        "date": "2021-10-13",
+        "direction": "forward",
+        "raw_gap_ratio": 1.971888111888112,
+        "matched_ratio": 2.0,
+        "share_factor_on_ex_date": 2.0,
+        "source": "price_discontinuity_integrity_reconstruction"
+      },
+      {
+        "symbol": "MKC",
+        "date": "2020-12-01",
+        "direction": "forward",
+        "raw_gap_ratio": 1.9677962534203326,
+        "matched_ratio": 2.0,
+        "share_factor_on_ex_date": 2.0,
+        "source": "price_discontinuity_integrity_reconstruction"
+      },
+      {
+        "symbol": "MNST",
+        "date": "2023-03-28",
+        "direction": "forward",
+        "raw_gap_ratio": 2.0067101226993866,
+        "matched_ratio": 2.0,
+        "share_factor_on_ex_date": 2.0,
+        "source": "price_discontinuity_integrity_reconstruction"
+      },
+      {
+        "symbol": "NDAQ",
+        "date": "2022-08-29",
+        "direction": "forward",
+        "raw_gap_ratio": 3.0184018567639255,
+        "matched_ratio": 3.0,
+        "share_factor_on_ex_date": 3.0,
+        "source": "price_discontinuity_integrity_reconstruction"
+      },
+      {
+        "symbol": "NEE",
+        "date": "2020-10-27",
+        "direction": "forward",
+        "raw_gap_ratio": 3.9749146309429992,
+        "matched_ratio": 4.0,
+        "share_factor_on_ex_date": 4.0,
+        "source": "price_discontinuity_integrity_reconstruction"
+      },
+      {
+        "symbol": "NFLX",
+        "date": "2025-11-17",
+        "direction": "forward",
+        "raw_gap_ratio": 10.04216704288939,
+        "matched_ratio": 10.0,
+        "share_factor_on_ex_date": 10.0,
+        "source": "price_discontinuity_integrity_reconstruction"
+      },
+      {
+        "symbol": "NOW",
+        "date": "2025-12-18",
+        "direction": "forward",
+        "raw_gap_ratio": 4.998977701105361,
+        "matched_ratio": 5.0,
+        "share_factor_on_ex_date": 5.0,
+        "source": "price_discontinuity_integrity_reconstruction"
+      },
+      {
+        "symbol": "NVDA",
+        "date": "2021-07-20",
+        "direction": "forward",
+        "raw_gap_ratio": 4.010624666310732,
+        "matched_ratio": 4.0,
+        "share_factor_on_ex_date": 4.0,
+        "source": "price_discontinuity_integrity_reconstruction"
+      },
+      {
+        "symbol": "NVDA",
+        "date": "2024-06-10",
+        "direction": "forward",
+        "raw_gap_ratio": 10.043033978566088,
+        "matched_ratio": 10.0,
+        "share_factor_on_ex_date": 10.0,
+        "source": "price_discontinuity_integrity_reconstruction"
+      },
+      {
+        "symbol": "ODFL",
+        "date": "2024-03-28",
+        "direction": "forward",
+        "raw_gap_ratio": 1.9807914834529043,
+        "matched_ratio": 2.0,
+        "share_factor_on_ex_date": 2.0,
+        "source": "price_discontinuity_integrity_reconstruction"
+      },
+      {
+        "symbol": "ORLY",
+        "date": "2025-06-10",
+        "direction": "forward",
+        "raw_gap_ratio": 14.978888888888887,
+        "matched_ratio": 15.0,
+        "share_factor_on_ex_date": 15.0,
+        "source": "price_discontinuity_integrity_reconstruction"
+      },
+      {
+        "symbol": "PANW",
+        "date": "2022-09-14",
+        "direction": "forward",
+        "raw_gap_ratio": 2.9871020408163265,
+        "matched_ratio": 3.0,
+        "share_factor_on_ex_date": 3.0,
+        "source": "price_discontinuity_integrity_reconstruction"
+      },
+      {
+        "symbol": "PANW",
+        "date": "2024-12-16",
+        "direction": "forward",
+        "raw_gap_ratio": 1.9839515518546555,
+        "matched_ratio": 2.0,
+        "share_factor_on_ex_date": 2.0,
+        "source": "price_discontinuity_integrity_reconstruction"
+      },
+      {
+        "symbol": "PCAR",
+        "date": "2023-02-08",
+        "direction": "forward",
+        "raw_gap_ratio": 1.500544217687075,
+        "matched_ratio": 1.5,
+        "share_factor_on_ex_date": 1.5,
+        "source": "price_discontinuity_integrity_reconstruction"
+      },
+      {
+        "symbol": "SEDG",
+        "date": "2023-10-20",
+        "direction": "forward",
+        "raw_gap_ratio": 1.5082704777027922,
+        "matched_ratio": 1.5,
+        "share_factor_on_ex_date": 1.5,
+        "source": "price_discontinuity_integrity_reconstruction"
+      },
+      {
+        "symbol": "SHW",
+        "date": "2021-04-01",
+        "direction": "forward",
+        "raw_gap_ratio": 2.9958999756434195,
+        "matched_ratio": 3.0,
+        "share_factor_on_ex_date": 3.0,
+        "source": "price_discontinuity_integrity_reconstruction"
+      },
+      {
+        "symbol": "SIVB",
+        "date": "2023-03-09",
+        "direction": "forward",
+        "raw_gap_ratio": 1.5170206740300196,
+        "matched_ratio": 1.5,
+        "share_factor_on_ex_date": 1.5,
+        "source": "price_discontinuity_integrity_reconstruction"
+      },
+      {
+        "symbol": "SMCI",
+        "date": "2024-10-01",
+        "direction": "forward",
+        "raw_gap_ratio": 9.973652694610777,
+        "matched_ratio": 10.0,
+        "share_factor_on_ex_date": 10.0,
+        "source": "price_discontinuity_integrity_reconstruction"
+      },
+      {
+        "symbol": "SRE",
+        "date": "2023-08-22",
+        "direction": "forward",
+        "raw_gap_ratio": 1.9963503649635037,
+        "matched_ratio": 2.0,
+        "share_factor_on_ex_date": 2.0,
+        "source": "price_discontinuity_integrity_reconstruction"
+      },
+      {
+        "symbol": "TECH",
+        "date": "2022-11-30",
+        "direction": "forward",
+        "raw_gap_ratio": 4.001345730364571,
+        "matched_ratio": 4.0,
+        "share_factor_on_ex_date": 4.0,
+        "source": "price_discontinuity_integrity_reconstruction"
+      },
+      {
+        "symbol": "TPL",
+        "date": "2025-12-23",
+        "direction": "forward",
+        "raw_gap_ratio": 2.9736807646981798,
+        "matched_ratio": 3.0,
+        "share_factor_on_ex_date": 3.0,
+        "source": "price_discontinuity_integrity_reconstruction"
+      },
+      {
+        "symbol": "TSCO",
+        "date": "2024-12-20",
+        "direction": "forward",
+        "raw_gap_ratio": 5.013862514242309,
+        "matched_ratio": 5.0,
+        "share_factor_on_ex_date": 5.0,
+        "source": "price_discontinuity_integrity_reconstruction"
+      },
+      {
+        "symbol": "TSLA",
+        "date": "2020-08-31",
+        "direction": "forward",
+        "raw_gap_ratio": 4.978295584894627,
+        "matched_ratio": 5.0,
+        "share_factor_on_ex_date": 5.0,
+        "source": "price_discontinuity_integrity_reconstruction"
+      },
+      {
+        "symbol": "TSLA",
+        "date": "2022-08-25",
+        "direction": "forward",
+        "raw_gap_ratio": 2.9477774837941526,
+        "matched_ratio": 3.0,
+        "share_factor_on_ex_date": 3.0,
+        "source": "price_discontinuity_integrity_reconstruction"
+      },
+      {
+        "symbol": "TTD",
+        "date": "2021-06-17",
+        "direction": "forward",
+        "raw_gap_ratio": 9.979709164693947,
+        "matched_ratio": 10.0,
+        "share_factor_on_ex_date": 10.0,
+        "source": "price_discontinuity_integrity_reconstruction"
+      },
+      {
+        "symbol": "TTD",
+        "date": "2025-08-08",
+        "direction": "forward",
+        "raw_gap_ratio": 1.5594985875706213,
+        "matched_ratio": 1.5,
+        "share_factor_on_ex_date": 1.5,
+        "source": "price_discontinuity_integrity_reconstruction"
+      },
+      {
+        "symbol": "WMT",
+        "date": "2024-02-26",
+        "direction": "forward",
+        "raw_gap_ratio": 2.969553450608931,
+        "matched_ratio": 3.0,
+        "share_factor_on_ex_date": 3.0,
+        "source": "price_discontinuity_integrity_reconstruction"
+      },
+      {
+        "symbol": "WRB",
+        "date": "2022-03-24",
+        "direction": "forward",
+        "raw_gap_ratio": 1.515315594059406,
+        "matched_ratio": 1.5,
+        "share_factor_on_ex_date": 1.5,
+        "source": "price_discontinuity_integrity_reconstruction"
+      },
+      {
+        "symbol": "WRB",
+        "date": "2024-07-11",
+        "direction": "forward",
+        "raw_gap_ratio": 1.5133029266438616,
+        "matched_ratio": 1.5,
+        "share_factor_on_ex_date": 1.5,
+        "source": "price_discontinuity_integrity_reconstruction"
+      },
+      {
+        "symbol": "ZION",
+        "date": "2023-03-13",
+        "direction": "forward",
+        "raw_gap_ratio": 1.5371428571428571,
+        "matched_ratio": 1.5,
+        "share_factor_on_ex_date": 1.5,
+        "source": "price_discontinuity_integrity_reconstruction"
+      }
+    ],
+    "detected_split_event_count": 65,
+    "dividend_action_rows_loaded": 28,
+    "earnings_rows_loaded": 5539,
+    "earnings_symbols_loaded": 152,
+    "earnings_max_event_date_et": "2025-06-26",
+    "sma200_ready_cells": 768898,
+    "eps_four_event_available_cells": 196865,
+    "eps_3of4_cells": 188887,
+    "eps_4of4_cells": 180734,
+    "holdout_rows_loaded": {
+      "bars": 0,
+      "membership": 0,
+      "earnings": 0,
+      "actions": 0
+    },
+    "holdout_rows_loaded_total": 0
+  },
+  "ledger_report": {
+    "0930": {
+      "ledger_rows": 447,
+      "unique_roles": 447,
+      "symbols": 99
+    },
+    "0940": {
+      "ledger_rows": 447,
+      "unique_roles": 447,
+      "symbols": 99
+    }
+  },
+  "maximum_loaded_date": "2026-04-30",
+  "holdout_rows_loaded": 0
+}

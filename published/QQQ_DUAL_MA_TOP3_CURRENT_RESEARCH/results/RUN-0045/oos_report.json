@@ -1,0 +1,19 @@
+{
+  "status": "completed",
+  "net_fixed_base_pct": 20.81648560261244,
+  "monthly_net_fixed_base_pct": {
+    "2026-05-31": 25.92928506847501,
+    "2026-06-30": 14.901329128517519,
+    "2026-07-31": -30.12126378241596,
+    "2026-08-31": 10.107135188035858
+  },
+  "maximum_drawdown_pct": 28.588779133768703,
+  "positive_days": 36,
+  "negative_days": 33,
+  "best_day_pct": 16.55428637316602,
+  "worst_day_pct": -13.091235079262246,
+  "quote_coverage": 1.0,
+  "turnover": 4.0,
+  "maximum_loaded_date": "2026-08-10",
+  "rows_after_authorized_end": 0
+}

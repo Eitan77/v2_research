@@ -1,0 +1,38 @@
+run_id: RUN-0003
+campaign_id: CAM-0630
+parent_run: RUN-0002
+status: completed_diagnostic
+question: Which causal position and market states explain profitable and losing exact-filled slow-leader overnights?
+configuration:
+  outcome: exact_position_return_at_2bps_each_side
+  features:
+    - rank_among_three_at_prior_close
+    - weekday
+    - sessions_since_position_selection
+    - stock_open_to_1550_or_1250_mid_return
+    - stock_prior_close_to_entry_mid_return
+    - stock_minus_QQQ_same_day_return
+    - QQQ_open_to_entry_clock_return
+    - prior_stock_day_return
+    - prior_five_session_stock_return
+    - prior_close_distance_to_SMA50_and_SMA200
+  diagnostics: [sign_splits, broad_bins, chronological_partitions, recent12]
+  holdout_access: false
+reason: Separate alpha selection from execution drag and locate economically coherent session states before modifying the strategy.
+expected_effect: A credible adaptation should identify a broad monotone or categorical relationship with adequate observations and consistent chronology.
+gates:
+  - all_features_available_by_entry
+  - no_official_close_used_for_1550_decision
+  - sample_and_attrition_reported
+  - no_multivariate_threshold_mining
+  - zero_holdout_rows_loaded
+result:
+  positions: 4560
+  strongest_broad_states:
+    prior_day_return_le_minus_2pct: {n: 934, net_return: 1.244902, recent12: 0.522480, early: 0.523312, late: 0.721590}
+    distance_above_SMA200_ge_50pct: {n: 1719, net_return: 1.341637, recent12: 0.448395, early: 0.780024, late: 0.561613}
+    QQQ_same_day_0_to_1pct: {n: 1752, net_return: 1.213031, recent12: 0.280966, early: 0.656680, late: 0.556351}
+    stock_same_day_2_to_5pct: {n: 657, net_return: 0.822275, recent12: 0.206285, early: 0.386753, late: 0.435523}
+  maximum_loaded_date: '2026-04-30'
+  holdout_rows_loaded: 0
+decision: Test each broad state independently with threshold neighborhoods and both cash-slot and full-port allocation before combining anything.

@@ -1,0 +1,47 @@
+run_id: RUN-0038
+campaign_id: CAM-0611
+parent_run: RUN-0036
+status: completed
+change: Compare weekly rebalance signal weekdays Monday through Friday with the locked strategy otherwise unchanged.
+reason: Determine whether the Friday-close decision embeds a weekday-specific advantage or whether the edge is stable across weekly scheduling choices.
+expected_effect: Similar neighboring-day performance would support robustness; a single isolated best weekday would increase timing-selection risk.
+configuration:
+  variants: [monday, tuesday, wednesday, thursday, friday]
+  holiday_rule: first_available_session_on_or_after_target_weekday_within_W_FRI_week; Friday uses final session
+  signal_information: completed_target_session_close
+  execution: next_trading_session_open_with_frozen_average_quote_slippage_plus_2bps_bar_stage
+  strategy: locked_QQQ_dual_MA_top3_126_skip21_equal_liquidity_top_half
+  capital_base: 1.0_fixed_additive
+  broker_margin: false
+  discovery_cutoff: 2026-04-30
+  holdout_access: false
+gates:
+  - only_weekday_differs
+  - exactly_one_signal_per_complete_week_when_possible
+  - zero_holdout_rows_loaded
+  - exact_quote_replay_for_materially_competitive_weekdays
+result:
+  status: completed
+  bar_stage:
+    monday: {net_return: 3.818458, maximum_drawdown: 0.169026, recent12_return: 1.280480, positive_months: 49, negative_months: 24}
+    tuesday: {net_return: 3.738974, maximum_drawdown: 0.181437, recent12_return: 1.136837, positive_months: 44, negative_months: 29}
+    wednesday: {net_return: 3.276113, maximum_drawdown: 0.222864, recent12_return: 1.092721, positive_months: 44, negative_months: 29}
+    thursday: {net_return: 3.841604, maximum_drawdown: 0.221618, recent12_return: 1.293219, positive_months: 46, negative_months: 27}
+    friday: {net_return: 3.628296, maximum_drawdown: 0.172334, recent12_return: 1.155198, positive_months: 48, negative_months: 25}
+  exact_quote_plus_2bps:
+    monday: {net_return: 3.678254, maximum_drawdown: 0.181103, recent12_return: 1.246948, positive_months: 48, negative_months: 25, trade_roles: 421}
+    thursday: {net_return: 3.775684, maximum_drawdown: 0.222511, recent12_return: 1.277212, positive_months: 46, negative_months: 27, trade_roles: 407}
+    friday: {net_return: 3.628296, maximum_drawdown: 0.175224, recent12_return: 1.170944, positive_months: 48, negative_months: 25, trade_roles: 383}
+  quote_role_coverage: 1.0_including_preserved_terminal_symbol_exceptions
+  maximum_loaded_date: 2026-04-30
+  holdout_rows_loaded: 0
+  artifacts:
+    bar_report: artifacts/RUN-0038/bar_report.json
+    quote_report: artifacts/RUN-0038/quote_report.json
+decision: >-
+  No weekday clearly dominates. Monday adds 5.00 full-history and 7.60 recent
+  return points after exact quotes but increases drawdown 0.59 points and order
+  roles, with identical 48/25 monthly consistency. Thursday adds 14.74 return
+  points and 10.63 recent points but drawdown rises 4.73 points and consistency
+  worsens. Preserve Friday as the simplest locked schedule; forward-track Monday
+  only as a modest recent challenger.

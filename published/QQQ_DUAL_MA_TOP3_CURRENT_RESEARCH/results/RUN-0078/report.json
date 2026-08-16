@@ -1,0 +1,85 @@
+{
+  "status": "completed",
+  "window_start": "2025-08-15",
+  "window_end": "2026-08-14",
+  "maximum_loaded_date": "2026-08-14",
+  "evidence_label": "observed_oos_descriptive_not_fresh_validation",
+  "metrics": [
+    {
+      "variant": "baseline",
+      "return": 2.242113204755375,
+      "maximum_drawdown": 0.4078072978745625,
+      "positive_months": 9,
+      "negative_months": 3,
+      "worst_month": -0.30006413275003807,
+      "positive_weeks": 34,
+      "negative_weeks": 18,
+      "worst_week": -0.1358798330273746
+    },
+    {
+      "variant": "max_10pct_above_sma200",
+      "return": -0.24173865532897765,
+      "maximum_drawdown": 0.3420149892737159,
+      "positive_months": 6,
+      "negative_months": 6,
+      "worst_month": -0.15404966184410573,
+      "positive_weeks": 27,
+      "negative_weeks": 25,
+      "worst_week": -0.13443215741830417,
+      "median_eligible_names": 10.0,
+      "weeks_with_fewer_than_3": 0
+    },
+    {
+      "variant": "max_20pct_above_sma200",
+      "return": -0.22837322862588338,
+      "maximum_drawdown": 0.37158137581550643,
+      "positive_months": 6,
+      "negative_months": 6,
+      "worst_month": -0.161496350426394,
+      "positive_weeks": 22,
+      "negative_weeks": 30,
+      "worst_week": -0.11490224987538078,
+      "median_eligible_names": 17.0,
+      "weeks_with_fewer_than_3": 0
+    },
+    {
+      "variant": "max_30pct_above_sma200",
+      "return": 0.5075698319037079,
+      "maximum_drawdown": 0.24569657118334032,
+      "positive_months": 7,
+      "negative_months": 5,
+      "worst_month": -0.1714497397314383,
+      "positive_weeks": 27,
+      "negative_weeks": 25,
+      "worst_week": -0.10890830645151339,
+      "median_eligible_names": 21.0,
+      "weeks_with_fewer_than_3": 0
+    },
+    {
+      "variant": "max_50pct_above_sma200",
+      "return": 0.6797761032784146,
+      "maximum_drawdown": 0.2501789437198779,
+      "positive_months": 9,
+      "negative_months": 3,
+      "worst_month": -0.15198986674270598,
+      "positive_weeks": 28,
+      "negative_weeks": 24,
+      "worst_week": -0.11322077358725857,
+      "median_eligible_names": 25.0,
+      "weeks_with_fewer_than_3": 0
+    },
+    {
+      "variant": "max_75pct_above_sma200",
+      "return": 1.0695030031430401,
+      "maximum_drawdown": 0.2584143742942464,
+      "positive_months": 9,
+      "negative_months": 3,
+      "worst_month": -0.11044661080010953,
+      "positive_weeks": 28,
+      "negative_weeks": 24,
+      "worst_week": -0.14138034784264863,
+      "median_eligible_names": 29.0,
+      "weeks_with_fewer_than_3": 0
+    }
+  ]
+}

@@ -1,0 +1,58 @@
+run_id: RUN-0062
+campaign_id: CAM-0611
+parent_run: RUN-0061
+status: completed
+question: Can a causal portfolio drawdown governor preserve near-full compounding at highs while cutting exposure during genuine reversals?
+diagnosis: >-
+  Static partial compounding offers a smooth but costly return-risk tradeoff.
+  Tail losses arrive after the account leaves a high-water mark, so a simple
+  hysteretic governor may retain full or 75-percent compounding during advances
+  and reduce reinvestment only after a material portfolio drawdown.
+expected_effect: >-
+  Better discovery return per unit drawdown than static beta, with fewer state
+  flips than a one-week winner/loser rule. Late triggering may still leave the
+  first loss leg unprotected and delayed re-risking may miss rebounds.
+configuration:
+  signal_execution_and_account: identical_to_RUN_0061
+  normal_beta: [1.0, 0.75]
+  defensive_beta: [0.0, 0.25, 0.5]
+  drawdown_triggers: [0.05, 0.10, 0.15]
+  recovery_threshold: one_half_of_trigger
+  state_information: equity_available_at_scheduled_Monday_0940_before_rebalance
+  target_gross: min(equity, 1 + active_beta * max(equity - 1, 0))
+  variants:
+    - normal1_low0_trigger5
+    - normal1_low25_trigger5
+    - normal1_low50_trigger5
+    - normal1_low0_trigger10
+    - normal1_low25_trigger10
+    - normal1_low50_trigger10
+    - normal1_low0_trigger15
+    - normal1_low25_trigger15
+    - normal1_low50_trigger15
+    - normal75_low25_trigger10
+    - normal75_low50_trigger10
+  discovery_cutoff: 2026-04-30
+  observed_diagnostic_end: 2026-08-14
+  holdout_label: May_onward_already_observed_and_forbidden_for_selection
+gates:
+  - selection_uses_discovery_only
+  - causal_state_at_rebalance
+  - exact_cash_and_quote_replay
+  - report_state_flips_and_defensive_sessions
+  - compare_to_static_beta_frontier
+  - reject_isolated_threshold_winner
+result:
+  status: completed_and_reconciled
+  planned_variants: 11
+  executed_variants: 11
+  discovery_state_flip_range: [12, 30]
+  best_full_return_cell: {normal_beta: 1.0, defensive_beta: 0.5, trigger: 0.15, discovery_return: 10.465903, maximum_drawdown: 0.347396}
+  lowest_drawdown_cell: {normal_beta: 1.0, defensive_beta: 0.0, trigger: 0.05, discovery_return: 3.409805, maximum_drawdown: 0.275962}
+  quote_role_coverage: 1.0
+  maximum_loaded_date: 2026-08-14
+  holdout_used_for_selection: false
+decision: >-
+  Reject the drawdown governor. Every cell is dominated or essentially matched
+  by the simpler static partial-compounding frontier; the rule reacts after
+  losses and frequently misses rebounds. May onward was not used for selection.

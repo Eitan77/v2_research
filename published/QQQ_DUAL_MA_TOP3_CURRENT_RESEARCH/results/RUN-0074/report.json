@@ -1,0 +1,19 @@
+{
+  "status": "completed",
+  "maximum_loaded_date": "2026-04-30",
+  "holdout_rows_loaded": 0,
+  "cycles": 316,
+  "baseline_additive_return": 3.6282963573506333,
+  "correlations": {
+    "QQQ_gap": -0.17643432924705363,
+    "QQQ_open_to_0940": 0.07576932244473443,
+    "QQQ_prior_close_to_0940": -0.1497538092198537,
+    "QQQ_prior_week": 0.0439632817996563,
+    "SPY_gap": -0.18182323489563845,
+    "SPY_open_to_0940": -0.042219845944675,
+    "SPY_prior_close_to_0940": -0.19494741293227114,
+    "SPY_prior_week": -0.0034559753562138544,
+    "constituent_gap_median": -0.15751074891123304,
+    "constituent_gap_positive_fraction": -0.09133501547474164
+  }
+}

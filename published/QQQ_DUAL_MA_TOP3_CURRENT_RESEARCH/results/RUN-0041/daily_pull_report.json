@@ -1,0 +1,10 @@
+{
+  "status": "passed",
+  "symbols": 102,
+  "rows": 8568,
+  "pages": 3,
+  "minimum_date": "2026-04-01",
+  "maximum_date": "2026-07-31",
+  "rows_after_july": 0,
+  "credentials_recorded": false
+}

@@ -1,0 +1,52 @@
+run_id: RUN-0006
+campaign_id: CAM-0630
+parent_run: RUN-0005
+status: completed
+question: Can cross-sectionally selecting the weakest prior-day slow leader preserve delayed overnight rebound alpha while trading every session?
+configuration:
+  variants:
+    - weakest_prior_day_one_of_top3
+    - weakest_prior_day_two_of_top3
+    - strongest_prior_day_one_control
+    - weakest_one_only_if_nonpositive
+    - weakest_two_only_if_nonpositive
+    - weakest_one_with_loss_thresholds_minus_0p5_1_1p5pct
+  allocation: full_port_equal_among_selected_else_cash
+  execution: exact_15_50_ask_to_next_09_40_bid
+  extra_bps_per_side: [-1, 0, 1, 2, 5, 10]
+  holdout_access: false
+reason: A within-Top-3 rank is simpler and more frequency-stable than selecting a development-maximized absolute threshold.
+expected_effect: If delayed rebound is cross-sectional, weakest-one should outperform strongest-one and remain positive at high costs with near-daily activity.
+gates:
+  - exact_quotes_only
+  - explicit_strongest_control
+  - cost_and_chronology
+  - no_holdout_rows_loaded
+result:
+  exact_quote_coverage: 1.0
+  maximum_loaded_date: 2026-04-30
+  holdout_rows_loaded: 0
+  weakest1_at_2bps:
+    additive_return: 1.661103
+    maximum_drawdown: 0.301715
+    recent12_return: 0.931306
+    active_fraction: 1.0
+    worst_year: -0.118593
+  strongest1_control_at_2bps:
+    additive_return: 1.125057
+    maximum_drawdown: 0.678559
+    recent12_return: 0.730151
+    worst_year: -0.823856
+  weakest1_le_minus_1pct_at_2bps:
+    additive_return: 2.574315
+    maximum_drawdown: 0.111430
+    recent12_return: 0.898961
+    active_fraction: 0.553289
+    worst_year: 0.137201
+  weakest1_le_minus_1p5pct_at_2bps:
+    additive_return: 2.677183
+    maximum_drawdown: 0.104281
+    recent12_return: 0.892967
+    active_fraction: 0.461842
+    worst_year: 0.058807
+decision: Advance adaptive shock definitions. The weakest-versus-strongest control supports delayed rebound, but unfiltered daily trading has unacceptable drawdown and a losing year; the smooth loss-severity neighborhood is materially stronger.

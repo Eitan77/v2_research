@@ -1,0 +1,133 @@
+{
+  "status": "completed",
+  "window_start": "2025-08-15",
+  "window_end": "2026-08-14",
+  "observed_oos_start": "2026-05-01",
+  "maximum_loaded_date": "2026-08-14",
+  "membership_maximum_date": "2026-06-24",
+  "membership_carry_forward_sessions": 36,
+  "run0029_max_reproduction_error": 5.935252289646087e-13,
+  "holdout_label": "already_observed_descriptive_not_fresh_OOS",
+  "metrics": [
+    {
+      "top_n": 1,
+      "total_return": 1.8073213443677298,
+      "maximum_drawdown": 0.2139733835269581,
+      "trade_sessions": 9
+    },
+    {
+      "top_n": 2,
+      "total_return": 1.60257887695301,
+      "maximum_drawdown": 0.18505431794438068,
+      "trade_sessions": 18
+    },
+    {
+      "top_n": 3,
+      "total_return": 1.4396953468062745,
+      "maximum_drawdown": 0.17908336183490312,
+      "trade_sessions": 23
+    },
+    {
+      "top_n": 4,
+      "total_return": 1.3858921070277148,
+      "maximum_drawdown": 0.16243849061494217,
+      "trade_sessions": 30
+    },
+    {
+      "top_n": 5,
+      "total_return": 1.2386698038196784,
+      "maximum_drawdown": 0.16952384747940785,
+      "trade_sessions": 28
+    },
+    {
+      "top_n": 6,
+      "total_return": 1.285140617749754,
+      "maximum_drawdown": 0.16740546555053945,
+      "trade_sessions": 34
+    },
+    {
+      "top_n": 7,
+      "total_return": 1.2944268226824238,
+      "maximum_drawdown": 0.17193964689900298,
+      "trade_sessions": 31
+    },
+    {
+      "top_n": 8,
+      "total_return": 1.2312766244873892,
+      "maximum_drawdown": 0.16632210316153742,
+      "trade_sessions": 35
+    },
+    {
+      "top_n": 9,
+      "total_return": 1.1837867105988722,
+      "maximum_drawdown": 0.16540435705198636,
+      "trade_sessions": 38
+    },
+    {
+      "top_n": 10,
+      "total_return": 1.0773646050007626,
+      "maximum_drawdown": 0.1737220209294935,
+      "trade_sessions": 34
+    },
+    {
+      "top_n": 11,
+      "total_return": 1.1220045777730427,
+      "maximum_drawdown": 0.15413073850778197,
+      "trade_sessions": 42
+    },
+    {
+      "top_n": 12,
+      "total_return": 1.0573461389254797,
+      "maximum_drawdown": 0.1581167085924749,
+      "trade_sessions": 45
+    },
+    {
+      "top_n": 13,
+      "total_return": 0.9394717720113017,
+      "maximum_drawdown": 0.16654732561030625,
+      "trade_sessions": 40
+    },
+    {
+      "top_n": 14,
+      "total_return": 0.8931487297406313,
+      "maximum_drawdown": 0.16266492648941194,
+      "trade_sessions": 44
+    },
+    {
+      "top_n": 15,
+      "total_return": 0.8556273203730567,
+      "maximum_drawdown": 0.15658003480150035,
+      "trade_sessions": 42
+    },
+    {
+      "top_n": 16,
+      "total_return": 0.8037126443698168,
+      "maximum_drawdown": 0.15552747033776215,
+      "trade_sessions": 44
+    },
+    {
+      "top_n": 17,
+      "total_return": 0.7656565463071972,
+      "maximum_drawdown": 0.15599284050612172,
+      "trade_sessions": 48
+    },
+    {
+      "top_n": 18,
+      "total_return": 0.7120207770515257,
+      "maximum_drawdown": 0.156413418056169,
+      "trade_sessions": 45
+    },
+    {
+      "top_n": 19,
+      "total_return": 0.7163440409587603,
+      "maximum_drawdown": 0.14612939111239132,
+      "trade_sessions": 48
+    },
+    {
+      "top_n": 20,
+      "total_return": 0.6612711222831444,
+      "maximum_drawdown": 0.1463303089062634,
+      "trade_sessions": 48
+    }
+  ]
+}

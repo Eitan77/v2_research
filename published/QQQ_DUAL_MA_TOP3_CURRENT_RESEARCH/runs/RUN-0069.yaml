@@ -1,0 +1,43 @@
+run_id: RUN-0069
+campaign_id: CAM-0611
+parent_run: RUN-0068
+status: completed_and_reconciled
+question: What are the frozen Top-3 selections from the completed 2026-08-14 close for execution on 2026-08-17?
+reason: >-
+  The canonical raw-bar lake ends 2026-06-24, causing RUN-0067/0068 rolling
+  dollar-volume eligibility to expire after 32 missing sessions. A fresh raw
+  SIP-bar extension is required before generating a live-facing selection.
+configuration:
+  signal: unchanged_QQQ_PIT_SMA50_gt_SMA200_liquidity_top_half_rank_126_skip21_top3
+  signal_date: 2026-08-14_completed_close
+  intended_execution: 2026-08-17_0940_America_New_York
+  adjusted_prices: Alpaca_SIP_adjustment_all
+  liquidity_extension: Alpaca_SIP_adjustment_raw_close_times_volume
+  membership: last_known_PIT_state_carried_from_2026-06-24_then_selected_names_verified_current
+  broker_margin: false
+gates:
+  - no_rows_after_2026-08-14
+  - completed_close_only
+  - raw_liquidity_present_through_2026-08-14
+  - verify_selected_names_current_QQQ_eligibility
+result:
+  status: completed_and_reconciled
+  maximum_loaded_date: 2026-08-14
+  signal_date: 2026-08-14
+  intended_execution: 2026-08-17_0940_America_New_York
+  trend_eligible_count: 57
+  liquid_half_count: 29
+  top3: [SNDK, MU, ARM]
+  next_ranked: [STX, MRVL, AMD, WDC]
+  prior_active_top3: [ARM, MU, SNDK]
+  membership_changed: false
+  raw_liquidity_refresh: passed_through_2026-08-14
+  official_index_checks:
+    - Nasdaq_2026-08-14_NDX_page_current
+    - Nasdaq_SNDK_addition_effective_2026-04-20
+    - Nasdaq_2026-05-01_constituent_file_contains_ARM_MU_and_post_addition_SNDK
+decision: >-
+  The completed Friday signal remains SNDK, MU, and ARM. An existing frozen
+  change-only portfolio would make no Monday membership trade; a new deployment
+  would initiate equal liquidation-value positions at the frozen 09:40 clock.
+

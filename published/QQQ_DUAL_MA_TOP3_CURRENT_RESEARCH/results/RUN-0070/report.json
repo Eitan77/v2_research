@@ -1,0 +1,181 @@
+{
+  "status": "completed",
+  "maximum_loaded_date": "2026-04-30",
+  "holdout_rows_loaded": 0,
+  "current_reference": {
+    "symbol": "SNDK",
+    "ret5": 0.35381658293529994,
+    "ret21": 0.163016979901919,
+    "above_sma20": 0.21245143316042947
+  },
+  "thresholds": [
+    {
+      "ret5_threshold": 0.1,
+      "qualifying_name_events": 100,
+      "independent_weeks": 80,
+      "positive_weeks": 48,
+      "win_rate": 0.6,
+      "mean_next_week": 0.0131844311010758,
+      "median_next_week": 0.01000619560538174,
+      "worst_next_week": -0.20245478987293652,
+      "best_next_week": 0.17801322338276515
+    },
+    {
+      "ret5_threshold": 0.15,
+      "qualifying_name_events": 45,
+      "independent_weeks": 41,
+      "positive_weeks": 25,
+      "win_rate": 0.6097560975609756,
+      "mean_next_week": 0.014423398527165227,
+      "median_next_week": 0.010896729203027533,
+      "worst_next_week": -0.20245478987293652,
+      "best_next_week": 0.17801322338276515
+    },
+    {
+      "ret5_threshold": 0.2,
+      "qualifying_name_events": 18,
+      "independent_weeks": 18,
+      "positive_weeks": 9,
+      "win_rate": 0.5,
+      "mean_next_week": 0.002411107652094476,
+      "median_next_week": 0.0008831183657936337,
+      "worst_next_week": -0.20245478987293652,
+      "best_next_week": 0.15061836892166158
+    },
+    {
+      "ret5_threshold": 0.25,
+      "qualifying_name_events": 7,
+      "independent_weeks": 7,
+      "positive_weeks": 2,
+      "win_rate": 0.2857142857142857,
+      "mean_next_week": -0.029018062299923004,
+      "median_next_week": -0.03124192634733014,
+      "worst_next_week": -0.20245478987293652,
+      "best_next_week": 0.15061836892166158
+    },
+    {
+      "ret5_threshold": 0.3,
+      "qualifying_name_events": 5,
+      "independent_weeks": 5,
+      "positive_weeks": 2,
+      "win_rate": 0.4,
+      "mean_next_week": -0.022066284709164698,
+      "median_next_week": -0.017560281877092798,
+      "worst_next_week": -0.20245478987293652,
+      "best_next_week": 0.15061836892166158
+    },
+    {
+      "ret5_threshold": 0.35,
+      "qualifying_name_events": 1,
+      "independent_weeks": 1,
+      "positive_weeks": 0,
+      "win_rate": 0.0,
+      "mean_next_week": -0.20245478987293652,
+      "median_next_week": -0.20245478987293652,
+      "worst_next_week": -0.20245478987293652,
+      "best_next_week": -0.20245478987293652
+    }
+  ],
+  "nearest": [
+    {
+      "signal_date": "2021-04-16",
+      "execution_date": "2021-04-19",
+      "symbol": "MRNA",
+      "ret5": 0.21210615952313372,
+      "ret21": 0.1576414774652659,
+      "above_sma20": 0.22928226497110504,
+      "portfolio_next_week": 0.019532056347316473,
+      "distance": 0.9517556880248165
+    },
+    {
+      "signal_date": "2021-11-26",
+      "execution_date": "2021-11-29",
+      "symbol": "MRNA",
+      "ret5": 0.31112525356986587,
+      "ret21": -0.0330028162403192,
+      "above_sma20": 0.20869550868945863,
+      "portfolio_next_week": -0.051831449920483275,
+      "distance": 1.0208933308392152
+    },
+    {
+      "signal_date": "2024-09-20",
+      "execution_date": "2024-09-23",
+      "symbol": "CEG",
+      "ret5": 0.3010511276660883,
+      "ret21": 0.29602521093829415,
+      "above_sma20": 0.31839722029043194,
+      "portfolio_next_week": 0.010896729203027533,
+      "distance": 1.0319344765437162
+    },
+    {
+      "signal_date": "2025-04-25",
+      "execution_date": "2025-04-28",
+      "symbol": "PLTR",
+      "ret5": 0.20260183407976107,
+      "ret21": 0.22214997832683148,
+      "above_sma20": 0.24758017234703922,
+      "portfolio_next_week": 0.09284440117846193,
+      "distance": 1.0763483287603082
+    },
+    {
+      "signal_date": "2020-11-20",
+      "execution_date": "2020-11-23",
+      "symbol": "TSLA",
+      "ret5": 0.1985556915544675,
+      "ret21": 0.14988609408393794,
+      "above_sma20": 0.14430017633922598,
+      "portfolio_next_week": 0.10340349140718574,
+      "distance": 1.132303935248061
+    },
+    {
+      "signal_date": "2024-10-25",
+      "execution_date": "2024-10-28",
+      "symbol": "TSLA",
+      "ret5": 0.21971001359311293,
+      "ret21": 0.058886004248288826,
+      "above_sma20": 0.13963358487770328,
+      "portfolio_next_week": -0.03316242675890868,
+      "distance": 1.1428297194091217
+    },
+    {
+      "signal_date": "2024-11-08",
+      "execution_date": "2024-11-11",
+      "symbol": "TSLA",
+      "ret5": 0.2901437866495302,
+      "ret21": 0.3453113875277465,
+      "above_sma20": 0.29494430715521025,
+      "portfolio_next_week": -0.03124192634733014,
+      "distance": 1.1460439775025466
+    },
+    {
+      "signal_date": "2025-08-08",
+      "execution_date": "2025-08-11",
+      "symbol": "PLTR",
+      "ret5": 0.21190121216049773,
+      "ret21": 0.31200000000000006,
+      "above_sma20": 0.1709590139292516,
+      "portfolio_next_week": -0.008505883104250489,
+      "distance": 1.235526153721556
+    },
+    {
+      "signal_date": "2021-01-08",
+      "execution_date": "2021-01-11",
+      "symbol": "TSLA",
+      "ret5": 0.2470701602732155,
+      "ret21": 0.35412691573829,
+      "above_sma20": 0.2854654411200821,
+      "portfolio_next_week": 0.02423225797839046,
+      "distance": 1.2870299292149243
+    },
+    {
+      "signal_date": "2025-04-25",
+      "execution_date": "2025-04-28",
+      "symbol": "MSTR",
+      "ret5": 0.16238965952080697,
+      "ret21": 0.11964410433937611,
+      "above_sma20": 0.20414761593729613,
+      "portfolio_next_week": 0.09284440117846193,
+      "distance": 1.2956576871587566
+    }
+  ]
+}

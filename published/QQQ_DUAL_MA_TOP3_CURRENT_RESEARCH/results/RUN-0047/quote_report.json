@@ -1,0 +1,158 @@
+{
+  "status": "completed",
+  "metrics": [
+    {
+      "variant": "cash_switch",
+      "extra_bps": 0.0,
+      "net_return": 2.477482006688078,
+      "max_drawdown": 0.17934510082842248,
+      "recent12": 0.8875196760702498,
+      "positive_months": 44,
+      "negative_months": 27,
+      "worst_month": -0.16614068055099043
+    },
+    {
+      "variant": "cash_switch",
+      "extra_bps": 1.0,
+      "net_return": 2.462248673354743,
+      "max_drawdown": 0.18070329964736287,
+      "recent12": 0.8851863427369167,
+      "positive_months": 44,
+      "negative_months": 27,
+      "worst_month": -0.1663406805509904
+    },
+    {
+      "variant": "cash_switch",
+      "extra_bps": 2.0,
+      "net_return": 2.4470153400214105,
+      "max_drawdown": 0.18207073387073414,
+      "recent12": 0.8828530094035832,
+      "positive_months": 44,
+      "negative_months": 27,
+      "worst_month": -0.16654068055099044
+    },
+    {
+      "variant": "cash_switch",
+      "extra_bps": 5.0,
+      "net_return": 2.40131534002141,
+      "max_drawdown": 0.18622940065003568,
+      "recent12": 0.8758530094035831,
+      "positive_months": 44,
+      "negative_months": 27,
+      "worst_month": -0.16714068055099043
+    },
+    {
+      "variant": "cash_switch",
+      "extra_bps": 10.0,
+      "net_return": 2.325148673354745,
+      "max_drawdown": 0.19335430197231762,
+      "recent12": 0.8641863427369164,
+      "positive_months": 44,
+      "negative_months": 27,
+      "worst_month": -0.16814068055099043
+    },
+    {
+      "variant": "half_inverse",
+      "extra_bps": 0.0,
+      "net_return": 1.5120310679226425,
+      "max_drawdown": 0.3267626622396499,
+      "recent12": 0.726373503363984,
+      "positive_months": 44,
+      "negative_months": 33,
+      "worst_month": -0.25877692460379764
+    },
+    {
+      "variant": "half_inverse",
+      "extra_bps": 1.0,
+      "net_return": 1.4930977345893064,
+      "max_drawdown": 0.32957716184851527,
+      "recent12": 0.7234401700306506,
+      "positive_months": 44,
+      "negative_months": 33,
+      "worst_month": -0.25907692460379766
+    },
+    {
+      "variant": "half_inverse",
+      "extra_bps": 2.0,
+      "net_return": 1.4741644012559765,
+      "max_drawdown": 0.33242084084167045,
+      "recent12": 0.7205068366973171,
+      "positive_months": 44,
+      "negative_months": 33,
+      "worst_month": -0.2593769246037977
+    },
+    {
+      "variant": "half_inverse",
+      "extra_bps": 5.0,
+      "net_return": 1.4173644012559743,
+      "max_drawdown": 0.34113156357801877,
+      "recent12": 0.711706836697317,
+      "positive_months": 44,
+      "negative_months": 33,
+      "worst_month": -0.26027692460379764
+    },
+    {
+      "variant": "half_inverse",
+      "extra_bps": 10.0,
+      "net_return": 1.3226977345893083,
+      "max_drawdown": 0.35627753971864384,
+      "recent12": 0.6970401700306502,
+      "positive_months": 44,
+      "negative_months": 33,
+      "worst_month": -0.2617769246037977
+    },
+    {
+      "variant": "full_inverse",
+      "extra_bps": 0.0,
+      "net_return": 0.546580129157203,
+      "max_drawdown": 0.6569713825015342,
+      "recent12": 0.5652273306577172,
+      "positive_months": 37,
+      "negative_months": 40,
+      "worst_month": -0.3514131686566049
+    },
+    {
+      "variant": "full_inverse",
+      "extra_bps": 1.0,
+      "net_return": 0.523946795823869,
+      "max_drawdown": 0.6638700804664487,
+      "recent12": 0.5616939973243839,
+      "positive_months": 37,
+      "negative_months": 40,
+      "worst_month": -0.35181316865660484
+    },
+    {
+      "variant": "full_inverse",
+      "extra_bps": 2.0,
+      "net_return": 0.5013134624905369,
+      "max_drawdown": 0.6708111171072797,
+      "recent12": 0.5581606639910504,
+      "positive_months": 37,
+      "negative_months": 40,
+      "worst_month": -0.3522131686566049
+    },
+    {
+      "variant": "full_inverse",
+      "extra_bps": 5.0,
+      "net_return": 0.43341346249053664,
+      "max_drawdown": 0.6918921929118973,
+      "recent12": 0.5475606639910506,
+      "positive_months": 37,
+      "negative_months": 40,
+      "worst_month": -0.3534131686566049
+    },
+    {
+      "variant": "full_inverse",
+      "extra_bps": 10.0,
+      "net_return": 0.3202467958238691,
+      "max_drawdown": 0.7279115509942515,
+      "recent12": 0.5298939973243838,
+      "positive_months": 37,
+      "negative_months": 40,
+      "worst_month": -0.3554131686566049
+    }
+  ],
+  "quote_role_coverage": 1.0,
+  "maximum_loaded_date": "2026-04-30",
+  "holdout_rows_loaded": 0
+}

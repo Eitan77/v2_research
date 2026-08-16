@@ -1,0 +1,32 @@
+{
+  "status": "passed",
+  "fixture": {
+    "status": "passed",
+    "planned_cells": 15,
+    "executed_cells": 15,
+    "unique_ids": 15,
+    "maximum_gross": 1.0,
+    "nonnegative": true
+  },
+  "chronological_split": "2023-08-01",
+  "profitable_quote_candidates": [
+    "control_f126_s21",
+    "f10_s0",
+    "f10_s1",
+    "f10_s5",
+    "f1_s0",
+    "f20_s0",
+    "f20_s1",
+    "f20_s10",
+    "f20_s5",
+    "f30_s0",
+    "f30_s1",
+    "f30_s10",
+    "f30_s5",
+    "f5_s0",
+    "f5_s1"
+  ],
+  "profitable_quote_candidate_count": 15,
+  "maximum_loaded_date": "2026-04-30",
+  "holdout_rows_loaded": 0
+}

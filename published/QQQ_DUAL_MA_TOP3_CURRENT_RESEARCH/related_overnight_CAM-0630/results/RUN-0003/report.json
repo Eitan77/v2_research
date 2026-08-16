@@ -1,0 +1,16 @@
+{
+  "status": "completed",
+  "positions": 4560,
+  "feature_coverage": {
+    "age_sessions": 1.0,
+    "stock_open_to_entry": 1.0,
+    "stock_prior_close_to_entry": 1.0,
+    "intraday_residual": 1.0,
+    "qqq_open_to_entry": 1.0,
+    "prior_day_return": 1.0,
+    "prior5_return": 1.0,
+    "distance_sma200": 1.0
+  },
+  "maximum_loaded_date": "2026-04-30",
+  "holdout_rows_loaded": 0
+}

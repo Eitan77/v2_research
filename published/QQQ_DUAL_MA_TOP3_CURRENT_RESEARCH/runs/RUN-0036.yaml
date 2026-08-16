@@ -1,0 +1,54 @@
+run_id: RUN-0036
+campaign_id: CAM-0611
+parent_run: RUN-0035
+status: completed
+change: Test a small mechanism-based price, liquidity, volume, and trend selection neighborhood motivated by trade diagnostics.
+reason: Low absolute momentum episodes lost money while high momentum, high liquidity, and strong trend extension carried the right tail; test whether simple causal eligibility or blended ranking improves new-position quality.
+expected_effect: Avoid weak leaders without retrospectively choosing symbols; preserve the high-volatility right tail and allow cash when no qualifying opportunity exists.
+configuration:
+  locked_universe_and_trend: point_in_time_QQQ_and_SMA50_gt_SMA200
+  weekly_top3_equal_weight: true
+  variants:
+    - control
+    - momentum_floor_25pct
+    - momentum_floor_50pct
+    - price_above_SMA200_by_10pct
+    - price_above_SMA200_by_20pct
+    - liquidity_top_quarter
+    - prior_relative_volume_at_most_1
+    - prior_relative_volume_at_least_1
+    - rank_75pct_momentum_25pct_liquidity
+    - rank_75pct_momentum_25pct_trend_distance
+  exits: [normal_weekly, stair15_5_two_close_for_bar_survivors]
+  execution_lag_sessions: 1
+  bar_execution_cost_bps_per_turnover: 9.740340418
+  quote_gate: materially_competitive_survivors
+  discovery_cutoff: 2026-04-30
+  holdout_access: false
+gates:
+  - no_full_sample_symbol_selection
+  - causal_completed_session_features
+  - report_sample_and_utilization_attrition
+  - zero_holdout_rows_loaded
+result:
+  status: completed
+  bar_variants_executed: 20
+  quote_survivors: [mom25_normal, mom25_ratchet]
+  quote_role_coverage: 1.0_including_preserved_XLNX_last_tradable_session_exception
+  control_normal_2bps: {net_return: 3.628296, maximum_drawdown: 0.175224, recent12_return: 1.170944, positive_months: 48, negative_months: 25}
+  mom25_normal_2bps: {net_return: 3.873284, maximum_drawdown: 0.176353, recent12_return: 1.170944, positive_months: 49, negative_months: 24}
+  control_ratchet_2bps: {net_return: 3.810301, maximum_drawdown: 0.163599, recent12_return: 1.186115, positive_months: 49, negative_months: 24}
+  mom25_ratchet_2bps: {net_return: 4.055289, maximum_drawdown: 0.157405, recent12_return: 1.186115, positive_months: 50, negative_months: 23}
+  mom25_ratchet_10bps: {net_return: 3.943289, maximum_drawdown: 0.167779, recent12_return: 1.170115}
+  mom25_increment_by_year: {2019: 0.0, 2020: 0.0, 2021: 0.0, 2022: 0.244988, 2023: 0.0, 2024: 0.0, 2025: 0.0, 2026: 0.0}
+  maximum_loaded_date: 2026-04-30
+  holdout_rows_loaded: 0
+  artifacts:
+    bar_report: artifacts/RUN-0036/bar_report.json
+    quote_report: artifacts/RUN-0036/quote_report.json
+decision: >-
+  Do not promote the 25 percent momentum floor despite the +405.53 percent
+  combined headline. Its entire +24.50-point standalone improvement occurs in
+  2022 and it has zero effect in every other year, including recent12. Tightened
+  liquidity, relative-volume filters, trend-distance filters, and blended ranks
+  all failed. Preserve the floor only as a regime-specific diagnostic.

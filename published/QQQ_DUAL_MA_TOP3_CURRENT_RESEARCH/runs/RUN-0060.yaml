@@ -1,0 +1,64 @@
+run_id: RUN-0060
+campaign_id: CAM-0611
+parent_run: RUN-0059
+status: completed_and_audited
+question: Does a self-financing fixed-initial-risk budget preserve profits and materially reduce deployment drawdown?
+authorization: User explicitly requested calculation and display on 2026-08-14.
+diagnosis: >-
+  Fully compounded deployment amplifies both gains and reversal losses. A fixed
+  original risk budget can sweep gains to cash and use that cash to restore
+  losing slots without broker margin.
+expected_effect: >-
+  Lower account-level drawdown and slower profit growth than compounding, with
+  cash acting as a shock absorber after profitable periods.
+configuration:
+  signal: unchanged_QQQ_PIT_SMA50_gt_SMA200_liquidity_top_half_rank_126_skip21_top3
+  schedule: completed_Friday_signal_next_session_0940_execution
+  rebalance: every_scheduled_week
+  target: equal_weight_selected_names
+  original_risk_budget: 1.0
+  invested_cap: min_1p0_or_current_equity_if_below_1p0_after_execution_costs
+  profit_policy: sweep_equity_above_original_risk_budget_to_cash
+  loss_policy: use_available_cash_to_restore_each_selected_slot_to_one_third_original_budget
+  insolvency_policy: if_equity_below_1p0_equalize_available_equity_without_margin
+  execution: exact_SIP_0930_midpoint_to_0940_marketability_plus_2bps_per_side
+  broker_margin: false
+  shorting: false
+  evaluation_end: 2026-08-14
+  evidence_label: >-
+    discovery_valid_through_2026_04_30; May_onward_post_holdout_observation_diagnostic_not_fresh_OOS
+gates:
+  - exact_cash_and_fractional_inventory
+  - cash_never_negative
+  - gross_exposure_never_above_minimum_of_original_risk_budget_and_equity
+  - quote_fill_every_weekly_equalization_role
+  - no_rows_after_2026_08_14
+  - compare_against_fully_compounded_change_only_architecture
+result:
+  status: completed_and_audited
+  discovery_ending_equity: 4.531003
+  discovery_compounded_return: 3.531003
+  full_ending_equity_through_2026_08_14: 5.025837
+  full_compounded_return: 4.025837
+  full_maximum_drawdown: 0.184106
+  post_observation_may_aug_return: 0.109211
+  post_observation_monthly_returns:
+    2026-05: 0.093258
+    2026-06: 0.048565
+    2026-07: -0.074621
+    2026-08_partial_through_14: 0.045626
+  post_observation_maximum_drawdown: 0.104038
+  ending_cash: 3.858981
+  ending_marked_gross: 1.166857
+  maximum_rebalance_target_gross: 0.999997
+  quote_role_coverage: 1.0
+  maximum_loaded_date: 2026-08-14
+  rows_after_authorized_end: 0
+  broker_margin_used: false
+decision: >-
+  The fixed initial risk budget is a coherent and substantially smoother live
+  architecture. It reduced the observed May-August path from +45.40 percent
+  with 44.61 percent drawdown under full compounding to +10.92 percent with
+  10.40 percent drawdown, and reduced July from -32.76 to -7.46 percent. This
+  is a return-for-risk tradeoff, not a free improvement, and May onward is
+  post-observation evidence because the rule was proposed after seeing it.

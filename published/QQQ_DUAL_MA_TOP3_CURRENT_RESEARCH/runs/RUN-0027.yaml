@@ -1,0 +1,58 @@
+run_id: RUN-0027
+campaign_id: CAM-0611
+parent_run: RUN-0026
+status: completed
+change: Compare three prespecified ranking-method challengers against the locked QQQ dual-MA top-3 126/21 control.
+reason: The formation/skip neighborhood is smooth, but ranking methodology has not been directly challenged.
+expected_effect: Determine whether multi-horizon confirmation, volatility normalization, or a causal turnover buffer improves consistency or drawdown without sacrificing robust quote-filled profit.
+configuration:
+  universe: point_in_time_qqq
+  trend_filter: SMA50_greater_than_SMA200
+  liquidity_filter: trailing_63_session_median_dollar_volume_top_half
+  cadence: weekly
+  breadth: top_3_equal_weight
+  execution_lag_sessions: 1
+  holding: open_to_next_open_until_weekly_target_changes
+  control:
+    id: raw_momentum_126_skip21
+    score: total_return_126_sessions_ending_21_sessions_before_decision
+  challengers:
+    - id: ensemble_84_126_189_skip21
+      score: equal_mean_cross_sectional_percentile_rank_of_84_21_126_21_189_21_returns
+    - id: risk_adjusted_126_skip21_vol63
+      score: raw_126_21_return_divided_by_trailing_63_session_realized_volatility
+    - id: ensemble_84_126_189_skip21_top5_buffer
+      score: same_as_ensemble
+      buffer: retain_current_names_while_eligible_and_ranked_top5_then_fill_to_top3_by_rank
+  costs_bps_per_side: [0, 1, 2, 5, 10]
+  quote_reference: 09:30_ET_SIP_NBBO_midpoint
+  quote_execution: first_marketable_09:40_ET_SIP_quote
+  capital_base: 1.0_fixed_additive
+  broker_margin: false
+  discovery_cutoff: 2026-04-30
+  holdout_start: 2026-05-01
+  holdout_access: false
+gates:
+  - causal_feature_fixture_passes
+  - zero_holdout_rows_loaded
+  - configuration_matches_frozen_record
+  - report_turnover_monthly_path_drawdown_concentration_and_chronological_splits
+  - quote_replay_every_profitable_challenger_at_0_1_or_2_bps
+result:
+  status: completed
+  planned_variants: 4
+  executed_variants: 4
+  causal_fixture: passed
+  quote_role_coverage: 1.0
+  chronological_split: 2023-08-01
+  metrics_at_2bps:
+    control_126_21: {net_return: 3.628296, maximum_drawdown: 0.175224, recent12_return: 1.170944, positive_months: 48, negative_months: 25, turnover: 127.666667, leave_top5_return: 1.190875}
+    ensemble_84_126_189_21: {net_return: 2.988290, maximum_drawdown: 0.217374, recent12_return: 1.123848, positive_months: 48, negative_months: 25, turnover: 139.666667, leave_top5_return: 0.836810}
+    risk_adjusted_126_21_vol63: {net_return: 2.384747, maximum_drawdown: 0.174035, recent12_return: 0.602370, positive_months: 41, negative_months: 32, turnover: 163.0, leave_top5_return: 0.603970}
+    ensemble_top5_buffer: {net_return: 2.485827, maximum_drawdown: 0.221294, recent12_return: 1.025571, positive_months: 45, negative_months: 28, turnover: 70.333333, leave_top5_return: 0.494002}
+  maximum_loaded_date: 2026-04-30
+  holdout_rows_loaded: 0
+  artifacts:
+    bar_report: artifacts/RUN-0027/bar_report.json
+    quote_report: artifacts/RUN-0027/quote_report.json
+decision: Retain raw 126/21 momentum as the locked ranking. None of the prespecified ranking-method challengers improved the total-return, drawdown, consistency, concentration, and chronological evidence jointly.

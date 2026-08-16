@@ -1,0 +1,32 @@
+{
+  "status": "completed_bar_diagnostic",
+  "warning": "July known before overlays; not clean OOS",
+  "maximum_loaded_date": "2026-07-31",
+  "rows_after_authorized_end": 0,
+  "metrics": [
+    {
+      "variant": "baseline",
+      "july_return_pct": -26.213356305117053,
+      "july_max_dd_pct": 32.950788531084996,
+      "active_sessions": 22,
+      "average_exposure": 1.0,
+      "turnover": 0.6666666666666666
+    },
+    {
+      "variant": "volatility_ratio_scaling",
+      "july_return_pct": -19.07382984910017,
+      "july_max_dd_pct": 25.35074153990703,
+      "active_sessions": 22,
+      "average_exposure": 0.7632868541091888,
+      "turnover": 0.9063775347192257
+    },
+    {
+      "variant": "qqq_and_leaders",
+      "july_return_pct": 0.0,
+      "july_max_dd_pct": -0.0,
+      "active_sessions": 0,
+      "average_exposure": 0.0,
+      "turnover": 0.0
+    }
+  ]
+}

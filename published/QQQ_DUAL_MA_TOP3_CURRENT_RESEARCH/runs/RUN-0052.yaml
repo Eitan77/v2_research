@@ -1,0 +1,13 @@
+run_id: RUN-0052
+parent_run: RUN-0051
+status: completed_bar_diagnostic
+question: How did the two pre-holdout defensive leads behave during July 2026?
+authorization: July 1 through July 31 2026 diagnostic only
+variants: [baseline, volatility_ratio_scaling, qqq_and_leaders]
+execution: bar gross returns less frozen 9.740340418 bp per turnover
+warning: July was already observed before overlay selection; results are post-event diagnostic, not clean OOS confirmation.
+result:
+  baseline: {july_return_pct: -26.21, max_dd_pct: 32.95, average_exposure: 1.0}
+  volatility_ratio_scaling: {july_return_pct: -19.07, max_dd_pct: 25.35, average_exposure: 0.7633}
+  qqq_and_leaders: {july_return_pct: 0.0, max_dd_pct: 0.0, average_exposure: 0.0}
+decision: Both protected July; combined gate avoided it entirely but this is post-event diagnostic evidence and paid a large pre-holdout return cost.

@@ -1,0 +1,42 @@
+run_id: RUN-0045
+campaign_id: CAM-0611
+parent_run: RUN-0043
+status: completed
+change: Extend the unchanged aligned S&P baseline continuously through August 10 for the requested last-year comparison chart.
+authorization: User explicitly requested the S&P version on the same last-year graph and monthly comparison table on 2026-08-10.
+frozen_candidate:
+  universe: last_causally_known_2026-04-30_sp500_membership
+  signal: SMA50_gt_SMA200_and_trailing63_median_dollar_volume_top_half_then_top3_by_126_skip21_momentum
+  weighting: equal_one_third
+  signal_time: final_weekly_session_close
+  execution: following_session_first_marketable_SIP_quote_at_or_after_09_40_ET
+  holding: until_next_weekly_target_change
+  exit_overlay: none
+  broker_margin: false
+evaluation_scope:
+  start: 2026-05-01
+  end: 2026-08-10
+  later_access: forbidden
+accounting:
+  capital_base: 1.0_fixed_additive_noncompounded
+  quote_extra_adverse_bps_per_turnover: 2
+gates:
+  - unchanged_sp500_configuration_from_RUN_0026
+  - exact_SIP_execution_roles
+  - report_membership_freshness
+  - maximum_loaded_date_must_not_exceed_2026-08-10
+  - graph_and_monthly_table_use_same_daily_series
+validation:
+  maximum_loaded_date: 2026-08-10
+  rows_after_authorized_end: 0
+  quote_role_coverage: 1.0
+  members_at_cutoff: 503
+  member_symbols_missing_provider_bars: 0
+  membership_maximum_date: 2026-04-30
+result:
+  last_year_net_fixed_base_return: 1.499074
+  oos_monthly_net_fixed_base_return: {May_2026: 0.259293, June_2026: 0.149013, July_2026: -0.301213, August_1_10_2026: 0.101071}
+  may_through_august_10_net_fixed_base_return: 0.208165
+  may_through_august_10_maximum_drawdown: 0.285888
+  positive_negative_days_oos: [36, 33]
+decision: Added unchanged S&P strategy to the comparison. It slightly beat the QQQ strategy over the last year, but suffered an even worse July loss and is the same cluster exposure rather than diversification.

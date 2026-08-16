@@ -1,0 +1,60 @@
+run_id: RUN-0056
+campaign_id: CAM-0611
+parent_run: RUN-0055
+status: completed
+question: Can repeated partial profit-taking outperform one-time trims for the locked QQQ top-3 strategy?
+reason: >-
+  A ladder that realizes gains progressively may retain more convex upside than
+  a one-time large trim while steadily reducing reversal exposure.
+expected_effect: >-
+  Five-percent milestones should improve profit retention but add turnover;
+  ten-percent milestones should preserve more continuation. Selling a fraction
+  of remaining weight should be less aggressive than selling the same fraction
+  of original weight.
+configuration:
+  locked_entry: QQQ_PIT_SMA50_gt_SMA200_liquidity_top_half_rank_126_skip21_top3_equal_weekly
+  reference_reset: each_weekly_execution_open
+  trigger_information: completed_adjusted_close
+  execution: next_session_open_bar_stage_then_exact_0940_SIP_for_survivors
+  variants:
+    - orig10_every5_to25
+    - orig20_every5_to15
+    - orig20_every5_to25
+    - orig25_every5_to20
+    - orig20_every10_to50
+    - rem20_every5_to25
+    - rem25_every5_to20
+    - rem33_every5_to15
+    - rem20_every10_to50
+  bar_execution_cost_bps_per_turnover: 9.740340418
+  quote_extra_bps_per_side: [0, 1, 2, 5, 10]
+  capital_base: 1.0_fixed_additive
+  maximum_gross_exposure: 1.0
+  broker_margin: false
+  discovery_cutoff: 2026-04-30
+  holdout_access: false
+gates:
+  - exact_locked_control_reproduction
+  - no_intraday_threshold_claim
+  - completed_close_trigger_next_open_execution
+  - maximum_loaded_date_2026_04_30
+  - zero_holdout_rows_loaded
+  - quote_replay_material_frontier_only
+result:
+  bar_variants_executed: 10
+  exact_quote_variants: [control, orig20_every10_to50, orig10_every5_to25, orig20_every5_to25, orig25_every5_to20]
+  control_2bps: {net_return: 3.628296, maximum_drawdown: 0.175224, recent12_return: 1.170944, positive_months: 48, negative_months: 25, worst_month: -0.166237}
+  requested_orig20_every5_to25_2bps: {net_return: 3.526727, maximum_drawdown: 0.169839, recent12_return: 1.095605, positive_months: 48, negative_months: 25, worst_month: -0.166237, turnover: 177.4, trade_roles: 967}
+  gentler_orig10_every5_to25_2bps: {net_return: 3.577512, maximum_drawdown: 0.172504, recent12_return: 1.133275, positive_months: 48, negative_months: 25, worst_month: -0.166237}
+  best_balance_orig20_every10_to50_2bps: {net_return: 3.621460, maximum_drawdown: 0.171792, recent12_return: 1.150192, positive_months: 49, negative_months: 24, worst_month: -0.166237}
+  requested_orig20_every5_to25_10bps: {net_return: 3.384807, maximum_drawdown: 0.176198, recent12_return: 1.075552}
+  maximum_loaded_date: 2026-04-30
+  holdout_rows_loaded: 0
+  quote_role_coverage: 1.0_with_preserved_XLNX_terminal_exception
+decision: >-
+  Reject progressive fixed profit ladders as replacements for the locked
+  control. The requested 20 percent of original weight at every 5 percent gain
+  reduced drawdown by only 0.54 points while sacrificing 10.16 full-history
+  return points and 7.53 recent-12 points; worst month and month hit rate were
+  unchanged. The gentler 20 percent every 10 percent rule was nearly neutral
+  but still dominated after exact fills.

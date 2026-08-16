@@ -1,0 +1,44 @@
+run_id: RUN-0055
+campaign_id: CAM-0611
+parent_run: RUN-0054
+status: completed
+question: Does the weekly-reset partial-trim effect persist above the RUN-0054 activation boundary?
+reason: >-
+  RUN-0054 found that the least aggressive tested activation, 15 percent, was
+  the only neighborhood preserving return while reducing drawdown. Since that
+  value was the grid boundary, test higher activations before interpretation.
+expected_effect: >-
+  Higher thresholds should trigger less often, preserve more momentum return,
+  and may offer less drawdown protection. A smooth tradeoff would support the
+  mechanism; an isolated 15 percent maximum would weaken it.
+configuration:
+  parent_semantics: weekly_reset_completed_close_trigger_next_open_trim
+  activation_returns: [0.20, 0.25]
+  trim_fractions: [0.25, 0.50, 0.75]
+  bar_execution_cost_bps_per_turnover: 9.740340418
+  capital_base: 1.0_fixed_additive
+  broker_margin: false
+  discovery_cutoff: 2026-04-30
+  holdout_access: false
+gates:
+  - reuse_verified_RUN_0054_control
+  - maximum_loaded_date_2026_04_30
+  - zero_holdout_rows_loaded
+  - exact_quote_replay_for_any_material_frontier_variant
+result:
+  bar_variants_executed: 7
+  exact_quote_survivors: [control, weekly_t20_f75, weekly_t25_f75]
+  control_2bps: {net_return: 3.628296, maximum_drawdown: 0.175224, recent12_return: 1.170944, positive_months: 48, negative_months: 25}
+  weekly_t20_f75_2bps: {net_return: 3.657161, maximum_drawdown: 0.169701, recent12_return: 1.170944, positive_months: 49, negative_months: 24, trim_events: 14}
+  weekly_t25_f75_2bps: {net_return: 3.651110, maximum_drawdown: 0.172410, recent12_return: 1.170944, positive_months: 49, negative_months: 24, trim_events: 5}
+  weekly_t20_f75_yearly_increment_pct: {2020: 11.9611, 2021: 0.0, 2022: 0.0, 2023: -1.7167, 2024: -2.5406, 2025: -4.8174, 2026: 0.0}
+  weekly_t20_f75_10bps: {net_return: 3.549427, maximum_drawdown: 0.174787, recent12_return: 1.157611}
+  maximum_loaded_date: 2026-04-30
+  holdout_rows_loaded: 0
+  quote_role_coverage: 1.0_with_preserved_XLNX_terminal_exception
+decision: >-
+  Do not adopt a fixed partial-profit trim. The 20 percent/75 percent branch is
+  a small full-history frontier improvement, but its gain is concentrated in
+  2020, it detracts in 2023-2025, and it never triggers in the latest in-sample
+  year. It does not address recent reversal risk and is not robust enough to
+  replace the locked control.

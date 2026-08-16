@@ -1,0 +1,47 @@
+{
+  "status": "completed",
+  "window": "2025-08-15 through 2026-08-14",
+  "closed_during_window": {
+    "completed_trades": 25,
+    "wins": 18,
+    "losses": 7,
+    "win_rate": 0.72,
+    "average_win": 0.33961320271806145,
+    "average_loss": -0.10660858916361146,
+    "average_trade": 0.21467110099119302,
+    "median_trade": 0.034380361019613837,
+    "average_holding_sessions": 33.04,
+    "median_holding_sessions": 19.0
+  },
+  "entered_and_closed_during_window": {
+    "completed_trades": 22,
+    "wins": 16,
+    "losses": 6,
+    "win_rate": 0.7272727272727273,
+    "average_win": 0.30987456538479025,
+    "average_loss": -0.10336733300436547,
+    "average_trade": 0.19717222946047502,
+    "median_trade": 0.03438564282952276,
+    "average_holding_sessions": 25.90909090909091,
+    "median_holding_sessions": 16.5
+  },
+  "full_history_through_2026_08_14": {
+    "completed_trades": 197,
+    "wins": 113,
+    "losses": 84,
+    "win_rate": 0.5736040609137056,
+    "average_win": 0.16700863680992475,
+    "average_loss": -0.07644148969639751,
+    "average_trade": 0.06320249149758428,
+    "median_trade": 0.008574610424182014,
+    "average_holding_sessions": 23.685279187817258,
+    "median_holding_sessions": 10.0
+  },
+  "open_excluded": [
+    "SNDK",
+    "MU",
+    "ARM"
+  ],
+  "maximum_loaded_date": "2026-08-14",
+  "rows_after_authorized_end": 0
+}

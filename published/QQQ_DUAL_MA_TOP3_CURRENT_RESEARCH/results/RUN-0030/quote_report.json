@@ -1,0 +1,73 @@
+{
+  "status": "completed",
+  "metrics": [
+    {
+      "extra_bps": 0.0,
+      "net_simple_return": 3.8945550878106996,
+      "maximum_drawdown": 0.2116085510948168,
+      "positive_months": 46,
+      "negative_months": 27,
+      "worst_month": -0.15064943141129497,
+      "recent12_return": 1.1159801429793965,
+      "recent12_positive_months": 8,
+      "trade_roles": 873,
+      "trade_sessions": 418,
+      "role_coverage": 1.0
+    },
+    {
+      "extra_bps": 1.0,
+      "net_simple_return": 3.8654550878107,
+      "maximum_drawdown": 0.214649311438329,
+      "positive_months": 46,
+      "negative_months": 27,
+      "worst_month": -0.15164943141129497,
+      "recent12_return": 1.11291347631273,
+      "recent12_positive_months": 8,
+      "trade_roles": 873,
+      "trade_sessions": 418,
+      "role_coverage": 1.0
+    },
+    {
+      "extra_bps": 2.0,
+      "net_simple_return": 3.8363550878107002,
+      "maximum_drawdown": 0.2177056648089732,
+      "positive_months": 46,
+      "negative_months": 27,
+      "worst_month": -0.15264943141129497,
+      "recent12_return": 1.1098468096460632,
+      "recent12_positive_months": 8,
+      "trade_roles": 873,
+      "trade_sessions": 418,
+      "role_coverage": 1.0
+    },
+    {
+      "extra_bps": 5.0,
+      "net_simple_return": 3.7490550878107003,
+      "maximum_drawdown": 0.22696949179740092,
+      "positive_months": 46,
+      "negative_months": 27,
+      "worst_month": -0.15564943141129495,
+      "recent12_return": 1.100646809646063,
+      "recent12_positive_months": 8,
+      "trade_roles": 873,
+      "trade_sessions": 418,
+      "role_coverage": 1.0
+    },
+    {
+      "extra_bps": 10.0,
+      "net_simple_return": 3.6035550878107,
+      "maximum_drawdown": 0.24273253515796367,
+      "positive_months": 46,
+      "negative_months": 27,
+      "worst_month": -0.16064943141129495,
+      "recent12_return": 1.0853134763127297,
+      "recent12_positive_months": 8,
+      "trade_roles": 873,
+      "trade_sessions": 418,
+      "role_coverage": 1.0
+    }
+  ],
+  "maximum_loaded_date": "2026-04-30",
+  "holdout_rows_loaded": 0,
+  "broker_margin": false
+}

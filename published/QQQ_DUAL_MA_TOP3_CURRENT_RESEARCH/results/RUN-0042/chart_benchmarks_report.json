@@ -1,0 +1,14 @@
+{
+  "status": "passed",
+  "symbols": [
+    "QQQ",
+    "SPY"
+  ],
+  "minimum_date": "2025-08-11",
+  "maximum_date": "2026-08-10",
+  "rows": 502,
+  "adjustment": "all",
+  "feed": "sip",
+  "rows_after_authorized_end": 0,
+  "credentials_recorded": false
+}

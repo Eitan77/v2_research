@@ -1,0 +1,34 @@
+campaign_id: CAM-0630
+title: Session-only expression of QQQ dual-MA momentum leadership
+status: frozen_pre_execution
+created_at: 2026-08-16
+hypothesis: >-
+  The slow QQQ cross-sectional leadership signal may earn a distinct overnight
+  or regular-session premium that can be harvested with daily round trips while
+  preserving its SMA50/SMA200 regime filter and 126/21 momentum identity.
+parent_signal_reference: CAM-0611 QQQ dual-MA top-3 126/21
+starting_implementations:
+  selectors:
+    - frozen_weekly_top3_carried_daily
+    - daily_refreshed_top3_using_prior_completed_close
+  legs:
+    - prior_close_signal_then_next_open_to_close_intraday
+    - prior_close_signal_then_next_close_to_following_open_overnight
+  breadth: 3_equal_weight
+  costs_bps_per_side: [-1, 0, 1, 2, 5, 10]
+  accounting: fixed_base_additive_primary
+constraints:
+  - Discovery data ends 2026-04-30 with zero holdout rows loaded.
+  - Gross exposure never exceeds 1.0 and no broker margin is used.
+  - Intraday legs are forced flat by the regular-session close.
+  - Overnight legs are long-only; no direct short is held overnight.
+  - Every active session pays a complete round trip before interpretation.
+  - Quote replay is required for a bar-stage survivor at 0, 1, or 2 bps.
+adaptation_inside_campaign:
+  - causal first-ten-minute relative-strength confirmation
+  - QQQ residual opening strength
+  - daily versus weekly slow selector
+  - entry and exit clock neighbors
+  - broad regime and volatility controls tied to session alpha
+new_campaign_if: The signal stops using slow QQQ constituent leadership or adds overnight shorts.
+holdout_access: false

@@ -1,0 +1,55 @@
+run_id: RUN-0079
+campaign_id: CAM-0611
+parent_run: RUN-0028
+status: completed_and_reconciled
+question: What happens when the 126-session momentum formation is held fixed and only the recent-session exclusion is varied?
+configuration:
+  formation_sessions: 126
+  skip_sessions: [0, 1, 5, 10, 15, 21, 30]
+  unchanged_components: [PIT_QQQ, SMA50_gt_SMA200, trailing63_median_dollar_volume_top_half, weekly, top3_equal, next_session_open]
+  development_cutoff: 2026-04-30
+  development_cost_bps_per_side: [2, 5, 10]
+  quote_fill: first_0940_marketable_SIP_against_0930_SIP_midpoint_for_all_positive_cells
+  descriptive_trailing_year: 2025-08-15_through_2026-08-14
+  trailing_year_accounting: self_financing_compounded_change_only_0p5pct_cash_reserve
+reason: The earlier short-horizon grid omitted the exact 126/0 comparison.
+expected_effect: Determine whether including the latest month improves the locked rank or whether the 21-session skip robustly avoids short-term reversal.
+gates:
+  - only_skip_parameter_changes
+  - primary_selection_uses_discovery_cutoff
+  - observed_oos_is_descriptive_only
+  - no_margin
+bar_result:
+  skip_0_at_2bps: {additive_return: 3.076835, maximum_drawdown: 0.291725, positive_months: 45, negative_months: 28}
+  skip_10_at_2bps: {additive_return: 3.287322, maximum_drawdown: 0.204915, positive_months: 48, negative_months: 25}
+  skip_21_at_2bps: {additive_return: 3.727115, maximum_drawdown: 0.166550, positive_months: 49, negative_months: 24}
+  skip_30_at_2bps: {additive_return: 4.319920, maximum_drawdown: 0.148290, positive_months: 50, negative_months: 23}
+  trailing_year_compounded:
+    skip_0: {return: 1.845718, maximum_drawdown: 0.444463}
+    skip_21: {return: 2.242113, maximum_drawdown: 0.407807}
+    skip_30: {return: 3.689837, maximum_drawdown: 0.437488}
+quote_result_at_2bps_per_side:
+  skip_0: {additive_return: 2.895456, maximum_drawdown: 0.328628, recent12_return: 1.274151, positive_months: 44, negative_months: 29}
+  skip_1: {additive_return: 2.797512, maximum_drawdown: 0.377843, recent12_return: 1.197976, positive_months: 45, negative_months: 28}
+  skip_5: {additive_return: 2.519947, maximum_drawdown: 0.351658, recent12_return: 1.196623, positive_months: 46, negative_months: 27}
+  skip_10: {additive_return: 3.176884, maximum_drawdown: 0.209468, recent12_return: 0.994511, positive_months: 43, negative_months: 30}
+  skip_15: {additive_return: 3.073730, maximum_drawdown: 0.196179, recent12_return: 0.943252, positive_months: 43, negative_months: 30}
+  skip_21: {additive_return: 3.628296, maximum_drawdown: 0.175224, recent12_return: 1.170944, positive_months: 48, negative_months: 25}
+  skip_30: {additive_return: 4.163078, maximum_drawdown: 0.153643, recent12_return: 1.509132, positive_months: 48, negative_months: 25}
+quote_cost_stress_skip_30:
+  at_5bps: {additive_return: 4.1217, maximum_drawdown: 0.154}
+  at_10bps: {additive_return: 4.054, maximum_drawdown: 0.155}
+quote_role_coverage: 1.0
+decision: Reject 126/0 as a replacement for 126/21. Advance 126/30 as a posthoc challenger because it dominates 126/21 on full-development return, drawdown, recent development return, and cost stress, but require a narrow skip-neighborhood stability check before any deployment change.
+attribution_skip30_minus_skip21:
+  additive_improvement: 0.534782
+  early_half_improvement: 0.252732
+  late_half_improvement: 0.282050
+  same_weekly_basket_fraction: 0.437326
+  different_signal_weeks: 202
+  average_names_overlap_of_3: 1.980501
+  largest_day_share_of_improvement: 0.258436
+  top5_days_share_of_improvement: 0.667748
+  improvement_after_removing_top5_days: 0.177682
+  years_skip30_better: [2020, 2021, 2022, 2025, 2026]
+  years_skip21_better: [2023, 2024]

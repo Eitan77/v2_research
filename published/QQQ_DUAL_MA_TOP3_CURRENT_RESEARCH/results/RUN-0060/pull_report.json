@@ -1,0 +1,9 @@
+{
+  "status": "passed",
+  "schedule_sessions": 15,
+  "quote_roles": 104,
+  "quote_coverage": 1.0,
+  "maximum_loaded_date": "2026-08-14",
+  "rows_after_authorized_end": 0,
+  "credentials_recorded": false
+}

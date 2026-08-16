@@ -1,0 +1,44 @@
+run_id: RUN-0030
+campaign_id: CAM-0611
+parent_run: RUN-0029
+status: completed
+change: Daily rebalancing of the locked QQQ dual-MA top-3 126/21 strategy.
+reason: Determine whether refreshing the unchanged ranking every completed session improves responsiveness versus the weekly control.
+expected_effect: Potentially capture leadership changes earlier, at the cost of greater turnover and execution sensitivity.
+configuration:
+  universe: point_in_time_qqq
+  trend_filter: SMA50_greater_than_SMA200
+  liquidity_filter: trailing_63_session_median_dollar_volume_top_half
+  ranking: momentum_126_skip21
+  breadth: top_3_equal_weight
+  cadence_challenger: daily
+  cadence_control: weekly
+  execution_lag_sessions: 1
+  holding: open_to_next_open_until_target_changes
+  bar_execution_cost_bps_per_turnover: 9.740340418
+  bar_cost_basis: 7.740340418bps_frozen_average_quote_slippage_plus_2bps_adverse
+  quote_reference: 09:30_ET_SIP_NBBO_midpoint
+  quote_execution: first_marketable_09:40_ET_SIP_quote
+  capital_base: 1.0_fixed_additive
+  broker_margin: false
+  discovery_cutoff: 2026-04-30
+  holdout_start: 2026-05-01
+  holdout_access: false
+gates:
+  - only_cadence_differs_from_locked_control
+  - causal_completed_session_signals
+  - zero_holdout_rows_loaded
+  - exact_quote_replay_if_bar_result_is_economically_competitive
+result:
+  status: completed
+  quote_role_coverage: 1.0
+  daily_at_2bps: {net_return: 3.836355, maximum_drawdown: 0.217706, recent12_return: 1.109847, positive_months: 46, negative_months: 27, recent_positive_months: 8, trade_roles: 873, trade_sessions: 418}
+  weekly_control_at_2bps: {net_return: 3.628296, maximum_drawdown: 0.175224, recent12_return: 1.170944, positive_months: 48, negative_months: 25, recent_positive_months: 9, trade_roles: 383, trade_sessions: 174}
+  daily_at_10bps: {net_return: 3.603555, maximum_drawdown: 0.242733, recent12_return: 1.085313}
+  average_slippage_bar_daily_return: 3.856701
+  maximum_loaded_date: 2026-04-30
+  holdout_rows_loaded: 0
+  artifacts:
+    bar_report: artifacts/RUN-0030/bar_report.json
+    quote_report: artifacts/RUN-0030/quote_report.json
+decision: Daily rebalancing is a viable aggressive cadence challenger but does not dominate weekly: it adds 20.81 return points while increasing drawdown 4.25 points, more than doubling trade roles, and weakening recent return and monthly consistency. Retain weekly as locked control and track daily separately.

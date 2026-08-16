@@ -1,0 +1,64 @@
+run_id: RUN-0059
+campaign_id: CAM-0611
+parent_run: RUN-0058
+status: completed_and_audited
+question: How did the frozen self-financing change-only deployment architecture perform in the sealed holdout through 2026-08-14?
+authorization: User explicitly requested the out-of-sample monthly results on 2026-08-14.
+change: >-
+  No strategy change. Extend only the RUN-0058 change-only, 0.5-percent-reserve,
+  2-bp-per-side configuration into the authorized holdout.
+configuration:
+  signal: unchanged_QQQ_PIT_SMA50_gt_SMA200_liquidity_top_half_rank_126_skip21_top3
+  signal_time: completed_Friday_close
+  execution_time: next_session_0940_America_New_York
+  portfolio:
+    initial_state: exact_RUN_0058_terminal_cash_and_fractional_inventory
+    rebalance: equalize_current_equity_only_when_membership_changes
+    cash_reserve_fraction: 0.005
+    broker_margin: false
+    shorting: false
+  quote_model:
+    reference: first_valid_SIP_midpoint_after_0930
+    execution: first_valid_SIP_bid_or_ask_after_0940
+    extra_adverse_bps_per_side: 2
+  authorized_window:
+    start: 2026-05-01
+    end: 2026-08-14
+  adaptation_from_holdout: forbidden
+gates:
+  - reproduce_RUN_0058_terminal_equity_and_inventory
+  - use_frozen_preexisting_weekly_target_schedule
+  - load_no_rows_after_2026_08_14
+  - quote_fill_every_change_only_equalization_role
+  - preserve_cash_nonnegative_and_gross_exposure_not_above_equity
+  - report_partial_August_separately
+  - label_results_as_compounded_deployment_not_fixed_base_research
+result:
+  status: completed_and_audited
+  maximum_loaded_date: 2026-08-14
+  rows_after_authorized_end: 0
+  quote_role_coverage: 1.0
+  starting_equity: 17.863855
+  ending_equity: 25.973397
+  oos_compounded_return: 0.453964
+  monthly_compounded_returns:
+    2026-05: 0.459915
+    2026-06: 0.212307
+    2026-07: -0.327649
+    2026-08_partial_through_14: 0.221849
+  oos_maximum_drawdown: 0.446113
+  drawdown_peak: 2026-06-22
+  drawdown_trough: 2026-07-29
+  recovered_by_end: false
+  ending_drawdown_from_oos_peak: 0.233167
+  rebalance_sessions: 6
+  trade_orders: 25
+  minimum_cash: 0.085785
+  maximum_gross_to_equity: 0.996502
+  broker_margin_used: false
+decision: >-
+  The frozen architecture remained strongly profitable overall but failed the
+  requested consistency profile. May and June compounded sharply, July lost
+  32.76 percent and created a 44.61 percent deployment drawdown, and the strong
+  partial-August rebound left equity 23.32 percent below its June peak. Do not
+  retune on this holdout and do not interpret the rebound as recovery.

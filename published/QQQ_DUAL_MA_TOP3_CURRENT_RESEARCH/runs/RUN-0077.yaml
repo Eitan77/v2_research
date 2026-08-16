@@ -1,0 +1,29 @@
+run_id: RUN-0077
+campaign_id: CAM-0611
+parent_run: RUN-0068
+status: completed_and_reconciled
+question: Do a below-SMA200 recovery filter or a wait-for-nonnegative-morning entry materially improve the compounded QQQ dual-MA Top-3 over the trailing observed year?
+configuration:
+  window: 2025-08-15_through_2026-08-14
+  baseline: unchanged_compounded_change_only_top3
+  experiment_1_entry_price_over_sma200_max: [1.0, 0.9, 0.8]
+  experiment_2: hold_each_new_weekly_slot_in_cash_until_first_open_not_below_prior_close
+  execution: daily_open_bar_plus_frozen_average_slippage
+  accounting: self_financing_compounded_0p5pct_cash_reserve_no_margin
+  observed_oos_use: explicitly_requested_descriptive_experiment_not_fresh_validation
+reason: Test two simple economic defenses against overextension and falling knives without a broad parameter search.
+expected_effect: Useful defenses should reduce the trailing-year drawdown without destroying most of the baseline return.
+gates:
+  - unchanged_126_skip21_rank_and_weekly_schedule
+  - no_broker_margin
+  - compare_only_prespecified_variants
+  - label_observed_oos_descriptive
+result:
+  baseline: {compounded_return: 2.242113, maximum_drawdown: 0.407807, worst_month: -0.300064, positive_months: 9, negative_months: 3}
+  price_le_1x_sma200: {compounded_return: -0.099080, maximum_drawdown: 0.288156, worst_month: -0.120091, zero_candidate_signal_weeks: 5}
+  price_le_0p9x_sma200: {compounded_return: 0.472768, maximum_drawdown: 0.243114, worst_month: -0.223751, zero_candidate_signal_weeks: 32}
+  price_le_0p8x_sma200: {compounded_return: -0.123597, maximum_drawdown: 0.243114, worst_month: -0.223751, zero_candidate_signal_weeks: 48}
+  wait_until_nonnegative_open: {compounded_return: 2.060622, maximum_drawdown: 0.390853, worst_month: -0.290121, positive_months: 9, negative_months: 3}
+  maximum_loaded_date: 2026-08-14
+  evidence_label: observed_oos_descriptive_not_fresh_validation
+decision: Reject both modifications. The below-SMA recovery rule removes the momentum mechanism and becomes sparse; the wait rule sacrifices 18.15 percentage points of return for only 1.70 percentage points less drawdown and 1.0 percentage point improvement in the worst month.

@@ -1,0 +1,20 @@
+{
+  "status": "completed",
+  "maximum_loaded_date": "2026-08-10",
+  "rows_after_authorized_end": 0,
+  "execution": "bar less frozen 9.740340418 bp per turnover",
+  "variants": {
+    "qqq": {
+      "return_pct": 94.52618120278687,
+      "max_drawdown_pct": 17.626923290448126,
+      "turnover": 13.800000000000002,
+      "signal_count": 55
+    },
+    "sp500": {
+      "return_pct": 110.15772336606236,
+      "max_drawdown_pct": 13.99155767916611,
+      "turnover": 16.2,
+      "signal_count": 55
+    }
+  }
+}

@@ -1,0 +1,53 @@
+run_id: RUN-0039
+campaign_id: CAM-0611
+parent_run: RUN-0038
+status: completed
+change: Replace Friday-close signal and Monday 09:40 execution with a causal near-close Friday signal and same-session execution.
+reason: Test whether avoiding weekend gap and Monday-open execution improves the locked weekly strategy.
+expected_effect: Lower weekend exposure and possibly cheaper execution, offset by incomplete Friday information and near-close spreads.
+configuration:
+  signal_session: final_trading_session_of_W_FRI_week
+  normal_session_signal: 15:50_ET_first_SIP_quote_after
+  normal_session_execution: 15:55_ET_first_marketable_SIP_quote_after
+  shortened_session_signal: session_close_minus_10_minutes
+  shortened_session_execution: session_close_minus_5_minutes
+  signal_price: SIP_NBBO_midpoint
+  trend_SMA_update: replace_current_session_close_with_signal_midpoint
+  momentum_126_skip21: unchanged_completed_daily_history
+  liquidity_filter: trailing_63_completed_sessions_through_prior_session_top_half
+  universe: point_in_time_QQQ
+  breadth: top3_equal
+  accounting: fixed_base_additive_noncompounded
+  quote_extra_adverse_bps_per_turnover: [0, 1, 2, 5, 10]
+  broker_margin: false
+  discovery_cutoff: 2026-04-30
+  holdout_access: false
+gates:
+  - signal_quotes_precede_execution_quotes
+  - signal_uses_no_official_close_or_later_information
+  - exact_SIP_role_coverage_or_documented_terminal_exception
+  - split_and_dividend_adjusted_daily_mark_to_market
+  - zero_holdout_rows_loaded
+result:
+  status: completed
+  signal_roles: 36493
+  signal_roles_matched: 36404
+  signal_quote_coverage: 0.997561
+  signal_missing_roles: 89
+  execution_trade_roles: 395
+  execution_role_coverage: 1.0
+  near_close_2bps: {net_return: 3.710652, maximum_drawdown: 0.183785, recent12_return: 1.225738, positive_months: 45, negative_months: 28, recent_positive_months: 8, worst_month: -0.141161, worst_year: -0.072341, turnover: 131.666667}
+  monday_execution_control_2bps: {net_return: 3.628296, maximum_drawdown: 0.175224, recent12_return: 1.170944, positive_months: 48, negative_months: 25, recent_positive_months: 9, worst_month: -0.166237, worst_year: -0.074899, turnover: 127.666667}
+  near_close_10bps: {net_return: 3.605319, maximum_drawdown: 0.190206, recent12_return: 1.210271, positive_months: 45, negative_months: 28}
+  maximum_loaded_date: 2026-04-30
+  holdout_rows_loaded: 0
+  artifacts:
+    signal_attrition: artifacts/RUN-0039/signal_attrition.csv
+    execution_ledger: artifacts/RUN-0039/execution_ledger.parquet
+    quote_report: artifacts/RUN-0039/quote_report.json
+decision: >-
+  Friday near-close execution is a viable aggressive timing challenger but not
+  a dominant replacement. It adds 8.24 full-history and 5.48 recent return
+  points and improves worst month by 2.51 points, but drawdown rises 0.86 points,
+  positive/negative months worsen from 48/25 to 45/28, recent positive months
+  fall from 9 to 8, and turnover rises. Preserve Monday 09:40 as locked control.

@@ -1,0 +1,15 @@
+{
+  "status": "passed",
+  "fixture": {
+    "status": "passed",
+    "first_active_signal_date": "2020-04-09",
+    "variant_count": 4,
+    "all_max_gross_le_one": true,
+    "all_nonnegative": true
+  },
+  "chronological_split": "2023-08-01",
+  "executed_variants": 4,
+  "planned_variants": 4,
+  "maximum_loaded_date": "2026-04-30",
+  "holdout_rows_loaded": 0
+}

@@ -1,0 +1,152 @@
+[
+  {
+    "signal_date": "2026-05-01",
+    "eligible": 49,
+    "liquid": 25,
+    "selected": [
+      "MU",
+      "WDC",
+      "SNDK"
+    ]
+  },
+  {
+    "signal_date": "2026-05-08",
+    "eligible": 51,
+    "liquid": 26,
+    "selected": [
+      "MU",
+      "WDC",
+      "SNDK"
+    ]
+  },
+  {
+    "signal_date": "2026-05-15",
+    "eligible": 52,
+    "liquid": 26,
+    "selected": [
+      "STX",
+      "WDC",
+      "SNDK"
+    ]
+  },
+  {
+    "signal_date": "2026-05-22",
+    "eligible": 53,
+    "liquid": 27,
+    "selected": [
+      "STX",
+      "WDC",
+      "SNDK"
+    ]
+  },
+  {
+    "signal_date": "2026-05-29",
+    "eligible": 57,
+    "liquid": 29,
+    "selected": [
+      "STX",
+      "WDC",
+      "SNDK"
+    ]
+  },
+  {
+    "signal_date": "2026-06-05",
+    "eligible": 59,
+    "liquid": 30,
+    "selected": [
+      "STX",
+      "WDC",
+      "SNDK"
+    ]
+  },
+  {
+    "signal_date": "2026-06-12",
+    "eligible": 58,
+    "liquid": 29,
+    "selected": [
+      "INTC",
+      "MU",
+      "SNDK"
+    ]
+  },
+  {
+    "signal_date": "2026-06-18",
+    "eligible": 58,
+    "liquid": 29,
+    "selected": [
+      "WDC",
+      "INTC",
+      "SNDK"
+    ]
+  },
+  {
+    "signal_date": "2026-06-26",
+    "eligible": 56,
+    "liquid": 28,
+    "selected": [
+      "WDC",
+      "MU",
+      "SNDK"
+    ]
+  },
+  {
+    "signal_date": "2026-07-02",
+    "eligible": 57,
+    "liquid": 29,
+    "selected": [
+      "WDC",
+      "MU",
+      "SNDK"
+    ]
+  },
+  {
+    "signal_date": "2026-07-10",
+    "eligible": 57,
+    "liquid": 29,
+    "selected": [
+      "WDC",
+      "MU",
+      "SNDK"
+    ]
+  },
+  {
+    "signal_date": "2026-07-17",
+    "eligible": 59,
+    "liquid": 30,
+    "selected": [
+      "WDC",
+      "MU",
+      "SNDK"
+    ]
+  },
+  {
+    "signal_date": "2026-07-24",
+    "eligible": 60,
+    "liquid": 30,
+    "selected": [
+      "INTC",
+      "MU",
+      "SNDK"
+    ]
+  },
+  {
+    "signal_date": "2026-07-31",
+    "eligible": 59,
+    "liquid": 30,
+    "selected": [
+      "INTC",
+      "MU",
+      "SNDK"
+    ]
+  },
+  {
+    "signal_date": "2026-08-07",
+    "eligible": 57,
+    "liquid": 29,
+    "selected": [
+      "ARM",
+      "MU",
+      "SNDK"
+    ]
+  }
+]

@@ -1,0 +1,41 @@
+{
+  "status": "completed_bar_stage",
+  "cluster_rule": "weekly trailing126 highest sector ETF correlation",
+  "metrics": [
+    {
+      "variant": "control",
+      "net_return": 0.9622933597354598,
+      "max_drawdown": 0.1900600242441619,
+      "recent12": 0.010264849632087729,
+      "positive_months": 41,
+      "negative_months": 32,
+      "worst_month": -0.1382756706236765,
+      "turnover": 632.0,
+      "underfilled_signals": 16
+    },
+    {
+      "variant": "max2",
+      "net_return": 1.0377909228639044,
+      "max_drawdown": 0.20277764512537885,
+      "recent12": 0.058508797466448124,
+      "positive_months": 42,
+      "negative_months": 31,
+      "worst_month": -0.15319233762730927,
+      "turnover": 632.0,
+      "underfilled_signals": 16
+    },
+    {
+      "variant": "max1",
+      "net_return": 0.9840671894478128,
+      "max_drawdown": 0.13772691766037343,
+      "recent12": -0.0013220743452632758,
+      "positive_months": 42,
+      "negative_months": 31,
+      "worst_month": -0.13547697089320468,
+      "turnover": 632.0,
+      "underfilled_signals": 16
+    }
+  ],
+  "maximum_loaded_date": "2026-04-30",
+  "holdout_rows_loaded": 0
+}

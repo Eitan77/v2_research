@@ -1,0 +1,36 @@
+[
+  {
+    "strategy": "S&P dual top-3 aligned",
+    "common_start": "2020-04-13",
+    "end": "2026-04-30",
+    "quote_net_return_2bps": 2.735338882689967,
+    "max_drawdown": 0.3473561277013184,
+    "dd_peak": "2021-02-09",
+    "dd_trough": "2022-01-27",
+    "dd_recovery": "2023-11-07",
+    "dd_calendar_days_to_recovery": 1001,
+    "positive_months": 51,
+    "negative_months": 22,
+    "worst_month": -0.23621806854651012,
+    "worst_year": -0.1872604850891264,
+    "recent12_return": 1.6151100688704683,
+    "trade_sessions": 187
+  },
+  {
+    "strategy": "QQQ dual top-3",
+    "common_start": "2020-04-13",
+    "end": "2026-04-30",
+    "quote_net_return_2bps": 3.628296357350633,
+    "max_drawdown": 0.1752235199883951,
+    "dd_peak": "2024-06-18",
+    "dd_trough": "2024-08-02",
+    "dd_recovery": "2025-01-17",
+    "dd_calendar_days_to_recovery": 213,
+    "positive_months": 48,
+    "negative_months": 25,
+    "worst_month": -0.16623677342512083,
+    "worst_year": -0.07489914873155203,
+    "recent12_return": 1.1709440641641784,
+    "trade_sessions": 174
+  }
+]

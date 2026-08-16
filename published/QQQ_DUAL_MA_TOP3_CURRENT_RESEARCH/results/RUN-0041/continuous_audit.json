@@ -1,0 +1,21 @@
+{
+  "status": "passed",
+  "window": "2026-05-01_through_2026-07-31",
+  "monthly_net_fixed_base_pct": {
+    "2026-05": 45.369424,
+    "2026-06": 15.299439,
+    "2026-07": -26.846883
+  },
+  "cumulative_net_fixed_base_pct": 33.821980,
+  "continuous_peak_relative_max_drawdown_pct": 26.975970,
+  "drawdown_peak_date": "2026-06-18",
+  "drawdown_trough_date": "2026-07-29",
+  "july_gross_symbol_contribution_pct": {
+    "SNDK": -14.786511,
+    "MU": -7.318611,
+    "WDC": -3.582538,
+    "INTC": -0.460760
+  },
+  "maximum_loaded_date": "2026-07-31",
+  "rows_after_authorized_end": 0
+}

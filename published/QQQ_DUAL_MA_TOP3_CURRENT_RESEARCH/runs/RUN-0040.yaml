@@ -1,0 +1,51 @@
+run_id: RUN-0040
+campaign_id: CAM-0611
+parent_run: RUN-0039
+status: completed
+change: Evaluate the unchanged locked baseline on the first sealed holdout month only.
+authorization: User explicitly requested the first out-of-sample month on 2026-08-10.
+frozen_candidate:
+  universe: point_in_time_QQQ
+  signal: SMA50_gt_SMA200_and_trailing63_median_dollar_volume_top_half_then_top3_by_126_skip21_momentum
+  weighting: equal_one_third
+  signal_time: final_weekly_session_close
+  execution: following_session_first_marketable_SIP_quote_at_or_after_09_40_ET
+  holding: until_next_weekly_target_change
+  exit_overlay: none
+  broker_margin: false
+evaluation_scope:
+  start: 2026-05-01
+  end: 2026-05-31
+  load_no_rows_after: 2026-05-31
+  carry_in_positions_from_discovery: true
+  later_holdout_access: forbidden
+accounting:
+  capital_base: 1.0_fixed_additive_noncompounded
+  quote_extra_adverse_bps_per_turnover: 2
+gates:
+  - candidate_configuration_hash_and_rules_frozen_before_holdout_load
+  - no_strategy_or_parameter_changes_after_result
+  - point_in_time_membership
+  - exact_SIP_execution_roles
+  - report_month_return_drawdown_daily_path_holdings_and_costs
+  - maximum_loaded_date_must_equal_2026-05-29_or_2026-05-31_calendar_bound
+validation:
+  discovery_maximum_date: 2026-04-30
+  out_of_sample_maximum_loaded_date: 2026-05-29
+  rows_after_authorized_end: 0
+  quote_role_coverage: 1.0
+  frozen_configuration_unchanged: true
+result:
+  net_fixed_base_return: 0.453694
+  gross_fixed_base_return: 0.444966
+  maximum_peak_relative_drawdown: 0.103341
+  positive_days: 12
+  negative_days: 8
+  weekly_pnl: [0.103269, 0.258503, -0.049561, 0.069657, 0.071826]
+  best_day: 0.113089
+  worst_day: -0.088199
+  turnover: 0.666667
+  quote_execution_drag: -0.008861
+  additional_2bps_drag: 0.000133
+  gross_symbol_contribution: {SNDK: 0.176658, MU: 0.137687, WDC: 0.095303, STX: 0.035318}
+decision: Strong positive first-month confirmation, but one month and a four-name storage/semiconductor cluster are insufficient for promotion or parameter changes. Preserve the frozen baseline and keep later holdout sealed.

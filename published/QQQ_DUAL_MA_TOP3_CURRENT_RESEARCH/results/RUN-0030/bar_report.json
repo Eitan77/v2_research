@@ -1,0 +1,38 @@
+{
+  "status": "completed_bar_stage",
+  "execution_model": "bar plus frozen average quote slippage plus 2 bp adverse",
+  "metrics": [
+    {
+      "variant": "weekly_control",
+      "net_simple_return": 3.6282963573587454,
+      "maximum_drawdown": 0.17233352173209557,
+      "turnover": 127.66666666666666,
+      "position_changes": 383,
+      "trade_sessions": 173,
+      "positive_months": 48,
+      "negative_months": 25,
+      "recent12_return": 1.1551976793162875,
+      "recent12_positive_months": 9,
+      "average_week_profit": 0.010106675090135782,
+      "top5_symbol_positive_share": 0.5281838645224756,
+      "leave_best_symbol_out_return": 2.906663056834248
+    },
+    {
+      "variant": "daily_rebalance",
+      "net_simple_return": 3.856701315029981,
+      "maximum_drawdown": 0.20950011062008467,
+      "turnover": 291.0,
+      "position_changes": 873,
+      "trade_sessions": 418,
+      "positive_months": 47,
+      "negative_months": 26,
+      "recent12_return": 1.1314811671110987,
+      "recent12_positive_months": 9,
+      "average_week_profit": 0.010742900598969306,
+      "top5_symbol_positive_share": 0.5059831006010548,
+      "leave_best_symbol_out_return": 3.070286268131097
+    }
+  ],
+  "maximum_loaded_date": "2026-04-30",
+  "holdout_rows_loaded": 0
+}

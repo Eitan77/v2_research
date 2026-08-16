@@ -1,0 +1,11 @@
+{
+  "status": "passed",
+  "symbols_requested": 503,
+  "symbols_returned": 503,
+  "rows": 45113,
+  "pages": 11,
+  "minimum_date": "2026-04-01",
+  "maximum_date": "2026-08-10",
+  "rows_after_authorized_end": 0,
+  "credentials_recorded": false
+}

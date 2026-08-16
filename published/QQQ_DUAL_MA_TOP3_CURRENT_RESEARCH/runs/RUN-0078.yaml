@@ -1,0 +1,24 @@
+run_id: RUN-0078
+campaign_id: CAM-0611
+parent_run: RUN-0077
+status: completed_and_reconciled
+question: Does a simple maximum distance above SMA200 avoid overextended entries without destroying the trailing-year QQQ Top-3 momentum edge?
+configuration:
+  entry_price_over_sma200_max: [1.10, 1.20, 1.30, 1.50, 1.75]
+  replacement: scan_down_unchanged_126_skip21_rank
+  window: 2025-08-15_through_2026-08-14
+  execution: daily_open_bar_plus_frozen_average_slippage
+  accounting: self_financing_compounded_change_only_0p5pct_cash_reserve_no_margin
+  evidence_label: observed_oos_descriptive_not_fresh_validation
+reason: An upper cap preserves the bullish dual-MA mechanism while testing a direct defense against extreme extension.
+expected_effect: A useful broad cap should reduce drawdown and worst month with modest return sacrifice across neighboring thresholds.
+result:
+  baseline: {compounded_return: 2.242113, maximum_drawdown: 0.407807, worst_month: -0.300064}
+  max_10pct: {compounded_return: -0.241739, maximum_drawdown: 0.342015, worst_month: -0.154050}
+  max_20pct: {compounded_return: -0.228373, maximum_drawdown: 0.371581, worst_month: -0.161496}
+  max_30pct: {compounded_return: 0.507570, maximum_drawdown: 0.245697, worst_month: -0.171450}
+  max_50pct: {compounded_return: 0.679776, maximum_drawdown: 0.250179, worst_month: -0.151990}
+  max_75pct: {compounded_return: 1.069503, maximum_drawdown: 0.258414, worst_month: -0.110447}
+  candidate_availability: at_least_3_every_signal_week_for_all_caps
+  maximum_loaded_date: 2026-08-14
+decision: The cap materially reduces tail risk but also amputates the strategy's strongest momentum winners. A 75 percent cap is a possible risk-budget alternative, not an improvement to the return-maximizing baseline, and must not be selected from this already-observed window as if validated.

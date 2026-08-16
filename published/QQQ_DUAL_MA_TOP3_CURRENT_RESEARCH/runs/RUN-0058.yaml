@@ -1,0 +1,103 @@
+run_id: RUN-0058
+campaign_id: CAM-0611
+parent_run: RUN-0057
+status: completed
+question: What does the locked QQQ top-3 strategy produce as a genuinely self-financing cash-account portfolio with Monday equalization?
+diagnosis: >-
+  Prior headline results use the constitution's fixed-base additive research
+  convention. They do not track actual cash, fractional shares, drifted
+  holdings, or the feasibility of restoring equal weights after losses.
+expected_effect: >-
+  Current-equity sizing will compound gains and shrink after losses. Weekly
+  equalization may reduce concentration but creates more turnover and may trim
+  momentum winners; membership-change-only rebalancing should retain more drift.
+configuration:
+  signal: unchanged_QQQ_PIT_SMA50_gt_SMA200_liquidity_top_half_rank_126_skip21_top3
+  signal_time: completed_Friday_close
+  execution_time: next_session_0940_America_New_York
+  portfolio:
+    initial_cash: 1.0
+    fractional_shares: true
+    broker_margin: false
+    shorting: false
+    negative_cash_tolerance: 1.0e-12
+    target: equal_liquidation_value_across_selected_names
+    execution_sequence: sell_and_trim_then_buy
+    cash_reserve_fraction: [0.0, 0.005]
+  variants:
+    - weekly_equalize_current_equity
+    - membership_change_only_current_equity
+  quote_model:
+    reference: first_valid_SIP_midpoint_after_0930
+    execution: first_valid_SIP_bid_or_ask_after_0940
+    extra_adverse_bps_per_side: [0, 2, 10]
+  marking: split_repaired_total_return_open_close_path
+  discovery_cutoff: 2026-04-30
+  holdout_start: 2026-05-01
+  holdout_access: false
+gates:
+  - load_no_rows_after_2026_04_30
+  - reproduce_frozen_top3_schedule
+  - track_cash_and_fractional_inventory_explicitly
+  - never_allow_cash_below_zero
+  - never_allow_gross_liquidation_value_above_equity
+  - execute_sells_before_buys
+  - quote_fill_every_actual_rebalance_role
+  - preserve_terminal_security_events_explicitly
+  - report_compounded_deployment_path_separately_from_fixed_base_research_result
+  - reconcile_planned_and_executed_variants_before_interpretation
+result:
+  status: completed_and_audited
+  planned_variants: 12
+  executed_variants: 12
+  effective_quote_role_coverage: 1.0
+  quote_roles_per_clock: 1138
+  terminal_roles_resolved: 1
+  weekly_equalize_reserve0p5_2bps:
+    ending_equity: 16.611762
+    compounded_return: 15.611762
+    maximum_drawdown: 0.423308
+    drawdown_peak: 2024-06-18
+    drawdown_trough: 2024-09-06
+    drawdown_recovery: 2025-02-04
+    drawdown_duration_sessions: 157
+    recent12_compounded_return: 1.951150
+    positive_months: 45
+    negative_months: 28
+    worst_month: -0.150867
+    worst_year: -0.180712
+    rebalance_sessions: 316
+    trade_orders: 1138
+    minimum_cash: 0.005
+    maximum_gross_to_equity: 0.996039
+  weekly_equalize_reserve0p5_10bps:
+    ending_equity: 14.889474
+    compounded_return: 13.889474
+    maximum_drawdown: 0.427744
+    recent12_compounded_return: 1.888702
+  change_only_reserve0p5_2bps:
+    ending_equity: 17.863855
+    compounded_return: 16.863855
+    maximum_drawdown: 0.419909
+    recent12_compounded_return: 1.925107
+    positive_months: 46
+    negative_months: 27
+    trade_orders: 709
+    minimum_cash: 0.005
+    maximum_gross_to_equity: 0.996379
+  fixed_base_research_comparator_2bps:
+    additive_return: 3.628296
+    maximum_drawdown: 0.175224
+    recent12_additive_return: 1.170944
+  maximum_loaded_date: 2026-04-30
+  holdout_rows_loaded: 0
+  broker_margin_used: false
+decision: >-
+  The Monday-equalized deployment path is cash-valid and compounds strongly,
+  but its true percentage drawdown is about 42.3 percent rather than the 17.5
+  percent fixed-base research drawdown. Weekly equalization is also dominated
+  over the full development history by equalizing only when membership changes,
+  which ends higher with slightly lower drawdown and 38 percent fewer orders.
+  Do not treat the fixed-base headline as live risk evidence and do not declare
+  either deployment architecture live-ready without separately authorized
+  frozen holdout reconciliation and forward paper execution.

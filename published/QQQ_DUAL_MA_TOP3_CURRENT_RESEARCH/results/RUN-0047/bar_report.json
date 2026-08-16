@@ -1,0 +1,53 @@
+{
+  "status": "completed_bar_stage",
+  "flip": "QQQ_SMA10_below_SMA20_completed_close_next_session",
+  "cost_bps_per_turnover": 9.740340418,
+  "metrics": [
+    {
+      "variant": "control",
+      "net_return": 3.6282963573555858,
+      "max_drawdown": 0.17233352173229444,
+      "recent12": 1.1551976793158751,
+      "positive_months": 48,
+      "negative_months": 25,
+      "worst_month": -0.16536813445772058,
+      "turnover": 127.66666666666666,
+      "risk_off_sessions": 550
+    },
+    {
+      "variant": "cash_switch",
+      "net_return": 2.4526207980478514,
+      "max_drawdown": 0.17958095739483182,
+      "recent12": 0.7956138242210913,
+      "positive_months": 44,
+      "negative_months": 27,
+      "worst_month": -0.1428435343621684,
+      "turnover": 152.33333333333331,
+      "risk_off_sessions": 550
+    },
+    {
+      "variant": "half_inverse",
+      "net_return": 1.442433240435994,
+      "max_drawdown": 0.3311994382125035,
+      "recent12": 0.6154034168697637,
+      "positive_months": 42,
+      "negative_months": 35,
+      "worst_month": -0.21427417091436912,
+      "turnover": 189.33333333333331,
+      "risk_off_sessions": 550
+    },
+    {
+      "variant": "full_inverse",
+      "net_return": 0.432245682824137,
+      "max_drawdown": 0.6738429903343095,
+      "recent12": 0.4351930095184363,
+      "positive_months": 35,
+      "negative_months": 42,
+      "worst_month": -0.2902132992789186,
+      "turnover": 226.33333333333334,
+      "risk_off_sessions": 550
+    }
+  ],
+  "maximum_loaded_date": "2026-04-30",
+  "holdout_rows_loaded": 0
+}

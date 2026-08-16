@@ -1,0 +1,56 @@
+run_id: RUN-0071
+campaign_id: CAM-0611
+parent_run: RUN-0070
+status: completed_bar_stage_compounded_bar_diagnostic_not_interpreted
+question: Can a simple five-session overextension rule improve the QQQ Top-3 strategy historically by substituting the next-ranked candidate?
+diagnosis: >-
+  RUN-0070 found weak next-week compounded portfolio outcomes when an incumbent
+  gained more than 25 percent over five sessions. The existing 126/21 rank
+  deliberately ignores those five sessions, allowing a temporarily exhausted
+  leader to remain selected.
+expected_effect: >-
+  Candidate substitution should reduce reversal tails while preserving three
+  invested sleeves. Entry-only filtering may avoid selling persistent winners;
+  cash substitution tests whether the replacement itself dilutes the signal.
+configuration:
+  sample: discovery_only_through_2026-04-30
+  base_signal: unchanged_QQQ_PIT_SMA50_gt_SMA200_liquidity_top_half_rank_126_skip21_top3
+  signal_time: completed_Friday_close
+  execution_time: next_session_open_bar_stage
+  overextension_feature: trailing_5_session_total_return_through_signal_close
+  thresholds: [0.10, 0.15, 0.20, 0.25, 0.30, 0.35, 0.40]
+  treatments:
+    - all_candidate_substitution_scan_down_rank
+    - new_entry_only_substitution_with_incumbent_exemption
+    - all_candidate_cash_for_blocked_baseline_slots
+  primary_research_accounting: fixed_base_additive
+  deployment_diagnostic: self_financing_compounded_change_only_equalization_0p5pct_cash_reserve
+  execution_cost: frozen_average_slippage_9p740340418_bps_per_turnover
+  broker_margin: false
+  holdout_access: false
+  adaptation_label: posthoc_current_event_inspired
+gates:
+  - zero_rows_after_2026-04-30
+  - reproduce_unfiltered_control
+  - report_parameter_neighborhood_not_best_cell_only
+  - report_substitution_counts_turnover_months_drawdown_and_chronology
+  - report_fixed_base_primary_and_compounded_deployment_separately
+  - quote_replay_only_if_bar_improvement_is_broad_and_material
+result:
+  status: completed_and_reconciled_fixed_base
+  planned_variants: 22
+  executed_variants: 22
+  maximum_loaded_date: 2026-04-30
+  holdout_rows_loaded: 0
+  fixed_base_2bps:
+    control: {return: 3.628296, maximum_drawdown: 0.172334, recent12: 1.155198}
+    substitute_25: {return: 3.645214, maximum_drawdown: 0.171118, recent12: 1.155198, substitutions: 8}
+    substitute_30: {return: 3.673402, maximum_drawdown: 0.169556, recent12: 1.155198, substitutions: 5}
+    substitute_35: {return: 3.682544, maximum_drawdown: 0.172334, recent12: 1.155198, substitutions: 1}
+  lower_thresholds: materially_reduce_return_and_increase_turnover
+  compounded_bar_diagnostic: not_interpreted_due_material_divergence_from_audited_quote_cash_engine
+decision: >-
+  Only sparse 25-35 percent substitution thresholds modestly improve fixed-base
+  history. The 10-20 percent neighborhood damages return, while no threshold
+  improves the recent period or worst month. Advance only 25/30/35 to the
+  already-audited exact quote cash-account engine.

@@ -1,0 +1,32 @@
+run_id: RUN-0064
+campaign_id: CAM-0611
+parent_run: RUN-0063
+status: aborted_before_interpretation
+question: Is the apparent two-times profit-lock tier supported by a coarse local neighborhood?
+diagnosis: >-
+  RUN-0063 showed its best return-drawdown tradeoff at the lowest tested tier,
+  two times initial capital. A coarse neighboring test is required before the
+  intuitively appealing first-double rule can be treated as stable.
+expected_effect: >-
+  Gradual return and risk changes across 1.5, 2.0, and 2.5 times tiers. A sharp
+  isolated optimum at 2.0 would be rejected as threshold-sensitive.
+configuration:
+  signal_execution_and_account: identical_to_RUN-0063
+  tiers: [1.5, 2.0, 2.5]
+  post_tier_betas: [0.25, 0.5]
+  target_gross: min(equity, tier + post_tier_beta * max(equity - tier, 0))
+  discovery_cutoff: 2026-04-30
+  observed_diagnostic_end: 2026-08-14
+  holdout_label: May_onward_already_observed_and_forbidden_for_selection
+gates:
+  - selection_uses_discovery_only
+  - exact_cash_and_quote_replay
+  - require_smooth_neighborhood
+  - do_not_optimize_on_observed_period
+result:
+  status: interrupted_by_user
+  interpretation_performed: false
+decision: >-
+  Stop the threshold neighborhood because the user rejected fixed capital caps
+  as economically unsuitable for long-term deployment. Preserve any partial
+  artifacts but draw no conclusion from them.

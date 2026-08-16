@@ -1,0 +1,28 @@
+run_id: RUN-0044
+campaign_id: CAM-0611
+parent_run: RUN-0043
+status: superseded_pre_execution
+change: Evaluate the unchanged aligned S&P dual-MA top-three baseline for July 2026 only and compare with QQQ.
+authorization: User corrected the requested comparison to July on 2026-08-10.
+frozen_candidate:
+  universe: last_causally_known_2026-04-30_sp500_membership
+  signal: SMA50_gt_SMA200_and_trailing63_median_dollar_volume_top_half_then_top3_by_126_skip21_momentum
+  weighting: equal_one_third
+  signal_time: final_weekly_session_close
+  execution: following_session_first_marketable_SIP_quote_at_or_after_09_40_ET
+  holding: until_next_weekly_target_change
+  exit_overlay: none
+  broker_margin: false
+evaluation_scope:
+  reported_window: {start: 2026-07-01, end: 2026-07-31}
+  may_june_data_use: formation_and_carry_in_only
+  august_access_forbidden: true
+accounting:
+  capital_base: 1.0_fixed_additive_noncompounded
+  quote_extra_adverse_bps_per_turnover: 2
+gates:
+  - unchanged_sp500_configuration_from_RUN_0026_and_RUN_0043
+  - exact_SIP_execution_roles
+  - report_membership_freshness
+  - maximum_loaded_date_must_not_exceed_2026-07-31
+decision: Superseded by RUN-0045 before any RUN-0044 S&P market-data access or execution; user requested a continuous last-year chart instead of an isolated July comparison.

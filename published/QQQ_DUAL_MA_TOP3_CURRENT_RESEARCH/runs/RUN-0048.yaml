@@ -1,0 +1,26 @@
+run_id: RUN-0048
+campaign_id: CAM-0611
+parent_run: RUN-0030
+status: frozen_pre_execution
+change: Development-only full-port causal sector-proxy diversification of the locked QQQ top-three strategy.
+reason: Test whether preventing three correlated sector exposures reduces tail risk without abandoning full deployment.
+oos_quarantine: {maximum_date_loaded: 2026-04-30, post_cutoff_results_used_for_selection: false}
+cluster_definition:
+  proxies: standard_available_sector_ETFs
+  assignment: highest_trailing_126_session_return_correlation
+  refresh: each_weekly_signal
+variants:
+  - {id: control, maximum_names_per_cluster: 3}
+  - {id: max2_per_cluster, maximum_names_per_cluster: 2}
+  - {id: max1_per_cluster, maximum_names_per_cluster: 1}
+portfolio:
+  breadth: 3
+  weighting: equal_one_third
+  full_port_requirement: gross_exposure_1_when_three_causally_eligible_clusters_exist
+  broker_margin: false
+execution: {signal: completed_weekly_close, fill: next_session_09_40_SIP, extra_bps: [0, 1, 2, 5, 10]}
+gates:
+  - zero_holdout_rows_loaded
+  - report_days_with_less_than_full_exposure
+  - exact_quote_replay_for_profitable_variants
+  - compare_return_drawdown_months_turnover_and_cluster_concentration

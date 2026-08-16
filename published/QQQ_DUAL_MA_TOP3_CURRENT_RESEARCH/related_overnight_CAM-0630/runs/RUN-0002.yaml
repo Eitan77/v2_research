@@ -1,0 +1,36 @@
+run_id: RUN-0002
+campaign_id: CAM-0630
+parent_run: RUN-0001
+status: completed_exact_quote
+question: Does the weekly slow-leader overnight leg survive a complete daily 15:50 ask to next-session 09:40 bid replay?
+configuration:
+  selector: frozen_QQQ_dual_MA_top3_126_21_weekly_carried
+  entry: first_valid_SIP_ask_at_or_after_15_50_ET
+  exit: first_valid_SIP_bid_at_or_after_09_40_ET_next_session
+  holding: overnight_only_daily_cash_reset
+  costs_bps_per_side: [-1, 0, 1, 2, 5, 10]
+  capital_base: 1.0_fixed_additive
+  broker_margin: false
+  direct_short: false
+  discovery_cutoff: 2026-04-30
+  holdout_access: false
+reason: RUN-0001 found materially stronger overnight than intraday bar expectancy; daily spread crossing is the primary falsification risk.
+expected_effect: A real overnight leadership premium should remain positive at 2 bps and retain chronological and recent strength after 3,040 endpoint fills per year-equivalent.
+gates:
+  - quote_role_coverage_100pct
+  - every_position_has_entry_and_exit
+  - apply_splits_and_cash_dividends
+  - report_cost_curve_chronology_months_weeks_days_and_concentration
+  - zero_holdout_rows_loaded
+  - no_promotion_from_development_only
+result:
+  quote_role_coverage: 1.0
+  positions: 4560
+  at_2bps: {net_return: 1.471018, maximum_drawdown: 0.285169, recent12_return: 0.675546, positive_months: 36, negative_months: 37, positive_weeks: 177, negative_weeks: 139, position_win_rate: 0.502193}
+  at_5bps: {net_return: 0.558409, maximum_drawdown: 0.484583, recent12_return: 0.524586}
+  at_10bps: {net_return: -0.961391, maximum_drawdown: 1.273116, recent12_return: 0.273187}
+  early_return_2bps: 0.603715
+  late_return_2bps: 0.867302
+  maximum_loaded_date: '2026-04-30'
+  holdout_rows_loaded: 0
+decision: Retain as a real but cost-sensitive overnight lead. It is not Class A; diagnose causal profitable states before adaptation.

@@ -1,0 +1,84 @@
+run_id: RUN-0024
+campaign_id: CAM-0611
+parent_run: RUN-0023
+status: completed
+change: Daily dual-MA cross-sectional rank adaptation for genuine high frequency.
+reason: Weekly candidate fails the trade-session cadence requirement.
+expected_effect: Test whether dual-MA filtering survives daily ranking and low costs.
+configuration:
+  cadence: daily
+  costs_bps:
+  - -1
+  - 0
+  - 1
+  - 2
+  - 5
+  - 10
+  holdout_access: false
+decision: Quote replay only if the selected daily candidate meets exact trade-session
+  cadence after ledger reconstruction.
+result:
+  status: completed
+  run_id: RUN-0024
+  variant_cost_tests: 216
+  structured_candidates: 30
+  selected:
+    campaign_id: CAM-0611
+    run_id: RUN-0024
+    variant_id: sp500__ma50_200__daily__top3__momentum
+    panel: sp500
+    execution_lag_bars: 1
+    cost_bps_per_side: 2.0
+    net_simple_return: 2.478948549998218
+    gross_simple_return: 2.5275485499982175
+    total_cost: 0.04859999999999999
+    entries: 366
+    position_change_count: 729
+    active_days: 1055
+    green_days: 572
+    red_days: 483
+    average_gross_exposure: 0.8406374501992032
+    maximum_gross_exposure: 1.0
+    total_turnover: 243.0
+    profitable_symbols: 55
+    loss_symbols: 37
+    top5_symbol_positive_share: 0.6128448189359665
+    top5_day_positive_share: 0.05157302365738681
+    best_symbol: SNDK
+    best_symbol_pnl: 0.6274634563390092
+    leave_best_symbol_out_return: 1.8514850936592087
+    unavailable_entry_positions: 0
+    missing_return_positions: 0
+    monthly_average: 0.04131580916663697
+    monthly_median: 0.02869219375352461
+    positive_months: 34
+    negative_months: 17
+    inactive_months: 9
+    maximum_drawdown: 0.2175269895455224
+    drawdown_peak_date: '2022-05-27'
+    drawdown_trough_date: '2022-07-13'
+    drawdown_recovery_sessions: 84.0
+    ending_drawdown: 0.0
+    recent12_months_observed: 12
+    recent12_average_month: 0.12354413559403783
+    recent12_median_month: 0.07407942151262206
+    recent12_positive_months: 11
+    recent12_negative_months: 1
+    recent12_inactive_months: 0
+    recent15_months_observed: 15
+    recent15_average_month: 0.10215462369201231
+    recent15_median_month: 0.06688024105446637
+    recent15_positive_months: 13
+    recent15_negative_months: 2
+    recent15_inactive_months: 0
+    recent18_months_observed: 18
+    recent18_average_month: 0.10338113077077911
+    recent18_median_month: 0.06558382974024131
+    recent18_positive_months: 16
+    recent18_negative_months: 2
+    recent18_inactive_months: 0
+    holding: open_to_next_open
+    net10: 2.284548549998217
+  maximum_loaded_date: '2026-04-30'
+  holdout_rows_loaded: 0
+  broker_margin: false

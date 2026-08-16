@@ -1,0 +1,22 @@
+run_id: RUN-0007
+campaign_id: CAM-0630
+parent_run: RUN-0006
+status: frozen_before_execution
+question: Does a causal volatility-normalized or rolling-percentile shock definition preserve the delayed-rebound edge without relying on a development-maximized absolute return cutoff?
+configuration:
+  variants:
+    standardized_prior_day_return: [-0.5, -0.75, -1.0, -1.25, -1.5, -2.0]
+    rolling_symbol_percentile_126: [0.10, 0.20, 0.30, 0.40]
+    weakest_only: true
+    allocation: full_port_equal_among_qualifying_top3_else_cash
+    execution: exact_15_50_ask_to_next_09_40_bid
+    extra_bps_per_side: [-1, 0, 1, 2, 5, 10]
+    holdout_access: false
+reason: Absolute loss severity was smooth and strong, but an adaptive shock measure is less regime-dependent and is an adversarial check against threshold mining.
+expected_effect: A real leader-rebound mechanism should remain positive across neighboring standardized or percentile definitions, chronology halves, and severe cost stress.
+gates:
+  - causal_features_shifted_before_entry_session
+  - exact_quotes_only
+  - standalone_feature_families_before_combinations
+  - cost_chronology_concentration_and_yearly_stress
+  - no_holdout_rows_loaded

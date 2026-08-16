@@ -1,0 +1,47 @@
+run_id: RUN-0029
+campaign_id: CAM-0611
+parent_run: RUN-0028
+status: completed
+change: Locked QQQ dual-MA 126/21 breadth curve for every top-N from 1 through 20.
+reason: Measure how portfolio breadth changes full-history and recent-12-month quote-filled return without changing the rank or eligibility rules.
+expected_effect: Identify whether top-3 lies on a stable breadth region or whether nearby breadth provides a superior return tradeoff.
+configuration:
+  universe: point_in_time_qqq
+  trend_filter: SMA50_greater_than_SMA200
+  liquidity_filter: trailing_63_session_median_dollar_volume_top_half
+  ranking: momentum_126_skip21
+  breadth_top_n: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]
+  weighting: equal_weight
+  cadence: weekly
+  execution_lag_sessions: 1
+  holding: open_to_next_open_until_weekly_target_changes
+  execution_model: next_session_open_bar_with_frozen_average_slippage
+  average_quote_slippage_bps_per_turnover: 7.740340418
+  additional_adverse_bps_per_turnover: 2.0
+  all_in_bar_cost_bps_per_turnover: 9.740340418
+  slippage_calibration: locked_top3_126_21_full_history_0930_midpoint_to_0940_marketable_SIP
+  capital_base: 1.0_fixed_additive
+  broker_margin: false
+  discovery_cutoff: 2026-04-30
+  holdout_start: 2026-05-01
+  holdout_access: false
+gates:
+  - execute_exactly_20_breadths
+  - zero_holdout_rows_loaded
+  - reproduce_locked_top3_quote_return_within_rounding_under_average_slippage
+  - preserve_locked_rank_and_all_non_breadth_parameters
+result:
+  status: completed
+  executed_breadths: 20
+  execution_model: bar_plus_7.740340418bps_average_quote_slippage_plus_2bps_adverse
+  top3_reproduction_return: 3.628296
+  best_full_return: {top_n: 3, return: 3.628296}
+  best_recent12_return: {top_n: 2, return: 1.423744}
+  top3_recent12_return_under_average_slippage: 1.155198
+  top3_maximum_drawdown: 0.172334
+  maximum_loaded_date: 2026-04-30
+  holdout_rows_loaded: 0
+  artifacts:
+    breadth_curve: artifacts/RUN-0029/breadth_curve.csv
+    report: artifacts/RUN-0029/report.json
+decision: Top-3 is the full-history return peak and lies beside top-2; retain top-3 because its drawdown is materially lower. Top-2 is a recent-regime breadth lead, not a replacement selected from full-history development evidence.

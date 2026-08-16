@@ -1,0 +1,57 @@
+run_id: RUN-0074
+campaign_id: CAM-0611
+parent_run: RUN-0073
+status: completed_diagnostic
+question: Can market information available by the Monday 09:40 execution predict the strategy's ensuing weekly cycle strongly enough to justify delaying entry?
+diagnosis: >-
+  Weekly strategy P&L states were not useful blockers. A broad-market opening
+  shock or weak constituent breadth could identify a reversal regime using
+  information available before the intended entry.
+expected_effect: >-
+  If a causal market-state blocker is genuine, weak Monday states should have
+  materially negative subsequent strategy returns across thresholds and
+  chronological partitions, and skipping them should improve fixed-base net
+  profit and tail risk after execution costs.
+configuration:
+  inference_sample: discovery_only_through_2026-04-30
+  strategy_series: exact_quote_fixed_base_2bps_weekly_execution_cycles
+  decision_clock: Monday_or_next_session_09:40_America_New_York
+  predictors:
+    - QQQ_prior_close_to_open_gap
+    - QQQ_open_to_09_40_return
+    - QQQ_prior_close_to_09_40_return
+    - SPY_equivalents
+    - QQQ_constituent_opening_gap_breadth
+    - prior_week_QQQ_return
+  thresholds:
+    market_returns: [0, -0.0025, -0.005, -0.01, -0.015, -0.02]
+    breadth_positive_fraction: [0.3, 0.4, 0.5]
+  accounting: fixed_base_additive_primary
+  holdout_access: false
+gates:
+  - maximum_loaded_date_2026_04_30
+  - zero_holdout_rows_loaded
+  - predictors_available_by_execution_time
+  - report_sample_size_win_rate_mean_median_and_worst
+  - chronological_stability
+  - no_threshold_selected_from_holdout
+  - exact_execution_replay_before_any_live_rule
+result:
+  cycles: 316
+  baseline_additive_return: 3.628296
+  qqq_gap_down:
+    below_zero: {n: 147, mean_cycle: 0.02033, win_rate: 0.6190}
+    below_minus_0p5pct: {n: 67, mean_cycle: 0.02225, win_rate: 0.6567, worst_cycle: -0.16250}
+  qqq_first_ten_minutes_down:
+    below_zero: {n: 133, mean_cycle: 0.00740, win_rate: 0.5113}
+    below_minus_0p25pct: {n: 56, mean_cycle: 0.00303, win_rate: 0.4643}
+  qqq_gap_up_posthoc:
+    above_1pct: {n: 31, mean_cycle: -0.01650, win_rate: 0.4839, additive_contribution: -0.5114}
+    chronology: {2020_2022_mean: -0.0090, 2023_2026_mean: -0.0244}
+  conclusion: >-
+    A red QQQ open is not a hold-off signal; it historically preceded stronger
+    strategy weeks. Weakness during the first ten minutes lowered win rate but
+    retained positive total expectancy. The only blocker-shaped observation
+    was large gap-up exhaustion, which was discovered post-hoc and advanced to
+    RUN-0075 exact replay.
+decision: Reject down-open and first-ten-minute weakness as live blockers.

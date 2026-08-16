@@ -1,0 +1,26 @@
+{
+  "status": "completed",
+  "authorized_window": {
+    "start": "2026-08-01",
+    "end": "2026-08-10",
+    "maximum_loaded_date": "2026-08-10",
+    "rows_after_authorized_end": 0
+  },
+  "quote_coverage": 1.0,
+  "combined_net_fixed_base_pct": 10.093346078206425,
+  "monthly_net_fixed_base_pct": {
+    "2026-08-31": 10.093346078206423
+  },
+  "combined_max_drawdown_peak_relative_pct": 6.379724171789158,
+  "positive_days": 4,
+  "negative_days": 2,
+  "best_day_pct": 11.691144476468283,
+  "worst_day_pct": -7.3250836528895,
+  "weekly_pnl_pct": {
+    "2026-08-07": 9.649688368850057,
+    "2026-08-14": 0.4436577093563657
+  },
+  "turnover_weight": 0.6666666666666666,
+  "quote_execution_drag_pct": -1.193229330241959,
+  "explicit_2bps_drag_pct": 0.013333333333333334
+}

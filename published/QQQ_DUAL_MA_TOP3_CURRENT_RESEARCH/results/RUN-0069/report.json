@@ -1,0 +1,96 @@
+{
+  "status": "completed",
+  "signal_date": "2026-08-14",
+  "intended_execution": "2026-08-17 09:40 America/New_York",
+  "maximum_loaded_date": "2026-08-14",
+  "membership_maximum_date": "2026-06-24",
+  "trend_eligible_count": 57,
+  "liquid_half_count": 29,
+  "top3": [
+    "SNDK",
+    "MU",
+    "ARM"
+  ],
+  "ranking": [
+    {
+      "rank": 1,
+      "symbol": "SNDK",
+      "momentum_126_skip21": 2.6199173956542943,
+      "sma50": 1655.6262000000002,
+      "sma200": 903.2335500000002,
+      "median_dollar_volume_63": 21138082654.78
+    },
+    {
+      "rank": 2,
+      "symbol": "MU",
+      "momentum_126_skip21": 1.5236802495633928,
+      "sma50": 960.8022274619012,
+      "sma200": 552.6210903032411,
+      "median_dollar_volume_63": 45977802449.28
+    },
+    {
+      "rank": 3,
+      "symbol": "ARM",
+      "momentum_126_skip21": 1.429617952522252,
+      "sma50": 311.302,
+      "sma200": 195.035425,
+      "median_dollar_volume_63": 2390522006.3199997
+    },
+    {
+      "rank": 4,
+      "symbol": "STX",
+      "momentum_126_skip21": 1.3427382717529048,
+      "sma50": 889.5142204765583,
+      "sma200": 550.2209681873552,
+      "median_dollar_volume_63": 4048477045.0
+    },
+    {
+      "rank": 5,
+      "symbol": "MRVL",
+      "momentum_126_skip21": 1.2678581345310076,
+      "sma50": 238.12497483495852,
+      "sma200": 141.4551215280722,
+      "median_dollar_volume_63": 5921682017.27
+    },
+    {
+      "rank": 6,
+      "symbol": "AMD",
+      "momentum_126_skip21": 1.267004570756213,
+      "sma50": 510.4,
+      "sma200": 324.33035,
+      "median_dollar_volume_63": 14650920492.840002
+    },
+    {
+      "rank": 7,
+      "symbol": "WDC",
+      "momentum_126_skip21": 1.1819074964066623,
+      "sma50": 552.547879100389,
+      "sma200": 349.753801777123,
+      "median_dollar_volume_63": 4130744108.28
+    },
+    {
+      "rank": 8,
+      "symbol": "DDOG",
+      "momentum_126_skip21": 1.0901992031872516,
+      "sma50": 248.80879999999996,
+      "sma200": 172.270275,
+      "median_dollar_volume_63": 1148307955.2
+    },
+    {
+      "rank": 9,
+      "symbol": "INTC",
+      "momentum_126_skip21": 1.0507506872488896,
+      "sma50": 109.40140000000001,
+      "sma200": 70.14465,
+      "median_dollar_volume_63": 13132175425.92
+    },
+    {
+      "rank": 10,
+      "symbol": "PANW",
+      "momentum_126_skip21": 0.8548074403982189,
+      "sma50": 326.3241,
+      "sma200": 222.39627500000003,
+      "median_dollar_volume_63": 2124015267.24
+    }
+  ]
+}

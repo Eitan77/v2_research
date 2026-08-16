@@ -1,0 +1,110 @@
+{
+  "status": "completed_bar_stage",
+  "fixture": {
+    "status": "passed",
+    "variants": 4,
+    "max_gross": 1.0000000000000002,
+    "nonnegative": true,
+    "score_cap": 0.5000000000000001
+  },
+  "metrics": [
+    {
+      "variant": "equal_control",
+      "net_simple_return": 3.6282963573587454,
+      "maximum_drawdown": 0.17233352173209557,
+      "turnover": 127.66666666666666,
+      "positive_months": 48,
+      "negative_months": 25,
+      "recent12_return": 1.1551976793162875,
+      "recent12_positive_months": 9,
+      "top5_symbol_positive_share": 0.5281838645224756,
+      "leave_best_symbol_out_return": 2.906663056834248,
+      "train": {
+        "net": 1.6725377736771558,
+        "dd": 0.17233352173209557,
+        "positive_months": 26,
+        "negative_months": 15
+      },
+      "validation": {
+        "net": 1.9557585836815892,
+        "dd": 0.3586834668966442,
+        "positive_months": 22,
+        "negative_months": 11
+      }
+    },
+    {
+      "variant": "rank_50_30_20",
+      "net_simple_return": 3.602164433414309,
+      "maximum_drawdown": 0.22109288177039554,
+      "turnover": 133.8,
+      "positive_months": 49,
+      "negative_months": 24,
+      "recent12_return": 1.2540721837530528,
+      "recent12_positive_months": 9,
+      "top5_symbol_positive_share": 0.5625170799905609,
+      "leave_best_symbol_out_return": 2.914721128537895,
+      "train": {
+        "net": 1.575241856801244,
+        "dd": 0.22109288177039554,
+        "positive_months": 27,
+        "negative_months": 14
+      },
+      "validation": {
+        "net": 2.0269225766130647,
+        "dd": 0.34132670697284995,
+        "positive_months": 22,
+        "negative_months": 11
+      }
+    },
+    {
+      "variant": "score_proportional_cap50",
+      "net_simple_return": 3.631903478641736,
+      "maximum_drawdown": 0.19833074253409153,
+      "turnover": 132.29437871747817,
+      "positive_months": 51,
+      "negative_months": 22,
+      "recent12_return": 1.232777858024764,
+      "recent12_positive_months": 9,
+      "top5_symbol_positive_share": 0.572904057313465,
+      "leave_best_symbol_out_return": 2.896544688689331,
+      "train": {
+        "net": 1.6677156449318984,
+        "dd": 0.19833074253409153,
+        "positive_months": 27,
+        "negative_months": 14
+      },
+      "validation": {
+        "net": 1.9641878337098377,
+        "dd": 0.35602946970564125,
+        "positive_months": 24,
+        "negative_months": 9
+      }
+    },
+    {
+      "variant": "hybrid_equal_score",
+      "net_simple_return": 3.6300999180002407,
+      "maximum_drawdown": 0.18156647057883218,
+      "turnover": 129.98052269207238,
+      "positive_months": 51,
+      "negative_months": 22,
+      "recent12_return": 1.1939877686705258,
+      "recent12_positive_months": 9,
+      "top5_symbol_positive_share": 0.5503647616228663,
+      "leave_best_symbol_out_return": 2.9016038727617883,
+      "train": {
+        "net": 1.670126709304527,
+        "dd": 0.18156647057883218,
+        "positive_months": 27,
+        "negative_months": 14
+      },
+      "validation": {
+        "net": 1.9599732086957138,
+        "dd": 0.35736215186626197,
+        "positive_months": 24,
+        "negative_months": 9
+      }
+    }
+  ],
+  "maximum_loaded_date": "2026-04-30",
+  "holdout_rows_loaded": 0
+}

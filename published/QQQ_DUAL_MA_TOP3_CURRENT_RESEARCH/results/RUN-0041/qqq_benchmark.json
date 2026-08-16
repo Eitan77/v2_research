@@ -1,0 +1,14 @@
+{
+  "source": "Alpaca SIP daily adjustment=all",
+  "method": "first_session_open_to_last_session_close",
+  "monthly_return_pct": {
+    "2026-05": 10.333168768607038,
+    "2026-06": 0.023090610271236933,
+    "2026-07": -5.650104910928566
+  },
+  "may_july_return_pct": 2.926260042188411,
+  "minimum_date": "2026-05-01",
+  "maximum_date": "2026-07-31",
+  "rows_after_july": 0,
+  "credentials_recorded": false
+}

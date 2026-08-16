@@ -1,0 +1,51 @@
+run_id: RUN-0042
+campaign_id: CAM-0611
+parent_run: RUN-0041
+status: completed
+change: Extend the unchanged locked baseline from August 1 through the latest completed session available on August 10, 2026.
+authorization: User explicitly requested pulling new data through today on 2026-08-10.
+frozen_candidate:
+  universe: point_in_time_QQQ_with_last_known_membership_carry_after_2026-06-24
+  signal: SMA50_gt_SMA200_and_trailing63_median_dollar_volume_top_half_then_top3_by_126_skip21_momentum
+  weighting: equal_one_third
+  signal_time: final_weekly_session_close
+  execution: following_session_first_marketable_SIP_quote_at_or_after_09_40_ET
+  holding: until_next_weekly_target_change
+  exit_overlay: none
+  broker_margin: false
+evaluation_scope:
+  start: 2026-08-01
+  end: 2026-08-10
+  expected_latest_completed_session: 2026-08-07
+  carry_in_positions_from_RUN_0041: true
+  later_access: forbidden
+accounting:
+  capital_base: 1.0_fixed_additive_noncompounded
+  quote_extra_adverse_bps_per_turnover: 2
+gates:
+  - unchanged_candidate_configuration
+  - exact_SIP_execution_roles
+  - maximum_loaded_date_must_not_exceed_2026-08-10
+  - report_august_to_date_and_continuous_may_to_date_path
+validation:
+  actual_latest_completed_session: 2026-08-10
+  expected_latest_completed_session_was_conservative: true
+  discovery_maximum_date: 2026-04-30
+  out_of_sample_maximum_loaded_date: 2026-08-10
+  rows_after_authorized_end: 0
+  quote_role_coverage: 1.0
+  frozen_configuration_unchanged: true
+  membership_maximum_date: 2026-06-24
+  sessions_using_last_known_membership: 6
+result:
+  august_to_date_net_fixed_base_return: 0.100933
+  august_to_date_gross_bar_return: 0.089135
+  august_to_date_maximum_peak_relative_drawdown: 0.063797
+  positive_negative_days: [4, 2]
+  qqq_august_to_date_return: 0.047319
+  may_through_august_10_cumulative_net_fixed_base_return: 0.439153
+  may_through_august_10_continuous_maximum_drawdown: 0.269760
+  august_gross_symbol_contribution: {INTC: 0.037067, SNDK: 0.034476, MU: 0.033485, ARM: -0.015893}
+  quote_execution_drag: -0.011932
+  additional_2bps_drag: 0.000133
+decision: August-to-date is a strong rebound and beats QQQ, but six sessions do not resolve July's concentration failure or 26.98% continuous drawdown. Preserve unchanged observed history without promotion or tuning.

@@ -1,0 +1,30 @@
+run_id: RUN-0046
+campaign_id: CAM-0611
+parent_run: RUN-0042
+status: completed
+change: Evaluate the prespecified unchanged daily-rebalance QQQ challenger during July 2026.
+authorization: User explicitly asked whether daily rebalancing would have helped in July on 2026-08-10.
+frozen_candidate:
+  universe: point_in_time_QQQ_with_last_known_membership_carry_after_2026-06-24
+  signal: SMA50_gt_SMA200_and_trailing63_median_dollar_volume_top_half_then_top3_by_126_skip21_momentum
+  weighting: equal_one_third
+  cadence: daily_completed_close
+  execution: following_session_first_marketable_SIP_quote_at_or_after_09_40_ET
+  exit_overlay: none
+  broker_margin: false
+evaluation_scope: {start: 2026-07-01, end: 2026-07-31, later_access: forbidden_for_this_run}
+accounting: {capital_base: 1.0_fixed_additive_noncompounded, quote_extra_adverse_bps_per_turnover: 2}
+gates:
+  - identical_to_prespecified_RUN_0030_daily_variant
+  - exact_SIP_execution_roles
+  - compare_against_weekly_RUN_0041_July
+validation: {maximum_loaded_date: 2026-07-31, rows_after_july: 0, quote_role_coverage: 1.0, frozen_configuration_unchanged: true}
+result:
+  daily_july_net_fixed_base_return: -0.240692
+  weekly_july_net_fixed_base_return: -0.268469
+  daily_minus_weekly_return: 0.027777
+  daily_maximum_drawdown: 0.308066
+  daily_positive_negative_days: [8, 14]
+  daily_turnover: 5.333333
+  weekly_turnover: 0.666667
+decision: Daily rebalancing helped by only 2.78 points and modestly reduced the loss; it did not escape the cluster crash and required eight times weekly turnover. Retain weekly as control.

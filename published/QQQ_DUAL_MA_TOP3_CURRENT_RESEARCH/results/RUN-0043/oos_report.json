@@ -1,0 +1,14 @@
+{
+  "status": "completed",
+  "june_net_fixed_base_pct": 21.785996473002356,
+  "june_gross_pct": 20.87266453506912,
+  "maximum_drawdown_pct": 11.709844269997793,
+  "positive_days": 13,
+  "negative_days": 8,
+  "best_day_pct": 11.296053562420056,
+  "worst_day_pct": -7.493093237516129,
+  "quote_coverage": 1.0,
+  "turnover": 2.6666666666666665,
+  "maximum_loaded_date": "2026-06-30",
+  "rows_after_june": 0
+}

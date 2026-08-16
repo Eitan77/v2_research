@@ -1,0 +1,64 @@
+run_id: RUN-0054
+campaign_id: CAM-0611
+parent_run: RUN-0033
+status: completed
+question: Can simple partial profit-taking improve the locked QQQ top-3 strategy without amputating momentum winners?
+diagnosis: >-
+  The earlier trim5 test modestly improved month count and drawdown but mixed a
+  one-time episode flag with weekly target restoration. This run separates
+  weekly-reset trims from persistent episode trims and tests a small smooth
+  neighborhood of activation levels and trim fractions.
+expected_effect: >-
+  Small partial trims may retain most right-tail participation while banking
+  enough gains to reduce drawdown and negative-month frequency. Large or early
+  trims are expected to sacrifice return.
+configuration:
+  locked_entry: QQQ_PIT_SMA50_gt_SMA200_liquidity_top_half_rank_126_skip21_top3_equal_weekly
+  information: completed_adjusted_close_only
+  execution: next_session_open
+  post_trim_capital: cash_until_rule_permits_weekly_reset_or_symbol_reentry
+  activation_returns: [0.05, 0.10, 0.15]
+  one_stage_trim_fractions: [0.25, 0.50, 0.75]
+  persistent_one_stage_subset:
+    - {activation: 0.05, trim_fraction: 0.50}
+    - {activation: 0.10, trim_fraction: 0.25}
+    - {activation: 0.10, trim_fraction: 0.50}
+    - {activation: 0.15, trim_fraction: 0.50}
+  ladders:
+    - {reset: weekly, thresholds: [0.05, 0.10], original_weight_trim_each: 0.25}
+    - {reset: weekly, thresholds: [0.10, 0.20], original_weight_trim_each: 0.25}
+    - {reset: persistent, thresholds: [0.10, 0.20], original_weight_trim_each: 0.25}
+  bar_execution_cost_bps_per_turnover: 9.740340418
+  quote_gate: exact_SIP_0940_for_material_bar_survivors
+  quote_extra_bps_per_side: [0, 1, 2, 5, 10]
+  capital_base: 1.0_fixed_additive
+  maximum_gross_exposure: 1.0
+  broker_margin: false
+  discovery_cutoff: 2026-04-30
+  holdout_start: 2026-05-01
+  holdout_access: false
+gates:
+  - exact_locked_control_reproduction
+  - decision_on_completed_close_and_execution_next_open
+  - explicit_weekly_reset_versus_persistent_semantics
+  - maximum_loaded_date_2026_04_30
+  - zero_holdout_rows_loaded
+  - report_return_drawdown_months_recent12_turnover_exposure_and_trim_counts
+  - quote_replay_only_for_material_survivors
+result:
+  bar_variants_executed: 17
+  exact_quote_survivors: [control, weekly_t15_f25, weekly_t15_f50, weekly_t15_f75, weekly_t5_f50]
+  control_2bps: {net_return: 3.628296, maximum_drawdown: 0.175224, recent12_return: 1.170944, positive_months: 48, negative_months: 25, worst_month: -0.166237}
+  weekly_t15_f25_2bps: {net_return: 3.625117, maximum_drawdown: 0.171986, recent12_return: 1.168989, positive_months: 49, negative_months: 24, trim_events: 35}
+  weekly_t15_f50_2bps: {net_return: 3.621937, maximum_drawdown: 0.168865, recent12_return: 1.167034, positive_months: 49, negative_months: 24, trim_events: 35}
+  weekly_t15_f75_2bps: {net_return: 3.618757, maximum_drawdown: 0.165856, recent12_return: 1.165078, positive_months: 49, negative_months: 24, trim_events: 35}
+  persistent_trim_result: Failed at bar stage; persistent reductions materially reduced utilization and return, with the 10 percent/50 percent branch falling to 2.515680 net and 0.188684 drawdown.
+  maximum_loaded_date: 2026-04-30
+  holdout_rows_loaded: 0
+  quote_role_coverage: 1.0_with_preserved_XLNX_terminal_exception
+decision: >-
+  Weekly-reset trims at a 15 percent gain produced a smooth return-versus-risk
+  tradeoff, but no material improvement: larger trims reduced drawdown modestly
+  while slightly lowering full and recent return, and worst month was unchanged.
+  Persistent trims amputated the continuation edge. Preserve the control and
+  test the upper activation boundary before final judgment.

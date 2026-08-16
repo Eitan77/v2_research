@@ -1,0 +1,63 @@
+run_id: RUN-0068
+campaign_id: CAM-0611
+parent_run: RUN-0067
+status: completed_and_reconciled
+question: What is the Top-N breadth curve over the trailing year under the actual self-financing compounded deployment architecture?
+reason: >-
+  RUN-0067 used fixed-base additive accounting, which understates live-account
+  drawdown after accumulated gains and is inappropriate for the user's intended
+  compounded deployment comparison.
+expected_effect: >-
+  Return and especially drawdown should reflect current-equity exposure; the
+  Top-3 drawdown should reveal the June-July 2026 reversal rather than dilute it
+  with fixed-original-capital sizing.
+configuration:
+  signal: unchanged_QQQ_PIT_SMA50_gt_SMA200_liquidity_top_half_rank_126_skip21
+  breadths: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]
+  weighting: equal_liquidation_value
+  window: 2025-08-15_through_2026-08-14
+  oos_segment: 2026-05-01_through_2026-08-14_already_observed
+  portfolio:
+    self_financing: true
+    compounding: true
+    rebalance: equalize_current_equity_only_when_ranked_membership_changes
+    cash_reserve_fraction: 0.005
+    fractional_shares: true
+    broker_margin: false
+    shorting: false
+  execution_model: next_session_open_bar_with_frozen_average_slippage
+  all_in_cost_bps_per_turnover: 9.740340418
+  purpose: corrected_descriptive_chart_only_not_selection_or_validation
+gates:
+  - simulate_from_full_history_so_trailing_window_inherits_actual_inventory
+  - cash_never_negative
+  - gross_exposure_never_above_equity
+  - report_true_peak_relative_account_drawdown
+  - compare_top3_bar_approximation_with_exact_quote_deployment_checkpoint
+  - do_not_describe_as_fresh_oos
+result:
+  status: completed_and_reconciled
+  maximum_loaded_date: 2026-08-14
+  accounting: self_financing_compounded_change_only_equalization_0p5pct_cash_reserve
+  execution: bar_plus_frozen_average_slippage_approximation
+  top1: {compounded_return: 2.878456, maximum_drawdown: 0.510774}
+  top2: {compounded_return: 2.632297, maximum_drawdown: 0.430918}
+  top3: {compounded_return: 2.242113, maximum_drawdown: 0.407807}
+  top4: {compounded_return: 2.193724, maximum_drawdown: 0.370560}
+  top10: {compounded_return: 1.498761, maximum_drawdown: 0.347598}
+  exact_quote_top3_reference:
+    compounded_return: 2.389292
+    maximum_drawdown: 0.446113
+    drawdown_peak: 2026-06-22
+    drawdown_trough: 2026-07-29
+  integrity:
+    minimum_cash: 0.005
+    maximum_gross_to_equity: 0.997766
+    broker_margin_used: false
+  evidence_label: already_observed_descriptive_not_fresh_OOS
+decision: >-
+  Replace the fixed-base RUN-0067 chart for deployment interpretation. The
+  compounded breadth curve confirms materially larger live-account risk: Top 3
+  has 40.78 percent drawdown under the common bar/slippage comparison and 44.61
+  percent under its exact quote-filled checkpoint. Do not use observed OOS to
+  retune breadth.

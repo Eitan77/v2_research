@@ -1,0 +1,79 @@
+run_id: RUN-0028
+campaign_id: CAM-0611
+parent_run: RUN-0027
+status: completed
+change: Prespecified short-horizon momentum formation/skip grid for the locked QQQ dual-MA top-3 strategy.
+reason: The prior neighborhood began at 42 sessions and did not determine whether 1-30 session leadership improves the rank.
+expected_effect: Test whether fast continuation exists after preserving the same universe, eligibility, breadth, cadence, holding, and execution contract.
+configuration:
+  universe: point_in_time_qqq
+  trend_filter: SMA50_greater_than_SMA200
+  liquidity_filter: trailing_63_session_median_dollar_volume_top_half
+  breadth: top_3_equal_weight
+  cadence: weekly
+  execution_lag_sessions: 1
+  holding: open_to_next_open_until_weekly_target_changes
+  score: total_return_over_formation_ending_skip_sessions_before_decision
+  formation_skip_cells:
+    - [1, 0]
+    - [5, 0]
+    - [5, 1]
+    - [10, 0]
+    - [10, 1]
+    - [10, 5]
+    - [20, 0]
+    - [20, 1]
+    - [20, 5]
+    - [20, 10]
+    - [30, 0]
+    - [30, 1]
+    - [30, 5]
+    - [30, 10]
+  locked_control: [126, 21]
+  costs_bps_per_side: [0, 1, 2, 5, 10]
+  quote_reference: 09:30_ET_SIP_NBBO_midpoint
+  quote_execution: first_marketable_09:40_ET_SIP_quote
+  capital_base: 1.0_fixed_additive
+  broker_margin: false
+  discovery_cutoff: 2026-04-30
+  holdout_start: 2026-05-01
+  holdout_access: false
+gates:
+  - executed_grid_matches_14_frozen_short_cells_plus_control
+  - causal_timing_fixture_passes
+  - zero_holdout_rows_loaded
+  - quote_replay_every_short_cell_profitable_at_0_1_or_2bps
+  - report_chronological_performance_turnover_monthly_path_drawdown_and_concentration
+result:
+  status: completed
+  planned_short_cells: 14
+  executed_short_cells: 14
+  executed_total_including_control: 15
+  causal_fixture: passed
+  quote_role_coverage: 1.0
+  chronological_split: 2023-08-01
+  control_126_21_at_2bps: {net_return: 3.628296, maximum_drawdown: 0.175224, recent12_return: 1.170944, turnover: 127.666667, positive_months: 48, negative_months: 25}
+  best_short_by_full_return_at_2bps:
+    variant: f20_s1
+    net_return: 2.676836
+    maximum_drawdown: 0.303239
+    recent12_return: 0.718932
+    turnover: 292.333333
+    positive_months: 45
+    negative_months: 28
+  best_short_balanced_at_2bps:
+    variant: f5_s0
+    net_return: 2.605606
+    maximum_drawdown: 0.253050
+    recent12_return: 1.060158
+    turnover: 519.0
+    positive_months: 47
+    negative_months: 26
+  control_at_10bps: {net_return: 3.526163, maximum_drawdown: 0.180458, recent12_return: 1.157611}
+  f5_s0_at_10bps: {net_return: 2.190406, maximum_drawdown: 0.298688, recent12_return: 0.992958}
+  maximum_loaded_date: 2026-04-30
+  holdout_rows_loaded: 0
+  artifacts:
+    bar_report: artifacts/RUN-0028/bar_report.json
+    quote_report: artifacts/RUN-0028/quote_report.json
+decision: Retain 126/21 unchanged. Short-horizon ranks are profitable but have lower net return, higher drawdown, substantially higher turnover, and no consistent chronological or recent advantage.

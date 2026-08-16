@@ -1,0 +1,49 @@
+run_id: RUN-0066
+campaign_id: CAM-0611
+parent_run: RUN-0028
+status: completed
+question: Does an entry-only recent-extension veto reduce reversal risk without removing continuing momentum winners?
+diagnosis: >-
+  The 126/21 score deliberately excludes the latest month, so a previously
+  strong candidate can still be entered after becoming sharply extended. The
+  veto should apply only to new entries; currently held names remain eligible
+  under the unchanged ranking and trend rules.
+expected_effect: >-
+  Substitute the next-highest ranked non-extended candidate at unusually hot
+  entry points, reducing left-tail reversals while retaining existing winners.
+configuration:
+  base_signal: unchanged_QQQ_PIT_SMA50_gt_SMA200_liquidity_top_half_rank_126_skip21
+  breadth: 3
+  recent_extension: trailing_21_session_total_return_through_signal_close
+  new_entry_maximums: [0.10, 0.20, 0.30, 0.40, 0.50]
+  existing_holding_exemption: true
+  replacement_rule: scan_126_21_rank_descending_until_three_names_pass
+  cadence: weekly_completed_Friday_signal_next_session_open_stage
+  bar_cost_bps_per_turnover: 9.740340417752536
+  quote_gate: every_variant_positive_at_0_1_or_2bps
+  discovery_cutoff: 2026-04-30
+  holdout_access: false
+gates:
+  - zero_holdout_rows_loaded
+  - causal_completed_close_features_only
+  - exact_three_names_when_eligible_supply_allows
+  - report_blocked_entries_substitution_depth_turnover_concentration_and_attrition
+  - reject_isolated_threshold_winner
+result:
+  status: completed_and_reconciled
+  planned_variants: 6
+  executed_variants: 6
+  quote_role_coverage: 1.0
+  control_2bps: {net_return: 3.628296, maximum_drawdown: 0.175224, recent12_return: 1.170944, trade_roles: 383}
+  veto10_2bps: {net_return: 3.472726, maximum_drawdown: 0.171178, recent12_return: 0.942668, blocked_candidates: 122}
+  veto20_2bps: {net_return: 3.594753, maximum_drawdown: 0.164517, recent12_return: 1.062354, blocked_candidates: 47}
+  veto30_2bps: {net_return: 3.509662, maximum_drawdown: 0.173937, recent12_return: 1.072875, blocked_candidates: 26}
+  veto40_2bps: {net_return: 3.583290, maximum_drawdown: 0.173207, recent12_return: 1.072875, blocked_candidates: 15}
+  veto50_2bps: {net_return: 3.681449, maximum_drawdown: 0.173178, recent12_return: 1.170944, blocked_candidates: 9}
+  maximum_loaded_date: 2026-04-30
+  holdout_rows_loaded: 0
+decision: >-
+  Reject the entry-only extension veto. The threshold response is nonmonotonic;
+  10-40 percent branches reduce total or recent return, while the apparent
+  50-percent improvement depends on only nine blocked candidates and leaves
+  recent return unchanged. Do not combine it with replacement-only handling.

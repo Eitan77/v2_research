@@ -1,0 +1,20 @@
+run_id: RUN-0053
+parent_run: RUN-0038
+status: completed_bar_stage
+question: What is the cost of liquidating every Friday close and repurchasing Monday at 09:40?
+configuration:
+  removed_exposure: Friday close to next-session open
+  repurchase: next-session 09:40
+  extra_execution_cost: frozen 9.740340418 bp per incremental turnover
+  accounting: fixed-base additive
+result:
+  full_baseline_pct: 362.8296
+  full_flat_weekend_pct: 294.6740
+  full_difference_pct: -68.1556
+  recent12_baseline_pct: 115.5198
+  recent12_flat_weekend_pct: 68.7714
+  recent12_difference_pct: -46.7483
+  recent12_removed_weekend_pnl_pct: 38.2418
+  recent12_extra_cost_pct: 8.5066
+integrity: {maximum_loaded_date: 2026-04-30, holdout_rows_loaded: 0}
+decision: Reject routine weekend liquidation; recent performance depends materially on weekend exposure and additional turnover is costly.

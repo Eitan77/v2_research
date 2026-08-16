@@ -1,0 +1,46 @@
+run_id: RUN-0043
+campaign_id: CAM-0611
+parent_run: RUN-0042
+status: completed
+change: Evaluate the unchanged aligned S&P dual-MA top-three baseline for June 2026 only and compare with the QQQ baseline.
+authorization: User explicitly requested a June-only S&P comparison on 2026-08-10.
+frozen_candidate:
+  universe: point_in_time_sp500_primary_fja_reconstruction_or_last_causally_known_membership_if_no_later_snapshot_exists
+  signal: SMA50_gt_SMA200_and_trailing63_median_dollar_volume_top_half_then_top3_by_126_skip21_momentum
+  weighting: equal_one_third
+  signal_time: final_weekly_session_close
+  execution: following_session_first_marketable_SIP_quote_at_or_after_09_40_ET
+  holding: until_next_weekly_target_change
+  exit_overlay: none
+  broker_margin: false
+evaluation_scope:
+  reported_window: {start: 2026-06-01, end: 2026-06-30}
+  may_data_use: formation_and_carry_in_only
+  july_access_forbidden: true
+accounting:
+  capital_base: 1.0_fixed_additive_noncompounded
+  quote_extra_adverse_bps_per_turnover: 2
+gates:
+  - unchanged_sp500_configuration_from_RUN_0026
+  - exact_SIP_execution_roles
+  - report_membership_freshness
+  - maximum_loaded_date_must_not_exceed_2026-06-30
+validation:
+  maximum_loaded_date: 2026-06-30
+  rows_after_june: 0
+  quote_role_coverage: 1.0
+  members_at_cutoff: 503
+  member_symbols_missing_provider_bars: 0
+  membership_maximum_date: 2026-04-30
+  sessions_using_last_known_membership: 21
+result:
+  sp500_june_net_fixed_base_return: 0.217860
+  sp500_june_gross_bar_return: 0.208727
+  sp500_june_maximum_drawdown: 0.117098
+  sp500_positive_negative_days: [13, 8]
+  qqq_june_net_fixed_base_return: 0.152994
+  qqq_june_maximum_drawdown: 0.103856
+  qqq_positive_negative_days: [12, 9]
+  sp500_minus_qqq_return: 0.064866
+decision: The S&P version did not get packed up in June; it remained strongly positive and outperformed the QQQ version by 6.49 fixed-base points. Both remained concentrated in the same storage/semiconductor cluster, so this is not independent breadth confirmation.
+reconciliation_note: RUN-0043 was an isolated June endpoint test and marked June 30 to that session's close, producing +21.79%. The continuous May-August path attributes June 30 open-to-July 1 open to June under the established daily convention, so the comparable continuous-chart June figure is +14.90%. Use RUN-0045 for monthly chart comparisons.

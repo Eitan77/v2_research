@@ -1,0 +1,32 @@
+{
+  "status": "completed_bar_stage",
+  "window": "2025-05-01 through 2026-04-30",
+  "maximum_loaded_date": "2026-04-30",
+  "holdout_rows_loaded": 0,
+  "metrics": [
+    {
+      "variant": "baseline",
+      "return_pct": 115.5197679315875,
+      "max_drawdown_pct": 12.962366662695345,
+      "positive_months": 9,
+      "negative_months": 3,
+      "worst_month_pct": -11.991125098521184,
+      "active_sessions": 251,
+      "turnover": 16.666666666666664
+    },
+    {
+      "variant": "previous_cycle_positive",
+      "return_pct": 79.48366965679679,
+      "max_drawdown_pct": 9.561324919115755,
+      "positive_months": 8,
+      "negative_months": 4,
+      "worst_month_pct": -6.63752888778775,
+      "active_sessions": 170,
+      "turnover": 28.0
+    }
+  ],
+  "cycle_gate_counts": {
+    "on": 184,
+    "off": 173
+  }
+}

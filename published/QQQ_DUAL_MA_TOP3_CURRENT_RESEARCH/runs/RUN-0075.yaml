@@ -1,0 +1,53 @@
+run_id: RUN-0075
+campaign_id: CAM-0611
+parent_run: RUN-0074
+status: completed_exact_quote_diagnostic
+question: Does the post-hoc large Monday gap-up exhaustion pattern survive exact quote replay and a smooth threshold neighborhood?
+diagnosis: >-
+  RUN-0074 found that down gaps were favorable, while QQQ gap-ups of at least
+  one percent had negative ensuing cycle P&L in both broad chronological
+  partitions. This is the only market-state relationship with a plausible
+  blocker direction and must be labeled post-hoc.
+expected_effect: >-
+  A real exhaustion effect should improve fixed-base net return and drawdown
+  across adjacent gap-up thresholds, retain direction across related QQQ/SPY
+  definitions, and survive the additional liquidation and re-entry fills.
+configuration:
+  inference_sample: discovery_only_through_2026-04-30
+  baseline: QQQ_dual_MA_top3_126_21_Friday_signal_next_session_0940
+  action_when_blocked: liquidate_at_0940_and_hold_cash_until_next_weekly_execution
+  qqq_gap_up_thresholds: [0.005, 0.0075, 0.01, 0.0125, 0.015]
+  related_checks:
+    - SPY_gap_up_0.01
+    - QQQ_prior_close_to_0940_up_0.01
+    - constituent_median_gap_up_0.01
+  execution: exact_SIP_0940_plus_2bps_each_side
+  accounting:
+    - fixed_base_additive_primary
+    - self_financing_compounded_diagnostic
+  broker_margin: false
+  holdout_access: false
+gates:
+  - zero_holdout_rows_loaded
+  - exact_execution_role_coverage_100pct
+  - preserve_post_hoc_label
+  - neighborhood_and_chronology_required
+  - no_live_promotion_from_discovery_only
+result:
+  control_fixed: {return: 3.628296, maximum_drawdown: 0.175224, worst_month: -0.166237, positive_months: 48, recent12: 1.170944}
+  qqq_gap_up_1pct_fixed: {return: 4.098863, maximum_drawdown: 0.151936, worst_month: -0.166237, positive_months: 50, recent12: 1.134396, blocked_cycles: 31}
+  qqq_gap_up_1pct_compounded: {return: 28.689670, maximum_drawdown: 0.407411, worst_month: -0.186692}
+  spy_gap_up_1pct_fixed: {return: 4.080471, maximum_drawdown: 0.162778, worst_month: -0.166237, positive_months: 52, recent12: 1.198647, blocked_cycles: 19}
+  qqq_threshold_neighborhood_fixed_returns:
+    0.005: 3.650430
+    0.0075: 3.502251
+    0.01: 4.098863
+    0.0125: 3.843341
+    0.015: 3.732053
+  integrity: {quote_role_coverage: 1.0, maximum_loaded_date: '2026-04-30', holdout_rows_loaded: 0, broker_margin: false}
+decision: >-
+  Record large Monday gap-up exhaustion as a forward-paper candidate, not a
+  live override. Exact fixed-base evidence is interesting and related SPY and
+  breadth definitions agree, but the QQQ threshold neighborhood is irregular,
+  recent12 is worse, worst-month protection is absent, and the compounded
+  worst month worsens. Preserve the unchanged live baseline.

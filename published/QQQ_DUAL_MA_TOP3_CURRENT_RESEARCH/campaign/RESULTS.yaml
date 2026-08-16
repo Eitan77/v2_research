@@ -1,0 +1,417 @@
+campaign_id: CAM-0611
+paper_section: '3.12'
+strategy: Two moving averages
+status: execution_sensitive_unpromoted
+promotion_ready: false
+maximum_loaded_date: '2026-04-30'
+holdout_rows_loaded: 0
+broker_margin_used: false
+baseline:
+  variant: etf__sma10_30__long
+  net_return_2bps: 0.8081183963713153
+adaptation:
+  variant: etf__sma50_200__long
+  net_return_2bps: 1.1043326848748525
+  maximum_drawdown: 0.321181552984944
+  post2024_return: 0.3777922818035948
+  walk_forward_return: 0.1599530284340435
+quote:
+  run_id: RUN-0007
+  model: 09:40 marketable daily reset
+  net_return: 0.0715265259421856
+  extra_2bps_return: -0.0280734740578143
+  maximum_drawdown: 0.1385852440615005
+  positive_months: 8.0
+  negative_months: 4.0
+  coverage_rate: 1.0
+conclusion: execution_sensitive_unpromoted
+deep_development_checkpoint:
+  checkpoint: 2026-08-10_deep_development
+  paper_section: '3.12'
+  strategy: Two moving averages
+  status: two_ma_risk_filter_supported_unpromoted
+  promotion_ready: false
+  development_only: true
+  maximum_loaded_date: '2026-04-30'
+  holdout_rows_loaded: 0
+  broker_margin_used: false
+  selected:
+    variant: qqq__ma50_200__weekly__top3__momentum
+    full_history_net_2bps: 3.0797545172018594
+    full_history_maximum_drawdown: 0.2210979270380882
+    recent12_net_2bps: 1.2015300266866626
+    recent12_historical_percentile: 0.9722222222222222
+    positive_rolling12_fraction: 0.8055555555555556
+    target_active_date_fraction: 0.882830626450116
+    average_names_per_active_date: 3.0
+  quote_0940_target_change:
+    additional_slippage_bps_per_side: 2
+    net_simple_return: 1.2192463411988794
+    maximum_drawdown: 0.1244686332285264
+    positive_months: 9
+    negative_months: 3
+    active_days: 251
+    top5_day_positive_share: 0.1478783949607104
+    role_coverage: 1.0
+  matched_control:
+    run_id: RUN-0012
+    cost_bps_per_side: 2.0
+    adapted_variant: qqq__ma50_200__weekly__top3
+    control_variant: qqq__ungated__weekly__top3
+    adapted_net: 3.0797545172018594
+    control_net: 3.0253854164311464
+    incremental_net: 0.054369100770713
+    adapted_drawdown: 0.2210979270380882
+    control_drawdown: 0.359956278200333
+    drawdown_change: -0.1388583511622448
+    adapted_recent12_average_month: 0.1001275022238885
+    control_recent12_average_month: 0.0870288583815264
+    adapted_recent12_positive_months: 9.0
+    control_recent12_positive_months: 8.0
+    decision: The 50/200 gate improves return modestly and sharply reduces drawdown
+      versus identical momentum ranking.
+  conclusion: No strategy is promoted; evidence is adapted development data and the
+    sealed holdout remains untouched.
+prior_checkpoint_status: invalid_split_adjustment
+split_repaired_checkpoint:
+  strategy_section: '3.12'
+  source_run: RUN-0020
+  structured_survivors: 33
+  selected_variant: sp500__ma50_200__weekly__top3__momentum
+  bar_net_2bps: 2.500445477870296
+  bar_maximum_drawdown: 0.2635994824702233
+  decision: provisional_execution_survivor
+  quote_2bps_net: 1.6151100688704685
+  quote_2bps_drawdown: 0.1187793556227905
+  quote_2bps_positive_months: 11
+  quote_2bps_negative_months: 1
+  quote_2bps_coverage: 1.0
+  quote_10bps_net: 1.5969767355371347
+  quote_10bps_drawdown: 0.1198653623757879
+  quote_10bps_positive_months: 11
+  quote_10bps_negative_months: 1
+  quote_10bps_coverage: 1.0
+  maximum_loaded_date: '2026-04-30'
+  holdout_rows_loaded: 0
+  promotion_ready: false
+  strategy_title: Two moving averages
+individual_hf_extension:
+  status: class_a_shaped_development_candidate
+  variant: sp500__ma50_200__daily__top10__momentum
+  quote_0940_net_2bps: 0.9659245119
+  quote_maximum_drawdown: 0.1060360447
+  trade_session_fraction: 0.6693227092
+  positive_months: 9
+  negative_months: 3
+  promotion_ready: false
+  persistence3_quote_0940_net_2bps: 1.121929
+  persistence3_quote_maximum_drawdown: 0.105898
+  persistence3_trade_session_fraction: 0.609562
+  daily_pnl_correlation_with_single_ma_persistence3: 0.997241
+  decision: redundant_with_single_ma
+full_history_quote_replay:
+  shared_run: CAM-0600/RUN-0042
+  qqq_dual:
+    candidate: qqq_dual_ma50_200_weekly_top3
+    net_2bps: 3.628296
+    maximum_drawdown_2bps: 0.175224
+    recent12_net_2bps: 1.170944
+    leave_top5_return: 1.190875
+  sp500_dual:
+    candidate: sp500_dual_ma50_200_weekly_top3
+    net_2bps: 2.484482
+    maximum_drawdown_2bps: 0.258853
+    recent12_net_2bps: 1.615110
+    leave_top5_return: 0.401264
+  role_coverage: 1.0
+  promotion_ready: false
+  maximum_loaded_date: '2026-04-30'
+  holdout_rows_loaded: 0
+breadth_quote_replay:
+  shared_run: CAM-0600/RUN-0043
+  breadths: [1, 2, 3, 10]
+  qqq_balanced: {breadth: 3, net_2bps: 3.628296, maximum_drawdown: 0.175224, leave_top5_return: 1.190875}
+  sp500_aggressive: {breadth: 1, net_2bps: 4.482077, maximum_drawdown: 0.289363, recent12_net_2bps: 2.404679, top5_positive_share: 0.814126}
+  role_coverage: 1.0
+  promotion_ready: false
+rank_parameter_neighborhood:
+  shared_run: CAM-0600/RUN-0044
+  grid_cells_per_breadth: 30
+  conclusion: No training-selected dual-MA parameter improved full quote return,
+    recent return, chronological validation, and drawdown simultaneously. Preserve
+    QQQ top 3 at 126/21 as the balanced default. The post-hoc QQQ top-1 84/21
+    maximum is isolated and unpromoted.
+  quote_role_coverage: 1.0
+  maximum_loaded_date: '2026-04-30'
+  holdout_rows_loaded: 0
+  promotion_ready: false
+weekly_dependence_checkpoint:
+  run_id: RUN-0073
+  inference_scope: discovery_only_through_2026_04_30
+  weeks: 316
+  compounded_lag1_autocorrelation: 0.0024
+  loss_probability_after_loss: 0.4307
+  loss_probability_after_nonloss: 0.4382
+  fisher_exact_p: 0.9092
+  after_two_losses: {n: 59, mean_next: 0.02145, win_rate: 0.6102}
+  after_gain_ge_10pct: {n: 24, mean_next: 0.01918, win_rate: 0.6667, worst_next: -0.15292}
+  after_rebalance: {n: 172, mean_next: 0.00236, win_rate: 0.4942}
+  after_no_rebalance: {n: 143, mean_next: 0.02031, win_rate: 0.6503}
+  conclusion: No loss-cluster or strong-week reversal blocker. Rebalance state predicts relative weakness, but post-rebalance expectation remains positive and a cash gate reduces additive return.
+  promotion_ready: false
+monday_market_state_checkpoint:
+  runs: [RUN-0074, RUN-0075]
+  inference_scope: discovery_only_through_2026_04_30
+  cycles: 316
+  qqq_gap_down_0p5pct: {n: 67, mean_cycle: 0.02225, win_rate: 0.6567}
+  qqq_first_ten_minutes_down: {n: 133, mean_cycle: 0.00740, win_rate: 0.5113}
+  control_fixed: {return: 3.628296, maximum_drawdown: 0.175224, recent12: 1.170944}
+  qqq_gap_up_1pct_exact_fixed: {return: 4.098863, maximum_drawdown: 0.151936, recent12: 1.134396, blocked_cycles: 31}
+  spy_gap_up_1pct_exact_fixed: {return: 4.080471, maximum_drawdown: 0.162778, recent12: 1.198647, blocked_cycles: 19}
+  conclusion: Red Monday opens are favorable rather than dangerous. Large gap-up exhaustion is an interesting post-hoc forward-paper candidate but is not stable enough for a live override.
+  promotion_ready: false
+five_session_overextension_substitution_checkpoint:
+  runs: [RUN-0070, RUN-0071, RUN-0072]
+  scope: discovery_only_through_2026_04_30_posthoc_current_event_inspired
+  fixed_base_control: {return: 3.628296, maximum_drawdown: 0.172334, recent12: 1.155198}
+  fixed_base_substitute_25: {return: 3.645214, maximum_drawdown: 0.171118, recent12: 1.155198, substitutions: 8}
+  fixed_base_substitute_30: {return: 3.673402, maximum_drawdown: 0.169556, recent12: 1.155198, substitutions: 5}
+  fixed_base_substitute_35: {return: 3.682544, maximum_drawdown: 0.172334, recent12: 1.155198, substitutions: 1}
+  exact_compounded_control_2bps: {return: 16.863855, maximum_drawdown: 0.419909, recent12: 1.925107, worst_month: -0.150740, trade_orders: 709}
+  exact_compounded_substitute_25_2bps: {return: 17.623094, maximum_drawdown: 0.419909, recent12: 1.882351, worst_month: -0.150740, trade_orders: 743}
+  exact_compounded_substitute_30_2bps: {return: 17.808567, maximum_drawdown: 0.419909, recent12: 1.882351, worst_month: -0.150740, trade_orders: 735}
+  exact_compounded_substitute_35_2bps: {return: 18.095723, maximum_drawdown: 0.419909, recent12: 1.882351, worst_month: -0.150740, trade_orders: 717}
+  conclusion: Sparse high-threshold substitutions raise ending equity but do not improve true drawdown or worst month and reduce recent return. Reject as a validated risk control; preserve the frozen baseline.
+  integrity: {planned_quote_variants: 12, executed_quote_variants: 12, effective_quote_coverage: 1.0, broker_margin_used: false, maximum_loaded_date: '2026-04-30', holdout_rows_loaded: 0}
+  promotion_ready: false
+exit_overlay_checkpoint:
+  run_id: RUN-0033
+  bar_variants: 17
+  quote_survivors: [rank5, trim5, tp10, stop5]
+  control_2bps: {net: 3.628296, maximum_drawdown: 0.175224, recent12: 1.170944, positive_months: 48, negative_months: 25}
+  defensive_stop5_2bps: {net: 3.534419, maximum_drawdown: 0.163650, recent12: 1.115836, worst_month: -0.137487}
+  consistency_trim5_2bps: {net: 3.617468, maximum_drawdown: 0.169664, recent12: 1.081604, positive_months: 50, negative_months: 23}
+  conclusion: No tested exit improved profit after exact quote execution. Preserve the unchanged weekly control; retain stop5 only as a lower-risk expression and trim5 only as a lower-return consistency expression.
+  quote_role_coverage: 1.0
+  maximum_loaded_date: '2026-04-30'
+  holdout_rows_loaded: 0
+  promotion_ready: false
+staircase_ratchet_checkpoint:
+  run_id: RUN-0034
+  rule: activate at 15 percent position gain, lock breakeven, then raise the floor 5 points for each additional 5-point completed-close gain; exit after two consecutive closes at or below floor, next open
+  control_2bps: {net: 3.628296, maximum_drawdown: 0.175224, recent12: 1.170944, positive_months: 48, negative_months: 25}
+  leading_15_5_two_close_2bps: {net: 3.810301, maximum_drawdown: 0.163599, recent12: 1.186115, positive_months: 49, negative_months: 24, turnover: 143.0, trade_roles: 429}
+  leading_15_5_two_close_10bps: {net: 3.695901, maximum_drawdown: 0.168715, recent12: 1.170115}
+  neighborhood_support: Both 15/5 one-close and 10/5 two-close improve full quote return and drawdown versus control.
+  conclusion: Leading adapted exit challenger, not independently confirmed and not promoted.
+  quote_role_coverage: 1.0
+  maximum_loaded_date: '2026-04-30'
+  holdout_rows_loaded: 0
+  promotion_ready: false
+winner_loser_and_selection_checkpoint:
+  runs: [RUN-0035, RUN-0036]
+  episodes: 193
+  win_rate: 0.575130
+  average_position_return: 0.056398
+  median_position_return: 0.008575
+  large_winners: 25
+  large_losers: 21
+  top5_positive_share: 0.303993
+  finding: Strong momentum, volatility, liquidity, and trend extension create both tails; revenue growth, EPS growth, and relative volume are nonmonotonic.
+  market_cap_status: invalid_due_to_share_count_split_scale_discontinuities
+  mom25_plus_ratchet_2bps: {net: 4.055289, maximum_drawdown: 0.157405, recent12: 1.186115, positive_months: 50, negative_months: 23}
+  mom25_increment_by_year: {2019: 0.0, 2020: 0.0, 2021: 0.0, 2022: 0.244988, 2023: 0.0, 2024: 0.0, 2025: 0.0, 2026: 0.0}
+  conclusion: The +25 percent floor is a 2022-only historical cleanup, not a robust selection improvement. No fundamental, volume, liquidity, or blended rank is promoted.
+  maximum_loaded_date: '2026-04-30'
+  holdout_rows_loaded: 0
+  promotion_ready: false
+weekday_rebalance_checkpoint:
+  run_id: RUN-0038
+  friday_control_2bps: {net: 3.628296, maximum_drawdown: 0.175224, recent12: 1.170944, positive_months: 48, negative_months: 25}
+  monday_2bps: {net: 3.678254, maximum_drawdown: 0.181103, recent12: 1.246948, positive_months: 48, negative_months: 25}
+  thursday_2bps: {net: 3.775684, maximum_drawdown: 0.222511, recent12: 1.277212, positive_months: 46, negative_months: 27}
+  conclusion: No weekday dominates across return, risk, and consistency. Preserve Friday; Monday is a modest forward-tracking challenger and Thursday is an aggressive higher-drawdown expression.
+  quote_role_coverage: 1.0
+  maximum_loaded_date: '2026-04-30'
+  holdout_rows_loaded: 0
+  promotion_ready: false
+friday_near_close_checkpoint:
+  run_id: RUN-0039
+  rule: 15:50 SIP midpoint signal and 15:55 marketable SIP execution, adjusted to close-minus-10 and close-minus-5 on shortened sessions
+  signal_quote_coverage: 0.997561
+  execution_quote_coverage: 1.0
+  near_close_2bps: {net: 3.710652, maximum_drawdown: 0.183785, recent12: 1.225738, positive_months: 45, negative_months: 28, worst_month: -0.141161}
+  monday_control_2bps: {net: 3.628296, maximum_drawdown: 0.175224, recent12: 1.170944, positive_months: 48, negative_months: 25, worst_month: -0.166237}
+  conclusion: Near-close execution adds modest return and improves worst month but worsens drawdown and monthly consistency; it is not a dominant replacement.
+  maximum_loaded_date: '2026-04-30'
+  holdout_rows_loaded: 0
+  promotion_ready: false
+first_oos_month_checkpoint:
+  run_id: RUN-0040
+  authorized_window: {start: '2026-05-01', end: '2026-05-31'}
+  frozen_candidate: qqq_dual_top3_weekly_126_skip21_equal_weight_monday_0940
+  net_fixed_base_return: 0.453694
+  maximum_drawdown: 0.103341
+  positive_negative_days: [12, 8]
+  weekly_pnl: [0.103269, 0.258503, -0.049561, 0.069657, 0.071826]
+  gross_symbol_contribution: {SNDK: 0.176658, MU: 0.137687, WDC: 0.095303, STX: 0.035318}
+  quote_role_coverage: 1.0
+  maximum_loaded_date: '2026-05-29'
+  rows_after_authorized_end: 0
+  conclusion: Strong first-month OOS result, but too short and cluster-concentrated to establish robustness. No tuning or promotion.
+  promotion_ready: false
+next_two_oos_months_checkpoint:
+  run_id: RUN-0041
+  authorized_window: {start: '2026-06-01', end: '2026-07-31'}
+  monthly_net_fixed_base_return: {June_2026: 0.152994, July_2026: -0.268469}
+  june_july_net_fixed_base_return: -0.115474
+  june_july_standalone_maximum_drawdown: 0.364884
+  may_july_cumulative_net_fixed_base_return: 0.338220
+  may_july_continuous_maximum_drawdown: 0.269760
+  positive_negative_days: [19, 24]
+  positive_negative_weeks: [3, 6]
+  july_gross_symbol_contribution: {SNDK: -0.147865, MU: -0.073186, WDC: -0.035825, INTC: -0.004608}
+  quote_role_coverage: 1.0
+  membership_maximum_date: '2026-06-24'
+  membership_carry_forward_sessions: 26
+  maximum_loaded_date: '2026-07-31'
+  rows_after_authorized_end: 0
+  conclusion: June remained strong but July reversed violently in the same concentrated cluster. The baseline is profitable May-July but fails the desired consistency and drawdown profile.
+  promotion_ready: false
+august_to_date_checkpoint:
+  run_id: RUN-0042
+  authorized_window: {start: '2026-08-01', end: '2026-08-10'}
+  latest_completed_session: '2026-08-10'
+  net_fixed_base_return: 0.100933
+  gross_bar_return: 0.089135
+  qqq_return: 0.047319
+  positive_negative_days: [4, 2]
+  maximum_drawdown: 0.063797
+  may_to_date_cumulative_net_fixed_base_return: 0.439153
+  may_to_date_continuous_maximum_drawdown: 0.269760
+  quote_execution_drag: -0.011932
+  quote_role_coverage: 1.0
+  maximum_loaded_date: '2026-08-10'
+  rows_after_authorized_end: 0
+  conclusion: Strong six-session rebound but not sufficient to repair the July tail-risk and concentration finding.
+  promotion_ready: false
+sp500_june_oos_checkpoint:
+  run_id: RUN-0043
+  authorized_window: {start: '2026-06-01', end: '2026-06-30'}
+  sp500_net_fixed_base_return: 0.217860
+  sp500_maximum_drawdown: 0.117098
+  sp500_positive_negative_days: [13, 8]
+  qqq_net_fixed_base_return: 0.152994
+  qqq_maximum_drawdown: 0.103856
+  qqq_positive_negative_days: [12, 9]
+  sp500_minus_qqq_return: 0.064866
+  quote_role_coverage: 1.0
+  membership_maximum_date: '2026-04-30'
+  membership_carry_forward_sessions: 21
+  conclusion: S&P did not collapse in June and outperformed QQQ, but both expressed the same storage and semiconductor cluster.
+  promotion_ready: false
+development_inverse_flip_checkpoint:
+  run_id: RUN-0047
+  flip_rule: completed_QQQ_SMA10_below_SMA20_next_session
+  control_2bps: {net: 3.628296, maximum_drawdown: 0.175224, recent12: 1.170944}
+  cash_switch_2bps: {net: 2.447015, maximum_drawdown: 0.182071, recent12: 0.882853}
+  half_SQQQ_2bps: {net: 1.474164, maximum_drawdown: 0.332421, recent12: 0.720507}
+  full_SQQQ_2bps: {net: 0.501313, maximum_drawdown: 0.670811, recent12: 0.558161}
+  quote_role_coverage: 1.0
+  maximum_loaded_date: '2026-04-30'
+  holdout_rows_loaded: 0
+  conclusion: All three generic adverse-flip expressions are dominated by control and inverse exposure greatly worsens whipsaw drawdown.
+  promotion_ready: false
+profit_trim_checkpoint:
+  runs: [RUN-0054, RUN-0055]
+  scope: discovery_only_through_2026_04_30
+  control_2bps: {net: 3.628296, maximum_drawdown: 0.175224, recent12: 1.170944, positive_months: 48, negative_months: 25}
+  weekly_15pct_gain_trim_75pct_2bps: {net: 3.618757, maximum_drawdown: 0.165856, recent12: 1.165078, positive_months: 49, negative_months: 24, triggers: 35}
+  weekly_20pct_gain_trim_75pct_2bps: {net: 3.657161, maximum_drawdown: 0.169701, recent12: 1.170944, positive_months: 49, negative_months: 24, triggers: 14}
+  twenty_pct_trim_yearly_increment_pct: {2020: 11.9611, 2023: -1.7167, 2024: -2.5406, 2025: -4.8174}
+  conclusion: Fixed partial trims do not robustly improve the locked strategy. The 15 percent branch offers only a small drawdown tradeoff; the 20 percent headline improvement is 2020-concentrated and inactive in recent12. Preserve the unchanged control.
+  maximum_loaded_date: '2026-04-30'
+  holdout_rows_loaded: 0
+  promotion_ready: false
+progressive_profit_ladder_checkpoint:
+  run_id: RUN-0056
+  scope: discovery_only_through_2026_04_30
+  control_2bps: {net: 3.628296, maximum_drawdown: 0.175224, recent12: 1.170944, positive_months: 48, negative_months: 25, worst_month: -0.166237}
+  requested_sell20pct_original_every5pct_2bps: {net: 3.526727, maximum_drawdown: 0.169839, recent12: 1.095605, positive_months: 48, negative_months: 25, worst_month: -0.166237}
+  gentler_sell20pct_original_every10pct_2bps: {net: 3.621460, maximum_drawdown: 0.171792, recent12: 1.150192, positive_months: 49, negative_months: 24, worst_month: -0.166237}
+  conclusion: Progressive fixed ladders repeatedly trim the continuation edge. Risk improvement is too small relative to lost full and recent return; preserve control.
+  maximum_loaded_date: '2026-04-30'
+  holdout_rows_loaded: 0
+  promotion_ready: false
+micro_profit_ladder_checkpoint:
+  run_id: RUN-0057
+  scope: discovery_only_through_2026_04_30
+  control_2bps: {net: 3.628296, maximum_drawdown: 0.175224, recent12: 1.170944, positive_months: 48, negative_months: 25, worst_month: -0.166237, worst_year: -0.074899, trade_roles: 383}
+  sell5pct_original_every1pct_through20pct_2bps: {net: 3.469869, maximum_drawdown: 0.161740, recent12: 1.044856, positive_months: 50, negative_months: 23, worst_month: -0.154968, worst_year: -0.033344, trade_roles: 1958}
+  sell5pct_remaining_every1pct_through20pct_2bps: {net: 3.488764, maximum_drawdown: 0.164345, recent12: 1.062021, positive_months: 50, negative_months: 23, worst_month: -0.155603, worst_year: -0.033982, trade_roles: 1958}
+  conclusion: The micro ladder materially smooths historical risk but is not dominant; it gives up substantial full and recent return and creates roughly five times as many quote roles. Keep only as an optional lower-risk sleeve, not the locked default.
+  maximum_loaded_date: '2026-04-30'
+  holdout_rows_loaded: 0
+  promotion_ready: false
+self_financing_deployment_checkpoint:
+  run_id: RUN-0058
+  scope: discovery_only_through_2026_04_30
+  accounting_label: compounded_self_financing_deployment_diagnostic_not_primary_research_metric
+  weekly_equalize_0p5cash_2bps: {ending_equity: 16.611762, compounded_return: 15.611762, maximum_drawdown: 0.423308, recent12_compounded_return: 1.951150, positive_months: 45, negative_months: 28, worst_month: -0.150867, worst_year: -0.180712, trade_orders: 1138}
+  weekly_equalize_0p5cash_10bps: {ending_equity: 14.889474, compounded_return: 13.889474, maximum_drawdown: 0.427744, recent12_compounded_return: 1.888702}
+  membership_change_only_0p5cash_2bps: {ending_equity: 17.863855, compounded_return: 16.863855, maximum_drawdown: 0.419909, recent12_compounded_return: 1.925107, positive_months: 46, negative_months: 27, trade_orders: 709}
+  fixed_base_comparator_2bps: {additive_return: 3.628296, maximum_drawdown: 0.175224, recent12_additive_return: 1.170944}
+  integrity: {planned_variants: 12, executed_variants: 12, effective_quote_coverage: 1.0, minimum_cash: 0.0, maximum_gross_to_equity: 1.0, broker_margin_used: false}
+  conclusion: Weekly equalization is feasible without margin and compounds strongly, but exposes a roughly 42 percent true deployment drawdown. Membership-change-only equalization has the better development frontier and fewer orders. Neither is live-ready from discovery evidence alone.
+  maximum_loaded_date: '2026-04-30'
+  holdout_rows_loaded: 0
+  promotion_ready: false
+change_only_self_financing_oos_checkpoint:
+  run_id: RUN-0059
+  scope: explicitly_authorized_holdout_2026_05_01_through_2026_08_14
+  accounting_label: compounded_self_financing_deployment_diagnostic_not_primary_fixed_base_research_metric
+  configuration: exact_RUN_0058_membership_change_only_0p5cash_2bps
+  monthly_compounded_returns: {2026-05: 0.459915, 2026-06: 0.212307, 2026-07: -0.327649, 2026-08_partial_through_14: 0.221849}
+  combined_oos_compounded_return: 0.453964
+  maximum_drawdown: 0.446113
+  drawdown_peak: '2026-06-22'
+  drawdown_trough: '2026-07-29'
+  ending_drawdown_from_peak: 0.233167
+  recovered_by_end: false
+  integrity: {quote_role_coverage: 1.0, rebalance_sessions: 6, trade_orders: 25, minimum_cash: 0.085785, maximum_gross_to_equity: 0.996502, broker_margin_used: false}
+  conclusion: The frozen deployment made 45.40 percent overall but failed consistency with a 32.76 percent July loss and 44.61 percent drawdown. The August rebound is strong but incomplete.
+  maximum_loaded_date: '2026-08-14'
+  rows_after_authorized_end: 0
+  promotion_ready: false
+fixed_initial_risk_budget_checkpoint:
+  run_id: RUN-0060
+  accounting_label: self_financing_fixed_original_risk_budget_with_weekly_profit_sweep
+  discovery_ending_equity: 4.531003
+  discovery_return: 3.531003
+  full_ending_equity_through_2026_08_14: 5.025837
+  full_return: 4.025837
+  full_maximum_drawdown: 0.184106
+  post_observation_monthly_returns: {2026-05: 0.093258, 2026-06: 0.048565, 2026-07: -0.074621, 2026-08_partial_through_14: 0.045626}
+  post_observation_combined_return: 0.109211
+  post_observation_maximum_drawdown: 0.104038
+  ending_cash: 3.858981
+  ending_marked_gross: 1.166857
+  integrity: {quote_role_coverage: 1.0, maximum_rebalance_target_gross: 0.999997, minimum_cash: 0.0, broker_margin_used: false, maximum_loaded_date: '2026-08-14', rows_after_authorized_end: 0}
+  conclusion: Fixed risk converts the strategy from explosive compounding into a much smoother cash-building account, but May onward is post-observation diagnostic evidence and cannot validate the adaptation.
+  promotion_ready: false
+replacement_only_and_extension_veto_checkpoint:
+  runs: [RUN-0065, RUN-0066]
+  scope: discovery_only_through_2026_04_30
+  accounting_label: compounded_self_financing_deployment_diagnostic_not_primary_fixed_base_metric
+  replacement_only_2bps: {ending_equity: 21.451778, compounded_return: 20.451778, maximum_drawdown: 0.411053, recent12_compounded_return: 1.861383, positive_months: 48, negative_months: 25, trade_orders: 383, maximum_single_position_weight: 0.632867}
+  replacement_only_10bps: {ending_equity: 19.566277, compounded_return: 18.566277, maximum_drawdown: 0.422785, recent12_compounded_return: 1.830218}
+  membership_change_equalize_2bps_comparator: {ending_equity: 17.863855, maximum_drawdown: 0.419909, trade_orders: 709}
+  weekly_equalize_2bps_comparator: {ending_equity: 16.611762, maximum_drawdown: 0.423308, trade_orders: 1138}
+  concentration: {maximum_symbol: TSLA, maximum_weight: 0.632867, maximum_date: '2021-01-08', sessions_above_50pct: 501}
+  entry_veto_control_2bps: {net_return: 3.628296, maximum_drawdown: 0.175224, recent12: 1.170944}
+  entry_veto_50pct_2bps: {net_return: 3.681449, maximum_drawdown: 0.173178, recent12: 1.170944, blocked_candidates: 9}
+  conclusion: Replacement-only handling improves the development deployment frontier but creates material single-name drift. The entry-extension veto is nonmonotonic and thin; reject it and do not combine it with the replacement architecture.
+  integrity: {quote_role_coverage: 1.0, minimum_cash: -4.440892e-16, maximum_gross_to_equity: 1.0, maximum_continuing_notional_error: 0.0, broker_margin_used: false}
+  maximum_loaded_date: '2026-04-30'
+  holdout_rows_loaded: 0
+  promotion_ready: false

@@ -1,0 +1,30 @@
+run_id: RUN-0049
+parent_run: RUN-0042
+status: completed
+question: Add prespecified top-10 breadth variants for QQQ and S&P to the existing last-year comparison chart.
+authorization:
+  sealed_window: 2026-05-01 through 2026-08-10
+  purpose: chart-only evaluation of the already-prespecified top-10 breadth
+configuration:
+  universes: [qqq_pit, sp500_pit]
+  signal: SMA50 above SMA200, trailing 126 skip 21 momentum rank
+  liquidity: trailing 63-session median dollar-volume top half
+  rebalance: Friday close signal, next-session open execution
+  breadth: 10
+  weighting: equal, fixed-base full-port when ten names qualify
+  execution: bar return less frozen 9.740340418 bp per unit turnover
+  accounting: additive fixed capital 1.0, no margin, no compounding
+reason: Show whether broader holdings would have materially changed the observed last-year path without changing the strategy mechanism.
+expected_effect: Lower path volatility and July concentration, with lower upside than top-3.
+integrity:
+  no_parameter_selection_from_holdout: true
+  top10_was_prespecified_in_RUN_0029: true
+  maximum_authorized_date: 2026-08-10
+result:
+  qqq_top10_last_year_return_pct: 94.5262
+  qqq_top10_last_year_max_drawdown_pct: 17.6269
+  sp500_top10_last_year_return_pct: 110.1577
+  sp500_top10_last_year_max_drawdown_pct: 13.9916
+  maximum_loaded_date: 2026-08-10
+  rows_after_authorized_end: 0
+decision: Added both top-10 paths and monthly P&L columns to the existing chart; chart-only bar-stage comparison, not a promotion decision.

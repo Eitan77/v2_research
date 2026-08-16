@@ -1,0 +1,190 @@
+{
+  "status": "completed",
+  "breadths": 20,
+  "execution_model": "bar plus frozen 7.740340418 bp average quote slippage plus 2 bp adverse per turnover",
+  "control_top3_return": 3.6282963573587454,
+  "maximum_loaded_date": "2026-04-30",
+  "holdout_rows_loaded": 0,
+  "metrics": [
+    {
+      "top_n": 1,
+      "total_return": 3.5158939139203436,
+      "recent12_return": 1.3810236638004236,
+      "maximum_drawdown": 0.363218562617535,
+      "turnover": 151.0,
+      "positive_months": 44,
+      "negative_months": 29
+    },
+    {
+      "top_n": 2,
+      "total_return": 3.610039181074964,
+      "recent12_return": 1.423744217015978,
+      "maximum_drawdown": 0.28224242778530373,
+      "turnover": 135.0,
+      "positive_months": 43,
+      "negative_months": 30
+    },
+    {
+      "top_n": 3,
+      "total_return": 3.6282963573587454,
+      "recent12_return": 1.1551976793162875,
+      "maximum_drawdown": 0.17233352173209557,
+      "turnover": 127.66666666666666,
+      "positive_months": 48,
+      "negative_months": 25
+    },
+    {
+      "top_n": 4,
+      "total_return": 3.2274823300782476,
+      "recent12_return": 1.0559126289687542,
+      "maximum_drawdown": 0.1635933205487914,
+      "turnover": 133.5,
+      "positive_months": 42,
+      "negative_months": 31
+    },
+    {
+      "top_n": 5,
+      "total_return": 2.773591694223453,
+      "recent12_return": 0.969699480563702,
+      "maximum_drawdown": 0.17146901440093812,
+      "turnover": 115.5,
+      "positive_months": 46,
+      "negative_months": 27
+    },
+    {
+      "top_n": 6,
+      "total_return": 2.3052278671828903,
+      "recent12_return": 0.9455653909268227,
+      "maximum_drawdown": 0.2220560898034313,
+      "turnover": 118.16666666666666,
+      "positive_months": 43,
+      "negative_months": 30
+    },
+    {
+      "top_n": 7,
+      "total_return": 2.3506857309265263,
+      "recent12_return": 0.9681771055620418,
+      "maximum_drawdown": 0.1909563459956792,
+      "turnover": 114.07142857142856,
+      "positive_months": 46,
+      "negative_months": 27
+    },
+    {
+      "top_n": 8,
+      "total_return": 2.328768433005468,
+      "recent12_return": 0.9682270318611524,
+      "maximum_drawdown": 0.20231263198442323,
+      "turnover": 109.57142857142857,
+      "positive_months": 45,
+      "negative_months": 28
+    },
+    {
+      "top_n": 9,
+      "total_return": 2.2795596319775466,
+      "recent12_return": 0.9350860923617123,
+      "maximum_drawdown": 0.17696093310411035,
+      "turnover": 106.37698412698413,
+      "positive_months": 48,
+      "negative_months": 25
+    },
+    {
+      "top_n": 10,
+      "total_return": 2.2133298221542357,
+      "recent12_return": 0.8614026616349131,
+      "maximum_drawdown": 0.1795191787180895,
+      "turnover": 102.71031746031747,
+      "positive_months": 46,
+      "negative_months": 27
+    },
+    {
+      "top_n": 11,
+      "total_return": 2.1915099828395506,
+      "recent12_return": 0.8876113435919929,
+      "maximum_drawdown": 0.18527300382102435,
+      "turnover": 97.81940836940836,
+      "positive_months": 46,
+      "negative_months": 27
+    },
+    {
+      "top_n": 12,
+      "total_return": 2.0827590571994206,
+      "recent12_return": 0.8397843069571335,
+      "maximum_drawdown": 0.19453919928775296,
+      "turnover": 94.48607503607502,
+      "positive_months": 46,
+      "negative_months": 27
+    },
+    {
+      "top_n": 13,
+      "total_return": 2.0581224343969318,
+      "recent12_return": 0.8095183308032879,
+      "maximum_drawdown": 0.18483850188850748,
+      "turnover": 87.25530580530581,
+      "positive_months": 45,
+      "negative_months": 28
+    },
+    {
+      "top_n": 14,
+      "total_return": 2.004117562647181,
+      "recent12_return": 0.7623215093004758,
+      "maximum_drawdown": 0.18547995386309396,
+      "turnover": 85.51904206904206,
+      "positive_months": 44,
+      "negative_months": 29
+    },
+    {
+      "top_n": 15,
+      "total_return": 1.9665223496493938,
+      "recent12_return": 0.7312645359238221,
+      "maximum_drawdown": 0.19432533914189934,
+      "turnover": 85.35713730713731,
+      "positive_months": 45,
+      "negative_months": 28
+    },
+    {
+      "top_n": 16,
+      "total_return": 1.8992082060638302,
+      "recent12_return": 0.6930204218021511,
+      "maximum_drawdown": 0.2033766991019312,
+      "turnover": 86.29880397380398,
+      "positive_months": 44,
+      "negative_months": 29
+    },
+    {
+      "top_n": 17,
+      "total_return": 1.870999334508629,
+      "recent12_return": 0.6709626669250741,
+      "maximum_drawdown": 0.21379278365924975,
+      "turnover": 84.32086279733338,
+      "positive_months": 46,
+      "negative_months": 27
+    },
+    {
+      "top_n": 18,
+      "total_return": 1.8308294921935944,
+      "recent12_return": 0.6412058681955883,
+      "maximum_drawdown": 0.21387647368158624,
+      "turnover": 77.72609155550333,
+      "positive_months": 46,
+      "negative_months": 27
+    },
+    {
+      "top_n": 19,
+      "total_return": 1.8041946178928834,
+      "recent12_return": 0.6274120948825367,
+      "maximum_drawdown": 0.2171837743909578,
+      "turnover": 75.42199798825185,
+      "positive_months": 47,
+      "negative_months": 26
+    },
+    {
+      "top_n": 20,
+      "total_return": 1.780286237631368,
+      "recent12_return": 0.5975624665750152,
+      "maximum_drawdown": 0.21449674960097093,
+      "turnover": 75.35884009351501,
+      "positive_months": 46,
+      "negative_months": 27
+    }
+  ]
+}

@@ -1,0 +1,4674 @@
+[
+  {
+    "date": "2019-06-24 00:00:00",
+    "date_index": 1,
+    "target_symbols": [],
+    "previous_symbols": []
+  },
+  {
+    "date": "2019-07-01 00:00:00",
+    "date_index": 6,
+    "target_symbols": [],
+    "previous_symbols": []
+  },
+  {
+    "date": "2019-07-08 00:00:00",
+    "date_index": 10,
+    "target_symbols": [],
+    "previous_symbols": []
+  },
+  {
+    "date": "2019-07-15 00:00:00",
+    "date_index": 15,
+    "target_symbols": [],
+    "previous_symbols": []
+  },
+  {
+    "date": "2019-07-22 00:00:00",
+    "date_index": 20,
+    "target_symbols": [],
+    "previous_symbols": []
+  },
+  {
+    "date": "2019-07-29 00:00:00",
+    "date_index": 25,
+    "target_symbols": [],
+    "previous_symbols": []
+  },
+  {
+    "date": "2019-08-05 00:00:00",
+    "date_index": 30,
+    "target_symbols": [],
+    "previous_symbols": []
+  },
+  {
+    "date": "2019-08-12 00:00:00",
+    "date_index": 35,
+    "target_symbols": [],
+    "previous_symbols": []
+  },
+  {
+    "date": "2019-08-19 00:00:00",
+    "date_index": 40,
+    "target_symbols": [],
+    "previous_symbols": []
+  },
+  {
+    "date": "2019-08-26 00:00:00",
+    "date_index": 45,
+    "target_symbols": [],
+    "previous_symbols": []
+  },
+  {
+    "date": "2019-09-03 00:00:00",
+    "date_index": 50,
+    "target_symbols": [],
+    "previous_symbols": []
+  },
+  {
+    "date": "2019-09-09 00:00:00",
+    "date_index": 54,
+    "target_symbols": [],
+    "previous_symbols": []
+  },
+  {
+    "date": "2019-09-16 00:00:00",
+    "date_index": 59,
+    "target_symbols": [],
+    "previous_symbols": []
+  },
+  {
+    "date": "2019-09-23 00:00:00",
+    "date_index": 64,
+    "target_symbols": [],
+    "previous_symbols": []
+  },
+  {
+    "date": "2019-09-30 00:00:00",
+    "date_index": 69,
+    "target_symbols": [],
+    "previous_symbols": []
+  },
+  {
+    "date": "2019-10-07 00:00:00",
+    "date_index": 74,
+    "target_symbols": [],
+    "previous_symbols": []
+  },
+  {
+    "date": "2019-10-14 00:00:00",
+    "date_index": 79,
+    "target_symbols": [],
+    "previous_symbols": []
+  },
+  {
+    "date": "2019-10-21 00:00:00",
+    "date_index": 84,
+    "target_symbols": [],
+    "previous_symbols": []
+  },
+  {
+    "date": "2019-10-28 00:00:00",
+    "date_index": 89,
+    "target_symbols": [],
+    "previous_symbols": []
+  },
+  {
+    "date": "2019-11-04 00:00:00",
+    "date_index": 94,
+    "target_symbols": [],
+    "previous_symbols": []
+  },
+  {
+    "date": "2019-11-11 00:00:00",
+    "date_index": 99,
+    "target_symbols": [],
+    "previous_symbols": []
+  },
+  {
+    "date": "2019-11-18 00:00:00",
+    "date_index": 104,
+    "target_symbols": [],
+    "previous_symbols": []
+  },
+  {
+    "date": "2019-11-25 00:00:00",
+    "date_index": 109,
+    "target_symbols": [],
+    "previous_symbols": []
+  },
+  {
+    "date": "2019-12-02 00:00:00",
+    "date_index": 113,
+    "target_symbols": [],
+    "previous_symbols": []
+  },
+  {
+    "date": "2019-12-09 00:00:00",
+    "date_index": 118,
+    "target_symbols": [],
+    "previous_symbols": []
+  },
+  {
+    "date": "2019-12-16 00:00:00",
+    "date_index": 123,
+    "target_symbols": [],
+    "previous_symbols": []
+  },
+  {
+    "date": "2019-12-23 00:00:00",
+    "date_index": 128,
+    "target_symbols": [],
+    "previous_symbols": []
+  },
+  {
+    "date": "2019-12-30 00:00:00",
+    "date_index": 132,
+    "target_symbols": [],
+    "previous_symbols": []
+  },
+  {
+    "date": "2020-01-06 00:00:00",
+    "date_index": 136,
+    "target_symbols": [],
+    "previous_symbols": []
+  },
+  {
+    "date": "2020-01-13 00:00:00",
+    "date_index": 141,
+    "target_symbols": [],
+    "previous_symbols": []
+  },
+  {
+    "date": "2020-01-21 00:00:00",
+    "date_index": 146,
+    "target_symbols": [],
+    "previous_symbols": []
+  },
+  {
+    "date": "2020-01-27 00:00:00",
+    "date_index": 150,
+    "target_symbols": [],
+    "previous_symbols": []
+  },
+  {
+    "date": "2020-02-03 00:00:00",
+    "date_index": 155,
+    "target_symbols": [],
+    "previous_symbols": []
+  },
+  {
+    "date": "2020-02-10 00:00:00",
+    "date_index": 160,
+    "target_symbols": [],
+    "previous_symbols": []
+  },
+  {
+    "date": "2020-02-18 00:00:00",
+    "date_index": 165,
+    "target_symbols": [],
+    "previous_symbols": []
+  },
+  {
+    "date": "2020-02-24 00:00:00",
+    "date_index": 169,
+    "target_symbols": [],
+    "previous_symbols": []
+  },
+  {
+    "date": "2020-03-02 00:00:00",
+    "date_index": 174,
+    "target_symbols": [],
+    "previous_symbols": []
+  },
+  {
+    "date": "2020-03-09 00:00:00",
+    "date_index": 179,
+    "target_symbols": [],
+    "previous_symbols": []
+  },
+  {
+    "date": "2020-03-16 00:00:00",
+    "date_index": 184,
+    "target_symbols": [],
+    "previous_symbols": []
+  },
+  {
+    "date": "2020-03-23 00:00:00",
+    "date_index": 189,
+    "target_symbols": [],
+    "previous_symbols": []
+  },
+  {
+    "date": "2020-03-30 00:00:00",
+    "date_index": 194,
+    "target_symbols": [],
+    "previous_symbols": []
+  },
+  {
+    "date": "2020-04-06 00:00:00",
+    "date_index": 199,
+    "target_symbols": [],
+    "previous_symbols": []
+  },
+  {
+    "date": "2020-04-13 00:00:00",
+    "date_index": 203,
+    "target_symbols": [
+      "AMD",
+      "REGN",
+      "TSLA"
+    ],
+    "previous_symbols": []
+  },
+  {
+    "date": "2020-04-20 00:00:00",
+    "date_index": 208,
+    "target_symbols": [
+      "AMD",
+      "REGN",
+      "TSLA"
+    ],
+    "previous_symbols": [
+      "AMD",
+      "REGN",
+      "TSLA"
+    ]
+  },
+  {
+    "date": "2020-04-27 00:00:00",
+    "date_index": 213,
+    "target_symbols": [
+      "AMD",
+      "REGN",
+      "TSLA"
+    ],
+    "previous_symbols": [
+      "AMD",
+      "REGN",
+      "TSLA"
+    ]
+  },
+  {
+    "date": "2020-05-04 00:00:00",
+    "date_index": 218,
+    "target_symbols": [
+      "REGN",
+      "TSLA",
+      "ZM"
+    ],
+    "previous_symbols": [
+      "AMD",
+      "REGN",
+      "TSLA"
+    ]
+  },
+  {
+    "date": "2020-05-11 00:00:00",
+    "date_index": 223,
+    "target_symbols": [
+      "AMD",
+      "REGN",
+      "TSLA"
+    ],
+    "previous_symbols": [
+      "REGN",
+      "TSLA",
+      "ZM"
+    ]
+  },
+  {
+    "date": "2020-05-18 00:00:00",
+    "date_index": 228,
+    "target_symbols": [
+      "DXCM",
+      "TSLA",
+      "ZM"
+    ],
+    "previous_symbols": [
+      "AMD",
+      "REGN",
+      "TSLA"
+    ]
+  },
+  {
+    "date": "2020-05-26 00:00:00",
+    "date_index": 233,
+    "target_symbols": [
+      "DXCM",
+      "TSLA",
+      "ZM"
+    ],
+    "previous_symbols": [
+      "DXCM",
+      "TSLA",
+      "ZM"
+    ]
+  },
+  {
+    "date": "2020-06-01 00:00:00",
+    "date_index": 237,
+    "target_symbols": [
+      "DXCM",
+      "TSLA",
+      "ZM"
+    ],
+    "previous_symbols": [
+      "DXCM",
+      "TSLA",
+      "ZM"
+    ]
+  },
+  {
+    "date": "2020-06-08 00:00:00",
+    "date_index": 242,
+    "target_symbols": [
+      "DXCM",
+      "TSLA",
+      "ZM"
+    ],
+    "previous_symbols": [
+      "DXCM",
+      "TSLA",
+      "ZM"
+    ]
+  },
+  {
+    "date": "2020-06-15 00:00:00",
+    "date_index": 247,
+    "target_symbols": [
+      "DXCM",
+      "TSLA",
+      "ZM"
+    ],
+    "previous_symbols": [
+      "DXCM",
+      "TSLA",
+      "ZM"
+    ]
+  },
+  {
+    "date": "2020-06-22 00:00:00",
+    "date_index": 252,
+    "target_symbols": [
+      "DXCM",
+      "TSLA",
+      "ZM"
+    ],
+    "previous_symbols": [
+      "DXCM",
+      "TSLA",
+      "ZM"
+    ]
+  },
+  {
+    "date": "2020-06-29 00:00:00",
+    "date_index": 257,
+    "target_symbols": [
+      "DOCU",
+      "TSLA",
+      "ZM"
+    ],
+    "previous_symbols": [
+      "DXCM",
+      "TSLA",
+      "ZM"
+    ]
+  },
+  {
+    "date": "2020-07-06 00:00:00",
+    "date_index": 261,
+    "target_symbols": [
+      "DOCU",
+      "TSLA",
+      "ZM"
+    ],
+    "previous_symbols": [
+      "DOCU",
+      "TSLA",
+      "ZM"
+    ]
+  },
+  {
+    "date": "2020-07-13 00:00:00",
+    "date_index": 266,
+    "target_symbols": [
+      "DOCU",
+      "TSLA",
+      "ZM"
+    ],
+    "previous_symbols": [
+      "DOCU",
+      "TSLA",
+      "ZM"
+    ]
+  },
+  {
+    "date": "2020-07-20 00:00:00",
+    "date_index": 271,
+    "target_symbols": [
+      "DOCU",
+      "TSLA",
+      "ZM"
+    ],
+    "previous_symbols": [
+      "DOCU",
+      "TSLA",
+      "ZM"
+    ]
+  },
+  {
+    "date": "2020-07-27 00:00:00",
+    "date_index": 276,
+    "target_symbols": [
+      "MRNA",
+      "TSLA",
+      "ZM"
+    ],
+    "previous_symbols": [
+      "DOCU",
+      "TSLA",
+      "ZM"
+    ]
+  },
+  {
+    "date": "2020-08-03 00:00:00",
+    "date_index": 281,
+    "target_symbols": [
+      "MRNA",
+      "TSLA",
+      "ZM"
+    ],
+    "previous_symbols": [
+      "MRNA",
+      "TSLA",
+      "ZM"
+    ]
+  },
+  {
+    "date": "2020-08-10 00:00:00",
+    "date_index": 286,
+    "target_symbols": [
+      "MRNA",
+      "TSLA",
+      "ZM"
+    ],
+    "previous_symbols": [
+      "MRNA",
+      "TSLA",
+      "ZM"
+    ]
+  },
+  {
+    "date": "2020-08-17 00:00:00",
+    "date_index": 291,
+    "target_symbols": [
+      "MRNA",
+      "TSLA",
+      "ZM"
+    ],
+    "previous_symbols": [
+      "MRNA",
+      "TSLA",
+      "ZM"
+    ]
+  },
+  {
+    "date": "2020-08-24 00:00:00",
+    "date_index": 296,
+    "target_symbols": [
+      "DOCU",
+      "MRNA",
+      "ZM"
+    ],
+    "previous_symbols": [
+      "MRNA",
+      "TSLA",
+      "ZM"
+    ]
+  },
+  {
+    "date": "2020-08-31 00:00:00",
+    "date_index": 301,
+    "target_symbols": [
+      "DOCU",
+      "MRNA",
+      "ZM"
+    ],
+    "previous_symbols": [
+      "DOCU",
+      "MRNA",
+      "ZM"
+    ]
+  },
+  {
+    "date": "2020-09-08 00:00:00",
+    "date_index": 306,
+    "target_symbols": [
+      "DOCU",
+      "MRNA",
+      "ZM"
+    ],
+    "previous_symbols": [
+      "DOCU",
+      "MRNA",
+      "ZM"
+    ]
+  },
+  {
+    "date": "2020-09-14 00:00:00",
+    "date_index": 310,
+    "target_symbols": [
+      "MRNA",
+      "PDD",
+      "ZM"
+    ],
+    "previous_symbols": [
+      "DOCU",
+      "MRNA",
+      "ZM"
+    ]
+  },
+  {
+    "date": "2020-09-21 00:00:00",
+    "date_index": 315,
+    "target_symbols": [
+      "MRNA",
+      "PDD",
+      "ZM"
+    ],
+    "previous_symbols": [
+      "MRNA",
+      "PDD",
+      "ZM"
+    ]
+  },
+  {
+    "date": "2020-09-28 00:00:00",
+    "date_index": 320,
+    "target_symbols": [
+      "MRNA",
+      "TSLA",
+      "ZM"
+    ],
+    "previous_symbols": [
+      "MRNA",
+      "PDD",
+      "ZM"
+    ]
+  },
+  {
+    "date": "2020-10-05 00:00:00",
+    "date_index": 325,
+    "target_symbols": [
+      "DOCU",
+      "TSLA",
+      "ZM"
+    ],
+    "previous_symbols": [
+      "MRNA",
+      "TSLA",
+      "ZM"
+    ]
+  },
+  {
+    "date": "2020-10-12 00:00:00",
+    "date_index": 330,
+    "target_symbols": [
+      "DOCU",
+      "TSLA",
+      "ZM"
+    ],
+    "previous_symbols": [
+      "DOCU",
+      "TSLA",
+      "ZM"
+    ]
+  },
+  {
+    "date": "2020-10-19 00:00:00",
+    "date_index": 335,
+    "target_symbols": [
+      "DOCU",
+      "TSLA",
+      "ZM"
+    ],
+    "previous_symbols": [
+      "DOCU",
+      "TSLA",
+      "ZM"
+    ]
+  },
+  {
+    "date": "2020-10-26 00:00:00",
+    "date_index": 340,
+    "target_symbols": [
+      "DOCU",
+      "TSLA",
+      "ZM"
+    ],
+    "previous_symbols": [
+      "DOCU",
+      "TSLA",
+      "ZM"
+    ]
+  },
+  {
+    "date": "2020-11-02 00:00:00",
+    "date_index": 345,
+    "target_symbols": [
+      "DOCU",
+      "TSLA",
+      "ZM"
+    ],
+    "previous_symbols": [
+      "DOCU",
+      "TSLA",
+      "ZM"
+    ]
+  },
+  {
+    "date": "2020-11-09 00:00:00",
+    "date_index": 350,
+    "target_symbols": [
+      "DOCU",
+      "TSLA",
+      "ZM"
+    ],
+    "previous_symbols": [
+      "DOCU",
+      "TSLA",
+      "ZM"
+    ]
+  },
+  {
+    "date": "2020-11-16 00:00:00",
+    "date_index": 355,
+    "target_symbols": [
+      "DOCU",
+      "TSLA",
+      "ZM"
+    ],
+    "previous_symbols": [
+      "DOCU",
+      "TSLA",
+      "ZM"
+    ]
+  },
+  {
+    "date": "2020-11-23 00:00:00",
+    "date_index": 360,
+    "target_symbols": [
+      "MELI",
+      "TSLA",
+      "ZM"
+    ],
+    "previous_symbols": [
+      "DOCU",
+      "TSLA",
+      "ZM"
+    ]
+  },
+  {
+    "date": "2020-11-30 00:00:00",
+    "date_index": 364,
+    "target_symbols": [
+      "MELI",
+      "TSLA",
+      "ZM"
+    ],
+    "previous_symbols": [
+      "MELI",
+      "TSLA",
+      "ZM"
+    ]
+  },
+  {
+    "date": "2020-12-07 00:00:00",
+    "date_index": 369,
+    "target_symbols": [
+      "PDD",
+      "TSLA",
+      "ZM"
+    ],
+    "previous_symbols": [
+      "MELI",
+      "TSLA",
+      "ZM"
+    ]
+  },
+  {
+    "date": "2020-12-14 00:00:00",
+    "date_index": 374,
+    "target_symbols": [
+      "QCOM",
+      "TSLA",
+      "ZM"
+    ],
+    "previous_symbols": [
+      "PDD",
+      "TSLA",
+      "ZM"
+    ]
+  },
+  {
+    "date": "2020-12-21 00:00:00",
+    "date_index": 379,
+    "target_symbols": [
+      "PDD",
+      "TSLA",
+      "ZM"
+    ],
+    "previous_symbols": [
+      "QCOM",
+      "TSLA",
+      "ZM"
+    ]
+  },
+  {
+    "date": "2020-12-28 00:00:00",
+    "date_index": 383,
+    "target_symbols": [
+      "PTON",
+      "TSLA",
+      "ZM"
+    ],
+    "previous_symbols": [
+      "PDD",
+      "TSLA",
+      "ZM"
+    ]
+  },
+  {
+    "date": "2021-01-04 00:00:00",
+    "date_index": 387,
+    "target_symbols": [
+      "MRNA",
+      "PTON",
+      "TSLA"
+    ],
+    "previous_symbols": [
+      "PTON",
+      "TSLA",
+      "ZM"
+    ]
+  },
+  {
+    "date": "2021-01-11 00:00:00",
+    "date_index": 392,
+    "target_symbols": [
+      "MRNA",
+      "PTON",
+      "TSLA"
+    ],
+    "previous_symbols": [
+      "MRNA",
+      "PTON",
+      "TSLA"
+    ]
+  },
+  {
+    "date": "2021-01-19 00:00:00",
+    "date_index": 397,
+    "target_symbols": [
+      "MRNA",
+      "PTON",
+      "TSLA"
+    ],
+    "previous_symbols": [
+      "MRNA",
+      "PTON",
+      "TSLA"
+    ]
+  },
+  {
+    "date": "2021-01-25 00:00:00",
+    "date_index": 401,
+    "target_symbols": [
+      "MRNA",
+      "PTON",
+      "TSLA"
+    ],
+    "previous_symbols": [
+      "MRNA",
+      "PTON",
+      "TSLA"
+    ]
+  },
+  {
+    "date": "2021-02-01 00:00:00",
+    "date_index": 406,
+    "target_symbols": [
+      "PDD",
+      "PTON",
+      "TSLA"
+    ],
+    "previous_symbols": [
+      "MRNA",
+      "PTON",
+      "TSLA"
+    ]
+  },
+  {
+    "date": "2021-02-08 00:00:00",
+    "date_index": 411,
+    "target_symbols": [
+      "PDD",
+      "PTON",
+      "TSLA"
+    ],
+    "previous_symbols": [
+      "PDD",
+      "PTON",
+      "TSLA"
+    ]
+  },
+  {
+    "date": "2021-02-16 00:00:00",
+    "date_index": 416,
+    "target_symbols": [
+      "PDD",
+      "PTON",
+      "TSLA"
+    ],
+    "previous_symbols": [
+      "PDD",
+      "PTON",
+      "TSLA"
+    ]
+  },
+  {
+    "date": "2021-02-22 00:00:00",
+    "date_index": 420,
+    "target_symbols": [
+      "BIDU",
+      "PTON",
+      "TSLA"
+    ],
+    "previous_symbols": [
+      "PDD",
+      "PTON",
+      "TSLA"
+    ]
+  },
+  {
+    "date": "2021-03-01 00:00:00",
+    "date_index": 425,
+    "target_symbols": [
+      "BIDU",
+      "PTON",
+      "TSLA"
+    ],
+    "previous_symbols": [
+      "BIDU",
+      "PTON",
+      "TSLA"
+    ]
+  },
+  {
+    "date": "2021-03-08 00:00:00",
+    "date_index": 430,
+    "target_symbols": [
+      "MRNA",
+      "PTON",
+      "TSLA"
+    ],
+    "previous_symbols": [
+      "BIDU",
+      "PTON",
+      "TSLA"
+    ]
+  },
+  {
+    "date": "2021-03-15 00:00:00",
+    "date_index": 435,
+    "target_symbols": [
+      "BIDU",
+      "MRNA",
+      "TSLA"
+    ],
+    "previous_symbols": [
+      "MRNA",
+      "PTON",
+      "TSLA"
+    ]
+  },
+  {
+    "date": "2021-03-22 00:00:00",
+    "date_index": 440,
+    "target_symbols": [
+      "BIDU",
+      "MRNA",
+      "PDD"
+    ],
+    "previous_symbols": [
+      "BIDU",
+      "MRNA",
+      "TSLA"
+    ]
+  },
+  {
+    "date": "2021-03-29 00:00:00",
+    "date_index": 445,
+    "target_symbols": [
+      "BIDU",
+      "MRNA",
+      "PDD"
+    ],
+    "previous_symbols": [
+      "BIDU",
+      "MRNA",
+      "PDD"
+    ]
+  },
+  {
+    "date": "2021-04-05 00:00:00",
+    "date_index": 449,
+    "target_symbols": [
+      "BIDU",
+      "MRNA",
+      "MU"
+    ],
+    "previous_symbols": [
+      "BIDU",
+      "MRNA",
+      "PDD"
+    ]
+  },
+  {
+    "date": "2021-04-12 00:00:00",
+    "date_index": 454,
+    "target_symbols": [
+      "AMAT",
+      "BIDU",
+      "MRNA"
+    ],
+    "previous_symbols": [
+      "BIDU",
+      "MRNA",
+      "MU"
+    ]
+  },
+  {
+    "date": "2021-04-19 00:00:00",
+    "date_index": 459,
+    "target_symbols": [
+      "AMAT",
+      "BIDU",
+      "MRNA"
+    ],
+    "previous_symbols": [
+      "AMAT",
+      "BIDU",
+      "MRNA"
+    ]
+  },
+  {
+    "date": "2021-04-26 00:00:00",
+    "date_index": 464,
+    "target_symbols": [
+      "AMAT",
+      "BIDU",
+      "MRNA"
+    ],
+    "previous_symbols": [
+      "AMAT",
+      "BIDU",
+      "MRNA"
+    ]
+  },
+  {
+    "date": "2021-05-03 00:00:00",
+    "date_index": 469,
+    "target_symbols": [
+      "AMAT",
+      "MRNA",
+      "PDD"
+    ],
+    "previous_symbols": [
+      "AMAT",
+      "BIDU",
+      "MRNA"
+    ]
+  },
+  {
+    "date": "2021-05-10 00:00:00",
+    "date_index": 474,
+    "target_symbols": [
+      "AMAT",
+      "LRCX",
+      "MU"
+    ],
+    "previous_symbols": [
+      "AMAT",
+      "MRNA",
+      "PDD"
+    ]
+  },
+  {
+    "date": "2021-05-17 00:00:00",
+    "date_index": 479,
+    "target_symbols": [
+      "AMAT",
+      "MRNA",
+      "MU"
+    ],
+    "previous_symbols": [
+      "AMAT",
+      "LRCX",
+      "MU"
+    ]
+  },
+  {
+    "date": "2021-05-24 00:00:00",
+    "date_index": 484,
+    "target_symbols": [
+      "AMAT",
+      "MRNA",
+      "TSLA"
+    ],
+    "previous_symbols": [
+      "AMAT",
+      "MRNA",
+      "MU"
+    ]
+  },
+  {
+    "date": "2021-06-01 00:00:00",
+    "date_index": 489,
+    "target_symbols": [
+      "AMAT",
+      "LRCX",
+      "MRNA"
+    ],
+    "previous_symbols": [
+      "AMAT",
+      "MRNA",
+      "TSLA"
+    ]
+  },
+  {
+    "date": "2021-06-07 00:00:00",
+    "date_index": 493,
+    "target_symbols": [
+      "AMAT",
+      "ASML",
+      "MRNA"
+    ],
+    "previous_symbols": [
+      "AMAT",
+      "LRCX",
+      "MRNA"
+    ]
+  },
+  {
+    "date": "2021-06-14 00:00:00",
+    "date_index": 498,
+    "target_symbols": [
+      "AMAT",
+      "ASML",
+      "MRNA"
+    ],
+    "previous_symbols": [
+      "AMAT",
+      "ASML",
+      "MRNA"
+    ]
+  },
+  {
+    "date": "2021-06-21 00:00:00",
+    "date_index": 503,
+    "target_symbols": [
+      "AMAT",
+      "ASML",
+      "MRNA"
+    ],
+    "previous_symbols": [
+      "AMAT",
+      "ASML",
+      "MRNA"
+    ]
+  },
+  {
+    "date": "2021-06-28 00:00:00",
+    "date_index": 508,
+    "target_symbols": [
+      "AMAT",
+      "ASML",
+      "MRNA"
+    ],
+    "previous_symbols": [
+      "AMAT",
+      "ASML",
+      "MRNA"
+    ]
+  },
+  {
+    "date": "2021-07-06 00:00:00",
+    "date_index": 513,
+    "target_symbols": [
+      "AMAT",
+      "ASML",
+      "MRNA"
+    ],
+    "previous_symbols": [
+      "AMAT",
+      "ASML",
+      "MRNA"
+    ]
+  },
+  {
+    "date": "2021-07-12 00:00:00",
+    "date_index": 517,
+    "target_symbols": [
+      "AMAT",
+      "ASML",
+      "GOOG"
+    ],
+    "previous_symbols": [
+      "AMAT",
+      "ASML",
+      "MRNA"
+    ]
+  },
+  {
+    "date": "2021-07-19 00:00:00",
+    "date_index": 522,
+    "target_symbols": [
+      "AMAT",
+      "ASML",
+      "BIIB"
+    ],
+    "previous_symbols": [
+      "AMAT",
+      "ASML",
+      "GOOG"
+    ]
+  },
+  {
+    "date": "2021-07-26 00:00:00",
+    "date_index": 527,
+    "target_symbols": [
+      "AMAT",
+      "BIIB",
+      "MRNA"
+    ],
+    "previous_symbols": [
+      "AMAT",
+      "ASML",
+      "BIIB"
+    ]
+  },
+  {
+    "date": "2021-08-02 00:00:00",
+    "date_index": 532,
+    "target_symbols": [
+      "AMAT",
+      "MRNA",
+      "NVDA"
+    ],
+    "previous_symbols": [
+      "AMAT",
+      "BIIB",
+      "MRNA"
+    ]
+  },
+  {
+    "date": "2021-08-09 00:00:00",
+    "date_index": 537,
+    "target_symbols": [
+      "BIIB",
+      "MRNA",
+      "NVDA"
+    ],
+    "previous_symbols": [
+      "AMAT",
+      "MRNA",
+      "NVDA"
+    ]
+  },
+  {
+    "date": "2021-08-16 00:00:00",
+    "date_index": 542,
+    "target_symbols": [
+      "GOOG",
+      "GOOGL",
+      "MRNA"
+    ],
+    "previous_symbols": [
+      "BIIB",
+      "MRNA",
+      "NVDA"
+    ]
+  },
+  {
+    "date": "2021-08-23 00:00:00",
+    "date_index": 547,
+    "target_symbols": [
+      "GOOG",
+      "MRNA",
+      "NVDA"
+    ],
+    "previous_symbols": [
+      "GOOG",
+      "GOOGL",
+      "MRNA"
+    ]
+  },
+  {
+    "date": "2021-08-30 00:00:00",
+    "date_index": 552,
+    "target_symbols": [
+      "GOOG",
+      "MRNA",
+      "NVDA"
+    ],
+    "previous_symbols": [
+      "GOOG",
+      "MRNA",
+      "NVDA"
+    ]
+  },
+  {
+    "date": "2021-09-07 00:00:00",
+    "date_index": 557,
+    "target_symbols": [
+      "ASML",
+      "MRNA",
+      "NVDA"
+    ],
+    "previous_symbols": [
+      "GOOG",
+      "MRNA",
+      "NVDA"
+    ]
+  },
+  {
+    "date": "2021-09-13 00:00:00",
+    "date_index": 561,
+    "target_symbols": [
+      "ASML",
+      "INTU",
+      "MRNA"
+    ],
+    "previous_symbols": [
+      "ASML",
+      "MRNA",
+      "NVDA"
+    ]
+  },
+  {
+    "date": "2021-09-20 00:00:00",
+    "date_index": 566,
+    "target_symbols": [
+      "ISRG",
+      "MRNA",
+      "REGN"
+    ],
+    "previous_symbols": [
+      "ASML",
+      "INTU",
+      "MRNA"
+    ]
+  },
+  {
+    "date": "2021-09-27 00:00:00",
+    "date_index": 571,
+    "target_symbols": [
+      "MRNA",
+      "NVDA",
+      "REGN"
+    ],
+    "previous_symbols": [
+      "ISRG",
+      "MRNA",
+      "REGN"
+    ]
+  },
+  {
+    "date": "2021-10-04 00:00:00",
+    "date_index": 576,
+    "target_symbols": [
+      "ASML",
+      "MRNA",
+      "NVDA"
+    ],
+    "previous_symbols": [
+      "MRNA",
+      "NVDA",
+      "REGN"
+    ]
+  },
+  {
+    "date": "2021-10-11 00:00:00",
+    "date_index": 581,
+    "target_symbols": [
+      "ASML",
+      "MRNA",
+      "NVDA"
+    ],
+    "previous_symbols": [
+      "ASML",
+      "MRNA",
+      "NVDA"
+    ]
+  },
+  {
+    "date": "2021-10-18 00:00:00",
+    "date_index": 586,
+    "target_symbols": [
+      "ASML",
+      "MRNA",
+      "NVDA"
+    ],
+    "previous_symbols": [
+      "ASML",
+      "MRNA",
+      "NVDA"
+    ]
+  },
+  {
+    "date": "2021-10-25 00:00:00",
+    "date_index": 591,
+    "target_symbols": [
+      "INTU",
+      "MRNA",
+      "NVDA"
+    ],
+    "previous_symbols": [
+      "ASML",
+      "MRNA",
+      "NVDA"
+    ]
+  },
+  {
+    "date": "2021-11-01 00:00:00",
+    "date_index": 596,
+    "target_symbols": [
+      "INTU",
+      "MRNA",
+      "NVDA"
+    ],
+    "previous_symbols": [
+      "INTU",
+      "MRNA",
+      "NVDA"
+    ]
+  },
+  {
+    "date": "2021-11-08 00:00:00",
+    "date_index": 601,
+    "target_symbols": [
+      "MRNA",
+      "MRVL",
+      "NVDA"
+    ],
+    "previous_symbols": [
+      "INTU",
+      "MRNA",
+      "NVDA"
+    ]
+  },
+  {
+    "date": "2021-11-15 00:00:00",
+    "date_index": 606,
+    "target_symbols": [
+      "AMD",
+      "MRNA",
+      "NVDA"
+    ],
+    "previous_symbols": [
+      "MRNA",
+      "MRVL",
+      "NVDA"
+    ]
+  },
+  {
+    "date": "2021-11-22 00:00:00",
+    "date_index": 611,
+    "target_symbols": [
+      "MRNA",
+      "MRVL",
+      "NVDA"
+    ],
+    "previous_symbols": [
+      "AMD",
+      "MRNA",
+      "NVDA"
+    ]
+  },
+  {
+    "date": "2021-11-29 00:00:00",
+    "date_index": 615,
+    "target_symbols": [
+      "MRNA",
+      "NVDA",
+      "TSLA"
+    ],
+    "previous_symbols": [
+      "MRNA",
+      "MRVL",
+      "NVDA"
+    ]
+  },
+  {
+    "date": "2021-12-06 00:00:00",
+    "date_index": 620,
+    "target_symbols": [
+      "MRNA",
+      "NVDA",
+      "TSLA"
+    ],
+    "previous_symbols": [
+      "MRNA",
+      "NVDA",
+      "TSLA"
+    ]
+  },
+  {
+    "date": "2021-12-13 00:00:00",
+    "date_index": 625,
+    "target_symbols": [
+      "AMD",
+      "NVDA",
+      "TSLA"
+    ],
+    "previous_symbols": [
+      "MRNA",
+      "NVDA",
+      "TSLA"
+    ]
+  },
+  {
+    "date": "2021-12-20 00:00:00",
+    "date_index": 630,
+    "target_symbols": [
+      "AMD",
+      "NVDA",
+      "TSLA"
+    ],
+    "previous_symbols": [
+      "AMD",
+      "NVDA",
+      "TSLA"
+    ]
+  },
+  {
+    "date": "2021-12-27 00:00:00",
+    "date_index": 634,
+    "target_symbols": [
+      "AMD",
+      "LCID",
+      "NVDA"
+    ],
+    "previous_symbols": [
+      "AMD",
+      "NVDA",
+      "TSLA"
+    ]
+  },
+  {
+    "date": "2022-01-03 00:00:00",
+    "date_index": 639,
+    "target_symbols": [
+      "AMD",
+      "LCID",
+      "TSLA"
+    ],
+    "previous_symbols": [
+      "AMD",
+      "LCID",
+      "NVDA"
+    ]
+  },
+  {
+    "date": "2022-01-10 00:00:00",
+    "date_index": 644,
+    "target_symbols": [
+      "AMD",
+      "DDOG",
+      "NVDA"
+    ],
+    "previous_symbols": [
+      "AMD",
+      "LCID",
+      "TSLA"
+    ]
+  },
+  {
+    "date": "2022-01-18 00:00:00",
+    "date_index": 649,
+    "target_symbols": [
+      "AMD",
+      "DDOG",
+      "LCID"
+    ],
+    "previous_symbols": [
+      "AMD",
+      "DDOG",
+      "NVDA"
+    ]
+  },
+  {
+    "date": "2022-01-24 00:00:00",
+    "date_index": 653,
+    "target_symbols": [
+      "AMD",
+      "DDOG",
+      "MRVL"
+    ],
+    "previous_symbols": [
+      "AMD",
+      "DDOG",
+      "LCID"
+    ]
+  },
+  {
+    "date": "2022-01-31 00:00:00",
+    "date_index": 658,
+    "target_symbols": [
+      "AMD",
+      "DDOG",
+      "TSLA"
+    ],
+    "previous_symbols": [
+      "AMD",
+      "DDOG",
+      "MRVL"
+    ]
+  },
+  {
+    "date": "2022-02-07 00:00:00",
+    "date_index": 663,
+    "target_symbols": [
+      "AMD",
+      "TSLA",
+      "XLNX"
+    ],
+    "previous_symbols": [
+      "AMD",
+      "DDOG",
+      "TSLA"
+    ]
+  },
+  {
+    "date": "2022-02-14 00:00:00",
+    "date_index": 668,
+    "target_symbols": [
+      "AMD",
+      "LCID",
+      "TSLA"
+    ],
+    "previous_symbols": [
+      "AMD",
+      "TSLA",
+      "XLNX"
+    ]
+  },
+  {
+    "date": "2022-02-22 00:00:00",
+    "date_index": 673,
+    "target_symbols": [
+      "AMD",
+      "LCID",
+      "TSLA"
+    ],
+    "previous_symbols": [
+      "AMD",
+      "LCID",
+      "TSLA"
+    ]
+  },
+  {
+    "date": "2022-02-28 00:00:00",
+    "date_index": 677,
+    "target_symbols": [
+      "KLAC",
+      "LCID",
+      "TSLA"
+    ],
+    "previous_symbols": [
+      "AMD",
+      "LCID",
+      "TSLA"
+    ]
+  },
+  {
+    "date": "2022-03-07 00:00:00",
+    "date_index": 682,
+    "target_symbols": [
+      "PANW",
+      "QCOM",
+      "TSLA"
+    ],
+    "previous_symbols": [
+      "KLAC",
+      "LCID",
+      "TSLA"
+    ]
+  },
+  {
+    "date": "2022-03-14 00:00:00",
+    "date_index": 687,
+    "target_symbols": [
+      "NVDA",
+      "PANW",
+      "TSLA"
+    ],
+    "previous_symbols": [
+      "PANW",
+      "QCOM",
+      "TSLA"
+    ]
+  },
+  {
+    "date": "2022-03-21 00:00:00",
+    "date_index": 692,
+    "target_symbols": [
+      "MU",
+      "NVDA",
+      "PANW"
+    ],
+    "previous_symbols": [
+      "NVDA",
+      "PANW",
+      "TSLA"
+    ]
+  },
+  {
+    "date": "2022-03-28 00:00:00",
+    "date_index": 697,
+    "target_symbols": [
+      "AVGO",
+      "MU",
+      "PANW"
+    ],
+    "previous_symbols": [
+      "MU",
+      "NVDA",
+      "PANW"
+    ]
+  },
+  {
+    "date": "2022-04-04 00:00:00",
+    "date_index": 702,
+    "target_symbols": [
+      "AVGO",
+      "MU",
+      "PANW"
+    ],
+    "previous_symbols": [
+      "AVGO",
+      "MU",
+      "PANW"
+    ]
+  },
+  {
+    "date": "2022-04-11 00:00:00",
+    "date_index": 707,
+    "target_symbols": [
+      "AVGO",
+      "COST",
+      "PANW"
+    ],
+    "previous_symbols": [
+      "AVGO",
+      "MU",
+      "PANW"
+    ]
+  },
+  {
+    "date": "2022-04-18 00:00:00",
+    "date_index": 711,
+    "target_symbols": [
+      "AVGO",
+      "COST",
+      "CSX"
+    ],
+    "previous_symbols": [
+      "AVGO",
+      "COST",
+      "PANW"
+    ]
+  },
+  {
+    "date": "2022-04-25 00:00:00",
+    "date_index": 716,
+    "target_symbols": [
+      "COST",
+      "PANW",
+      "TSLA"
+    ],
+    "previous_symbols": [
+      "AVGO",
+      "COST",
+      "CSX"
+    ]
+  },
+  {
+    "date": "2022-05-02 00:00:00",
+    "date_index": 721,
+    "target_symbols": [
+      "AVGO",
+      "PANW",
+      "TSLA"
+    ],
+    "previous_symbols": [
+      "COST",
+      "PANW",
+      "TSLA"
+    ]
+  },
+  {
+    "date": "2022-05-09 00:00:00",
+    "date_index": 726,
+    "target_symbols": [
+      "COST",
+      "PANW",
+      "TSLA"
+    ],
+    "previous_symbols": [
+      "AVGO",
+      "PANW",
+      "TSLA"
+    ]
+  },
+  {
+    "date": "2022-05-16 00:00:00",
+    "date_index": 731,
+    "target_symbols": [
+      "COST",
+      "PANW",
+      "TSLA"
+    ],
+    "previous_symbols": [
+      "COST",
+      "PANW",
+      "TSLA"
+    ]
+  },
+  {
+    "date": "2022-05-23 00:00:00",
+    "date_index": 736,
+    "target_symbols": [
+      "AMGN",
+      "COST",
+      "TSLA"
+    ],
+    "previous_symbols": [
+      "COST",
+      "PANW",
+      "TSLA"
+    ]
+  },
+  {
+    "date": "2022-05-31 00:00:00",
+    "date_index": 741,
+    "target_symbols": [
+      "AMGN",
+      "COST",
+      "PANW"
+    ],
+    "previous_symbols": [
+      "AMGN",
+      "COST",
+      "TSLA"
+    ]
+  },
+  {
+    "date": "2022-06-06 00:00:00",
+    "date_index": 745,
+    "target_symbols": [
+      "AMGN",
+      "AVGO",
+      "TMUS"
+    ],
+    "previous_symbols": [
+      "AMGN",
+      "COST",
+      "PANW"
+    ]
+  },
+  {
+    "date": "2022-06-13 00:00:00",
+    "date_index": 750,
+    "target_symbols": [
+      "AMGN",
+      "MDLZ",
+      "PEP"
+    ],
+    "previous_symbols": [
+      "AMGN",
+      "AVGO",
+      "TMUS"
+    ]
+  },
+  {
+    "date": "2022-06-21 00:00:00",
+    "date_index": 755,
+    "target_symbols": [
+      "AMGN",
+      "REGN",
+      "TMUS"
+    ],
+    "previous_symbols": [
+      "AMGN",
+      "MDLZ",
+      "PEP"
+    ]
+  },
+  {
+    "date": "2022-06-27 00:00:00",
+    "date_index": 759,
+    "target_symbols": [
+      "AMGN",
+      "TMUS",
+      "VRTX"
+    ],
+    "previous_symbols": [
+      "AMGN",
+      "REGN",
+      "TMUS"
+    ]
+  },
+  {
+    "date": "2022-07-05 00:00:00",
+    "date_index": 764,
+    "target_symbols": [
+      "AMGN",
+      "TMUS",
+      "VRTX"
+    ],
+    "previous_symbols": [
+      "AMGN",
+      "TMUS",
+      "VRTX"
+    ]
+  },
+  {
+    "date": "2022-07-11 00:00:00",
+    "date_index": 768,
+    "target_symbols": [
+      "AMGN",
+      "TMUS",
+      "VRTX"
+    ],
+    "previous_symbols": [
+      "AMGN",
+      "TMUS",
+      "VRTX"
+    ]
+  },
+  {
+    "date": "2022-07-18 00:00:00",
+    "date_index": 773,
+    "target_symbols": [
+      "AMGN",
+      "TMUS",
+      "VRTX"
+    ],
+    "previous_symbols": [
+      "AMGN",
+      "TMUS",
+      "VRTX"
+    ]
+  },
+  {
+    "date": "2022-07-25 00:00:00",
+    "date_index": 778,
+    "target_symbols": [
+      "AZN",
+      "TMUS",
+      "VRTX"
+    ],
+    "previous_symbols": [
+      "AMGN",
+      "TMUS",
+      "VRTX"
+    ]
+  },
+  {
+    "date": "2022-08-01 00:00:00",
+    "date_index": 783,
+    "target_symbols": [
+      "ATVI",
+      "TMUS",
+      "VRTX"
+    ],
+    "previous_symbols": [
+      "AZN",
+      "TMUS",
+      "VRTX"
+    ]
+  },
+  {
+    "date": "2022-08-08 00:00:00",
+    "date_index": 788,
+    "target_symbols": [
+      "AZN",
+      "TMUS",
+      "VRTX"
+    ],
+    "previous_symbols": [
+      "ATVI",
+      "TMUS",
+      "VRTX"
+    ]
+  },
+  {
+    "date": "2022-08-15 00:00:00",
+    "date_index": 793,
+    "target_symbols": [
+      "AZN",
+      "TMUS",
+      "VRTX"
+    ],
+    "previous_symbols": [
+      "AZN",
+      "TMUS",
+      "VRTX"
+    ]
+  },
+  {
+    "date": "2022-08-22 00:00:00",
+    "date_index": 798,
+    "target_symbols": [
+      "AMGN",
+      "TMUS",
+      "VRTX"
+    ],
+    "previous_symbols": [
+      "AZN",
+      "TMUS",
+      "VRTX"
+    ]
+  },
+  {
+    "date": "2022-08-29 00:00:00",
+    "date_index": 803,
+    "target_symbols": [
+      "AMGN",
+      "TMUS",
+      "VRTX"
+    ],
+    "previous_symbols": [
+      "AMGN",
+      "TMUS",
+      "VRTX"
+    ]
+  },
+  {
+    "date": "2022-09-06 00:00:00",
+    "date_index": 808,
+    "target_symbols": [
+      "AZN",
+      "TMUS",
+      "VRTX"
+    ],
+    "previous_symbols": [
+      "AMGN",
+      "TMUS",
+      "VRTX"
+    ]
+  },
+  {
+    "date": "2022-09-12 00:00:00",
+    "date_index": 812,
+    "target_symbols": [
+      "AMGN",
+      "TMUS",
+      "VRTX"
+    ],
+    "previous_symbols": [
+      "AZN",
+      "TMUS",
+      "VRTX"
+    ]
+  },
+  {
+    "date": "2022-09-19 00:00:00",
+    "date_index": 817,
+    "target_symbols": [
+      "ADP",
+      "TMUS",
+      "VRTX"
+    ],
+    "previous_symbols": [
+      "AMGN",
+      "TMUS",
+      "VRTX"
+    ]
+  },
+  {
+    "date": "2022-09-26 00:00:00",
+    "date_index": 822,
+    "target_symbols": [
+      "ADP",
+      "TMUS",
+      "VRTX"
+    ],
+    "previous_symbols": [
+      "ADP",
+      "TMUS",
+      "VRTX"
+    ]
+  },
+  {
+    "date": "2022-10-03 00:00:00",
+    "date_index": 827,
+    "target_symbols": [
+      "ADP",
+      "PDD",
+      "VRTX"
+    ],
+    "previous_symbols": [
+      "ADP",
+      "TMUS",
+      "VRTX"
+    ]
+  },
+  {
+    "date": "2022-10-10 00:00:00",
+    "date_index": 832,
+    "target_symbols": [
+      "PDD",
+      "TMUS",
+      "VRTX"
+    ],
+    "previous_symbols": [
+      "ADP",
+      "PDD",
+      "VRTX"
+    ]
+  },
+  {
+    "date": "2022-10-17 00:00:00",
+    "date_index": 837,
+    "target_symbols": [
+      "GILD",
+      "PDD",
+      "VRTX"
+    ],
+    "previous_symbols": [
+      "PDD",
+      "TMUS",
+      "VRTX"
+    ]
+  },
+  {
+    "date": "2022-10-24 00:00:00",
+    "date_index": 842,
+    "target_symbols": [
+      "ADP",
+      "PDD",
+      "VRTX"
+    ],
+    "previous_symbols": [
+      "GILD",
+      "PDD",
+      "VRTX"
+    ]
+  },
+  {
+    "date": "2022-10-31 00:00:00",
+    "date_index": 847,
+    "target_symbols": [
+      "GILD",
+      "PDD",
+      "VRTX"
+    ],
+    "previous_symbols": [
+      "ADP",
+      "PDD",
+      "VRTX"
+    ]
+  },
+  {
+    "date": "2022-11-07 00:00:00",
+    "date_index": 852,
+    "target_symbols": [
+      "PDD",
+      "SBUX",
+      "VRTX"
+    ],
+    "previous_symbols": [
+      "GILD",
+      "PDD",
+      "VRTX"
+    ]
+  },
+  {
+    "date": "2022-11-14 00:00:00",
+    "date_index": 857,
+    "target_symbols": [
+      "GILD",
+      "PDD",
+      "SBUX"
+    ],
+    "previous_symbols": [
+      "PDD",
+      "SBUX",
+      "VRTX"
+    ]
+  },
+  {
+    "date": "2022-11-21 00:00:00",
+    "date_index": 862,
+    "target_symbols": [
+      "GILD",
+      "PDD",
+      "SBUX"
+    ],
+    "previous_symbols": [
+      "GILD",
+      "PDD",
+      "SBUX"
+    ]
+  },
+  {
+    "date": "2022-11-28 00:00:00",
+    "date_index": 866,
+    "target_symbols": [
+      "ENPH",
+      "NFLX",
+      "PDD"
+    ],
+    "previous_symbols": [
+      "GILD",
+      "PDD",
+      "SBUX"
+    ]
+  },
+  {
+    "date": "2022-12-05 00:00:00",
+    "date_index": 871,
+    "target_symbols": [
+      "ENPH",
+      "GILD",
+      "NFLX"
+    ],
+    "previous_symbols": [
+      "ENPH",
+      "NFLX",
+      "PDD"
+    ]
+  },
+  {
+    "date": "2022-12-12 00:00:00",
+    "date_index": 876,
+    "target_symbols": [
+      "ENPH",
+      "NFLX",
+      "PDD"
+    ],
+    "previous_symbols": [
+      "ENPH",
+      "GILD",
+      "NFLX"
+    ]
+  },
+  {
+    "date": "2022-12-19 00:00:00",
+    "date_index": 881,
+    "target_symbols": [
+      "ENPH",
+      "NFLX",
+      "PDD"
+    ],
+    "previous_symbols": [
+      "ENPH",
+      "NFLX",
+      "PDD"
+    ]
+  },
+  {
+    "date": "2022-12-27 00:00:00",
+    "date_index": 886,
+    "target_symbols": [
+      "ENPH",
+      "NFLX",
+      "PDD"
+    ],
+    "previous_symbols": [
+      "ENPH",
+      "NFLX",
+      "PDD"
+    ]
+  },
+  {
+    "date": "2023-01-03 00:00:00",
+    "date_index": 890,
+    "target_symbols": [
+      "ENPH",
+      "NFLX",
+      "PDD"
+    ],
+    "previous_symbols": [
+      "ENPH",
+      "NFLX",
+      "PDD"
+    ]
+  },
+  {
+    "date": "2023-01-09 00:00:00",
+    "date_index": 894,
+    "target_symbols": [
+      "ENPH",
+      "NFLX",
+      "PDD"
+    ],
+    "previous_symbols": [
+      "ENPH",
+      "NFLX",
+      "PDD"
+    ]
+  },
+  {
+    "date": "2023-01-17 00:00:00",
+    "date_index": 899,
+    "target_symbols": [
+      "ENPH",
+      "MRNA",
+      "NFLX"
+    ],
+    "previous_symbols": [
+      "ENPH",
+      "NFLX",
+      "PDD"
+    ]
+  },
+  {
+    "date": "2023-01-23 00:00:00",
+    "date_index": 903,
+    "target_symbols": [
+      "ENPH",
+      "MRNA",
+      "NFLX"
+    ],
+    "previous_symbols": [
+      "ENPH",
+      "MRNA",
+      "NFLX"
+    ]
+  },
+  {
+    "date": "2023-01-30 00:00:00",
+    "date_index": 908,
+    "target_symbols": [
+      "ENPH",
+      "GILD",
+      "NFLX"
+    ],
+    "previous_symbols": [
+      "ENPH",
+      "MRNA",
+      "NFLX"
+    ]
+  },
+  {
+    "date": "2023-02-06 00:00:00",
+    "date_index": 913,
+    "target_symbols": [
+      "GILD",
+      "NFLX",
+      "PDD"
+    ],
+    "previous_symbols": [
+      "ENPH",
+      "GILD",
+      "NFLX"
+    ]
+  },
+  {
+    "date": "2023-02-13 00:00:00",
+    "date_index": 918,
+    "target_symbols": [
+      "ASML",
+      "NFLX",
+      "PDD"
+    ],
+    "previous_symbols": [
+      "GILD",
+      "NFLX",
+      "PDD"
+    ]
+  },
+  {
+    "date": "2023-02-21 00:00:00",
+    "date_index": 923,
+    "target_symbols": [
+      "MELI",
+      "NFLX",
+      "PDD"
+    ],
+    "previous_symbols": [
+      "ASML",
+      "NFLX",
+      "PDD"
+    ]
+  },
+  {
+    "date": "2023-02-27 00:00:00",
+    "date_index": 927,
+    "target_symbols": [
+      "MELI",
+      "NFLX",
+      "PDD"
+    ],
+    "previous_symbols": [
+      "MELI",
+      "NFLX",
+      "PDD"
+    ]
+  },
+  {
+    "date": "2023-03-06 00:00:00",
+    "date_index": 932,
+    "target_symbols": [
+      "MELI",
+      "NFLX",
+      "PDD"
+    ],
+    "previous_symbols": [
+      "MELI",
+      "NFLX",
+      "PDD"
+    ]
+  },
+  {
+    "date": "2023-03-13 00:00:00",
+    "date_index": 937,
+    "target_symbols": [
+      "GILD",
+      "NFLX",
+      "PDD"
+    ],
+    "previous_symbols": [
+      "MELI",
+      "NFLX",
+      "PDD"
+    ]
+  },
+  {
+    "date": "2023-03-20 00:00:00",
+    "date_index": 942,
+    "target_symbols": [
+      "GILD",
+      "NFLX",
+      "PDD"
+    ],
+    "previous_symbols": [
+      "GILD",
+      "NFLX",
+      "PDD"
+    ]
+  },
+  {
+    "date": "2023-03-27 00:00:00",
+    "date_index": 947,
+    "target_symbols": [
+      "NFLX",
+      "NVDA",
+      "PDD"
+    ],
+    "previous_symbols": [
+      "GILD",
+      "NFLX",
+      "PDD"
+    ]
+  },
+  {
+    "date": "2023-04-03 00:00:00",
+    "date_index": 952,
+    "target_symbols": [
+      "NFLX",
+      "NVDA",
+      "PDD"
+    ],
+    "previous_symbols": [
+      "NFLX",
+      "NVDA",
+      "PDD"
+    ]
+  },
+  {
+    "date": "2023-04-10 00:00:00",
+    "date_index": 956,
+    "target_symbols": [
+      "MELI",
+      "NFLX",
+      "NVDA"
+    ],
+    "previous_symbols": [
+      "NFLX",
+      "NVDA",
+      "PDD"
+    ]
+  },
+  {
+    "date": "2023-04-17 00:00:00",
+    "date_index": 961,
+    "target_symbols": [
+      "NFLX",
+      "NVDA",
+      "PDD"
+    ],
+    "previous_symbols": [
+      "MELI",
+      "NFLX",
+      "NVDA"
+    ]
+  },
+  {
+    "date": "2023-04-24 00:00:00",
+    "date_index": 966,
+    "target_symbols": [
+      "ASML",
+      "META",
+      "NVDA"
+    ],
+    "previous_symbols": [
+      "NFLX",
+      "NVDA",
+      "PDD"
+    ]
+  },
+  {
+    "date": "2023-05-01 00:00:00",
+    "date_index": 971,
+    "target_symbols": [
+      "BKNG",
+      "META",
+      "NVDA"
+    ],
+    "previous_symbols": [
+      "ASML",
+      "META",
+      "NVDA"
+    ]
+  },
+  {
+    "date": "2023-05-08 00:00:00",
+    "date_index": 976,
+    "target_symbols": [
+      "BKNG",
+      "META",
+      "NVDA"
+    ],
+    "previous_symbols": [
+      "BKNG",
+      "META",
+      "NVDA"
+    ]
+  },
+  {
+    "date": "2023-05-15 00:00:00",
+    "date_index": 981,
+    "target_symbols": [
+      "ASML",
+      "META",
+      "NVDA"
+    ],
+    "previous_symbols": [
+      "BKNG",
+      "META",
+      "NVDA"
+    ]
+  },
+  {
+    "date": "2023-05-22 00:00:00",
+    "date_index": 986,
+    "target_symbols": [
+      "LRCX",
+      "META",
+      "NVDA"
+    ],
+    "previous_symbols": [
+      "ASML",
+      "META",
+      "NVDA"
+    ]
+  },
+  {
+    "date": "2023-05-30 00:00:00",
+    "date_index": 991,
+    "target_symbols": [
+      "MELI",
+      "META",
+      "NVDA"
+    ],
+    "previous_symbols": [
+      "LRCX",
+      "META",
+      "NVDA"
+    ]
+  },
+  {
+    "date": "2023-06-05 00:00:00",
+    "date_index": 995,
+    "target_symbols": [
+      "MELI",
+      "META",
+      "NVDA"
+    ],
+    "previous_symbols": [
+      "MELI",
+      "META",
+      "NVDA"
+    ]
+  },
+  {
+    "date": "2023-06-12 00:00:00",
+    "date_index": 1000,
+    "target_symbols": [
+      "AMD",
+      "META",
+      "NVDA"
+    ],
+    "previous_symbols": [
+      "MELI",
+      "META",
+      "NVDA"
+    ]
+  },
+  {
+    "date": "2023-06-20 00:00:00",
+    "date_index": 1005,
+    "target_symbols": [
+      "AMD",
+      "META",
+      "NVDA"
+    ],
+    "previous_symbols": [
+      "AMD",
+      "META",
+      "NVDA"
+    ]
+  },
+  {
+    "date": "2023-06-26 00:00:00",
+    "date_index": 1009,
+    "target_symbols": [
+      "AMD",
+      "META",
+      "NVDA"
+    ],
+    "previous_symbols": [
+      "AMD",
+      "META",
+      "NVDA"
+    ]
+  },
+  {
+    "date": "2023-07-03 00:00:00",
+    "date_index": 1014,
+    "target_symbols": [
+      "AMD",
+      "META",
+      "NVDA"
+    ],
+    "previous_symbols": [
+      "AMD",
+      "META",
+      "NVDA"
+    ]
+  },
+  {
+    "date": "2023-07-10 00:00:00",
+    "date_index": 1018,
+    "target_symbols": [
+      "AMD",
+      "META",
+      "NVDA"
+    ],
+    "previous_symbols": [
+      "AMD",
+      "META",
+      "NVDA"
+    ]
+  },
+  {
+    "date": "2023-07-17 00:00:00",
+    "date_index": 1023,
+    "target_symbols": [
+      "AMD",
+      "META",
+      "NVDA"
+    ],
+    "previous_symbols": [
+      "AMD",
+      "META",
+      "NVDA"
+    ]
+  },
+  {
+    "date": "2023-07-24 00:00:00",
+    "date_index": 1028,
+    "target_symbols": [
+      "META",
+      "NVDA",
+      "TSLA"
+    ],
+    "previous_symbols": [
+      "AMD",
+      "META",
+      "NVDA"
+    ]
+  },
+  {
+    "date": "2023-07-31 00:00:00",
+    "date_index": 1033,
+    "target_symbols": [
+      "META",
+      "NVDA",
+      "TSLA"
+    ],
+    "previous_symbols": [
+      "META",
+      "NVDA",
+      "TSLA"
+    ]
+  },
+  {
+    "date": "2023-08-07 00:00:00",
+    "date_index": 1038,
+    "target_symbols": [
+      "META",
+      "NVDA",
+      "TSLA"
+    ],
+    "previous_symbols": [
+      "META",
+      "NVDA",
+      "TSLA"
+    ]
+  },
+  {
+    "date": "2023-08-14 00:00:00",
+    "date_index": 1043,
+    "target_symbols": [
+      "META",
+      "NVDA",
+      "TSLA"
+    ],
+    "previous_symbols": [
+      "META",
+      "NVDA",
+      "TSLA"
+    ]
+  },
+  {
+    "date": "2023-08-21 00:00:00",
+    "date_index": 1048,
+    "target_symbols": [
+      "META",
+      "NVDA",
+      "TSLA"
+    ],
+    "previous_symbols": [
+      "META",
+      "NVDA",
+      "TSLA"
+    ]
+  },
+  {
+    "date": "2023-08-28 00:00:00",
+    "date_index": 1053,
+    "target_symbols": [
+      "META",
+      "NVDA",
+      "TSLA"
+    ],
+    "previous_symbols": [
+      "META",
+      "NVDA",
+      "TSLA"
+    ]
+  },
+  {
+    "date": "2023-09-05 00:00:00",
+    "date_index": 1058,
+    "target_symbols": [
+      "META",
+      "NVDA",
+      "PANW"
+    ],
+    "previous_symbols": [
+      "META",
+      "NVDA",
+      "TSLA"
+    ]
+  },
+  {
+    "date": "2023-09-11 00:00:00",
+    "date_index": 1062,
+    "target_symbols": [
+      "AVGO",
+      "META",
+      "NVDA"
+    ],
+    "previous_symbols": [
+      "META",
+      "NVDA",
+      "PANW"
+    ]
+  },
+  {
+    "date": "2023-09-18 00:00:00",
+    "date_index": 1067,
+    "target_symbols": [
+      "AVGO",
+      "META",
+      "NVDA"
+    ],
+    "previous_symbols": [
+      "AVGO",
+      "META",
+      "NVDA"
+    ]
+  },
+  {
+    "date": "2023-09-25 00:00:00",
+    "date_index": 1072,
+    "target_symbols": [
+      "ADBE",
+      "META",
+      "NVDA"
+    ],
+    "previous_symbols": [
+      "AVGO",
+      "META",
+      "NVDA"
+    ]
+  },
+  {
+    "date": "2023-10-02 00:00:00",
+    "date_index": 1077,
+    "target_symbols": [
+      "ADBE",
+      "META",
+      "NVDA"
+    ],
+    "previous_symbols": [
+      "ADBE",
+      "META",
+      "NVDA"
+    ]
+  },
+  {
+    "date": "2023-10-09 00:00:00",
+    "date_index": 1082,
+    "target_symbols": [
+      "ADBE",
+      "META",
+      "NVDA"
+    ],
+    "previous_symbols": [
+      "ADBE",
+      "META",
+      "NVDA"
+    ]
+  },
+  {
+    "date": "2023-10-16 00:00:00",
+    "date_index": 1087,
+    "target_symbols": [
+      "ADBE",
+      "META",
+      "NVDA"
+    ],
+    "previous_symbols": [
+      "ADBE",
+      "META",
+      "NVDA"
+    ]
+  },
+  {
+    "date": "2023-10-23 00:00:00",
+    "date_index": 1092,
+    "target_symbols": [
+      "ADBE",
+      "META",
+      "NVDA"
+    ],
+    "previous_symbols": [
+      "ADBE",
+      "META",
+      "NVDA"
+    ]
+  },
+  {
+    "date": "2023-10-30 00:00:00",
+    "date_index": 1097,
+    "target_symbols": [
+      "ADBE",
+      "META",
+      "NVDA"
+    ],
+    "previous_symbols": [
+      "ADBE",
+      "META",
+      "NVDA"
+    ]
+  },
+  {
+    "date": "2023-11-06 00:00:00",
+    "date_index": 1102,
+    "target_symbols": [
+      "META",
+      "NVDA",
+      "TSLA"
+    ],
+    "previous_symbols": [
+      "ADBE",
+      "META",
+      "NVDA"
+    ]
+  },
+  {
+    "date": "2023-11-13 00:00:00",
+    "date_index": 1107,
+    "target_symbols": [
+      "ADBE",
+      "NVDA",
+      "PDD"
+    ],
+    "previous_symbols": [
+      "META",
+      "NVDA",
+      "TSLA"
+    ]
+  },
+  {
+    "date": "2023-11-20 00:00:00",
+    "date_index": 1112,
+    "target_symbols": [
+      "META",
+      "NVDA",
+      "PDD"
+    ],
+    "previous_symbols": [
+      "ADBE",
+      "NVDA",
+      "PDD"
+    ]
+  },
+  {
+    "date": "2023-11-27 00:00:00",
+    "date_index": 1116,
+    "target_symbols": [
+      "ADBE",
+      "NVDA",
+      "PDD"
+    ],
+    "previous_symbols": [
+      "META",
+      "NVDA",
+      "PDD"
+    ]
+  },
+  {
+    "date": "2023-12-04 00:00:00",
+    "date_index": 1121,
+    "target_symbols": [
+      "ADBE",
+      "NVDA",
+      "PDD"
+    ],
+    "previous_symbols": [
+      "ADBE",
+      "NVDA",
+      "PDD"
+    ]
+  },
+  {
+    "date": "2023-12-11 00:00:00",
+    "date_index": 1126,
+    "target_symbols": [
+      "ADBE",
+      "NVDA",
+      "PDD"
+    ],
+    "previous_symbols": [
+      "ADBE",
+      "NVDA",
+      "PDD"
+    ]
+  },
+  {
+    "date": "2023-12-18 00:00:00",
+    "date_index": 1131,
+    "target_symbols": [
+      "ADBE",
+      "NVDA",
+      "PDD"
+    ],
+    "previous_symbols": [
+      "ADBE",
+      "NVDA",
+      "PDD"
+    ]
+  },
+  {
+    "date": "2023-12-26 00:00:00",
+    "date_index": 1136,
+    "target_symbols": [
+      "ADBE",
+      "NVDA",
+      "PDD"
+    ],
+    "previous_symbols": [
+      "ADBE",
+      "NVDA",
+      "PDD"
+    ]
+  },
+  {
+    "date": "2024-01-02 00:00:00",
+    "date_index": 1140,
+    "target_symbols": [
+      "ADBE",
+      "CRWD",
+      "PDD"
+    ],
+    "previous_symbols": [
+      "ADBE",
+      "NVDA",
+      "PDD"
+    ]
+  },
+  {
+    "date": "2024-01-08 00:00:00",
+    "date_index": 1144,
+    "target_symbols": [
+      "ADBE",
+      "CRWD",
+      "PDD"
+    ],
+    "previous_symbols": [
+      "ADBE",
+      "CRWD",
+      "PDD"
+    ]
+  },
+  {
+    "date": "2024-01-16 00:00:00",
+    "date_index": 1149,
+    "target_symbols": [
+      "CRWD",
+      "LULU",
+      "PDD"
+    ],
+    "previous_symbols": [
+      "ADBE",
+      "CRWD",
+      "PDD"
+    ]
+  },
+  {
+    "date": "2024-01-22 00:00:00",
+    "date_index": 1153,
+    "target_symbols": [
+      "CRWD",
+      "INTU",
+      "PDD"
+    ],
+    "previous_symbols": [
+      "CRWD",
+      "LULU",
+      "PDD"
+    ]
+  },
+  {
+    "date": "2024-01-29 00:00:00",
+    "date_index": 1158,
+    "target_symbols": [
+      "CRWD",
+      "INTC",
+      "PDD"
+    ],
+    "previous_symbols": [
+      "CRWD",
+      "INTU",
+      "PDD"
+    ]
+  },
+  {
+    "date": "2024-02-05 00:00:00",
+    "date_index": 1163,
+    "target_symbols": [
+      "CRWD",
+      "INTC",
+      "PDD"
+    ],
+    "previous_symbols": [
+      "CRWD",
+      "INTC",
+      "PDD"
+    ]
+  },
+  {
+    "date": "2024-02-12 00:00:00",
+    "date_index": 1168,
+    "target_symbols": [
+      "CRWD",
+      "MELI",
+      "PDD"
+    ],
+    "previous_symbols": [
+      "CRWD",
+      "INTC",
+      "PDD"
+    ]
+  },
+  {
+    "date": "2024-02-20 00:00:00",
+    "date_index": 1173,
+    "target_symbols": [
+      "AMD",
+      "CRWD",
+      "PDD"
+    ],
+    "previous_symbols": [
+      "CRWD",
+      "MELI",
+      "PDD"
+    ]
+  },
+  {
+    "date": "2024-02-26 00:00:00",
+    "date_index": 1177,
+    "target_symbols": [
+      "AMD",
+      "CRWD",
+      "PDD"
+    ],
+    "previous_symbols": [
+      "AMD",
+      "CRWD",
+      "PDD"
+    ]
+  },
+  {
+    "date": "2024-03-04 00:00:00",
+    "date_index": 1182,
+    "target_symbols": [
+      "AMD",
+      "CRWD",
+      "ZS"
+    ],
+    "previous_symbols": [
+      "AMD",
+      "CRWD",
+      "PDD"
+    ]
+  },
+  {
+    "date": "2024-03-11 00:00:00",
+    "date_index": 1187,
+    "target_symbols": [
+      "CRWD",
+      "PANW",
+      "ZS"
+    ],
+    "previous_symbols": [
+      "AMD",
+      "CRWD",
+      "ZS"
+    ]
+  },
+  {
+    "date": "2024-03-18 00:00:00",
+    "date_index": 1192,
+    "target_symbols": [
+      "CRWD",
+      "NVDA",
+      "PANW"
+    ],
+    "previous_symbols": [
+      "CRWD",
+      "PANW",
+      "ZS"
+    ]
+  },
+  {
+    "date": "2024-03-25 00:00:00",
+    "date_index": 1197,
+    "target_symbols": [
+      "AMD",
+      "CRWD",
+      "NVDA"
+    ],
+    "previous_symbols": [
+      "CRWD",
+      "NVDA",
+      "PANW"
+    ]
+  },
+  {
+    "date": "2024-04-01 00:00:00",
+    "date_index": 1201,
+    "target_symbols": [
+      "AMD",
+      "CRWD",
+      "META"
+    ],
+    "previous_symbols": [
+      "AMD",
+      "CRWD",
+      "NVDA"
+    ]
+  },
+  {
+    "date": "2024-04-08 00:00:00",
+    "date_index": 1206,
+    "target_symbols": [
+      "AMD",
+      "CRWD",
+      "NVDA"
+    ],
+    "previous_symbols": [
+      "AMD",
+      "CRWD",
+      "META"
+    ]
+  },
+  {
+    "date": "2024-04-15 00:00:00",
+    "date_index": 1211,
+    "target_symbols": [
+      "AMD",
+      "CRWD",
+      "NVDA"
+    ],
+    "previous_symbols": [
+      "AMD",
+      "CRWD",
+      "NVDA"
+    ]
+  },
+  {
+    "date": "2024-04-22 00:00:00",
+    "date_index": 1216,
+    "target_symbols": [
+      "AMD",
+      "CRWD",
+      "NVDA"
+    ],
+    "previous_symbols": [
+      "AMD",
+      "CRWD",
+      "NVDA"
+    ]
+  },
+  {
+    "date": "2024-04-29 00:00:00",
+    "date_index": 1221,
+    "target_symbols": [
+      "AMD",
+      "CRWD",
+      "NVDA"
+    ],
+    "previous_symbols": [
+      "AMD",
+      "CRWD",
+      "NVDA"
+    ]
+  },
+  {
+    "date": "2024-05-06 00:00:00",
+    "date_index": 1226,
+    "target_symbols": [
+      "CRWD",
+      "MU",
+      "NVDA"
+    ],
+    "previous_symbols": [
+      "AMD",
+      "CRWD",
+      "NVDA"
+    ]
+  },
+  {
+    "date": "2024-05-13 00:00:00",
+    "date_index": 1231,
+    "target_symbols": [
+      "DASH",
+      "MU",
+      "NVDA"
+    ],
+    "previous_symbols": [
+      "CRWD",
+      "MU",
+      "NVDA"
+    ]
+  },
+  {
+    "date": "2024-05-20 00:00:00",
+    "date_index": 1236,
+    "target_symbols": [
+      "DASH",
+      "NFLX",
+      "NVDA"
+    ],
+    "previous_symbols": [
+      "DASH",
+      "MU",
+      "NVDA"
+    ]
+  },
+  {
+    "date": "2024-05-28 00:00:00",
+    "date_index": 1241,
+    "target_symbols": [
+      "CEG",
+      "DASH",
+      "NVDA"
+    ],
+    "previous_symbols": [
+      "DASH",
+      "NFLX",
+      "NVDA"
+    ]
+  },
+  {
+    "date": "2024-06-03 00:00:00",
+    "date_index": 1245,
+    "target_symbols": [
+      "CRWD",
+      "DASH",
+      "NVDA"
+    ],
+    "previous_symbols": [
+      "CEG",
+      "DASH",
+      "NVDA"
+    ]
+  },
+  {
+    "date": "2024-06-10 00:00:00",
+    "date_index": 1250,
+    "target_symbols": [
+      "CEG",
+      "CRWD",
+      "NVDA"
+    ],
+    "previous_symbols": [
+      "CRWD",
+      "DASH",
+      "NVDA"
+    ]
+  },
+  {
+    "date": "2024-06-17 00:00:00",
+    "date_index": 1255,
+    "target_symbols": [
+      "CEG",
+      "MU",
+      "NVDA"
+    ],
+    "previous_symbols": [
+      "CEG",
+      "CRWD",
+      "NVDA"
+    ]
+  },
+  {
+    "date": "2024-06-24 00:00:00",
+    "date_index": 1259,
+    "target_symbols": [
+      "CEG",
+      "MRNA",
+      "NVDA"
+    ],
+    "previous_symbols": [
+      "CEG",
+      "MU",
+      "NVDA"
+    ]
+  },
+  {
+    "date": "2024-07-01 00:00:00",
+    "date_index": 1264,
+    "target_symbols": [
+      "CEG",
+      "MRNA",
+      "NVDA"
+    ],
+    "previous_symbols": [
+      "CEG",
+      "MRNA",
+      "NVDA"
+    ]
+  },
+  {
+    "date": "2024-07-08 00:00:00",
+    "date_index": 1268,
+    "target_symbols": [
+      "ARM",
+      "MRNA",
+      "NVDA"
+    ],
+    "previous_symbols": [
+      "CEG",
+      "MRNA",
+      "NVDA"
+    ]
+  },
+  {
+    "date": "2024-07-15 00:00:00",
+    "date_index": 1273,
+    "target_symbols": [
+      "ARM",
+      "CEG",
+      "NVDA"
+    ],
+    "previous_symbols": [
+      "ARM",
+      "MRNA",
+      "NVDA"
+    ]
+  },
+  {
+    "date": "2024-07-22 00:00:00",
+    "date_index": 1278,
+    "target_symbols": [
+      "ARM",
+      "MU",
+      "NVDA"
+    ],
+    "previous_symbols": [
+      "ARM",
+      "CEG",
+      "NVDA"
+    ]
+  },
+  {
+    "date": "2024-07-29 00:00:00",
+    "date_index": 1283,
+    "target_symbols": [
+      "ARM",
+      "NVDA",
+      "SMCI"
+    ],
+    "previous_symbols": [
+      "ARM",
+      "MU",
+      "NVDA"
+    ]
+  },
+  {
+    "date": "2024-08-05 00:00:00",
+    "date_index": 1288,
+    "target_symbols": [
+      "ARM",
+      "NVDA",
+      "SMCI"
+    ],
+    "previous_symbols": [
+      "ARM",
+      "NVDA",
+      "SMCI"
+    ]
+  },
+  {
+    "date": "2024-08-12 00:00:00",
+    "date_index": 1293,
+    "target_symbols": [
+      "ARM",
+      "NVDA",
+      "SMCI"
+    ],
+    "previous_symbols": [
+      "ARM",
+      "NVDA",
+      "SMCI"
+    ]
+  },
+  {
+    "date": "2024-08-19 00:00:00",
+    "date_index": 1298,
+    "target_symbols": [
+      "ARM",
+      "NVDA",
+      "SMCI"
+    ],
+    "previous_symbols": [
+      "ARM",
+      "NVDA",
+      "SMCI"
+    ]
+  },
+  {
+    "date": "2024-08-26 00:00:00",
+    "date_index": 1303,
+    "target_symbols": [
+      "ARM",
+      "NVDA",
+      "SMCI"
+    ],
+    "previous_symbols": [
+      "ARM",
+      "NVDA",
+      "SMCI"
+    ]
+  },
+  {
+    "date": "2024-09-03 00:00:00",
+    "date_index": 1308,
+    "target_symbols": [
+      "ARM",
+      "CEG",
+      "NVDA"
+    ],
+    "previous_symbols": [
+      "ARM",
+      "NVDA",
+      "SMCI"
+    ]
+  },
+  {
+    "date": "2024-09-09 00:00:00",
+    "date_index": 1312,
+    "target_symbols": [
+      "ARM",
+      "CEG",
+      "NVDA"
+    ],
+    "previous_symbols": [
+      "ARM",
+      "CEG",
+      "NVDA"
+    ]
+  },
+  {
+    "date": "2024-09-16 00:00:00",
+    "date_index": 1317,
+    "target_symbols": [
+      "AVGO",
+      "CEG",
+      "NVDA"
+    ],
+    "previous_symbols": [
+      "ARM",
+      "CEG",
+      "NVDA"
+    ]
+  },
+  {
+    "date": "2024-09-23 00:00:00",
+    "date_index": 1322,
+    "target_symbols": [
+      "CEG",
+      "NVDA",
+      "PANW"
+    ],
+    "previous_symbols": [
+      "AVGO",
+      "CEG",
+      "NVDA"
+    ]
+  },
+  {
+    "date": "2024-09-30 00:00:00",
+    "date_index": 1327,
+    "target_symbols": [
+      "MELI",
+      "NVDA",
+      "TXN"
+    ],
+    "previous_symbols": [
+      "CEG",
+      "NVDA",
+      "PANW"
+    ]
+  },
+  {
+    "date": "2024-10-07 00:00:00",
+    "date_index": 1332,
+    "target_symbols": [
+      "AAPL",
+      "MELI",
+      "TSLA"
+    ],
+    "previous_symbols": [
+      "MELI",
+      "NVDA",
+      "TXN"
+    ]
+  },
+  {
+    "date": "2024-10-14 00:00:00",
+    "date_index": 1337,
+    "target_symbols": [
+      "MELI",
+      "NVDA",
+      "TSLA"
+    ],
+    "previous_symbols": [
+      "AAPL",
+      "MELI",
+      "TSLA"
+    ]
+  },
+  {
+    "date": "2024-10-21 00:00:00",
+    "date_index": 1342,
+    "target_symbols": [
+      "AVGO",
+      "MELI",
+      "TSLA"
+    ],
+    "previous_symbols": [
+      "MELI",
+      "NVDA",
+      "TSLA"
+    ]
+  },
+  {
+    "date": "2024-10-28 00:00:00",
+    "date_index": 1347,
+    "target_symbols": [
+      "CEG",
+      "MELI",
+      "TSLA"
+    ],
+    "previous_symbols": [
+      "AVGO",
+      "MELI",
+      "TSLA"
+    ]
+  },
+  {
+    "date": "2024-11-04 00:00:00",
+    "date_index": 1352,
+    "target_symbols": [
+      "CEG",
+      "NVDA",
+      "TSLA"
+    ],
+    "previous_symbols": [
+      "CEG",
+      "MELI",
+      "TSLA"
+    ]
+  },
+  {
+    "date": "2024-11-11 00:00:00",
+    "date_index": 1357,
+    "target_symbols": [
+      "CEG",
+      "NVDA",
+      "TSLA"
+    ],
+    "previous_symbols": [
+      "CEG",
+      "NVDA",
+      "TSLA"
+    ]
+  },
+  {
+    "date": "2024-11-18 00:00:00",
+    "date_index": 1362,
+    "target_symbols": [
+      "CEG",
+      "MELI",
+      "NVDA"
+    ],
+    "previous_symbols": [
+      "CEG",
+      "NVDA",
+      "TSLA"
+    ]
+  },
+  {
+    "date": "2024-11-25 00:00:00",
+    "date_index": 1367,
+    "target_symbols": [
+      "APP",
+      "NVDA",
+      "TSLA"
+    ],
+    "previous_symbols": [
+      "CEG",
+      "MELI",
+      "NVDA"
+    ]
+  },
+  {
+    "date": "2024-12-02 00:00:00",
+    "date_index": 1371,
+    "target_symbols": [
+      "APP",
+      "ARM",
+      "NVDA"
+    ],
+    "previous_symbols": [
+      "APP",
+      "NVDA",
+      "TSLA"
+    ]
+  },
+  {
+    "date": "2024-12-09 00:00:00",
+    "date_index": 1376,
+    "target_symbols": [
+      "APP",
+      "NVDA",
+      "TSLA"
+    ],
+    "previous_symbols": [
+      "APP",
+      "ARM",
+      "NVDA"
+    ]
+  },
+  {
+    "date": "2024-12-16 00:00:00",
+    "date_index": 1381,
+    "target_symbols": [
+      "APP",
+      "NVDA",
+      "TSLA"
+    ],
+    "previous_symbols": [
+      "APP",
+      "NVDA",
+      "TSLA"
+    ]
+  },
+  {
+    "date": "2024-12-23 00:00:00",
+    "date_index": 1386,
+    "target_symbols": [
+      "APP",
+      "NVDA",
+      "TSLA"
+    ],
+    "previous_symbols": [
+      "APP",
+      "NVDA",
+      "TSLA"
+    ]
+  },
+  {
+    "date": "2024-12-30 00:00:00",
+    "date_index": 1390,
+    "target_symbols": [
+      "APP",
+      "MSTR",
+      "PLTR"
+    ],
+    "previous_symbols": [
+      "APP",
+      "NVDA",
+      "TSLA"
+    ]
+  },
+  {
+    "date": "2025-01-06 00:00:00",
+    "date_index": 1394,
+    "target_symbols": [
+      "APP",
+      "MSTR",
+      "PLTR"
+    ],
+    "previous_symbols": [
+      "APP",
+      "MSTR",
+      "PLTR"
+    ]
+  },
+  {
+    "date": "2025-01-13 00:00:00",
+    "date_index": 1398,
+    "target_symbols": [
+      "APP",
+      "MSTR",
+      "PLTR"
+    ],
+    "previous_symbols": [
+      "APP",
+      "MSTR",
+      "PLTR"
+    ]
+  },
+  {
+    "date": "2025-01-21 00:00:00",
+    "date_index": 1403,
+    "target_symbols": [
+      "APP",
+      "MSTR",
+      "PLTR"
+    ],
+    "previous_symbols": [
+      "APP",
+      "MSTR",
+      "PLTR"
+    ]
+  },
+  {
+    "date": "2025-01-27 00:00:00",
+    "date_index": 1407,
+    "target_symbols": [
+      "APP",
+      "MSTR",
+      "PLTR"
+    ],
+    "previous_symbols": [
+      "APP",
+      "MSTR",
+      "PLTR"
+    ]
+  },
+  {
+    "date": "2025-02-03 00:00:00",
+    "date_index": 1412,
+    "target_symbols": [
+      "APP",
+      "MSTR",
+      "PLTR"
+    ],
+    "previous_symbols": [
+      "APP",
+      "MSTR",
+      "PLTR"
+    ]
+  },
+  {
+    "date": "2025-02-10 00:00:00",
+    "date_index": 1417,
+    "target_symbols": [
+      "APP",
+      "MSTR",
+      "PLTR"
+    ],
+    "previous_symbols": [
+      "APP",
+      "MSTR",
+      "PLTR"
+    ]
+  },
+  {
+    "date": "2025-02-18 00:00:00",
+    "date_index": 1422,
+    "target_symbols": [
+      "APP",
+      "MSTR",
+      "PLTR"
+    ],
+    "previous_symbols": [
+      "APP",
+      "MSTR",
+      "PLTR"
+    ]
+  },
+  {
+    "date": "2025-02-24 00:00:00",
+    "date_index": 1426,
+    "target_symbols": [
+      "APP",
+      "MSTR",
+      "PLTR"
+    ],
+    "previous_symbols": [
+      "APP",
+      "MSTR",
+      "PLTR"
+    ]
+  },
+  {
+    "date": "2025-03-03 00:00:00",
+    "date_index": 1431,
+    "target_symbols": [
+      "APP",
+      "MSTR",
+      "PLTR"
+    ],
+    "previous_symbols": [
+      "APP",
+      "MSTR",
+      "PLTR"
+    ]
+  },
+  {
+    "date": "2025-03-10 00:00:00",
+    "date_index": 1436,
+    "target_symbols": [
+      "APP",
+      "MSTR",
+      "PLTR"
+    ],
+    "previous_symbols": [
+      "APP",
+      "MSTR",
+      "PLTR"
+    ]
+  },
+  {
+    "date": "2025-03-17 00:00:00",
+    "date_index": 1441,
+    "target_symbols": [
+      "APP",
+      "MSTR",
+      "PLTR"
+    ],
+    "previous_symbols": [
+      "APP",
+      "MSTR",
+      "PLTR"
+    ]
+  },
+  {
+    "date": "2025-03-24 00:00:00",
+    "date_index": 1446,
+    "target_symbols": [
+      "APP",
+      "MSTR",
+      "PLTR"
+    ],
+    "previous_symbols": [
+      "APP",
+      "MSTR",
+      "PLTR"
+    ]
+  },
+  {
+    "date": "2025-03-31 00:00:00",
+    "date_index": 1451,
+    "target_symbols": [
+      "APP",
+      "MSTR",
+      "PLTR"
+    ],
+    "previous_symbols": [
+      "APP",
+      "MSTR",
+      "PLTR"
+    ]
+  },
+  {
+    "date": "2025-04-07 00:00:00",
+    "date_index": 1456,
+    "target_symbols": [
+      "APP",
+      "MSTR",
+      "PLTR"
+    ],
+    "previous_symbols": [
+      "APP",
+      "MSTR",
+      "PLTR"
+    ]
+  },
+  {
+    "date": "2025-04-14 00:00:00",
+    "date_index": 1461,
+    "target_symbols": [
+      "APP",
+      "MSTR",
+      "PLTR"
+    ],
+    "previous_symbols": [
+      "APP",
+      "MSTR",
+      "PLTR"
+    ]
+  },
+  {
+    "date": "2025-04-21 00:00:00",
+    "date_index": 1465,
+    "target_symbols": [
+      "APP",
+      "MSTR",
+      "PLTR"
+    ],
+    "previous_symbols": [
+      "APP",
+      "MSTR",
+      "PLTR"
+    ]
+  },
+  {
+    "date": "2025-04-28 00:00:00",
+    "date_index": 1470,
+    "target_symbols": [
+      "APP",
+      "MSTR",
+      "PLTR"
+    ],
+    "previous_symbols": [
+      "APP",
+      "MSTR",
+      "PLTR"
+    ]
+  },
+  {
+    "date": "2025-05-05 00:00:00",
+    "date_index": 1475,
+    "target_symbols": [
+      "APP",
+      "MSTR",
+      "PLTR"
+    ],
+    "previous_symbols": [
+      "APP",
+      "MSTR",
+      "PLTR"
+    ]
+  },
+  {
+    "date": "2025-05-12 00:00:00",
+    "date_index": 1480,
+    "target_symbols": [
+      "APP",
+      "MSTR",
+      "PLTR"
+    ],
+    "previous_symbols": [
+      "APP",
+      "MSTR",
+      "PLTR"
+    ]
+  },
+  {
+    "date": "2025-05-19 00:00:00",
+    "date_index": 1485,
+    "target_symbols": [
+      "APP",
+      "MSTR",
+      "PLTR"
+    ],
+    "previous_symbols": [
+      "APP",
+      "MSTR",
+      "PLTR"
+    ]
+  },
+  {
+    "date": "2025-05-27 00:00:00",
+    "date_index": 1490,
+    "target_symbols": [
+      "APP",
+      "MSTR",
+      "PLTR"
+    ],
+    "previous_symbols": [
+      "APP",
+      "MSTR",
+      "PLTR"
+    ]
+  },
+  {
+    "date": "2025-06-02 00:00:00",
+    "date_index": 1494,
+    "target_symbols": [
+      "APP",
+      "MSTR",
+      "PLTR"
+    ],
+    "previous_symbols": [
+      "APP",
+      "MSTR",
+      "PLTR"
+    ]
+  },
+  {
+    "date": "2025-06-09 00:00:00",
+    "date_index": 1499,
+    "target_symbols": [
+      "APP",
+      "MSTR",
+      "PLTR"
+    ],
+    "previous_symbols": [
+      "APP",
+      "MSTR",
+      "PLTR"
+    ]
+  },
+  {
+    "date": "2025-06-16 00:00:00",
+    "date_index": 1504,
+    "target_symbols": [
+      "MSTR",
+      "NFLX",
+      "PLTR"
+    ],
+    "previous_symbols": [
+      "APP",
+      "MSTR",
+      "PLTR"
+    ]
+  },
+  {
+    "date": "2025-06-23 00:00:00",
+    "date_index": 1508,
+    "target_symbols": [
+      "MELI",
+      "NFLX",
+      "PLTR"
+    ],
+    "previous_symbols": [
+      "MSTR",
+      "NFLX",
+      "PLTR"
+    ]
+  },
+  {
+    "date": "2025-06-30 00:00:00",
+    "date_index": 1513,
+    "target_symbols": [
+      "AVGO",
+      "NFLX",
+      "PLTR"
+    ],
+    "previous_symbols": [
+      "MELI",
+      "NFLX",
+      "PLTR"
+    ]
+  },
+  {
+    "date": "2025-07-07 00:00:00",
+    "date_index": 1517,
+    "target_symbols": [
+      "AVGO",
+      "PLTR",
+      "ZS"
+    ],
+    "previous_symbols": [
+      "AVGO",
+      "NFLX",
+      "PLTR"
+    ]
+  },
+  {
+    "date": "2025-07-14 00:00:00",
+    "date_index": 1522,
+    "target_symbols": [
+      "AVGO",
+      "PLTR",
+      "ZS"
+    ],
+    "previous_symbols": [
+      "AVGO",
+      "PLTR",
+      "ZS"
+    ]
+  },
+  {
+    "date": "2025-07-21 00:00:00",
+    "date_index": 1527,
+    "target_symbols": [
+      "KLAC",
+      "PLTR",
+      "ZS"
+    ],
+    "previous_symbols": [
+      "AVGO",
+      "PLTR",
+      "ZS"
+    ]
+  },
+  {
+    "date": "2025-07-28 00:00:00",
+    "date_index": 1532,
+    "target_symbols": [
+      "MELI",
+      "PLTR",
+      "ZS"
+    ],
+    "previous_symbols": [
+      "KLAC",
+      "PLTR",
+      "ZS"
+    ]
+  },
+  {
+    "date": "2025-08-04 00:00:00",
+    "date_index": 1537,
+    "target_symbols": [
+      "MELI",
+      "PLTR",
+      "ZS"
+    ],
+    "previous_symbols": [
+      "MELI",
+      "PLTR",
+      "ZS"
+    ]
+  },
+  {
+    "date": "2025-08-11 00:00:00",
+    "date_index": 1542,
+    "target_symbols": [
+      "NFLX",
+      "PLTR",
+      "ZS"
+    ],
+    "previous_symbols": [
+      "MELI",
+      "PLTR",
+      "ZS"
+    ]
+  },
+  {
+    "date": "2025-08-18 00:00:00",
+    "date_index": 1547,
+    "target_symbols": [
+      "DASH",
+      "NFLX",
+      "PLTR"
+    ],
+    "previous_symbols": [
+      "NFLX",
+      "PLTR",
+      "ZS"
+    ]
+  },
+  {
+    "date": "2025-08-25 00:00:00",
+    "date_index": 1552,
+    "target_symbols": [
+      "DASH",
+      "PLTR",
+      "WBD"
+    ],
+    "previous_symbols": [
+      "DASH",
+      "NFLX",
+      "PLTR"
+    ]
+  },
+  {
+    "date": "2025-09-02 00:00:00",
+    "date_index": 1557,
+    "target_symbols": [
+      "AMD",
+      "NVDA",
+      "PLTR"
+    ],
+    "previous_symbols": [
+      "DASH",
+      "PLTR",
+      "WBD"
+    ]
+  },
+  {
+    "date": "2025-09-08 00:00:00",
+    "date_index": 1561,
+    "target_symbols": [
+      "AMD",
+      "NVDA",
+      "PLTR"
+    ],
+    "previous_symbols": [
+      "AMD",
+      "NVDA",
+      "PLTR"
+    ]
+  },
+  {
+    "date": "2025-09-15 00:00:00",
+    "date_index": 1566,
+    "target_symbols": [
+      "AMD",
+      "NVDA",
+      "PLTR"
+    ],
+    "previous_symbols": [
+      "AMD",
+      "NVDA",
+      "PLTR"
+    ]
+  },
+  {
+    "date": "2025-09-22 00:00:00",
+    "date_index": 1571,
+    "target_symbols": [
+      "AMD",
+      "AVGO",
+      "PLTR"
+    ],
+    "previous_symbols": [
+      "AMD",
+      "NVDA",
+      "PLTR"
+    ]
+  },
+  {
+    "date": "2025-09-29 00:00:00",
+    "date_index": 1576,
+    "target_symbols": [
+      "AMD",
+      "AVGO",
+      "PLTR"
+    ],
+    "previous_symbols": [
+      "AMD",
+      "AVGO",
+      "PLTR"
+    ]
+  },
+  {
+    "date": "2025-10-06 00:00:00",
+    "date_index": 1581,
+    "target_symbols": [
+      "AMD",
+      "AVGO",
+      "PLTR"
+    ],
+    "previous_symbols": [
+      "AMD",
+      "AVGO",
+      "PLTR"
+    ]
+  },
+  {
+    "date": "2025-10-13 00:00:00",
+    "date_index": 1586,
+    "target_symbols": [
+      "APP",
+      "AVGO",
+      "PLTR"
+    ],
+    "previous_symbols": [
+      "AMD",
+      "AVGO",
+      "PLTR"
+    ]
+  },
+  {
+    "date": "2025-10-20 00:00:00",
+    "date_index": 1591,
+    "target_symbols": [
+      "APP",
+      "PLTR",
+      "TSLA"
+    ],
+    "previous_symbols": [
+      "APP",
+      "AVGO",
+      "PLTR"
+    ]
+  },
+  {
+    "date": "2025-10-27 00:00:00",
+    "date_index": 1596,
+    "target_symbols": [
+      "APP",
+      "AVGO",
+      "PLTR"
+    ],
+    "previous_symbols": [
+      "APP",
+      "PLTR",
+      "TSLA"
+    ]
+  },
+  {
+    "date": "2025-11-03 00:00:00",
+    "date_index": 1601,
+    "target_symbols": [
+      "APP",
+      "MU",
+      "PLTR"
+    ],
+    "previous_symbols": [
+      "APP",
+      "AVGO",
+      "PLTR"
+    ]
+  },
+  {
+    "date": "2025-11-10 00:00:00",
+    "date_index": 1606,
+    "target_symbols": [
+      "AMD",
+      "APP",
+      "MU"
+    ],
+    "previous_symbols": [
+      "APP",
+      "MU",
+      "PLTR"
+    ]
+  },
+  {
+    "date": "2025-11-17 00:00:00",
+    "date_index": 1611,
+    "target_symbols": [
+      "AMD",
+      "APP",
+      "MU"
+    ],
+    "previous_symbols": [
+      "AMD",
+      "APP",
+      "MU"
+    ]
+  },
+  {
+    "date": "2025-11-24 00:00:00",
+    "date_index": 1616,
+    "target_symbols": [
+      "AMD",
+      "MU",
+      "WBD"
+    ],
+    "previous_symbols": [
+      "AMD",
+      "APP",
+      "MU"
+    ]
+  },
+  {
+    "date": "2025-12-01 00:00:00",
+    "date_index": 1620,
+    "target_symbols": [
+      "AMD",
+      "MU",
+      "WBD"
+    ],
+    "previous_symbols": [
+      "AMD",
+      "MU",
+      "WBD"
+    ]
+  },
+  {
+    "date": "2025-12-08 00:00:00",
+    "date_index": 1625,
+    "target_symbols": [
+      "AMD",
+      "MU",
+      "WBD"
+    ],
+    "previous_symbols": [
+      "AMD",
+      "MU",
+      "WBD"
+    ]
+  },
+  {
+    "date": "2025-12-15 00:00:00",
+    "date_index": 1630,
+    "target_symbols": [
+      "AMD",
+      "MU",
+      "WBD"
+    ],
+    "previous_symbols": [
+      "AMD",
+      "MU",
+      "WBD"
+    ]
+  },
+  {
+    "date": "2025-12-22 00:00:00",
+    "date_index": 1635,
+    "target_symbols": [
+      "AMD",
+      "MU",
+      "WBD"
+    ],
+    "previous_symbols": [
+      "AMD",
+      "MU",
+      "WBD"
+    ]
+  },
+  {
+    "date": "2025-12-29 00:00:00",
+    "date_index": 1639,
+    "target_symbols": [
+      "MU",
+      "WBD",
+      "WDC"
+    ],
+    "previous_symbols": [
+      "AMD",
+      "MU",
+      "WBD"
+    ]
+  },
+  {
+    "date": "2026-01-05 00:00:00",
+    "date_index": 1643,
+    "target_symbols": [
+      "MU",
+      "WBD",
+      "WDC"
+    ],
+    "previous_symbols": [
+      "MU",
+      "WBD",
+      "WDC"
+    ]
+  },
+  {
+    "date": "2026-01-12 00:00:00",
+    "date_index": 1648,
+    "target_symbols": [
+      "MU",
+      "WBD",
+      "WDC"
+    ],
+    "previous_symbols": [
+      "MU",
+      "WBD",
+      "WDC"
+    ]
+  },
+  {
+    "date": "2026-01-20 00:00:00",
+    "date_index": 1653,
+    "target_symbols": [
+      "STX",
+      "WBD",
+      "WDC"
+    ],
+    "previous_symbols": [
+      "MU",
+      "WBD",
+      "WDC"
+    ]
+  },
+  {
+    "date": "2026-01-26 00:00:00",
+    "date_index": 1657,
+    "target_symbols": [
+      "MU",
+      "WBD",
+      "WDC"
+    ],
+    "previous_symbols": [
+      "STX",
+      "WBD",
+      "WDC"
+    ]
+  },
+  {
+    "date": "2026-02-02 00:00:00",
+    "date_index": 1662,
+    "target_symbols": [
+      "MU",
+      "WBD",
+      "WDC"
+    ],
+    "previous_symbols": [
+      "MU",
+      "WBD",
+      "WDC"
+    ]
+  },
+  {
+    "date": "2026-02-09 00:00:00",
+    "date_index": 1667,
+    "target_symbols": [
+      "MU",
+      "WBD",
+      "WDC"
+    ],
+    "previous_symbols": [
+      "MU",
+      "WBD",
+      "WDC"
+    ]
+  },
+  {
+    "date": "2026-02-17 00:00:00",
+    "date_index": 1672,
+    "target_symbols": [
+      "MU",
+      "WBD",
+      "WDC"
+    ],
+    "previous_symbols": [
+      "MU",
+      "WBD",
+      "WDC"
+    ]
+  },
+  {
+    "date": "2026-02-23 00:00:00",
+    "date_index": 1676,
+    "target_symbols": [
+      "MU",
+      "STX",
+      "WDC"
+    ],
+    "previous_symbols": [
+      "MU",
+      "WBD",
+      "WDC"
+    ]
+  },
+  {
+    "date": "2026-03-02 00:00:00",
+    "date_index": 1681,
+    "target_symbols": [
+      "MU",
+      "STX",
+      "WDC"
+    ],
+    "previous_symbols": [
+      "MU",
+      "STX",
+      "WDC"
+    ]
+  },
+  {
+    "date": "2026-03-09 00:00:00",
+    "date_index": 1686,
+    "target_symbols": [
+      "MU",
+      "STX",
+      "WDC"
+    ],
+    "previous_symbols": [
+      "MU",
+      "STX",
+      "WDC"
+    ]
+  },
+  {
+    "date": "2026-03-16 00:00:00",
+    "date_index": 1691,
+    "target_symbols": [
+      "MU",
+      "STX",
+      "WDC"
+    ],
+    "previous_symbols": [
+      "MU",
+      "STX",
+      "WDC"
+    ]
+  },
+  {
+    "date": "2026-03-23 00:00:00",
+    "date_index": 1696,
+    "target_symbols": [
+      "MU",
+      "STX",
+      "WDC"
+    ],
+    "previous_symbols": [
+      "MU",
+      "STX",
+      "WDC"
+    ]
+  },
+  {
+    "date": "2026-03-30 00:00:00",
+    "date_index": 1701,
+    "target_symbols": [
+      "MU",
+      "STX",
+      "WDC"
+    ],
+    "previous_symbols": [
+      "MU",
+      "STX",
+      "WDC"
+    ]
+  },
+  {
+    "date": "2026-04-06 00:00:00",
+    "date_index": 1705,
+    "target_symbols": [
+      "LRCX",
+      "MU",
+      "WDC"
+    ],
+    "previous_symbols": [
+      "MU",
+      "STX",
+      "WDC"
+    ]
+  },
+  {
+    "date": "2026-04-13 00:00:00",
+    "date_index": 1710,
+    "target_symbols": [
+      "AMAT",
+      "MU",
+      "WDC"
+    ],
+    "previous_symbols": [
+      "LRCX",
+      "MU",
+      "WDC"
+    ]
+  },
+  {
+    "date": "2026-04-20 00:00:00",
+    "date_index": 1715,
+    "target_symbols": [
+      "AMAT",
+      "MU",
+      "WDC"
+    ],
+    "previous_symbols": [
+      "AMAT",
+      "MU",
+      "WDC"
+    ]
+  },
+  {
+    "date": "2026-04-27 00:00:00",
+    "date_index": 1720,
+    "target_symbols": [
+      "MU",
+      "SNDK",
+      "WDC"
+    ],
+    "previous_symbols": [
+      "AMAT",
+      "MU",
+      "WDC"
+    ]
+  }
+]
