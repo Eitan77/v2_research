@@ -71,3 +71,7 @@ Most importantly, 26.8% of the $2,000 orders were larger than 5% of the displaye
 All 84 depth-unsupported exits remained in the ledger. Adding another 25 bp to each of them, beyond the existing one-second and five-basis-point-per-side stress, left +33.79% additive return, +3.68%, +3.09%, and +27.03% chronology blocks, and 6.25% drawdown. An additional 50 bp left the full total positive at +25.28% but made the first block negative. At 100 bp, two blocks were negative and drawdown rose to 17.42%.
 
 This bounds rather than solves deeper-book execution. The candidate is historically robust to a severe 25 bp unsupported-exit surcharge, but actual route and fill evidence is still required. The frozen forward-paper specification now incorporates 5% entry-depth sizing, broker timestamp/fill logging, and explicit exit-depth reconciliation. The latest-twelve-month result remains only +0.20% under the conservative small-account path. The final conclusion remains a modest sparse forward-paper candidate, not a money printer or live-ready system.
+
+## RUN-0011 implementation parity
+
+An independent implementation of the two frozen rules generated exactly 314 trades, matching every saved variant, date, symbol, signal timestamp, entry timestamp, and exit timestamp. Maximum gross-return difference was below `1e-16`. Both bullish and inverse mappings, completed-bar timing, exact holding periods, no within-sleeve overlap, and the April 2026 cutoff passed. `src/frozen_candidate.py` is now the canonical generator for forward shadow code.

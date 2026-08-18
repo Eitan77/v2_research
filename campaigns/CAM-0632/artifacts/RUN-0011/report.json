@@ -1,0 +1,37 @@
+{
+  "status": "completed",
+  "generated_at": "2026-08-18T22:29:29+00:00",
+  "expected_trades": 314,
+  "actual_trades": 314,
+  "key_mismatches": 0,
+  "maximum_return_difference": 9.93129189996722e-17,
+  "checks": {
+    "expected_trade_count": true,
+    "both_variants_present": true,
+    "both_bull_and_inverse_symbols_present": true,
+    "maximum_date_at_or_before_cutoff": true,
+    "entry_after_signal": true,
+    "exit_after_entry": true,
+    "no_within_sleeve_overlap": true,
+    "exact_key_parity": true,
+    "gross_return_tolerance": true,
+    "all_checks_passed": true
+  },
+  "attrition": [
+    {
+      "pair": "SMH_SOXL_SOXS",
+      "parent_symbol_union_dates": 1724,
+      "complete_aligned_dates": 1656,
+      "dates_removed": 68
+    },
+    {
+      "pair": "QQQ_TQQQ_SQQQ",
+      "parent_symbol_union_dates": 1724,
+      "complete_aligned_dates": 1713,
+      "dates_removed": 11
+    }
+  ],
+  "maximum_signal_date": "2026-04-02",
+  "maximum_loaded_date": "2026-04-30",
+  "holdout_rows_loaded": 0
+}

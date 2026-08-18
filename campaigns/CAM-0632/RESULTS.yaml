@@ -80,4 +80,11 @@ run0010:
   extra_25bp_on_unsupported_exits: {net_return: 0.337926, recent12: 0.002046, blocks: [0.036766, 0.030874, 0.270286], drawdown: 0.062534}
   extra_50bp_on_unsupported_exits: {net_return: 0.252752, recent12: 0.002046, blocks: [-0.015316, 0.014194, 0.253874], drawdown: 0.066693}
   interpretation: Historical all-block robustness survives through an additional 25bp on every unsupported exit; 50bp breaks the first block. Actual broker exits remain the forward gate.
-next_gate: Forward-only paper observation under FORWARD_PAPER_SPEC.md for the later of twelve months or fifty trades; no sealed-history access, rule changes, or live-capital claim.
+run0011:
+  independent_trade_count: 314
+  saved_trade_count: 314
+  key_mismatches: 0
+  maximum_return_difference: 9.93129189996722e-17
+  semantic_checks_passed: [side_mapping, QQQ_confirmation, SMH_overshoot, timing, exact_hold, no_overlap, cutoff]
+  canonical_signal_code: src/frozen_candidate.py
+next_gate: Build a no-order shadow runner and append-only observation ledger around the parity-verified canonical generator; do not access sealed historical data.

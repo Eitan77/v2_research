@@ -4,6 +4,8 @@
 
 This is an adapted research candidate, not a live-trading recommendation and not untouched out-of-sample evidence. The discovery dataset ends April 30, 2026. Data from May 1, 2026 onward was not accessed. Forward observation starts only after this specification is frozen; no sealed historical rows may be backfilled into the decision.
 
+The canonical signal implementation is `src/frozen_candidate.py`. RUN-0011 independently reproduced all 314 saved discovery trades with zero key mismatches and sub-`1e-16` maximum return difference. Any future runner must call or match that implementation; prose must not be used to reinterpret the rule.
+
 The portfolio is cash-only, long-only, additive, and noncompounding. It has two permanent sleeves, each targeted to 0.50 of the original normalized capital base. Idle sleeve cash is not reassigned. Actual whole-share order quantity is the smaller of `(0.50 * frozen account base) / current ask` and `0.05 * current SIP ask-size units * 100`, rounded down. Simultaneous gross exposure therefore cannot exceed 1.0, and thin displayed depth leaves part of a sleeve in cash.
 
 ## Shared data and execution contract

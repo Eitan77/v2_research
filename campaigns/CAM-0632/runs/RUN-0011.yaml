@@ -1,0 +1,28 @@
+run_id: RUN-0011
+parent_run: RUN-0010
+status: completed
+question: Does an independent frozen-strategy implementation reproduce every saved candidate trade and satisfy side, timing, overlap, and cutoff semantics?
+change: Implementation parity only; no signal, threshold, holding period, return, or selection change.
+reason: A prose paper specification is insufficient if production-like code can drift from the measured research implementation.
+configuration:
+  frozen_candidates: [QQQ_confirmed_40bp_15m, SMH_50bp_20bp_overshoot_20m]
+  comparison_source: RUN-0003_top_trade_ledgers_filtered_to_audit_passed_variants
+  parity_keys: [variant, date, symbol, signal_ts, entry_ts, exit_ts]
+  return_tolerance: 1.0e-12
+  semantic_checks: [positive_and_negative_side_mapping, QQQ_opposite_bar_confirmation, SMH_directional_overshoot, next_actionable_bar_entry, exact_hold_end, no_within_sleeve_overlap, cutoff]
+  expected_trade_count: 314
+  cutoff: 2026-04-30
+expected_effect: Exact parity and fixture success are required. Any mismatch blocks the forward-paper handoff and is repaired without changing historical rules.
+holdout_access: false
+execution:
+  command: python campaigns/CAM-0632/src/run0011_implementation_parity.py
+result:
+  expected_trades: 314
+  independently_generated_trades: 314
+  key_mismatches: 0
+  maximum_gross_return_difference: 9.93129189996722e-17
+  checks: {both_variants: passed, both_direction_mappings: passed, cutoff: passed, entry_after_signal: passed, exit_after_entry: passed, no_within_sleeve_overlap: passed, exact_key_parity: passed, return_tolerance: passed}
+  maximum_signal_date: 2026-04-02
+  maximum_loaded_date: 2026-04-30
+  holdout_rows_loaded: 0
+decision: Independent implementation parity passed. Use frozen_candidate.py as the canonical signal generator for the forward shadow runner; research-rule drift is not an open blocker.
