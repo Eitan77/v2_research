@@ -57,3 +57,11 @@ Decision: freeze the exact cash-only rules in `FORWARD_PAPER_SPEC.md` and recomm
 The percentage-return path is not automatically scalable. SIP sizes are round-lot units, so the audit converted each unit to 100 shares and measured the smaller of entry-ask and later exit-bid displayed notional. At the reference engine's conservative 5% participation, median supported full-portfolio notional was only $887 and the minimum was $184. Only 27.4% of trades supported a $2,000 portfolio's 50% sleeve on both sides; for $10,000 the fraction was 9.2%. At 25% participation those figures improved to 82.2% and 27.4%. Consuming the full displayed top of book would support $2,000 on every observation, but that is a diagnostic upper bound rather than a prudent assumption.
 
 Exit depth is observed after entry and cannot causally select trades. Accordingly, these fractions do not define an alternate profitable subset and no PnL row was dropped. The next run must cap size using entry-time depth only and preserve every subsequent outcome. Until then, the fixed-base portfolio establishes small-unit edge, not scalable account returns.
+
+## RUN-0009 causal entry-depth sizing
+
+For a $2,000 account with 50% target sleeves and the prespecified 5% entry-depth cap, the 1,000 ms/five-basis-point stress retained +42.31% additive return. All blocks remained positive at +8.88%, +4.76%, and +28.67%; drawdown was 5.89%. Average sleeve utilization was 64.9%, only 43.6% of orders reached their whole-share target, and the latest twelve months earned just +0.20%.
+
+Scaling is poor. At $10,000 and the same 5% cap, average utilization fell to 32.3%, median utilization to 13.9%, and recent-twelve-month return became -0.22%, although the full path and all blocks remained positive. Account-size rows are diagnostics, not a menu from which to select the best historical weighting.
+
+Most importantly, 26.8% of the $2,000 orders were larger than 5% of the displayed bid when they later exited. Those trades were not removed or resized using future information, but the existing five-basis-point exit stress may understate the cost of sweeping them. A punitive unsupported-exit penalty is still required before the forward-paper handoff is final.

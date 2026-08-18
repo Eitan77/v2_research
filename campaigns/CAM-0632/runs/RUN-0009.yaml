@@ -1,0 +1,31 @@
+run_id: RUN-0009
+parent_run: RUN-0008
+status: completed
+question: Does the frozen portfolio remain profitable when each order is causally capped by entry-time displayed depth for realistic account notionals?
+change: Replace ideal 50 percent deployment with whole-share quantity equal to the smaller of the sleeve target and a fixed fraction of the observed entry ask size; never use exit depth to size or select.
+reason: RUN-0008 showed that ideal fixed-base percentages are not broadly scalable under conservative top-of-book participation.
+configuration:
+  source: RUN-0006_trade_audit_for_two_frozen_candidates
+  account_notional_usd: [2000, 10000, 25000, 50000]
+  target_sleeve_fraction: 0.50
+  entry_displayed_participation: [0.05, 0.10, 0.25]
+  sip_size_unit_shares: 100
+  quantity: floor(min(account_times_0.50_divided_by_entry_ask, entry_ask_size_units_times_100_times_participation))
+  executions: [250ms_plus_2bp_side, 1000ms_plus_5bp_side]
+  exit_depth: report whether sized quantity fit the later displayed participation, but never filter or resize the trade using future depth
+  accounting: weighted fixed-account additive return, no compounding
+  cutoff: 2026-04-30
+expected_effect: A credible small-account implementation should keep all chronology blocks positive under stress after causal sizing. Low utilization or poor exit-depth support must be reported as a scalability limitation.
+holdout_access: false
+execution:
+  command: python campaigns/CAM-0632/src/run0009_causal_capacity_sizing.py
+  planned_rows: 24
+  executed_rows: 24
+result:
+  conservative_2000_account_5pct_entry_depth_stress: {net_return: 0.423101, recent12_return: 0.002046, mean_sleeve_utilization: 0.648606, median_sleeve_utilization: 0.696150, full_target_fraction: 0.436306, later_exit_depth_support_fraction: 0.732484, green_active_days: 0.564103, positive_month_fraction: 0.265060, block_returns: [0.088849, 0.047553, 0.286699], max_drawdown: 0.058908, recovery_sessions: 473, top10_absolute_trade_share: 0.195740}
+  conservative_10000_account_5pct_entry_depth_stress: {net_return: 0.200213, recent12_return: -0.002159, mean_sleeve_utilization: 0.322502, median_sleeve_utilization: 0.139230, full_target_fraction: 0.156051, later_exit_depth_support_fraction: 0.646497, block_returns: [0.013927, 0.005997, 0.180289]}
+  2000_account_10pct_entry_depth_stress: {net_return: 0.523924, recent12_return: 0.003848, mean_sleeve_utilization: 0.810035, later_exit_depth_support_fraction: 0.818471, block_returns: [0.132091, 0.110398, 0.281435]}
+  2000_account_25pct_entry_depth_stress: {net_return: 0.529261, recent12_return: 0.003848, mean_sleeve_utilization: 0.952835, later_exit_depth_support_fraction: 0.939490, block_returns: [0.132520, 0.157007, 0.239735]}
+  maximum_loaded_date: 2026-04-30
+  holdout_rows_loaded: 0
+decision: Use the prespecified 5 percent entry-depth cap in the forward paper contract. The small-account historical path survives, but 26.8 percent of later exits exceed the same participation and require a punitive exit-impact sensitivity before final handoff.

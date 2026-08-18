@@ -1,6 +1,6 @@
 campaign_id: CAM-0632
 checkpoint: RUN-0003_overshoot_neighborhood
-status: frozen_forward_paper_candidate
+status: forward_paper_candidate_exit_impact_pending
 holdout_access: false
 maximum_loaded_date: 2026-04-30
 baseline:
@@ -70,4 +70,9 @@ run0008:
   twenty_five_percent_displayed: {minimum_portfolio_usd: 921.50, median_portfolio_usd: 4436.00, fraction_supporting_2000: 0.821656, fraction_supporting_10000: 0.273885}
   full_top_of_book_diagnostic: {minimum_portfolio_usd: 3686.00, median_portfolio_usd: 17744.00, fraction_supporting_2000: 1.0}
   interpretation: Fixed-base returns overstate scalable dollars. Exit depth cannot be used as an ex-ante filter; next test caps each order using only entry-time displayed depth.
-next_gate: Causal capacity-capped portfolio at 5/10/25 percent entry displayed participation across $2k/$10k/$25k/$50k account notionals, with no exit-depth filtering.
+run0009:
+  causal_quantity: whole shares capped by target half-account sleeve and entry-time displayed participation only
+  2000_account_5pct_entry_depth_stress: {net_return: 0.423101, recent12: 0.002046, mean_sleeve_utilization: 0.648606, full_target_fraction: 0.436306, exit_depth_support: 0.732484, drawdown: 0.058908, blocks: [0.088849, 0.047553, 0.286699]}
+  10000_account_5pct_entry_depth_stress: {net_return: 0.200213, recent12: -0.002159, mean_sleeve_utilization: 0.322502, exit_depth_support: 0.646497, blocks: [0.013927, 0.005997, 0.180289]}
+  interpretation: A $2k reference remains historically positive after causal entry sizing, but 26.8 percent of its exits exceed 5 percent of displayed bid depth and the latest-year edge is only 0.20 percent.
+next_gate: Apply prespecified punitive extra exit penalties to capacity-unsupported $2k/5-percent observations; do not drop them or choose participation from the result.
