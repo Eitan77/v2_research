@@ -1,0 +1,134 @@
+{
+  "status": "completed",
+  "generated_at": "2026-08-18T22:07:40+00:00",
+  "planned_development_variants": 300,
+  "executed_development_variants": 300,
+  "development_survivors": 1,
+  "selected_without_validation": [
+    "SMH_SOXL_SOXS_impulse_continuation_t20_h1_afternoon"
+  ],
+  "executed_validation_rows": 3,
+  "two_bp_validation_survivors": 0,
+  "selected_development": [
+    {
+      "variant": "SMH_SOXL_SOXS_impulse_continuation_t20_h1_afternoon",
+      "pair": "SMH_SOXL_SOXS",
+      "mechanism": "impulse_continuation",
+      "threshold_bp": 20,
+      "hold_min": 1,
+      "time_bucket": "afternoon",
+      "cost_bp_side": 2,
+      "trades": 936,
+      "trades_per_session": 0.8682745826,
+      "net_return": 0.254250151,
+      "mean_net_trade_bp": 2.7163477667,
+      "green_active_days": 0.5133079848,
+      "green_all_days": 0.1252319109,
+      "positive_month_fraction": 0.4545454545,
+      "half_returns": [
+        0.1966207403,
+        0.0576294107
+      ],
+      "max_drawdown": 0.0842199357,
+      "recovery_sessions": null,
+      "recent12_return": 0.0,
+      "worst_day": -0.0556601846,
+      "dev_gate": true,
+      "worst_half": 0.0576294107
+    }
+  ],
+  "validation": [
+    {
+      "variant": "SMH_SOXL_SOXS_impulse_continuation_t20_h1_afternoon",
+      "pair": "SMH_SOXL_SOXS",
+      "mechanism": "impulse_continuation",
+      "threshold_bp": 20,
+      "hold_min": 1,
+      "time_bucket": "afternoon",
+      "cost_bp_side": 1,
+      "trades": 337,
+      "trades_per_session": 0.5830449827,
+      "net_return": -0.0777781564,
+      "mean_net_trade_bp": -2.3079571636,
+      "green_active_days": 0.3551401869,
+      "green_all_days": 0.0657439446,
+      "positive_month_fraction": 0.4285714286,
+      "half_returns": [
+        -0.0200118049,
+        -0.0577663515
+      ],
+      "max_drawdown": 0.0925719384,
+      "recovery_sessions": null,
+      "recent12_return": -0.0617590605,
+      "worst_day": -0.0211528642,
+      "validation_gate": false
+    },
+    {
+      "variant": "SMH_SOXL_SOXS_impulse_continuation_t20_h1_afternoon",
+      "pair": "SMH_SOXL_SOXS",
+      "mechanism": "impulse_continuation",
+      "threshold_bp": 20,
+      "hold_min": 1,
+      "time_bucket": "afternoon",
+      "cost_bp_side": 2,
+      "trades": 337,
+      "trades_per_session": 0.5830449827,
+      "net_return": -0.1451781564,
+      "mean_net_trade_bp": -4.3079571636,
+      "green_active_days": 0.3457943925,
+      "green_all_days": 0.0640138408,
+      "positive_month_fraction": 0.4285714286,
+      "half_returns": [
+        -0.0492118049,
+        -0.0959663515
+      ],
+      "max_drawdown": 0.1577483007,
+      "recovery_sessions": null,
+      "recent12_return": -0.0783590605,
+      "worst_day": -0.0231528642,
+      "validation_gate": false
+    },
+    {
+      "variant": "SMH_SOXL_SOXS_impulse_continuation_t20_h1_afternoon",
+      "pair": "SMH_SOXL_SOXS",
+      "mechanism": "impulse_continuation",
+      "threshold_bp": 20,
+      "hold_min": 1,
+      "time_bucket": "afternoon",
+      "cost_bp_side": 5,
+      "trades": 337,
+      "trades_per_session": 0.5830449827,
+      "net_return": -0.3473781564,
+      "mean_net_trade_bp": -10.3079571636,
+      "green_active_days": 0.261682243,
+      "green_all_days": 0.0484429066,
+      "positive_month_fraction": 0.3571428571,
+      "half_returns": [
+        -0.1368118049,
+        -0.2105663515
+      ],
+      "max_drawdown": 0.3543137676,
+      "recovery_sessions": null,
+      "recent12_return": -0.1281590605,
+      "worst_day": -0.0291528642,
+      "validation_gate": false
+    }
+  ],
+  "attrition": [
+    {
+      "pair": "SMH_SOXL_SOXS",
+      "parent_symbol_union_dates": 1724,
+      "complete_aligned_dates": 1656,
+      "dates_removed": 68
+    },
+    {
+      "pair": "QQQ_TQQQ_SQQQ",
+      "parent_symbol_union_dates": 1724,
+      "complete_aligned_dates": 1713,
+      "dates_removed": 11
+    }
+  ],
+  "maximum_loaded_date": "2026-04-30",
+  "holdout_rows_loaded": 0,
+  "decision_gate": "time_bucket_must_survive_unchanged_late_period_at_2bp_per_side"
+}

@@ -1,0 +1,54 @@
+run_id: RUN-0005
+parent_run: RUN-0002
+status: completed
+question: Can a causal time-of-day subset turn the otherwise friction-dominated dense one-minute impulse scalp into a frequent and chronologically stable edge?
+change: Test the unperformed time-of-day attribution promised by the campaign plan, using an early development period for selection and a late untouched period for confirmation.
+reason: Aggregate dense continuation earned only 0.37 gross bp per trade, but intraday ETF creation/redemption, opening discovery, and closing flow are not uniform through the session.
+configuration:
+  development_period: 2019-06-21_through_2023-12-29
+  untouched_validation_period: 2024-01-02_through_2026-04-30
+  pairs: [SMH_SOXL_SOXS, QQQ_TQQQ_SQQQ]
+  formation_minutes: 1
+  mechanisms: [impulse_continuation, impulse_reversal]
+  underlying_threshold_bps: [5, 10, 20]
+  hold_minutes: [1, 2, 3, 5, 10]
+  local_time_buckets:
+    open: 09:35-10:00
+    morning: 10:00-11:00
+    midday: 11:00-14:00
+    afternoon: 14:00-15:00
+    close: 15:00-15:40
+  selection_cost_bps_per_side: 2
+  diagnostic_cost_bps_per_side: [1, 2, 5]
+  development_gate: at least 250 trades, positive net fixed-base PnL in both chronological development halves, positive mean net trade, and at least 50 percent green active days
+  selection: independently within each pair and mechanism maximize the worse development-half return, then mean net trade and sample size
+  validation_gate: positive at two bps per side, positive recent-twelve-month return, at least 50 percent green active days, and positive first and second validation halves
+  entry: next one-minute bar open after completed signal bar
+  overlap: one position per pair and variant before time filtering
+  cutoff: 2026-04-30
+expected_effect: A structural session effect should survive unchanged in the late period and neighboring costs; a development-only bucket is rejection, not permission for more time slicing.
+holdout_access: false
+execution:
+  command: python campaigns/CAM-0632/src/run0005_time_of_day_split.py
+  planned_development_variants: 300
+  executed_development_variants: 300
+result:
+  development_survivors: 1
+  selected_without_validation:
+    variant: SMH_SOXL_SOXS_impulse_continuation_t20_h1_afternoon
+    development_trades: 936
+    development_trades_per_session: 0.868275
+    development_net_return_at_2bp_side: 0.254250
+    development_mean_net_trade_bps: 2.716348
+    development_green_active_days: 0.513308
+    development_half_returns: [0.196621, 0.057629]
+  validation:
+    trades: 337
+    trades_per_session: 0.583045
+    one_bp_side: {net_return: -0.077778, mean_net_trade_bps: -2.307957, half_returns: [-0.020012, -0.057766], recent12_return: -0.061759}
+    two_bp_side: {net_return: -0.145178, mean_net_trade_bps: -4.307957, half_returns: [-0.049212, -0.095966], recent12_return: -0.078359, green_active_days: 0.345794}
+    five_bp_side: {net_return: -0.347378, mean_net_trade_bps: -10.307957, recent12_return: -0.128159}
+  two_bp_validation_survivors: 0
+  maximum_loaded_date: 2026-04-30
+  holdout_rows_loaded: 0
+decision: Reject time-of-day repair. The sole development survivor reversed sign in both untouched validation halves and was negative even at one basis point per side.

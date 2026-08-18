@@ -17,3 +17,11 @@ The reversal clue broadened into six all-block-positive rows at five basis point
 The recent-focused SMH row used a 60 bp shock and fifteen-minute hold, returned +41.56% additive over 147 trades, and made +10.75% in the latest twelve months, but had 17.16% drawdown, 247-session recovery, and only 22.89% positive months. The strongest full/risk row required a 50 bp shock, twenty-minute hold, and 20 bp directional leveraged overshoot; it returned +84.32% with 7.96% drawdown but only 108 trades, 18.07% positive months, and 616-session recovery. A one-bar opposite-sign confirmation improved the QQQ representative to +56.26% with 8.41% drawdown and all blocks positive, but latest-twelve-month return was only +0.50%.
 
 The mechanism is therefore neither high-frequency nor a monthly printer. It has nevertheless earned exact marketable SIP replay because three distinct representatives survive broad threshold, hold, confirmation, and cost neighborhoods. Quote replay will determine whether next-bar opens hid spread/latency damage; it will not be used to rescue a losing bar family or justify more threshold mining.
+
+## RUN-0005 dense time-of-day split
+
+The last obvious aggregate-bar omission did not repair dense scalping. A frozen 300-variant grid tested one-minute continuation and reversal across two ETF trios, three shock sizes, five holds, and five broad session buckets. Selection used only June 2019 through December 2023 and required at least 250 trades, positive net return in both development halves at two basis points per side, positive mean trade, and at least half of active days green.
+
+Only afternoon SMH/SOXL/SOXS continuation after a 20 bp one-minute SMH move survived development. It earned +25.43% additive over 936 trades at two basis points per side, with +19.66% and +5.76% in the two development halves. Evaluated unchanged from January 2024 through April 2026, it lost 7.78% even at one basis point per side and 14.52% at two; both validation halves and the latest twelve months were negative. The active-day win rate fell from 51.3% to 34.6% at the selection cost.
+
+Decision: reject time-of-day conditionality as a dense-scalp repair. Its only selected rule was a development-era effect that reversed rather than weakened marginally. Further session slicing would be historical chart fitting.

@@ -33,3 +33,12 @@ run0003:
     confirmed_QQQ: {variant: QQQ_TQQQ_SQQQ_reversal_t40_h15_one_bar_opposite_ov0, trades: 206, net_return: 0.562559, recent12: 0.005008, drawdown: 0.084118}
   profile_verdict: Sparse reversal neighborhood, not high-frequency and not monthly consistent.
 next_gate: Exact marketable SIP ask-entry/bid-exit replay for the three representatives with latency and adverse-slippage stress; no further bar threshold tuning.
+run0005:
+  planned_development_variants: 300
+  executed_development_variants: 300
+  development_survivors: 1
+  selected_rule: SMH_SOXL_SOXS_impulse_continuation_t20_h1_afternoon
+  development_at_2bp_side: {trades: 936, net_return: 0.254250, mean_net_trade_bps: 2.716348, half_returns: [0.196621, 0.057629]}
+  unchanged_validation_at_1bp_side: {trades: 337, net_return: -0.077778, recent12_return: -0.061759, half_returns: [-0.020012, -0.057766]}
+  unchanged_validation_at_2bp_side: {net_return: -0.145178, mean_net_trade_bps: -4.307957, half_returns: [-0.049212, -0.095966]}
+  decision: Time-of-day selectivity failed late confirmation and does not repair dense scalping.
