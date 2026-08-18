@@ -5,8 +5,8 @@
 - [x] Primary OFI, queue-imbalance, latency/liquidity, broker-order, and paper-fill sources checked.
 - [x] PLAN.yaml frozen before any signal backtest or fill simulation.
 - [x] SIP quote/trade schema, entitlements, timestamp semantics, regular-session boundary, and cutoff pass fail-fast readiness.
-- [ ] Representative panel attrition and empirical spread-bucket composition reported.
-- [ ] Signed midpoint markouts reported at 250 ms, 1, 5, 15, 30, and 60 seconds before fill assumptions.
+- [x] Representative panel attrition and empirical spread-bucket composition reported for the first six-session panel.
+- [x] Signed midpoint markouts reported at 250 ms, 1, 5, 15, 30, and 60 seconds before fill assumptions.
 - [ ] Chronological validation, month/day/time/volatility/spread/symbol/sector breakdowns, and leave-one-out tests completed.
 - [ ] Cross-asset residual value tested against top-of-book-only and local-behavior controls.
 - [ ] Queue-aware fill simulation uses latency, displayed size, same-price trade prints, partial fills, and four stress models.

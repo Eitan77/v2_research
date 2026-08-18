@@ -1,0 +1,91 @@
+{
+  "status": "completed",
+  "generated_at": "2026-08-18T21:20:56+00:00",
+  "planned_jobs": 576,
+  "executed_jobs": 576,
+  "symbols": 24,
+  "sessions": [
+    "2024-11-06",
+    "2025-02-05",
+    "2025-05-07",
+    "2025-08-06",
+    "2025-11-05",
+    "2026-04-01"
+  ],
+  "train_candidate_events": 129222,
+  "train_model_events": 129222,
+  "validation_candidate_events": 62484,
+  "validation_effective_100ms_clusters": 22692,
+  "minimum_loaded_session": "2024-11-06",
+  "maximum_loaded_session": "2026-04-01",
+  "holdout_rows_loaded": 0,
+  "model_target": "negative_side_signed_5s_midpoint_markout",
+  "validation_auc": 0.5690490908652512,
+  "low_bucket_share": 0.20000320081940978,
+  "high_bucket_share": 0.20000320081940978,
+  "low_bucket_mean_markouts_bps": {
+    "0.25": 0.17882593435216806,
+    "1": 0.17649903036553347,
+    "5": 0.4786084686598479,
+    "15": 1.2069814756305501,
+    "30": 1.369419155523434,
+    "60": 1.86323102390247
+  },
+  "high_bucket_mean_markouts_bps": {
+    "0.25": 0.10572287002358996,
+    "1": 0.04414850270080119,
+    "5": -0.2297861818480496,
+    "15": -0.8496062822074272,
+    "30": -1.0595584502098145,
+    "60": -1.4124204233466175
+  },
+  "raw_cache_committed": false,
+  "fill_simulation_performed": false,
+  "decision_gate": "continue_only_if_low_toxicity_markouts_are_positive_and_stable_across_validation_sessions_symbols_and_horizons",
+  "dependency_diagnostic": {
+    "unit": "100ms clusters then equal weight by symbol",
+    "rows": [
+      {
+        "session": "2025-11-05",
+        "bucket": "high",
+        "markout_0.25s_bps": 0.0834487262,
+        "markout_1s_bps": 0.0314880637,
+        "markout_5s_bps": -0.2128842152,
+        "markout_15s_bps": 0.0089486646,
+        "markout_30s_bps": 0.4903714293,
+        "markout_60s_bps": 1.9843287196
+      },
+      {
+        "session": "2025-11-05",
+        "bucket": "low",
+        "markout_0.25s_bps": 0.4232267628,
+        "markout_1s_bps": 0.3006597363,
+        "markout_5s_bps": 0.3034519149,
+        "markout_15s_bps": 0.7227942368,
+        "markout_30s_bps": 0.5588877989,
+        "markout_60s_bps": 0.3996284203
+      },
+      {
+        "session": "2026-04-01",
+        "bucket": "high",
+        "markout_0.25s_bps": 0.2533184088,
+        "markout_1s_bps": 0.2159435547,
+        "markout_5s_bps": 0.2873642029,
+        "markout_15s_bps": -0.591427923,
+        "markout_30s_bps": -2.4785197471,
+        "markout_60s_bps": -4.7561641636
+      },
+      {
+        "session": "2026-04-01",
+        "bucket": "low",
+        "markout_0.25s_bps": 0.229323373,
+        "markout_1s_bps": 0.3030108397,
+        "markout_5s_bps": 0.8907410167,
+        "markout_15s_bps": 1.8528334479,
+        "markout_30s_bps": 2.3354093341,
+        "markout_60s_bps": 4.329020654
+      }
+    ],
+    "interpretation": "low bucket exceeds high bucket at 5s on both validation sessions after dependence and symbol weighting, but long-horizon raw-event means are not stable on 2025-11-05"
+  }
+}

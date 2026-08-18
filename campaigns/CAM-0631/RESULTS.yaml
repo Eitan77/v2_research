@@ -1,0 +1,23 @@
+campaign_id: CAM-0631
+checkpoint: RUN-0002_signal_existence_provisional
+status: active_signal_promising_robustness_unresolved
+holdout_access: false
+maximum_loaded_session: 2026-04-01
+evidence:
+  source_sequence_honored: true
+  quote_trade_readiness: passed
+  signal_only_jobs: 576
+  panel_symbols: 24
+  train_candidate_events: 129222
+  validation_candidate_events: 62484
+  validation_effective_100ms_clusters: 22692
+  validation_auc: 0.5690490909
+  low_toxicity_pooled_markout_bps: {0.25s: 0.178826, 1s: 0.176499, 5s: 0.478608, 15s: 1.206981, 30s: 1.369419, 60s: 1.863231}
+  high_toxicity_pooled_markout_bps: {0.25s: 0.105723, 1s: 0.044149, 5s: -0.229786, 15s: -0.849606, 30s: -1.059558, 60s: -1.412420}
+limitations:
+  - Only six sampled sessions and four minutes per symbol-session were studied.
+  - Quote updates are dependent; raw-event pooling overweights high-update names and states.
+  - One validation date did not preserve raw-event long-horizon bucket ordering.
+  - Current features are not all expressed in candidate-side coordinates and include correlated imbalance/microprice terms.
+  - No queue, fill, cost, inventory, forced-exit, capacity, or live-calibration claim exists.
+next_gate: Side-symmetric cluster-weighted robustness, then cross-asset residual incremental value; only then conservative fill simulation.

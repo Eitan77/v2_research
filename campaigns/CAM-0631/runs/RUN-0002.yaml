@@ -1,0 +1,46 @@
+run_id: RUN-0002
+parent_run: RUN-0001
+status: completed
+question: Does interpretable SIP top-of-book and recent-flow state separate favorable from toxic side-signed midpoint markouts across a representative 24-stock panel?
+change: Advance from the passed one-symbol schema smoke test to the source-specified signal-only toxicity experiment; do not simulate fills.
+reason: RUN-0001 proved pre-cutoff SIP quote/trade reconstruction is available and explicitly left fill simulation blocked.
+configuration:
+  symbols: [AAPL, MSFT, AMZN, GOOGL, META, NVDA, AMD, AVGO, MU, TSLA, JPM, BAC, WFC, XOM, CVX, LLY, UNH, JNJ, WMT, COST, HD, DIS, UBER, PLTR]
+  sessions: [2024-11-06, 2025-02-05, 2025-05-07, 2025-08-06, 2025-11-05, 2026-04-01]
+  windows_et: [[10:00:00, 10:02:00], [13:00:00, 13:02:00]]
+  event_sampling: every_valid_nbbo_update
+  candidate_filter: spread_at_or_above_symbol_session_window_75th_percentile
+  candidate_side: sign_of_top_of_book_microprice_minus_midpoint
+  features: [spread_bps, normalized_size_imbalance, microprice_edge_bps, quote_update_rate_1s, midpoint_return_1s, midpoint_return_5s, signed_trade_imbalance_1s]
+  markout_horizons_seconds: [0.25, 1, 5, 15, 30, 60]
+  model: chronological_logistic_regression_with_train_only_scaling
+  train_sessions: [2024-11-06, 2025-02-05, 2025-05-07, 2025-08-06]
+  validation_sessions: [2025-11-05, 2026-04-01]
+  raw_cache: tmp/epdc_cam0631_run0002_not_committed
+  cutoff: 2026-04-30
+expected_effect: Low predicted toxicity should have positive side-signed markouts at multiple horizons on both validation dates, while high predicted toxicity should be materially worse.
+holdout_access: false
+execution:
+  commands:
+    - python campaigns/CAM-0631/src/run0002_toxicity_signal.py
+    - python campaigns/CAM-0631/src/analyze_run0002_dependence.py
+  planned_jobs: 576
+  executed_jobs: 576
+  planned_models: 1
+  executed_models: 1
+  resolved_candidate_filter: within-symbol-session-window spread 75th percentile
+result:
+  train_candidate_events: 129222
+  validation_candidate_events: 62484
+  validation_effective_100ms_clusters: 22692
+  validation_auc: 0.5690490909
+  pooled_low_bucket_mean_markout_bps: {0.25s: 0.178826, 1s: 0.176499, 5s: 0.478608, 15s: 1.206981, 30s: 1.369419, 60s: 1.863231}
+  pooled_high_bucket_mean_markout_bps: {0.25s: 0.105723, 1s: 0.044149, 5s: -0.229786, 15s: -0.849606, 30s: -1.059558, 60s: -1.412420}
+  equal_symbol_100ms_low_minus_high_5s_bps:
+    2025-11-05: 0.516336
+    2026-04-01: 0.603377
+  instability: Raw-event long-horizon separation reversed on 2025-11-05; event dependence, symbol weighting, and side-asymmetric feature encoding require correction before fill simulation.
+  maximum_loaded_session: 2026-04-01
+  holdout_rows_loaded: 0
+  fill_simulation_performed: false
+decision: Signal mechanism passes a provisional existence gate but not the robustness gate. Do not simulate fills yet; run a side-symmetric, 100ms-cluster-weighted model and then test cross-asset residual incremental value.
