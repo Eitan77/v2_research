@@ -1,0 +1,166 @@
+{
+  "status": "completed",
+  "generated_at": "2026-08-18T22:15:06+00:00",
+  "source_trades": 461,
+  "audited_trades": 461,
+  "integrity": {
+    "key_failures": 0,
+    "scale_failures_outside_half_to_double": 0,
+    "invalid_nbbo_rows": 0,
+    "invalid_size_rows": 0,
+    "invalid_latency_rows": 0
+  },
+  "primary_execution": {
+    "latency_ms": 250,
+    "extra_bps_per_side": 2
+  },
+  "stress_execution": {
+    "latency_ms": 1000,
+    "extra_bps_per_side": 5
+  },
+  "variant_audit": [
+    {
+      "variant": "SMH_SOXL_SOXS_reversal_t60_h15_none_ov0",
+      "trades": 147,
+      "net_return": 0.1958323716,
+      "recent12_return": 0.0803160013,
+      "mean_net_trade_bps": 13.3219300438,
+      "green_active_days": 0.5421686747,
+      "positive_month_fraction": 0.2168674699,
+      "block_returns": [
+        -0.0558917553,
+        0.1497274545,
+        0.1019966724
+      ],
+      "max_drawdown": 0.2055385166,
+      "recovery_sessions": null,
+      "worst_day": -0.1979169796,
+      "best_day": 0.0951360405,
+      "stress_net_return": 0.1158894547,
+      "stress_recent12_return": 0.0654353166,
+      "stress_block_returns": [
+        -0.1047939759,
+        0.1287990191,
+        0.0918844115
+      ],
+      "top10_absolute_return_share": 0.2630610173,
+      "best_date": "2025-04-09",
+      "leave_best_date_return": 0.1006963311,
+      "excluding_covid_return": 0.228317911,
+      "excluding_april2025_return": 0.2989598185,
+      "excluding_both_return": 0.3314453579,
+      "entry_bar_diff_median_bps": 5.8241118229,
+      "entry_bar_diff_max_abs_bps": 72.3967281965,
+      "exit_bar_diff_median_bps": -4.7687172151,
+      "exit_bar_diff_max_abs_bps": 98.8296488947,
+      "quote_bar_return_diff_median_bps": -14.3952329685,
+      "quote_bar_return_diff_max_abs_bps": 148.8472970453,
+      "entry_delay_max_ms": 1905.757922,
+      "exit_delay_max_ms": 4751.175007,
+      "minimum_entry_size_units": 1.0,
+      "minimum_exit_size_units": 1.0,
+      "audit_gate": false
+    },
+    {
+      "variant": "SMH_SOXL_SOXS_reversal_t50_h20_none_ov20",
+      "trades": 108,
+      "net_return": 0.6527235885,
+      "recent12_return": 0.0116702829,
+      "mean_net_trade_bps": 60.4373693019,
+      "green_active_days": 0.5942028986,
+      "positive_month_fraction": 0.1807228916,
+      "block_returns": [
+        0.0590791942,
+        0.147752448,
+        0.4458919463
+      ],
+      "max_drawdown": 0.0930704644,
+      "recovery_sessions": 615.0,
+      "worst_day": -0.0954587008,
+      "best_day": 0.2797573305,
+      "stress_net_return": 0.5752589509,
+      "stress_recent12_return": 0.0036535501,
+      "stress_block_returns": [
+        0.0299543718,
+        0.1308508638,
+        0.4144537153
+      ],
+      "top10_absolute_return_share": 0.3287703731,
+      "best_date": "2025-04-09",
+      "leave_best_date_return": 0.372966258,
+      "excluding_covid_return": 0.568634719,
+      "excluding_april2025_return": 0.2596877541,
+      "excluding_both_return": 0.1755988847,
+      "entry_bar_diff_median_bps": 6.4126838587,
+      "entry_bar_diff_max_abs_bps": 101.7441860465,
+      "exit_bar_diff_median_bps": -5.1605033841,
+      "exit_bar_diff_max_abs_bps": 64.8618161309,
+      "quote_bar_return_diff_median_bps": -11.5047992872,
+      "quote_bar_return_diff_max_abs_bps": 163.3446171811,
+      "entry_delay_max_ms": 2792.323459,
+      "exit_delay_max_ms": 10579.943405,
+      "minimum_entry_size_units": 1.0,
+      "minimum_exit_size_units": 1.0,
+      "audit_gate": true
+    },
+    {
+      "variant": "QQQ_TQQQ_SQQQ_reversal_t40_h15_one_bar_opposite_ov0",
+      "trades": 206,
+      "net_return": 0.6196162208,
+      "recent12_return": 0.0075102036,
+      "mean_net_trade_bps": 30.0784573204,
+      "green_active_days": 0.6111111111,
+      "positive_month_fraction": 0.265060241,
+      "block_returns": [
+        0.3110154952,
+        0.220820696,
+        0.0877800296
+      ],
+      "max_drawdown": 0.0791977921,
+      "recovery_sessions": 79.0,
+      "worst_day": -0.0876926593,
+      "best_day": 0.1430110112,
+      "stress_net_return": 0.5090520228,
+      "stress_recent12_return": 0.0054648554,
+      "stress_block_returns": [
+        0.252556849,
+        0.190444227,
+        0.0660509468
+      ],
+      "top10_absolute_return_share": 0.186210527,
+      "best_date": "2025-04-07",
+      "leave_best_date_return": 0.4766052096,
+      "excluding_covid_return": 0.3124590906,
+      "excluding_april2025_return": 0.5727505281,
+      "excluding_both_return": 0.2655933979,
+      "entry_bar_diff_median_bps": 1.8078605246,
+      "entry_bar_diff_max_abs_bps": 25.2981568486,
+      "exit_bar_diff_median_bps": -1.7673670831,
+      "exit_bar_diff_max_abs_bps": 23.3190827827,
+      "quote_bar_return_diff_median_bps": -3.0695297082,
+      "quote_bar_return_diff_max_abs_bps": 30.2985929709,
+      "entry_delay_max_ms": 1042.0,
+      "exit_delay_max_ms": 1042.0,
+      "minimum_entry_size_units": 1.0,
+      "minimum_exit_size_units": 1.0,
+      "audit_gate": true
+    }
+  ],
+  "attrition": [
+    {
+      "pair": "SMH_SOXL_SOXS",
+      "parent_symbol_union_dates": 1724,
+      "complete_aligned_dates": 1656,
+      "dates_removed": 68
+    },
+    {
+      "pair": "QQQ_TQQQ_SQQQ",
+      "parent_symbol_union_dates": 1724,
+      "complete_aligned_dates": 1713,
+      "dates_removed": 11
+    }
+  ],
+  "maximum_loaded_date": "2026-04-30",
+  "holdout_rows_loaded": 0,
+  "decision_gate": "audit_pass_earns_adapted_candidate_freeze_not_consistency_claim"
+}

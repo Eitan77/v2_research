@@ -1,6 +1,6 @@
 campaign_id: CAM-0632
 checkpoint: RUN-0003_overshoot_neighborhood
-status: active_quote_survivors_pending_adversarial_audit
+status: two_adapted_quote_validated_candidates
 holdout_access: false
 maximum_loaded_date: 2026-04-30
 baseline:
@@ -49,4 +49,12 @@ run0004:
   SMH_full_risk: {trades: 108, net_return: 0.652724, recent12: 0.011670, mean_trade_bps: 60.437369, drawdown: 0.093070, positive_month_fraction: 0.180723, blocks: [0.059079, 0.147752, 0.445892]}
   SMH_recent: {trades: 147, net_return: 0.195832, recent12: 0.080316, mean_trade_bps: 13.321930, drawdown: 0.205539, blocks: [-0.055892, 0.149727, 0.101997]}
   interpretation: Quote survival is necessary execution evidence, but sparse activity, low positive-month fractions, extreme days, and bar/quote differences still block a candidate freeze.
-next_gate: Adversarial audit of quote/bar price scale and timestamps, top-event and leave-date-out concentration, COVID and recent regimes, displayed capacity, and cross-variant portfolio overlap.
+run0006:
+  integrity_failures: 0
+  audited_trades: 461
+  audit_passed: [QQQ_TQQQ_SQQQ_reversal_t40_h15_one_bar_opposite_ov0, SMH_SOXL_SOXS_reversal_t50_h20_none_ov20]
+  audit_rejected: [SMH_SOXL_SOXS_reversal_t60_h15_none_ov0]
+  QQQ_stress_1000ms_5bp_side: {net_return: 0.509052, recent12: 0.005465, blocks: [0.252557, 0.190444, 0.066051], leave_best_date: 0.476605, exclude_both_shock_windows: 0.265593, top10_abs_share: 0.186211}
+  SMH_stress_1000ms_5bp_side: {net_return: 0.575259, recent12: 0.003654, blocks: [0.029954, 0.130851, 0.414454], leave_best_date: 0.372966, exclude_both_shock_windows: 0.175599, top10_abs_share: 0.328770}
+  interpretation: Two adapted sparse candidates pass execution and adversarial historical checks, but full-sample adaptation and very low monthly activity require forward paper observation.
+next_gate: Cash-only fixed-sleeve combined portfolio with overlap, activity, concentration, and leave-family-out analysis; then freeze exact forward-paper rules if the combined path adds useful consistency.

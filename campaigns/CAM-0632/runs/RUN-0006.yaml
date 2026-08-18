@@ -1,0 +1,57 @@
+run_id: RUN-0006
+parent_run: RUN-0004
+status: completed
+question: Are the two all-block-positive marketable quote survivors data-consistent and robust to extreme-event, period, symbol, capacity, and higher-friction attacks?
+change: Audit the frozen RUN-0004 quote ledger without changing signals, trades, prices, or chosen representatives.
+reason: Positive quote replay is surprising enough to require direct reconciliation before any candidate freeze.
+configuration:
+  source: RUN-0004_complete_SIP_quote_ledger
+  primary_execution: 250ms plus 2bp adverse slippage per side
+  stress_execution: 1000ms plus 5bp adverse slippage per side
+  checks:
+    - exact trade-key reconciliation to RUN-0003
+    - raw one-minute bar open/close versus SIP ask/bid price-scale differences
+    - entry and exit quote timestamps between latency floor and 30-second forward ceiling
+    - positive uncrossed NBBO and at least one displayed size unit on both marketable sides
+    - top-ten absolute-trade concentration and leave-best-date-out fixed-base return
+    - returns excluding 2020-02-20_through_2020-04-30 and 2025-04-01_through_2025-04-30 separately and jointly
+    - yearly, monthly, weekly, symbol, and direction attribution
+    - full chronology and latest-twelve-month stress survival
+  audit_gate:
+    - zero trade-key, price-scale, timestamp, NBBO, or displayed-size integrity failures
+    - positive primary return after removing the best date and after jointly excluding both shock windows
+    - top-ten absolute-return share no greater than 0.50
+    - positive all chronology blocks and latest twelve months at 1000ms plus 5bp per side
+  cutoff: 2026-04-30
+expected_effect: A genuine sparse structural reversal should survive without one crisis window or one date. Passing does not make it frequent or monthly consistent; it only earns a frozen adapted candidate and forward paper recommendation.
+holdout_access: false
+execution:
+  command: python campaigns/CAM-0632/src/run0006_adversarial_audit.py
+  source_trades: 461
+  audited_trades: 461
+result:
+  integrity: {trade_key_failures: 0, scale_failures_outside_half_to_double: 0, invalid_nbbo_rows: 0, invalid_size_rows: 0, invalid_latency_rows: 0}
+  QQQ_confirmed:
+    audit_gate: passed
+    primary: {net_return: 0.619616, recent12_return: 0.007510, mean_trade_bps: 30.078457, block_returns: [0.311015, 0.220821, 0.087780]}
+    stress_1000ms_5bp_side: {net_return: 0.509052, recent12_return: 0.005465, block_returns: [0.252557, 0.190444, 0.066051]}
+    leave_best_date_return: 0.476605
+    excluding_covid_and_april2025_return: 0.265593
+    top10_absolute_return_share: 0.186211
+    quote_bar_median_return_difference_bps: -3.069530
+    maximum_absolute_quote_bar_return_difference_bps: 30.298593
+  SMH_full_risk:
+    audit_gate: passed
+    primary: {net_return: 0.652724, recent12_return: 0.011670, mean_trade_bps: 60.437369, block_returns: [0.059079, 0.147752, 0.445892]}
+    stress_1000ms_5bp_side: {net_return: 0.575259, recent12_return: 0.003654, block_returns: [0.029954, 0.130851, 0.414454]}
+    leave_best_date_return: 0.372966
+    excluding_covid_and_april2025_return: 0.175599
+    top10_absolute_return_share: 0.328770
+    quote_bar_median_return_difference_bps: -11.504799
+    maximum_absolute_quote_bar_return_difference_bps: 163.344617
+  SMH_recent:
+    audit_gate: failed_first_chronology_block
+    stress_block_returns: [-0.104794, 0.128799, 0.091884]
+  maximum_loaded_date: 2026-04-30
+  holdout_rows_loaded: 0
+decision: Freeze the QQQ confirmed and SMH overshoot rules as adapted quote-validated research candidates for cash-only combined-portfolio testing and forward paper observation. Reject the recent-focused SMH rule. No live or consistency claim is authorized.
