@@ -1,6 +1,6 @@
 campaign_id: CAM-0631
-checkpoint: RUN-0005_frozen_model_confirmation
-status: active_queue_simulation_earned
+checkpoint: RUN-0006_queue_fill_failure
+status: active_execution_failure_diagnosis
 holdout_access: false
 maximum_loaded_session: 2026-04-01
 evidence:
@@ -49,4 +49,12 @@ run0005:
   pooled_low_minus_high_5s_bps: 0.592613
   refit_or_rethreshold: false
   decision: Prespecified signal confirmation passed; conservative queue-aware fill simulation earned.
-next_gate: Simulate passive arrival, queue ahead, same-price print consumption, partial/nonfill, passive exit, emergency exit, and explicit per-share costs. No profit claim exists yet.
+run0006:
+  candidate_orders: 1035
+  path_variants: 180
+  economic_rows: 1080
+  nonoptimistic_adverse_positive_configs: 0
+  best_conservative_adverse: {fill_rate: 0.022222, forced_exit_rate: 0.782609, mean_spread_edge_bps: 0.188154, mean_markout_5s_bps: -0.088434, mean_net_trade_bps: -2.271670}
+  best_base_adverse: {fill_rate: 0.028986, mean_markout_5s_bps: -0.312756, mean_net_trade_bps: -3.527197}
+  diagnosis: Fill conditioning reverses the favorable ex-ante markout and one-cent-like spread edge is insufficient after exit friction.
+next_gate: Early/late split test of stricter frozen-score selectivity, absolute wider spreads, smaller calibration order, and marketable five-second exit. No threshold rescue may use late dates.

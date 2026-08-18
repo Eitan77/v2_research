@@ -1,0 +1,49 @@
+run_id: RUN-0006
+parent_run: RUN-0005
+status: completed
+question: Does the confirmed low-toxicity event filter remain profitable under explicit decision latency, same-price trade consumption, queue-ahead stress, passive exits, protective stops, forced exits, and per-share costs?
+change: Advance to the source-prescribed conservative passive-fill layer only after RUN-0005 passed the frozen confirmation gates.
+reason: Signed midpoint prediction is necessary but not sufficient; queue selection and exit friction can reverse the result.
+configuration:
+  sessions: RUN-0005_twelve_confirmation_sessions
+  model: RUN-0005_frozen_Model_A_low_toxicity_only
+  candidate_cooldown_seconds_per_symbol: 60
+  order_size_shares: 100
+  decision_latency_ms: [50, 250, 500]
+  exit_order_latency_ms: same_as_decision_latency
+  entry_ttl_seconds: [1, 2, 5, 10, 15]
+  queue_models:
+    optimistic_diagnostic: zero_displayed_queue_ahead_but_requires_same_price_print_volume
+    base: displayed_size_ahead_plus_order_size
+    conservative: two_times_displayed_size_ahead_plus_order_size
+    adversarial: trade_through_limit_required
+  passive_exit_ttl_seconds: [5, 15, 30]
+  hard_max_hold_seconds: 60
+  protective_stop_bps: 15
+  forced_exit: marketable opposite NBBO after stop or max hold
+  explicit_commission_per_share_per_side_usd: [0.0025, 0.0040]
+  adverse_crossing_slippage_bps_per_forced_side: [0, 1, 2]
+  passive_rebate_credit: 0
+  portfolio_slot_weight: 0.05
+  maximum_concurrent_slots: 20
+  short_rule: intraday only, 15bp protective stop, 60s maximum hold, sessions far from close; borrow availability remains an execution limitation
+  cutoff: 2026-04-30
+expected_effect: A viable EPDC configuration must retain positive net edge beyond the optimistic queue model, with distributed days/symbols and limited forced exits; optimistic-only profit is a rejection.
+holdout_access: false
+execution:
+  command: python campaigns/CAM-0631/src/run0006_queue_sim.py
+  semantic_fixtures: passed
+  planned_path_variants: 180
+  executed_path_variants: 180
+  planned_economic_rows: 1080
+  executed_economic_rows: 1080
+result:
+  candidate_orders_after_60s_cooldown: 1035
+  nonoptimistic_adverse_positive_configs: 0
+  best_conservative_adverse: {latency_ms: 500, entry_ttl_s: 1, exit_ttl_s: 15, fills: 23, fill_rate: 0.022222, forced_exit_rate: 0.782609, mean_spread_edge_bps: 0.188154, mean_markout_5s_bps: -0.088434, mean_net_trade_bps: -2.271670, net_fixed_base_return: -0.000261}
+  best_base_adverse: {latency_ms: 500, entry_ttl_s: 1, exit_ttl_s: 15, fills: 30, fill_rate: 0.028986, mean_spread_edge_bps: 0.536365, mean_markout_5s_bps: -0.312756, mean_net_trade_bps: -3.527197, net_fixed_base_return: -0.000529}
+  best_optimistic_adverse: {fills: 68, fill_rate: 0.065700, mean_markout_5s_bps: -0.422666, mean_net_trade_bps: -1.796001, net_fixed_base_return: -0.000611}
+  favorable_cost_positive_counts: {optimistic_diagnostic: 0, base: 0, conservative: 0, adversarial_trade_through: 4}
+  maximum_loaded_session: 2026-03-04
+  holdout_rows_loaded: 0
+decision: First fill implementation fails because realized fills are toxic and spread edge is too small. Test prespecified stricter toxicity, wider absolute spreads, smaller calibration size, and a 5-second marketable exit using early confirmation dates for adaptation and late dates for unchanged validation; do not relax queue evidence.
