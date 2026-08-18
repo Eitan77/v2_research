@@ -1,0 +1,33 @@
+run_id: RUN-0008
+parent_run: RUN-0007
+status: completed
+question: What account sizes are supported by the observed SIP top-of-book depth under conservative displayed-size participation, without pretending deeper-book liquidity is known?
+change: Capacity audit only; do not change signals, returns, or the frozen 50/50 allocation.
+reason: Fixed-base percentage returns do not establish scalable dollars, and RUN-0004 verified only positive displayed size rather than conservative participation.
+configuration:
+  source: RUN-0006_primary_250ms_2bp_trade_audit_for_two_frozen_candidates
+  sip_size_unit_shares: 100
+  displayed_size_participation: [0.05, 0.10, 0.25, 1.00]
+  portfolio_account_notional_usd: [2000, 10000, 25000, 50000]
+  sleeve_fraction: 0.50
+  supported_roundtrip_notional: minimum of entry ask displayed notional and exit bid displayed notional times participation
+  caveat: Exit depth is unknowable at entry and is used only for ex-post capacity diagnostics; unsupported observations are not dropped from strategy PnL.
+  cutoff: 2026-04-30
+expected_effect: Report capacity coverage honestly. If modest accounts frequently exceed conservative displayed depth, forward paper sizing must be reduced and the historical return remains non-scalable.
+holdout_access: false
+execution:
+  command: python campaigns/CAM-0632/src/run0008_capacity_audit.py
+  audited_candidate_trades: 314
+result:
+  five_percent_displayed_participation:
+    combined_supported_portfolio_notional: {minimum_usd: 184.30, p10_usd: 305.61, median_usd: 887.20, p90_usd: 8268.97}
+    fraction_fully_supporting_account: {2000_usd: 0.273885, 10000_usd: 0.092357, 25000_usd: 0.054140, 50000_usd: 0.044586}
+  twenty_five_percent_displayed_participation:
+    combined_supported_portfolio_notional: {minimum_usd: 921.50, p10_usd: 1528.05, median_usd: 4436.00, p90_usd: 41344.85}
+    fraction_fully_supporting_account: {2000_usd: 0.821656, 10000_usd: 0.273885, 25000_usd: 0.149682, 50000_usd: 0.092357}
+  full_top_of_book_diagnostic:
+    combined_supported_portfolio_notional: {minimum_usd: 3686.00, median_usd: 17744.00}
+    fraction_fully_supporting_account: {2000_usd: 1.0, 10000_usd: 0.735669, 25000_usd: 0.378981, 50000_usd: 0.235669}
+  maximum_loaded_date: 2026-04-30
+  holdout_rows_loaded: 0
+decision: Historical percentage returns are not dollar-scalable under conservative top-of-book participation. Test causal entry-depth-capped sizing by account notional; do not filter trades using future exit depth.
