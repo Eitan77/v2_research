@@ -1,5 +1,13 @@
 # Current Research Direction
 
+## 2026-08-18 checkpoint — EPDC rejection and sparse ETF reversal paper candidate
+
+CAM-0631 confirmed a reusable passive-toxicity signal but rejected historical execution. Conservative same-price queue conditioning reversed the favorable ex-ante markout, and none of 1,296 prespecified early-development execution repairs passed the minimum-fill and two-block gate. The untouched late validation block remained unopened. Any continuation requires prospective broker-specific queue calibration, not historical threshold rescue.
+
+CAM-0632 rejected dense leveraged-ETF scalping after friction and late validation, but found two sparse large-shock reversal rules that survived exact marketable SIP replay and adversarial audit. A cash-only 50/50 portfolio was then capacity-capped using only entry-time displayed depth. For a $2,000 reference account, the 1,000 ms plus 5 bp/side path returned +42.31% additive with 5.89% drawdown and only +0.20% in the latest twelve months. Adding 25 bp to all depth-unsupported exits retained +33.79% with all chronology blocks positive; 50 bp broke the first block.
+
+The exact adapted rules and 5% entry-depth sizing are frozen in `campaigns/CAM-0632/FORWARD_PAPER_SPEC.md`. Independent code reproduced all 314 trades exactly, and the guarded no-order shadow runner passed synthetic timing/idempotency tests. The valid next step is unchanged forward paper observation for the later of twelve months or fifty trades. Dense daily-printer and scalable-account claims are rejected; sealed post-April-2026 history remains untouched.
+
 ## 2026-08-10 corrected checkpoint — reciprocal split repair
 
 The prior SSRN and CAM-0625 checkpoint is invalid. The inherited stock panel

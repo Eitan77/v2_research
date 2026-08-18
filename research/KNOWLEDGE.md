@@ -10,6 +10,12 @@ Add concise, reusable knowledge at meaningful campaign checkpoints. Keep run-spe
 
 ---
 
+## 2026-08-18 reusable microstructure lessons
+
+- Favorable midpoint markout before order placement is not passive execution evidence. Conditioning on actual same-price queue consumption can reverse markout sign; queue-aware fills, forced exits, and per-share costs must be evaluated before interpreting a toxicity filter as PnL.
+- Repetition does not turn sub-friction expectancy into a printer. In leveraged ETFs, dense one-minute continuation averaged less than one gross basis point per trade and failed costs; only sparse large-shock reversal survived marketable quotes, and its low active-day/month frequency must remain part of the strategy identity.
+- Fixed-base percentage return does not establish dollar capacity. Convert SIP round-lot sizes to shares, cap sizing with information available at entry, report later exit-depth violations without filtering them, and stress unsupported exits separately.
+
 # 1. Fundamental research model
 
 ## 1.1 A strategy has several separable layers
