@@ -1,6 +1,6 @@
 campaign_id: CAM-0631
 checkpoint: RUN-0006_queue_fill_failure
-status: active_execution_failure_diagnosis
+status: historical_execution_rejected_signal_only
 holdout_access: false
 maximum_loaded_session: 2026-04-01
 evidence:
@@ -57,4 +57,13 @@ run0006:
   best_conservative_adverse: {fill_rate: 0.022222, forced_exit_rate: 0.782609, mean_spread_edge_bps: 0.188154, mean_markout_5s_bps: -0.088434, mean_net_trade_bps: -2.271670}
   best_base_adverse: {fill_rate: 0.028986, mean_markout_5s_bps: -0.312756, mean_net_trade_bps: -3.527197}
   diagnosis: Fill conditioning reverses the favorable ex-ante markout and one-cent-like spread edge is insufficient after exit friction.
-next_gate: Early/late split test of stricter frozen-score selectivity, absolute wider spreads, smaller calibration order, and marketable five-second exit. No threshold rescue may use late dates.
+run0007:
+  planned_development_rows: 1296
+  executed_development_rows: 1296
+  development_survivors: 0
+  untouched_validation_accessed: false
+  best_raw_row: {fills: 9, mean_net_trade_bps: 2.239892, first_block_return: 0.000106930, second_block_return: -0.000006135}
+  best_minimum_sample_row: {fills: 37, mean_net_trade_bps: -1.738778, first_block_return: -0.000151031, second_block_return: -0.000170642}
+  wider_spread_result: Two-cent states were negative even at their maximum; the positive three-cent maximum used only two fills.
+  decision: No development neighborhood survived the frozen minimum-sample and chronological-block gate; late validation remained untouched.
+next_gate: Historical passive execution is rejected on the available sampled SIP data. A future campaign may perform broker-specific live shadow calibration of queue position and acknowledgements, but this campaign makes no paper or live profitability claim.

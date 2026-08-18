@@ -1,0 +1,40 @@
+run_id: RUN-0007
+parent_run: RUN-0006
+status: completed
+question: Can stricter toxicity, an absolute wider-spread floor, smaller queue size, and a marketable exit at the model horizon repair fill toxicity without using late confirmation dates to choose the rule?
+change: Mechanism-driven execution diagnosis after RUN-0006; keep same model and queue evidence, but align exit with predicted 5/15-second markout and explicitly search the source's spread/liquidity sweet spot.
+reason: RUN-0006 filled states had negative markout, tiny spread edge, and mostly forced passive exits.
+configuration:
+  development_sessions: [2024-12-04, 2025-01-08, 2025-03-05, 2025-04-02, 2025-06-04, 2025-07-02]
+  untouched_validation_sessions: [2025-09-03, 2025-10-01, 2025-12-03, 2026-01-07, 2026-02-04, 2026-03-04]
+  frozen_model: RUN-0005_Model_A
+  frozen_training_toxicity_quantiles: [0.05, 0.10, 0.20]
+  minimum_signal_spread_cents: [1, 2, 3]
+  order_size_shares: [1, 10, 100]
+  latency_ms: [250, 500]
+  entry_ttl_seconds: [1, 5, 15]
+  queue_models: [base, conservative]
+  exit: marketable_at_[5,15]_seconds_or_earlier_15bp_protective_stop
+  commission_per_share_per_side_usd: 0.004
+  adverse_exit_slippage_bps: [1, 2]
+  passive_rebate_credit: 0
+  cooldown_seconds: 60
+  selection_rule: require at least 20 development fills and positive net fixed-base PnL in both first-three and last-three development-session blocks; maximize the worse block, then prefer conservative queue and smaller order
+  cutoff: 2026-04-30
+expected_effect: A real repair must create a positive development neighborhood and remain positive on the untouched late six dates. If only a few optimized fills work, retire the historical execution claim.
+holdout_access: false
+execution:
+  command: python campaigns/CAM-0631/src/run0007_execution_repair.py
+  planned_development_rows: 1296
+  executed_development_rows: 1296
+  frozen_training_score_cuts: {q05: 0.3016572990, q10: 0.3165722580, q20: 0.3464973877}
+result:
+  development_survivors: 0
+  selected_development_config: null
+  untouched_validation_accessed: false
+  best_raw_net_row: {toxicity_quantile: 0.05, minimum_spread_cents: 1, order_size_shares: 100, latency_ms: 500, entry_ttl_seconds: 1, queue_model: conservative, exit_horizon_seconds: 15, exit_slippage_bps: 1, candidate_orders: 341, fills: 9, mean_net_trade_bps: 2.239892, net_fixed_base_return: 0.000100795, first_block_return: 0.000106930, second_block_return: -0.000006135}
+  best_row_with_at_least_20_fills: {toxicity_quantile: 0.05, minimum_spread_cents: 1, order_size_shares: 10, latency_ms: 250, entry_ttl_seconds: 5, queue_model: conservative, exit_horizon_seconds: 15, exit_slippage_bps: 1, candidate_orders: 341, fills: 37, mean_net_trade_bps: -1.738778, net_fixed_base_return: -0.000321674, first_block_return: -0.000151031, second_block_return: -0.000170642}
+  wider_spread_max_net: {two_cents: -0.000003106, three_cents: 0.000004629}
+  maximum_loaded_session: 2026-03-04
+  holdout_rows_loaded: 0
+decision: Execution repair failed. No development configuration combined at least 20 fills with positive early and late development blocks, so the untouched late-six-session validation was not evaluated. Retire historical passive execution under available sparse-window SIP evidence; retain the confirmed toxicity signal only as a live-calibration research lead.
