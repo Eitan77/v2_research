@@ -1,6 +1,6 @@
 campaign_id: CAM-0632
 checkpoint: RUN-0003_overshoot_neighborhood
-status: active_three_sparse_quote_candidates
+status: active_quote_survivors_pending_adversarial_audit
 holdout_access: false
 maximum_loaded_date: 2026-04-30
 baseline:
@@ -19,9 +19,9 @@ baseline:
     positive_month_fraction: 0.240964
     block_returns: [0.058123, 0.238609, 0.199776]
 limitations:
-  - The only positive 5bp all-block row is sparse, recently negative, and inconsistent by month.
-  - Bar opens/closes do not establish bid/ask marketability or latency.
-  - No candidate has earned quote replay, executable status, or promotion.
+  - Dense scalping failed friction and the only development-selected time bucket failed late confirmation.
+  - Sparse reversal candidates have marketable quote evidence but only 18%-27% positive months and roughly two to four signals per month.
+  - Quote/bar reconciliation, extreme-event dependence, displayed capacity, and cross-variant overlap remain unaudited; no candidate is frozen or promoted.
 run0003:
   planned_signal_variants: 144
   executed_signal_variants: 144
@@ -32,7 +32,6 @@ run0003:
     full_risk_focused: {variant: SMH_SOXL_SOXS_reversal_t50_h20_none_ov20, trades: 108, net_return: 0.843186, recent12: 0.016936, drawdown: 0.079581}
     confirmed_QQQ: {variant: QQQ_TQQQ_SQQQ_reversal_t40_h15_one_bar_opposite_ov0, trades: 206, net_return: 0.562559, recent12: 0.005008, drawdown: 0.084118}
   profile_verdict: Sparse reversal neighborhood, not high-frequency and not monthly consistent.
-next_gate: Exact marketable SIP ask-entry/bid-exit replay for the three representatives with latency and adverse-slippage stress; no further bar threshold tuning.
 run0005:
   planned_development_variants: 300
   executed_development_variants: 300
@@ -42,3 +41,12 @@ run0005:
   unchanged_validation_at_1bp_side: {trades: 337, net_return: -0.077778, recent12_return: -0.061759, half_returns: [-0.020012, -0.057766]}
   unchanged_validation_at_2bp_side: {net_return: -0.145178, mean_net_trade_bps: -4.307957, half_returns: [-0.049212, -0.095966]}
   decision: Time-of-day selectivity failed late confirmation and does not repair dense scalping.
+run0004:
+  role_coverage: 1.0
+  source_trades: 461
+  primary_execution: 250ms latency plus 2bp adverse slippage on both entry and exit beyond observed SIP spread
+  QQQ_confirmed: {trades: 206, net_return: 0.619616, recent12: 0.007510, mean_trade_bps: 30.078457, drawdown: 0.079198, positive_month_fraction: 0.265060, blocks: [0.311015, 0.220821, 0.087780]}
+  SMH_full_risk: {trades: 108, net_return: 0.652724, recent12: 0.011670, mean_trade_bps: 60.437369, drawdown: 0.093070, positive_month_fraction: 0.180723, blocks: [0.059079, 0.147752, 0.445892]}
+  SMH_recent: {trades: 147, net_return: 0.195832, recent12: 0.080316, mean_trade_bps: 13.321930, drawdown: 0.205539, blocks: [-0.055892, 0.149727, 0.101997]}
+  interpretation: Quote survival is necessary execution evidence, but sparse activity, low positive-month fractions, extreme days, and bar/quote differences still block a candidate freeze.
+next_gate: Adversarial audit of quote/bar price scale and timestamps, top-event and leave-date-out concentration, COVID and recent regimes, displayed capacity, and cross-variant portfolio overlap.

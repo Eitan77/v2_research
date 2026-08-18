@@ -1,0 +1,7 @@
+variant,date,symbol,role,target_ts,latency_ms,quote_ts,bid,ask
+SMH_SOXL_SOXS_reversal_t60_h15_none_ov0,2020-03-18,SOXS,exit,2020-03-18 17:27:00+00:00,0,,,
+SMH_SOXL_SOXS_reversal_t60_h15_none_ov0,2020-03-18,SOXS,exit,2020-03-18 17:27:00+00:00,250,,,
+SMH_SOXL_SOXS_reversal_t60_h15_none_ov0,2020-03-18,SOXS,exit,2020-03-18 17:27:00+00:00,1000,,,
+SMH_SOXL_SOXS_reversal_t50_h20_none_ov20,2020-03-18,SOXS,exit,2020-03-18 18:02:00+00:00,0,,,
+SMH_SOXL_SOXS_reversal_t50_h20_none_ov20,2020-03-18,SOXS,exit,2020-03-18 18:02:00+00:00,250,,,
+SMH_SOXL_SOXS_reversal_t50_h20_none_ov20,2020-03-18,SOXS,exit,2020-03-18 18:02:00+00:00,1000,,,

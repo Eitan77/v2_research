@@ -1,0 +1,10 @@
+variant,latency_ms,role_coverage
+QQQ_TQQQ_SQQQ_reversal_t40_h15_one_bar_opposite_ov0,0,1.0
+QQQ_TQQQ_SQQQ_reversal_t40_h15_one_bar_opposite_ov0,250,1.0
+QQQ_TQQQ_SQQQ_reversal_t40_h15_one_bar_opposite_ov0,1000,1.0
+SMH_SOXL_SOXS_reversal_t50_h20_none_ov20,0,1.0
+SMH_SOXL_SOXS_reversal_t50_h20_none_ov20,250,1.0
+SMH_SOXL_SOXS_reversal_t50_h20_none_ov20,1000,1.0
+SMH_SOXL_SOXS_reversal_t60_h15_none_ov0,0,1.0
+SMH_SOXL_SOXS_reversal_t60_h15_none_ov0,250,1.0
+SMH_SOXL_SOXS_reversal_t60_h15_none_ov0,1000,1.0

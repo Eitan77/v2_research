@@ -1,0 +1,86 @@
+{
+  "status": "completed",
+  "generated_at": "2026-08-18T22:11:35+00:00",
+  "selected_variants": [
+    "SMH_SOXL_SOXS_reversal_t60_h15_none_ov0",
+    "SMH_SOXL_SOXS_reversal_t50_h20_none_ov20",
+    "QQQ_TQQQ_SQQQ_reversal_t40_h15_one_bar_opposite_ov0"
+  ],
+  "source_trades": 461,
+  "quote_roles": 922,
+  "unique_quote_requests": 877,
+  "minimum_role_coverage": 1.0,
+  "planned_execution_rows": 36,
+  "executed_execution_rows": 36,
+  "primary_250ms_2bp": [
+    {
+      "variant": "QQQ_TQQQ_SQQQ_reversal_t40_h15_one_bar_opposite_ov0",
+      "latency_ms": 250,
+      "extra_bp_side": 2,
+      "role_coverage": 1.0,
+      "trades": 206,
+      "net_return": 0.6196162208,
+      "recent12_return": 0.0075102036,
+      "recent18_return": 0.0455606847,
+      "mean_trade_bp": 30.0784573204,
+      "max_drawdown": 0.0791977921,
+      "recovery_sessions": 79.0,
+      "positive_month_fraction": 0.265060241,
+      "green_all_days": 0.0321074139,
+      "green_active_days": 0.6111111111,
+      "block_returns": [
+        0.3110154952,
+        0.220820696,
+        0.0877800296
+      ],
+      "worst_day": -0.0876926593
+    },
+    {
+      "variant": "SMH_SOXL_SOXS_reversal_t50_h20_none_ov20",
+      "latency_ms": 250,
+      "extra_bp_side": 2,
+      "role_coverage": 1.0,
+      "trades": 108,
+      "net_return": 0.6527235885,
+      "recent12_return": 0.0116702829,
+      "recent18_return": 0.3911692651,
+      "mean_trade_bp": 60.4373693019,
+      "max_drawdown": 0.0930704644,
+      "recovery_sessions": 615.0,
+      "positive_month_fraction": 0.1807228916,
+      "green_all_days": 0.0247584541,
+      "green_active_days": 0.5942028986,
+      "block_returns": [
+        0.0590791942,
+        0.147752448,
+        0.4458919463
+      ],
+      "worst_day": -0.0954587008
+    },
+    {
+      "variant": "SMH_SOXL_SOXS_reversal_t60_h15_none_ov0",
+      "latency_ms": 250,
+      "extra_bp_side": 2,
+      "role_coverage": 1.0,
+      "trades": 147,
+      "net_return": 0.1958323716,
+      "recent12_return": 0.0803160013,
+      "recent18_return": 0.0237819976,
+      "mean_trade_bp": 13.3219300438,
+      "max_drawdown": 0.2055385166,
+      "recovery_sessions": null,
+      "positive_month_fraction": 0.2168674699,
+      "green_all_days": 0.027173913,
+      "green_active_days": 0.5421686747,
+      "block_returns": [
+        -0.0558917553,
+        0.1497274545,
+        0.1019966724
+      ],
+      "worst_day": -0.1979169796
+    }
+  ],
+  "maximum_loaded_date": "2026-04-30",
+  "holdout_rows_loaded": 0,
+  "decision_gate": "execution_survival_does_not_override_sparse_inconsistent_profile"
+}
