@@ -1,6 +1,6 @@
 campaign_id: CAM-0631
-checkpoint: RUN-0002_signal_existence_provisional
-status: active_signal_promising_robustness_unresolved
+checkpoint: RUN-0003_side_symmetric_signal_robustness
+status: active_signal_stage_cross_asset_test_earned
 holdout_access: false
 maximum_loaded_session: 2026-04-01
 evidence:
@@ -21,3 +21,12 @@ limitations:
   - Current features are not all expressed in candidate-side coordinates and include correlated imbalance/microprice terms.
   - No queue, fill, cost, inventory, forced-exit, capacity, or live-calibration claim exists.
 next_gate: Side-symmetric cluster-weighted robustness, then cross-asset residual incremental value; only then conservative fill simulation.
+run0003:
+  modeling_unit: 100ms clusters with equal symbol-session training weight
+  planned_models: 9
+  executed_models: 9
+  base_5s_validation:
+    2025-11-05: {auc: 0.525027, low_5s_bps: 0.392601, high_5s_bps: 0.070299, low_15s_bps: 0.669331, high_15s_bps: -0.440096, breadth: 0.666667}
+    2026-04-01: {auc: 0.551831, low_5s_bps: 0.700261, high_5s_bps: -0.400636, low_15s_bps: 0.991021, high_15s_bps: -0.398619, breadth: 0.708333}
+  ablation_interpretation: Local returns were unnecessary; signed one-second trade flow was material on the weaker validation date.
+next_gate: Test incremental cross-asset residual value against this own-book/flow control; only then conservative fill simulation.

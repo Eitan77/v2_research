@@ -1,0 +1,36 @@
+run_id: RUN-0003
+parent_run: RUN-0002
+status: completed
+question: Does the EPDC toxicity separation survive candidate-side symmetry, 100ms event clustering, equal symbol-session weighting, adjacent label horizons, and simple feature ablations?
+change: Correct direction encoding and dependence identified in RUN-0002 without changing its dates, symbols, spread filter, candidate side, or markout horizons.
+reason: RUN-0002 pooled separation was favorable but raw-event long-horizon ordering failed on one validation date; directional features were not candidate-side aligned and quote-update dependence was uneven.
+configuration:
+  data_lineage: RUN-0002 exact cached quote/trade jobs and candidate construction
+  modeling_unit: symbol-session-window-side 100ms cluster mean
+  training_weight: equal total weight per symbol-session
+  directional_encoding: multiply imbalance, recent return, and trade imbalance by candidate side
+  base_features: [spread_bps, side_size_imbalance, quote_rate_1s, side_mid_return_1s, side_mid_return_5s, side_trade_imbalance_1s]
+  ablations: [base, without_trade_flow, without_local_returns]
+  toxicity_label_horizons_seconds: [1, 5, 15]
+  validation_buckets: bottom_20_percent_and_top_20_percent_predicted_toxicity
+  train_sessions: [2024-11-06, 2025-02-05, 2025-05-07, 2025-08-06]
+  validation_sessions: [2025-11-05, 2026-04-01]
+expected_effect: A real side-symmetric toxicity effect should preserve low-minus-high markout ordering on both validation dates and adjacent label horizons after dependence control, rather than relying on April 2026 event density.
+holdout_access: false
+execution:
+  command: python campaigns/CAM-0631/src/run0003_symmetric_cluster.py
+  planned_models: 9
+  executed_models: 9
+  resolved_modeling_unit: 100ms cluster
+result:
+  train_clusters: 33358
+  validation_clusters: 18222
+  base_5s:
+    2025-11-05: {auc: 0.525027, low_5s_bps: 0.392601, high_5s_bps: 0.070299, low_15s_bps: 0.669331, high_15s_bps: -0.440096, symbol_breadth_low_gt_high: 0.666667}
+    2026-04-01: {auc: 0.551831, low_5s_bps: 0.700261, high_5s_bps: -0.400636, low_15s_bps: 0.991021, high_15s_bps: -0.398619, symbol_breadth_low_gt_high: 0.708333}
+  without_local_returns: Preserved favorable low-minus-high ordering on both validation dates and all three target horizons.
+  without_trade_flow: Failed favorable 5-second ordering on 2025-11-05, indicating signed trade flow is material.
+  maximum_loaded_session: 2026-04-01
+  holdout_rows_loaded: 0
+  fill_simulation_performed: false
+decision: Side-symmetric own-book/flow toxicity separation survives both dates, adjacent horizons, dependence control, and local-return ablation. Advance to the source-prescribed cross-asset residual incremental-value test; keep fill simulation blocked.

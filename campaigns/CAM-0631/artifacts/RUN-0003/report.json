@@ -1,0 +1,30 @@
+{
+  "status": "completed",
+  "generated_at": "2026-08-18T21:24:53+00:00",
+  "planned_models": 9,
+  "executed_models": 9,
+  "train_clusters_100ms": 33358,
+  "validation_clusters_100ms": 18222,
+  "maximum_loaded_session": "2026-04-01",
+  "holdout_rows_loaded": 0,
+  "base_5s_validation": [
+    {
+      "session": "2025-11-05",
+      "low_gt_high_5s": true,
+      "low_positive_5s": true,
+      "low_gt_high_15s": true,
+      "low_positive_15s": true,
+      "symbol_fraction_low_gt_high_at_target": 0.6666666666666666
+    },
+    {
+      "session": "2026-04-01",
+      "low_gt_high_5s": true,
+      "low_positive_5s": true,
+      "low_gt_high_15s": true,
+      "low_positive_15s": true,
+      "symbol_fraction_low_gt_high_at_target": 0.7083333333333334
+    }
+  ],
+  "fill_simulation_performed": false,
+  "decision_gate": "require_both_dates_low_gt_high_and_positive_at_5s_and_15s_plus_reasonable_symbol_breadth_before_cross_asset_test"
+}
