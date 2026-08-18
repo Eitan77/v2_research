@@ -1,6 +1,6 @@
 campaign_id: CAM-0632
 checkpoint: RUN-0003_overshoot_neighborhood
-status: two_adapted_quote_validated_candidates
+status: frozen_forward_paper_candidate
 holdout_access: false
 maximum_loaded_date: 2026-04-30
 baseline:
@@ -57,4 +57,11 @@ run0006:
   QQQ_stress_1000ms_5bp_side: {net_return: 0.509052, recent12: 0.005465, blocks: [0.252557, 0.190444, 0.066051], leave_best_date: 0.476605, exclude_both_shock_windows: 0.265593, top10_abs_share: 0.186211}
   SMH_stress_1000ms_5bp_side: {net_return: 0.575259, recent12: 0.003654, blocks: [0.029954, 0.130851, 0.414454], leave_best_date: 0.372966, exclude_both_shock_windows: 0.175599, top10_abs_share: 0.328770}
   interpretation: Two adapted sparse candidates pass execution and adversarial historical checks, but full-sample adaptation and very low monthly activity require forward paper observation.
-next_gate: Cash-only fixed-sleeve combined portfolio with overlap, activity, concentration, and leave-family-out analysis; then freeze exact forward-paper rules if the combined path adds useful consistency.
+run0007:
+  construction: permanent 50 percent QQQ sleeve plus permanent 50 percent SMH sleeve; no idle-cash reallocation
+  maximum_concurrent_exposure: 1.0
+  primary_250ms_2bp_side: {net_return: 0.636170, recent12: 0.009590, active_day_fraction: 0.068301, positive_month_fraction: 0.277108, drawdown: 0.054537, blocks: [0.185047, 0.184287, 0.266836], top10_abs_share: 0.163267}
+  stress_1000ms_5bp_side: {net_return: 0.542155, recent12: 0.004559, active_day_fraction: 0.068301, positive_month_fraction: 0.265060, drawdown: 0.058909, blocks: [0.141256, 0.160648, 0.240252], top10_abs_share: 0.163242}
+  stress_family_contributions: {QQQ: 0.254526, SMH: 0.287629}
+  decision: Freeze exact rules in FORWARD_PAPER_SPEC.md. Recommend forward paper observation; do not describe as high-frequency, daily consistent, untouched OOS, or live-ready.
+next_gate: Forward-only paper observation for the later of twelve months or fifty completed trades, with unchanged rules and complete broker/quote reconciliation. Sealed post-April-2026 historical data remains unopened.

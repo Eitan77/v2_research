@@ -1,0 +1,33 @@
+run_id: RUN-0007
+parent_run: RUN-0006
+status: completed
+question: Does a cash-only fixed-sleeve combination of the two audited candidates improve activity and path consistency without leverage, dynamic reallocation, or new selection?
+change: Combine the frozen QQQ and SMH candidates with permanent 50 percent normalized-capital sleeves.
+reason: The candidates depend on different underlyings and signal constructions; fixed sleeves are the simplest causal diversification rule and cap simultaneous gross exposure at 1.0.
+configuration:
+  candidates:
+    - QQQ_TQQQ_SQQQ_reversal_t40_h15_one_bar_opposite_ov0
+    - SMH_SOXL_SOXS_reversal_t50_h20_none_ov20
+  sleeve_weight_each: 0.50
+  cash_reallocation_when_other_sleeve_idle: false
+  maximum_gross_exposure: 1.0
+  primary_execution: 250ms plus 2bp adverse slippage per side
+  stress_execution: 1000ms plus 5bp adverse slippage per side
+  accounting: fixed_base_additive_no_compounding
+  checks: [maximum_concurrent_exposure, overlap_count, weekly_monthly_yearly_path, green_active_days, positive_month_fraction, drawdown_recovery, recent12, chronology_blocks, top10_concentration, leave_each_family_out, daily_family_correlation]
+  cutoff: 2026-04-30
+expected_effect: Diversification should improve active frequency or path stability while remaining positive under stress. If consistency stays sparse, freeze only as an event-driven paper candidate and state that it is not a daily scalp printer.
+holdout_access: false
+execution:
+  command: python campaigns/CAM-0632/src/run0007_fixed_sleeve_portfolio.py
+  candidate_trades: 314
+result:
+  maximum_concurrent_exposure: 1.0
+  overlap_entries: 68
+  active_day_family_correlation_primary: 0.340603
+  primary_250ms_2bp_side: {net_return: 0.636170, recent12_return: 0.009590, trades_per_session: 0.183304, active_day_fraction: 0.068301, green_active_days: 0.598291, positive_month_fraction: 0.277108, block_returns: [0.185047, 0.184287, 0.266836], max_drawdown: 0.054537, recovery_sessions: 42, top10_absolute_trade_share: 0.163267}
+  stress_1000ms_5bp_side: {net_return: 0.542155, recent12_return: 0.004559, trades_per_session: 0.183304, active_day_fraction: 0.068301, green_active_days: 0.564103, positive_month_fraction: 0.265060, block_returns: [0.141256, 0.160648, 0.240252], max_drawdown: 0.058909, recovery_sessions: 75, top10_absolute_trade_share: 0.163242}
+  stress_family_contributions: {QQQ_half_sleeve: 0.254526, SMH_half_sleeve: 0.287629}
+  maximum_loaded_date: 2026-04-30
+  holdout_rows_loaded: 0
+decision: Freeze the 50/50 portfolio for forward paper observation. It is a robust sparse event-reversal candidate with modest recent profit, not a high-frequency or daily-consistency printer.

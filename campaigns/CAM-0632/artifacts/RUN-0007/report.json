@@ -1,0 +1,102 @@
+{
+  "status": "completed",
+  "generated_at": "2026-08-18T22:17:38+00:00",
+  "candidate_trades": 314,
+  "sleeve_weight_each": 0.5,
+  "maximum_concurrent_exposure": 1.0,
+  "overlap_entries": 68,
+  "active_day_family_correlation_primary": 0.34060331175700775,
+  "portfolio": [
+    {
+      "portfolio": "fixed_50_50",
+      "execution": "primary_250ms_2bp",
+      "trades": 314,
+      "trades_per_session": 0.1833041448,
+      "active_day_fraction": 0.0683012259,
+      "net_return": 0.6361699046,
+      "recent12_return": 0.0095902432,
+      "green_active_days": 0.5982905983,
+      "positive_week_fraction": 0.1169916435,
+      "positive_month_fraction": 0.2771084337,
+      "block_returns": [
+        0.1850473447,
+        0.184286572,
+        0.266835988
+      ],
+      "max_drawdown": 0.0545367619,
+      "recovery_sessions": 42,
+      "worst_day": -0.0483808946,
+      "best_day": 0.1717486173,
+      "top10_absolute_trade_share": 0.1632673063
+    },
+    {
+      "portfolio": "fixed_50_50",
+      "execution": "stress_1000ms_5bp",
+      "trades": 314,
+      "trades_per_session": 0.1833041448,
+      "active_day_fraction": 0.0683012259,
+      "net_return": 0.5421554869,
+      "recent12_return": 0.0045592027,
+      "green_active_days": 0.5641025641,
+      "positive_week_fraction": 0.1114206128,
+      "positive_month_fraction": 0.265060241,
+      "block_returns": [
+        0.1412556104,
+        0.1606475454,
+        0.2402523311
+      ],
+      "max_drawdown": 0.0589088659,
+      "recovery_sessions": 75,
+      "worst_day": -0.049183519,
+      "best_day": 0.1689511611,
+      "top10_absolute_trade_share": 0.1632421069
+    }
+  ],
+  "family_attribution": [
+    {
+      "execution": "primary_250ms_2bp",
+      "variant": "QQQ_TQQQ_SQQQ_reversal_t40_h15_one_bar_opposite_ov0",
+      "trades": 206,
+      "weighted_return": 0.3098081104,
+      "mean_unweighted_trade_bps": 30.0784573204
+    },
+    {
+      "execution": "primary_250ms_2bp",
+      "variant": "SMH_SOXL_SOXS_reversal_t50_h20_none_ov20",
+      "trades": 108,
+      "weighted_return": 0.3263617942,
+      "mean_unweighted_trade_bps": 60.4373693019
+    },
+    {
+      "execution": "stress_1000ms_5bp",
+      "variant": "QQQ_TQQQ_SQQQ_reversal_t40_h15_one_bar_opposite_ov0",
+      "trades": 206,
+      "weighted_return": 0.2545260114,
+      "mean_unweighted_trade_bps": 24.7112632437
+    },
+    {
+      "execution": "stress_1000ms_5bp",
+      "variant": "SMH_SOXL_SOXS_reversal_t50_h20_none_ov20",
+      "trades": 108,
+      "weighted_return": 0.2876294754,
+      "mean_unweighted_trade_bps": 53.2647176756
+    }
+  ],
+  "attrition": [
+    {
+      "pair": "SMH_SOXL_SOXS",
+      "parent_symbol_union_dates": 1724,
+      "complete_aligned_dates": 1656,
+      "dates_removed": 68
+    },
+    {
+      "pair": "QQQ_TQQQ_SQQQ",
+      "parent_symbol_union_dates": 1724,
+      "complete_aligned_dates": 1713,
+      "dates_removed": 11
+    }
+  ],
+  "maximum_loaded_date": "2026-04-30",
+  "holdout_rows_loaded": 0,
+  "decision_gate": "freeze_exact_forward_paper_spec_if_stress_positive_without_claiming_daily_consistency"
+}
