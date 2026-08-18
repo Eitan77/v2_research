@@ -1,0 +1,35 @@
+{
+  "model": "RUN-0004_A_book_flow_target_5s",
+  "generated_at": "2026-08-18T21:30:33+00:00",
+  "features": [
+    "spread_bps",
+    "side_size_imbalance",
+    "quote_rate_1s",
+    "side_trade_imbalance_1s"
+  ],
+  "mean": [
+    6.042116693548261,
+    0.42107808199069185,
+    44.70355416862515,
+    0.07398106321474243
+  ],
+  "std": [
+    5.197182187059457,
+    0.18525540486508454,
+    68.08605867552099,
+    0.7002233846049258
+  ],
+  "beta_intercept_then_features": [
+    -0.4273234683805801,
+    0.06872732980540962,
+    -0.06268240632118277,
+    0.16597568238322613,
+    -0.23355353910050464
+  ],
+  "training_low_cut": 0.34652983291370537,
+  "training_high_cut": 0.4748137127116985,
+  "training_clusters": 33307,
+  "coefficient_reproduction_max_abs_difference": 6.938893903907228e-17,
+  "confirmation_data_accessed": false,
+  "package_sha256": "45aebb54bb6e7f790a6175140a7568f369ec80bd08f4d024f10ff74258c6087f"
+}

@@ -1,0 +1,48 @@
+run_id: RUN-0005
+parent_run: RUN-0004
+status: completed
+question: Does frozen own-book/flow Model A confirm across twelve untouched pre-cutoff sessions without refitting, rethresholding, or adding features?
+change: Expand date coverage only after rejecting peer complexity; freeze the exact RUN-0004 Model A training transformation, coefficients, and training-score bucket cutoffs before downloading confirmation sessions.
+reason: Six-session development evidence is too narrow for queue/fill simulation despite favorable two-date validation.
+configuration:
+  symbols: [AAPL, MSFT, AMZN, GOOGL, META, NVDA, AMD, AVGO, MU, TSLA, JPM, BAC, WFC, XOM, CVX, LLY, UNH, JNJ, WMT, COST, HD, DIS, UBER, PLTR]
+  confirmation_sessions: [2024-12-04, 2025-01-08, 2025-03-05, 2025-04-02, 2025-06-04, 2025-07-02, 2025-09-03, 2025-10-01, 2025-12-03, 2026-01-07, 2026-02-04, 2026-03-04]
+  windows_et: [[10:00:00, 10:02:00], [13:00:00, 13:02:00]]
+  event_and_cluster_rules: identical_to_RUN-0002_and_RUN-0003
+  frozen_model: RUN-0004_A_book_flow_target_5s
+  features: [spread_bps, side_size_imbalance, quote_rate_1s, side_trade_imbalance_1s]
+  training_lineage: first four RUN-0002 sessions only
+  bucket_thresholds: frozen training predicted-toxicity 20th and 80th percentiles
+  no_refit: true
+  no_confirmation_quantile_rethreshold: true
+  pass_gate:
+    minimum_sessions_low_markout_positive_5s: 9_of_12
+    minimum_sessions_low_gt_high_5s: 9_of_12
+    minimum_pooled_symbol_fraction_low_gt_high_5s: 0.60
+    required_pooled_low_minus_high_5s: positive
+  cutoff: 2026-04-30
+expected_effect: A genuine toxicity filter should retain favorable signed markout across most months and symbols; failure blocks queue-aware fill simulation and triggers diagnosis rather than threshold tuning.
+holdout_access: false
+execution:
+  commands:
+    - python campaigns/CAM-0631/src/freeze_run0005_model.py
+    - python campaigns/CAM-0631/src/run0005_confirmation.py
+  frozen_model_sha256: 45aebb54bb6e7f790a6175140a7568f369ec80bd08f4d024f10ff74258c6087f
+  coefficient_reproduction_max_abs_difference: 6.938893903907228e-17
+  planned_jobs: 1152
+  executed_jobs: 1152
+result:
+  candidate_events: 333887
+  effective_100ms_clusters: 96376
+  zero_candidate_jobs: 0
+  sessions_low_markout_positive_5s: 12_of_12
+  sessions_low_gt_high_5s: 11_of_12
+  sole_ordering_failure_session: 2025-06-04
+  pooled_symbol_fraction_low_gt_high_5s: 0.666667
+  pooled_low_minus_high_5s_bps: 0.592613
+  maximum_loaded_session: 2026-03-04
+  holdout_rows_loaded: 0
+  refit_performed: false
+  confirmation_rethreshold_performed: false
+  fill_simulation_performed: false
+decision: All prespecified confirmation gates passed. Freeze the confirmed Model A event filter and proceed to conservative queue-aware passive-fill simulation with same-price prints, latency, queue-ahead stress, forced exits, and explicit costs.

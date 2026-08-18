@@ -1,6 +1,6 @@
 campaign_id: CAM-0631
-checkpoint: RUN-0003_side_symmetric_signal_robustness
-status: active_signal_stage_cross_asset_test_earned
+checkpoint: RUN-0005_frozen_model_confirmation
+status: active_queue_simulation_earned
 holdout_access: false
 maximum_loaded_session: 2026-04-01
 evidence:
@@ -15,12 +15,10 @@ evidence:
   low_toxicity_pooled_markout_bps: {0.25s: 0.178826, 1s: 0.176499, 5s: 0.478608, 15s: 1.206981, 30s: 1.369419, 60s: 1.863231}
   high_toxicity_pooled_markout_bps: {0.25s: 0.105723, 1s: 0.044149, 5s: -0.229786, 15s: -0.849606, 30s: -1.059558, 60s: -1.412420}
 limitations:
-  - Only six sampled sessions and four minutes per symbol-session were studied.
+  - Eighteen sampled sessions cover only four minutes per symbol-session; full-session behavior remains untested.
   - Quote updates are dependent; raw-event pooling overweights high-update names and states.
-  - One validation date did not preserve raw-event long-horizon bucket ordering.
-  - Current features are not all expressed in candidate-side coordinates and include correlated imbalance/microprice terms.
+  - The confirmed model is a probabilistic 100ms-cluster filter and one of twelve confirmation dates failed low-versus-high ordering.
   - No queue, fill, cost, inventory, forced-exit, capacity, or live-calibration claim exists.
-next_gate: Side-symmetric cluster-weighted robustness, then cross-asset residual incremental value; only then conservative fill simulation.
 run0003:
   modeling_unit: 100ms clusters with equal symbol-session training weight
   planned_models: 9
@@ -38,4 +36,17 @@ run0004:
   model_C_5s:
     2025-11-05: {auc: 0.526171, low_5s_bps: 0.471033, high_5s_bps: 0.039992, breadth: 0.708333}
     2026-04-01: {auc: 0.547873, low_5s_bps: 0.655130, high_5s_bps: -0.306001, breadth: 0.625000}
-next_gate: Apply frozen Model A unchanged to a wider untouched set of pre-cutoff dates; only then conservative fill simulation.
+run0005:
+  frozen_model_sha256: 45aebb54bb6e7f790a6175140a7568f369ec80bd08f4d024f10ff74258c6087f
+  confirmation_sessions: 12
+  planned_jobs: 1152
+  executed_jobs: 1152
+  candidate_events: 333887
+  effective_100ms_clusters: 96376
+  sessions_low_positive_5s: 12
+  sessions_low_gt_high_5s: 11
+  pooled_symbol_fraction_low_gt_high_5s: 0.666667
+  pooled_low_minus_high_5s_bps: 0.592613
+  refit_or_rethreshold: false
+  decision: Prespecified signal confirmation passed; conservative queue-aware fill simulation earned.
+next_gate: Simulate passive arrival, queue ahead, same-price print consumption, partial/nonfill, passive exit, emergency exit, and explicit per-share costs. No profit claim exists yet.

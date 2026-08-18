@@ -1,0 +1,37 @@
+{
+  "status": "completed",
+  "generated_at": "2026-08-18T21:39:21+00:00",
+  "frozen_model_sha256": "45aebb54bb6e7f790a6175140a7568f369ec80bd08f4d024f10ff74258c6087f",
+  "planned_jobs": 1152,
+  "executed_jobs": 1152,
+  "confirmation_sessions": [
+    "2024-12-04",
+    "2025-01-08",
+    "2025-03-05",
+    "2025-04-02",
+    "2025-06-04",
+    "2025-07-02",
+    "2025-09-03",
+    "2025-10-01",
+    "2025-12-03",
+    "2026-01-07",
+    "2026-02-04",
+    "2026-03-04"
+  ],
+  "candidate_events": 333887,
+  "confirmation_clusters_100ms": 96376,
+  "zero_candidate_jobs": 0,
+  "maximum_loaded_session": "2026-03-04",
+  "holdout_rows_loaded": 0,
+  "refit_performed": false,
+  "confirmation_rethreshold_performed": false,
+  "gates": {
+    "sessions_low_positive_5s": 12,
+    "sessions_low_gt_high_5s": 11,
+    "pooled_symbol_fraction_low_gt_high_5s": 0.6666666666666666,
+    "pooled_low_minus_high_5s_bps": 0.5926128378102624,
+    "pass": true
+  },
+  "fill_simulation_performed": false,
+  "decision_gate": "queue_simulation_earned"
+}

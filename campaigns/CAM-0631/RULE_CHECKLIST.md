@@ -7,8 +7,8 @@
 - [x] SIP quote/trade schema, entitlements, timestamp semantics, regular-session boundary, and cutoff pass fail-fast readiness.
 - [x] Representative panel attrition and empirical spread-bucket composition reported for the first six-session panel.
 - [x] Signed midpoint markouts reported at 250 ms, 1, 5, 15, 30, and 60 seconds before fill assumptions.
-- [ ] Chronological validation, month/day/time/volatility/spread/symbol/sector breakdowns, and leave-one-out tests completed.
-- [ ] Cross-asset residual value tested against top-of-book-only and local-behavior controls.
+- [ ] Chronological validation, date/time/spread/symbol breakdowns completed; volatility/sector and leave-one-out remain before conclusion.
+- [x] Cross-asset residual value tested against top-of-book-only and local-behavior controls; rejected as non-incremental.
 - [ ] Queue-aware fill simulation uses latency, displayed size, same-price trade prints, partial fills, and four stress models.
 - [ ] Fixed-base PnL, weekly/monthly paths, drawdown/recovery, exposure, turnover, and forced exits reported.
 - [ ] Short inventory, if any, has protective and emergency exits and forced preclose liquidation.
