@@ -75,3 +75,7 @@ This bounds rather than solves deeper-book execution. The candidate is historica
 ## RUN-0011 implementation parity
 
 An independent implementation of the two frozen rules generated exactly 314 trades, matching every saved variant, date, symbol, signal timestamp, entry timestamp, and exit timestamp. Maximum gross-return difference was below `1e-16`. Both bullish and inverse mappings, completed-bar timing, exact holding periods, no within-sleeve overlap, and the April 2026 cutoff passed. `src/frozen_candidate.py` is now the canonical generator for forward shadow code.
+
+## RUN-0012 no-order shadow infrastructure
+
+The forward runner generated the two expected synthetic intents with exact side, entry, and exit timestamps; an identical rerun appended zero duplicates; and pre-forward input was rejected. The runner has no broker-order code and submitted zero orders. It is an append-only observation component, not an automated trading system. No post-April historical or live data was accessed in the test.

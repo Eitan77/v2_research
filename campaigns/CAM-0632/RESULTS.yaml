@@ -87,4 +87,12 @@ run0011:
   maximum_return_difference: 9.93129189996722e-17
   semantic_checks_passed: [side_mapping, QQQ_confirmation, SMH_overshoot, timing, exact_hold, no_overlap, cutoff]
   canonical_signal_code: src/frozen_candidate.py
-next_gate: Build a no-order shadow runner and append-only observation ledger around the parity-verified canonical generator; do not access sealed historical data.
+run0012:
+  runner: src/shadow_runner.py
+  forward_start: 2026-08-19T00:00:00Z
+  fixture_intents: 2
+  first_append: 2
+  identical_rerun_append: 0
+  checks: {QQQ_side_and_timing: passed, SMH_side_and_timing: passed, pre_forward_rejection: passed, no_order_capability: passed}
+  orders_submitted: 0
+next_gate: Prospectively supply completed post-freeze bars to the no-order runner and collect actual paper-broker quote/fill evidence separately; historical sealed rows remain unopened.

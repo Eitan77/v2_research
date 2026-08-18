@@ -6,6 +6,8 @@ This is an adapted research candidate, not a live-trading recommendation and not
 
 The canonical signal implementation is `src/frozen_candidate.py`. RUN-0011 independently reproduced all 314 saved discovery trades with zero key mismatches and sub-`1e-16` maximum return difference. Any future runner must call or match that implementation; prose must not be used to reinterpret the rule.
 
+`src/shadow_runner.py` is the no-order observation runner. It accepts caller-supplied completed bars no earlier than August 19, 2026 UTC and appends deterministic, duplicate-safe signal intents to JSONL. It has no broker submission capability. RUN-0012 passed exact QQQ/SMH side and timestamp fixtures, duplicate rerun suppression, and the pre-forward input guard.
+
 The portfolio is cash-only, long-only, additive, and noncompounding. It has two permanent sleeves, each targeted to 0.50 of the original normalized capital base. Idle sleeve cash is not reassigned. Actual whole-share order quantity is the smaller of `(0.50 * frozen account base) / current ask` and `0.05 * current SIP ask-size units * 100`, rounded down. Simultaneous gross exposure therefore cannot exceed 1.0, and thin displayed depth leaves part of a sleeve in cash.
 
 ## Shared data and execution contract

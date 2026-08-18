@@ -1,0 +1,23 @@
+{
+  "status": "completed",
+  "generated_at": "2026-08-18T22:31:36+00:00",
+  "generated_intents": 2,
+  "first_append": 2,
+  "second_append": 0,
+  "orders_submitted": 0,
+  "checks": {
+    "two_intents": true,
+    "qqq_maps_to_sqqq": true,
+    "qqq_entry_exact": true,
+    "qqq_exit_exact": true,
+    "smh_maps_to_soxs": true,
+    "smh_entry_exact": true,
+    "smh_exit_exact": true,
+    "first_append_two": true,
+    "rerun_append_zero": true,
+    "pre_forward_rejected": true,
+    "no_order_capability": true,
+    "all_checks_passed": true
+  },
+  "holdout_rows_loaded": 0
+}

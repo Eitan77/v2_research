@@ -1,0 +1,28 @@
+run_id: RUN-0012
+parent_run: RUN-0011
+status: completed
+question: Can a no-order forward shadow runner emit exact, idempotent, append-only intents while enforcing completed-bar timing and a hard post-freeze start boundary?
+change: Operational implementation only; no broker connection, orders, historical post-cutoff access, or rule changes.
+reason: Forward observation needs reproducible intent logging before any paper-broker adapter is considered.
+configuration:
+  canonical_rules: src/frozen_candidate.py_semantics
+  input: completed one-minute raw SIP bar rows supplied by caller
+  output: append-only JSONL shadow intents
+  broker_orders: disabled_not_implemented
+  forward_start: 2026-08-19T00:00:00Z
+  idempotency: deterministic SHA256 event id and duplicate suppression
+  fixtures: [QQQ_positive_shock_opposite_confirmation_maps_to_SQQQ, SMH_positive_shock_SOXL_overshoot_maps_to_SOXS, exact_entry_exit_targets, rerun_no_duplicate, pre_forward_input_rejected]
+expected_effect: Two fixture intents on first run, zero new intents on identical rerun, and fail-fast rejection of any pre-forward input.
+holdout_access: false
+execution:
+  command: python campaigns/CAM-0632/src/run0012_shadow_fixtures.py
+result:
+  generated_fixture_intents: 2
+  first_append: 2
+  identical_rerun_append: 0
+  QQQ_mapping_and_timestamps: passed
+  SMH_mapping_and_timestamps: passed
+  pre_forward_input_rejected: true
+  orders_submitted: 0
+  holdout_rows_loaded: 0
+decision: No-order shadow infrastructure passed all synthetic fixtures. It is ready to receive prospectively supplied completed bars after the frozen start, but no live data fetch or broker action is authorized by this run.
