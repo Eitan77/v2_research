@@ -1,0 +1,117 @@
+{
+  "variant": "QQQ_TQQQ_SQQQ_impulse_reversal_f1_h15_t40",
+  "interpretation": "only 5bp all-block-positive row; sparse and recently negative",
+  "cost_curve": [
+    {
+      "cost_bp_side": 0,
+      "trades": 329,
+      "trades_per_session": 0.19206071220081727,
+      "gross_return": 0.8255070285478765,
+      "net_return": 0.8255070285478765,
+      "recent12_return": -0.02557995135483615,
+      "recent18_return": 0.20986827233874727,
+      "mean_trade_bp": 25.091399044008405,
+      "green_all_days": 0.04319906596614127,
+      "green_active_days": 0.5174825174825175,
+      "positive_month_fraction": 0.30120481927710846,
+      "positive_week_fraction": 0.12256267409470752,
+      "max_drawdown": 0.11936145251374031,
+      "recovery_sessions": 4,
+      "block_returns": [
+        0.22712260611568647,
+        0.3426089145251642,
+        0.25577550790702586
+      ],
+      "worst_day": -0.07150160810563788
+    },
+    {
+      "cost_bp_side": 1,
+      "trades": 329,
+      "trades_per_session": 0.19206071220081727,
+      "gross_return": 0.8255070285478765,
+      "net_return": 0.7597070285478766,
+      "recent12_return": -0.02717995135483614,
+      "recent18_return": 0.20006827233874727,
+      "mean_trade_bp": 23.0913990440084,
+      "green_all_days": 0.04203152364273205,
+      "green_active_days": 0.5034965034965035,
+      "positive_month_fraction": 0.27710843373493976,
+      "positive_week_fraction": 0.11977715877437325,
+      "max_drawdown": 0.1265614525137403,
+      "recovery_sessions": 4,
+      "block_returns": [
+        0.19332260611568655,
+        0.32180891452516414,
+        0.24457550790702587
+      ],
+      "worst_day": -0.07390160810563788
+    },
+    {
+      "cost_bp_side": 2,
+      "trades": 329,
+      "trades_per_session": 0.19206071220081727,
+      "gross_return": 0.8255070285478765,
+      "net_return": 0.6939070285478766,
+      "recent12_return": -0.02877995135483616,
+      "recent18_return": 0.1902682723387472,
+      "mean_trade_bp": 21.091399044008405,
+      "green_all_days": 0.04203152364273205,
+      "green_active_days": 0.5034965034965035,
+      "positive_month_fraction": 0.27710843373493976,
+      "positive_week_fraction": 0.11977715877437325,
+      "max_drawdown": 0.13376145251374028,
+      "recovery_sessions": 4,
+      "block_returns": [
+        0.15952260611568655,
+        0.3010089145251642,
+        0.23337550790702583
+      ],
+      "worst_day": -0.07630160810563787
+    },
+    {
+      "cost_bp_side": 5,
+      "trades": 329,
+      "trades_per_session": 0.19206071220081727,
+      "gross_return": 0.8255070285478765,
+      "net_return": 0.4965070285478762,
+      "recent12_return": -0.03357995135483616,
+      "recent18_return": 0.16086827233874723,
+      "mean_trade_bp": 15.091399044008394,
+      "green_all_days": 0.03852889667250438,
+      "green_active_days": 0.46153846153846156,
+      "positive_month_fraction": 0.24096385542168675,
+      "positive_week_fraction": 0.11142061281337047,
+      "max_drawdown": 0.15963718266714289,
+      "recovery_sessions": 9,
+      "block_returns": [
+        0.058122606115686315,
+        0.23860891452516408,
+        0.1997755079070258
+      ],
+      "worst_day": -0.08350160810563789
+    },
+    {
+      "cost_bp_side": 10,
+      "trades": 329,
+      "trades_per_session": 0.19206071220081727,
+      "gross_return": 0.8255070285478765,
+      "net_return": 0.16750702854787597,
+      "recent12_return": -0.041579951354836164,
+      "recent18_return": 0.11186827233874719,
+      "mean_trade_bp": 5.091399044008387,
+      "green_all_days": 0.03619381202568593,
+      "green_active_days": 0.43356643356643354,
+      "positive_month_fraction": 0.2289156626506024,
+      "positive_week_fraction": 0.10584958217270195,
+      "max_drawdown": 0.24200245128176157,
+      "recovery_sessions": 465,
+      "block_returns": [
+        -0.11087739388431378,
+        0.13460891452516405,
+        0.14377550790702576
+      ],
+      "worst_day": -0.0955016081056379
+    }
+  ],
+  "top_absolute_trade_share": 0.1554561858322582
+}

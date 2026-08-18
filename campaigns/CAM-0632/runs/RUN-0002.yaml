@@ -1,0 +1,60 @@
+run_id: RUN-0002
+parent_run: RUN-0001
+status: completed
+question: Do completed underlying impulses or same-window leveraged-ETF tracking residuals predict profitable next-bar intraday scalps on the two fully covered core pairs?
+change: Remove only the two pairs proven absent by RUN-0001; preserve all covered core pairs and test three named structural signs.
+reason: RUN-0001 fail-fast blocked the four-pair launch because QLD/QID and SPXL/SPXS have no catalog rows.
+configuration:
+  pairs:
+    - {underlying: SMH, bull: SOXL, inverse: SOXS, nominal_leverage: 3}
+    - {underlying: QQQ, bull: TQQQ, inverse: SQQQ, nominal_leverage: 3}
+  mechanisms: [impulse_continuation, impulse_reversal, leveraged_lag_convergence]
+  formation_minutes: [1, 2, 5, 10]
+  hold_minutes: [1, 2, 3, 5, 10, 15]
+  signal_threshold_bps: [5, 10, 20, 40]
+  cost_bps_per_side: [0, 1, 2, 5, 10]
+  entry: next_one_minute_bar_open_after_completed_formation
+  exit: selected_hold_bar_close
+  overlap: one_position_per_pair_and_variant
+  signal_clock_et: [09:35, 15:40]
+  capital: full fixed base 1.0 per nonoverlapping position
+  cutoff: 2026-04-30
+expected_effect: A real structural lead/lag should survive both direction signs, adjacent horizons, chronology, and at least 2-5 bp per side; frequent 10 bp gross scalps that vanish at 5 bp are not viable.
+holdout_access: false
+execution:
+  commands:
+    - python campaigns/CAM-0632/src/run0002_structural_scalps.py
+    - python campaigns/CAM-0632/src/analyze_run0002_lead.py
+  planned_signal_variants: 576
+  executed_signal_variants: 576
+  planned_costed_rows: 2880
+  executed_costed_rows: 2880
+  cuda_used: false
+  compute_path: precomputed NumPy session arrays with stateful nonoverlap
+result:
+  date_range: [2019-06-21, 2026-04-30]
+  pair_attrition:
+    SMH_SOXL_SOXS: {parent_dates: 1724, aligned_complete_dates: 1656, removed_dates: 68}
+    QQQ_TQQQ_SQQQ: {parent_dates: 1724, aligned_complete_dates: 1713, removed_dates: 11}
+  dense_zero_cost_lead:
+    variant: SMH_SOXL_SOXS_impulse_continuation_f1_h10_t5
+    trades: 42763
+    trades_per_session: 24.96
+    mean_gross_trade_bps: 0.37
+    one_bp_per_side_net_return: negative
+  sole_5bp_all_block_positive:
+    variant: QQQ_TQQQ_SQQQ_impulse_reversal_f1_h15_t40
+    trades: 329
+    trades_per_session: 0.1921
+    net_return_5bp_side: 0.496507
+    recent12_return_5bp_side: -0.033580
+    recent18_return_5bp_side: 0.160868
+    mean_trade_5bp_side_bps: 15.0914
+    max_drawdown: 0.159637
+    block_returns: [0.058123, 0.238609, 0.199776]
+    positive_month_fraction: 0.240964
+    top_10_absolute_trade_share: 0.155456
+  variants_positive_all_three_blocks_at_5bp_side: 1
+  maximum_loaded_date: 2026-04-30
+  holdout_rows_loaded: 0
+decision: Dense scalp mechanisms fail realistic friction. Preserve the sparse QQQ overshoot-reversal clue and test mechanism-based confirmation, timing, and threshold neighborhoods before deciding; no quote replay earned yet.

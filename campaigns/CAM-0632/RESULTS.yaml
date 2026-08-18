@@ -1,0 +1,25 @@
+campaign_id: CAM-0632
+checkpoint: RUN-0002_structural_baseline
+status: active_sparse_overshoot_reversal_diagnostic
+holdout_access: false
+maximum_loaded_date: 2026-04-30
+baseline:
+  planned_signal_variants: 576
+  executed_signal_variants: 576
+  executed_costed_rows: 2880
+  dense_scalping_verdict: failed_friction
+  dense_lead: {variant: SMH_SOXL_SOXS_impulse_continuation_f1_h10_t5, trades: 42763, trades_per_session: 24.96, mean_gross_trade_bps: 0.37}
+  sole_5bp_all_block_positive:
+    variant: QQQ_TQQQ_SQQQ_impulse_reversal_f1_h15_t40
+    trades: 329
+    net_return: 0.496507
+    recent12_return: -0.033580
+    recent18_return: 0.160868
+    max_drawdown: 0.159637
+    positive_month_fraction: 0.240964
+    block_returns: [0.058123, 0.238609, 0.199776]
+limitations:
+  - The only positive 5bp all-block row is sparse, recently negative, and inconsistent by month.
+  - Bar opens/closes do not establish bid/ask marketability or latency.
+  - No candidate has earned quote replay, executable status, or promotion.
+next_gate: Test broad overshoot neighbors, one-bar reversal confirmation, time-of-day, direction, and leveraged-residual interaction without mining narrow thresholds.
