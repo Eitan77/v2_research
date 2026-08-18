@@ -1,0 +1,18 @@
+{
+  "generated_at": "2026-08-18T22:36:08+00:00",
+  "campaign": "CAM-0631",
+  "status": "passed",
+  "results_status": "historical_execution_rejected_signal_only",
+  "counts": {
+    "yaml_files": 9,
+    "run_files": 7,
+    "json_reports": 8,
+    "jsonl_lines": 14,
+    "python_files": 9,
+    "artifact_files": 29,
+    "holdout_assertions": 7,
+    "cutoff_assertions": 6
+  },
+  "declared_source_sha256": "e4245246a605f4bf7d9cb35f249bdcea15e7fd0d74f0f3e36a23f33636239c13",
+  "cutoff": "2026-04-30"
+}

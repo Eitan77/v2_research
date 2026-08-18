@@ -1,0 +1,18 @@
+{
+  "generated_at": "2026-08-18T22:36:08+00:00",
+  "campaign": "CAM-0632",
+  "status": "passed",
+  "results_status": "frozen_forward_paper_candidate",
+  "counts": {
+    "yaml_files": 14,
+    "run_files": 12,
+    "json_reports": 13,
+    "jsonl_lines": 24,
+    "python_files": 16,
+    "artifact_files": 57,
+    "holdout_assertions": 12,
+    "cutoff_assertions": 11
+  },
+  "declared_source_sha256": null,
+  "cutoff": "2026-04-30"
+}
