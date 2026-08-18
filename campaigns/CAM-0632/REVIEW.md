@@ -9,3 +9,11 @@ Only one of the 576 variants remained positive in all three broad chronological 
 That row is not consistent or currently strong. It averaged only 0.19 trades per session, had 24.10% positive months when zero months are included, and returned -3.36% over the latest twelve months at five basis points per side. At ten basis points per side the first chronology block became negative and recovery stretched to 465 sessions. No quote replay is justified yet.
 
 Decision: dense scalp families are rejected under the tested bar economics, but the large-impulse overshoot-reversal mechanism remains a principled diagnostic. The next run will test broad threshold/hold neighbors, one completed reversal-confirmation bar, direction and time-of-day attribution, and whether actual leveraged-ETF overshoot improves selection. A recent-only maximum will not rescue a weak full path.
+
+## RUN-0003 overshoot neighborhood
+
+The reversal clue broadened into six all-block-positive rows at five basis points per side, four with positive latest-twelve-month totals. This supports a real but sparse large-impulse reversal family rather than one isolated cell. It still does not meet the requested consistency profile.
+
+The recent-focused SMH row used a 60 bp shock and fifteen-minute hold, returned +41.56% additive over 147 trades, and made +10.75% in the latest twelve months, but had 17.16% drawdown, 247-session recovery, and only 22.89% positive months. The strongest full/risk row required a 50 bp shock, twenty-minute hold, and 20 bp directional leveraged overshoot; it returned +84.32% with 7.96% drawdown but only 108 trades, 18.07% positive months, and 616-session recovery. A one-bar opposite-sign confirmation improved the QQQ representative to +56.26% with 8.41% drawdown and all blocks positive, but latest-twelve-month return was only +0.50%.
+
+The mechanism is therefore neither high-frequency nor a monthly printer. It has nevertheless earned exact marketable SIP replay because three distinct representatives survive broad threshold, hold, confirmation, and cost neighborhoods. Quote replay will determine whether next-bar opens hid spread/latency damage; it will not be used to rescue a losing bar family or justify more threshold mining.

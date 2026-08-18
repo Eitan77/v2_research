@@ -1,6 +1,6 @@
 campaign_id: CAM-0632
-checkpoint: RUN-0002_structural_baseline
-status: active_sparse_overshoot_reversal_diagnostic
+checkpoint: RUN-0003_overshoot_neighborhood
+status: active_three_sparse_quote_candidates
 holdout_access: false
 maximum_loaded_date: 2026-04-30
 baseline:
@@ -22,4 +22,14 @@ limitations:
   - The only positive 5bp all-block row is sparse, recently negative, and inconsistent by month.
   - Bar opens/closes do not establish bid/ask marketability or latency.
   - No candidate has earned quote replay, executable status, or promotion.
-next_gate: Test broad overshoot neighbors, one-bar reversal confirmation, time-of-day, direction, and leveraged-residual interaction without mining narrow thresholds.
+run0003:
+  planned_signal_variants: 144
+  executed_signal_variants: 144
+  five_bp_all_block_positive: 6
+  five_bp_all_block_positive_recent12_positive: 4
+  representatives:
+    recent_focused: {variant: SMH_SOXL_SOXS_reversal_t60_h15_none_ov0, trades: 147, net_return: 0.415585, recent12: 0.107528, drawdown: 0.171608}
+    full_risk_focused: {variant: SMH_SOXL_SOXS_reversal_t50_h20_none_ov20, trades: 108, net_return: 0.843186, recent12: 0.016936, drawdown: 0.079581}
+    confirmed_QQQ: {variant: QQQ_TQQQ_SQQQ_reversal_t40_h15_one_bar_opposite_ov0, trades: 206, net_return: 0.562559, recent12: 0.005008, drawdown: 0.084118}
+  profile_verdict: Sparse reversal neighborhood, not high-frequency and not monthly consistent.
+next_gate: Exact marketable SIP ask-entry/bid-exit replay for the three representatives with latency and adverse-slippage stress; no further bar threshold tuning.

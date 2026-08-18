@@ -1,0 +1,36 @@
+run_id: RUN-0003
+parent_run: RUN-0002
+status: completed
+question: Is the sparse large-impulse reversal lead a stable overshoot mechanism after broad threshold/hold neighbors, one-bar confirmation, and leveraged-ETF overshoot conditioning?
+change: Diagnose and adapt the sole five-bp all-block-positive family without importing a single selected maximum as a final rule.
+reason: RUN-0002 rejected dense scalping but exposed a plausible QQQ one-minute overshoot/reversal clue that was historically positive yet sparse and recent12 negative.
+configuration:
+  pairs: [SMH_SOXL_SOXS, QQQ_TQQQ_SQQQ]
+  shock_formation_minutes: 1
+  shock_threshold_bps: [30, 40, 50, 60]
+  hold_minutes: [10, 15, 20]
+  confirmation: [none, next_completed_underlying_bar_opposite_sign]
+  directional_leveraged_overshoot_min_bps: [0, 10, 20]
+  cost_bps_per_side: [2, 5, 10]
+  entry: next_bar_open after required completed information
+  overlap: one position per pair and variant
+  diagnostics: [direction, time_of_day, magnitude, year, month, chronology, recent12, recent18]
+  cutoff: 2026-04-30
+expected_effect: Genuine overshoot reversal should form a stable neighborhood, improve recent behavior or consistency through causal confirmation, and survive five bps per side; otherwise the isolated RUN-0002 row is not actionable.
+holdout_access: false
+execution:
+  command: python campaigns/CAM-0632/src/run0003_overshoot_reversal.py
+  planned_signal_variants: 144
+  executed_signal_variants: 144
+  planned_costed_rows: 432
+  executed_costed_rows: 432
+result:
+  five_bp_all_block_positive: 6
+  five_bp_all_block_positive_and_recent12_positive: 4
+  recent_focused: {variant: SMH_SOXL_SOXS_reversal_t60_h15_none_ov0, trades: 147, net_return: 0.415585, recent12_return: 0.107528, recent18_return: 0.062102, max_drawdown: 0.171608, positive_month_fraction: 0.228916, recovery_sessions: 247}
+  full_risk_focused: {variant: SMH_SOXL_SOXS_reversal_t50_h20_none_ov20, trades: 108, net_return: 0.843186, recent12_return: 0.016936, recent18_return: 0.386324, max_drawdown: 0.079581, positive_month_fraction: 0.180723, recovery_sessions: 616}
+  confirmed_QQQ: {variant: QQQ_TQQQ_SQQQ_reversal_t40_h15_one_bar_opposite_ov0, trades: 206, net_return: 0.562559, recent12_return: 0.005008, recent18_return: 0.038352, max_drawdown: 0.084118, positive_month_fraction: 0.253012, recovery_sessions: 60}
+  maximum_loaded_date: 2026-04-30
+  holdout_rows_loaded: 0
+  quote_replay_performed: false
+decision: Overshoot/reversal is a real sparse neighborhood but not a consistent printer. Exact marketable SIP replay is earned for the three distinct representatives before final judgment; no additional threshold tuning.
