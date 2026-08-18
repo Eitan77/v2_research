@@ -1,6 +1,6 @@
 campaign_id: CAM-0632
 checkpoint: RUN-0003_overshoot_neighborhood
-status: forward_paper_candidate_exit_impact_pending
+status: frozen_forward_paper_candidate
 holdout_access: false
 maximum_loaded_date: 2026-04-30
 baseline:
@@ -75,4 +75,9 @@ run0009:
   2000_account_5pct_entry_depth_stress: {net_return: 0.423101, recent12: 0.002046, mean_sleeve_utilization: 0.648606, full_target_fraction: 0.436306, exit_depth_support: 0.732484, drawdown: 0.058908, blocks: [0.088849, 0.047553, 0.286699]}
   10000_account_5pct_entry_depth_stress: {net_return: 0.200213, recent12: -0.002159, mean_sleeve_utilization: 0.322502, exit_depth_support: 0.646497, blocks: [0.013927, 0.005997, 0.180289]}
   interpretation: A $2k reference remains historically positive after causal entry sizing, but 26.8 percent of its exits exceed 5 percent of displayed bid depth and the latest-year edge is only 0.20 percent.
-next_gate: Apply prespecified punitive extra exit penalties to capacity-unsupported $2k/5-percent observations; do not drop them or choose participation from the result.
+run0010:
+  unsupported_exits: 84
+  extra_25bp_on_unsupported_exits: {net_return: 0.337926, recent12: 0.002046, blocks: [0.036766, 0.030874, 0.270286], drawdown: 0.062534}
+  extra_50bp_on_unsupported_exits: {net_return: 0.252752, recent12: 0.002046, blocks: [-0.015316, 0.014194, 0.253874], drawdown: 0.066693}
+  interpretation: Historical all-block robustness survives through an additional 25bp on every unsupported exit; 50bp breaks the first block. Actual broker exits remain the forward gate.
+next_gate: Forward-only paper observation under FORWARD_PAPER_SPEC.md for the later of twelve months or fifty trades; no sealed-history access, rule changes, or live-capital claim.

@@ -1,0 +1,29 @@
+run_id: RUN-0010
+parent_run: RUN-0009
+status: completed
+question: Does the conservative $2,000 entry-depth-capped portfolio survive punitive exit impact on every observation whose quantity exceeds 5 percent of later displayed bid depth?
+change: Preserve every trade and sized quantity; subtract an additional fixed exit penalty only on capacity-unsupported exits.
+reason: RUN-0009's base stress may undercharge the 26.8 percent of exits that exceed the symmetric displayed-depth fraction.
+configuration:
+  source: RUN-0009_2000_account_5pct_entry_depth_stress_ledger
+  base_execution: 1000ms plus 5bp adverse slippage per side
+  additional_unsupported_exit_penalty_bps: [0, 10, 25, 50, 100]
+  supported_exit_extra_penalty_bps: 0
+  trades_dropped_or_resized_using_exit_depth: 0
+  accounting: subtract penalty times actual allocated dollars divided by frozen account base; additive and noncompounding
+  cutoff: 2026-04-30
+expected_effect: Full-history robustness may remain, but a credible handoff must show the recent path and chronology under severe exit penalties. No penalty row may be selected as an execution forecast.
+holdout_access: false
+execution:
+  command: python campaigns/CAM-0632/src/run0010_exit_impact_stress.py
+  planned_penalty_rows: 5
+  executed_penalty_rows: 5
+  unsupported_exits: 84
+result:
+  extra_10bp: {net_return: 0.389031, recent12_return: 0.002046, block_returns: [0.068016, 0.040881, 0.280134], max_drawdown: 0.060307}
+  extra_25bp: {net_return: 0.337926, recent12_return: 0.002046, block_returns: [0.036766, 0.030874, 0.270286], max_drawdown: 0.062534, recovery_sessions: 473}
+  extra_50bp: {net_return: 0.252752, recent12_return: 0.002046, block_returns: [-0.015316, 0.014194, 0.253874], max_drawdown: 0.066693}
+  extra_100bp: {net_return: 0.082402, recent12_return: 0.002046, block_returns: [-0.119482, -0.019164, 0.221048], max_drawdown: 0.174163}
+  maximum_loaded_date: 2026-04-30
+  holdout_rows_loaded: 0
+decision: The causal small-account candidate survives a severe additional 25bp penalty on every depth-unsupported exit, but not all chronology blocks at 50bp. Finalize forward paper observation with actual exit-fill evidence and no live claim.

@@ -1,0 +1,118 @@
+{
+  "status": "completed",
+  "generated_at": "2026-08-18T22:26:26+00:00",
+  "account_notional": 2000.0,
+  "entry_displayed_participation": 0.05,
+  "base_execution": "stress_1000ms_5bp",
+  "planned_penalty_rows": 5,
+  "executed_penalty_rows": 5,
+  "results": [
+    {
+      "unsupported_exit_extra_penalty_bps": 0,
+      "trades": 314,
+      "unsupported_exits": 84,
+      "net_return": 0.4231006632,
+      "recent12_return": 0.002046157,
+      "green_active_days": 0.5641025641,
+      "positive_month_fraction": 0.265060241,
+      "block_returns": [
+        0.088848666,
+        0.0475530017,
+        0.2866989954
+      ],
+      "max_drawdown": 0.0589081444,
+      "recovery_sessions": 473,
+      "worst_day": -0.0468833713,
+      "top10_absolute_trade_share": 0.1957398816
+    },
+    {
+      "unsupported_exit_extra_penalty_bps": 10,
+      "trades": 314,
+      "unsupported_exits": 84,
+      "net_return": 0.3890308382,
+      "recent12_return": 0.002046157,
+      "green_active_days": 0.5555555556,
+      "positive_month_fraction": 0.265060241,
+      "block_returns": [
+        0.068015641,
+        0.0408812867,
+        0.2801339104
+      ],
+      "max_drawdown": 0.0603067389,
+      "recovery_sessions": 473,
+      "worst_day": -0.0468833713,
+      "top10_absolute_trade_share": 0.1957865686
+    },
+    {
+      "unsupported_exit_extra_penalty_bps": 25,
+      "trades": 314,
+      "unsupported_exits": 84,
+      "net_return": 0.3379261007,
+      "recent12_return": 0.002046157,
+      "green_active_days": 0.5555555556,
+      "positive_month_fraction": 0.265060241,
+      "block_returns": [
+        0.0367661035,
+        0.0308737142,
+        0.2702862829
+      ],
+      "max_drawdown": 0.0625337491,
+      "recovery_sessions": 473,
+      "worst_day": -0.0468833713,
+      "top10_absolute_trade_share": 0.1957661293
+    },
+    {
+      "unsupported_exit_extra_penalty_bps": 50,
+      "trades": 314,
+      "unsupported_exits": 84,
+      "net_return": 0.2527515382,
+      "recent12_return": 0.002046157,
+      "green_active_days": 0.5555555556,
+      "positive_month_fraction": 0.265060241,
+      "block_returns": [
+        -0.015316459,
+        0.0141944267,
+        0.2538735704
+      ],
+      "max_drawdown": 0.0666929373,
+      "recovery_sessions": 74,
+      "worst_day": -0.0468833713,
+      "top10_absolute_trade_share": 0.1955733822
+    },
+    {
+      "unsupported_exit_extra_penalty_bps": 100,
+      "trades": 314,
+      "unsupported_exits": 84,
+      "net_return": 0.0824024132,
+      "recent12_return": 0.002046157,
+      "green_active_days": 0.5299145299,
+      "positive_month_fraction": 0.2409638554,
+      "block_returns": [
+        -0.119481584,
+        -0.0191641483,
+        0.2210481454
+      ],
+      "max_drawdown": 0.1741632445,
+      "recovery_sessions": 618,
+      "worst_day": -0.0468833713,
+      "top10_absolute_trade_share": 0.1950198804
+    }
+  ],
+  "attrition": [
+    {
+      "pair": "SMH_SOXL_SOXS",
+      "parent_symbol_union_dates": 1724,
+      "complete_aligned_dates": 1656,
+      "dates_removed": 68
+    },
+    {
+      "pair": "QQQ_TQQQ_SQQQ",
+      "parent_symbol_union_dates": 1724,
+      "complete_aligned_dates": 1713,
+      "dates_removed": 11
+    }
+  ],
+  "maximum_loaded_date": "2026-04-30",
+  "holdout_rows_loaded": 0,
+  "decision_gate": "report_full_and_recent_survival_without_selecting_penalty"
+}
