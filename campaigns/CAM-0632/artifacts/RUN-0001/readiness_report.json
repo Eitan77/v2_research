@@ -1,0 +1,47 @@
+{
+  "status": "failed",
+  "generated_at": "2026-08-18T21:10:23+00:00",
+  "catalog": "D:\\AlgoResearch\\data\\catalog.duckdb",
+  "query_cutoff_literal": "2026-04-30",
+  "maximum_loaded_date": "2026-04-30",
+  "holdout_rows_loaded": 0,
+  "deduplicated_rows": 4676060,
+  "pair_coverage": [
+    {
+      "underlying": "SMH",
+      "bull": "SOXL",
+      "inverse": "SOXS",
+      "complete_sessions": 1688,
+      "missing_symbols": []
+    },
+    {
+      "underlying": "QQQ",
+      "bull": "TQQQ",
+      "inverse": "SQQQ",
+      "complete_sessions": 1718,
+      "missing_symbols": []
+    },
+    {
+      "underlying": "QQQ",
+      "bull": "QLD",
+      "inverse": "QID",
+      "complete_sessions": 0,
+      "missing_symbols": [
+        "QLD",
+        "QID"
+      ]
+    },
+    {
+      "underlying": "SPY",
+      "bull": "SPXL",
+      "inverse": "SPXS",
+      "complete_sessions": 0,
+      "missing_symbols": [
+        "SPXL",
+        "SPXS"
+      ]
+    }
+  ],
+  "failure": "two declared starting pairs have no catalog bars",
+  "gate": "bar_stage_blocked"
+}

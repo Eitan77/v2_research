@@ -1,0 +1,40 @@
+campaign_id: CAM-0631
+title: Event-driven passive dislocation capture
+status: frozen_pre_execution
+created_at: 2026-08-18
+source: C:/Users/decla/Downloads/EPDC_event_driven_passive_dislocation_capture.md
+hypothesis: >-
+  During a causally identifiable subset of temporary regular-session NBBO
+  dislocations, a passive order can earn spread plus midpoint convergence that
+  exceeds adverse selection, explicit costs, forced-exit cost, and inventory risk.
+source_faithful_sequence:
+  - Build a SIP quote/trade event set and measure side-signed future midpoint markout.
+  - Test interpretable toxicity and fair-value features chronologically without fill assumptions.
+  - Proceed to queue-aware passive-fill simulation only if signed markout is positive.
+  - Require same-price trade evidence, queue-ahead stress, latency, and forced exits.
+starting_universe:
+  symbols: [AAPL, MSFT, AMZN, GOOGL, META, NVDA, AMD, AVGO, MU, TSLA, JPM, BAC, WFC, XOM, CVX, LLY, UNH, JNJ, WMT, COST, HD, DIS, UBER, PLTR]
+  rationale: Prespecified liquid multi-sector diagnostic panel; not a survivorship-free production universe.
+  empirical_buckets: [normally_one_cent, normally_one_to_three_cents, normally_two_to_eight_cents]
+starting_event_families:
+  - temporary spread widening versus symbol and time-of-day baseline
+  - stock-specific return residual versus prespecified liquid peers
+  - one-sided quote depletion followed by stabilization or refill
+starting_horizons_seconds: [0.25, 1, 5, 15, 30, 60]
+starting_order_ttl_seconds: [1, 2, 5, 10, 15]
+starting_queue_models: [optimistic_diagnostic, base, conservative, adversarial]
+constraints:
+  - Every data request and loader ends no later than 2026-04-30; May 1 onward is never requested or loaded.
+  - Regular session only and mandatory flat inventory before the close.
+  - Direct short inventory, if later tested, has a predefined protective exit and forced preclose liquidation.
+  - Quote touch alone never receives fill credit.
+  - Paper-account PnL is never strategy evidence.
+  - Fixed base 1.0, noncompounded additive PnL, and running-peak-relative drawdown.
+  - Report spread edge, signed markout, costs, forced exits, and net edge separately.
+  - No deep model until simple rules and interpretable chronological models establish stable signal value.
+adaptation_inside_campaign:
+  - event definitions, causal peer models, horizons, interpretable toxicity models
+  - liquidity/spread buckets, order TTL, queue-ahead assumptions, inventory limits
+  - passive exit versus emergency marketable exit and portfolio-level beta controls
+new_campaign_if: The edge ceases to be event-driven passive liquidity provision after temporary dislocation.
+holdout_access: false

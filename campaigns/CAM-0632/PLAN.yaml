@@ -1,0 +1,36 @@
+campaign_id: CAM-0632
+title: Structural leveraged-ETF intraday scalping
+status: frozen_pre_execution
+created_at: 2026-08-18
+hypothesis: >-
+  Completed underlying-ETF price/flow shocks and temporary leveraged-ETF tracking
+  residuals may create repeatable seconds-to-minutes continuation or convergence
+  opportunities that can be expressed cash-only through bull/inverse ETFs and
+  survive frequent round-trip costs.
+starting_pairs:
+  - {underlying: SMH, bull: SOXL, inverse: SOXS, nominal_leverage: 3}
+  - {underlying: QQQ, bull: TQQQ, inverse: SQQQ, nominal_leverage: 3}
+  - {underlying: QQQ, bull: QLD, inverse: QID, nominal_leverage: 2}
+  - {underlying: SPY, bull: SPXL, inverse: SPXS, nominal_leverage: 3}
+starting_mechanisms:
+  - completed-underlying impulse followed by leveraged-ETF continuation
+  - temporary leveraged-ETF return residual followed by convergence
+  - post-shock overshoot followed by short-horizon reversal
+  - spread/liquidity and time-of-day selectivity around the same structural signals
+starting_formation_minutes: [1, 2, 5, 10]
+starting_hold_minutes: [1, 2, 3, 5, 10, 15]
+starting_cost_bps_per_side: [0, 1, 2, 5, 10]
+constraints:
+  - Decisions use completed bars or quote-native state; start-stamped current-bar closes are never knowable at entry.
+  - Entry is no earlier than the next actionable quote/bar after the decision plus modeled latency.
+  - Cash-only fixed-base gross exposure no greater than 1.0; no broker margin and no compounding.
+  - Prefer long bull/inverse ETF expressions; any direct short is intraday with a protective exit and forced preclose liquidation.
+  - Every loader ends no later than 2026-04-30 and loads zero sealed rows.
+  - Report net return, trades/day, green days, weekly/monthly path, drawdown/recovery, turnover, concentration, costs, and execution evidence.
+  - Quote replay is required for every bar-stage survivor and cannot rescue a bar-stage loser.
+  - The economic test for frequent 10 bp gross scalps includes the full round-trip spread and adverse slippage; zero-cost profitability is not enough.
+adaptation_inside_campaign:
+  - named formation/holding horizons, side mapping, broad signal strength and volatility/liquidity filters
+  - causal residual estimators, exits, daily risk limits, pair allocation, and marketable/passive execution choices
+new_campaign_if: The mechanism no longer depends on intraday underlying-to-leveraged-ETF price discovery or tracking residuals.
+holdout_access: false

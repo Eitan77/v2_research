@@ -1,0 +1,30 @@
+run_id: RUN-0001
+parent_run: null
+status: completed
+question: Can the declared local/remote sources support a causal pre-cutoff SIP quote-and-trade EPDC study without requesting sealed data?
+configuration:
+  smoke_symbol: AAPL
+  smoke_session: 2026-04-30
+  smoke_window_et: [10:00:00, 10:01:00]
+  feed: sip
+  request_kinds: [quotes, trades]
+  cutoff: 2026-04-30
+  save_raw_payload: false
+expected_effect: Validate credentials, schemas, monotone timestamps, valid NBBOs and prints, and explicit cutoff enforcement before any model or fill claim.
+holdout_access: false
+execution:
+  command: python campaigns/CAM-0631/src/readiness.py
+  executed_request_kinds: [quotes, trades]
+  executed_variants: 1
+result:
+  quote_rows: 5428
+  valid_nbbo_rows: 5426
+  trade_rows: 3284
+  valid_trade_rows: 3284
+  quote_pages: 1
+  trade_pages: 1
+  maximum_loaded_timestamp_utc: 2026-04-30T14:00:59.967961473+00:00
+  holdout_rows_loaded: 0
+  raw_payload_persisted: false
+  validation: passed
+decision: SIP quote/trade event reconstruction is feasible. Proceed to a bounded representative-panel signed-markout dataset; fill simulation remains blocked.

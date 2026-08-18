@@ -1,0 +1,2 @@
+{"timestamp":"2026-08-18T14:05:00-07:00","run_id":"RUN-0001","event":"frozen","detail":"Source contract, rule checklist, and SIP quote/trade readiness smoke test frozen before execution."}
+{"timestamp":"2026-08-18T14:09:12-07:00","run_id":"RUN-0001","event":"completed","detail":"Pre-cutoff AAPL SIP smoke passed with 5,428 quotes, 3,284 trades, valid monotone timestamps, and zero holdout rows; signed-markout study allowed, fill claims still blocked."}

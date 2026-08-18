@@ -1,0 +1,28 @@
+run_id: RUN-0001
+parent_run: null
+status: failed
+question: Do the declared SIP one-minute sources support all starting ETF pairs with causal timestamp semantics and zero holdout rows loaded?
+configuration:
+  symbols: [SMH, SOXL, SOXS, QQQ, TQQQ, SQQQ, QLD, QID, SPY, SPXL, SPXS]
+  feed: sip
+  adjustment: raw
+  session: regular
+  cutoff: 2026-04-30
+  timestamp_contract: start_stamped_decide_after_close_enter_next_bar
+expected_effect: Establish exact pair/date coverage and block any strategy test if the start-stamp, duplicate, cutoff, or pair-completeness checks fail.
+holdout_access: false
+execution:
+  command: python campaigns/CAM-0632/src/readiness.py
+  executed_symbols: [SMH, SOXL, SOXS, QQQ, TQQQ, SQQQ, QLD, QID, SPY, SPXL, SPXS]
+  executed_pairs: 4
+result:
+  validation: failed_pair_coverage
+  maximum_loaded_date: 2026-04-30
+  holdout_rows_loaded: 0
+  pair_complete_sessions:
+    SMH_SOXL_SOXS: 1688
+    QQQ_TQQQ_SQQQ: 1718
+    QQQ_QLD_QID: 0
+    SPY_SPXL_SPXS: 0
+  missing_symbols: [QLD, QID, SPXL, SPXS]
+decision: Fail-fast blocked the four-pair backtest. Preserve the missing-pair attrition and freeze a child readiness run on the two fully covered requested core pairs.

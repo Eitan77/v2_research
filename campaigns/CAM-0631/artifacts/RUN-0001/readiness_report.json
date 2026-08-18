@@ -1,0 +1,51 @@
+{
+  "status": "passed",
+  "generated_at": "2026-08-18T21:09:12+00:00",
+  "request": {
+    "symbol": "AAPL",
+    "start": "2026-04-30T14:00:00Z",
+    "end": "2026-04-30T14:01:00Z",
+    "feed": "sip"
+  },
+  "cutoff": "2026-04-30",
+  "holdout_rows_loaded": 0,
+  "credentials_present_not_persisted": true,
+  "raw_payload_persisted": false,
+  "quotes": {
+    "row_count": 5428,
+    "minimum_timestamp": "2026-04-30T14:00:00.001121658+00:00",
+    "maximum_timestamp": "2026-04-30T14:00:59.890929329+00:00",
+    "monotone_non_decreasing": true,
+    "pages": 1,
+    "valid_nbbo_rows": 5426,
+    "schema_keys": [
+      "ap",
+      "as",
+      "ax",
+      "bp",
+      "bs",
+      "bx",
+      "c",
+      "t",
+      "z"
+    ]
+  },
+  "trades": {
+    "row_count": 3284,
+    "minimum_timestamp": "2026-04-30T14:00:00.021005253+00:00",
+    "maximum_timestamp": "2026-04-30T14:00:59.967961473+00:00",
+    "monotone_non_decreasing": true,
+    "pages": 1,
+    "valid_print_rows": 3284,
+    "schema_keys": [
+      "c",
+      "i",
+      "p",
+      "s",
+      "t",
+      "x",
+      "z"
+    ]
+  },
+  "gate": "signal_study_allowed_fill_simulation_still_blocked"
+}

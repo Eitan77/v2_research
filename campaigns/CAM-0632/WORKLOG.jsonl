@@ -1,0 +1,2 @@
+{"timestamp":"2026-08-18T14:05:00-07:00","run_id":"RUN-0001","event":"frozen","detail":"Structural ETF-pair scalping charter and pre-cutoff one-minute readiness test frozen before execution."}
+{"timestamp":"2026-08-18T14:13:00-07:00","run_id":"RUN-0001","event":"failed","detail":"Fail-fast pair coverage gate: SOXL/SOXS and TQQQ/SQQQ had 1,688/1,718 complete sessions, but QLD/QID and SPXL/SPXS were absent; no backtest executed."}
