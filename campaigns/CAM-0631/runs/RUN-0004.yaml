@@ -1,0 +1,49 @@
+run_id: RUN-0004
+parent_run: RUN-0003
+status: completed
+question: Does a train-only peer fair-value residual add stable toxicity discrimination beyond own-book/flow and local-return state?
+change: Add the source-prescribed cross-asset component after own-book toxicity passed RUN-0003; no fill assumptions or event-selection changes.
+reason: RUN-0003 established that own-book and signed trade-flow information survives both validation dates, earning the next source experiment.
+configuration:
+  data_lineage: RUN-0002 exact SIP cache and RUN-0003 100ms clustered candidates
+  peer_groups:
+    mega_tech: [AAPL, MSFT, AMZN, GOOGL, META]
+    semiconductors: [NVDA, AMD, AVGO, MU]
+    banks: [JPM, BAC, WFC]
+    energy: [XOM, CVX]
+    healthcare: [LLY, UNH, JNJ]
+    consumer: [WMT, COST, HD, DIS]
+    high_beta_growth: [TSLA, UBER, PLTR]
+  peer_fair_value: leave_target_out_equal_peer_return with per_symbol_beta_fit_on_training_sessions_only
+  peer_residual_horizons_seconds: [1, 5]
+  models:
+    A: own_book_and_signed_trade_flow
+    B: A_plus_local_returns
+    C: B_plus_side_signed_peer_residuals
+  toxicity_label_horizons_seconds: [5, 15]
+  modeling_unit: 100ms cluster
+  training_weight: equal symbol-session
+  validation_sessions: [2025-11-05, 2026-04-01]
+expected_effect: Model C should improve or preserve AUC, low-minus-high markout, date stability, and symbol breadth on both validation dates; a one-date gain or degraded control is not incremental evidence.
+holdout_access: false
+execution:
+  command: python campaigns/CAM-0631/src/run0004_cross_asset.py
+  planned_models: 6
+  executed_models: 6
+  parent_candidate_clusters: 51580
+  clusters_after_peer_join: 51505
+  cluster_attrition: 75
+result:
+  model_A_own_book_flow_5s:
+    2025-11-05: {auc: 0.526313, low_5s_bps: 0.391473, high_5s_bps: -0.036970, breadth: 0.833333}
+    2026-04-01: {auc: 0.549089, low_5s_bps: 0.727086, high_5s_bps: -0.276907, breadth: 0.750000}
+  model_B_plus_local_5s:
+    2025-11-05: {auc: 0.524963, low_5s_bps: 0.380298, high_5s_bps: 0.054980, breadth: 0.625000}
+    2026-04-01: {auc: 0.551951, low_5s_bps: 0.709218, high_5s_bps: -0.378417, breadth: 0.708333}
+  model_C_plus_peer_5s:
+    2025-11-05: {auc: 0.526171, low_5s_bps: 0.471033, high_5s_bps: 0.039992, breadth: 0.708333}
+    2026-04-01: {auc: 0.547873, low_5s_bps: 0.655130, high_5s_bps: -0.306001, breadth: 0.625000}
+  maximum_loaded_session: 2026-04-01
+  holdout_rows_loaded: 0
+  fill_simulation_performed: false
+decision: Reject cross-asset residuals as non-incremental and freeze simpler Model A for a wider untouched pre-cutoff date confirmation before queue-aware fill simulation.

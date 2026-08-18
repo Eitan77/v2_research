@@ -29,4 +29,13 @@ run0003:
     2025-11-05: {auc: 0.525027, low_5s_bps: 0.392601, high_5s_bps: 0.070299, low_15s_bps: 0.669331, high_15s_bps: -0.440096, breadth: 0.666667}
     2026-04-01: {auc: 0.551831, low_5s_bps: 0.700261, high_5s_bps: -0.400636, low_15s_bps: 0.991021, high_15s_bps: -0.398619, breadth: 0.708333}
   ablation_interpretation: Local returns were unnecessary; signed one-second trade flow was material on the weaker validation date.
-next_gate: Test incremental cross-asset residual value against this own-book/flow control; only then conservative fill simulation.
+run0004:
+  peer_join_attrition: {parent_clusters: 51580, retained_clusters: 51505, removed_clusters: 75}
+  decision: Cross-asset residuals were non-incremental; retain own-book and signed-trade-flow Model A.
+  model_A_5s:
+    2025-11-05: {auc: 0.526313, low_5s_bps: 0.391473, high_5s_bps: -0.036970, breadth: 0.833333}
+    2026-04-01: {auc: 0.549089, low_5s_bps: 0.727086, high_5s_bps: -0.276907, breadth: 0.750000}
+  model_C_5s:
+    2025-11-05: {auc: 0.526171, low_5s_bps: 0.471033, high_5s_bps: 0.039992, breadth: 0.708333}
+    2026-04-01: {auc: 0.547873, low_5s_bps: 0.655130, high_5s_bps: -0.306001, breadth: 0.625000}
+next_gate: Apply frozen Model A unchanged to a wider untouched set of pre-cutoff dates; only then conservative fill simulation.
