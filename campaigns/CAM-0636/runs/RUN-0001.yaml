@@ -1,0 +1,19 @@
+run_id: RUN-0001
+campaign_id: CAM-0636
+status: completed
+parent: null
+question: Can a green-candle SOXL micro-target scalp survive realistic entry and fallback costs?
+reason: The exact immediate resting-profit-target mechanism was not tested in CAM-0632.
+expected_effect: High same-clock volume may improve continuation and target-hit probability, while costs and failed targets may consume the apparent edge.
+configuration:
+  window: [2025-05-01, 2025-07-31]
+  symbol: SOXL
+  green_candle_min_bp: [0, 5, 10, 20]
+  relative_volume_min: [0, 1.0, 1.5, 2.0]
+  target_bp: [2, 5, 10, 15]
+  maximum_hold_minutes: [1, 3, 5, 10]
+  entry_cost_bp: [2, 5]
+  execution: next_minute_open_entry_target_if_later_high_reaches_else_hold_end_close
+command: python campaigns/CAM-0636/src/run0001_bar_microtarget.py
+result: 512/512 variants executed; zero profitable at 2 or 5 bp. Best 2-bp cell was -2.47% and best 5-bp cell was -12.12% over May-July 2025.
+decision: reject at realistic bar friction; isolate gross alpha once.

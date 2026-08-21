@@ -1,0 +1,13 @@
+run_id: RUN-0002
+campaign_id: CAM-0636
+status: completed
+parent: RUN-0001
+question: Is RUN-0001 failure weak alpha or execution friction?
+reason: Every 2 bp and 5 bp variant was negative; a zero/one-bp diagnostic isolates gross continuation from costs.
+expected_effect: A small gross-positive region that fails at one bp would identify an uneconomic micro-edge; gross-negative results would reject the signal itself.
+configuration:
+  same_grid_as: RUN-0001
+  diagnostic_cost_bp: [0, 1]
+command: python campaigns/CAM-0636/src/run0002_gross_diagnostic.py
+result: 29/256 gross cells positive, only 1/256 cells positive at 1 bp; the sole 1-bp survivor made 0.74% with 2/3 positive months and 0.25 bp per trade.
+decision: edge is far smaller than executable friction; quote-test only the user's literal 1-2 bp feasibility question.

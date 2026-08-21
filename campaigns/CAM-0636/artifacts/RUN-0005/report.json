@@ -1,0 +1,99 @@
+{
+  "month": "2025-05",
+  "signal_events": 81,
+  "merged_quote_windows": 49,
+  "quote_rows": 1296147,
+  "all_required_windows_present": true,
+  "results": {
+    "t1_h1": {
+      "trades": 81,
+      "net_return": -0.08407058397696188,
+      "mean_trade_bp": -10.37908444160023,
+      "target_fill_rate": 0.5925925925925926,
+      "mean_effective_target_bp": 5.928825658755587,
+      "forced_exit_mean_bp": -34.10420383107251,
+      "positive_months": 0,
+      "monthly": {
+        "2025-05-31": -0.08407058397696188
+      },
+      "max_drawdown": 0.08410760206842527,
+      "min_entry_ask_size_raw": 5,
+      "min_exit_bid_size_raw": 1
+    },
+    "t1_h3": {
+      "trades": 78,
+      "net_return": -0.05873188766157411,
+      "mean_trade_bp": -7.529729187381296,
+      "target_fill_rate": 0.7692307692307693,
+      "mean_effective_target_bp": 5.935106549422722,
+      "forced_exit_mean_bp": -52.48327504024696,
+      "positive_months": 0,
+      "monthly": {
+        "2025-05-31": -0.05873188766157411
+      },
+      "max_drawdown": 0.05768803385912367,
+      "min_entry_ask_size_raw": 5,
+      "min_exit_bid_size_raw": 1
+    },
+    "t1_h5": {
+      "trades": 75,
+      "net_return": -0.07163618508103142,
+      "mean_trade_bp": -9.551491344137524,
+      "target_fill_rate": 0.7866666666666666,
+      "mean_effective_target_bp": 5.940425668683987,
+      "forced_exit_mean_bp": -66.76583678603521,
+      "positive_months": 0,
+      "monthly": {
+        "2025-05-31": -0.07163618508103142
+      },
+      "max_drawdown": 0.06709382613586314,
+      "min_entry_ask_size_raw": 5,
+      "min_exit_bid_size_raw": 1
+    },
+    "t2_h1": {
+      "trades": 81,
+      "net_return": -0.08407058397696188,
+      "mean_trade_bp": -10.37908444160023,
+      "target_fill_rate": 0.5925925925925926,
+      "mean_effective_target_bp": 5.928825658755587,
+      "forced_exit_mean_bp": -34.10420383107251,
+      "positive_months": 0,
+      "monthly": {
+        "2025-05-31": -0.08407058397696188
+      },
+      "max_drawdown": 0.08410760206842527,
+      "min_entry_ask_size_raw": 5,
+      "min_exit_bid_size_raw": 1
+    },
+    "t2_h3": {
+      "trades": 78,
+      "net_return": -0.05873188766157411,
+      "mean_trade_bp": -7.529729187381296,
+      "target_fill_rate": 0.7692307692307693,
+      "mean_effective_target_bp": 5.935106549422722,
+      "forced_exit_mean_bp": -52.48327504024696,
+      "positive_months": 0,
+      "monthly": {
+        "2025-05-31": -0.05873188766157411
+      },
+      "max_drawdown": 0.05768803385912367,
+      "min_entry_ask_size_raw": 5,
+      "min_exit_bid_size_raw": 1
+    },
+    "t2_h5": {
+      "trades": 75,
+      "net_return": -0.07163618508103142,
+      "mean_trade_bp": -9.551491344137524,
+      "target_fill_rate": 0.7866666666666666,
+      "mean_effective_target_bp": 5.940425668683987,
+      "forced_exit_mean_bp": -66.76583678603521,
+      "positive_months": 0,
+      "monthly": {
+        "2025-05-31": -0.07163618508103142
+      },
+      "max_drawdown": 0.06709382613586314,
+      "min_entry_ask_size_raw": 5,
+      "min_exit_bid_size_raw": 1
+    }
+  }
+}

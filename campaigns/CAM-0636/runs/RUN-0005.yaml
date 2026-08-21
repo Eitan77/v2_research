@@ -1,0 +1,23 @@
+run_id: RUN-0005
+campaign_id: CAM-0636
+status: completed
+parent: RUN-0004
+question: In May 2025 alone, can SOXL be bought at the ask and immediately relisted 1-2 bp higher?
+reason: User narrowed the requested feasibility check to one month.
+expected_effect: Actual SIP bid crossings will establish target feasibility and nonfill inventory risk without a broader campaign.
+configuration:
+  month: 2025-05
+  signal: completed green candle >= 20 bp and causal same-clock relative volume >= 2
+  entry: first SIP ask next minute
+  target_labels_bp: [1, 2]
+  tick_rule: round sell limit upward to nearest cent
+  bid_cross_windows_minutes: [1, 3, 5]
+  fallback: SIP bid at window end
+  extra_slippage_bp: 0
+command: python campaigns/CAM-0636/src/run0005_may_feasibility.py
+result: >-
+  All 49 merged May windows were present (1,296,147 SIP quotes). One- and two-bp
+  labels rounded to the same cent and averaged 5.93 bp effective target. Bid-cross
+  rates were 59.26%/76.92%/78.67% within 1/3/5 minutes, but additive returns were
+  -8.41%/-5.87%/-7.16%; forced exits averaged -34.10/-52.48/-66.77 bp.
+decision: mechanically fillable often, but rejected as a profitable microscalp because asymmetric nonfill losses dominate.

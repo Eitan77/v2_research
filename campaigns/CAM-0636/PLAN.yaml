@@ -1,0 +1,37 @@
+campaign_id: CAM-0636
+title: SOXL green-candle micro-profit-target scalp
+status: complete_one_month_feasibility_rejected
+created_at: 2026-08-20
+hypothesis: >-
+  A completed green SOXL one-minute candle with unusually high causal same-clock
+  volume may create enough short-lived continuation to cover a marketable entry
+  and a resting sell limit only a few basis points above entry.
+window:
+  start: 2025-05-01
+  end: 2025-07-31
+  sealed_holdout_start: 2026-05-01
+starting_rule: >-
+  After a completed regular-session SOXL one-minute green candle, optionally
+  require its volume to exceed a shifted 20-session same-clock median. Enter at
+  the next minute open, rest a sell limit above entry, and force an adverse
+  marketable exit after a fixed short hold if the target is not reached.
+prespecified_grid:
+  green_candle_min_bp: [0, 5, 10, 20]
+  relative_volume_min: [0, 1.0, 1.5, 2.0]
+  target_bp: [2, 5, 10, 15]
+  maximum_hold_minutes: [1, 3, 5, 10]
+  entry_cost_bp: [2, 5]
+hard_constraints:
+  - fixed-base additive PnL; one full-capital position at a time; no compounding
+  - signal uses only a completed candle and shifted prior-session volume history
+  - entry is no earlier than the next minute open
+  - target credit is only a bar-stage proxy until same-price trade evidence exists
+  - fallback exit pays the configured adverse cost
+  - no data after 2025-07-31 is loaded for this bounded experiment
+adaptation_inside_campaign:
+  - nearby target, hold, candle-size, and causal relative-volume settings
+  - quote and trade replay of a prespecified survivor
+new_campaign_if: reversal, shorting, overnight holding, or a different asset family
+promotion_gate: >-
+  Positive at 5 bp marketable cost, economically positive fallback-inclusive PnL,
+  stable across all three months, and later supported by quote/trade execution.

@@ -1,0 +1,21 @@
+run_id: RUN-0003
+campaign_id: CAM-0636
+status: failed_data_coverage
+parent: RUN-0002
+question: Does the literal immediate 1-2 bp sell-limit scalp work on SIP quotes?
+reason: Bar target touches are not fills; the user requested quote validation of buy-now/list-immediately mechanics.
+expected_effect: Tick rounding and ask-paid entry may reduce apparent economics; bid-cross fills identify unambiguous executable target events.
+frozen_rule:
+  signal: completed SOXL one-minute green candle >= 20 bp and shifted same-clock relative volume >= 2
+  entry: first valid SIP ask in the next minute
+  sell_limit: entry ask times [1, 2] bp rounded upward to the next cent
+  target_fill: first later SIP bid at or above limit
+  maximum_hold_minutes: [1, 3, 5]
+  fallback: first valid SIP bid at the deadline
+  overlap: one position at a time
+  notional_diagnostic_usd: 2000
+  explicit_extra_slippage_bp: [0, 1]
+data: local canonical Alpaca SIP quote lake, May-July 2025 only
+command: python campaigns/CAM-0636/src/run0003_quote_microtarget.py
+result: Local canonical quote partitions contained zero SOXL rows for the requested windows.
+decision: preserve failure; bounded remote SIP repair required.

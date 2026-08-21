@@ -1,0 +1,235 @@
+{
+  "loaded": {
+    "rows": 24569,
+    "sessions": 63,
+    "min_date": "2025-05-01",
+    "max_date": "2025-07-31",
+    "missing_volume_baseline_rows": 3900
+  },
+  "executed_variants": 512,
+  "expected_variants": 512,
+  "best_cost5_min30": [
+    {
+      "variant": "g20_rv2_t15_h10_c5",
+      "green_bp": 20,
+      "rvol": 2.0,
+      "target_bp": 15,
+      "hold": 10,
+      "cost_bp": 5,
+      "trades": 275,
+      "trades_per_session": 4.365079365079365,
+      "net_return": -0.1211764820659943,
+      "mean_trade_bp": -4.40641752967252,
+      "target_fill_proxy_rate": 0.7854545454545454,
+      "forced_exit_rate": 0.21454545454545454,
+      "green_trade_fraction": 0.7890909090909091,
+      "positive_months": 1,
+      "max_drawdown": 0.1211764820659943
+    },
+    {
+      "variant": "g20_rv2_t15_h5_c5",
+      "green_bp": 20,
+      "rvol": 2.0,
+      "target_bp": 15,
+      "hold": 5,
+      "cost_bp": 5,
+      "trades": 289,
+      "trades_per_session": 4.587301587301587,
+      "net_return": -0.12990597006299254,
+      "mean_trade_bp": -4.495016265155451,
+      "target_fill_proxy_rate": 0.6678200692041523,
+      "forced_exit_rate": 0.33217993079584773,
+      "green_trade_fraction": 0.6885813148788927,
+      "positive_months": 1,
+      "max_drawdown": 0.13125537463991355
+    },
+    {
+      "variant": "g20_rv2_t10_h5_c5",
+      "green_bp": 20,
+      "rvol": 2.0,
+      "target_bp": 10,
+      "hold": 5,
+      "cost_bp": 5,
+      "trades": 299,
+      "trades_per_session": 4.746031746031746,
+      "net_return": -0.14264804577354118,
+      "mean_trade_bp": -4.7708376512890025,
+      "target_fill_proxy_rate": 0.7357859531772575,
+      "forced_exit_rate": 0.26421404682274247,
+      "green_trade_fraction": 0.7391304347826086,
+      "positive_months": 0,
+      "max_drawdown": 0.14420019609410373
+    },
+    {
+      "variant": "g20_rv2_t10_h10_c5",
+      "green_bp": 20,
+      "rvol": 2.0,
+      "target_bp": 10,
+      "hold": 10,
+      "cost_bp": 5,
+      "trades": 286,
+      "trades_per_session": 4.5396825396825395,
+      "net_return": -0.170522344321679,
+      "mean_trade_bp": -5.962319731527238,
+      "target_fill_proxy_rate": 0.8181818181818182,
+      "forced_exit_rate": 0.18181818181818182,
+      "green_trade_fraction": 0.8181818181818182,
+      "positive_months": 1,
+      "max_drawdown": 0.170522344321679
+    },
+    {
+      "variant": "g20_rv2_t2_h5_c5",
+      "green_bp": 20,
+      "rvol": 2.0,
+      "target_bp": 2,
+      "hold": 5,
+      "cost_bp": 5,
+      "trades": 308,
+      "trades_per_session": 4.888888888888889,
+      "net_return": -0.17325087158564156,
+      "mean_trade_bp": -5.625028298235115,
+      "target_fill_proxy_rate": 0.8636363636363636,
+      "forced_exit_rate": 0.13636363636363635,
+      "green_trade_fraction": 0.8636363636363636,
+      "positive_months": 0,
+      "max_drawdown": 0.17325087158564156
+    },
+    {
+      "variant": "g20_rv2_t15_h3_c5",
+      "green_bp": 20,
+      "rvol": 2.0,
+      "target_bp": 15,
+      "hold": 3,
+      "cost_bp": 5,
+      "trades": 300,
+      "trades_per_session": 4.761904761904762,
+      "net_return": -0.17775346918195534,
+      "mean_trade_bp": -5.925115639398511,
+      "target_fill_proxy_rate": 0.5833333333333334,
+      "forced_exit_rate": 0.4166666666666667,
+      "green_trade_fraction": 0.6033333333333334,
+      "positive_months": 0,
+      "max_drawdown": 0.17824134183563914
+    },
+    {
+      "variant": "g20_rv2_t5_h5_c5",
+      "green_bp": 20,
+      "rvol": 2.0,
+      "target_bp": 5,
+      "hold": 5,
+      "cost_bp": 5,
+      "trades": 302,
+      "trades_per_session": 4.7936507936507935,
+      "net_return": -0.18229950741821688,
+      "mean_trade_bp": -6.036407530404532,
+      "target_fill_proxy_rate": 0.804635761589404,
+      "forced_exit_rate": 0.19536423841059603,
+      "green_trade_fraction": 0.804635761589404,
+      "positive_months": 0,
+      "max_drawdown": 0.18229950741821688
+    },
+    {
+      "variant": "g20_rv2_t2_h10_c5",
+      "green_bp": 20,
+      "rvol": 2.0,
+      "target_bp": 2,
+      "hold": 10,
+      "cost_bp": 5,
+      "trades": 304,
+      "trades_per_session": 4.825396825396825,
+      "net_return": -0.1849493553830851,
+      "mean_trade_bp": -6.083860374443589,
+      "target_fill_proxy_rate": 0.9177631578947368,
+      "forced_exit_rate": 0.08223684210526316,
+      "green_trade_fraction": 0.9177631578947368,
+      "positive_months": 0,
+      "max_drawdown": 0.19018779656701335
+    },
+    {
+      "variant": "g20_rv2_t2_h3_c5",
+      "green_bp": 20,
+      "rvol": 2.0,
+      "target_bp": 2,
+      "hold": 3,
+      "cost_bp": 5,
+      "trades": 313,
+      "trades_per_session": 4.968253968253968,
+      "net_return": -0.1882193705165648,
+      "mean_trade_bp": -6.013398419059578,
+      "target_fill_proxy_rate": 0.8370607028753994,
+      "forced_exit_rate": 0.16293929712460065,
+      "green_trade_fraction": 0.8370607028753994,
+      "positive_months": 0,
+      "max_drawdown": 0.1882193705165648
+    },
+    {
+      "variant": "g20_rv2_t10_h3_c5",
+      "green_bp": 20,
+      "rvol": 2.0,
+      "target_bp": 10,
+      "hold": 3,
+      "cost_bp": 5,
+      "trades": 309,
+      "trades_per_session": 4.904761904761905,
+      "net_return": -0.20145674122470136,
+      "mean_trade_bp": -6.51963563833985,
+      "target_fill_proxy_rate": 0.656957928802589,
+      "forced_exit_rate": 0.343042071197411,
+      "green_trade_fraction": 0.656957928802589,
+      "positive_months": 0,
+      "max_drawdown": 0.20145674122470136
+    }
+  ],
+  "top_monthly": {
+    "g20_rv2_t15_h10_c5": {
+      "2025-05-31": -0.0984893930574885,
+      "2025-06-30": 0.03490665718582309,
+      "2025-07-31": -0.05759374619432889
+    },
+    "g20_rv2_t15_h5_c5": {
+      "2025-05-31": -0.09713101733981122,
+      "2025-06-30": 0.005513844647189514,
+      "2025-07-31": -0.03828879737037083
+    },
+    "g20_rv2_t10_h5_c5": {
+      "2025-05-31": -0.08884479409093071,
+      "2025-06-30": -0.006174457395240585,
+      "2025-07-31": -0.04762879428736988
+    },
+    "g20_rv2_t10_h10_c5": {
+      "2025-05-31": -0.11380874567626809,
+      "2025-06-30": 0.01997072206724071,
+      "2025-07-31": -0.07668432071265163
+    },
+    "g20_rv2_t2_h5_c5": {
+      "2025-05-31": -0.08130673878575823,
+      "2025-06-30": -0.04061926956087669,
+      "2025-07-31": -0.051324863239006646
+    },
+    "g20_rv2_t15_h3_c5": {
+      "2025-05-31": -0.08799764208626659,
+      "2025-06-30": -0.03266973552704955,
+      "2025-07-31": -0.0570860915686392
+    },
+    "g20_rv2_t5_h5_c5": {
+      "2025-05-31": -0.07672151205227828,
+      "2025-06-30": -0.02868819155762381,
+      "2025-07-31": -0.07688980380831478
+    },
+    "g20_rv2_t2_h10_c5": {
+      "2025-05-31": -0.10057049089258308,
+      "2025-06-30": -0.013619540395226948,
+      "2025-07-31": -0.07075932409527508
+    },
+    "g20_rv2_t2_h3_c5": {
+      "2025-05-31": -0.0751207759114797,
+      "2025-06-30": -0.05280931521984977,
+      "2025-07-31": -0.06028927938523532
+    },
+    "g20_rv2_t10_h3_c5": {
+      "2025-05-31": -0.08972531263359607,
+      "2025-06-30": -0.04929439360388388,
+      "2025-07-31": -0.06243703498722142
+    }
+  }
+}

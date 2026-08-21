@@ -1,0 +1,44 @@
+{
+  "signal_events": 364,
+  "quote_rows": 0,
+  "quote_min": "NaT",
+  "quote_max": "NaT",
+  "results": {
+    "t1_h1_x0": {
+      "trades": 0
+    },
+    "t1_h1_x1": {
+      "trades": 0
+    },
+    "t1_h3_x0": {
+      "trades": 0
+    },
+    "t1_h3_x1": {
+      "trades": 0
+    },
+    "t1_h5_x0": {
+      "trades": 0
+    },
+    "t1_h5_x1": {
+      "trades": 0
+    },
+    "t2_h1_x0": {
+      "trades": 0
+    },
+    "t2_h1_x1": {
+      "trades": 0
+    },
+    "t2_h3_x0": {
+      "trades": 0
+    },
+    "t2_h3_x1": {
+      "trades": 0
+    },
+    "t2_h5_x0": {
+      "trades": 0
+    },
+    "t2_h5_x1": {
+      "trades": 0
+    }
+  }
+}

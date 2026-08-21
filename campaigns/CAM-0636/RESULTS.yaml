@@ -1,0 +1,13 @@
+campaign_id: CAM-0636
+status: complete_one_month_feasibility_rejected
+window: [2025-05-01, 2025-05-31]
+signal: SOXL green one-minute candle at least 20bp with causal same-clock relative volume at least 2
+execution: buy first next-minute SIP ask; immediately place cent-rounded sell limit; fill only when later SIP bid reaches limit
+evidence: {signal_events: 81, merged_quote_windows: 49, sip_quote_rows: 1296147, coverage_complete: true}
+tick_result: {requested_targets_bp: [1, 2], mean_effective_target_bp: 5.93, reason: one-cent minimum tick}
+one_minute: {trades: 81, bid_cross_fill_rate: 0.5926, net_return: -0.0841, mean_trade_bp: -10.38, forced_exit_mean_bp: -34.10}
+three_minutes: {trades: 78, bid_cross_fill_rate: 0.7692, net_return: -0.0587, mean_trade_bp: -7.53, forced_exit_mean_bp: -52.48}
+five_minutes: {trades: 75, bid_cross_fill_rate: 0.7867, net_return: -0.0716, mean_trade_bp: -9.55, forced_exit_mean_bp: -66.77}
+conclusion: The order can fill frequently, but the strategy is negative because small target wins do not offset larger losses when the target is not reached.
+promotion: false
+

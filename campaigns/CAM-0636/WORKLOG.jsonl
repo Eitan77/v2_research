@@ -1,0 +1,7 @@
+{"timestamp":"2026-08-20T00:00:00-07:00","run_id":"RUN-0001","event":"frozen","detail":"Bounded May-July 2025 SOXL green-candle micro-target grid frozen before execution."}
+{"timestamp":"2026-08-20T00:01:00-07:00","run_id":"RUN-0001","event":"completed","detail":"512/512 cells; zero profitable at 2bp or 5bp cost."}
+{"timestamp":"2026-08-20T00:02:00-07:00","run_id":"RUN-0002","event":"completed","detail":"Gross edge was tiny: 29/256 positive at zero cost and 1/256 at 1bp."}
+{"timestamp":"2026-08-20T00:03:00-07:00","run_id":"RUN-0003","event":"failed","detail":"Canonical quote lake had zero SOXL rows; no strategy interpretation."}
+{"timestamp":"2026-08-20T00:04:00-07:00","run_id":"RUN-0004","event":"aborted","detail":"User narrowed remote quote repair to May only; partial cache preserved."}
+{"timestamp":"2026-08-20T00:05:00-07:00","run_id":"RUN-0005","event":"completed","detail":"May SIP bid-cross fills reached 59%-79% within 1-5m, but net was -8.41%/-5.87%/-7.16% because forced exits lost 34-67bp on average."}
+

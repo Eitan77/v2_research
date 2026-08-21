@@ -1,0 +1,15 @@
+run_id: RUN-0004
+campaign_id: CAM-0636
+status: aborted_by_user_scope_narrowing
+parent: RUN-0003
+question: Can missing canonical SOXL quote coverage be repaired with bounded SIP pulls?
+reason: RUN-0003 loaded zero SOXL quote rows; this was a data-coverage failure, not an economic result.
+expected_effect: Complete five-minute event windows will permit literal bid-cross target-fill replay without accessing sealed dates.
+configuration:
+  signals: unchanged RUN-0003 frozen signal events
+  quote_windows: entry target through five minutes and two seconds, overlapping windows merged
+  source: Alpaca SIP quotes
+  replay: unchanged RUN-0003 targets, holds, tick rounding, and fallback
+command: python campaigns/CAM-0636/src/run0004_pull_and_replay.py
+result: Partial bounded quote pull cached; no economic result interpreted.
+decision: user narrowed test to May 2025 only; continue as RUN-0005.
