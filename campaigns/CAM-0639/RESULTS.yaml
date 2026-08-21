@@ -1,5 +1,5 @@
 campaign_id: CAM-0639
-status: complete_bar_fill_result
+status: conditional_signal_checkpoint
 window: {first_entry: 2021-05-03, final_exit: 2026-04-30, overnights: 1254}
 execution: raw final regular-session one-minute close to next-session first one-minute open
 price_basis: raw price return; dividends excluded
@@ -11,4 +11,20 @@ yearly_zero_cost: {2021_partial: 0.079601, 2022: -0.633360, 2023: 0.219228, 2024
 best_overnight: {entry: 2024-09-25, exit: 2024-09-26, return: 0.180111}
 worst_overnight: {entry: 2024-12-18, exit: 2024-12-19, return: -0.130815}
 conclusion: Positive overall but highly unstable, cost-sensitive, and dominated by the recent regime; this is bar evidence, not an exact quote or auction fill claim.
-
+conditional_walk_forward:
+  run: RUN-0004
+  causal_timing: predictors through penultimate regular-session minute; entry at final one-minute close
+  oos_window: {first_entry: 2023-01-03, final_exit: 2026-04-30, overnights: 833}
+  classification: {green_base_rate: 0.545018, logistic_auc: 0.530947, logistic_accuracy: 0.519808, majority_accuracy: 0.545018}
+  logistic_selected: {trades: 150, green_rate: 0.606667, mean_net_bp_at_2bp_side: 36.6377, net_additive_return: 0.549565, positive_years: 4}
+  close_top_quartile:
+    adaptation_status: selected after comparing the prespecified simple-rule panel; not untouched OOS
+    trades: 252
+    green_rate: 0.599206
+    mean_net_bp_at_2bp_side: 54.7453
+    net_additive_return: 1.379583
+    max_drawdown: 0.075070
+    positive_years: 4
+    complement: {trades: 581, green_rate: 0.521515, mean_net_bp_at_2bp_side: 5.2389}
+    week_block_bootstrap_mean_gross_lift_bp_95ci: [15.8972, 85.5809]
+conditional_conclusion: MU closing near the observable session high is a meaningful lead, but green/red is not strongly classifiable overall. The rule still needs close-timing and execution sensitivity plus forward confirmation.

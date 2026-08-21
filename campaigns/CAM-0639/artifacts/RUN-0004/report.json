@@ -1,0 +1,1060 @@
+{
+  "status": "complete",
+  "causal_entry": "predictors through penultimate regular-session bar; entry at final one-minute close",
+  "source": "raw SIP one-minute bars; dividends excluded",
+  "cost_bp_per_side": 2,
+  "loaded_rows": 1986755,
+  "daily_symbol_sessions": 5104,
+  "role_overnights": 1254,
+  "merged_overnights_before_feature_attrition": 1254,
+  "feature_complete_overnights": 1254,
+  "attrition": 0,
+  "first_oos_entry": "2023-01-03",
+  "final_oos_exit": "2026-04-30",
+  "classification": {
+    "oos_rows": 833,
+    "green_base_rate": 0.5450180072028812,
+    "logistic_auc": 0.5309474271500471,
+    "logistic_accuracy_at_0p5": 0.5198079231692677,
+    "majority_class_accuracy": 0.5450180072028812,
+    "logistic_brier": 0.25397644957410814,
+    "ridge_return_rank_auc": 0.4919391396324666
+  },
+  "all_oos": {
+    "trades": 833,
+    "gross_additive_return": 2.0171639759746482,
+    "net_additive_return_2bp_side": 1.6839639759746485,
+    "mean_net_bp": 20.2156539732851,
+    "green_rate_gross": 0.5450180072028812,
+    "max_drawdown": 0.17930427349413988,
+    "top_abs_trade_share": 0.014409510710732609,
+    "positive_test_years": 4,
+    "test_years": 4,
+    "yearly": {
+      "2023": {
+        "trades": 249,
+        "net_return": 0.10862560302003316,
+        "mean_net_bp": 4.362474016868802
+      },
+      "2024": {
+        "trades": 252,
+        "net_return": 0.6049221014364666,
+        "mean_net_bp": 24.00484529509788
+      },
+      "2025": {
+        "trades": 250,
+        "net_return": 0.7256756870160763,
+        "mean_net_bp": 29.027027480643053
+      },
+      "2026": {
+        "trades": 82,
+        "net_return": 0.24474058450207223,
+        "mean_net_bp": 29.846412744155153
+      }
+    }
+  },
+  "models": {
+    "logistic": {
+      "trades": 150,
+      "gross_additive_return": 0.6095653383615328,
+      "net_additive_return_2bp_side": 0.5495653383615327,
+      "mean_net_bp": 36.637689224102175,
+      "green_rate_gross": 0.6066666666666667,
+      "max_drawdown": 0.052154614817835204,
+      "top_abs_trade_share": 0.03628088748395828,
+      "positive_test_years": 4,
+      "test_years": 4,
+      "yearly": {
+        "2023": {
+          "trades": 49,
+          "net_return": 0.07750862145371856,
+          "mean_net_bp": 15.818086010962972
+        },
+        "2024": {
+          "trades": 48,
+          "net_return": 0.09576728818918144,
+          "mean_net_bp": 19.951518372746136
+        },
+        "2025": {
+          "trades": 37,
+          "net_return": 0.2992185450266131,
+          "mean_net_bp": 80.86987703421975
+        },
+        "2026": {
+          "trades": 16,
+          "net_return": 0.07707088369201973,
+          "mean_net_bp": 48.16930230751233
+        }
+      }
+    },
+    "ridge": {
+      "trades": 157,
+      "gross_additive_return": 0.49573223101898944,
+      "net_additive_return_2bp_side": 0.4329322310189896,
+      "mean_net_bp": 27.575301338789146,
+      "green_rate_gross": 0.5859872611464968,
+      "max_drawdown": 0.1253722345558573,
+      "top_abs_trade_share": 0.033954009980702825,
+      "positive_test_years": 3,
+      "test_years": 4,
+      "yearly": {
+        "2023": {
+          "trades": 42,
+          "net_return": -0.04276717355750409,
+          "mean_net_bp": -10.182660370834308
+        },
+        "2024": {
+          "trades": 53,
+          "net_return": 0.045537086206694936,
+          "mean_net_bp": 8.591903057866968
+        },
+        "2025": {
+          "trades": 46,
+          "net_return": 0.36713049112497875,
+          "mean_net_bp": 79.81097633151713
+        },
+        "2026": {
+          "trades": 16,
+          "net_return": 0.0630318272448199,
+          "mean_net_bp": 39.394892028012436
+        }
+      }
+    }
+  },
+  "simple_rules": [
+    {
+      "rule": "close_top_quartile",
+      "trades": 252,
+      "gross_additive_return": 1.4803825458594342,
+      "net_additive_return_2bp_side": 1.3795825458594342,
+      "mean_net_bp": 54.74533912140611,
+      "green_rate_gross": 0.5992063492063492,
+      "max_drawdown": 0.07507038431795286,
+      "top_abs_trade_share": 0.04459611437355098,
+      "positive_test_years": 4,
+      "test_years": 4
+    },
+    {
+      "rule": "high_volume_1p5x",
+      "trades": 140,
+      "gross_additive_return": 0.6284696539310776,
+      "net_additive_return_2bp_side": 0.5724696539310774,
+      "mean_net_bp": 40.89068956650553,
+      "green_rate_gross": 0.6071428571428571,
+      "max_drawdown": 0.1146700146721104,
+      "top_abs_trade_share": 0.0653672810174072,
+      "positive_test_years": 3,
+      "test_years": 4
+    },
+    {
+      "rule": "mu_outperformed_smh",
+      "trades": 409,
+      "gross_additive_return": 1.4483380169648625,
+      "net_additive_return_2bp_side": 1.2847380169648628,
+      "mean_net_bp": 31.411687456353615,
+      "green_rate_gross": 0.5574572127139364,
+      "max_drawdown": 0.10241120922888698,
+      "top_abs_trade_share": 0.02843871173757881,
+      "positive_test_years": 3,
+      "test_years": 4
+    },
+    {
+      "rule": "mu_day_green",
+      "trades": 430,
+      "gross_additive_return": 1.5223436313407963,
+      "net_additive_return_2bp_side": 1.3503436313407962,
+      "mean_net_bp": 31.403340263739445,
+      "green_rate_gross": 0.5558139534883721,
+      "max_drawdown": 0.08782081798496903,
+      "top_abs_trade_share": 0.027841889546698684,
+      "positive_test_years": 4,
+      "test_years": 4
+    },
+    {
+      "rule": "last30_red",
+      "trades": 394,
+      "gross_additive_return": 1.3374581265034446,
+      "net_additive_return_2bp_side": 1.1798581265034447,
+      "mean_net_bp": 29.945637728513823,
+      "green_rate_gross": 0.5609137055837563,
+      "max_drawdown": 0.13375767669260474,
+      "top_abs_trade_share": 0.02310284356593946,
+      "positive_test_years": 4,
+      "test_years": 4
+    },
+    {
+      "rule": "green_day_last30_green",
+      "trades": 242,
+      "gross_additive_return": 0.8154704854223926,
+      "net_additive_return_2bp_side": 0.7186704854223924,
+      "mean_net_bp": 29.697127496793076,
+      "green_rate_gross": 0.5495867768595041,
+      "max_drawdown": 0.13723714102492243,
+      "top_abs_trade_share": 0.04691160357510525,
+      "positive_test_years": 3,
+      "test_years": 4
+    },
+    {
+      "rule": "smh_green",
+      "trades": 455,
+      "gross_additive_return": 1.4088395297703822,
+      "net_additive_return_2bp_side": 1.2268395297703822,
+      "mean_net_bp": 26.96350614879961,
+      "green_rate_gross": 0.5494505494505495,
+      "max_drawdown": 0.16042304944071892,
+      "top_abs_trade_share": 0.02666242421065711,
+      "positive_test_years": 4,
+      "test_years": 4
+    },
+    {
+      "rule": "qqq_green",
+      "trades": 460,
+      "gross_additive_return": 1.3900686986954354,
+      "net_additive_return_2bp_side": 1.2060686986954354,
+      "mean_net_bp": 26.2188847542486,
+      "green_rate_gross": 0.5608695652173913,
+      "max_drawdown": 0.1765727135530629,
+      "top_abs_trade_share": 0.02707987131016849,
+      "positive_test_years": 4,
+      "test_years": 4
+    },
+    {
+      "rule": "prior_overnight_green",
+      "trades": 454,
+      "gross_additive_return": 1.2730696357934987,
+      "net_additive_return_2bp_side": 1.0914696357934985,
+      "mean_net_bp": 24.04118140514314,
+      "green_rate_gross": 0.526431718061674,
+      "max_drawdown": 0.25481902247216476,
+      "top_abs_trade_share": 0.025589634974118862,
+      "positive_test_years": 3,
+      "test_years": 4
+    },
+    {
+      "rule": "all",
+      "trades": 833,
+      "gross_additive_return": 2.0171639759746482,
+      "net_additive_return_2bp_side": 1.6839639759746485,
+      "mean_net_bp": 20.2156539732851,
+      "green_rate_gross": 0.5450180072028812,
+      "max_drawdown": 0.17930427349413988,
+      "top_abs_trade_share": 0.014409510710732609,
+      "positive_test_years": 4,
+      "test_years": 4
+    },
+    {
+      "rule": "prior_overnight_red",
+      "trades": 379,
+      "gross_additive_return": 0.7440943401811495,
+      "net_additive_return_2bp_side": 0.5924943401811495,
+      "mean_net_bp": 15.63309604699603,
+      "green_rate_gross": 0.5672823218997362,
+      "max_drawdown": 0.20483741584825144,
+      "top_abs_trade_share": 0.018141959351892077,
+      "positive_test_years": 4,
+      "test_years": 4
+    },
+    {
+      "rule": "qqq_red",
+      "trades": 373,
+      "gross_additive_return": 0.6270952772792129,
+      "net_additive_return_2bp_side": 0.4778952772792129,
+      "mean_net_bp": 12.81220582517997,
+      "green_rate_gross": 0.5254691689008043,
+      "max_drawdown": 0.24540135518631917,
+      "top_abs_trade_share": 0.023408272753552246,
+      "positive_test_years": 3,
+      "test_years": 4
+    },
+    {
+      "rule": "smh_red",
+      "trades": 378,
+      "gross_additive_return": 0.6083244462042661,
+      "net_additive_return_2bp_side": 0.45712444620426623,
+      "mean_net_bp": 12.09323931757318,
+      "green_rate_gross": 0.5396825396825397,
+      "max_drawdown": 0.20108107096155325,
+      "top_abs_trade_share": 0.02383263240838006,
+      "positive_test_years": 3,
+      "test_years": 4
+    },
+    {
+      "rule": "last30_green",
+      "trades": 439,
+      "gross_additive_return": 0.6797058494712036,
+      "net_additive_return_2bp_side": 0.5041058494712036,
+      "mean_net_bp": 11.483048962897577,
+      "green_rate_gross": 0.530751708428246,
+      "max_drawdown": 0.24959791437671916,
+      "top_abs_trade_share": 0.027398371422157522,
+      "positive_test_years": 2,
+      "test_years": 4
+    },
+    {
+      "rule": "mu_underperformed_smh",
+      "trades": 424,
+      "gross_additive_return": 0.5688259590097857,
+      "net_additive_return_2bp_side": 0.39922595900978575,
+      "mean_net_bp": 9.415706580419474,
+      "green_rate_gross": 0.5330188679245284,
+      "max_drawdown": 0.46242848689087207,
+      "top_abs_trade_share": 0.022201827752788984,
+      "positive_test_years": 2,
+      "test_years": 4
+    },
+    {
+      "rule": "mu_day_red",
+      "trades": 403,
+      "gross_additive_return": 0.49482034463385205,
+      "net_additive_return_2bp_side": 0.3336203446338524,
+      "mean_net_bp": 8.27842046237847,
+      "green_rate_gross": 0.533498759305211,
+      "max_drawdown": 0.3767535245543831,
+      "top_abs_trade_share": 0.022701655169807943,
+      "positive_test_years": 2,
+      "test_years": 4
+    },
+    {
+      "rule": "close_bottom_quartile",
+      "trades": 209,
+      "gross_additive_return": 0.008055281481277543,
+      "net_additive_return_2bp_side": -0.07554471851872256,
+      "mean_net_bp": -3.6145798334317014,
+      "green_rate_gross": 0.5167464114832536,
+      "max_drawdown": 0.48654267352414016,
+      "top_abs_trade_share": 0.042491166264164146,
+      "positive_test_years": 2,
+      "test_years": 4
+    },
+    {
+      "rule": "red_day_high_volume",
+      "trades": 71,
+      "gross_additive_return": -0.01468028710481628,
+      "net_additive_return_2bp_side": -0.04308028710481626,
+      "mean_net_bp": -6.067646071100882,
+      "green_rate_gross": 0.5774647887323944,
+      "max_drawdown": 0.30434555160789806,
+      "top_abs_trade_share": 0.1004963873842071,
+      "positive_test_years": 2,
+      "test_years": 4
+    },
+    {
+      "rule": "red_day_last30_green",
+      "trades": 197,
+      "gross_additive_return": -0.13576463595118904,
+      "net_additive_return_2bp_side": -0.21456463595118894,
+      "mean_net_bp": -10.891605885847156,
+      "green_rate_gross": 0.5076142131979695,
+      "max_drawdown": 0.3955499708940033,
+      "top_abs_trade_share": 0.02923834921357387,
+      "positive_test_years": 2,
+      "test_years": 4
+    }
+  ],
+  "simple_rule_details": {
+    "all": {
+      "trades": 833,
+      "gross_additive_return": 2.0171639759746482,
+      "net_additive_return_2bp_side": 1.6839639759746485,
+      "mean_net_bp": 20.2156539732851,
+      "green_rate_gross": 0.5450180072028812,
+      "max_drawdown": 0.17930427349413988,
+      "top_abs_trade_share": 0.014409510710732609,
+      "positive_test_years": 4,
+      "test_years": 4,
+      "yearly": {
+        "2023": {
+          "trades": 249,
+          "net_return": 0.10862560302003316,
+          "mean_net_bp": 4.362474016868802
+        },
+        "2024": {
+          "trades": 252,
+          "net_return": 0.6049221014364666,
+          "mean_net_bp": 24.00484529509788
+        },
+        "2025": {
+          "trades": 250,
+          "net_return": 0.7256756870160763,
+          "mean_net_bp": 29.027027480643053
+        },
+        "2026": {
+          "trades": 82,
+          "net_return": 0.24474058450207223,
+          "mean_net_bp": 29.846412744155153
+        }
+      }
+    },
+    "mu_day_green": {
+      "trades": 430,
+      "gross_additive_return": 1.5223436313407963,
+      "net_additive_return_2bp_side": 1.3503436313407962,
+      "mean_net_bp": 31.403340263739445,
+      "green_rate_gross": 0.5558139534883721,
+      "max_drawdown": 0.08782081798496903,
+      "top_abs_trade_share": 0.027841889546698684,
+      "positive_test_years": 4,
+      "test_years": 4,
+      "yearly": {
+        "2023": {
+          "trades": 134,
+          "net_return": 0.17814382280273555,
+          "mean_net_bp": 13.294315134532505
+        },
+        "2024": {
+          "trades": 116,
+          "net_return": 0.6413852530646315,
+          "mean_net_bp": 55.29183216074409
+        },
+        "2025": {
+          "trades": 136,
+          "net_return": 0.47906161195268876,
+          "mean_net_bp": 35.225118525933
+        },
+        "2026": {
+          "trades": 44,
+          "net_return": 0.05175294352074052,
+          "mean_net_bp": 11.762032618350117
+        }
+      }
+    },
+    "mu_day_red": {
+      "trades": 403,
+      "gross_additive_return": 0.49482034463385205,
+      "net_additive_return_2bp_side": 0.3336203446338524,
+      "mean_net_bp": 8.27842046237847,
+      "green_rate_gross": 0.533498759305211,
+      "max_drawdown": 0.3767535245543831,
+      "top_abs_trade_share": 0.022701655169807943,
+      "positive_test_years": 2,
+      "test_years": 4,
+      "yearly": {
+        "2023": {
+          "trades": 115,
+          "net_return": -0.06951821978270238,
+          "mean_net_bp": -6.045062589800207
+        },
+        "2024": {
+          "trades": 136,
+          "net_return": -0.0364631516281648,
+          "mean_net_bp": -2.6811140903062354
+        },
+        "2025": {
+          "trades": 114,
+          "net_return": 0.2466140750633876,
+          "mean_net_bp": 21.63281360205154
+        },
+        "2026": {
+          "trades": 38,
+          "net_return": 0.1929876409813317,
+          "mean_net_bp": 50.78622131087676
+        }
+      }
+    },
+    "last30_green": {
+      "trades": 439,
+      "gross_additive_return": 0.6797058494712036,
+      "net_additive_return_2bp_side": 0.5041058494712036,
+      "mean_net_bp": 11.483048962897577,
+      "green_rate_gross": 0.530751708428246,
+      "max_drawdown": 0.24959791437671916,
+      "top_abs_trade_share": 0.027398371422157522,
+      "positive_test_years": 2,
+      "test_years": 4,
+      "yearly": {
+        "2023": {
+          "trades": 123,
+          "net_return": -0.17319973081888193,
+          "mean_net_bp": -14.081278928364384
+        },
+        "2024": {
+          "trades": 133,
+          "net_return": 0.561482359410809,
+          "mean_net_bp": 42.21671875269241
+        },
+        "2025": {
+          "trades": 134,
+          "net_return": -0.03964066969721557,
+          "mean_net_bp": -2.958258932628028
+        },
+        "2026": {
+          "trades": 49,
+          "net_return": 0.1554638905764921,
+          "mean_net_bp": 31.72732460744737
+        }
+      }
+    },
+    "last30_red": {
+      "trades": 394,
+      "gross_additive_return": 1.3374581265034446,
+      "net_additive_return_2bp_side": 1.1798581265034447,
+      "mean_net_bp": 29.945637728513823,
+      "green_rate_gross": 0.5609137055837563,
+      "max_drawdown": 0.13375767669260474,
+      "top_abs_trade_share": 0.02310284356593946,
+      "positive_test_years": 4,
+      "test_years": 4,
+      "yearly": {
+        "2023": {
+          "trades": 126,
+          "net_return": 0.2818253338389151,
+          "mean_net_bp": 22.367089987215486
+        },
+        "2024": {
+          "trades": 119,
+          "net_return": 0.04343974202565755,
+          "mean_net_bp": 3.6503984895510544
+        },
+        "2025": {
+          "trades": 116,
+          "net_return": 0.7653163567132919,
+          "mean_net_bp": 65.97554799252516
+        },
+        "2026": {
+          "trades": 33,
+          "net_return": 0.08927669392558012,
+          "mean_net_bp": 27.05354361381216
+        }
+      }
+    },
+    "close_top_quartile": {
+      "trades": 252,
+      "gross_additive_return": 1.4803825458594342,
+      "net_additive_return_2bp_side": 1.3795825458594342,
+      "mean_net_bp": 54.74533912140611,
+      "green_rate_gross": 0.5992063492063492,
+      "max_drawdown": 0.07507038431795286,
+      "top_abs_trade_share": 0.04459611437355098,
+      "positive_test_years": 4,
+      "test_years": 4,
+      "yearly": {
+        "2023": {
+          "trades": 75,
+          "net_return": 0.16403302243821477,
+          "mean_net_bp": 21.871069658428635
+        },
+        "2024": {
+          "trades": 72,
+          "net_return": 0.5845719620365215,
+          "mean_net_bp": 81.1905502828502
+        },
+        "2025": {
+          "trades": 80,
+          "net_return": 0.5025812017327137,
+          "mean_net_bp": 62.82265021658922
+        },
+        "2026": {
+          "trades": 25,
+          "net_return": 0.12839635965198418,
+          "mean_net_bp": 51.35854386079367
+        }
+      }
+    },
+    "close_bottom_quartile": {
+      "trades": 209,
+      "gross_additive_return": 0.008055281481277543,
+      "net_additive_return_2bp_side": -0.07554471851872256,
+      "mean_net_bp": -3.6145798334317014,
+      "green_rate_gross": 0.5167464114832536,
+      "max_drawdown": 0.48654267352414016,
+      "top_abs_trade_share": 0.042491166264164146,
+      "positive_test_years": 2,
+      "test_years": 4,
+      "yearly": {
+        "2023": {
+          "trades": 65,
+          "net_return": -0.03568731513664699,
+          "mean_net_bp": -5.490356174868768
+        },
+        "2024": {
+          "trades": 69,
+          "net_return": -0.26906004154652857,
+          "mean_net_bp": -38.99420891978675
+        },
+        "2025": {
+          "trades": 59,
+          "net_return": 0.10792936906449707,
+          "mean_net_bp": 18.293113400762216
+        },
+        "2026": {
+          "trades": 16,
+          "net_return": 0.12127326909995602,
+          "mean_net_bp": 75.79579318747251
+        }
+      }
+    },
+    "high_volume_1p5x": {
+      "trades": 140,
+      "gross_additive_return": 0.6284696539310776,
+      "net_additive_return_2bp_side": 0.5724696539310774,
+      "mean_net_bp": 40.89068956650553,
+      "green_rate_gross": 0.6071428571428571,
+      "max_drawdown": 0.1146700146721104,
+      "top_abs_trade_share": 0.0653672810174072,
+      "positive_test_years": 3,
+      "test_years": 4,
+      "yearly": {
+        "2023": {
+          "trades": 41,
+          "net_return": 0.0760399838316662,
+          "mean_net_bp": 18.546337519918588
+        },
+        "2024": {
+          "trades": 43,
+          "net_return": 0.24136571260294,
+          "mean_net_bp": 56.13156107045117
+        },
+        "2025": {
+          "trades": 41,
+          "net_return": 0.255418658743391,
+          "mean_net_bp": 62.29723383985146
+        },
+        "2026": {
+          "trades": 15,
+          "net_return": -0.0003547012469196087,
+          "mean_net_bp": -0.2364674979464058
+        }
+      }
+    },
+    "mu_outperformed_smh": {
+      "trades": 409,
+      "gross_additive_return": 1.4483380169648625,
+      "net_additive_return_2bp_side": 1.2847380169648628,
+      "mean_net_bp": 31.411687456353615,
+      "green_rate_gross": 0.5574572127139364,
+      "max_drawdown": 0.10241120922888698,
+      "top_abs_trade_share": 0.02843871173757881,
+      "positive_test_years": 3,
+      "test_years": 4,
+      "yearly": {
+        "2023": {
+          "trades": 126,
+          "net_return": 0.21055542666881447,
+          "mean_net_bp": 16.710748148318608
+        },
+        "2024": {
+          "trades": 108,
+          "net_return": 0.7125882440629481,
+          "mean_net_bp": 65.98039296879149
+        },
+        "2025": {
+          "trades": 131,
+          "net_return": 0.48943136010879923,
+          "mean_net_bp": 37.36117252738926
+        },
+        "2026": {
+          "trades": 44,
+          "net_return": -0.12783701387569915,
+          "mean_net_bp": -29.05386678993163
+        }
+      }
+    },
+    "mu_underperformed_smh": {
+      "trades": 424,
+      "gross_additive_return": 0.5688259590097857,
+      "net_additive_return_2bp_side": 0.39922595900978575,
+      "mean_net_bp": 9.415706580419474,
+      "green_rate_gross": 0.5330188679245284,
+      "max_drawdown": 0.46242848689087207,
+      "top_abs_trade_share": 0.022201827752788984,
+      "positive_test_years": 2,
+      "test_years": 4,
+      "yearly": {
+        "2023": {
+          "trades": 123,
+          "net_return": -0.10192982364878131,
+          "mean_net_bp": -8.286977532421245
+        },
+        "2024": {
+          "trades": 144,
+          "net_return": -0.10766614262648143,
+          "mean_net_bp": -7.476815460172321
+        },
+        "2025": {
+          "trades": 119,
+          "net_return": 0.23624432690727715,
+          "mean_net_bp": 19.852464445989675
+        },
+        "2026": {
+          "trades": 38,
+          "net_return": 0.3725775983777714,
+          "mean_net_bp": 98.046736415203
+        }
+      }
+    },
+    "smh_green": {
+      "trades": 455,
+      "gross_additive_return": 1.4088395297703822,
+      "net_additive_return_2bp_side": 1.2268395297703822,
+      "mean_net_bp": 26.96350614879961,
+      "green_rate_gross": 0.5494505494505495,
+      "max_drawdown": 0.16042304944071892,
+      "top_abs_trade_share": 0.02666242421065711,
+      "positive_test_years": 4,
+      "test_years": 4,
+      "yearly": {
+        "2023": {
+          "trades": 137,
+          "net_return": 0.012708586071848738,
+          "mean_net_bp": 0.9276340198429737
+        },
+        "2024": {
+          "trades": 134,
+          "net_return": 0.6786218611906951,
+          "mean_net_bp": 50.64342247691754
+        },
+        "2025": {
+          "trades": 138,
+          "net_return": 0.4172136783685459,
+          "mean_net_bp": 30.23287524409753
+        },
+        "2026": {
+          "trades": 46,
+          "net_return": 0.11829540413929251,
+          "mean_net_bp": 25.716392204194026
+        }
+      }
+    },
+    "smh_red": {
+      "trades": 378,
+      "gross_additive_return": 0.6083244462042661,
+      "net_additive_return_2bp_side": 0.45712444620426623,
+      "mean_net_bp": 12.09323931757318,
+      "green_rate_gross": 0.5396825396825397,
+      "max_drawdown": 0.20108107096155325,
+      "top_abs_trade_share": 0.02383263240838006,
+      "positive_test_years": 3,
+      "test_years": 4,
+      "yearly": {
+        "2023": {
+          "trades": 112,
+          "net_return": 0.09591701694818441,
+          "mean_net_bp": 8.564019370373607
+        },
+        "2024": {
+          "trades": 118,
+          "net_return": -0.07369975975422846,
+          "mean_net_bp": -6.245742352053259
+        },
+        "2025": {
+          "trades": 112,
+          "net_return": 0.30846200864753043,
+          "mean_net_bp": 27.54125077210093
+        },
+        "2026": {
+          "trades": 36,
+          "net_return": 0.1264451803627797,
+          "mean_net_bp": 35.12366121188325
+        }
+      }
+    },
+    "qqq_green": {
+      "trades": 460,
+      "gross_additive_return": 1.3900686986954354,
+      "net_additive_return_2bp_side": 1.2060686986954354,
+      "mean_net_bp": 26.2188847542486,
+      "green_rate_gross": 0.5608695652173913,
+      "max_drawdown": 0.1765727135530629,
+      "top_abs_trade_share": 0.02707987131016849,
+      "positive_test_years": 4,
+      "test_years": 4,
+      "yearly": {
+        "2023": {
+          "trades": 145,
+          "net_return": 0.031399194906799495,
+          "mean_net_bp": 2.16546171771031
+        },
+        "2024": {
+          "trades": 131,
+          "net_return": 0.6773748081933644,
+          "mean_net_bp": 51.70800062544766
+        },
+        "2025": {
+          "trades": 141,
+          "net_return": 0.45397914211997203,
+          "mean_net_bp": 32.1971022780122
+        },
+        "2026": {
+          "trades": 43,
+          "net_return": 0.04331555347529949,
+          "mean_net_bp": 10.073384529139416
+        }
+      }
+    },
+    "qqq_red": {
+      "trades": 373,
+      "gross_additive_return": 0.6270952772792129,
+      "net_additive_return_2bp_side": 0.4778952772792129,
+      "mean_net_bp": 12.81220582517997,
+      "green_rate_gross": 0.5254691689008043,
+      "max_drawdown": 0.24540135518631917,
+      "top_abs_trade_share": 0.023408272753552246,
+      "positive_test_years": 3,
+      "test_years": 4,
+      "yearly": {
+        "2023": {
+          "trades": 104,
+          "net_return": 0.07722640811323367,
+          "mean_net_bp": 7.425616164734007
+        },
+        "2024": {
+          "trades": 121,
+          "net_return": -0.07245270675689774,
+          "mean_net_bp": -5.987827004702293
+        },
+        "2025": {
+          "trades": 109,
+          "net_return": 0.2716965448961043,
+          "mean_net_bp": 24.926288522578375
+        },
+        "2026": {
+          "trades": 39,
+          "net_return": 0.20142503102677273,
+          "mean_net_bp": 51.64744385301865
+        }
+      }
+    },
+    "prior_overnight_green": {
+      "trades": 454,
+      "gross_additive_return": 1.2730696357934987,
+      "net_additive_return_2bp_side": 1.0914696357934985,
+      "mean_net_bp": 24.04118140514314,
+      "green_rate_gross": 0.526431718061674,
+      "max_drawdown": 0.25481902247216476,
+      "top_abs_trade_share": 0.025589634974118862,
+      "positive_test_years": 3,
+      "test_years": 4,
+      "yearly": {
+        "2023": {
+          "trades": 131,
+          "net_return": -0.11115771818260277,
+          "mean_net_bp": -8.485321998671967
+        },
+        "2024": {
+          "trades": 138,
+          "net_return": 0.4916978185245502,
+          "mean_net_bp": 35.63027670467755
+        },
+        "2025": {
+          "trades": 142,
+          "net_return": 0.5617115820224925,
+          "mean_net_bp": 39.55715366355581
+        },
+        "2026": {
+          "trades": 43,
+          "net_return": 0.14921795342905886,
+          "mean_net_bp": 34.70184963466485
+        }
+      }
+    },
+    "prior_overnight_red": {
+      "trades": 379,
+      "gross_additive_return": 0.7440943401811495,
+      "net_additive_return_2bp_side": 0.5924943401811495,
+      "mean_net_bp": 15.63309604699603,
+      "green_rate_gross": 0.5672823218997362,
+      "max_drawdown": 0.20483741584825144,
+      "top_abs_trade_share": 0.018141959351892077,
+      "positive_test_years": 4,
+      "test_years": 4,
+      "yearly": {
+        "2023": {
+          "trades": 118,
+          "net_return": 0.2197833212026359,
+          "mean_net_bp": 18.62570518666406
+        },
+        "2024": {
+          "trades": 114,
+          "net_return": 0.11322428291191643,
+          "mean_net_bp": 9.931954641396176
+        },
+        "2025": {
+          "trades": 108,
+          "net_return": 0.16396410499358385,
+          "mean_net_bp": 15.181861573479987
+        },
+        "2026": {
+          "trades": 39,
+          "net_return": 0.09552263107301338,
+          "mean_net_bp": 24.49298232641369
+        }
+      }
+    },
+    "red_day_last30_green": {
+      "trades": 197,
+      "gross_additive_return": -0.13576463595118904,
+      "net_additive_return_2bp_side": -0.21456463595118894,
+      "mean_net_bp": -10.891605885847156,
+      "green_rate_gross": 0.5076142131979695,
+      "max_drawdown": 0.3955499708940033,
+      "top_abs_trade_share": 0.02923834921357387,
+      "positive_test_years": 2,
+      "test_years": 4,
+      "yearly": {
+        "2023": {
+          "trades": 59,
+          "net_return": -0.21700563648027774,
+          "mean_net_bp": -36.78061635258945
+        },
+        "2024": {
+          "trades": 61,
+          "net_return": 0.016693460558074413,
+          "mean_net_bp": 2.7366328783728546
+        },
+        "2025": {
+          "trades": 53,
+          "net_return": -0.17777595677631486,
+          "mean_net_bp": -33.54263335402167
+        },
+        "2026": {
+          "trades": 24,
+          "net_return": 0.1635234967473292,
+          "mean_net_bp": 68.13479031138716
+        }
+      }
+    },
+    "green_day_last30_green": {
+      "trades": 242,
+      "gross_additive_return": 0.8154704854223926,
+      "net_additive_return_2bp_side": 0.7186704854223924,
+      "mean_net_bp": 29.697127496793076,
+      "green_rate_gross": 0.5495867768595041,
+      "max_drawdown": 0.13723714102492243,
+      "top_abs_trade_share": 0.04691160357510525,
+      "positive_test_years": 3,
+      "test_years": 4,
+      "yearly": {
+        "2023": {
+          "trades": 64,
+          "net_return": 0.043805905661395826,
+          "mean_net_bp": 6.844672759593098
+        },
+        "2024": {
+          "trades": 72,
+          "net_return": 0.5447888988527346,
+          "mean_net_bp": 75.66512484065758
+        },
+        "2025": {
+          "trades": 81,
+          "net_return": 0.13813528707909928,
+          "mean_net_bp": 17.053739145567814
+        },
+        "2026": {
+          "trades": 25,
+          "net_return": -0.008059606170837091,
+          "mean_net_bp": -3.2238424683348366
+        }
+      }
+    },
+    "red_day_high_volume": {
+      "trades": 71,
+      "gross_additive_return": -0.01468028710481628,
+      "net_additive_return_2bp_side": -0.04308028710481626,
+      "mean_net_bp": -6.067646071100882,
+      "green_rate_gross": 0.5774647887323944,
+      "max_drawdown": 0.30434555160789806,
+      "top_abs_trade_share": 0.1004963873842071,
+      "positive_test_years": 2,
+      "test_years": 4,
+      "yearly": {
+        "2023": {
+          "trades": 14,
+          "net_return": 0.058640683499474766,
+          "mean_net_bp": 41.88620249962484
+        },
+        "2024": {
+          "trades": 27,
+          "net_return": -0.2779489509481298,
+          "mean_net_bp": -102.94405590671475
+        },
+        "2025": {
+          "trades": 23,
+          "net_return": 0.20334856928565537,
+          "mean_net_bp": 88.41242142854581
+        },
+        "2026": {
+          "trades": 7,
+          "net_return": -0.027120588941816546,
+          "mean_net_bp": -38.74369848830935
+        }
+      }
+    }
+  },
+  "top_quartile_audit": {
+    "top_quartile": {
+      "trades": 252,
+      "gross_additive_return": 1.4803825458594342,
+      "net_additive_return_2bp_side": 1.3795825458594342,
+      "mean_net_bp": 54.74533912140611,
+      "green_rate_gross": 0.5992063492063492,
+      "max_drawdown": 0.07507038431795286,
+      "top_abs_trade_share": 0.04459611437355098,
+      "positive_test_years": 4,
+      "test_years": 4,
+      "yearly": {
+        "2023": {
+          "trades": 75,
+          "net_return": 0.16403302243821477,
+          "mean_net_bp": 21.871069658428635
+        },
+        "2024": {
+          "trades": 72,
+          "net_return": 0.5845719620365215,
+          "mean_net_bp": 81.1905502828502
+        },
+        "2025": {
+          "trades": 80,
+          "net_return": 0.5025812017327137,
+          "mean_net_bp": 62.82265021658922
+        },
+        "2026": {
+          "trades": 25,
+          "net_return": 0.12839635965198418,
+          "mean_net_bp": 51.35854386079367
+        }
+      }
+    },
+    "complement": {
+      "trades": 581,
+      "gross_additive_return": 0.5367814301152141,
+      "net_additive_return_2bp_side": 0.30438143011521435,
+      "mean_net_bp": 5.238923065666341,
+      "green_rate_gross": 0.5215146299483648,
+      "max_drawdown": 0.3738780785299209,
+      "top_abs_trade_share": 0.016180596060183728,
+      "positive_test_years": 3,
+      "test_years": 4,
+      "yearly": {
+        "2023": {
+          "trades": 174,
+          "net_return": -0.05540741941818159,
+          "mean_net_bp": -3.1843344493207812
+        },
+        "2024": {
+          "trades": 180,
+          "net_return": 0.020350139399945132,
+          "mean_net_bp": 1.130563299996952
+        },
+        "2025": {
+          "trades": 170,
+          "net_return": 0.2230944852833626,
+          "mean_net_bp": 13.123205016668388
+        },
+        "2026": {
+          "trades": 57,
+          "net_return": 0.11634422485008805,
+          "mean_net_bp": 20.41126751755931
+        }
+      }
+    },
+    "green_rate_lift_percentage_points": 7.769171925798435,
+    "green_rate_difference_z_independent_approximation": 2.089495770132995,
+    "mean_gross_return_lift_bp": 49.506416055739784,
+    "calendar_week_block_bootstrap_mean_lift_bp_95ci": [
+      15.897192055526592,
+      85.58092659715922
+    ],
+    "bootstrap_repetitions": 10000
+  },
+  "interpretation_gate": "A useful discriminator must show out-of-sample lift, positive net performance across years, and adequate activity; full-sample rule ranking is descriptive only."
+}

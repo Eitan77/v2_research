@@ -1,0 +1,46 @@
+run_id: RUN-0004
+campaign_id: CAM-0639
+status: complete
+parent: RUN-0003
+question: Can information known by MU's close distinguish green from red next overnights out of sample?
+reason: The unconditional strategy is profitable but unstable; causal conditioning may separate favorable overnight states.
+expected_effect: A real relationship should improve green rate and 2bp-side return in expanding tests without relying on one year or tail event.
+configuration:
+  features:
+    - MU day return, first-30m and last-30m returns, range, close location, volume ratio
+    - MU prior overnight, trailing 5/20-session returns
+    - same-day QQQ, SMH, and SPY returns plus MU-minus-SMH return
+    - day-of-week encoding
+  expanding_tests: [2023, 2024, 2025, 2026_through_april]
+  models: [fixed_simple_rules, l2_logistic_green_probability, ridge_return_rank]
+  selection: model score above training-period 75th percentile
+  cost_bp_per_side: 2
+  minimum_history: 2021-05-03 through 2022-12-31 before first test
+command: python campaigns/CAM-0639/src/run0004_green_red_predictability.py
+reconciliation:
+  command_matches_frozen_record: true
+  source_rows: 1986755
+  daily_symbol_sessions: 5104
+  role_overnights: 1254
+  feature_complete_overnights: 1254
+  attrition: 0
+  holdout_rows: 0
+result:
+  oos_window: {first_entry: 2023-01-03, final_exit: 2026-04-30, overnights: 833}
+  unconditional_oos: {green_rate: 0.545018, mean_net_bp: 20.2157, net_additive_return: 1.683964, positive_years: 4, test_years: 4}
+  logistic_classification: {auc: 0.530947, accuracy_at_0p5: 0.519808, majority_accuracy: 0.545018, brier: 0.253976}
+  logistic_top_training_quartile: {trades: 150, green_rate: 0.606667, mean_net_bp: 36.6377, net_additive_return: 0.549565, max_drawdown: 0.052155, positive_years: 4}
+  ridge_top_training_quartile: {trades: 157, green_rate: 0.585987, mean_net_bp: 27.5753, net_additive_return: 0.432932, positive_years: 3}
+  close_top_quartile_descriptive:
+    trades: 252
+    green_rate: 0.599206
+    mean_net_bp: 54.7453
+    net_additive_return: 1.379583
+    max_drawdown: 0.075070
+    positive_years: 4
+    complement_green_rate: 0.521515
+    complement_mean_net_bp: 5.2389
+    green_rate_lift_percentage_points: 7.7692
+    mean_return_lift_bp: 49.5064
+    week_block_bootstrap_mean_lift_bp_95ci: [15.8972, 85.5809]
+decision: There is weak broad classification but a credible close-location lead. Freeze the top-quartile rule as an adapted candidate requiring timing/fill sensitivity and genuinely forward confirmation; do not call it untouched OOS or a dependable daily predictor.

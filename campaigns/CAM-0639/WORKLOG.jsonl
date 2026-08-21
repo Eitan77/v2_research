@@ -2,4 +2,5 @@
 {"timestamp":"2026-08-21T00:01:00-07:00","run_id":"RUN-0001","event":"completed","detail":"1,255 sessions, 1,254 overnights, 10 early closes, zero missing endpoints or holdout rows."}
 {"timestamp":"2026-08-21T00:02:00-07:00","run_id":"RUN-0002","event":"aborted","detail":"User replaced quote replay with bar fills; partial quote cache preserved but not interpreted."}
 {"timestamp":"2026-08-21T00:03:00-07:00","run_id":"RUN-0003","event":"completed","detail":"1,254 MU overnights: +147.44% additive zero-cost, +97.28% at 2bp/side, 52.31% wins, 66.05% zero-cost DD, 32/60 positive months; 2022 -63.34%."}
-
+{"timestamp":"2026-08-21T00:04:00-07:00","run_id":"RUN-0004","event":"frozen","detail":"Expanding walk-forward green/red predictability audit frozen using close-known MU and market features."}
+{"timestamp":"2026-08-21T00:05:00-07:00","run_id":"RUN-0004","event":"completed","detail":"833 expanding-test overnights: broad logistic AUC 0.531; top-quartile close-location lead had 59.92% green, +54.75 bp mean net at 2bp/side, 4/4 positive years, versus 52.15% and +5.24 bp for its complement. Adapted lead, not untouched confirmation."}
