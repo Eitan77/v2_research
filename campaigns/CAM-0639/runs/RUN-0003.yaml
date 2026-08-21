@@ -1,0 +1,20 @@
+run_id: RUN-0003
+campaign_id: CAM-0639
+status: completed
+parent: RUN-0002
+question: What is MU's five-year every-session close-to-next-open bar return?
+reason: User replaced exact quote replay with a bar-fill calculation.
+expected_effect: Produce the unconditional raw-price overnight return and transparent turnover-cost sensitivity quickly.
+configuration:
+  entry: raw final regular-session one-minute close
+  exit: raw next-session first one-minute open
+  costs_bp_per_side: [0,1,2,5]
+  accounting: fixed-base additive primary; compounded buy-and-reinvest diagnostic secondary
+  dividends: excluded price_return_only
+command: python campaigns/CAM-0639/src/run0003_bar_fill.py
+result: >-
+  1,254 raw-price overnights from 2021-05-03 entry through 2026-04-30 exit.
+  Zero-cost additive return +147.44%, compounded diagnostic +236.20%, 11.76bp
+  mean overnight, 52.31% wins, 66.05% maximum drawdown, and 32/60 positive
+  months. At 2bp per side: +97.28% additive, +103.64% compounded diagnostic.
+decision: report as a volatile regime-dependent descriptive overnight effect, not a consistent strategy or quote-filled claim.

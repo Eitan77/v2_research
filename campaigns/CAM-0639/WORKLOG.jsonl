@@ -1,0 +1,5 @@
+{"timestamp":"2026-08-21T00:00:00-07:00","run_id":"RUN-0001","event":"frozen","detail":"Five-year unconditional MU close-to-next-open quote replay frozen."}
+{"timestamp":"2026-08-21T00:01:00-07:00","run_id":"RUN-0001","event":"completed","detail":"1,255 sessions, 1,254 overnights, 10 early closes, zero missing endpoints or holdout rows."}
+{"timestamp":"2026-08-21T00:02:00-07:00","run_id":"RUN-0002","event":"aborted","detail":"User replaced quote replay with bar fills; partial quote cache preserved but not interpreted."}
+{"timestamp":"2026-08-21T00:03:00-07:00","run_id":"RUN-0003","event":"completed","detail":"1,254 MU overnights: +147.44% additive zero-cost, +97.28% at 2bp/side, 52.31% wins, 66.05% zero-cost DD, 32/60 positive months; 2022 -63.34%."}
+

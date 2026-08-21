@@ -1,0 +1,11 @@
+{
+  "sessions": 1255,
+  "overnights": 1254,
+  "min_entry_date": "2021-05-03",
+  "max_exit_date": "2026-04-30",
+  "early_close_entries": 10,
+  "missing_open_values": 0,
+  "missing_close_values": 0,
+  "maximum_loaded_date": "2026-04-30",
+  "holdout_rows": 0
+}

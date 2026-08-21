@@ -1,0 +1,12 @@
+run_id: RUN-0001
+campaign_id: CAM-0639
+status: completed_after_endpoint_aggregation_repair
+parent: null
+question: Are all MU sessions and exact regular-session endpoints ready for the five-year quote replay?
+reason: The strategy requires every close and next open, including early closes, with zero sealed roles.
+expected_effect: Produce a deterministic role ledger and block quote pulling on any schema, cutoff, or sequencing failure.
+configuration: {symbol: MU, start: 2021-05-01, final_exit: 2026-04-30, entry_offset_seconds_before_session_end: 10, exit: next_session_open}
+command: python campaigns/CAM-0639/src/run0001_readiness.py
+result: 1,255 sessions and 1,254 overnight roles from 2021-05-03 through the final 2026-04-30 exit; 10 early closes, zero missing bar endpoints, zero holdout rows.
+decision: exact SIP endpoint replay authorized.
+

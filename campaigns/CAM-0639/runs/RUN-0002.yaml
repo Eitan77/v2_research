@@ -1,0 +1,17 @@
+run_id: RUN-0002
+campaign_id: CAM-0639
+status: aborted_by_user_scope_change
+parent: RUN-0001
+question: What is the exact five-year quote-filled MU close-to-next-open return?
+reason: Readiness passed after endpoint aggregation repair.
+expected_effect: Marketable close-ask/open-bid execution should underperform the raw bar close-to-open proxy by the cumulative spread drag.
+configuration:
+  roles: 2508
+  entry: first valid SIP ask within 10 seconds from actual session last-bar plus 50 seconds
+  exit: first valid SIP bid within 10 seconds from next session first bar
+  extra_slippage_bp_per_side: [0,1,2,5]
+  accounting: fixed-base additive full-notional independent overnights
+command: python campaigns/CAM-0639/src/run0002_quote_replay.py
+result: Partial endpoint cache only; no quote-return result calculated or interpreted.
+decision: User requested bar fills instead; continue as RUN-0003.
+

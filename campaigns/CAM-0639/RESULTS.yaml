@@ -1,0 +1,14 @@
+campaign_id: CAM-0639
+status: complete_bar_fill_result
+window: {first_entry: 2021-05-03, final_exit: 2026-04-30, overnights: 1254}
+execution: raw final regular-session one-minute close to next-session first one-minute open
+price_basis: raw price return; dividends excluded
+zero_cost: {additive_return: 1.474407, compounded_diagnostic: 2.361954, mean_overnight_bp: 11.7576, win_rate: 0.523126, max_drawdown: 0.660513, positive_months: 32, negative_months: 28}
+one_bp_side: {additive_return: 1.223607, compounded_diagnostic: 1.616632, max_drawdown: 0.742718}
+two_bp_side: {additive_return: 0.972807, compounded_diagnostic: 1.036441, mean_overnight_bp: 7.7576, max_drawdown: 0.836469}
+five_bp_side: {additive_return: 0.220407, compounded_diagnostic: -0.040315, max_drawdown: 1.159497}
+yearly_zero_cost: {2021_partial: 0.079601, 2022: -0.633360, 2023: 0.219228, 2024: 0.705722, 2025: 0.825676, 2026_partial: 0.277541}
+best_overnight: {entry: 2024-09-25, exit: 2024-09-26, return: 0.180111}
+worst_overnight: {entry: 2024-12-18, exit: 2024-12-19, return: -0.130815}
+conclusion: Positive overall but highly unstable, cost-sensitive, and dominated by the recent regime; this is bar evidence, not an exact quote or auction fill claim.
+

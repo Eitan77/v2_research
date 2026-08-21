@@ -1,0 +1,14 @@
+campaign_id: CAM-0639
+title: MU daily close-to-next-open quote-filled return
+status: complete_bar_fill_result
+created_at: 2026-08-21
+hypothesis: Measure, without selection, the five-year return from holding MU only overnight on every eligible session.
+window: {start: 2021-05-01, final_exit: 2026-04-30, sealed_holdout_start: 2026-05-01, holdout_access: false}
+rule: Unconditionally buy MU at the first valid SIP ask from 10 seconds before each actual regular-session close and sell at the first valid SIP bid from the next regular-session open.
+execution_notes:
+  - Actual session endpoints come from bounded raw SIP one-minute bars, including early closes.
+  - The unconditional closing order is assumed submitted before the close; this is marketable quote execution, not an official MOC/MOO auction claim.
+  - Entry and exit spreads are embedded; stress adds 1/2/5 bp per side.
+accounting: fixed base 1.0, full notional each independent overnight, additive PnL, no compounding
+required_outputs: [coverage, trade_ledger, monthly, yearly, cumulative_return, win_rate, maximum_drawdown, cost_stress, bar_vs_quote_drag]
+hard_constraints: [literal SQL cutoff no later than 2026-04-30, no next-open role after cutoff, preserve missing quotes, include corporate-action diagnosis]
