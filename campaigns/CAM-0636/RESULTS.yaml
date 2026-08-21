@@ -9,5 +9,12 @@ one_minute: {trades: 81, bid_cross_fill_rate: 0.5926, net_return: -0.0841, mean_
 three_minutes: {trades: 78, bid_cross_fill_rate: 0.7692, net_return: -0.0587, mean_trade_bp: -7.53, forced_exit_mean_bp: -52.48}
 five_minutes: {trades: 75, bid_cross_fill_rate: 0.7867, net_return: -0.0716, mean_trade_bp: -9.55, forced_exit_mean_bp: -66.77}
 conclusion: The order can fill frequently, but the strategy is negative because small target wins do not offset larger losses when the target is not reached.
+literal_symmetric_oco: {effective_distance_bp: 5.93, mean_spread_bp: 5.93, target_rate: 0.0864, stop_rate: 0.9136, median_hold_ms: 25.8, net_with_1bp_stop_slippage: -0.0611}
+wider_symmetric_oco:
+  cells: 15
+  profitable_cells: 0
+  best_net_return: -0.0611
+  effective_11_86bp: {target_rate: 0.1975, stop_rate: 0.8025}
+  effective_23_69bp: {target_rate: 0.3375, stop_rate: 0.6500}
+final_conclusion: No tested market-buy symmetric reward/risk version was viable; a passive entry would be a different queue-dependent liquidity-provision strategy.
 promotion: false
-

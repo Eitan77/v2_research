@@ -1,0 +1,176 @@
+{
+  "cells": 15,
+  "profitable_cells": 0,
+  "best": [
+    {
+      "target_bp": 5,
+      "hold_min": 1,
+      "trades": 81,
+      "net_return": -0.061117688962634364,
+      "mean_trade_bp": -7.545393699090662,
+      "target_rate": 0.08641975308641975,
+      "stop_rate": 0.9135802469135802,
+      "timeout_rate": 0.0,
+      "median_hold_ms": 25.79631,
+      "mean_distance_bp": 5.92882565875547,
+      "mean_entry_spread_bp": 5.932351924567555,
+      "max_drawdown": 0.05991645057842915,
+      "monthly": {
+        "2025-05-31": -0.061117688962634364
+      }
+    },
+    {
+      "target_bp": 5,
+      "hold_min": 3,
+      "trades": 81,
+      "net_return": -0.061117688962634364,
+      "mean_trade_bp": -7.545393699090662,
+      "target_rate": 0.08641975308641975,
+      "stop_rate": 0.9135802469135802,
+      "timeout_rate": 0.0,
+      "median_hold_ms": 25.79631,
+      "mean_distance_bp": 5.92882565875547,
+      "mean_entry_spread_bp": 5.932351924567555,
+      "max_drawdown": 0.05991645057842915,
+      "monthly": {
+        "2025-05-31": -0.061117688962634364
+      }
+    },
+    {
+      "target_bp": 5,
+      "hold_min": 5,
+      "trades": 81,
+      "net_return": -0.061117688962634364,
+      "mean_trade_bp": -7.545393699090662,
+      "target_rate": 0.08641975308641975,
+      "stop_rate": 0.9135802469135802,
+      "timeout_rate": 0.0,
+      "median_hold_ms": 25.79631,
+      "mean_distance_bp": 5.92882565875547,
+      "mean_entry_spread_bp": 5.932351924567555,
+      "max_drawdown": 0.05991645057842915,
+      "monthly": {
+        "2025-05-31": -0.061117688962634364
+      }
+    },
+    {
+      "target_bp": 10,
+      "hold_min": 1,
+      "trades": 81,
+      "net_return": -0.0666727276954866,
+      "mean_trade_bp": -8.231200950060074,
+      "target_rate": 0.1728395061728395,
+      "stop_rate": 0.7654320987654321,
+      "timeout_rate": 0.06172839506172839,
+      "median_hold_ms": 3516.816366,
+      "mean_distance_bp": 11.857651317510998,
+      "mean_entry_spread_bp": 5.932351924567555,
+      "max_drawdown": 0.06330009510461122,
+      "monthly": {
+        "2025-05-31": -0.0666727276954866
+      }
+    },
+    {
+      "target_bp": 10,
+      "hold_min": 3,
+      "trades": 81,
+      "net_return": -0.06791345304714813,
+      "mean_trade_bp": -8.384376919401005,
+      "target_rate": 0.19753086419753085,
+      "stop_rate": 0.8024691358024691,
+      "timeout_rate": 0.0,
+      "median_hold_ms": 3516.816366,
+      "mean_distance_bp": 11.857651317510998,
+      "mean_entry_spread_bp": 5.932351924567555,
+      "max_drawdown": 0.06454530388977085,
+      "monthly": {
+        "2025-05-31": -0.06791345304714813
+      }
+    },
+    {
+      "target_bp": 10,
+      "hold_min": 5,
+      "trades": 81,
+      "net_return": -0.06791345304714813,
+      "mean_trade_bp": -8.384376919401005,
+      "target_rate": 0.19753086419753085,
+      "stop_rate": 0.8024691358024691,
+      "timeout_rate": 0.0,
+      "median_hold_ms": 3516.816366,
+      "mean_distance_bp": 11.857651317510998,
+      "mean_entry_spread_bp": 5.932351924567555,
+      "max_drawdown": 0.06454530388977085,
+      "monthly": {
+        "2025-05-31": -0.06791345304714813
+      }
+    },
+    {
+      "target_bp": 20,
+      "hold_min": 3,
+      "trades": 80,
+      "net_return": -0.07157899162732051,
+      "mean_trade_bp": -8.947373953415063,
+      "target_rate": 0.3,
+      "stop_rate": 0.6125,
+      "timeout_rate": 0.0875,
+      "median_hold_ms": 29892.494307,
+      "mean_distance_bp": 23.693475299245677,
+      "mean_entry_spread_bp": 5.92688848922973,
+      "max_drawdown": 0.06651260427272568,
+      "monthly": {
+        "2025-05-31": -0.07157899162732051
+      }
+    },
+    {
+      "target_bp": 20,
+      "hold_min": 5,
+      "trades": 80,
+      "net_return": -0.07288680374201761,
+      "mean_trade_bp": -9.110850467752202,
+      "target_rate": 0.3375,
+      "stop_rate": 0.65,
+      "timeout_rate": 0.0125,
+      "median_hold_ms": 29892.494307,
+      "mean_distance_bp": 23.693475299245677,
+      "mean_entry_spread_bp": 5.92688848922973,
+      "max_drawdown": 0.06644424662064707,
+      "monthly": {
+        "2025-05-31": -0.07288680374201761
+      }
+    },
+    {
+      "target_bp": 30,
+      "hold_min": 3,
+      "trades": 77,
+      "net_return": -0.07460162986022245,
+      "mean_trade_bp": -9.688523358470448,
+      "target_rate": 0.23376623376623376,
+      "stop_rate": 0.4675324675324675,
+      "timeout_rate": 0.2987012987012987,
+      "median_hold_ms": 72520.358859,
+      "mean_distance_bp": 33.60520974018812,
+      "mean_entry_spread_bp": 5.932926807427435,
+      "max_drawdown": 0.07450201505784877,
+      "monthly": {
+        "2025-05-31": -0.07460162986022245
+      }
+    },
+    {
+      "target_bp": 20,
+      "hold_min": 1,
+      "trades": 81,
+      "net_return": -0.07613039235999863,
+      "mean_trade_bp": -9.39881387160477,
+      "target_rate": 0.18518518518518517,
+      "stop_rate": 0.4444444444444444,
+      "timeout_rate": 0.37037037037037035,
+      "median_hold_ms": 30176.103273,
+      "mean_distance_bp": 23.71530263502209,
+      "mean_entry_spread_bp": 5.932351924567555,
+      "max_drawdown": 0.07225896072970564,
+      "monthly": {
+        "2025-05-31": -0.07613039235999863
+      }
+    }
+  ]
+}

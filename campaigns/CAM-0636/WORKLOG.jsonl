@@ -4,4 +4,5 @@
 {"timestamp":"2026-08-20T00:03:00-07:00","run_id":"RUN-0003","event":"failed","detail":"Canonical quote lake had zero SOXL rows; no strategy interpretation."}
 {"timestamp":"2026-08-20T00:04:00-07:00","run_id":"RUN-0004","event":"aborted","detail":"User narrowed remote quote repair to May only; partial cache preserved."}
 {"timestamp":"2026-08-20T00:05:00-07:00","run_id":"RUN-0005","event":"completed","detail":"May SIP bid-cross fills reached 59%-79% within 1-5m, but net was -8.41%/-5.87%/-7.16% because forced exits lost 34-67bp on average."}
-
+{"timestamp":"2026-08-20T00:06:00-07:00","run_id":"RUN-0006","event":"completed","detail":"Literal 1:1 stopped 91.36% in median 25.8ms because 5.93bp target/stop distance equaled the 5.93bp spread; net -6.11% with 1bp stop slippage."}
+{"timestamp":"2026-08-20T00:07:00-07:00","run_id":"RUN-0007","event":"completed","detail":"0/15 wider symmetric OCO cells profitable; target rates remained far below 50%, so market-buy 1:1 family rejected."}

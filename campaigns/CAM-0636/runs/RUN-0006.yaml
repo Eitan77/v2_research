@@ -1,0 +1,22 @@
+run_id: RUN-0006
+campaign_id: CAM-0636
+status: completed
+parent: RUN-0005
+question: Can a symmetric win/loss OCO exit rescue the May SOXL microscalp?
+reason: RUN-0005 had frequent small wins but rare large losses; equal reward and risk directly addresses that asymmetry.
+expected_effect: Loss magnitude should collapse, but the ask-paid entry and one-cent spread may trigger the stop before continuation develops.
+configuration:
+  month: 2025-05
+  signal_and_entry: unchanged RUN-0005
+  profit_target: requested [1, 2] bp, rounded up to valid cent tick
+  stop_distance: exactly equal in dollars to entry-to-profit-limit distance
+  event_ordering: first subsequent SIP bid crossing either target or stop
+  stop_extra_slippage_bp: [0, 1]
+  maximum_hold_minutes: [1, 3, 5]
+  fallback: SIP bid at timeout
+command: python campaigns/CAM-0636/src/run0006_symmetric_oco.py
+result: >-
+  The 1/2-bp labels again collapsed to a 5.93-bp cent-rounded distance. The
+  mean entry spread was also 5.93 bp, so 91.36% stopped in a median 25.8 ms.
+  Target rate was 8.64%; net was -5.37% before and -6.11% after 1bp stop slippage.
+decision: reject literal ultra-tight 1:1 OCO; diagnose only distances wider than the spread.

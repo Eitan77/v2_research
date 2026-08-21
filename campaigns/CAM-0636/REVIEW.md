@@ -6,3 +6,6 @@ Across 1,296,147 SIP quotes with complete coverage, the subsequent bid reached t
 
 No queue assumption was needed for credited targets because a bid at or above the sell limit makes the order marketable. The result is still development evidence from one selected month and signal, but it is sufficiently negative that further threshold mining is not justified.
 
+The symmetric OCO repair did not work. At the literal cent-rounded distance, the 5.93-bp stop equaled the average 5.93-bp spread: 91.4% of positions stopped in a median 25.8 milliseconds, only 8.6% hit the target, and net PnL was -6.11% with one bp of stop slippage. A prespecified spread-diagnosis tested 5/10/15/20/30-bp requested symmetric distances over 1/3/5-minute windows. None of 15 cells was profitable. Even at an effective 23.7-bp distance, the best target/stop rates were 33.8%/65.0%, far from the greater-than-half target rate a symmetric system needs after slippage.
+
+This rejects the market-buy, immediate symmetric-OCO family for the tested signal and month. Entering passively at the bid could avoid paying the spread, but it changes the strategy into queue-dependent liquidity provision and cannot inherit these fill rates.

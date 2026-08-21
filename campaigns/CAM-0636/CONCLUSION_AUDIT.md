@@ -8,3 +8,5 @@
 - Inventory and forced exits: included; losses reported beside fill rates.
 - Parameter mining: stopped after the user-narrowed one-month feasibility test.
 - Promotion: rejected; no paper/live profitability claim.
+- Symmetric-loss repair: completed at literal and spread-clearing distances; 0/15 wider cells profitable.
+- Remaining alternative: passive entry is materially different and requires queue-aware evidence, not reuse of market-entry results.

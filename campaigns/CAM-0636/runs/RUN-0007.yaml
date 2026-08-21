@@ -1,0 +1,19 @@
+run_id: RUN-0007
+campaign_id: CAM-0636
+status: completed
+parent: RUN-0006
+question: Does symmetric reward/risk work when the OCO distance is wider than the entry spread?
+reason: RUN-0006 stopped 91.36% of positions in a median 26 ms because target/stop distance and mean spread were both 5.93 bp.
+expected_effect: Wider symmetric distances should prevent mechanical spread stops; genuine continuation must then produce a target rate above one half after stop slippage.
+configuration:
+  month_signal_entry: unchanged RUN-0006
+  requested_symmetric_distance_bp: [5, 10, 15, 20, 30]
+  maximum_hold_minutes: [1, 3, 5]
+  stop_extra_slippage_bp: 1
+command: python campaigns/CAM-0636/src/run0007_wider_symmetric_oco.py
+result: >-
+  Zero of 15 wider symmetric cells was profitable. Best was -6.11%. At an
+  effective 11.86-bp distance the target rate reached only 19.75% versus
+  80.25% stops; at effective 23.69 bp the best target rate was 33.75% versus
+  65.00% stops. Wider distances did not reveal positive 1:1 continuation.
+decision: reject market-buy symmetric-OCO family for this signal and month; stop rather than threshold-mine.
