@@ -1,0 +1,10 @@
+campaign_id: CAM-0637
+status: complete_no_candidate
+window: 2025-05
+evidence: {signals: 235, merged_windows: 159, nonempty_windows: 159, sip_quotes: 13922840}
+one_bp: {effective_distance_bp: 1.1336, target_rate: 0.4340, stop_rate: 0.5660, net_zero_stop_slippage: -0.00489, net_one_bp_stop_slippage: -0.01819}
+two_bp: {effective_distance_bp: 2.1155, target_rate: 0.4723, stop_rate: 0.5277, net_zero_stop_slippage: -0.00330, net_one_bp_stop_slippage: -0.01570}
+mean_entry_spread_bp: 0.3588
+conclusion: QQQ removes the SOXL tick/spread pathology but the green high-volume signal does not achieve a greater-than-half target-first probability.
+promotion: false
+

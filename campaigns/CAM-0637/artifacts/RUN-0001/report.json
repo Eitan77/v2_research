@@ -1,0 +1,128 @@
+{
+  "signals": 235,
+  "windows": 159,
+  "zero_windows": 0,
+  "quote_rows": 13922840,
+  "results": {
+    "t1_h1_s0": {
+      "trades": 235,
+      "net_return": -0.004890876570337932,
+      "mean_bp": -0.20812240724842265,
+      "target_rate": 0.4340425531914894,
+      "stop_rate": 0.5659574468085107,
+      "timeout_rate": 0.0,
+      "mean_distance_bp": 1.1336045396479246,
+      "mean_spread_bp": 0.35881275306667315
+    },
+    "t1_h1_s1": {
+      "trades": 235,
+      "net_return": -0.018189231227405567,
+      "mean_bp": -0.7740098394640667,
+      "target_rate": 0.4340425531914894,
+      "stop_rate": 0.5659574468085107,
+      "timeout_rate": 0.0,
+      "mean_distance_bp": 1.1336045396479246,
+      "mean_spread_bp": 0.35881275306667315
+    },
+    "t1_h3_s0": {
+      "trades": 235,
+      "net_return": -0.004890876570337932,
+      "mean_bp": -0.20812240724842265,
+      "target_rate": 0.4340425531914894,
+      "stop_rate": 0.5659574468085107,
+      "timeout_rate": 0.0,
+      "mean_distance_bp": 1.1336045396479246,
+      "mean_spread_bp": 0.35881275306667315
+    },
+    "t1_h3_s1": {
+      "trades": 235,
+      "net_return": -0.018189231227405567,
+      "mean_bp": -0.7740098394640667,
+      "target_rate": 0.4340425531914894,
+      "stop_rate": 0.5659574468085107,
+      "timeout_rate": 0.0,
+      "mean_distance_bp": 1.1336045396479246,
+      "mean_spread_bp": 0.35881275306667315
+    },
+    "t1_h5_s0": {
+      "trades": 235,
+      "net_return": -0.004890876570337932,
+      "mean_bp": -0.20812240724842265,
+      "target_rate": 0.4340425531914894,
+      "stop_rate": 0.5659574468085107,
+      "timeout_rate": 0.0,
+      "mean_distance_bp": 1.1336045396479246,
+      "mean_spread_bp": 0.35881275306667315
+    },
+    "t1_h5_s1": {
+      "trades": 235,
+      "net_return": -0.018189231227405567,
+      "mean_bp": -0.7740098394640667,
+      "target_rate": 0.4340425531914894,
+      "stop_rate": 0.5659574468085107,
+      "timeout_rate": 0.0,
+      "mean_distance_bp": 1.1336045396479246,
+      "mean_spread_bp": 0.35881275306667315
+    },
+    "t2_h1_s0": {
+      "trades": 235,
+      "net_return": -0.003713921357722527,
+      "mean_bp": -0.15803920671159688,
+      "target_rate": 0.46382978723404256,
+      "stop_rate": 0.5276595744680851,
+      "timeout_rate": 0.00851063829787234,
+      "mean_distance_bp": 2.1155304598415055,
+      "mean_spread_bp": 0.35881275306667315
+    },
+    "t2_h1_s1": {
+      "trades": 235,
+      "net_return": -0.01631124490114899,
+      "mean_bp": -0.6940955277084677,
+      "target_rate": 0.46382978723404256,
+      "stop_rate": 0.5276595744680851,
+      "timeout_rate": 0.00851063829787234,
+      "mean_distance_bp": 2.1155304598415055,
+      "mean_spread_bp": 0.35881275306667315
+    },
+    "t2_h3_s0": {
+      "trades": 235,
+      "net_return": -0.0032995502817830813,
+      "mean_bp": -0.14040639496949284,
+      "target_rate": 0.4723404255319149,
+      "stop_rate": 0.5276595744680851,
+      "timeout_rate": 0.0,
+      "mean_distance_bp": 2.1155304598415055,
+      "mean_spread_bp": 0.35881275306667315
+    },
+    "t2_h3_s1": {
+      "trades": 235,
+      "net_return": -0.01569687382520968,
+      "mean_bp": -0.667952077668497,
+      "target_rate": 0.4723404255319149,
+      "stop_rate": 0.5276595744680851,
+      "timeout_rate": 0.0,
+      "mean_distance_bp": 2.1155304598415055,
+      "mean_spread_bp": 0.35881275306667315
+    },
+    "t2_h5_s0": {
+      "trades": 235,
+      "net_return": -0.0032995502817830813,
+      "mean_bp": -0.14040639496949284,
+      "target_rate": 0.4723404255319149,
+      "stop_rate": 0.5276595744680851,
+      "timeout_rate": 0.0,
+      "mean_distance_bp": 2.1155304598415055,
+      "mean_spread_bp": 0.35881275306667315
+    },
+    "t2_h5_s1": {
+      "trades": 235,
+      "net_return": -0.01569687382520968,
+      "mean_bp": -0.667952077668497,
+      "target_rate": 0.4723404255319149,
+      "stop_rate": 0.5276595744680851,
+      "timeout_rate": 0.0,
+      "mean_distance_bp": 2.1155304598415055,
+      "mean_spread_bp": 0.35881275306667315
+    }
+  }
+}

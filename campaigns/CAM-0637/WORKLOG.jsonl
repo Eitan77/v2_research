@@ -1,0 +1,3 @@
+{"timestamp":"2026-08-20T00:00:00-07:00","run_id":"RUN-0001","event":"frozen","detail":"May 2025 QQQ market-buy 1-2bp symmetric OCO frozen."}
+{"timestamp":"2026-08-20T00:01:00-07:00","run_id":"RUN-0001","event":"completed","detail":"235 trades and 13.9m SIP quotes; best 2bp cell -0.33% before and -1.57% after 1bp stop slippage; 47.23% targets vs 52.77% stops."}
+

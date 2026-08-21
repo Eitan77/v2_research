@@ -1,0 +1,15 @@
+run_id: RUN-0001
+campaign_id: CAM-0637
+status: completed
+parent: null
+question: Is the literal QQQ 1-2bp symmetric market-buy micro-OCO viable in May 2025?
+reason: QQQ's penny tick and spread are materially smaller in bp than SOXL's.
+expected_effect: Stops should no longer trigger mechanically at the spread; profitability still requires target-first probability above one half after slippage.
+configuration: {green_candle_bp: 5, relative_volume: 2, target_bp: [1,2], hold_minutes: [1,3,5], stop_slippage_bp: [0,1]}
+command: python campaigns/CAM-0637/src/run0001_qqq_oco.py
+result: >-
+  235 signals, 159/159 nonempty SIP windows, and 13,922,840 quotes. The best
+  two-bp cell returned -0.33% before stop slippage and -1.57% with 1bp stop
+  slippage. Target/stop rates were 47.23%/52.77%. One-bp target/stop rates were
+  43.40%/56.60% and returned -1.82% with slippage.
+decision: reject; QQQ fixes the SOXL tick/spread problem but the signal has no positive target-first edge.
