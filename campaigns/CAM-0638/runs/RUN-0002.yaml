@@ -1,0 +1,11 @@
+run_id: RUN-0002
+campaign_id: CAM-0638
+status: completed
+parent: RUN-0001
+question: Does the unexecuted frozen depth-two trigger find a later-half survivor?
+reason: RUN-0001 executed simple rules and ridge ranking but omitted the planned shallow depth-two family; interpretation is blocked until reconciled.
+expected_effect: If simple interactions are real, a development-selected conjunction should remain positive in validation; otherwise it will expose selection noise.
+configuration: {base_exit_grid: RUN-0001, trigger: conjunction_of_two_prespecified_simple_conditions, minimum_development_trades: 20, locked_candidates: 5}
+command: python campaigns/CAM-0638/src/run0002_depth2_reconcile.py
+result: 2,848 depth-two development candidates evaluated; top five locked; 0/5 positive in validation and 0/5 passed the gate.
+decision: conclude no conditional candidate in this quote-executed green-volume QQQ scalp family; stop rather than mine validation.

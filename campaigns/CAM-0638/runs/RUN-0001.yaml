@@ -1,0 +1,23 @@
+run_id: RUN-0001
+campaign_id: CAM-0638
+status: completed_with_depth2_reconciliation_required
+parent: null
+question: Can simple or restrained multivariate triggers produce a validation-positive QQQ scalp after quote execution?
+reason: Broad 1-2bp symmetric OCO was slightly negative; conditional states may alter target-first odds or support asymmetric exits.
+expected_effect: Genuine triggers should remain positive in the chronologically later half; mined development winners should collapse.
+configuration:
+  split: 2025-05-15 close
+  targets_bp: [1,2,3,5]
+  stops_bp: [1,2,3,5]
+  holds_min: [1,3]
+  stop_timeout_slippage_bp: 1
+  minimum_development_trades: 20
+  locked_simple_candidates: 10
+  models: [ridge_top30_percent, depth2_best_leaf]
+command: python campaigns/CAM-0638/src/run0001_conditional_search.py
+result: >-
+  235 signals, 13,922,840 quotes, 32 exit configurations, 928 simple
+  candidate rows and 32 ridge candidates. Ten simple and three ridge candidates
+  were locked from development; 0/13 were positive in validation. Planned
+  depth-two family remained unexecuted and blocked final interpretation.
+decision: run RUN-0002 reconciliation; no candidate claim.

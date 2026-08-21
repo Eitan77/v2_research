@@ -1,0 +1,73 @@
+{
+  "executed_depth2_rows": 2848,
+  "locked": 5,
+  "validation_positive": 0,
+  "validation_gate_pass": 0,
+  "results": [
+    {
+      "rule": "prior5_bp_ge_10&close_loc_ge_0.9",
+      "target": 5,
+      "stop": 5,
+      "hold": 1,
+      "dev_return": 0.0020440490449470383,
+      "validation_trades": 27,
+      "validation_net_return": -0.003196356448658344,
+      "validation_mean_bp": -1.1838357217253126,
+      "validation_target_rate": 0.25925925925925924,
+      "validation_green_rate": 0.3333333333333333,
+      "validation_top_abs_share": 0.05560003572214775
+    },
+    {
+      "rule": "green_ge_10&prior5_bp_ge_10",
+      "target": 5,
+      "stop": 5,
+      "hold": 3,
+      "dev_return": 0.001581058245220368,
+      "validation_trades": 19,
+      "validation_net_return": -0.002638118664419986,
+      "validation_mean_bp": -1.3884835075894664,
+      "validation_target_rate": 0.42105263157894735,
+      "validation_green_rate": 0.42105263157894735,
+      "validation_top_abs_share": 0.057652610922277525
+    },
+    {
+      "rule": "green_ge_10&prior3_bp_ge_5",
+      "target": 5,
+      "stop": 5,
+      "hold": 3,
+      "dev_return": 0.0014926385401663467,
+      "validation_trades": 28,
+      "validation_net_return": -0.0014229803665800622,
+      "validation_mean_bp": -0.5082072737785936,
+      "validation_target_rate": 0.5,
+      "validation_green_rate": 0.5,
+      "validation_top_abs_share": 0.039678579712685215
+    },
+    {
+      "rule": "green_ge_10&prior5_bp_ge_5",
+      "target": 5,
+      "stop": 5,
+      "hold": 3,
+      "dev_return": 0.0014798919677947442,
+      "validation_trades": 23,
+      "validation_net_return": -0.001721157632616932,
+      "validation_mean_bp": -0.7483294054856225,
+      "validation_target_rate": 0.4782608695652174,
+      "validation_green_rate": 0.4782608695652174,
+      "validation_top_abs_share": 0.04811323298295342
+    },
+    {
+      "rule": "green_ge_10&prior5_bp_ge_10",
+      "target": 5,
+      "stop": 5,
+      "hold": 1,
+      "dev_return": 0.0014490651164086321,
+      "validation_trades": 19,
+      "validation_net_return": -0.003644279058250821,
+      "validation_mean_bp": -1.9180416096056954,
+      "validation_target_rate": 0.2631578947368421,
+      "validation_green_rate": 0.3157894736842105,
+      "validation_top_abs_share": 0.0685481815047775
+    }
+  ]
+}

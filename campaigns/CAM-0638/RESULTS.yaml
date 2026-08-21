@@ -1,0 +1,12 @@
+campaign_id: CAM-0638
+status: complete_no_conditional_scalp_candidate
+scope: Conditional subsets of May 2025 QQQ green >=5bp and causal relative-volume >=2 events
+evidence: {signals: 235, sip_quotes: 13922840, exit_configs: 32}
+simple_search: {candidate_rows: 928, locked: 10, validation_positive: 0}
+ridge_search: {candidate_rows: 32, locked: 3, validation_positive: 0}
+depth2_search: {candidate_rows: 2848, locked: 5, validation_positive: 0}
+best_simple_validation: {rule: green_ge_10, target_bp: 2, stop_bp: 5, trades: 35, net_return: -0.001537, mean_bp: -0.4393}
+best_depth2_validation: {rule: green_ge_10_and_prior3_ge_5, target_bp: 5, stop_bp: 5, trades: 28, net_return: -0.001423, mean_bp: -0.5082}
+conclusion: Development patterns did not survive the later half; no simple, asymmetric-exit, ridge, or shallow-interaction trigger is supported.
+promotion: false
+

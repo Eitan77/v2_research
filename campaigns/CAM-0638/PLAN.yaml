@@ -1,0 +1,19 @@
+campaign_id: CAM-0638
+title: Conditional QQQ quote-scalping trigger discovery
+status: complete_no_conditional_scalp_candidate
+created_at: 2026-08-20
+hypothesis: A causal subset of short-horizon QQQ states may have target-first odds or payoff asymmetry sufficient for quote-executed scalping even though the broad green-volume rule failed.
+data: May 2025 QQQ one-minute SIP bars and the 159 complete SIP quote windows pulled by CAM-0637; no post-May rows.
+chronology: {development: [2025-05-01, 2025-05-15], validation: [2025-05-16, 2025-05-30]}
+features: [green_candle_bp, relative_volume, prior_3m_return, prior_5m_return, range_bp, close_location, time_of_day, entry_spread]
+families:
+  - fixed simple one- and two-condition rules
+  - target/stop bp in [1,2,3,5] with 1/3-minute timeout
+  - regularized multivariate return ranking and shallow depth-two tree on development only
+hard_constraints:
+  - next-minute ask entry and ordered SIP bid target/stop/timeout exits
+  - one position at a time and 1bp adverse stop/timeout slippage
+  - select only on development; report every locked candidate on validation
+  - no ticker, date, or future-return features
+  - no holdout or post-May access
+promotion_gate: Positive validation PnL with at least 20 validation trades, target-first or payoff evidence, and no dependence on a single event.

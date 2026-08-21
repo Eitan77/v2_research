@@ -1,0 +1,3 @@
+{"timestamp":"2026-08-20T00:00:00-07:00","run_id":"RUN-0001","event":"frozen","detail":"May QQQ conditional scalp search frozen with chronological half split and actual quote exits."}
+{"timestamp":"2026-08-20T00:01:00-07:00","run_id":"RUN-0001","event":"completed_partial","detail":"0/13 locked simple/ridge candidates positive in validation; depth-two plan item outstanding."}
+{"timestamp":"2026-08-20T00:02:00-07:00","run_id":"RUN-0002","event":"completed","detail":"2,848 depth-two rows; 0/5 development-selected candidates positive in validation; family rejected."}
